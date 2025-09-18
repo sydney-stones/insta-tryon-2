@@ -20,7 +20,7 @@ export const defaultWardrobe: WardrobeItem[] = [
  {
     id: 'outfit-1',
     name: 'Outfit 1',
-    url: 'https://i.imgur.com/Bo5a63D.jpeg',
+    url: 'https://i.imgur.com/DCtXkpe.png',
   }
   
 ];
