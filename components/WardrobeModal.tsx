@@ -13,7 +13,7 @@ interface WardrobePanelProps {
   wardrobe: WardrobeItem[];
 }
 
-// Helper to convert image URL to a File object using a canvas to bypass potential CORS issues.
+// Helper to convert image URL to a File object.
 const urlToFile = (url: string, filename: string): Promise<File> => {
     return new Promise((resolve, reject) => {
         const image = new Image();
@@ -41,7 +41,6 @@ const urlToFile = (url: string, filename: string): Promise<File> => {
         };
 
         image.onerror = (error) => {
-            // Attempt to fetch via proxy if CORS fails for known patterns
             console.error(`Direct image load failed for ${url}. Error:`, error);
             reject(new Error(`Could not load image. Please ensure it's a direct link and the hosting service allows cross-origin access.`));
         };
@@ -52,6 +51,11 @@ const urlToFile = (url: string, filename: string): Promise<File> => {
 
 const WardrobePanel: React.FC<WardrobePanelProps> = ({ onGarmentSelect, activeGarmentIds, isLoading, wardrobe }) => {
     const [error, setError] = useState<string | null>(null);
+    const [brokenImageUrls, setBrokenImageUrls] = useState<Set<string>>(new Set());
+
+    const handleImageError = (url: string) => {
+        setBrokenImageUrls(prev => new Set(prev).add(url));
+    };
 
     const handleGarmentClick = async (item: WardrobeItem) => {
         if (isLoading || activeGarmentIds.includes(item.id)) return;
@@ -75,15 +79,28 @@ const WardrobePanel: React.FC<WardrobePanelProps> = ({ onGarmentSelect, activeGa
         <div className="grid grid-cols-3 gap-3">
             {wardrobe.map((item) => {
                 const isActive = activeGarmentIds.includes(item.id);
+                const isBroken = brokenImageUrls.has(item.url);
                 return (
                     <div key={item.id} className="relative group/wardrobeitem">
                         <button
                             onClick={() => handleGarmentClick(item)}
-                            disabled={isLoading || isActive}
+                            disabled={isLoading || isActive || isBroken}
                             className="w-full relative aspect-square border rounded-lg overflow-hidden transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
                             aria-label={`Select ${item.name}`}
                         >
-                            <img src={item.url} alt={item.name} className="w-full h-full object-cover" />
+                            {isBroken ? (
+                                <div className="w-full h-full bg-gray-100 flex flex-col items-center justify-center text-center p-2">
+                                    <p className="text-red-500 text-xs font-bold">Error</p>
+                                    <p className="text-gray-500 text-[10px] leading-tight mt-1">Image failed to load. Check URL & repo visibility.</p>
+                                </div>
+                            ) : (
+                                <img 
+                                    src={item.url} 
+                                    alt={item.name} 
+                                    className="w-full h-full object-cover" 
+                                    onError={() => handleImageError(item.url)}
+                                />
+                            )}
                             <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/wardrobeitem:opacity-100 transition-opacity">
                                 <p className="text-white text-xs font-bold text-center p-1">{item.name}</p>
                             </div>
