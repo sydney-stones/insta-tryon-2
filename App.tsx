@@ -57,44 +57,8 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentPoseIndex, setCurrentPoseIndex] = useState(0);
   const [isSheetCollapsed, setIsSheetCollapsed] = useState(false);
-  const [wardrobe, setWardrobe] = useState<WardrobeItem[]>(defaultWardrobe);
+  const wardrobe: WardrobeItem[] = defaultWardrobe; // The wardrobe is now static
   const isMobile = useMediaQuery('(max-width: 767px)');
-
-  // Load user's custom wardrobe from localStorage on initial mount
-  useEffect(() => {
-    try {
-      const storedWardrobe = localStorage.getItem('userWardrobe');
-      if (storedWardrobe) {
-        const userItems: WardrobeItem[] = JSON.parse(storedWardrobe);
-        // Combine default items with user's stored items, ensuring no duplicates
-        setWardrobe(prevDefaultWardrobe => {
-          const existingIds = new Set(prevDefaultWardrobe.map(item => item.id));
-          const newItems = userItems.filter(item => !existingIds.has(item.id));
-          return [...prevDefaultWardrobe, ...newItems];
-        });
-      }
-    } catch (error) {
-      console.error("Failed to load wardrobe from localStorage:", error);
-    }
-  }, []);
-
-  // Save user's custom wardrobe items to localStorage whenever the wardrobe changes
-  useEffect(() => {
-    try {
-      const userItems = wardrobe.filter(item => item.isCustom);
-      if (userItems.length > 0) {
-        localStorage.setItem('userWardrobe', JSON.stringify(userItems));
-      } else {
-        // If no more custom items, clear from storage
-        localStorage.removeItem('userWardrobe');
-      }
-    } catch (error) {
-      console.error("Failed to save wardrobe to localStorage:", error);
-      // NOTE: Could add a user-facing error here if storage quota is exceeded.
-      setError("Could not save wardrobe. Storage might be full.");
-    }
-  }, [wardrobe]);
-
 
   const activeOutfitLayers = useMemo(() => 
     outfitHistory.slice(0, currentOutfitIndex + 1), 
@@ -139,10 +103,6 @@ const App: React.FC = () => {
     setError(null);
     setCurrentPoseIndex(0);
     setIsSheetCollapsed(false);
-    // Reset wardrobe to default + what's in storage. The effect hooks will handle it.
-    const stored = localStorage.getItem('userWardrobe');
-    const userItems = stored ? JSON.parse(stored) : [];
-    setWardrobe([...defaultWardrobe, ...userItems]);
   };
 
   const handleGarmentSelect = useCallback(async (garmentFile: File, garmentInfo: WardrobeItem) => {
@@ -181,32 +141,12 @@ const App: React.FC = () => {
       setLoadingMessage('');
     }
   }, [displayImageUrl, isLoading, currentPoseIndex, outfitHistory, currentOutfitIndex]);
-  
-  const handleAddToWardrobe = (newItem: WardrobeItem) => {
-    setWardrobe(prev => {
-        if (prev.some(item => item.url === newItem.url)) {
-            setError("An item with this URL is already in your wardrobe.");
-            setTimeout(() => setError(null), 3000);
-            return prev;
-        }
-        return [...prev, newItem];
-    });
-  };
 
   const handleRemoveLastGarment = () => {
     if (currentOutfitIndex > 0) {
       setCurrentOutfitIndex(prevIndex => prevIndex - 1);
       setCurrentPoseIndex(0);
     }
-  };
-  
-  const handleRemoveFromWardrobe = (itemIdToRemove: string) => {
-    if (activeGarmentIds.includes(itemIdToRemove)) {
-      setError("Cannot remove a garment that is currently part of the outfit.");
-      setTimeout(() => setError(null), 3000);
-      return;
-    }
-    setWardrobe(prev => prev.filter(item => item.id !== itemIdToRemove));
   };
 
   const handlePoseSelect = useCallback(async (newIndex: number) => {
@@ -319,8 +259,6 @@ const App: React.FC = () => {
                       activeGarmentIds={activeGarmentIds}
                       isLoading={isLoading}
                       wardrobe={wardrobe}
-                      onRemoveFromWardrobe={handleRemoveFromWardrobe}
-                      onAddToWardrobe={handleAddToWardrobe}
                     />
                   </div>
               </aside>

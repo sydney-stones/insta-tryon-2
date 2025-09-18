@@ -7,7 +7,6 @@ export interface WardrobeItem {
   id: string;
   name: string;
   url: string;
-  isCustom?: boolean;
 }
 
 export interface OutfitLayer {
