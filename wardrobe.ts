@@ -41,36 +41,36 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'Silverstone-Alpine',
     name: 'Silverstone-Alpine',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main//outfits/Silverstone/Silverstone-Alpine.png',
-  }, 
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-Alpine.png',
+  },
   {
     id: 'Silverstone-AstonMartin',
     name: 'Silverstone-AstonMartin',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main//outfits/Silverstone/Silverstone-AstonMartin.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-AstonMartin.png',
   },
   {
     id: 'Silverstone-Ferrari',
     name: 'Silverstone-Ferrari',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main//outfits/Silverstone/Silverstone-Ferrari.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-Ferrari.png',
   },
   {
     id: 'Silverstone-Mclaren',
     name: 'Silverstone-Mclaren',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main//outfits/Silverstone/Silverstone-Mclaren.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-Mclaren.png',
   },
   {
     id: 'Silverstone-Mercedes',
     name: 'Silverstone-Mercedes',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main//outfits/Silverstone/Silverstone-Mercedes.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-Mercedes.png',
   },
   {
     id: 'Silverstone-RedBull',
     name: 'Silverstone-RedBull',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main//outfits/Silverstone/Silverstone-RedBull.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-Redbull.png',
   },
   {
     id: 'Silverstone-Williams',
     name: 'Silverstone-Williams',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main//outfits/Silverstone/Silverstone-Williams.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-Williams.png',
   }
 ];
