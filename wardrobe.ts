@@ -18,8 +18,8 @@ export const defaultWardrobe: WardrobeItem[] = [
     url: 'https://raw.githubusercontent.com/ammaarreshi/app-images/refs/heads/main/Gemini-tee.png',
   },
   {
-    id: 'gemini-hoodie',
-    name: 'Gemini Hoodie',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/blob/main/country.png',
+    id: 'country',
+    name: 'Country',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/country.png',
   }
 ];
