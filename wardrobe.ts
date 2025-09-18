@@ -16,11 +16,5 @@ export const defaultWardrobe: WardrobeItem[] = [
     id: 'gemini-tee',
     name: 'Gemini Tee',
     url: 'https://raw.githubusercontent.com/ammaarreshi/app-images/refs/heads/main/Gemini-tee.png',
-  },
- {
-    id: 'outfit-1',
-    name: 'Outfit 1',
-    url: 'https://i.imgur.com/DCtXkpe.png',
   }
-  
 ];
