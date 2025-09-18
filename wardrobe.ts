@@ -6,70 +6,26 @@
 import { WardrobeItem } from './types';
 
 // Default wardrobe items hosted for easy access
+// This is the ONLY place where wardrobe items are defined.
 export const defaultWardrobe: WardrobeItem[] = [
   {
-    id: 'GameFair-1',
-    name: 'GameFair 1',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/GameFair-1.png',
-  },
-  {
-    id: 'GameFair-2',
-    name: 'GameFair 2',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/GameFair-2.png',
-  },
-  {
-    id: 'GameFair-3',
-    name: 'GameFair 3',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/GameFair-3.png',
-  },
-  {
-    id: 'GameFair-4',
-    name: 'GameFair 4',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/GameFair-4.png',
-  },
-  {
-    id: 'GameFair-5',
-    name: 'GameFair 5',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/GameFair-5.png',
-  },
-  {
-    id: 'GameFair-6',
-    name: 'GameFair 6',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/GameFair-6.png',
-  },
-  {
-    id: 'Silverstone-Alpine',
-    name: 'Silverstone-Alpine',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/Silverstone-Alpine.png',
-  },
-  {
-    id: 'Silverstone-RedBull',
-    name: 'Silverstone-RedBull',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/Silverstone-RedBull.png',
-  },
-  {
-    id: 'Silverstone-Mercedes',
-    name: 'Silverstone-Mercedes',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/Silverstone-Mercedes.png',
-  },
-  {
-    id: 'Silverstone-Ferrari',
-    name: 'Silverstone-Ferrari',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/Silverstone-Ferrari.png',
-  },
-  {
-    id: 'Silverstone-McLaren',
-    name: 'Silverstone-McLaren',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/Silverstone-McLaren.png',
-  },
-  {
-    id: 'Silverstone-AstonMartin',
-    name: 'Silverstone-AstonMartin',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/Silverstone-AstonMartin.png',
-  },
-  {
-    id: 'Silverstone-Williams',
-    name: 'Silverstone-Williams',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Outfits/Silverstone-Williams.png',
+    id: 'country-outfit',
+    name: 'Country Outfit',
+    // This URL must be a direct link to the raw image file.
+    // Make sure your GitHub repository is PUBLIC for the link to work.
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/country.png',
   }
+
+  // HOW TO ADD YOUR OWN OUTFITS:
+  // 1. Upload an image from your "outfit folder" to a public host like GitHub.
+  // 2. Get the direct raw image URL.
+  // 3. Copy the format below and paste it here, inside the square brackets [].
+  /*
+  , // <-- Don't forget the comma after the item above!
+  {
+    id: 'a-unique-id-for-your-item', // e.g., 'blue-denim-jacket'
+    name: 'The Name You Want to Display', // e.g., 'Blue Denim Jacket'
+    url: 'paste-your-public-image-url-here', // e.g., 'https://raw.githubusercontent.com/...'
+  }
+  */
 ];

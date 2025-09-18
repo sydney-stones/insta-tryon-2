@@ -57,7 +57,6 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentPoseIndex, setCurrentPoseIndex] = useState(0);
   const [isSheetCollapsed, setIsSheetCollapsed] = useState(false);
-  const wardrobe: WardrobeItem[] = defaultWardrobe; // The wardrobe is now static
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   const activeOutfitLayers = useMemo(() => 
@@ -258,7 +257,7 @@ const App: React.FC = () => {
                       onGarmentSelect={handleGarmentSelect}
                       activeGarmentIds={activeGarmentIds}
                       isLoading={isLoading}
-                      wardrobe={wardrobe}
+                      wardrobe={defaultWardrobe}
                     />
                   </div>
               </aside>
