@@ -21,5 +21,10 @@ export const defaultWardrobe: WardrobeItem[] = [
     id: 'country',
     name: 'Country',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/country.png',
+  },
+  {
+    id: 'country2',
+    name: 'Country2',
+    url: 'https://i.imgur.com/DCtXkpe.png',
   }
 ];
