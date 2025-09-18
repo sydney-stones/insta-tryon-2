@@ -13,7 +13,6 @@ import { generateVirtualTryOnImage, generatePoseVariation } from './services/gem
 import { OutfitLayer, WardrobeItem } from './types';
 import { ChevronDownIcon, ChevronUpIcon } from './components/icons';
 import { defaultWardrobe } from './wardrobe';
-import Footer from './components/Footer';
 import { getFriendlyErrorMessage } from './lib/utils';
 import Spinner from './components/Spinner';
 
@@ -105,12 +104,12 @@ const App: React.FC = () => {
   };
 
   const handleGarmentSelect = useCallback(async (garmentFile: File, garmentInfo: WardrobeItem) => {
-    if (!displayImageUrl || isLoading) return;
+    const baseModelImage = outfitHistory[0] ? Object.values(outfitHistory[0].poseImages)[0] : null;
 
-    const nextLayer = outfitHistory[currentOutfitIndex + 1];
-    if (nextLayer && nextLayer.garment?.id === garmentInfo.id) {
-        setCurrentOutfitIndex(prev => prev + 1);
-        setCurrentPoseIndex(0);
+    if (!baseModelImage || isLoading) return;
+
+    // If the selected garment is already worn, do nothing.
+    if (currentOutfitIndex > 0 && outfitHistory[currentOutfitIndex]?.garment?.id === garmentInfo.id) {
         return;
     }
 
@@ -119,19 +118,22 @@ const App: React.FC = () => {
     setLoadingMessage(`Adding ${garmentInfo.name}...`);
 
     try {
-      const newImageUrl = await generateVirtualTryOnImage(displayImageUrl, garmentFile);
-      const currentPoseInstruction = POSE_INSTRUCTIONS[currentPoseIndex];
+      const newImageUrl = await generateVirtualTryOnImage(baseModelImage, garmentFile);
+      // When a new garment is selected, we reset to the default pose.
+      const defaultPoseInstruction = POSE_INSTRUCTIONS[0];
       
       const newLayer: OutfitLayer = { 
         garment: garmentInfo, 
-        poseImages: { [currentPoseInstruction]: newImageUrl } 
+        poseImages: { [defaultPoseInstruction]: newImageUrl } 
       };
 
       setOutfitHistory(prevHistory => {
-        const newHistory = prevHistory.slice(0, currentOutfitIndex + 1);
-        return [...newHistory, newLayer];
+        // New history is always the base layer plus the new garment layer.
+        // This replaces any existing garment.
+        return [prevHistory[0], newLayer];
       });
-      setCurrentOutfitIndex(prev => prev + 1);
+      setCurrentOutfitIndex(1);
+      setCurrentPoseIndex(0); // Reset to default pose index.
       
     } catch (err) {
       setError(getFriendlyErrorMessage(err, 'Failed to apply garment'));
@@ -139,7 +141,7 @@ const App: React.FC = () => {
       setIsLoading(false);
       setLoadingMessage('');
     }
-  }, [displayImageUrl, isLoading, currentPoseIndex, outfitHistory, currentOutfitIndex]);
+  }, [isLoading, outfitHistory, currentOutfitIndex]);
 
   const handleRemoveLastGarment = () => {
     if (currentOutfitIndex > 0) {
@@ -218,7 +220,7 @@ const App: React.FC = () => {
             transition={{ duration: 0.5, ease: 'easeInOut' }}
           >
             <main className="flex-grow relative flex flex-col md:flex-row overflow-hidden">
-              <div className="w-full h-full flex-grow flex items-center justify-center bg-white pb-16 relative">
+              <div className="w-full h-full flex-grow flex items-center justify-center bg-white pb-24 md:pb-16 relative">
                 <Canvas 
                   displayImageUrl={displayImageUrl}
                   onStartOver={handleStartOver}
@@ -232,7 +234,7 @@ const App: React.FC = () => {
               </div>
 
               <aside 
-                className={`absolute md:relative md:flex-shrink-0 bottom-0 right-0 h-auto md:h-full w-full md:w-1/3 md:max-w-sm bg-white/80 backdrop-blur-md flex flex-col border-t md:border-t-0 md:border-l border-gray-200/60 transition-transform duration-500 ease-in-out ${isSheetCollapsed ? 'translate-y-[calc(100%-4.5rem)]' : 'translate-y-0'} md:translate-y-0`}
+                className={`absolute md:relative md:flex-shrink-0 bottom-0 right-0 h-auto max-h-[60vh] md:max-h-none md:h-full w-full md:w-1/3 md:max-w-sm bg-white/80 backdrop-blur-md flex flex-col border-t md:border-t-0 md:border-l border-gray-200/60 transition-transform duration-500 ease-in-out ${isSheetCollapsed ? 'translate-y-[calc(100%-4.5rem)]' : 'translate-y-0'} md:translate-y-0`}
                 style={{ transitionProperty: 'transform' }}
               >
                   <button 
@@ -280,7 +282,6 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <Footer isOnDressingScreen={!!modelImageUrl} />
     </div>
   );
 };
