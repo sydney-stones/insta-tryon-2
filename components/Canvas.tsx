@@ -18,10 +18,9 @@ interface CanvasProps {
   currentPoseIndex: number;
   availablePoseKeys: string[];
   aspectRatio: AspectRatio;
-  onAspectRatioChange: (aspectRatio: AspectRatio) => void;
 }
 
-const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, aspectRatio, onAspectRatioChange }) => {
+const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, aspectRatio }) => {
   const [isPoseMenuOpen, setIsPoseMenuOpen] = useState(false);
 
   const getAspectRatioClasses = (aspectRatio: AspectRatio) => {
@@ -129,34 +128,6 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
           )}
         </AnimatePresence>
       </div>
-
-      {/* Aspect Ratio Controls */}
-      {displayImageUrl && !isLoading && (
-        <div className="absolute top-6 right-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-white/80 backdrop-blur-md rounded-lg p-3 border border-gray-200/50">
-            <p className="text-xs font-medium text-gray-700 mb-2">Aspect Ratio</p>
-            <div className="flex gap-1">
-              {([
-                { ratio: '9:16', label: 'Reel' },
-                { ratio: '1:1', label: 'Square' },
-                { ratio: '4:5', label: 'Portrait' }
-              ] as const).map(({ ratio, label }) => (
-                <button
-                  key={ratio}
-                  onClick={() => onAspectRatioChange(ratio)}
-                  className={`px-2 py-1 text-xs font-medium rounded border transition-colors ${
-                    aspectRatio === ratio
-                      ? 'bg-gray-900 text-white border-gray-900'
-                      : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Pose Controls */}
       {displayImageUrl && !isLoading && (
