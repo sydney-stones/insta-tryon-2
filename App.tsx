@@ -9,7 +9,7 @@ import StartScreen, { AspectRatio } from './components/StartScreen';
 import Canvas from './components/Canvas';
 import WardrobePanel from './components/WardrobeModal';
 import OutfitStack from './components/OutfitStack';
-import { generateVirtualTryOnImage, generatePoseVariation } from './services/geminiService';
+import { generateVirtualTryOnImage, generatePoseVariation, regenerateImageWithAspectRatio } from './services/geminiService';
 import { OutfitLayer, WardrobeItem } from './types';
 import { ChevronDownIcon, ChevronUpIcon } from './components/icons';
 import { defaultWardrobe } from './wardrobe';
@@ -94,9 +94,35 @@ const App: React.FC = () => {
     setCurrentOutfitIndex(0);
   };
 
-  const handleAspectRatioChange = (newAspectRatio: AspectRatio) => {
+  const handleAspectRatioChange = useCallback(async (newAspectRatio: AspectRatio) => {
+    if (newAspectRatio === aspectRatio || !displayImageUrl || isLoading) return;
+
+    setError(null);
+    setIsLoading(true);
+    setLoadingMessage(`Changing aspect ratio to ${newAspectRatio}...`);
+
+    const prevAspectRatio = aspectRatio;
     setAspectRatio(newAspectRatio);
-  };
+
+    try {
+      const newImageUrl = await regenerateImageWithAspectRatio(displayImageUrl, newAspectRatio);
+
+      // Update the current layer with the new image
+      setOutfitHistory(prevHistory => {
+        const newHistory = [...prevHistory];
+        const currentLayer = newHistory[currentOutfitIndex];
+        const currentPoseInstruction = POSE_INSTRUCTIONS[currentPoseIndex];
+        currentLayer.poseImages[currentPoseInstruction] = newImageUrl;
+        return newHistory;
+      });
+    } catch (err) {
+      setError(getFriendlyErrorMessage(err, 'Failed to change aspect ratio'));
+      setAspectRatio(prevAspectRatio);
+    } finally {
+      setIsLoading(false);
+      setLoadingMessage('');
+    }
+  }, [aspectRatio, displayImageUrl, isLoading, currentOutfitIndex, currentPoseIndex, POSE_INSTRUCTIONS]);
 
   const handleStartOver = () => {
     setModelImageUrl(null);
@@ -125,7 +151,7 @@ const App: React.FC = () => {
     setLoadingMessage(`Adding ${garmentInfo.name}...`);
 
     try {
-      const newImageUrl = await generateVirtualTryOnImage(baseModelImage as string, garmentFile);
+      const newImageUrl = await generateVirtualTryOnImage(baseModelImage as string, garmentFile, aspectRatio);
       // When a new garment is selected, we reset to the default pose.
       const defaultPoseInstruction = POSE_INSTRUCTIONS[0];
       
@@ -148,7 +174,7 @@ const App: React.FC = () => {
       setIsLoading(false);
       setLoadingMessage('');
     }
-  }, [isLoading, outfitHistory, currentOutfitIndex]);
+  }, [isLoading, outfitHistory, currentOutfitIndex, aspectRatio]);
 
   const handleRemoveLastGarment = () => {
     if (currentOutfitIndex > 0) {
@@ -179,7 +205,7 @@ const App: React.FC = () => {
     setCurrentPoseIndex(newIndex);
 
     try {
-      const newImageUrl = await generatePoseVariation(baseImageForPoseChange, poseInstruction);
+      const newImageUrl = await generatePoseVariation(baseImageForPoseChange, poseInstruction, aspectRatio);
       setOutfitHistory(prevHistory => {
         const newHistory = [...prevHistory];
         const updatedLayer = newHistory[currentOutfitIndex];
@@ -193,7 +219,7 @@ const App: React.FC = () => {
       setIsLoading(false);
       setLoadingMessage('');
     }
-  }, [currentPoseIndex, outfitHistory, isLoading, currentOutfitIndex]);
+  }, [currentPoseIndex, outfitHistory, isLoading, currentOutfitIndex, aspectRatio]);
 
   const viewVariants = {
     initial: { opacity: 0, y: 15 },
