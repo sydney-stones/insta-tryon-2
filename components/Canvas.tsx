@@ -17,11 +17,11 @@ interface CanvasProps {
   poseInstructions: string[];
   currentPoseIndex: number;
   availablePoseKeys: string[];
-  currentGarment?: { name: string; url: string } | null;
   aspectRatio: AspectRatio;
+  onAspectRatioChange: (aspectRatio: AspectRatio) => void;
 }
 
-const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, currentGarment, aspectRatio }) => {
+const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, aspectRatio, onAspectRatioChange }) => {
   const [isPoseMenuOpen, setIsPoseMenuOpen] = useState(false);
 
   const getAspectRatioClasses = (aspectRatio: AspectRatio) => {
@@ -99,37 +99,13 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
       {/* Image Display or Placeholder */}
       <div className="relative w-full h-full flex items-center justify-center">
         {displayImageUrl ? (
-          currentGarment ? (
-            // Show both outfit and generated image side by side
-            <div className="flex items-center justify-center gap-6 max-w-full max-h-full">
-              <div className="flex flex-col items-center">
-                <img
-                  src={currentGarment.url}
-                  alt={`${currentGarment.name} outfit`}
-                  className={`object-contain rounded-lg border border-gray-200 ${getAspectRatioClasses(aspectRatio)}`}
-                  style={{ maxWidth: '40%' }}
-                />
-                <p className="text-sm font-medium text-gray-700 mt-2 text-center">{currentGarment.name}</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <img
-                  key={displayImageUrl} // Use key to force re-render and trigger animation on image change
-                  src={displayImageUrl}
-                  alt="Virtual try-on result"
-                  className={`object-contain transition-opacity duration-500 animate-fade-in rounded-lg ${getAspectRatioClasses(aspectRatio)}`}
-                />
-                <p className="text-sm font-medium text-gray-700 mt-2 text-center">Try-On Result</p>
-              </div>
-            </div>
-          ) : (
-            // Show only the generated image (model without garment)
-            <img
-              key={displayImageUrl} // Use key to force re-render and trigger animation on image change
-              src={displayImageUrl}
-              alt="Virtual try-on model"
-              className={`object-contain transition-opacity duration-500 animate-fade-in rounded-lg ${getAspectRatioClasses(aspectRatio)}`}
-            />
-          )
+          // Show only the generated image
+          <img
+            key={displayImageUrl} // Use key to force re-render and trigger animation on image change
+            src={displayImageUrl}
+            alt="Virtual try-on model"
+            className={`object-contain transition-opacity duration-500 animate-fade-in rounded-lg ${getAspectRatioClasses(aspectRatio)}`}
+          />
         ) : (
             <div className={`bg-gray-100 border border-gray-200 rounded-lg flex flex-col items-center justify-center ${getAspectRatioClasses(aspectRatio)}`}>
               <Spinner />
@@ -154,9 +130,37 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
         </AnimatePresence>
       </div>
 
+      {/* Aspect Ratio Controls */}
+      {displayImageUrl && !isLoading && (
+        <div className="absolute top-6 right-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-white/80 backdrop-blur-md rounded-lg p-3 border border-gray-200/50">
+            <p className="text-xs font-medium text-gray-700 mb-2">Aspect Ratio</p>
+            <div className="flex gap-1">
+              {([
+                { ratio: '9:16', label: 'Reel' },
+                { ratio: '1:1', label: 'Square' },
+                { ratio: '4:5', label: 'Portrait' }
+              ] as const).map(({ ratio, label }) => (
+                <button
+                  key={ratio}
+                  onClick={() => onAspectRatioChange(ratio)}
+                  className={`px-2 py-1 text-xs font-medium rounded border transition-colors ${
+                    aspectRatio === ratio
+                      ? 'bg-gray-900 text-white border-gray-900'
+                      : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Pose Controls */}
       {displayImageUrl && !isLoading && (
-        <div 
+        <div
           className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           onMouseEnter={() => setIsPoseMenuOpen(true)}
           onMouseLeave={() => setIsPoseMenuOpen(false)}

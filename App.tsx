@@ -78,11 +78,6 @@ const App: React.FC = () => {
     return currentLayer.poseImages[poseInstruction] ?? Object.values(currentLayer.poseImages)[0];
   }, [outfitHistory, currentOutfitIndex, currentPoseIndex, modelImageUrl]);
 
-  const currentGarment = useMemo(() => {
-    if (outfitHistory.length === 0 || currentOutfitIndex === 0) return null;
-    const currentLayer = outfitHistory[currentOutfitIndex];
-    return currentLayer?.garment;
-  }, [outfitHistory, currentOutfitIndex]);
 
   const availablePoseKeys = useMemo(() => {
     if (outfitHistory.length === 0) return [];
@@ -90,14 +85,17 @@ const App: React.FC = () => {
     return currentLayer ? Object.keys(currentLayer.poseImages) : [];
   }, [outfitHistory, currentOutfitIndex]);
 
-  const handleModelFinalized = (url: string, selectedAspectRatio: AspectRatio) => {
+  const handleModelFinalized = (url: string) => {
     setModelImageUrl(url);
-    setAspectRatio(selectedAspectRatio);
     setOutfitHistory([{
       garment: null,
       poseImages: { [POSE_INSTRUCTIONS[0]]: url }
     }]);
     setCurrentOutfitIndex(0);
+  };
+
+  const handleAspectRatioChange = (newAspectRatio: AspectRatio) => {
+    setAspectRatio(newAspectRatio);
   };
 
   const handleStartOver = () => {
@@ -239,8 +237,8 @@ const App: React.FC = () => {
                   poseInstructions={POSE_INSTRUCTIONS}
                   currentPoseIndex={currentPoseIndex}
                   availablePoseKeys={availablePoseKeys}
-                  currentGarment={currentGarment}
                   aspectRatio={aspectRatio}
+                  onAspectRatioChange={handleAspectRatioChange}
                 />
               </div>
 
