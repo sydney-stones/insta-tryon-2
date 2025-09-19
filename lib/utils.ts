@@ -19,6 +19,21 @@ export function getFriendlyErrorMessage(error: unknown, context: string): string
         rawMessage = String(error);
     }
 
+    // Handle JSON-formatted error responses
+    try {
+        const errorJson = JSON.parse(rawMessage);
+        if (errorJson?.error?.message) {
+            rawMessage = errorJson.error.message;
+        }
+    } catch (e) {
+        // Not a JSON string, continue with original message
+    }
+
+    // Check for timeout/deadline errors
+    if (rawMessage.includes("Deadline expired") || rawMessage.includes("UNAVAILABLE")) {
+        return `${context} - The AI service is currently busy. This usually resolves in a few moments. Please try again.`;
+    }
+
     // Check for specific unsupported MIME type error from Gemini API
     if (rawMessage.includes("Unsupported MIME type")) {
         try {
@@ -35,6 +50,16 @@ export function getFriendlyErrorMessage(error: unknown, context: string): string
         // Generic fallback for any "Unsupported MIME type" error
         return `Unsupported file format. Please upload an image format like PNG, JPEG, or WEBP.`;
     }
-    
+
+    // Check for rate limiting
+    if (rawMessage.includes("429") || rawMessage.includes("rate limit") || rawMessage.includes("quota")) {
+        return `${context} - Too many requests. Please wait a moment and try again.`;
+    }
+
+    // Check for safety filters
+    if (rawMessage.includes("safety") || rawMessage.includes("blocked") || rawMessage.includes("SAFETY")) {
+        return `${context} - Image was blocked by safety filters. Please try a different image.`;
+    }
+
     return `${context}. ${rawMessage}`;
 }

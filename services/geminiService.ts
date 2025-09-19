@@ -72,25 +72,86 @@ const getAspectRatioPrompt = (aspectRatio: AspectRatio): string => {
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
 const model = 'gemini-2.5-flash-image-preview';
 
+const retryWithFallback = async <T>(
+    primaryFn: () => Promise<T>,
+    fallbackFn?: () => Promise<T>,
+    maxRetries: number = 2
+): Promise<T> => {
+    let lastError: any;
+
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+            return await primaryFn();
+        } catch (error: any) {
+            lastError = error;
+            console.log(`Attempt ${attempt} failed:`, error);
+
+            // If it's a timeout/deadline error and we have retries left, wait and retry
+            if (error.message?.includes('Deadline expired') || error.message?.includes('UNAVAILABLE')) {
+                if (attempt < maxRetries) {
+                    console.log(`Retrying in ${attempt * 2} seconds...`);
+                    await new Promise(resolve => setTimeout(resolve, attempt * 2000));
+                    continue;
+                }
+            }
+
+            // If not a timeout error or out of retries, break
+            break;
+        }
+    }
+
+    // If we have a fallback and the primary failed with timeout, try fallback
+    if (fallbackFn && lastError?.message?.includes('Deadline expired')) {
+        try {
+            console.log('Trying fallback approach...');
+            return await fallbackFn();
+        } catch (fallbackError) {
+            console.log('Fallback also failed:', fallbackError);
+        }
+    }
+
+    throw lastError;
+};
+
 export const generateModelImage = async (userImage: File, aspectRatio: AspectRatio = '4:5'): Promise<string> => {
     const userImagePart = await fileToPart(userImage);
-    const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-    const prompt = `You are an expert fashion photographer AI. Transform the person in this image into a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic. ${aspectRatioPrompt} Return ONLY the final image.`;
-    const response = await ai.models.generateContent({
-        model,
-        contents: { parts: [userImagePart, { text: prompt }] },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-    return handleApiResponse(response);
+
+    const primaryGeneration = async () => {
+        const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
+        const prompt = `You are an expert fashion photographer AI. Transform the person in this image into a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic. ${aspectRatioPrompt} Return ONLY the final image.`;
+        const response = await ai.models.generateContent({
+            model,
+            contents: { parts: [userImagePart, { text: prompt }] },
+            config: {
+                responseModalities: [Modality.IMAGE, Modality.TEXT],
+            },
+        });
+        return handleApiResponse(response);
+    };
+
+    const fallbackGeneration = async () => {
+        // Simpler prompt without specific aspect ratio requirements
+        const prompt = `You are an expert fashion photographer AI. Transform the person in this image into a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic. Return ONLY the final image.`;
+        const response = await ai.models.generateContent({
+            model,
+            contents: { parts: [userImagePart, { text: prompt }] },
+            config: {
+                responseModalities: [Modality.IMAGE, Modality.TEXT],
+            },
+        });
+        return handleApiResponse(response);
+    };
+
+    return retryWithFallback(primaryGeneration, fallbackGeneration);
 };
 
 export const generateVirtualTryOnImage = async (modelImageUrl: string, garmentImage: File, aspectRatio: AspectRatio = '4:5'): Promise<string> => {
     const modelImagePart = dataUrlToPart(modelImageUrl);
     const garmentImagePart = await fileToPart(garmentImage);
-    const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-    const prompt = `You are an expert virtual try-on AI. You will be given a 'model image' and a 'garment image'. Your task is to create a new photorealistic image where the person from the 'model image' is wearing the clothing from the 'garment image'.
+
+    const primaryGeneration = async () => {
+        const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
+        const prompt = `You are an expert virtual try-on AI. You will be given a 'model image' and a 'garment image'. Your task is to create a new photorealistic image where the person from the 'model image' is wearing the clothing from the 'garment image'.
 
 **Crucial Rules:**
 1.  **Complete Garment Replacement:** You MUST completely REMOVE and REPLACE the outfit worn by the person in the 'model image' with all items seen in the new outfit. No part of the original clothing (e.g., collars, sleeves, patterns) should be visible in the final image.
@@ -99,40 +160,53 @@ export const generateVirtualTryOnImage = async (modelImageUrl: string, garmentIm
 4.  **Apply the Garment:** Realistically fit the new outfit onto the person. It should adapt to their pose with natural folds, shadows, and lighting consistent with the original scene.
 5.  **Aspect Ratio:** ${aspectRatioPrompt}
 6.  **Output:** Return ONLY the final, edited image. Do not include any text.`;
-    const response = await ai.models.generateContent({
-        model,
-        contents: { parts: [modelImagePart, garmentImagePart, { text: prompt }] },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-    return handleApiResponse(response);
+        const response = await ai.models.generateContent({
+            model,
+            contents: { parts: [modelImagePart, garmentImagePart, { text: prompt }] },
+            config: {
+                responseModalities: [Modality.IMAGE, Modality.TEXT],
+            },
+        });
+        return handleApiResponse(response);
+    };
+
+    return retryWithFallback(primaryGeneration);
 };
 
 export const generatePoseVariation = async (tryOnImageUrl: string, poseInstruction: string, aspectRatio: AspectRatio = '4:5'): Promise<string> => {
     const tryOnImagePart = dataUrlToPart(tryOnImageUrl);
-    const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-    const prompt = `You are an expert fashion photographer AI. Take this image and regenerate it from a different perspective. The person, clothing, and background style must remain identical. The new perspective should be: "${poseInstruction}". ${aspectRatioPrompt} Return ONLY the final image.`;
-    const response = await ai.models.generateContent({
-        model,
-        contents: { parts: [tryOnImagePart, { text: prompt }] },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-    return handleApiResponse(response);
+
+    const primaryGeneration = async () => {
+        const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
+        const prompt = `You are an expert fashion photographer AI. Take this image and regenerate it from a different perspective. The person, clothing, and background style must remain identical. The new perspective should be: "${poseInstruction}". ${aspectRatioPrompt} Return ONLY the final image.`;
+        const response = await ai.models.generateContent({
+            model,
+            contents: { parts: [tryOnImagePart, { text: prompt }] },
+            config: {
+                responseModalities: [Modality.IMAGE, Modality.TEXT],
+            },
+        });
+        return handleApiResponse(response);
+    };
+
+    return retryWithFallback(primaryGeneration);
 };
 
 export const regenerateImageWithAspectRatio = async (imageUrl: string, aspectRatio: AspectRatio): Promise<string> => {
     const imagePart = dataUrlToPart(imageUrl);
-    const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-    const prompt = `You are an expert AI image processor. Take this image and regenerate it with the exact same content, person, clothing, pose, and background, but change only the aspect ratio. The person, their outfit, pose, facial features, and background must remain identical. ${aspectRatioPrompt} Return ONLY the final image.`;
-    const response = await ai.models.generateContent({
-        model,
-        contents: { parts: [imagePart, { text: prompt }] },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-    return handleApiResponse(response);
+
+    const primaryGeneration = async () => {
+        const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
+        const prompt = `You are an expert AI image processor. Take this image and regenerate it with the exact same content, person, clothing, pose, and background, but change only the aspect ratio. The person, their outfit, pose, facial features, and background must remain identical. ${aspectRatioPrompt} Return ONLY the final image.`;
+        const response = await ai.models.generateContent({
+            model,
+            contents: { parts: [imagePart, { text: prompt }] },
+            config: {
+                responseModalities: [Modality.IMAGE, Modality.TEXT],
+            },
+        });
+        return handleApiResponse(response);
+    };
+
+    return retryWithFallback(primaryGeneration);
 };
