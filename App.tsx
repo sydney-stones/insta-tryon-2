@@ -5,7 +5,7 @@
 
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import StartScreen from './components/StartScreen';
+import StartScreen, { AspectRatio } from './components/StartScreen';
 import Canvas from './components/Canvas';
 import WardrobePanel from './components/WardrobeModal';
 import OutfitStack from './components/OutfitStack';
@@ -56,6 +56,7 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentPoseIndex, setCurrentPoseIndex] = useState(0);
   const [isSheetCollapsed, setIsSheetCollapsed] = useState(false);
+  const [aspectRatio, setAspectRatio] = useState<AspectRatio>('4:5');
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   const activeOutfitLayers = useMemo(() => 
@@ -89,8 +90,9 @@ const App: React.FC = () => {
     return currentLayer ? Object.keys(currentLayer.poseImages) : [];
   }, [outfitHistory, currentOutfitIndex]);
 
-  const handleModelFinalized = (url: string) => {
+  const handleModelFinalized = (url: string, selectedAspectRatio: AspectRatio) => {
     setModelImageUrl(url);
+    setAspectRatio(selectedAspectRatio);
     setOutfitHistory([{
       garment: null,
       poseImages: { [POSE_INSTRUCTIONS[0]]: url }
@@ -107,6 +109,7 @@ const App: React.FC = () => {
     setError(null);
     setCurrentPoseIndex(0);
     setIsSheetCollapsed(false);
+    setAspectRatio('4:5');
   };
 
   const handleGarmentSelect = useCallback(async (garmentFile: File, garmentInfo: WardrobeItem) => {
@@ -237,6 +240,7 @@ const App: React.FC = () => {
                   currentPoseIndex={currentPoseIndex}
                   availablePoseKeys={availablePoseKeys}
                   currentGarment={currentGarment}
+                  aspectRatio={aspectRatio}
                 />
               </div>
 
