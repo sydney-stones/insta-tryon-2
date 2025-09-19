@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { RotateCcwIcon, ChevronLeftIcon, ChevronRightIcon } from './icons';
 import Spinner from './Spinner';
 import { AnimatePresence, motion } from 'framer-motion';
+import { AspectRatio } from './StartScreen';
 
 interface CanvasProps {
   displayImageUrl: string | null;
@@ -17,10 +18,24 @@ interface CanvasProps {
   currentPoseIndex: number;
   availablePoseKeys: string[];
   currentGarment?: { name: string; url: string } | null;
+  aspectRatio: AspectRatio;
 }
 
-const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, currentGarment }) => {
+const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, currentGarment, aspectRatio }) => {
   const [isPoseMenuOpen, setIsPoseMenuOpen] = useState(false);
+
+  const getAspectRatioClasses = (aspectRatio: AspectRatio) => {
+    switch (aspectRatio) {
+      case '9:16':
+        return 'aspect-[9/16] max-w-[280px] max-h-[500px] md:max-w-[350px] md:max-h-[620px]';
+      case '1:1':
+        return 'aspect-square max-w-[350px] max-h-[350px] md:max-w-[450px] md:max-h-[450px]';
+      case '4:5':
+        return 'aspect-[4/5] max-w-[320px] max-h-[400px] md:max-w-[400px] md:max-h-[500px]';
+      default:
+        return 'aspect-[4/5] max-w-[320px] max-h-[400px] md:max-w-[400px] md:max-h-[500px]';
+    }
+  };
   
   const handlePreviousPose = () => {
     if (isLoading || availablePoseKeys.length <= 1) return;
@@ -91,7 +106,8 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
                 <img
                   src={currentGarment.url}
                   alt={`${currentGarment.name} outfit`}
-                  className="max-w-[200px] max-h-[300px] md:max-w-[250px] md:max-h-[400px] object-contain rounded-lg border border-gray-200"
+                  className={`object-contain rounded-lg border border-gray-200 ${getAspectRatioClasses(aspectRatio)}`}
+                  style={{ maxWidth: '40%' }}
                 />
                 <p className="text-sm font-medium text-gray-700 mt-2 text-center">{currentGarment.name}</p>
               </div>
@@ -100,7 +116,7 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
                   key={displayImageUrl} // Use key to force re-render and trigger animation on image change
                   src={displayImageUrl}
                   alt="Virtual try-on result"
-                  className="max-w-[300px] max-h-[450px] md:max-w-[350px] md:max-h-[500px] object-contain transition-opacity duration-500 animate-fade-in rounded-lg"
+                  className={`object-contain transition-opacity duration-500 animate-fade-in rounded-lg ${getAspectRatioClasses(aspectRatio)}`}
                 />
                 <p className="text-sm font-medium text-gray-700 mt-2 text-center">Try-On Result</p>
               </div>
@@ -111,11 +127,11 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
               key={displayImageUrl} // Use key to force re-render and trigger animation on image change
               src={displayImageUrl}
               alt="Virtual try-on model"
-              className="max-w-full max-h-full object-contain transition-opacity duration-500 animate-fade-in rounded-lg"
+              className={`object-contain transition-opacity duration-500 animate-fade-in rounded-lg ${getAspectRatioClasses(aspectRatio)}`}
             />
           )
         ) : (
-            <div className="w-[400px] h-[600px] bg-gray-100 border border-gray-200 rounded-lg flex flex-col items-center justify-center">
+            <div className={`bg-gray-100 border border-gray-200 rounded-lg flex flex-col items-center justify-center ${getAspectRatioClasses(aspectRatio)}`}>
               <Spinner />
               <p className="text-md font-serif text-gray-600 mt-4">Loading Model...</p>
             </div>

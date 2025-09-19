@@ -11,8 +11,10 @@ import { generateModelImage } from '../services/geminiService';
 import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
 
+export type AspectRatio = '9:16' | '1:1' | '4:5';
+
 interface StartScreenProps {
-  onModelFinalized: (modelUrl: string) => void;
+  onModelFinalized: (modelUrl: string, aspectRatio: AspectRatio) => void;
 }
 
 const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
@@ -20,6 +22,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
   const [generatedModelUrl, setGeneratedModelUrl] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedAspectRatio, setSelectedAspectRatio] = useState<AspectRatio>('4:5');
 
   const handleFileSelect = useCallback(async (file: File) => {
     if (!file.type.startsWith('image/')) {
@@ -93,7 +96,34 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
                   Upload Photo
                 </label>
                 <input id="image-upload-start" type="file" className="hidden" accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif" onChange={handleFileChange} />
-                <p className="text-gray-500 text-sm">Select a clear, full-body photo. Face-only photos also work, but full-body is preferred for best results.</p>
+
+                <div className="w-full mt-4">
+                  <p className="text-gray-700 text-sm font-medium mb-2">Output Aspect Ratio:</p>
+                  <div className="flex gap-2">
+                    {([
+                      { ratio: '9:16', label: 'Reel', description: '9:16' },
+                      { ratio: '1:1', label: 'Square', description: '1:1' },
+                      { ratio: '4:5', label: 'Portrait', description: '4:5' }
+                    ] as const).map(({ ratio, label, description }) => (
+                      <button
+                        key={ratio}
+                        onClick={() => setSelectedAspectRatio(ratio)}
+                        className={`flex-1 px-3 py-2 text-sm font-medium rounded-md border transition-colors ${
+                          selectedAspectRatio === ratio
+                            ? 'bg-gray-900 text-white border-gray-900'
+                            : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                        }`}
+                      >
+                        <div className="text-center">
+                          <div className="font-semibold">{label}</div>
+                          <div className="text-xs opacity-75">{description}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <p className="text-gray-500 text-sm mt-4">Select a clear, full-body photo. Face-only photos also work, but full-body is preferred for best results.</p>
                 <p className="text-gray-500 text-xs mt-1">By uploading, you agree not to create harmful, explicit, or unlawful content. This service is for creative and responsible use only.</p>
                 {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
               </div>
@@ -158,8 +188,8 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
                   >
                     Use Different Photo
                   </button>
-                  <button 
-                    onClick={() => onModelFinalized(generatedModelUrl)}
+                  <button
+                    onClick={() => onModelFinalized(generatedModelUrl, selectedAspectRatio)}
                     className="w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-gray-900 rounded-md cursor-pointer group hover:bg-gray-700 transition-colors"
                   >
                     Proceed to Styling &rarr;
