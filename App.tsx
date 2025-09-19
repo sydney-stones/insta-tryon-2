@@ -77,6 +77,12 @@ const App: React.FC = () => {
     return currentLayer.poseImages[poseInstruction] ?? Object.values(currentLayer.poseImages)[0];
   }, [outfitHistory, currentOutfitIndex, currentPoseIndex, modelImageUrl]);
 
+  const currentGarment = useMemo(() => {
+    if (outfitHistory.length === 0 || currentOutfitIndex === 0) return null;
+    const currentLayer = outfitHistory[currentOutfitIndex];
+    return currentLayer?.garment;
+  }, [outfitHistory, currentOutfitIndex]);
+
   const availablePoseKeys = useMemo(() => {
     if (outfitHistory.length === 0) return [];
     const currentLayer = outfitHistory[currentOutfitIndex];
@@ -118,7 +124,7 @@ const App: React.FC = () => {
     setLoadingMessage(`Adding ${garmentInfo.name}...`);
 
     try {
-      const newImageUrl = await generateVirtualTryOnImage(baseModelImage, garmentFile);
+      const newImageUrl = await generateVirtualTryOnImage(baseModelImage as string, garmentFile);
       // When a new garment is selected, we reset to the default pose.
       const defaultPoseInstruction = POSE_INSTRUCTIONS[0];
       
@@ -161,7 +167,7 @@ const App: React.FC = () => {
       return;
     }
 
-    const baseImageForPoseChange = Object.values(currentLayer.poseImages)[0];
+    const baseImageForPoseChange = Object.values(currentLayer.poseImages)[0] as string;
     if (!baseImageForPoseChange) return;
 
     setError(null);
@@ -221,7 +227,7 @@ const App: React.FC = () => {
           >
             <main className="flex-grow relative flex flex-col md:flex-row overflow-hidden">
               <div className="w-full h-full flex-grow flex items-center justify-center bg-white pb-24 md:pb-16 relative">
-                <Canvas 
+                <Canvas
                   displayImageUrl={displayImageUrl}
                   onStartOver={handleStartOver}
                   isLoading={isLoading}
@@ -230,6 +236,7 @@ const App: React.FC = () => {
                   poseInstructions={POSE_INSTRUCTIONS}
                   currentPoseIndex={currentPoseIndex}
                   availablePoseKeys={availablePoseKeys}
+                  currentGarment={currentGarment}
                 />
               </div>
 

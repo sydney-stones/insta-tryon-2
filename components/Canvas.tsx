@@ -16,9 +16,10 @@ interface CanvasProps {
   poseInstructions: string[];
   currentPoseIndex: number;
   availablePoseKeys: string[];
+  currentGarment?: { name: string; url: string } | null;
 }
 
-const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys }) => {
+const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, currentGarment }) => {
   const [isPoseMenuOpen, setIsPoseMenuOpen] = useState(false);
   
   const handlePreviousPose = () => {
@@ -83,12 +84,36 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
       {/* Image Display or Placeholder */}
       <div className="relative w-full h-full flex items-center justify-center">
         {displayImageUrl ? (
-          <img
-            key={displayImageUrl} // Use key to force re-render and trigger animation on image change
-            src={displayImageUrl}
-            alt="Virtual try-on model"
-            className="max-w-full max-h-full object-contain transition-opacity duration-500 animate-fade-in rounded-lg"
-          />
+          currentGarment ? (
+            // Show both outfit and generated image side by side
+            <div className="flex items-center justify-center gap-6 max-w-full max-h-full">
+              <div className="flex flex-col items-center">
+                <img
+                  src={currentGarment.url}
+                  alt={`${currentGarment.name} outfit`}
+                  className="max-w-[200px] max-h-[300px] md:max-w-[250px] md:max-h-[400px] object-contain rounded-lg border border-gray-200"
+                />
+                <p className="text-sm font-medium text-gray-700 mt-2 text-center">{currentGarment.name}</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img
+                  key={displayImageUrl} // Use key to force re-render and trigger animation on image change
+                  src={displayImageUrl}
+                  alt="Virtual try-on result"
+                  className="max-w-[300px] max-h-[450px] md:max-w-[350px] md:max-h-[500px] object-contain transition-opacity duration-500 animate-fade-in rounded-lg"
+                />
+                <p className="text-sm font-medium text-gray-700 mt-2 text-center">Try-On Result</p>
+              </div>
+            </div>
+          ) : (
+            // Show only the generated image (model without garment)
+            <img
+              key={displayImageUrl} // Use key to force re-render and trigger animation on image change
+              src={displayImageUrl}
+              alt="Virtual try-on model"
+              className="max-w-full max-h-full object-contain transition-opacity duration-500 animate-fade-in rounded-lg"
+            />
+          )
         ) : (
             <div className="w-[400px] h-[600px] bg-gray-100 border border-gray-200 rounded-lg flex flex-col items-center justify-center">
               <Spinner />
