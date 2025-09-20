@@ -84,6 +84,78 @@ export const defaultWardrobe: WardrobeItem[] = [
     name: 'Silverstone-Williams',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Silverstone%20/Silverstone-Williams.png',
     folder: 'Silverstone',
+  },
+  {
+    id: 'Autumn-1',
+    name: 'Autumn-1',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn1.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-2',
+    name: 'Autumn-2',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn2.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-3',
+    name: 'Autumn-3',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn3.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-4',
+    name: 'Autumn-4',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn4.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-5',
+    name: 'Autumn-5',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn5.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-6',
+    name: 'Autumn-6',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn6.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-7',
+    name: 'Autumn-7',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn7.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-8',
+    name: 'Autumn-8',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn8.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-9',
+    name: 'Autumn-9',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn9.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-10',
+    name: 'Autumn-10',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn10.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-11',
+    name: 'Autumn-11',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn11.png',
+    folder: 'Autumn',
+  },
+  {
+    id: 'Autumn-12',
+    name: 'Autumn-12',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn12.png',
+    folder: 'Autumn',
   }
 ];
 
