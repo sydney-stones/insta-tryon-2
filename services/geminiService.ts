@@ -59,13 +59,13 @@ const handleApiResponse = (response: GenerateContentResponse): string => {
 const getAspectRatioPrompt = (aspectRatio: AspectRatio): string => {
     switch (aspectRatio) {
         case '9:16':
-            return 'The output image must have a 9:16 aspect ratio (portrait orientation, 1080x1920 pixels or equivalent). This is perfect for Instagram Reels and TikTok videos.';
+            return 'The output image MUST be EXACTLY 1080x1920 pixels (9:16 aspect ratio). Do not use any other dimensions.';
         case '1:1':
-            return 'The output image must have a 1:1 aspect ratio (perfect square, 1080x1080 pixels or equivalent). This is ideal for Instagram posts.';
+            return 'The output image MUST be EXACTLY 1080x1080 pixels (1:1 aspect ratio). Do not use any other dimensions.';
         case '4:5':
-            return 'The output image must have a 4:5 aspect ratio (portrait orientation, 1080x1350 pixels or equivalent). This is perfect for Instagram portrait posts.';
+            return 'The output image MUST be EXACTLY 1080x1350 pixels (4:5 aspect ratio). Do not use any other dimensions.';
         default:
-            return 'The output image must have a 4:5 aspect ratio (portrait orientation, 1080x1350 pixels or equivalent). This is perfect for Instagram portrait posts.';
+            return 'The output image MUST be EXACTLY 1080x1350 pixels (4:5 aspect ratio). Do not use any other dimensions.';
     }
 };
 
@@ -186,13 +186,14 @@ export const generateVirtualTryOnImage = async (modelImageUrl: string, garmentIm
         const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
         const prompt = `You are an expert virtual try-on AI. You will be given a 'model image', a 'garment image', and a 'blank aspect ratio reference'. Your task is to create a new photorealistic image where the person from the 'model image' is wearing the clothing from the 'garment image'.
 
+**CRITICAL DIMENSION REQUIREMENT:** ${aspectRatioPrompt} You MUST generate the output at these EXACT pixel dimensions. Look at the blank reference image provided - your output must be the same size as this reference.
+
 **Crucial Rules:**
 1.  **Complete Garment Replacement:** You MUST completely REMOVE and REPLACE the outfit worn by the person in the 'model image' with all items seen in the new outfit. No part of the original clothing (e.g., collars, sleeves, patterns) should be visible in the final image.
 2.  **Preserve the Model:** The person's face, hair, body shape, and pose from the 'model image' MUST remain unchanged.
 3.  **Preserve the Background:** The entire background from the 'model image' MUST be preserved perfectly.
 4.  **Apply the Garment:** Realistically fit the new outfit onto the person. It should adapt to their pose with natural folds, shadows, and lighting consistent with the original scene.
-5.  **Aspect Ratio:** ${aspectRatioPrompt} The output image MUST match the exact dimensions and aspect ratio of the blank reference image provided.
-6.  **Output:** Return ONLY the final, edited image. Do not include any text.`;
+5.  **Output:** Return ONLY the final, edited image. Do not include any text.`;
         const response = await ai.models.generateContent({
             model,
             contents: { parts: [modelImagePart, garmentImagePart, blankImagePart, { text: prompt }] },
@@ -215,7 +216,11 @@ export const generatePoseVariation = async (tryOnImageUrl: string, poseInstructi
 
     const primaryGeneration = async () => {
         const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-        const prompt = `You are an expert fashion photographer AI. Take this image and regenerate it from a different perspective. The person, clothing, and background style must remain identical. The new perspective should be: "${poseInstruction}". ${aspectRatioPrompt} The output image MUST match the exact dimensions and aspect ratio of the blank reference image provided. Return ONLY the final image.`;
+        const prompt = `You are an expert fashion photographer AI. Take this image and regenerate it from a different perspective. The person, clothing, and background style must remain identical. The new perspective should be: "${poseInstruction}".
+
+**CRITICAL DIMENSION REQUIREMENT:** ${aspectRatioPrompt} You MUST generate the output at these EXACT pixel dimensions. Look at the blank reference image provided - your output must be the same size as this reference.
+
+Return ONLY the final image.`;
         const response = await ai.models.generateContent({
             model,
             contents: { parts: [tryOnImagePart, blankImagePart, { text: prompt }] },
