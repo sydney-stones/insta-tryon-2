@@ -69,6 +69,27 @@ const getAspectRatioPrompt = (aspectRatio: AspectRatio): string => {
     }
 };
 
+const getBlankAspectRatioImageUrl = (aspectRatio: AspectRatio): string => {
+    switch (aspectRatio) {
+        case '9:16':
+            return 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/9_16.png';
+        case '1:1':
+            return 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/1_1.png';
+        case '4:5':
+            return 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/4_5.png';
+        default:
+            return 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/4_5.png';
+    }
+};
+
+const fetchImageAndConvertToPart = async (imageUrl: string) => {
+    const response = await fetch(imageUrl);
+    const arrayBuffer = await response.arrayBuffer();
+    const base64String = Buffer.from(arrayBuffer).toString('base64');
+    const mimeType = response.headers.get('content-type') || 'image/png';
+    return { inlineData: { mimeType, data: base64String } };
+};
+
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
 const model = 'gemini-2.5-flash-image-preview';
 
@@ -149,20 +170,24 @@ export const generateVirtualTryOnImage = async (modelImageUrl: string, garmentIm
     const modelImagePart = dataUrlToPart(modelImageUrl);
     const garmentImagePart = await fileToPart(garmentImage);
 
+    // Fetch the blank aspect ratio image to enforce the output dimensions
+    const blankImageUrl = getBlankAspectRatioImageUrl(aspectRatio);
+    const blankImagePart = await fetchImageAndConvertToPart(blankImageUrl);
+
     const primaryGeneration = async () => {
         const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-        const prompt = `You are an expert virtual try-on AI. You will be given a 'model image' and a 'garment image'. Your task is to create a new photorealistic image where the person from the 'model image' is wearing the clothing from the 'garment image'.
+        const prompt = `You are an expert virtual try-on AI. You will be given a 'model image', a 'garment image', and a 'blank aspect ratio reference'. Your task is to create a new photorealistic image where the person from the 'model image' is wearing the clothing from the 'garment image'.
 
 **Crucial Rules:**
 1.  **Complete Garment Replacement:** You MUST completely REMOVE and REPLACE the outfit worn by the person in the 'model image' with all items seen in the new outfit. No part of the original clothing (e.g., collars, sleeves, patterns) should be visible in the final image.
 2.  **Preserve the Model:** The person's face, hair, body shape, and pose from the 'model image' MUST remain unchanged.
 3.  **Preserve the Background:** The entire background from the 'model image' MUST be preserved perfectly.
 4.  **Apply the Garment:** Realistically fit the new outfit onto the person. It should adapt to their pose with natural folds, shadows, and lighting consistent with the original scene.
-5.  **Aspect Ratio:** ${aspectRatioPrompt}
+5.  **Aspect Ratio:** ${aspectRatioPrompt} The output image MUST match the exact dimensions and aspect ratio of the blank reference image provided.
 6.  **Output:** Return ONLY the final, edited image. Do not include any text.`;
         const response = await ai.models.generateContent({
             model,
-            contents: { parts: [modelImagePart, garmentImagePart, { text: prompt }] },
+            contents: { parts: [modelImagePart, garmentImagePart, blankImagePart, { text: prompt }] },
             config: {
                 responseModalities: [Modality.IMAGE, Modality.TEXT],
             },
@@ -176,12 +201,16 @@ export const generateVirtualTryOnImage = async (modelImageUrl: string, garmentIm
 export const generatePoseVariation = async (tryOnImageUrl: string, poseInstruction: string, aspectRatio: AspectRatio = '4:5'): Promise<string> => {
     const tryOnImagePart = dataUrlToPart(tryOnImageUrl);
 
+    // Fetch the blank aspect ratio image to enforce the output dimensions
+    const blankImageUrl = getBlankAspectRatioImageUrl(aspectRatio);
+    const blankImagePart = await fetchImageAndConvertToPart(blankImageUrl);
+
     const primaryGeneration = async () => {
         const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-        const prompt = `You are an expert fashion photographer AI. Take this image and regenerate it from a different perspective. The person, clothing, and background style must remain identical. The new perspective should be: "${poseInstruction}". ${aspectRatioPrompt} Return ONLY the final image.`;
+        const prompt = `You are an expert fashion photographer AI. Take this image and regenerate it from a different perspective. The person, clothing, and background style must remain identical. The new perspective should be: "${poseInstruction}". ${aspectRatioPrompt} The output image MUST match the exact dimensions and aspect ratio of the blank reference image provided. Return ONLY the final image.`;
         const response = await ai.models.generateContent({
             model,
-            contents: { parts: [tryOnImagePart, { text: prompt }] },
+            contents: { parts: [tryOnImagePart, blankImagePart, { text: prompt }] },
             config: {
                 responseModalities: [Modality.IMAGE, Modality.TEXT],
             },
@@ -195,12 +224,16 @@ export const generatePoseVariation = async (tryOnImageUrl: string, poseInstructi
 export const regenerateImageWithAspectRatio = async (imageUrl: string, aspectRatio: AspectRatio): Promise<string> => {
     const imagePart = dataUrlToPart(imageUrl);
 
+    // Fetch the blank aspect ratio image to enforce the output dimensions
+    const blankImageUrl = getBlankAspectRatioImageUrl(aspectRatio);
+    const blankImagePart = await fetchImageAndConvertToPart(blankImageUrl);
+
     const primaryGeneration = async () => {
         const aspectRatioPrompt = getAspectRatioPrompt(aspectRatio);
-        const prompt = `You are an expert AI image processor. Take this image and regenerate it with the exact same content, person, clothing, pose, and background, but change only the aspect ratio. The person, their outfit, pose, facial features, and background must remain identical. ${aspectRatioPrompt} Return ONLY the final image.`;
+        const prompt = `You are an expert AI image processor. Take this image and regenerate it with the exact same content, person, clothing, pose, and background, but change only the aspect ratio. The person, their outfit, pose, facial features, and background must remain identical. ${aspectRatioPrompt} The output image MUST match the exact dimensions and aspect ratio of the blank reference image provided. Return ONLY the final image.`;
         const response = await ai.models.generateContent({
             model,
-            contents: { parts: [imagePart, { text: prompt }] },
+            contents: { parts: [imagePart, blankImagePart, { text: prompt }] },
             config: {
                 responseModalities: [Modality.IMAGE, Modality.TEXT],
             },
