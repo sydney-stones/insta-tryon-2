@@ -3,14 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 import React, { useState } from 'react';
-import type { WardrobeItem } from '../types';
-import { CheckCircleIcon } from './icons';
+import type { WardrobeItem, WardrobeFolder } from '../types';
+import { CheckCircleIcon, ChevronDownIcon, ChevronRightIcon } from './icons';
 
 interface WardrobePanelProps {
   onGarmentSelect: (garmentFile: File, garmentInfo: WardrobeItem) => void;
   activeGarmentIds: string[];
   isLoading: boolean;
-  wardrobe: WardrobeItem[];
+  wardrobeFolders: WardrobeFolder[];
 }
 
 // Helper to convert image URL to a File object.
@@ -49,9 +49,10 @@ const urlToFile = (url: string, filename: string): Promise<File> => {
     });
 };
 
-const WardrobePanel: React.FC<WardrobePanelProps> = ({ onGarmentSelect, activeGarmentIds, isLoading, wardrobe }) => {
+const WardrobePanel: React.FC<WardrobePanelProps> = ({ onGarmentSelect, activeGarmentIds, isLoading, wardrobeFolders }) => {
     const [error, setError] = useState<string | null>(null);
     const [brokenImageUrls, setBrokenImageUrls] = useState<Set<string>>(new Set());
+    const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(wardrobeFolders.map(f => f.name)));
 
     const handleImageError = (url: string) => {
         setBrokenImageUrls(prev => new Set(prev).add(url));
@@ -70,46 +71,81 @@ const WardrobePanel: React.FC<WardrobePanelProps> = ({ onGarmentSelect, activeGa
         }
     };
 
+    const toggleFolder = (folderName: string) => {
+        setExpandedFolders(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(folderName)) {
+                newSet.delete(folderName);
+            } else {
+                newSet.add(folderName);
+            }
+            return newSet;
+        });
+    };
+
   return (
     <div className="pt-6 border-t border-gray-400/50">
         <div className="flex justify-between items-center mb-3">
             <h2 className="text-xl font-serif tracking-wider text-gray-800">Wardrobe</h2>
         </div>
-        
-        <div className="grid grid-cols-3 gap-3">
-            {wardrobe.map((item) => {
-                const isActive = activeGarmentIds.includes(item.id);
-                const isBroken = brokenImageUrls.has(item.url);
+
+        <div className="space-y-4">
+            {wardrobeFolders.map((folder) => {
+                const isExpanded = expandedFolders.has(folder.name);
                 return (
-                    <div key={item.id} className="relative group/wardrobeitem">
+                    <div key={folder.name} className="space-y-2">
                         <button
-                            onClick={() => handleGarmentClick(item)}
-                            disabled={isLoading || isActive || isBroken}
-                            className="w-full relative aspect-square border rounded-lg overflow-hidden transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
-                            aria-label={`Select ${item.name}`}
+                            onClick={() => toggleFolder(folder.name)}
+                            className="flex items-center justify-between w-full text-left px-2 py-1 text-lg font-medium text-gray-700 hover:bg-gray-100 rounded transition-colors"
                         >
-                            {isBroken ? (
-                                <div className="w-full h-full bg-gray-100 flex flex-col items-center justify-center text-center p-2">
-                                    <p className="text-red-500 text-xs font-bold">Error</p>
-                                    <p className="text-gray-500 text-[10px] leading-tight mt-1">Image failed to load. Check URL & repo visibility.</p>
-                                </div>
+                            <span className="font-serif">{folder.name}</span>
+                            {isExpanded ? (
+                                <ChevronDownIcon className="w-4 h-4" />
                             ) : (
-                                <img 
-                                    src={item.url} 
-                                    alt={item.name} 
-                                    className="w-full h-full object-cover" 
-                                    onError={() => handleImageError(item.url)}
-                                />
-                            )}
-                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/wardrobeitem:opacity-100 transition-opacity">
-                                <p className="text-white text-xs font-bold text-center p-1">{item.name}</p>
-                            </div>
-                            {isActive && (
-                                <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
-                                    <CheckCircleIcon className="w-8 h-8 text-white" />
-                                </div>
+                                <ChevronRightIcon className="w-4 h-4" />
                             )}
                         </button>
+
+                        {isExpanded && (
+                            <div className="grid grid-cols-3 gap-3 pl-2">
+                                {folder.items.map((item) => {
+                                    const isActive = activeGarmentIds.includes(item.id);
+                                    const isBroken = brokenImageUrls.has(item.url);
+                                    return (
+                                        <div key={item.id} className="relative group/wardrobeitem">
+                                            <button
+                                                onClick={() => handleGarmentClick(item)}
+                                                disabled={isLoading || isActive || isBroken}
+                                                className="w-full relative aspect-square border rounded-lg overflow-hidden transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
+                                                aria-label={`Select ${item.name}`}
+                                            >
+                                                {isBroken ? (
+                                                    <div className="w-full h-full bg-gray-100 flex flex-col items-center justify-center text-center p-2">
+                                                        <p className="text-red-500 text-xs font-bold">Error</p>
+                                                        <p className="text-gray-500 text-[10px] leading-tight mt-1">Image failed to load. Check URL & repo visibility.</p>
+                                                    </div>
+                                                ) : (
+                                                    <img
+                                                        src={item.url}
+                                                        alt={item.name}
+                                                        className="w-full h-full object-cover"
+                                                        onError={() => handleImageError(item.url)}
+                                                    />
+                                                )}
+                                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/wardrobeitem:opacity-100 transition-opacity">
+                                                    <p className="text-white text-xs font-bold text-center p-1">{item.name}</p>
+                                                </div>
+                                                {isActive && (
+                                                    <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
+                                                        <CheckCircleIcon className="w-8 h-8 text-white" />
+                                                    </div>
+                                                )}
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
                 );
             })}

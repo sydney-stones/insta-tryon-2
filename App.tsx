@@ -5,14 +5,14 @@
 
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import StartScreen, { AspectRatio } from './components/StartScreen';
+import StartScreen from './components/StartScreen';
 import Canvas from './components/Canvas';
 import WardrobePanel from './components/WardrobeModal';
 import OutfitStack from './components/OutfitStack';
 import { generateVirtualTryOnImage, generatePoseVariation } from './services/geminiService';
 import { OutfitLayer, WardrobeItem } from './types';
 import { ChevronDownIcon, ChevronUpIcon } from './components/icons';
-import { defaultWardrobe } from './wardrobe';
+import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { getFriendlyErrorMessage } from './lib/utils';
 import Spinner from './components/Spinner';
 
@@ -56,7 +56,6 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentPoseIndex, setCurrentPoseIndex] = useState(0);
   const [isSheetCollapsed, setIsSheetCollapsed] = useState(false);
-  const [aspectRatio, setAspectRatio] = useState<AspectRatio>('4:5');
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   const activeOutfitLayers = useMemo(() => 
@@ -85,9 +84,8 @@ const App: React.FC = () => {
     return currentLayer ? Object.keys(currentLayer.poseImages) : [];
   }, [outfitHistory, currentOutfitIndex]);
 
-  const handleModelFinalized = (url: string, selectedAspectRatio: AspectRatio) => {
+  const handleModelFinalized = (url: string) => {
     setModelImageUrl(url);
-    setAspectRatio(selectedAspectRatio);
     setOutfitHistory([{
       garment: null,
       poseImages: { [POSE_INSTRUCTIONS[0]]: url }
@@ -123,7 +121,7 @@ const App: React.FC = () => {
     setLoadingMessage(`Adding ${garmentInfo.name}...`);
 
     try {
-      const newImageUrl = await generateVirtualTryOnImage(baseModelImage as string, garmentFile, aspectRatio);
+      const newImageUrl = await generateVirtualTryOnImage(baseModelImage as string, garmentFile);
       // When a new garment is selected, we reset to the default pose.
       const defaultPoseInstruction = POSE_INSTRUCTIONS[0];
       
@@ -146,7 +144,7 @@ const App: React.FC = () => {
       setIsLoading(false);
       setLoadingMessage('');
     }
-  }, [isLoading, outfitHistory, currentOutfitIndex, aspectRatio]);
+  }, [isLoading, outfitHistory, currentOutfitIndex]);
 
   const handleRemoveLastGarment = () => {
     if (currentOutfitIndex > 0) {
@@ -177,7 +175,7 @@ const App: React.FC = () => {
     setCurrentPoseIndex(newIndex);
 
     try {
-      const newImageUrl = await generatePoseVariation(baseImageForPoseChange, poseInstruction, aspectRatio);
+      const newImageUrl = await generatePoseVariation(baseImageForPoseChange, poseInstruction);
       setOutfitHistory(prevHistory => {
         const newHistory = [...prevHistory];
         const updatedLayer = newHistory[currentOutfitIndex];
@@ -191,7 +189,7 @@ const App: React.FC = () => {
       setIsLoading(false);
       setLoadingMessage('');
     }
-  }, [currentPoseIndex, outfitHistory, isLoading, currentOutfitIndex, aspectRatio]);
+  }, [currentPoseIndex, outfitHistory, isLoading, currentOutfitIndex]);
 
   const viewVariants = {
     initial: { opacity: 0, y: 15 },
@@ -235,7 +233,6 @@ const App: React.FC = () => {
                   poseInstructions={POSE_INSTRUCTIONS}
                   currentPoseIndex={currentPoseIndex}
                   availablePoseKeys={availablePoseKeys}
-                  aspectRatio={aspectRatio}
                 />
               </div>
 
@@ -265,7 +262,7 @@ const App: React.FC = () => {
                       onGarmentSelect={handleGarmentSelect}
                       activeGarmentIds={activeGarmentIds}
                       isLoading={isLoading}
-                      wardrobe={defaultWardrobe}
+                      wardrobeFolders={getWardrobeFolders(defaultWardrobe)}
                     />
                   </div>
               </aside>

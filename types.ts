@@ -7,6 +7,12 @@ export interface WardrobeItem {
   id: string;
   name: string;
   url: string;
+  folder?: string;
+}
+
+export interface WardrobeFolder {
+  name: string;
+  items: WardrobeItem[];
 }
 
 export interface OutfitLayer {
