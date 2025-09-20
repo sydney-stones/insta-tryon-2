@@ -11,35 +11,8 @@ import { generateModelImage } from '../services/geminiService';
 import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
 
-export type AspectRatio = '9:16' | '1:1' | '4:5';
-
-const getAspectRatioClasses = (aspectRatio: AspectRatio) => {
-  switch (aspectRatio) {
-    case '9:16':
-      return {
-        containerClass: 'aspect-[9/16]',
-        dimensions: 'w-[280px] h-[497px] sm:w-[320px] sm:h-[569px] lg:w-[360px] lg:h-[640px]'
-      };
-    case '1:1':
-      return {
-        containerClass: 'aspect-[1/1]',
-        dimensions: 'w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[400px] lg:h-[400px]'
-      };
-    case '4:5':
-      return {
-        containerClass: 'aspect-[4/5]',
-        dimensions: 'w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[400px] lg:h-[500px]'
-      };
-    default:
-      return {
-        containerClass: 'aspect-[4/5]',
-        dimensions: 'w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[400px] lg:h-[500px]'
-      };
-  }
-};
-
 interface StartScreenProps {
-  onModelFinalized: (modelUrl: string, aspectRatio: AspectRatio) => void;
+  onModelFinalized: (modelUrl: string) => void;
 }
 
 const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
@@ -47,7 +20,6 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
   const [generatedModelUrl, setGeneratedModelUrl] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [selectedAspectRatio, setSelectedAspectRatio] = useState<AspectRatio>('4:5');
 
   const handleFileSelect = useCallback(async (file: File) => {
     if (!file.type.startsWith('image/')) {
@@ -63,7 +35,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
         setGeneratedModelUrl(null);
         setError(null);
         try {
-            const result = await generateModelImage(file, selectedAspectRatio);
+            const result = await generateModelImage(file);
             setGeneratedModelUrl(result);
         } catch (err) {
             setError(getFriendlyErrorMessage(err, 'Failed to create model'));
@@ -73,7 +45,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
         }
     };
     reader.readAsDataURL(file);
-  }, [selectedAspectRatio]);
+  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -121,33 +93,6 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
                   Upload Photo
                 </label>
                 <input id="image-upload-start" type="file" className="hidden" accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif" onChange={handleFileChange} />
-
-                <div className="w-full mt-4">
-                  <p className="text-gray-700 text-sm font-medium mb-2">Output Aspect Ratio:</p>
-                  <div className="flex gap-2">
-                    {([
-                      { ratio: '9:16', label: 'Reel', description: '9:16' },
-                      { ratio: '1:1', label: 'Square', description: '1:1' },
-                      { ratio: '4:5', label: 'Portrait', description: '4:5' }
-                    ] as const).map(({ ratio, label, description }) => (
-                      <button
-                        key={ratio}
-                        onClick={() => setSelectedAspectRatio(ratio)}
-                        className={`flex-1 px-3 py-2 text-sm font-medium rounded-md border transition-colors ${
-                          selectedAspectRatio === ratio
-                            ? 'bg-gray-900 text-white border-gray-900'
-                            : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
-                        }`}
-                      >
-                        <div className="text-center">
-                          <div className="font-semibold">{label}</div>
-                          <div className="text-xs opacity-75">{description}</div>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
                 <p className="text-gray-500 text-sm mt-4">Select a clear, full-body photo. Face-only photos also work, but full-body is preferred for best results.</p>
                 <p className="text-gray-500 text-xs mt-1">By uploading, you agree not to create harmful, explicit, or unlawful content. This service is for creative and responsible use only.</p>
                 {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
@@ -159,7 +104,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
               firstImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Selfie.png"
               secondImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Model.png"
               slideMode="drag"
-              className={`w-full max-w-sm ${getAspectRatioClasses(selectedAspectRatio).containerClass} rounded-2xl bg-gray-200`}
+              className="w-full max-w-sm aspect-[2/3] rounded-2xl bg-gray-200"
             />
           </div>
         </motion.div>
@@ -214,7 +159,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
                     Use Different Photo
                   </button>
                   <button
-                    onClick={() => onModelFinalized(generatedModelUrl, selectedAspectRatio)}
+                    onClick={() => onModelFinalized(generatedModelUrl)}
                     className="w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-gray-900 rounded-md cursor-pointer group hover:bg-gray-700 transition-colors"
                   >
                     Proceed to Styling &rarr;
@@ -231,7 +176,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
                 firstImage={userImageUrl}
                 secondImage={generatedModelUrl ?? userImageUrl}
                 slideMode="drag"
-                className={`${getAspectRatioClasses(selectedAspectRatio).dimensions} rounded-2xl bg-gray-200`}
+                className="w-[280px] h-[420px] sm:w-[320px] sm:h-[480px] lg:w-[400px] lg:h-[600px] rounded-2xl bg-gray-200"
               />
             </div>
           </div>

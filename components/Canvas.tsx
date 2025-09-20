@@ -6,8 +6,6 @@ import React, { useState } from 'react';
 import { RotateCcwIcon, ChevronLeftIcon, ChevronRightIcon } from './icons';
 import Spinner from './Spinner';
 import { AnimatePresence, motion } from 'framer-motion';
-import { AspectRatio } from './StartScreen';
-
 interface CanvasProps {
   displayImageUrl: string | null;
   onStartOver: () => void;
@@ -17,24 +15,10 @@ interface CanvasProps {
   poseInstructions: string[];
   currentPoseIndex: number;
   availablePoseKeys: string[];
-  aspectRatio: AspectRatio;
 }
 
-const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys, aspectRatio }) => {
+const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading, loadingMessage, onSelectPose, poseInstructions, currentPoseIndex, availablePoseKeys }) => {
   const [isPoseMenuOpen, setIsPoseMenuOpen] = useState(false);
-
-  const getAspectRatioClasses = (aspectRatio: AspectRatio) => {
-    switch (aspectRatio) {
-      case '9:16':
-        return 'aspect-[9/16] max-w-[280px] max-h-[500px] md:max-w-[350px] md:max-h-[620px]';
-      case '1:1':
-        return 'aspect-square max-w-[350px] max-h-[350px] md:max-w-[450px] md:max-h-[450px]';
-      case '4:5':
-        return 'aspect-[4/5] max-w-[320px] max-h-[400px] md:max-w-[400px] md:max-h-[500px]';
-      default:
-        return 'aspect-[4/5] max-w-[320px] max-h-[400px] md:max-w-[400px] md:max-h-[500px]';
-    }
-  };
   
   const handlePreviousPose = () => {
     if (isLoading || availablePoseKeys.length <= 1) return;
@@ -103,10 +87,10 @@ const Canvas: React.FC<CanvasProps> = ({ displayImageUrl, onStartOver, isLoading
             key={displayImageUrl} // Use key to force re-render and trigger animation on image change
             src={displayImageUrl}
             alt="Virtual try-on model"
-            className={`object-contain transition-opacity duration-500 animate-fade-in rounded-lg ${getAspectRatioClasses(aspectRatio)}`}
+            className="object-contain transition-opacity duration-500 animate-fade-in rounded-lg aspect-[4/5] max-w-[320px] max-h-[400px] md:max-w-[400px] md:max-h-[500px]"
           />
         ) : (
-            <div className={`bg-gray-100 border border-gray-200 rounded-lg flex flex-col items-center justify-center ${getAspectRatioClasses(aspectRatio)}`}>
+            <div className="bg-gray-100 border border-gray-200 rounded-lg flex flex-col items-center justify-center aspect-[4/5] max-w-[320px] max-h-[400px] md:max-w-[400px] md:max-h-[500px]">
               <Spinner />
               <p className="text-md font-serif text-gray-600 mt-4">Loading Model...</p>
             </div>
