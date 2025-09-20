@@ -134,12 +134,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
   },
   {
-    id: 'Autumn-9',
-    name: 'Autumn-9',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn9.png',
-    folder: 'Autumn',
-  },
-  {
     id: 'Autumn-10',
     name: 'Autumn-10',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn10.png',
