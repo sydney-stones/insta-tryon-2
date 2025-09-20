@@ -13,6 +13,31 @@ import { getFriendlyErrorMessage } from '../lib/utils';
 
 export type AspectRatio = '9:16' | '1:1' | '4:5';
 
+const getAspectRatioClasses = (aspectRatio: AspectRatio) => {
+  switch (aspectRatio) {
+    case '9:16':
+      return {
+        containerClass: 'aspect-[9/16]',
+        dimensions: 'w-[280px] h-[497px] sm:w-[320px] sm:h-[569px] lg:w-[360px] lg:h-[640px]'
+      };
+    case '1:1':
+      return {
+        containerClass: 'aspect-[1/1]',
+        dimensions: 'w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[400px] lg:h-[400px]'
+      };
+    case '4:5':
+      return {
+        containerClass: 'aspect-[4/5]',
+        dimensions: 'w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[400px] lg:h-[500px]'
+      };
+    default:
+      return {
+        containerClass: 'aspect-[4/5]',
+        dimensions: 'w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[400px] lg:h-[500px]'
+      };
+  }
+};
+
 interface StartScreenProps {
   onModelFinalized: (modelUrl: string, aspectRatio: AspectRatio) => void;
 }
@@ -48,7 +73,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
         }
     };
     reader.readAsDataURL(file);
-  }, []);
+  }, [selectedAspectRatio]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -134,7 +159,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
               firstImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Selfie.png"
               secondImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Model.png"
               slideMode="drag"
-              className="w-full max-w-sm aspect-[2/3] rounded-2xl bg-gray-200"
+              className={`w-full max-w-sm ${getAspectRatioClasses(selectedAspectRatio).containerClass} rounded-2xl bg-gray-200`}
             />
           </div>
         </motion.div>
@@ -206,7 +231,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
                 firstImage={userImageUrl}
                 secondImage={generatedModelUrl ?? userImageUrl}
                 slideMode="drag"
-                className="w-[280px] h-[420px] sm:w-[320px] sm:h-[480px] lg:w-[400px] lg:h-[600px] rounded-2xl bg-gray-200"
+                className={`${getAspectRatioClasses(selectedAspectRatio).dimensions} rounded-2xl bg-gray-200`}
               />
             </div>
           </div>
