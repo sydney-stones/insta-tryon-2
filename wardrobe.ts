@@ -447,7 +447,7 @@ export const defaultWardrobe: WardrobeItem[] = [
   {    id: 'Burberry',
     name: 'Burberry',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Burberry.png',
-    folder: '30 in 30',
+    folder: '30Brands',
   }
 ];
 
