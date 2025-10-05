@@ -444,9 +444,16 @@ export const defaultWardrobe: WardrobeItem[] = [
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Wimbledon%20/Wimbledon6.png',
     folder: 'Wimbledon',
   },
+    // 30 Brands in 30 days Collection
   {    id: 'Burberry',
     name: 'Burberry',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Burberry.png',
+    folder: '30Brands',
+  },
+  {
+    id: 'Brora',
+    name: 'Brora',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Brora.png',
     folder: '30Brands',
   }
 ];
