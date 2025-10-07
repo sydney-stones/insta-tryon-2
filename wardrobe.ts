@@ -455,7 +455,12 @@ export const defaultWardrobe: WardrobeItem[] = [
     name: 'Brora',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Brora.png',
     folder: '30Brands',
-  }
+  },
+  {
+    id: 'Purdey',
+    name: 'Purdey',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Purdey.png',
+    folder: '30Brands',
 ];
 
 // Helper function to organize wardrobe items by folders
