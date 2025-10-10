@@ -90,7 +90,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
               <div className="flex flex-col items-center lg:items-start w-full gap-3">
                 <label htmlFor="image-upload-start" className="w-full relative flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-gray-900 rounded-md cursor-pointer group hover:bg-gray-700 transition-colors">
                   <UploadCloudIcon className="w-5 h-5 mr-3" />
-                  Upload Photo
+                  Upload Selfie
                 </label>
                 <input id="image-upload-start" type="file" className="hidden" accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif" onChange={handleFileChange} />
                 <p className="text-gray-500 text-sm mt-4">Select a clear, full-body photo. Face-only photos also work, but full-body is preferred for best results.</p>
