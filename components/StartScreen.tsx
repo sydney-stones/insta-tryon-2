@@ -81,7 +81,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
           <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="max-w-lg">
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
-                Create Your Model for Any Look.
+                Rendered Fits DEMO
               </h1>
               <p className="mt-4 text-lg text-gray-600">
                 Ever wondered how an outfit would look on you? Stop guessing. Upload a photo and see for yourself. Our AI creates your personal model, ready to try on anything.
@@ -101,8 +101,8 @@ const StartScreen: React.FC<StartScreenProps> = ({ onModelFinalized }) => {
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
             <Compare
-              firstImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Selfie.png"
-              secondImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Model.png"
+              firstImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/+.png"
+              secondImage="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Result.png"
               slideMode="drag"
               className="w-full max-w-sm aspect-[2/3] rounded-2xl bg-gray-200"
             />
