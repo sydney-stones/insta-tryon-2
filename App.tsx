@@ -9,6 +9,7 @@ import StartScreen from './components/StartScreen';
 import Canvas from './components/Canvas';
 import WardrobePanel from './components/WardrobeModal';
 import OutfitStack from './components/OutfitStack';
+import WaitlistModal from './components/WaitlistModal';
 import { generateVirtualTryOnImage, generatePoseVariation } from './services/geminiService';
 import { OutfitLayer, WardrobeItem } from './types';
 import { ChevronDownIcon, ChevronUpIcon } from './components/icons';
@@ -56,6 +57,9 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentPoseIndex, setCurrentPoseIndex] = useState(0);
   const [isSheetCollapsed, setIsSheetCollapsed] = useState(false);
+  const [generationCount, setGenerationCount] = useState(0);
+  const [showWaitlistModal, setShowWaitlistModal] = useState(false);
+  const MAX_GENERATIONS = 3;
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   const activeOutfitLayers = useMemo(() => 
@@ -103,13 +107,19 @@ const App: React.FC = () => {
     setError(null);
     setCurrentPoseIndex(0);
     setIsSheetCollapsed(false);
-    setAspectRatio('4:5');
+    setGenerationCount(0);
   };
 
   const handleGarmentSelect = useCallback(async (garmentFile: File, garmentInfo: WardrobeItem) => {
     const baseModelImage = outfitHistory[0] ? Object.values(outfitHistory[0].poseImages)[0] : null;
 
     if (!baseModelImage || isLoading) return;
+
+    // Check generation limit
+    if (generationCount >= MAX_GENERATIONS) {
+      setShowWaitlistModal(true);
+      return;
+    }
 
     // If the selected garment is already worn, do nothing.
     if (currentOutfitIndex > 0 && outfitHistory[currentOutfitIndex]?.garment?.id === garmentInfo.id) {
@@ -124,10 +134,10 @@ const App: React.FC = () => {
       const newImageUrl = await generateVirtualTryOnImage(baseModelImage as string, garmentFile);
       // When a new garment is selected, we reset to the default pose.
       const defaultPoseInstruction = POSE_INSTRUCTIONS[0];
-      
-      const newLayer: OutfitLayer = { 
-        garment: garmentInfo, 
-        poseImages: { [defaultPoseInstruction]: newImageUrl } 
+
+      const newLayer: OutfitLayer = {
+        garment: garmentInfo,
+        poseImages: { [defaultPoseInstruction]: newImageUrl }
       };
 
       setOutfitHistory(prevHistory => {
@@ -137,14 +147,15 @@ const App: React.FC = () => {
       });
       setCurrentOutfitIndex(1);
       setCurrentPoseIndex(0); // Reset to default pose index.
-      
+      setGenerationCount(prev => prev + 1);
+
     } catch (err) {
       setError(getFriendlyErrorMessage(err, 'Failed to apply garment'));
     } finally {
       setIsLoading(false);
       setLoadingMessage('');
     }
-  }, [isLoading, outfitHistory, currentOutfitIndex]);
+  }, [isLoading, outfitHistory, currentOutfitIndex, generationCount]);
 
   const handleRemoveLastGarment = () => {
     if (currentOutfitIndex > 0) {
@@ -248,13 +259,17 @@ const App: React.FC = () => {
                     {isSheetCollapsed ? <ChevronUpIcon className="w-6 h-6 text-gray-500" /> : <ChevronDownIcon className="w-6 h-6 text-gray-500" />}
                   </button>
                   <div className="p-4 md:p-6 pb-20 overflow-y-auto flex-grow flex flex-col gap-8">
+                    <div className="bg-gray-100 border-l-4 border-gray-500 text-gray-700 p-4 rounded-md">
+                      <p className="font-semibold text-sm">Demo Mode</p>
+                      <p className="text-sm">{generationCount} of {MAX_GENERATIONS} generations used</p>
+                    </div>
                     {error && (
                       <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 rounded-md" role="alert">
                         <p className="font-bold">Error</p>
                         <p>{error}</p>
                       </div>
                     )}
-                    <OutfitStack 
+                    <OutfitStack
                       outfitHistory={activeOutfitLayers}
                       onRemoveLastGarment={handleRemoveLastGarment}
                     />
@@ -285,6 +300,7 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <WaitlistModal isOpen={showWaitlistModal} onClose={() => setShowWaitlistModal(false)} />
     </div>
   );
 };
