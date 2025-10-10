@@ -13,7 +13,7 @@ interface WaitlistModalProps {
 
 const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
   const handleJoinWaitlist = () => {
-    window.open('https://mysterious-armchair-c3f.notion.site/Rendered-Fits-287b13a8912780558372edcd7a7dfe38', '_blank');
+    window.open('https://rendered-fits.notion.site/Join-The-Waitlist-288b13a8912780d89d3ff88f3085ba22?pvs=74', '_blank');
   };
 
   return (
