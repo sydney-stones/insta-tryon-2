@@ -24,7 +24,7 @@ export const defaultWardrobe: WardrobeItem[] = [
   },
   {
     id: 'Autumn-2',
-    name: 'Cozy Cardigan Set',
+    name: 'Autumn Leather',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn2.png',
     secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Autumn2.png',
     folder: 'Autumn',
@@ -33,9 +33,9 @@ export const defaultWardrobe: WardrobeItem[] = [
     collection: 'Autumn Collection',
     shopUrl: 'https://shopmy.us/shop/collections/2431665',
     outfitItems: [
-      { name: 'Cardigan', price: 100, shopUrl: 'https://www.ralphlauren.co.uk' },
-      { name: 'keyword', price: 0, shopUrl: '' },
-      { name: 'Pants', price: 0, shopUrl: '' },
+      { name: 'Jacket', price: 589, shopUrl: 'https://click.linksynergy.com/deeplink?id=8yaPBDQV8ls&mid=36666&u1=user-237065-pin-26118888-puser-null&murl=https%3A%2F%2Fwww.harrods.com%2Fen-gb%2Fp%2Fclaudie-pierlot-turn-lock-leather-jacket-000000000007821841' },
+      { name: 'Skirt', price: 379, shopUrl: 'https://click.linksynergy.com/deeplink?id=8yaPBDQV8ls&mid=36666&u1=user-237065-pin-26119124-puser-null&murl=https%3A%2F%2Fwww.harrods.com%2Fen-gb%2Fp%2Fclaudie-pierlot-leather-turn-lock-mini-skirt-000000000007821625' },
+      { name: 'Bag', price: 350, shopUrl: 'https://apiv3.shopmy.us/api/redirect_click?clickId=c47f7b64-09bc-4c39-8075-719504e7de65&cid=user-237065-pin-26119216-puser-null&url=https%3A%2F%2Fwww.meandem.com%2Fresin-stud-box-bag-chestnut%3Futm_source%3DShopMy%26utm_medium%3Daffiliate%26utm_campaign%3DSienna%20Stones%20%26utm_content%3DAutumn%20Outfit%20%26utm_referrer%3Dshopmy.us' },
     ],
   },
   {
