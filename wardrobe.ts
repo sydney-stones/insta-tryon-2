@@ -15,8 +15,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 89.99,
     description: 'Elegant autumn dress perfect for transitional weather. Features a flattering silhouette with warm seasonal tones.',
-    material: '60% Cotton, 40% Polyester',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -26,8 +25,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 125.00,
     description: 'Luxurious cardigan paired with coordinating pieces. Perfect for layering during autumn days.',
-    material: '100% Merino Wool',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: 'https://shopmy.us/shop/collections/2431665',
   },
   {
@@ -37,8 +35,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 95.00,
     description: 'Flowing midi dress with autumn-inspired prints. Comfortable and stylish for any occasion.',
-    material: '70% Viscose, 30% Silk',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -48,8 +45,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 199.99,
     description: 'Sophisticated wool blend coat for crisp autumn days. Features a timeless design with modern details.',
-    material: '80% Wool, 20% Nylon',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -59,8 +55,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 79.99,
     description: 'Comfortable knitted sweater dress. Perfect for casual autumn outings.',
-    material: '55% Acrylic, 45% Cotton',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -70,7 +65,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 145.00,
     description: 'Classic plaid blazer with coordinating trousers. A sophisticated autumn wardrobe staple.',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -80,7 +75,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 69.99,
     description: 'Cozy turtleneck sweater in rich autumn colors. Essential for layering.',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -90,7 +85,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 99.99,
     description: 'Flattering wrap dress with autumn florals. Versatile for work or weekend.',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -100,7 +95,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 165.00,
     description: 'Timeless tweed jacket with elegant detailing. Perfect for smart-casual occasions.',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -110,7 +105,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 139.99,
     description: 'Luxurious cashmere blend sweater. Soft, warm, and incredibly comfortable.',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
   {
@@ -120,7 +115,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 109.99,
     description: 'Elegant long sleeve maxi dress. Perfect for autumn events and gatherings.',
-    brand: 'Autumn Collection',
+    collection: 'Autumn Collection',
     shopUrl: '',
   },
 
@@ -132,7 +127,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 45.00,
     description: 'High-performance polo shirt designed for active sports. Breathable and moisture-wicking.',
-    brand: 'Badminton Sport',
+    collection: 'Badminton Sport',
     shopUrl: '',
   },
   {
@@ -142,7 +137,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 55.00,
     description: 'Stylish and functional athletic skort with built-in shorts. Perfect for court sports.',
-    brand: 'Badminton Sport',
+    collection: 'Badminton Sport',
     shopUrl: '',
   },
   {
@@ -152,7 +147,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 38.00,
     description: 'Lightweight tank top for maximum movement and comfort during intense matches.',
-    brand: 'Badminton Sport',
+    collection: 'Badminton Sport',
     shopUrl: '',
   },
   {
@@ -162,7 +157,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 65.00,
     description: 'Sleek athletic dress designed for competitive play. Combines style with functionality.',
-    brand: 'Badminton Sport',
+    collection: 'Badminton Sport',
     shopUrl: '',
   },
   {
@@ -172,7 +167,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 75.00,
     description: 'Essential warm-up jacket for pre-match preparation. Lightweight and flexible.',
-    brand: 'Badminton Sport',
+    collection: 'Badminton Sport',
     shopUrl: '',
   },
 
@@ -184,7 +179,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Burghley',
     price: 189.00,
     description: 'Timeless equestrian-inspired outfit. Perfect for country events and outdoor occasions.',
-    brand: 'Burghley Collection',
+    collection: 'Burghley Collection',
     shopUrl: '',
   },
   {
@@ -194,7 +189,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Burghley',
     price: 215.00,
     description: 'Heritage-inspired ensemble with modern touches. Sophisticated country style.',
-    brand: 'Burghley Collection',
+    collection: 'Burghley Collection',
     shopUrl: '',
   },
   {
@@ -204,7 +199,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Burghley',
     price: 245.00,
     description: 'Signature piece from the Burghley collection. Premium quality and craftsmanship.',
-    brand: 'Burghley Collection',
+    collection: 'Burghley Collection',
     shopUrl: '',
   },
 
