@@ -173,7 +173,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
                     <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
                       <p className="text-sm text-blue-900">
-                        <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. Full-body photos work best!
+                        <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. Face the camera directly with a neutral expression for best results.
                       </p>
                     </div>
                   </div>
