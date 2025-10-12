@@ -9,7 +9,6 @@ import { WardrobeItem } from '../types';
 import { generateModelImage, generateVirtualTryOnImage } from '../services/geminiService';
 import { UploadCloudIcon } from './icons';
 import Spinner from './Spinner';
-import { Compare } from './ui/compare';
 import { getFriendlyErrorMessage } from '../lib/utils';
 
 interface VirtualTryOnModalProps {
@@ -269,7 +268,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
               )}
 
               {/* Result Step */}
-              {step === 'result' && tryOnImageUrl && userImageUrl && (
+              {step === 'result' && tryOnImageUrl && (
                 <motion.div
                   key="result"
                   initial={{ opacity: 0, x: 20 }}
@@ -282,16 +281,15 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       Here's How It Looks!
                     </h2>
                     <p className="text-gray-600">
-                      Drag the slider to compare before and after
+                      Your personalized try-on result
                     </p>
                   </div>
 
                   <div className="max-w-md mx-auto mb-6">
-                    <Compare
-                      firstImage={userImageUrl}
-                      secondImage={tryOnImageUrl}
-                      slideMode="drag"
-                      className="w-full h-[500px] rounded-xl"
+                    <img
+                      src={tryOnImageUrl}
+                      alt="Virtual try-on result"
+                      className="w-full h-auto rounded-xl shadow-lg"
                     />
                   </div>
 
