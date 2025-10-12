@@ -10,9 +10,10 @@ import AdminTryOn from './AdminTryOn';
 
 interface AdminDashboardProps {
   onLogout: () => void;
+  products: WardrobeItem[];
 }
 
-const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
+const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) => {
   const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isTryOnOpen, setIsTryOnOpen] = useState(false);
@@ -104,7 +105,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   });
 
   if (isTryOnOpen) {
-    return <AdminTryOn onBack={() => setIsTryOnOpen(false)} />;
+    return <AdminTryOn onBack={() => setIsTryOnOpen(false)} products={products} />;
   }
 
   if (isFormOpen) {
@@ -132,12 +133,23 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
               <p className="text-sm text-gray-600 mt-1">{outfits.length} total outfits</p>
             </div>
-            <button
-              onClick={onLogout}
-              className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              Logout
-            </button>
+            <div className="flex items-center gap-2">
+              <a
+                href="/"
+                className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Home
+              </a>
+              <button
+                onClick={onLogout}
+                className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </div>

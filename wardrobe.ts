@@ -34,7 +34,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     shopUrl: 'https://shopmy.us/shop/collections/2431665',
     outfitItems: [
       { name: 'Cardigan', price: 100, shopUrl: 'https://www.ralphlauren.co.uk' },
-      { name: 'Top', price: 0, shopUrl: '' },
+      { name: 'keyword', price: 0, shopUrl: '' },
       { name: 'Pants', price: 0, shopUrl: '' },
     ],
   },

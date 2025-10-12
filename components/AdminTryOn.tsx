@@ -3,31 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { WardrobeItem } from '../types';
 import VirtualTryOnModal from './VirtualTryOnModal';
 
 interface AdminTryOnProps {
   onBack: () => void;
+  products: WardrobeItem[];
 }
 
-const AdminTryOn: React.FC<AdminTryOnProps> = ({ onBack }) => {
-  const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
+const AdminTryOn: React.FC<AdminTryOnProps> = ({ onBack, products }) => {
   const [selectedOutfit, setSelectedOutfit] = useState<WardrobeItem | null>(null);
   const [isTryOnModalOpen, setIsTryOnModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-
-  // Load outfits from localStorage
-  useEffect(() => {
-    const savedOutfits = localStorage.getItem('wardrobeOutfits');
-    if (savedOutfits) {
-      try {
-        setOutfits(JSON.parse(savedOutfits));
-      } catch (e) {
-        console.error('Failed to load outfits:', e);
-      }
-    }
-  }, []);
 
   const handleTryOnClick = (outfit: WardrobeItem) => {
     setSelectedOutfit(outfit);
@@ -39,7 +27,7 @@ const AdminTryOn: React.FC<AdminTryOnProps> = ({ onBack }) => {
     setTimeout(() => setSelectedOutfit(null), 300);
   };
 
-  const filteredOutfits = outfits.filter((outfit) => {
+  const filteredOutfits = products.filter((outfit) => {
     if (!searchQuery.trim()) return true;
     const query = searchQuery.toLowerCase();
     return outfit.name.toLowerCase().includes(query) || outfit.id.toLowerCase().includes(query);

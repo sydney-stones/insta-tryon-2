@@ -6,10 +6,15 @@
 import React, { useState, useEffect } from 'react';
 import AdminLogin from './AdminLogin';
 import AdminDashboard from './AdminDashboard';
+import { WardrobeItem } from '../types';
 
 const ADMIN_PASSWORD = 'admin123'; // Change this to your secure password
 
-const AdminPage: React.FC = () => {
+interface AdminPageProps {
+  products: WardrobeItem[];
+}
+
+const AdminPage: React.FC<AdminPageProps> = ({ products }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -38,7 +43,7 @@ const AdminPage: React.FC = () => {
     return <AdminLogin onLogin={handleLogin} />;
   }
 
-  return <AdminDashboard onLogout={handleLogout} />;
+  return <AdminDashboard onLogout={handleLogout} products={products} />;
 };
 
 export default AdminPage;
