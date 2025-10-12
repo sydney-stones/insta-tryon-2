@@ -70,3 +70,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #9ca3af; /* Darker gray on hover */
 }
+
+/* Hide scrollbar for collection filter */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
