@@ -307,7 +307,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                               <p className="text-sm font-medium text-gray-900">{item.name}</p>
                               {item.price && (
                                 <p className="text-xs text-gray-600 mt-0.5">
-                                  ${item.price.toFixed(2)}
+                                  £{item.price.toFixed(2)}
                                 </p>
                               )}
                             </div>

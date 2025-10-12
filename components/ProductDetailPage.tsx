@@ -85,7 +85,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                           <p className="font-medium text-gray-900">{item.name}</p>
                           {item.price && (
                             <p className="text-sm text-gray-600 mt-1">
-                              ${item.price.toFixed(2)}
+                              £{item.price.toFixed(2)}
                             </p>
                           )}
                         </div>
@@ -108,7 +108,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
               {/* Single item price - only show if no outfit items */}
               {!product.outfitItems && product.price && (
                 <p className="text-2xl font-semibold text-gray-900 mb-6">
-                  ${product.price.toFixed(2)}
+                  £{product.price.toFixed(2)}
                 </p>
               )}
             </div>
