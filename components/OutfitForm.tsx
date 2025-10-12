@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { WardrobeItem, OutfitItem } from '../types';
+import ImageUploadField from './ImageUploadField';
 
 interface OutfitFormProps {
   outfit?: WardrobeItem;
@@ -112,40 +113,18 @@ const OutfitForm: React.FC<OutfitFormProps> = ({ outfit, onSave, onCancel }) => 
 
         {/* Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Primary Image URL *
-            </label>
-            <input
-              type="url"
-              name="url"
-              value={formData.url}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-              placeholder="https://..."
-            />
-            {formData.url && (
-              <img src={formData.url} alt="Primary" className="mt-2 w-32 h-40 object-cover rounded-md" />
-            )}
-          </div>
+          <ImageUploadField
+            label="Primary Image"
+            currentImageUrl={formData.url}
+            onImageUploaded={(url) => setFormData((prev) => ({ ...prev, url }))}
+            required
+          />
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Secondary Image URL (for hover)
-            </label>
-            <input
-              type="url"
-              name="secondaryImageUrl"
-              value={formData.secondaryImageUrl}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-              placeholder="https://..."
-            />
-            {formData.secondaryImageUrl && (
-              <img src={formData.secondaryImageUrl} alt="Secondary" className="mt-2 w-32 h-40 object-cover rounded-md" />
-            )}
-          </div>
+          <ImageUploadField
+            label="Secondary Image (for hover)"
+            currentImageUrl={formData.secondaryImageUrl}
+            onImageUploaded={(url) => setFormData((prev) => ({ ...prev, secondaryImageUrl: url }))}
+          />
         </div>
 
         {/* Collection & Folder */}
