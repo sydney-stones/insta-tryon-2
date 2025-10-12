@@ -293,6 +293,40 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     />
                   </div>
 
+                  {/* Outfit Items */}
+                  {product?.outfitItems && product.outfitItems.length > 0 && (
+                    <div className="max-w-md mx-auto mb-6">
+                      <h3 className="text-sm font-semibold text-gray-900 mb-3">Shop This Outfit</h3>
+                      <div className="space-y-2">
+                        {product.outfitItems.map((item, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                          >
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900">{item.name}</p>
+                              {item.price && (
+                                <p className="text-xs text-gray-600 mt-0.5">
+                                  ${item.price.toFixed(2)}
+                                </p>
+                              )}
+                            </div>
+                            {item.shopUrl && (
+                              <a
+                                href={item.shopUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ml-3 px-3 py-1.5 bg-gray-900 text-white text-xs font-semibold rounded-md hover:bg-gray-800 transition-colors"
+                              >
+                                Shop
+                              </a>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                     <button
                       onClick={handleTryAgain}
@@ -314,7 +348,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                         onClick={handleClose}
                         className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800 transition-colors"
                       >
-                        Shop this Look
+                        Close
                       </button>
                     )}
                   </div>

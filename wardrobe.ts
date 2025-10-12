@@ -15,8 +15,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 89.99,
     description: 'Elegant autumn dress perfect for transitional weather. Features a flattering silhouette with warm seasonal tones.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Burgundy', 'Forest Green'],
     material: '60% Cotton, 40% Polyester',
     brand: 'Autumn Collection',
     shopUrl: '',
@@ -28,8 +26,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 125.00,
     description: 'Luxurious cardigan paired with coordinating pieces. Perfect for layering during autumn days.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Camel', 'Chocolate Brown'],
     material: '100% Merino Wool',
     brand: 'Autumn Collection',
     shopUrl: 'https://shopmy.us/shop/collections/2431665',
@@ -41,8 +37,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 95.00,
     description: 'Flowing midi dress with autumn-inspired prints. Comfortable and stylish for any occasion.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Rust', 'Mustard'],
     material: '70% Viscose, 30% Silk',
     brand: 'Autumn Collection',
     shopUrl: '',
@@ -54,8 +48,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 199.99,
     description: 'Sophisticated wool blend coat for crisp autumn days. Features a timeless design with modern details.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Navy', 'Charcoal'],
     material: '80% Wool, 20% Nylon',
     brand: 'Autumn Collection',
     shopUrl: '',
@@ -67,8 +59,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 79.99,
     description: 'Comfortable knitted sweater dress. Perfect for casual autumn outings.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Ivory', 'Taupe'],
     material: '55% Acrylic, 45% Cotton',
     brand: 'Autumn Collection',
     shopUrl: '',
@@ -80,9 +70,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 145.00,
     description: 'Classic plaid blazer with coordinating trousers. A sophisticated autumn wardrobe staple.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Brown Plaid', 'Grey Plaid'],
-    material: '65% Polyester, 35% Wool',
     brand: 'Autumn Collection',
     shopUrl: '',
   },
@@ -93,9 +80,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 69.99,
     description: 'Cozy turtleneck sweater in rich autumn colors. Essential for layering.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Wine', 'Olive'],
-    material: '100% Cotton',
     brand: 'Autumn Collection',
     shopUrl: '',
   },
@@ -106,9 +90,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 99.99,
     description: 'Flattering wrap dress with autumn florals. Versatile for work or weekend.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Burgundy Floral', 'Navy Floral'],
-    material: '100% Polyester',
     brand: 'Autumn Collection',
     shopUrl: '',
   },
@@ -119,9 +100,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 165.00,
     description: 'Timeless tweed jacket with elegant detailing. Perfect for smart-casual occasions.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Brown Tweed', 'Grey Tweed'],
-    material: '70% Wool, 30% Acrylic',
     brand: 'Autumn Collection',
     shopUrl: '',
   },
@@ -132,9 +110,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 139.99,
     description: 'Luxurious cashmere blend sweater. Soft, warm, and incredibly comfortable.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Cream', 'Mocha'],
-    material: '70% Cashmere, 30% Silk',
     brand: 'Autumn Collection',
     shopUrl: '',
   },
@@ -145,9 +120,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Autumn',
     price: 109.99,
     description: 'Elegant long sleeve maxi dress. Perfect for autumn events and gatherings.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Terracotta', 'Forest'],
-    material: '95% Viscose, 5% Elastane',
     brand: 'Autumn Collection',
     shopUrl: '',
   },
@@ -160,9 +132,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 45.00,
     description: 'High-performance polo shirt designed for active sports. Breathable and moisture-wicking.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['White', 'Navy', 'Red'],
-    material: '100% Polyester Performance Fabric',
     brand: 'Badminton Sport',
     shopUrl: '',
   },
@@ -173,9 +142,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 55.00,
     description: 'Stylish and functional athletic skort with built-in shorts. Perfect for court sports.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['White', 'Black', 'Navy'],
-    material: '85% Polyester, 15% Spandex',
     brand: 'Badminton Sport',
     shopUrl: '',
   },
@@ -186,9 +152,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 38.00,
     description: 'Lightweight tank top for maximum movement and comfort during intense matches.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['White', 'Light Blue', 'Pink'],
-    material: '90% Polyester, 10% Elastane',
     brand: 'Badminton Sport',
     shopUrl: '',
   },
@@ -199,9 +162,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 65.00,
     description: 'Sleek athletic dress designed for competitive play. Combines style with functionality.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Navy', 'Black', 'Royal Blue'],
-    material: '88% Polyester, 12% Spandex',
     brand: 'Badminton Sport',
     shopUrl: '',
   },
@@ -212,9 +172,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Badminton',
     price: 75.00,
     description: 'Essential warm-up jacket for pre-match preparation. Lightweight and flexible.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Navy', 'Black', 'Grey'],
-    material: '100% Polyester',
     brand: 'Badminton Sport',
     shopUrl: '',
   },
@@ -227,9 +184,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Burghley',
     price: 189.00,
     description: 'Timeless equestrian-inspired outfit. Perfect for country events and outdoor occasions.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Navy', 'Forest Green'],
-    material: '70% Cotton, 30% Polyester',
     brand: 'Burghley Collection',
     shopUrl: '',
   },
@@ -240,9 +194,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Burghley',
     price: 215.00,
     description: 'Heritage-inspired ensemble with modern touches. Sophisticated country style.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Khaki', 'Brown'],
-    material: '80% Wool, 20% Cotton',
     brand: 'Burghley Collection',
     shopUrl: '',
   },
@@ -253,9 +204,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Burghley',
     price: 245.00,
     description: 'Signature piece from the Burghley collection. Premium quality and craftsmanship.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['Navy', 'Burgundy'],
-    material: '100% Wool',
     brand: 'Burghley Collection',
     shopUrl: '',
   },
@@ -268,7 +216,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Fair',
     price: 179.00,
     description: 'Classic country attire perfect for game fairs and outdoor events. Durable and stylish for all-day comfort.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
     shopUrl: '',
   },
   {
@@ -278,7 +225,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Fair',
     price: 159.00,
     description: 'Traditional countryside ensemble with modern practicality. Ideal for field sports enthusiasts.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -288,7 +235,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Fair',
     price: 189.00,
     description: 'Premium game fair outfit combining heritage style with contemporary design. Perfect for country pursuits.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -298,7 +245,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Fair',
     price: 145.00,
     description: 'Versatile country wear suitable for game fairs and outdoor activities. Practical yet elegant.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -308,7 +255,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Fair',
     price: 169.00,
     description: 'Sophisticated outdoor ensemble for country events. Weather-appropriate and fashionable.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -318,7 +265,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Fair',
     price: 195.00,
     description: 'Distinguished country attire with refined details. Perfect for discerning game fair attendees.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Game Shooting Collection
@@ -329,7 +276,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Shooting',
     price: 219.00,
     description: 'Professional game shooting attire with functional design. Built for comfort during long days in the field.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -339,7 +286,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Shooting',
     price: 199.00,
     description: 'Traditional shooting outfit with practical features. Designed for serious sportsmen and sportswomen.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -349,7 +296,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Shooting',
     price: 235.00,
     description: 'Premium shooting ensemble combining style and functionality. Perfect for driven game shooting.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -359,7 +306,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Game Shooting',
     price: 189.00,
     description: 'Classic game shooting attire with weather-resistant properties. Timeless style for country sports.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Goodwood Collection
@@ -370,7 +317,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Goodwood',
     price: 165.00,
     description: 'Vintage-inspired ensemble perfect for Goodwood events. Combines retro elegance with modern comfort.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -380,7 +327,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Goodwood',
     price: 185.00,
     description: 'Classic racing attire with a nod to motorsport heritage. Stylish and sophisticated for trackside viewing.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -390,7 +337,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Goodwood',
     price: 149.00,
     description: 'Timeless Goodwood outfit capturing the spirit of vintage racing. Elegant and event-appropriate.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -400,7 +347,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Goodwood',
     price: 175.00,
     description: 'Refined racing ensemble with period-appropriate styling. Perfect for festival of speed attendees.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Next Collection
@@ -411,7 +358,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Next',
     price: 79.00,
     description: 'Contemporary everyday outfit with versatile styling. Perfect for modern casual wear.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -421,7 +368,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Next',
     price: 89.00,
     description: 'Stylish and practical ensemble for everyday occasions. Comfortable and fashion-forward.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -431,7 +378,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Next',
     price: 95.00,
     description: 'Modern casual outfit with on-trend details. Effortlessly chic for day-to-day wear.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -441,7 +388,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Next',
     price: 69.00,
     description: 'Classic casual ensemble with contemporary appeal. Great value for everyday style.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -451,7 +398,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Next',
     price: 85.00,
     description: 'Versatile outfit perfect for multiple occasions. Smart-casual styling at its best.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Race Day Collection
@@ -462,7 +409,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Race Day',
     price: 139.00,
     description: 'Elegant race day ensemble with sophisticated flair. Perfect for enjoying a day at the races in style.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -472,7 +419,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Race Day',
     price: 155.00,
     description: 'Chic and polished race day outfit. Designed to turn heads in the members enclosure.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -482,7 +429,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Race Day',
     price: 145.00,
     description: 'Classic racing attire with modern touches. Timeless elegance for racecourse occasions.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -492,7 +439,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Race Day',
     price: 165.00,
     description: 'Sophisticated race day ensemble with refined details. Perfect for special racing events.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Royal Ascot Collection
@@ -503,7 +450,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Royal Ascot',
     price: 225.00,
     description: 'Exquisite Royal Ascot ensemble meeting dress code requirements. Elegant and sophisticated for the royal enclosure.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -513,7 +460,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Royal Ascot',
     price: 249.00,
     description: 'Luxurious Royal Ascot outfit with impeccable tailoring. Perfect for making a statement at this prestigious event.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -523,7 +470,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Royal Ascot',
     price: 215.00,
     description: 'Refined Royal Ascot attire with graceful silhouette. Designed to impress in the most formal racing environment.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -533,7 +480,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Royal Ascot',
     price: 235.00,
     description: 'Premium Royal Ascot ensemble with elegant detailing. Suitable for the most discerning racegoer.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -543,7 +490,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Royal Ascot',
     price: 199.00,
     description: 'Classic Royal Ascot outfit with timeless appeal. Dress code compliant with stunning presence.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Schoffel Collection
@@ -554,7 +501,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 189.00,
     description: 'Premium outdoor clothing with superior craftsmanship. Designed for country living and outdoor adventures.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -564,7 +511,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 205.00,
     description: 'Technical outdoor outfit combining style and performance. Weather-resistant and exceptionally comfortable.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -574,7 +521,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 179.00,
     description: 'Classic country attire with functional features. Perfect for walks and rural activities.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -584,7 +531,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 219.00,
     description: 'Luxury outdoor ensemble with exceptional quality. Durable and stylish for countryside pursuits.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -594,7 +541,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 195.00,
     description: 'Versatile country outfit with practical design. Ideal for outdoor enthusiasts seeking quality and style.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -604,7 +551,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 169.00,
     description: 'Comfortable outdoor attire with timeless appeal. Perfect for country walks and field sports.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -614,7 +561,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 209.00,
     description: 'High-performance outdoor ensemble with refined styling. Built to withstand the elements in comfort.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -624,7 +571,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 185.00,
     description: 'Traditional country outfit with modern technical features. Sophisticated and functional.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -634,7 +581,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Schoffel',
     price: 199.00,
     description: 'Premium country attire with elegant detailing. Perfect for countryside events and outdoor activities.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Silverstone Collection
@@ -645,7 +592,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Silverstone',
     price: 129.00,
     description: 'Alpine-inspired motorsport outfit with team colors. Perfect for Formula 1 fans at Silverstone.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -655,7 +602,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Silverstone',
     price: 149.00,
     description: 'Aston Martin team-inspired ensemble with sophisticated racing style. Show your team support in style.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -665,7 +612,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Silverstone',
     price: 159.00,
     description: 'Ferrari-inspired outfit in iconic team colors. Perfect for passionate Tifosi at the British Grand Prix.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -675,7 +622,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Silverstone',
     price: 139.00,
     description: 'McLaren team-inspired attire with vibrant papaya orange. Celebrate British racing heritage.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -685,7 +632,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Silverstone',
     price: 145.00,
     description: 'Mercedes-inspired motorsport outfit in silver and black. Sleek and professional racing style.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -695,7 +642,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Silverstone',
     price: 155.00,
     description: 'Red Bull Racing-inspired ensemble with bold team colors. Dynamic style for championship supporters.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -705,7 +652,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Silverstone',
     price: 135.00,
     description: 'Williams team-inspired outfit honoring legendary racing heritage. Classic British motorsport style.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
   },
 
   // Wimbledon Collection
@@ -716,7 +663,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Wimbledon',
     price: 119.00,
     description: 'Classic Wimbledon outfit in traditional tennis whites. Elegant and appropriate for Centre Court viewing.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -726,7 +673,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Wimbledon',
     price: 135.00,
     description: 'Sophisticated Wimbledon ensemble with tennis-inspired details. Perfect for the prestigious tennis tournament.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -736,7 +683,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Wimbledon',
     price: 125.00,
     description: 'Timeless Wimbledon attire capturing the spirit of tennis tradition. Refined and sport-appropriate.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -746,7 +693,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Wimbledon',
     price: 149.00,
     description: 'Premium Wimbledon outfit with polished styling. Ideal for enjoying tennis at the All England Club.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -756,7 +703,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Wimbledon',
     price: 139.00,
     description: 'Elegant Wimbledon ensemble with classic appeal. Smart casual style for the championships.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   },
   {
@@ -766,7 +713,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     folder: 'Wimbledon',
     price: 129.00,
     description: 'Chic Wimbledon outfit perfect for summer tennis. Comfortable and stylish for all-day viewing.',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    
     shopUrl: '',
   }
   //   // 30 Brands in 30 days Collection

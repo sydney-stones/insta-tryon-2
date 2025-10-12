@@ -21,14 +21,7 @@ const StoreHeader: React.FC = () => {
           </Link>
 
           <nav className="flex items-center gap-6">
-            <Link
-              to="/"
-              className={`text-sm font-medium transition-colors ${
-                isStorePage ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Shop
-            </Link>
+            
             <a
               href="https://www.instagram.com/siennastones/"
               target="_blank"

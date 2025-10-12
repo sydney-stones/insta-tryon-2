@@ -32,10 +32,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-gray-900 text-center">
-            Virtual Try-On Store
+            Virtual Try-On
           </h1>
           <p className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto">
-            Browse my collection and try on any item virtually with AI-powered technology
+            See yourself in my style
           </p>
         </div>
       </div>
