@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </h3>
         {product.price && (
           <p className="text-base font-semibold text-gray-900">
-            ${product.price.toFixed(2)}
+            £{product.price.toFixed(2)}
           </p>
         )}
         {product.folder && (
