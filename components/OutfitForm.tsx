@@ -5,7 +5,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { WardrobeItem, OutfitItem } from '../types';
-import ImageUploadField from './ImageUploadField';
 
 interface OutfitFormProps {
   outfit?: WardrobeItem;
@@ -27,6 +26,9 @@ const OutfitForm: React.FC<OutfitFormProps> = ({ outfit, onSave, onCancel }) => 
     outfitItems: [],
   });
 
+  const [primaryImageFilename, setPrimaryImageFilename] = useState('');
+  const [secondaryImageFilename, setSecondaryImageFilename] = useState('');
+
   const [newOutfitItem, setNewOutfitItem] = useState<OutfitItem>({
     name: '',
     price: 0,
@@ -36,6 +38,15 @@ const OutfitForm: React.FC<OutfitFormProps> = ({ outfit, onSave, onCancel }) => 
   useEffect(() => {
     if (outfit) {
       setFormData(outfit);
+      // Extract filename from URL if editing
+      if (outfit.url) {
+        const match = outfit.url.match(/\/([^/]+)$/);
+        if (match) setPrimaryImageFilename(match[1]);
+      }
+      if (outfit.secondaryImageUrl) {
+        const match = outfit.secondaryImageUrl.match(/\/([^/]+)$/);
+        if (match) setSecondaryImageFilename(match[1]);
+      }
     }
   }, [outfit]);
 
@@ -46,6 +57,32 @@ const OutfitForm: React.FC<OutfitFormProps> = ({ outfit, onSave, onCancel }) => 
       [name]: name === 'price' ? parseFloat(value) || 0 : value,
     }));
   };
+
+  const handlePrimaryImageFilenameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const filename = e.target.value;
+    setPrimaryImageFilename(filename);
+    if (filename && formData.folder) {
+      const url = `https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/${formData.folder}/${filename}`;
+      setFormData((prev) => ({ ...prev, url }));
+    }
+  };
+
+  const handleSecondaryImageFilenameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const filename = e.target.value;
+    setSecondaryImageFilename(filename);
+    if (filename) {
+      const url = `https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/${filename}`;
+      setFormData((prev) => ({ ...prev, secondaryImageUrl: url }));
+    }
+  };
+
+  // Update primary image URL when folder changes
+  useEffect(() => {
+    if (primaryImageFilename && formData.folder) {
+      const url = `https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/${formData.folder}/${primaryImageFilename}`;
+      setFormData((prev) => ({ ...prev, url }));
+    }
+  }, [formData.folder, primaryImageFilename]);
 
   const handleAddOutfitItem = () => {
     if (newOutfitItem.name) {
@@ -112,19 +149,68 @@ const OutfitForm: React.FC<OutfitFormProps> = ({ outfit, onSave, onCancel }) => 
         </div>
 
         {/* Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <ImageUploadField
-            label="Primary Image"
-            currentImageUrl={formData.url}
-            onImageUploaded={(url) => setFormData((prev) => ({ ...prev, url }))}
-            required
-          />
+        <div className="border-t border-gray-200 pt-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Images</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Primary Image */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Primary Image Filename *
+              </label>
+              <input
+                type="text"
+                value={primaryImageFilename}
+                onChange={handlePrimaryImageFilenameChange}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+                placeholder="e.g., Autumn1.png"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Will use: outfits/{formData.folder || '[folder]'}/{primaryImageFilename || '[filename]'}
+              </p>
+              {formData.url && (
+                <div className="mt-3">
+                  <img
+                    src={formData.url}
+                    alt="Primary preview"
+                    className="w-full max-w-xs h-48 object-cover rounded-md border border-gray-200"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                </div>
+              )}
+            </div>
 
-          <ImageUploadField
-            label="Secondary Image (for hover)"
-            currentImageUrl={formData.secondaryImageUrl}
-            onImageUploaded={(url) => setFormData((prev) => ({ ...prev, secondaryImageUrl: url }))}
-          />
+            {/* Secondary Image */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Secondary Image Filename (for hover)
+              </label>
+              <input
+                type="text"
+                value={secondaryImageFilename}
+                onChange={handleSecondaryImageFilenameChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+                placeholder="e.g., Autumn1.png"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Will use: Renderings/{secondaryImageFilename || '[filename]'}
+              </p>
+              {formData.secondaryImageUrl && (
+                <div className="mt-3">
+                  <img
+                    src={formData.secondaryImageUrl}
+                    alt="Secondary preview"
+                    className="w-full max-w-xs h-48 object-cover rounded-md border border-gray-200"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Collection & Folder */}
