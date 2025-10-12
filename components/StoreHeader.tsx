@@ -21,7 +21,13 @@ const StoreHeader: React.FC = () => {
           </Link>
 
           <nav className="flex items-center gap-6">
-            
+            <Link
+              to="/waitlist"
+              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Create your own wardrobe
+            </Link>
+
             <a
               href="https://www.instagram.com/siennastones/"
               target="_blank"
