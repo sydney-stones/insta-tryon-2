@@ -8,6 +8,13 @@ export interface WardrobeItem {
   name: string;
   url: string;
   folder?: string;
+  // E-commerce fields
+  price?: number;
+  description?: string;
+  sizes?: string[];
+  colors?: string[];
+  material?: string;
+  brand?: string;
 }
 
 export interface WardrobeFolder {
@@ -18,4 +25,11 @@ export interface WardrobeFolder {
 export interface OutfitLayer {
   garment: WardrobeItem | null; // null represents the base model layer
   poseImages: Record<string, string>; // Maps pose instruction to image URL
+}
+
+export interface Product extends WardrobeItem {
+  price: number;
+  description: string;
+  sizes: string[];
+  inStock: boolean;
 }
