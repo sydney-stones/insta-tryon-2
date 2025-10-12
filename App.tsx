@@ -10,6 +10,7 @@ import ProductGrid from './components/ProductGrid';
 import ProductDetailPage from './components/ProductDetailPage';
 import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
+import WaitlistPage from './components/WaitlistPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -77,6 +78,10 @@ const App: React.FC = () => {
                         onTryOnClick={handleTryOnClick}
                       />
                     }
+                  />
+                  <Route
+                    path="/waitlist"
+                    element={<WaitlistPage />}
                   />
                 </Routes>
 
