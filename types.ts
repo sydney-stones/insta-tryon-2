@@ -19,8 +19,7 @@ export interface WardrobeItem {
   description?: string;
   sizes?: string[];
   colors?: string[];
-  material?: string;
-  brand?: string;
+  collection?: string;
   shopUrl?: string;
   // Multiple items in an outfit
   outfitItems?: OutfitItem[];
