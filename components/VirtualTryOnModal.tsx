@@ -10,21 +10,24 @@ import { generateModelImage, generateVirtualTryOnImage } from '../services/gemin
 import { UploadCloudIcon } from './icons';
 import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
+import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage } from '../lib/tryOnLimit';
 
 interface VirtualTryOnModalProps {
   isOpen: boolean;
   onClose: () => void;
   product: WardrobeItem | null;
+  isUnlimited?: boolean; // For admin mode
 }
 
-type ModalStep = 'upload' | 'generating-model' | 'model-ready' | 'generating-tryon' | 'result';
+type ModalStep = 'upload' | 'limit-reached' | 'generating-model' | 'model-ready' | 'generating-tryon' | 'result';
 
-const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product }) => {
+const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false }) => {
   const [step, setStep] = useState<ModalStep>('upload');
   const [userImageUrl, setUserImageUrl] = useState<string | null>(null);
   const [modelImageUrl, setModelImageUrl] = useState<string | null>(null);
   const [tryOnImageUrl, setTryOnImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [remainingTries, setRemainingTries] = useState(3);
 
   const handleClose = () => {
     setStep('upload');
@@ -35,7 +38,21 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
     onClose();
   };
 
+  // Update remaining tries when modal opens
+  React.useEffect(() => {
+    if (isOpen && !isUnlimited) {
+      setRemainingTries(getRemainingTryOns());
+    }
+  }, [isOpen, isUnlimited]);
+
   const handleFileSelect = useCallback(async (file: File) => {
+    // Check limit before processing (unless unlimited mode)
+    if (!isUnlimited && !canUseTryOn()) {
+      setStep('limit-reached');
+      setRemainingTries(0);
+      return;
+    }
+
     if (!file.type.startsWith('image/')) {
       setError('Please select an image file.');
       return;
@@ -68,6 +85,13 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
           const tryOnResult = await generateVirtualTryOnImage(generatedModel, garmentFile);
           setTryOnImageUrl(tryOnResult);
+
+          // Increment usage count on success (unless unlimited mode)
+          if (!isUnlimited) {
+            incrementTryOnUsage();
+            setRemainingTries(getRemainingTryOns());
+          }
+
           setStep('result');
         }
       } catch (err) {
@@ -77,7 +101,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       }
     };
     reader.readAsDataURL(file);
-  }, [product]);
+  }, [product, isUnlimited]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -126,6 +150,42 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
           <div className="overflow-y-auto max-h-[90vh]">
             <AnimatePresence mode="wait">
+              {/* Limit Reached Step */}
+              {step === 'limit-reached' && (
+                <motion.div
+                  key="limit-reached"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  className="p-8 sm:p-12"
+                >
+                  <div className="text-center max-w-md mx-auto">
+                    <div className="w-20 h-20 mx-auto mb-6 bg-amber-100 rounded-full flex items-center justify-center">
+                      <svg className="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                    </div>
+                    <h2 className="text-3xl font-serif font-bold text-gray-900 mb-3">
+                      Daily Limit Reached
+                    </h2>
+                    <p className="text-gray-600 mb-6">
+                      You've used all 3 free try-ons for today. Come back tomorrow for more!
+                    </p>
+                    <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg mb-6">
+                      <p className="text-sm text-blue-900">
+                        Your limit will reset at midnight. Check back tomorrow to try on more outfits!
+                      </p>
+                    </div>
+                    <button
+                      onClick={handleClose}
+                      className="w-full px-6 py-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800 transition-colors"
+                    >
+                      Got It
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Upload Step */}
               {step === 'upload' && (
                 <motion.div
@@ -142,6 +202,16 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     <p className="text-gray-600">
                       Upload a selfie to see how this item looks on you
                     </p>
+                    {!isUnlimited && (
+                      <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-full">
+                        <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span className="text-sm font-medium text-blue-900">
+                          {remainingTries} {remainingTries === 1 ? 'try' : 'tries'} remaining today
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="max-w-md mx-auto">
