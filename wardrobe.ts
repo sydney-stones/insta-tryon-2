@@ -26,6 +26,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     id: 'Autumn-2',
     name: 'Cozy Cardigan Set',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn2.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Autumn2.png',
     folder: 'Autumn',
     price: 125.00,
     description: 'Luxurious cardigan paired with coordinating pieces. Perfect for layering during autumn days.',
