@@ -51,7 +51,7 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-white">
         <Routes>
           {/* Admin Route - Hidden from navigation */}
-          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin" element={<AdminPage products={wardrobe} />} />
 
           {/* Public Routes */}
           <Route

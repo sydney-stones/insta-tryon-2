@@ -5,6 +5,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { generateModelImage, generateVirtualTryOnImage } from '../services/geminiService';
 import { UploadCloudIcon } from './icons';
@@ -22,6 +23,7 @@ interface VirtualTryOnModalProps {
 type ModalStep = 'upload' | 'limit-reached' | 'generating-model' | 'model-ready' | 'generating-tryon' | 'result';
 
 const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false }) => {
+  const navigate = useNavigate();
   const [step, setStep] = useState<ModalStep>('upload');
   const [userImageUrl, setUserImageUrl] = useState<string | null>(null);
   const [modelImageUrl, setModelImageUrl] = useState<string | null>(null);
@@ -110,11 +112,8 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
   };
 
   const handleTryAgain = () => {
-    setStep('upload');
-    setUserImageUrl(null);
-    setModelImageUrl(null);
-    setTryOnImageUrl(null);
-    setError(null);
+    handleClose();
+    navigate('/');
   };
 
   if (!isOpen) return null;
