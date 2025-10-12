@@ -15,6 +15,7 @@ export interface WardrobeItem {
   colors?: string[];
   material?: string;
   brand?: string;
+  shopUrl?: string;
 }
 
 export interface WardrobeFolder {

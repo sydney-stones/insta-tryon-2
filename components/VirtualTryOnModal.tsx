@@ -18,7 +18,7 @@ interface VirtualTryOnModalProps {
   product: WardrobeItem | null;
 }
 
-type ModalStep = 'upload' | 'generating-model' | 'generating-tryon' | 'result';
+type ModalStep = 'upload' | 'generating-model' | 'model-ready' | 'generating-tryon' | 'result';
 
 const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product }) => {
   const [step, setStep] = useState<ModalStep>('upload');
@@ -54,8 +54,12 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
         const generatedModel = await generateModelImage(file);
         setModelImageUrl(generatedModel);
 
-        // Step 2: Generate try-on with the product
+        // Show model-ready step with the generated model
+        setStep('model-ready');
+
+        // Step 2: Generate try-on with the product in the background
         if (product) {
+          // Start generating try-on
           setStep('generating-tryon');
 
           // Convert product URL to File
@@ -196,22 +200,71 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                 </motion.div>
               )}
 
+              {/* Model Ready Step */}
+              {step === 'model-ready' && modelImageUrl && (
+                <motion.div
+                  key="model-ready"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="p-8 sm:p-12"
+                >
+                  <div className="text-center mb-6">
+                    <h2 className="text-3xl font-serif font-bold text-gray-900 mb-2">
+                      Your Model is Ready!
+                    </h2>
+                    <p className="text-gray-600">
+                      Now applying {product?.name} to your model...
+                    </p>
+                  </div>
+
+                  <div className="max-w-md mx-auto mb-6">
+                    <img
+                      src={modelImageUrl}
+                      alt="Your model"
+                      className="w-full h-auto rounded-xl shadow-lg"
+                    />
+                  </div>
+
+                  <div className="flex justify-center">
+                    <Spinner />
+                  </div>
+                </motion.div>
+              )}
+
               {/* Generating Try-On Step */}
-              {step === 'generating-tryon' && (
+              {step === 'generating-tryon' && modelImageUrl && (
                 <motion.div
                   key="generating-tryon"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="p-8 sm:p-12 flex flex-col items-center justify-center min-h-[400px]"
+                  className="p-8 sm:p-12"
                 >
-                  <Spinner />
-                  <h3 className="text-2xl font-serif font-bold text-gray-900 mt-6 mb-2">
-                    Trying On {product?.name}
-                  </h3>
-                  <p className="text-gray-600 text-center max-w-md">
-                    Applying the outfit to your model. This may take a moment...
-                  </p>
+                  <div className="text-center mb-6">
+                    <h2 className="text-3xl font-serif font-bold text-gray-900 mb-2">
+                      Your Model is Ready!
+                    </h2>
+                    <p className="text-gray-600">
+                      Applying {product?.name} to your model...
+                    </p>
+                  </div>
+
+                  <div className="max-w-md mx-auto mb-6">
+                    <div className="relative">
+                      <img
+                        src={modelImageUrl}
+                        alt="Your model"
+                        className="w-full h-auto rounded-xl shadow-lg"
+                      />
+                      <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px] rounded-xl flex items-center justify-center">
+                        <div className="bg-white/90 px-6 py-4 rounded-lg shadow-lg">
+                          <Spinner />
+                          <p className="text-gray-900 font-semibold mt-2">Applying outfit...</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               )}
 
@@ -247,14 +300,25 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       onClick={handleTryAgain}
                       className="flex-1 px-6 py-3 bg-gray-100 text-gray-900 rounded-md font-semibold hover:bg-gray-200 transition-colors"
                     >
-                      Try Different Photo
+                      Try Another Outfit
                     </button>
-                    <button
-                      onClick={handleClose}
-                      className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800 transition-colors"
-                    >
-                      Add to Cart
-                    </button>
+                    {product?.shopUrl ? (
+                      <a
+                        href={product.shopUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800 transition-colors text-center"
+                      >
+                        Shop this Look
+                      </a>
+                    ) : (
+                      <button
+                        onClick={handleClose}
+                        className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800 transition-colors"
+                      >
+                        Shop this Look
+                      </button>
+                    )}
                   </div>
                 </motion.div>
               )}
