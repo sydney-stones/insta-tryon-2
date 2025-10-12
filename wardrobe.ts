@@ -32,7 +32,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Camel', 'Chocolate Brown'],
     material: '100% Merino Wool',
     brand: 'Autumn Collection',
-    shopUrl: '',
+    shopUrl: 'https://shopmy.us/shop/collections/2431665',
   },
   {
     id: 'Autumn-3',
