@@ -3,6 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
+export interface OutfitItem {
+  name: string;
+  price?: number;
+  shopUrl?: string;
+}
+
 export interface WardrobeItem {
   id: string;
   name: string;
@@ -16,6 +22,8 @@ export interface WardrobeItem {
   material?: string;
   brand?: string;
   shopUrl?: string;
+  // Multiple items in an outfit
+  outfitItems?: OutfitItem[];
 }
 
 export interface WardrobeFolder {
