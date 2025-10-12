@@ -138,13 +138,6 @@ const WaitlistPage: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-12">
             How It Works
           </h2>
-          <img
-            src="https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn2.png"
-            alt="How It Works"
-            className="mx-auto mb-8"
-            width={600}
-            height={400}
-          />
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">

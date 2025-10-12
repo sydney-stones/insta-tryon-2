@@ -871,7 +871,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 199.00,
     description: 'Premium country attire with elegant detailing. Perfect for countryside events and outdoor activities.',
     outfitItems: [
-      { name: 'Coat', price: 0, shopUrl: '' },
+      { name: 'Jacket', price: 0, shopUrl: '' },
       { name: 'Sweater', price: 0, shopUrl: '' },
       { name: 'Jeans', price: 0, shopUrl: '' },
     ],
