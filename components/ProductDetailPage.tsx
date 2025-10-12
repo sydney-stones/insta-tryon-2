@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion } from 'framer-motion';
@@ -16,6 +16,16 @@ interface ProductDetailPageProps {
 const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOnClick }) => {
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const productImages = useMemo(() => {
+    if (!product) return [];
+    const images = [product.url];
+    if (product.secondaryImageUrl) {
+      images.push(product.secondaryImageUrl);
+    }
+    return images;
+  }, [product]);
 
   if (!product) {
     return (
@@ -48,13 +58,37 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
 
         {/* Product Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Product Image */}
-          <div className="relative aspect-[3/4] lg:aspect-[2/3] overflow-hidden rounded-lg bg-gray-100">
-            <img
-              src={product.url}
-              alt={product.name}
-              className="h-full w-full object-cover"
-            />
+          {/* Product Image with Gallery */}
+          <div className="space-y-4">
+            <div className="relative aspect-[3/4] lg:aspect-[2/3] overflow-hidden rounded-lg bg-gray-100">
+              <img
+                src={productImages[selectedImageIndex]}
+                alt={product.name}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            {/* Image Thumbnails */}
+            {productImages.length > 1 && (
+              <div className="flex gap-2">
+                {productImages.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImageIndex(index)}
+                    className={`relative aspect-[3/4] w-20 overflow-hidden rounded-md transition-all ${
+                      selectedImageIndex === index
+                        ? 'ring-2 ring-gray-900 ring-offset-2'
+                        : 'ring-1 ring-gray-200 hover:ring-gray-400'
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`${product.name} view ${index + 1}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Product Info */}
@@ -83,7 +117,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                       >
                         <div className="flex-1">
                           <p className="font-medium text-gray-900">{item.name}</p>
-                          {item.price && (
+                          {item.price !== undefined && item.price > 0 && (
                             <p className="text-sm text-gray-600 mt-1">
                               £{item.price.toFixed(2)}
                             </p>
@@ -103,13 +137,6 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                     ))}
                   </div>
                 </div>
-              )}
-
-              {/* Single item price - only show if no outfit items */}
-              {!product.outfitItems && product.price && (
-                <p className="text-2xl font-semibold text-gray-900 mb-6">
-                  £{product.price.toFixed(2)}
-                </p>
               )}
             </div>
 
@@ -132,7 +159,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
             {/* Info Banner */}
             <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-md">
               <p className="text-sm text-blue-900">
-                <span className="font-semibold">Try before you buy!</span> Use our Virtual Try-On feature to see how this looks on you.
+                <span className="font-semibold">Try before you buy!</span> Use my Virtual Try-On tool to see how this looks on you.
               </p>
             </div>
           </div>

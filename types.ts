@@ -13,6 +13,7 @@ export interface WardrobeItem {
   id: string;
   name: string;
   url: string;
+  secondaryImageUrl?: string; // For hover/touch display
   folder?: string;
   // E-commerce fields
   price?: number;
