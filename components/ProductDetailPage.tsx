@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion } from 'framer-motion';
@@ -16,7 +16,6 @@ interface ProductDetailPageProps {
 const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOnClick }) => {
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
-  const [selectedSize, setSelectedSize] = useState<string>('');
 
   if (!product) {
     return (
@@ -65,12 +64,6 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                 {product.name}
               </h1>
 
-              {product.price && (
-                <p className="text-2xl font-semibold text-gray-900 mb-6">
-                  ${product.price.toFixed(2)}
-                </p>
-              )}
-
               {product.description && (
                 <div className="mb-8">
                   <h3 className="text-sm font-semibold text-gray-900 mb-2">Description</h3>
@@ -78,48 +71,45 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                 </div>
               )}
 
-              {product.material && (
-                <div className="mb-6">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-2">Material</h3>
-                  <p className="text-gray-600">{product.material}</p>
-                </div>
-              )}
-
-              {product.sizes && product.sizes.length > 0 && (
+              {/* Outfit Items */}
+              {product.outfitItems && product.outfitItems.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-3">Select Size</h3>
-                  <div className="grid grid-cols-5 gap-2">
-                    {product.sizes.map((size) => (
-                      <button
-                        key={size}
-                        onClick={() => setSelectedSize(size)}
-                        className={`py-3 px-4 border rounded-md text-sm font-medium transition-colors ${
-                          selectedSize === size
-                            ? 'border-gray-900 bg-gray-900 text-white'
-                            : 'border-gray-300 bg-white text-gray-900 hover:border-gray-900'
-                        }`}
+                  <h3 className="text-sm font-semibold text-gray-900 mb-4">Shop This Outfit</h3>
+                  <div className="space-y-3">
+                    {product.outfitItems.map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                       >
-                        {size}
-                      </button>
+                        <div className="flex-1">
+                          <p className="font-medium text-gray-900">{item.name}</p>
+                          {item.price && (
+                            <p className="text-sm text-gray-600 mt-1">
+                              ${item.price.toFixed(2)}
+                            </p>
+                          )}
+                        </div>
+                        {item.shopUrl && (
+                          <a
+                            href={item.shopUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-4 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-md hover:bg-gray-800 transition-colors"
+                          >
+                            Shop
+                          </a>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
               )}
 
-              {product.colors && product.colors.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-2">Available Colors</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {product.colors.map((color) => (
-                      <span
-                        key={color}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                      >
-                        {color}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              {/* Single item price - only show if no outfit items */}
+              {!product.outfitItems && product.price && (
+                <p className="text-2xl font-semibold text-gray-900 mb-6">
+                  ${product.price.toFixed(2)}
+                </p>
               )}
             </div>
 
@@ -137,10 +127,6 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                 </svg>
                 Virtual Try-On
               </motion.button>
-
-              <button className="w-full bg-gray-100 text-gray-900 py-4 px-6 rounded-md font-semibold text-base hover:bg-gray-200 transition-colors">
-                Add to Cart
-              </button>
             </div>
 
             {/* Info Banner */}
