@@ -1074,7 +1074,21 @@ export const defaultWardrobe: WardrobeItem[] = [
       { name: 'Skirt', price: 0, shopUrl: '' },
       { name: 'Shoes', price: 0, shopUrl: '' },
     ],
+  },
+  [
+  {
+    id: "test",
+    "name": "test",
+    "url": "https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn1.png",
+    "secondaryImageUrl": "https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn1.png",
+    "folder": "test",
+    "price": 0,
+    "description": "test",
+    "collection": "test",
+    "shopUrl": "",
+    "outfitItems": []
   }
+]
   //   // 30 Brands in 30 days Collection
   // {    id: 'Burberry',
   //   name: 'Burberry',
