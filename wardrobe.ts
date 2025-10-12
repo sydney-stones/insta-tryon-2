@@ -19,6 +19,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Burgundy', 'Forest Green'],
     material: '60% Cotton, 40% Polyester',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-2',
@@ -31,6 +32,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Camel', 'Chocolate Brown'],
     material: '100% Merino Wool',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-3',
@@ -43,6 +45,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Rust', 'Mustard'],
     material: '70% Viscose, 30% Silk',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-4',
@@ -55,6 +58,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Navy', 'Charcoal'],
     material: '80% Wool, 20% Nylon',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-5',
@@ -67,6 +71,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Ivory', 'Taupe'],
     material: '55% Acrylic, 45% Cotton',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-6',
@@ -79,6 +84,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Brown Plaid', 'Grey Plaid'],
     material: '65% Polyester, 35% Wool',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-7',
@@ -91,6 +97,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Wine', 'Olive'],
     material: '100% Cotton',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-8',
@@ -103,6 +110,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Burgundy Floral', 'Navy Floral'],
     material: '100% Polyester',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-10',
@@ -115,6 +123,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Brown Tweed', 'Grey Tweed'],
     material: '70% Wool, 30% Acrylic',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-11',
@@ -127,6 +136,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Cream', 'Mocha'],
     material: '70% Cashmere, 30% Silk',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
   {
     id: 'Autumn-12',
@@ -139,6 +149,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Terracotta', 'Forest'],
     material: '95% Viscose, 5% Elastane',
     brand: 'Autumn Collection',
+    shopUrl: '',
   },
 
   // Badminton Collection
@@ -153,6 +164,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['White', 'Navy', 'Red'],
     material: '100% Polyester Performance Fabric',
     brand: 'Badminton Sport',
+    shopUrl: '',
   },
   {
     id: 'Badminton-2',
@@ -165,6 +177,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['White', 'Black', 'Navy'],
     material: '85% Polyester, 15% Spandex',
     brand: 'Badminton Sport',
+    shopUrl: '',
   },
   {
     id: 'Badminton-3',
@@ -177,6 +190,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['White', 'Light Blue', 'Pink'],
     material: '90% Polyester, 10% Elastane',
     brand: 'Badminton Sport',
+    shopUrl: '',
   },
   {
     id: 'Badminton-4',
@@ -189,6 +203,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Navy', 'Black', 'Royal Blue'],
     material: '88% Polyester, 12% Spandex',
     brand: 'Badminton Sport',
+    shopUrl: '',
   },
   {
     id: 'Badminton-5',
@@ -201,6 +216,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Navy', 'Black', 'Grey'],
     material: '100% Polyester',
     brand: 'Badminton Sport',
+    shopUrl: '',
   },
 
   // Burghley Collection
@@ -215,6 +231,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Navy', 'Forest Green'],
     material: '70% Cotton, 30% Polyester',
     brand: 'Burghley Collection',
+    shopUrl: '',
   },
   {
     id: 'Burghley-2',
@@ -227,6 +244,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Khaki', 'Brown'],
     material: '80% Wool, 20% Cotton',
     brand: 'Burghley Collection',
+    shopUrl: '',
   },
   {
     id: 'Burghley-3',
@@ -239,6 +257,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     colors: ['Navy', 'Burgundy'],
     material: '100% Wool',
     brand: 'Burghley Collection',
+    shopUrl: '',
   },
 
   // Game Fair Collection
@@ -250,6 +269,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 179.00,
     description: 'Classic country attire perfect for game fairs and outdoor events. Durable and stylish for all-day comfort.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameFair-2',
@@ -259,6 +279,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 159.00,
     description: 'Traditional countryside ensemble with modern practicality. Ideal for field sports enthusiasts.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameFair-3',
@@ -268,6 +289,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 189.00,
     description: 'Premium game fair outfit combining heritage style with contemporary design. Perfect for country pursuits.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameFair-4',
@@ -277,6 +299,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 145.00,
     description: 'Versatile country wear suitable for game fairs and outdoor activities. Practical yet elegant.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameFair-5',
@@ -286,6 +309,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 169.00,
     description: 'Sophisticated outdoor ensemble for country events. Weather-appropriate and fashionable.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameFair-6',
@@ -306,6 +330,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 219.00,
     description: 'Professional game shooting attire with functional design. Built for comfort during long days in the field.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameShooting-2',
@@ -315,6 +340,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 199.00,
     description: 'Traditional shooting outfit with practical features. Designed for serious sportsmen and sportswomen.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameShooting-3',
@@ -324,6 +350,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 235.00,
     description: 'Premium shooting ensemble combining style and functionality. Perfect for driven game shooting.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'GameShooting-4',
@@ -344,6 +371,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 165.00,
     description: 'Vintage-inspired ensemble perfect for Goodwood events. Combines retro elegance with modern comfort.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Goodwood-2',
@@ -353,6 +381,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 185.00,
     description: 'Classic racing attire with a nod to motorsport heritage. Stylish and sophisticated for trackside viewing.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Goodwood-3',
@@ -362,6 +391,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 149.00,
     description: 'Timeless Goodwood outfit capturing the spirit of vintage racing. Elegant and event-appropriate.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Goodwood-4',
@@ -382,6 +412,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 79.00,
     description: 'Contemporary everyday outfit with versatile styling. Perfect for modern casual wear.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Next-2',
@@ -391,6 +422,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 89.00,
     description: 'Stylish and practical ensemble for everyday occasions. Comfortable and fashion-forward.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Next-3',
@@ -400,6 +432,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 95.00,
     description: 'Modern casual outfit with on-trend details. Effortlessly chic for day-to-day wear.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Next-4',
@@ -409,6 +442,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 69.00,
     description: 'Classic casual ensemble with contemporary appeal. Great value for everyday style.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Next-5',
@@ -429,6 +463,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 139.00,
     description: 'Elegant race day ensemble with sophisticated flair. Perfect for enjoying a day at the races in style.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'RaceDay-2',
@@ -438,6 +473,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 155.00,
     description: 'Chic and polished race day outfit. Designed to turn heads in the members enclosure.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'RaceDay-3',
@@ -447,6 +483,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 145.00,
     description: 'Classic racing attire with modern touches. Timeless elegance for racecourse occasions.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'RaceDay-4',
@@ -467,6 +504,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 225.00,
     description: 'Exquisite Royal Ascot ensemble meeting dress code requirements. Elegant and sophisticated for the royal enclosure.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'RoyalAscot-2',
@@ -476,6 +514,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 249.00,
     description: 'Luxurious Royal Ascot outfit with impeccable tailoring. Perfect for making a statement at this prestigious event.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'RoyalAscot-3',
@@ -485,6 +524,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 215.00,
     description: 'Refined Royal Ascot attire with graceful silhouette. Designed to impress in the most formal racing environment.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'RoyalAscot-4',
@@ -494,6 +534,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 235.00,
     description: 'Premium Royal Ascot ensemble with elegant detailing. Suitable for the most discerning racegoer.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'RoyalAscot-5',
@@ -514,6 +555,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 189.00,
     description: 'Premium outdoor clothing with superior craftsmanship. Designed for country living and outdoor adventures.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-2',
@@ -523,6 +565,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 205.00,
     description: 'Technical outdoor outfit combining style and performance. Weather-resistant and exceptionally comfortable.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-3',
@@ -532,6 +575,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 179.00,
     description: 'Classic country attire with functional features. Perfect for walks and rural activities.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-4',
@@ -541,6 +585,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 219.00,
     description: 'Luxury outdoor ensemble with exceptional quality. Durable and stylish for countryside pursuits.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-5',
@@ -550,6 +595,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 195.00,
     description: 'Versatile country outfit with practical design. Ideal for outdoor enthusiasts seeking quality and style.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-6',
@@ -559,6 +605,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 169.00,
     description: 'Comfortable outdoor attire with timeless appeal. Perfect for country walks and field sports.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-7',
@@ -568,6 +615,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 209.00,
     description: 'High-performance outdoor ensemble with refined styling. Built to withstand the elements in comfort.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-8',
@@ -577,6 +625,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 185.00,
     description: 'Traditional country outfit with modern technical features. Sophisticated and functional.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Schoffel-9',
@@ -597,6 +646,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 129.00,
     description: 'Alpine-inspired motorsport outfit with team colors. Perfect for Formula 1 fans at Silverstone.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Silverstone-AstonMartin',
@@ -606,6 +656,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 149.00,
     description: 'Aston Martin team-inspired ensemble with sophisticated racing style. Show your team support in style.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Silverstone-Ferrari',
@@ -615,6 +666,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 159.00,
     description: 'Ferrari-inspired outfit in iconic team colors. Perfect for passionate Tifosi at the British Grand Prix.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Silverstone-Mclaren',
@@ -624,6 +676,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 139.00,
     description: 'McLaren team-inspired attire with vibrant papaya orange. Celebrate British racing heritage.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Silverstone-Mercedes',
@@ -633,6 +686,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 145.00,
     description: 'Mercedes-inspired motorsport outfit in silver and black. Sleek and professional racing style.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Silverstone-RedBull',
@@ -642,6 +696,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 155.00,
     description: 'Red Bull Racing-inspired ensemble with bold team colors. Dynamic style for championship supporters.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Silverstone-Williams',
@@ -662,6 +717,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 119.00,
     description: 'Classic Wimbledon outfit in traditional tennis whites. Elegant and appropriate for Centre Court viewing.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Wimbledon-2',
@@ -671,6 +727,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 135.00,
     description: 'Sophisticated Wimbledon ensemble with tennis-inspired details. Perfect for the prestigious tennis tournament.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Wimbledon-3',
@@ -680,6 +737,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 125.00,
     description: 'Timeless Wimbledon attire capturing the spirit of tennis tradition. Refined and sport-appropriate.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Wimbledon-4',
@@ -689,6 +747,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 149.00,
     description: 'Premium Wimbledon outfit with polished styling. Ideal for enjoying tennis at the All England Club.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Wimbledon-5',
@@ -698,6 +757,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 139.00,
     description: 'Elegant Wimbledon ensemble with classic appeal. Smart casual style for the championships.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   },
   {
     id: 'Wimbledon-6',
@@ -707,6 +767,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     price: 129.00,
     description: 'Chic Wimbledon outfit perfect for summer tennis. Comfortable and stylish for all-day viewing.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    shopUrl: '',
   }
   //   // 30 Brands in 30 days Collection
   // {    id: 'Burberry',
