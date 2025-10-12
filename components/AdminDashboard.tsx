@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { WardrobeItem } from '../types';
 import OutfitForm from './OutfitForm';
+import AdminTryOn from './AdminTryOn';
 
 interface AdminDashboardProps {
   onLogout: () => void;
@@ -14,6 +15,7 @@ interface AdminDashboardProps {
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isTryOnOpen, setIsTryOnOpen] = useState(false);
   const [editingOutfit, setEditingOutfit] = useState<WardrobeItem | undefined>(undefined);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterFolder, setFilterFolder] = useState<string>('All');
@@ -101,6 +103,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
     return matchesSearch && matchesFolder;
   });
 
+  if (isTryOnOpen) {
+    return <AdminTryOn onBack={() => setIsTryOnOpen(false)} />;
+  }
+
   if (isFormOpen) {
     return (
       <div className="min-h-screen bg-gray-50 py-8 px-4">
@@ -146,6 +152,16 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                 className="px-4 py-2 bg-gray-900 text-white rounded-md font-medium hover:bg-gray-800 transition-colors"
               >
                 + Add New Outfit
+              </button>
+              <button
+                onClick={() => setIsTryOnOpen(true)}
+                className="px-4 py-2 bg-purple-600 text-white rounded-md font-medium hover:bg-purple-700 transition-colors flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Unlimited Try-On
               </button>
               <button
                 onClick={handleExportJSON}
