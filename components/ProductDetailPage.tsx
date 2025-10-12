@@ -89,14 +89,47 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                 ))}
               </div>
             )}
+
+            {/* Virtual Try-On Button - Mobile */}
+            <div className="lg:hidden">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => onTryOnClick(product)}
+                className="w-full bg-gray-900 text-white py-4 px-6 rounded-md font-semibold text-base hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Virtual Try-On
+              </motion.button>
+            </div>
           </div>
 
           {/* Product Info */}
           <div className="flex flex-col">
+            <h1 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-4">
+              {product.name}
+            </h1>
+
+            {/* Virtual Try-On Button - Desktop */}
+            <div className="hidden lg:block mb-6">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => onTryOnClick(product)}
+                className="w-full bg-gray-900 text-white py-4 px-6 rounded-md font-semibold text-base hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Virtual Try-On
+              </motion.button>
+            </div>
+
             <div className="flex-1">
-              <h1 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-4">
-                {product.name}
-              </h1>
 
               {product.description && (
                 <div className="mb-8">
@@ -138,29 +171,6 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                   </div>
                 </div>
               )}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="space-y-3 mt-8">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => onTryOnClick(product)}
-                className="w-full bg-gray-900 text-white py-4 px-6 rounded-md font-semibold text-base hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                Virtual Try-On
-              </motion.button>
-            </div>
-
-            {/* Info Banner */}
-            <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-md">
-              <p className="text-sm text-blue-900">
-                <span className="font-semibold">Try before you buy!</span> Use my Virtual Try-On tool to see how this looks on you.
-              </p>
             </div>
           </div>
         </div>
