@@ -7,16 +7,18 @@ import React, { useState, useEffect } from 'react';
 import { WardrobeItem } from '../types';
 import OutfitForm from './OutfitForm';
 import AdminTryOn from './AdminTryOn';
+import AnalyticsDashboard from './AnalyticsDashboard';
 
 interface AdminDashboardProps {
   onLogout: () => void;
   products: WardrobeItem[];
 }
 
+type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'form';
+
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) => {
   const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isTryOnOpen, setIsTryOnOpen] = useState(false);
+  const [currentView, setCurrentView] = useState<AdminView>('dashboard');
   const [editingOutfit, setEditingOutfit] = useState<WardrobeItem | undefined>(undefined);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterFolder, setFilterFolder] = useState<string>('All');
@@ -48,13 +50,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) =
       // Add new
       saveOutfits([...outfits, outfit]);
     }
-    setIsFormOpen(false);
+    setCurrentView('dashboard');
     setEditingOutfit(undefined);
   };
 
   const handleEditOutfit = (outfit: WardrobeItem) => {
     setEditingOutfit(outfit);
-    setIsFormOpen(true);
+    setCurrentView('form');
   };
 
   const handleDeleteOutfit = (id: string) => {
@@ -118,18 +120,60 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) =
     return matchesSearch && matchesFolder;
   });
 
-  if (isTryOnOpen) {
-    return <AdminTryOn onBack={() => setIsTryOnOpen(false)} products={products} />;
+  // Render views based on currentView
+  if (currentView === 'tryon') {
+    return <AdminTryOn onBack={() => setCurrentView('dashboard')} products={products} />;
   }
 
-  if (isFormOpen) {
+  if (currentView === 'analytics') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Header with Back Button */}
+        <div className="bg-white border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-between">
+              <button
+                onClick={() => setCurrentView('dashboard')}
+                className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Dashboard
+              </button>
+              <div className="flex items-center gap-2">
+                <a
+                  href="/"
+                  className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                  Home
+                </a>
+                <button
+                  onClick={onLogout}
+                  className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <AnalyticsDashboard />
+      </div>
+    );
+  }
+
+  if (currentView === 'form') {
     return (
       <div className="min-h-screen bg-gray-50 py-8 px-4">
         <OutfitForm
           outfit={editingOutfit}
           onSave={handleSaveOutfit}
           onCancel={() => {
-            setIsFormOpen(false);
+            setCurrentView('dashboard');
             setEditingOutfit(undefined);
           }}
         />
@@ -174,13 +218,22 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) =
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <div className="flex gap-2 flex-wrap">
               <button
-                onClick={() => setIsFormOpen(true)}
+                onClick={() => setCurrentView('form')}
                 className="px-4 py-2 bg-gray-900 text-white rounded-md font-medium hover:bg-gray-800 transition-colors"
               >
                 + Add New Outfit
               </button>
               <button
-                onClick={() => setIsTryOnOpen(true)}
+                onClick={() => setCurrentView('analytics')}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                Analytics
+              </button>
+              <button
+                onClick={() => setCurrentView('tryon')}
                 className="px-4 py-2 bg-purple-600 text-white rounded-md font-medium hover:bg-purple-700 transition-colors flex items-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
