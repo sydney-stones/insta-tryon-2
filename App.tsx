@@ -11,6 +11,7 @@ import ProductDetailPage from './components/ProductDetailPage';
 import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
+import BrandWaitlistPage from './components/BrandWaitlistPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -82,6 +83,10 @@ const App: React.FC = () => {
                   <Route
                     path="/waitlist"
                     element={<WaitlistPage />}
+                  />
+                  <Route
+                    path="/brand-waitlist"
+                    element={<BrandWaitlistPage />}
                   />
                 </Routes>
 

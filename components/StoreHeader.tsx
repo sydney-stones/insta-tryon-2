@@ -20,10 +20,17 @@ const StoreHeader: React.FC = () => {
             </h1>
           </Link>
 
-          <nav className="flex items-center gap-6">
+          <nav className="flex items-center gap-4 sm:gap-6">
+            <Link
+              to="/brand-waitlist"
+              className="relative px-3 py-1.5 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all shadow-sm hover:shadow-md"
+            >
+              For Brands
+            </Link>
+
             <Link
               to="/waitlist"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors hidden sm:block"
             >
               Create your own wardrobe
             </Link>

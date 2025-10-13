@@ -12,6 +12,7 @@ import { UploadCloudIcon } from './icons';
 import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
 import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage } from '../lib/tryOnLimit';
+import { logTryOnEvent } from '../lib/tryOnAnalytics';
 
 interface VirtualTryOnModalProps {
   isOpen: boolean;
@@ -93,6 +94,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
             incrementTryOnUsage();
             setRemainingTries(getRemainingTryOns());
           }
+
+          // Log analytics for successful try-on
+          logTryOnEvent(product.id, product.name);
 
           setStep('result');
         }
