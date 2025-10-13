@@ -22,7 +22,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
 
   // Sort products by most recent first (reverse order of array)
   const sortedProducts = useMemo(() => {
-    return [...products];
+    return [...products].reverse();
   }, [products]);
 
   const filteredProducts = useMemo(() => {
