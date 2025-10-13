@@ -10,7 +10,7 @@ export const defaultWardrobe: WardrobeItem[] = [
   // Autumn Collection
   {
     id: 'Autumn-2',
-    name: 'Autumn Leather Jacket',
+    name: 'Autumn Leather',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn2.png',
     secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Autumn2.png',
     folder: 'Autumn',
@@ -65,7 +65,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     ]
   },
   {
-    id: 'Holland Cooper',
+    id: 'Hollandcooper',
     name: 'Holland Cooper',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Hollandcooper.png',
     secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Hollandcooper.png',
