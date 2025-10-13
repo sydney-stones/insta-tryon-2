@@ -16,9 +16,9 @@ const StoreHeader: React.FC = () => {
         <div className="flex items-center justify-between h-16 relative">
           {/* Left Side - Instagram */}
           <div className="flex items-center gap-4">
-             <h4 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+             <h7 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
               @siennastones Wardrobe
-            </h4>
+            </h7>
             <a
               href="https://www.instagram.com/siennastones/"
               target="_blank"
