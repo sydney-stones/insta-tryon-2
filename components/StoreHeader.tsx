@@ -17,7 +17,7 @@ const StoreHeader: React.FC = () => {
           {/* Left Side - Instagram */}
           <div className="flex items-center gap-4">
              <h7 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-              @siennastones Wardrobe
+              @siennastones
             </h7>
             <a
               href="https://www.instagram.com/siennastones/"
