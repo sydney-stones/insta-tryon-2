@@ -131,44 +131,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     ]
   },
   {
-    id: 'Ken Hunt',
-    name: 'Ken Hunt',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Kenhunt.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Kenhunt.png',
-    folder: '30Brands',
-    price: 0,
-    description: '',
-    collection: '30Brands',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Bracelet',
-        price: 480,
-        shopUrl: 'https://go.shopmy.us/p-26523842'
-      },
-      {
-        name: 'Vest',
-        price: 645,
-        shopUrl: 'https://go.shopmy.us/p-26523858'
-      },
-      {
-        name: 'Skirt',
-        price: 750,
-        shopUrl: 'https://go.shopmy.us/p-26523874'
-      },
-      {
-        name: 'Wellies',
-        price: 130,
-        shopUrl: 'https://go.shopmy.us/p-26523906'
-      },
-      {
-        name: 'Sweater',
-        price: 495,
-        shopUrl: 'https://go.shopmy.us/p-26524056'
-      }
-    ]
-  },
-  {
     id: 'Hunter',
     name: 'Hunter',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Hunter.png',
