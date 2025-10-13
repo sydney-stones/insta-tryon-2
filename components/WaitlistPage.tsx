@@ -21,10 +21,10 @@ const WaitlistPage: React.FC = () => {
             Turn Your Style Into Sales
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-4">
-            The Virtual Try-On Platform Built for Fashion Influencers
+            Calling all fashion creators - want to boost your affiliate revenue by 3x?
           </p>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Let your followers see themselves in your outfits before they buy. Watch your affiliate commissions soar.
+            This virutal try on platform seemlessly integrates with LikeToKnow.it, ShopMy, and all major affiliate platforms
           </p>
         </motion.div>
       </div>

@@ -65,39 +65,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     ]
   },
   {
-    id: 'Hollandcooper',
-    name: 'Holland Cooper',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Hollandcooper.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Hollandcooper.png',
-    folder: '30Brands',
-    price: 0,
-    description: '',
-    collection: '30Brands',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Wellies',
-        price: 149,
-        shopUrl: 'https://go.shopmy.us/p-26369466'
-      },
-      {
-        name: 'Blazer',
-        price: 449,
-        shopUrl: 'https://go.shopmy.us/p-26369468'
-      },
-      {
-        name: 'Jeans',
-        price: 99,
-        shopUrl: 'https://go.shopmy.us/p-26369473'
-      },
-      {
-        name: 'Jumper',
-        price: 139,
-        shopUrl: 'https://go.shopmy.us/p-26369475'
-      }
-    ]
-  },
-  {
     id: 'Burberry',
     name: 'Burberry',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Burberry.png',
