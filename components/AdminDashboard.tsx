@@ -64,7 +64,21 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) =
   };
 
   const handleExportJSON = () => {
-    const dataStr = JSON.stringify(outfits, null, 2);
+    // Format the export to match the wardrobe.ts structure
+    const formattedExport = outfits.map((outfit: WardrobeItem) => ({
+      id: outfit.id,
+      name: outfit.name,
+      url: outfit.url,
+      secondaryImageUrl: outfit.secondaryImageUrl,
+      folder: outfit.folder,
+      price: outfit.price,
+      description: outfit.description,
+      collection: outfit.collection,
+      shopUrl: outfit.shopUrl,
+      outfitItems: outfit.outfitItems || []
+    }));
+
+    const dataStr = JSON.stringify(formattedExport, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
     const exportFileDefaultName = 'wardrobe-export.json';
 
