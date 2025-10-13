@@ -199,8 +199,8 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'Mulberry',
     name: 'Mulberry',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Mulberry.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Mulberry.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Mullberry.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Mullberry.png',
     folder: '30Brands',
     price: 0,
     description: '',
@@ -361,8 +361,8 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'Johnstonofelgin',
     name: 'Johnstonofelgin',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Johnstonofelgin.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Johnstonofelgin.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Johnstoneofelgin.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Johnstoneofelgin.png',
     folder: '30Brands',
     price: 0,
     description: '',
@@ -394,8 +394,8 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'Russelandbromley',
     name: 'Russelandbromley',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Russelandbromley.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Russelandbromley.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Russelandbrombley.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Russelandbrombley.png',
     folder: '30Brands',
     price: 0,
     description: '',
