@@ -32,7 +32,7 @@ const StoreHeader: React.FC = () => {
               to="/waitlist"
               className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors hidden sm:block"
             >
-              Create your own wardrobe
+              For Content Creators
             </Link>
 
             <a
