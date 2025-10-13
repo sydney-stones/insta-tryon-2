@@ -67,8 +67,8 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'Holland Cooper',
     name: 'Holland Cooper',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/HollandCooper.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/HollandCooper.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Hollandcooper.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Hollandcooper.png',
     folder: '30Brands',
     price: 0,
     description: '',
@@ -133,8 +133,8 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'Ken Hunt',
     name: 'Ken Hunt',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Ken-Hunt.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Ken-Hunt.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Kenhunt.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Kenhunt.png',
     folder: '30Brands',
     price: 0,
     description: '',
