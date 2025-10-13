@@ -23,9 +23,19 @@ const WaitlistPage: React.FC = () => {
           <p className="text-xl sm:text-2xl text-gray-600 mb-4">
             Calling all fashion creators - want to boost your affiliate revenue by 3x?
           </p>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
             This virutal try on platform seemlessly integrates with LikeToKnow.it, ShopMy, and all major affiliate platforms
           </p>
+          <div className="flex justify-center">
+            <a
+              href="https://tally.so/r/mV2g4g"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 transition-all hover:scale-105 shadow-xl"
+            >
+              Join the Waitlist
+            </a>
+          </div>
         </motion.div>
       </div>
 

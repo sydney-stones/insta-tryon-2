@@ -224,7 +224,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     >
                       <UploadCloudIcon className="w-16 h-16 text-gray-400 mb-4" />
                       <p className="text-lg font-semibold text-gray-700 mb-1">
-                        Upload Your Photo
+                        Upload a Selfie
                       </p>
                       <p className="text-sm text-gray-500">
                         PNG, JPG, or WEBP (MAX. 10MB)
@@ -246,7 +246,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
                     <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
                       <p className="text-sm text-blue-900">
-                        <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. Face the camera directly with a neutral expression for best results.
+                        <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. AI intepretation of how these itmes could look on.
                       </p>
                     </div>
                   </div>
