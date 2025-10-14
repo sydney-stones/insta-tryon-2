@@ -4,6 +4,7 @@
 */
 
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
 import ProductCard from './ProductCard';
 
@@ -14,7 +15,6 @@ interface ProductGridProps {
 
 const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
   const [selectedCollection, setSelectedCollection] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const collectionNames = useMemo(() => {
     return ['All', ...folders.map(f => f.name)];
@@ -33,78 +33,39 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
       filtered = filtered.filter(p => p.folder === selectedCollection);
     }
 
-    // Filter by search query
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase().trim();
-      filtered = filtered.filter(p => {
-        // Search in outfit name
-        if (p.name.toLowerCase().includes(query)) {
-          return true;
-        }
-        // Search in outfit items
-        if (p.outfitItems && p.outfitItems.length > 0) {
-          return p.outfitItems.some(item =>
-            item.name.toLowerCase().includes(query)
-          );
-        }
-        return false;
-      });
-    }
-
     return filtered;
-  }, [sortedProducts, selectedCollection, searchQuery]);
+  }, [sortedProducts, selectedCollection]);
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* Hero Section - Waitlist CTAs */}
       <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-gray-900 text-center">
-            Virtual Try-On
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center mb-4">
+            Virtual Try-On Technology
           </h1>
-          <p className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto">
-            See yourself in my style
+          <p className="text-base sm:text-lg text-gray-600 text-center max-w-2xl mx-auto mb-2">
+            Looking to use virtual try-on technology for your business or content?
+          </p>
+          <p className="text-sm sm:text-base text-gray-500 text-center max-w-2xl mx-auto mb-6">
+            Join our waitlist to get early access and exclusive benefits
           </p>
 
-          {/* Search Bar */}
-          <div className="mt-8 max-w-2xl mx-auto">
-            <div className="relative">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search outfits or items..."
-                className="w-full px-4 py-3 pl-12 pr-4 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-              />
-              <svg
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              )}
-            </div>
+          {/* Waitlist Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+            <Link
+              to="/waitlist"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-lg hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
+            >
+              For Creators
+            </Link>
+
+            <Link
+              to="/brand-waitlist"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
+            >
+              For Brands
+            </Link>
           </div>
         </div>
       </div>
@@ -131,29 +92,18 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
       </div>
 
       {/* Products Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="mb-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="mb-4 sm:mb-6">
           <p className="text-sm text-gray-600">
             {filteredProducts.length} {filteredProducts.length === 1 ? 'outfit' : 'outfits'}
-            {searchQuery && ` matching "${searchQuery}"`}
           </p>
-          {searchQuery && filteredProducts.length === 0 && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="text-sm text-gray-600 hover:text-gray-900 underline"
-            >
-              Clear search
-            </button>
-          )}
         </div>
         {filteredProducts.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500">
-              {searchQuery ? 'No outfits found. Try a different search term.' : 'No outfits available.'}
-            </p>
+            <p className="text-gray-500">No outfits available.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
