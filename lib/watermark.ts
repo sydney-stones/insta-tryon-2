@@ -28,36 +28,36 @@ export const addWatermark = async (imageDataUrl: string): Promise<string> => {
       // Draw original image
       ctx.drawImage(img, 0, 0);
 
-      // Calculate watermark size and position
-      const fontSize = Math.max(14, Math.floor(img.width / 50)); // Responsive font size
-      const padding = Math.floor(fontSize * 0.8);
+      // Calculate watermark size and position (center of image)
+      const fontSize = Math.max(18, Math.floor(img.width / 35)); // Larger, responsive font size
+      const padding = Math.floor(fontSize * 1);
 
       // Set watermark style
-      ctx.font = `${fontSize}px Arial, sans-serif`;
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'bottom';
+      ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
 
       // Measure text
       const watermarkText = 'made with @renderedfits';
       const textMetrics = ctx.measureText(watermarkText);
       const textWidth = textMetrics.width;
-      const textHeight = fontSize * 1.2; // Approximate height
+      const textHeight = fontSize * 1.3;
 
-      // Position at bottom left
-      const x = padding;
-      const y = img.height - padding;
+      // Position at center
+      const x = img.width / 2;
+      const y = img.height / 2;
 
-      // Draw semi-transparent background for better readability
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      // Draw semi-transparent background for better readability (centered)
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
       ctx.fillRect(
-        x - padding / 2,
-        y - textHeight - padding / 2,
-        textWidth + padding,
+        x - textWidth / 2 - padding,
+        y - textHeight / 2 - padding / 2,
+        textWidth + padding * 2,
         textHeight + padding
       );
 
-      // Draw white text
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      // Draw white text (centered)
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
       ctx.fillText(watermarkText, x, y);
 
       // Convert to data URL
