@@ -499,6 +499,44 @@ export const defaultWardrobe: WardrobeItem[] = [
         shopUrl: 'https://go.shopmy.us/p-27590819'
       }
     ]
+  },
+  {
+    id: 'Penhaligons',
+    name: 'Penhaligons',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Penhaligons.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Penhaligons.png',
+    folder: '30Brands',
+    price: 0,
+    description: '',
+    collection: '30Brands',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Jacket',
+        price: 89.99,
+        shopUrl: 'https://go.shopmy.us/p-27590391'
+      },
+      {
+        name: 'Trousers',
+        price: 49.99,
+        shopUrl: 'https://go.shopmy.us/p-27590407'
+      },
+      {
+        name: 'Scarf',
+        price: 270,
+        shopUrl: 'https://go.shopmy.us/p-27590809'
+      },
+      {
+        name: 'Fragrance',
+        price: 245,
+        shopUrl: 'https://go.shopmy.us/p-27590813'
+      },
+      {
+        name: 'Loafers',
+        price: 269,
+        shopUrl: 'https://go.shopmy.us/p-27590819'
+      }
+    ]
   }
   
 ]
