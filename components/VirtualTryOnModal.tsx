@@ -33,6 +33,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
   const [tryOnImageUrl, setTryOnImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [remainingTries, setRemainingTries] = useState(3);
+  const [showPurchasePopup, setShowPurchasePopup] = useState(false);
 
   const handleClose = () => {
     setStep('upload');
@@ -40,6 +41,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
     setModelImageUrl(null);
     setTryOnImageUrl(null);
     setError(null);
+    setShowPurchasePopup(false);
     onClose();
   };
 
@@ -116,6 +118,13 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
           logPersistentTryOnEvent(product.id, product.name);
 
           setStep('result');
+
+          // Show purchase popup after 2 seconds for demo product
+          if (product.folder === 'Demo') {
+            setTimeout(() => {
+              setShowPurchasePopup(true);
+            }, 2000);
+          }
         }
       } catch (err) {
         setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
@@ -137,7 +146,52 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
     navigate('/');
   };
 
+  const handleUseSavedModel = async () => {
+    const savedModel = getSavedModel();
+    if (!savedModel || !product) return;
+
+    setStep('generating-tryon');
+    setModelImageUrl(savedModel);
+
+    try {
+      // Convert product URL to File
+      const response = await fetch(product.url);
+      const blob = await response.blob();
+      const garmentFile = new File([blob], product.name, { type: blob.type });
+
+      const tryOnResult = await generateVirtualTryOnImage(savedModel, garmentFile);
+
+      // Add watermark to the generated image
+      const watermarkedImage = await addWatermark(tryOnResult);
+      setTryOnImageUrl(watermarkedImage);
+
+      // Increment usage count on success (unless unlimited mode)
+      if (!isUnlimited) {
+        incrementTryOnUsage();
+        setRemainingTries(getRemainingTryOns());
+      }
+
+      // Log analytics for successful try-on (both local and persistent)
+      logTryOnEvent(product.id, product.name);
+      logPersistentTryOnEvent(product.id, product.name);
+
+      setStep('result');
+
+      // Show purchase popup after 2 seconds for demo product
+      if (product.folder === 'Demo') {
+        setTimeout(() => {
+          setShowPurchasePopup(true);
+        }, 2000);
+      }
+    } catch (err) {
+      setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
+      setStep('upload');
+    }
+  };
+
   if (!isOpen) return null;
+
+  const savedModelExists = getSavedModel() !== null;
 
   return (
     <AnimatePresence>
@@ -229,7 +283,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       Try On {product?.name}
                     </h2>
                     <p className="text-gray-600">
-                      Upload a selfie to see how this item looks on you
+                      {savedModelExists ? 'Use your existing model or upload a new photo' : 'Upload a selfie to see how this item looks on you'}
                     </p>
                     {!isUnlimited && (
                       <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-full">
@@ -243,14 +297,55 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     )}
                   </div>
 
-                  <div className="max-w-md mx-auto">
+                  <div className="max-w-md mx-auto space-y-4">
+                    {/* Use Saved Model Button */}
+                    {savedModelExists && (
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={handleUseSavedModel}
+                        className="w-full p-6 bg-gradient-to-r from-indigo-50 to-purple-50 border-2 border-indigo-300 rounded-lg hover:border-indigo-400 transition-colors group"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="flex-shrink-0 w-16 h-16 bg-indigo-600 rounded-lg flex items-center justify-center">
+                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1 text-left">
+                            <p className="text-lg font-semibold text-gray-900 mb-1">
+                              Use Your Saved Model
+                            </p>
+                            <p className="text-sm text-gray-600">
+                              Skip the upload and try on instantly
+                            </p>
+                          </div>
+                          <svg className="w-6 h-6 text-indigo-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </motion.button>
+                    )}
+
+                    {savedModelExists && (
+                      <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                          <div className="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div className="relative flex justify-center text-sm">
+                          <span className="px-2 bg-white text-gray-500">or</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Upload New Photo */}
                     <label
                       htmlFor="tryon-upload"
                       className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
                     >
                       <UploadCloudIcon className="w-16 h-16 text-gray-400 mb-4" />
                       <p className="text-lg font-semibold text-gray-700 mb-1">
-                        Upload a Selfie
+                        {savedModelExists ? 'Upload New Photo' : 'Upload a Selfie'}
                       </p>
                       <p className="text-sm text-gray-500">
                         PNG, JPG, or WEBP (MAX. 10MB)
@@ -270,7 +365,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       </div>
                     )}
 
-                    <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
+                    <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg">
                       <p className="text-sm text-blue-900">
                         <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. AI intepretation of how these itmes could look on.
                       </p>
@@ -456,6 +551,73 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
             </AnimatePresence>
           </div>
         </motion.div>
+
+        {/* Purchase Popup (for Demo Product) */}
+        <AnimatePresence>
+          {showPurchasePopup && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="absolute inset-0 flex items-center justify-center p-4 z-10"
+              onClick={() => setShowPurchasePopup(false)}
+            >
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+              <motion.div
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+                onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                className="relative bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl"
+              >
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    Love the Look?
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Ready to add <strong>{product?.name}</strong> to your wardrobe? This virtual try-on experience can be yours!
+                  </p>
+                  <div className="space-y-3">
+                    {product?.outfitItems && product.outfitItems.length > 0 && (
+                      <>
+                        <p className="text-sm font-semibold text-gray-900 mb-2">Shop Individual Items:</p>
+                        <div className="space-y-2 mb-4">
+                          {product.outfitItems.slice(0, 2).map((item: { name: string; price?: number; shopUrl?: string }, index: number) => (
+                            <a
+                              key={index}
+                              href={item.shopUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                            >
+                              Shop {item.name} - £{item.price?.toFixed(2)}
+                            </a>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                    <button
+                      onClick={() => setShowPurchasePopup(false)}
+                      className="block w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                    >
+                      Maybe Later
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-4">
+                    This is a demo. Want this tech for your store?{' '}
+                    <a href="/brand-waitlist" className="text-indigo-600 underline hover:text-indigo-800">
+                      Learn more
+                    </a>
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </AnimatePresence>
   );

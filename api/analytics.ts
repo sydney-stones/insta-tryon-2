@@ -4,19 +4,17 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { kv } from '@vercel/kv';
 
-// Simple in-memory storage for demo (will reset on each deployment)
-// For production, you'd use Vercel KV, Upstash Redis, or a database
-let analyticsData: {
-  events: Array<{
-    timestamp: number;
-    outfitId: string;
-    outfitName: string;
-    date: string;
-  }>;
-} = {
-  events: []
-};
+const ANALYTICS_KEY = 'analytics:events';
+
+// Type for analytics event
+interface AnalyticsEvent {
+  timestamp: number;
+  outfitId: string;
+  outfitName: string;
+  date: string;
+}
 
 export default async function handler(
   req: VercelRequest,
@@ -42,19 +40,26 @@ export default async function handler(
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
-      const event = {
+      const event: AnalyticsEvent = {
         timestamp: Date.now(),
         outfitId,
         outfitName,
         date: new Date().toISOString().split('T')[0]
       };
 
-      analyticsData.events.push(event);
+      // Get existing events from KV
+      const existingEvents = await kv.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
 
-      // Keep only last 10000 events to prevent memory issues
-      if (analyticsData.events.length > 10000) {
-        analyticsData.events = analyticsData.events.slice(-10000);
+      // Add new event
+      existingEvents.push(event);
+
+      // Keep only last 10000 events to prevent storage issues
+      if (existingEvents.length > 10000) {
+        existingEvents.splice(0, existingEvents.length - 10000);
       }
+
+      // Save back to KV
+      await kv.set(ANALYTICS_KEY, existingEvents);
 
       return res.status(200).json({ success: true });
     } catch (error) {
@@ -66,13 +71,16 @@ export default async function handler(
   if (req.method === 'GET') {
     // Get analytics data
     try {
+      // Get events from KV
+      const events = await kv.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
+
       // Calculate summary
-      const totalTryOns = analyticsData.events.length;
+      const totalTryOns = events.length;
 
       // Group by outfit
       const outfitMap = new Map<string, { outfitId: string; outfitName: string; tryOnCount: number; lastTryOn: number }>();
 
-      analyticsData.events.forEach(event => {
+      events.forEach((event: AnalyticsEvent) => {
         const existing = outfitMap.get(event.outfitId);
         if (existing) {
           existing.tryOnCount++;
@@ -93,12 +101,12 @@ export default async function handler(
 
       // Try-ons by date
       const tryOnsByDate: Record<string, number> = {};
-      analyticsData.events.forEach(event => {
+      events.forEach((event: AnalyticsEvent) => {
         tryOnsByDate[event.date] = (tryOnsByDate[event.date] || 0) + 1;
       });
 
       // Recent events
-      const recentEvents = analyticsData.events.slice(-20).reverse();
+      const recentEvents = events.slice(-20).reverse();
 
       return res.status(200).json({
         totalTryOns,

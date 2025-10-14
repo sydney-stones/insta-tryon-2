@@ -7,6 +7,7 @@ import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion } from 'framer-motion';
+import { getSavedModel } from '../lib/tryOnLimit';
 
 interface ProductDetailPageProps {
   products: WardrobeItem[];
@@ -17,6 +18,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const savedModel = getSavedModel();
 
   const productImages = useMemo(() => {
     if (!product) return [];
@@ -24,8 +26,12 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
     if (product.secondaryImageUrl) {
       images.push(product.secondaryImageUrl);
     }
+    // Add saved model as 3rd image if it exists
+    if (savedModel) {
+      images.push(savedModel);
+    }
     return images;
-  }, [product]);
+  }, [product, savedModel]);
 
   if (!product) {
     return (
@@ -66,6 +72,19 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                 alt={product.name}
                 className="h-full w-full object-cover"
               />
+              {/* "Try on this look" button overlay if viewing saved model */}
+              {savedModel && selectedImageIndex === productImages.length - 1 && (
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => onTryOnClick(product)}
+                    className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg shadow-xl"
+                  >
+                    Try on this look
+                  </motion.button>
+                </div>
+              )}
             </div>
             {/* Image Thumbnails */}
             {productImages.length > 1 && (
@@ -85,6 +104,12 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                       alt={`${product.name} view ${index + 1}`}
                       className="h-full w-full object-cover"
                     />
+                    {/* Label for model image thumbnail */}
+                    {savedModel && index === productImages.length - 1 && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
+                        <span className="text-white text-xs font-semibold">You</span>
+                      </div>
+                    )}
                   </button>
                 ))}
               </div>
