@@ -11,8 +11,9 @@ import { generateModelImage, generateVirtualTryOnImage } from '../services/gemin
 import { UploadCloudIcon } from './icons';
 import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
-import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage } from '../lib/tryOnLimit';
+import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage, saveGeneratedModel, getSavedModel } from '../lib/tryOnLimit';
 import { logTryOnEvent } from '../lib/tryOnAnalytics';
+import { logPersistentTryOnEvent } from '../lib/persistentAnalytics';
 import { addWatermark } from '../lib/watermark';
 
 interface VirtualTryOnModalProps {
@@ -70,8 +71,19 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       setStep('generating-model');
 
       try {
-        // Step 1: Generate model from user's selfie
-        const generatedModel = await generateModelImage(file);
+        // Step 1: Check if we have a saved model from today, otherwise generate new one
+        let generatedModel = getSavedModel();
+
+        if (!generatedModel) {
+          // Generate new model from user's selfie
+          generatedModel = await generateModelImage(file);
+
+          // Save the model for reuse (unless unlimited mode)
+          if (!isUnlimited) {
+            saveGeneratedModel(generatedModel);
+          }
+        }
+
         setModelImageUrl(generatedModel);
 
         // Show model-ready step with the generated model
@@ -99,8 +111,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
             setRemainingTries(getRemainingTryOns());
           }
 
-          // Log analytics for successful try-on
+          // Log analytics for successful try-on (both local and persistent)
           logTryOnEvent(product.id, product.name);
+          logPersistentTryOnEvent(product.id, product.name);
 
           setStep('result');
         }
@@ -173,14 +186,23 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       </svg>
                     </div>
                     <h2 className="text-3xl font-serif font-bold text-gray-900 mb-3">
-                      Daily Limit Reached
+                      <strong>Out of tries for today!</strong>
                     </h2>
-                    <p className="text-gray-600 mb-6">
-                      You've used all 3 free try-ons for today. Come back tomorrow for more!
+                    <p className="text-gray-600 mb-4">
+                      Come back tomorrow for your next 2 FREE try-ons
                     </p>
-                    <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg mb-6">
-                      <p className="text-sm text-blue-900">
-                        Your limit will reset at midnight. Check back tomorrow to try on more outfits!
+                    <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg mb-6">
+                      <p className="text-sm text-gray-800">
+                        Follow{' '}
+                        <a
+                          href="https://www.instagram.com/renderedfits"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-purple-600 hover:text-purple-800 underline"
+                        >
+                          @renderedfits
+                        </a>
+                        {' '}for updates
                       </p>
                     </div>
                     <button

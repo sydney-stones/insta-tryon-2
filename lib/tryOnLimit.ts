@@ -4,7 +4,8 @@
 */
 
 const STORAGE_KEY = 'virtualTryOnUsage';
-const DAILY_LIMIT = 3;
+const MODEL_STORAGE_KEY = 'userGeneratedModel';
+const DAILY_LIMIT = 2;
 
 interface TryOnUsage {
   date: string; // Format: YYYY-MM-DD
@@ -99,4 +100,51 @@ export const hasReachedLimit = (): boolean => {
  */
 export const resetUsage = (): void => {
   localStorage.removeItem(STORAGE_KEY);
+};
+
+/**
+ * Save the generated model for reuse
+ */
+export const saveGeneratedModel = (modelImageUrl: string): void => {
+  try {
+    const data = {
+      modelImageUrl,
+      date: getTodayDate(),
+      timestamp: Date.now()
+    };
+    localStorage.setItem(MODEL_STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {
+    console.error('Error saving generated model:', e);
+  }
+};
+
+/**
+ * Get the saved model if it exists and is from today
+ */
+export const getSavedModel = (): string | null => {
+  try {
+    const stored = localStorage.getItem(MODEL_STORAGE_KEY);
+    if (stored) {
+      const data = JSON.parse(stored);
+      const today = getTodayDate();
+
+      // Only return the model if it's from today
+      if (data.date === today) {
+        return data.modelImageUrl;
+      } else {
+        // Clear old model
+        localStorage.removeItem(MODEL_STORAGE_KEY);
+      }
+    }
+  } catch (e) {
+    console.error('Error reading saved model:', e);
+  }
+  return null;
+};
+
+/**
+ * Clear saved model
+ */
+export const clearSavedModel = (): void => {
+  localStorage.removeItem(MODEL_STORAGE_KEY);
 };

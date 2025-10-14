@@ -61,10 +61,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center mb-4">
-            Virtual Try-On Technology
+            Virtual Try Before You Buy
           </h1>
           <p className="text-base sm:text-lg text-gray-600 text-center max-w-2xl mx-auto mb-2">
-            Looking to use virtual try-on technology for your business or content?
+            Looking to use AI try-on technology for your business or content?
           </p>
           <p className="text-sm sm:text-base text-gray-500 text-center max-w-2xl mx-auto mb-6">
             Join our waitlist to get early access and exclusive benefits

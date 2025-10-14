@@ -23,7 +23,7 @@ const StoreHeader: React.FC<StoreHeaderProps> = ({ searchQuery = '', setSearchQu
           {/* Left Side - Instagram */}
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <a
-              href="https://www.instagram.com/siennastones/"
+              href="https://www.instagram.com/renderedfits/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-1 sm:p-2 text-gray-600 hover:text-gray-900 transition-colors"
