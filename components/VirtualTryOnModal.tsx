@@ -13,6 +13,7 @@ import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
 import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage } from '../lib/tryOnLimit';
 import { logTryOnEvent } from '../lib/tryOnAnalytics';
+import { addWatermark } from '../lib/watermark';
 
 interface VirtualTryOnModalProps {
   isOpen: boolean;
@@ -87,7 +88,10 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
           const garmentFile = new File([blob], product.name, { type: blob.type });
 
           const tryOnResult = await generateVirtualTryOnImage(generatedModel, garmentFile);
-          setTryOnImageUrl(tryOnResult);
+
+          // Add watermark to the generated image
+          const watermarkedImage = await addWatermark(tryOnResult);
+          setTryOnImageUrl(watermarkedImage);
 
           // Increment usage count on success (unless unlimited mode)
           if (!isUnlimited) {
