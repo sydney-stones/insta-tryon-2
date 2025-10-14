@@ -11,9 +11,10 @@ import ProductCard from './ProductCard';
 interface ProductGridProps {
   products: WardrobeItem[];
   folders: WardrobeFolder[];
+  searchQuery?: string;
 }
 
-const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
+const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuery = '' }) => {
   const [selectedCollection, setSelectedCollection] = useState<string>('All');
 
   const collectionNames = useMemo(() => {
@@ -33,8 +34,26 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
       filtered = filtered.filter(p => p.folder === selectedCollection);
     }
 
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      filtered = filtered.filter(p => {
+        // Search in outfit name
+        if (p.name.toLowerCase().includes(query)) {
+          return true;
+        }
+        // Search in outfit items
+        if (p.outfitItems && p.outfitItems.length > 0) {
+          return p.outfitItems.some((item: { name: string }) =>
+            item.name.toLowerCase().includes(query)
+          );
+        }
+        return false;
+      });
+    }
+
     return filtered;
-  }, [sortedProducts, selectedCollection]);
+  }, [sortedProducts, selectedCollection, searchQuery]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -95,7 +114,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         <div className="mb-4 sm:mb-6">
           <p className="text-sm text-gray-600">
-            {filteredProducts.length} {filteredProducts.length === 1 ? 'outfit' : 'outfits'}
+            @siennastones wardrobe - {filteredProducts.length} {filteredProducts.length === 1 ? 'outfit' : 'outfits'}
           </p>
         </div>
         {filteredProducts.length === 0 ? (

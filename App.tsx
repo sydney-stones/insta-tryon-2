@@ -19,6 +19,7 @@ const App: React.FC = () => {
   const [isTryOnModalOpen, setIsTryOnModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<WardrobeItem | null>(null);
   const [wardrobe, setWardrobe] = useState<WardrobeItem[]>(defaultWardrobe);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Load wardrobe from localStorage if available
   useEffect(() => {
@@ -60,7 +61,7 @@ const App: React.FC = () => {
             path="/*"
             element={
               <>
-                <StoreHeader />
+                <StoreHeader searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 <Routes>
                   <Route
                     path="/"
@@ -68,6 +69,7 @@ const App: React.FC = () => {
                       <ProductGrid
                         products={wardrobe}
                         folders={wardrobeFolders}
+                        searchQuery={searchQuery}
                       />
                     }
                   />

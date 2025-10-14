@@ -14,12 +14,13 @@ interface AdminDashboardProps {
   products: WardrobeItem[];
 }
 
-type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'form';
+type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'form' | 'code-viewer';
 
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) => {
   const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
   const [currentView, setCurrentView] = useState<AdminView>('dashboard');
   const [editingOutfit, setEditingOutfit] = useState<WardrobeItem | undefined>(undefined);
+  const [generatedCode, setGeneratedCode] = useState<string>('');
   const [searchTerm, setSearchTerm] = useState('');
   const [filterFolder, setFilterFolder] = useState<string>('All');
 
@@ -41,16 +42,36 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) =
     localStorage.setItem('wardrobeOutfits', JSON.stringify(updatedOutfits));
   };
 
+  const generateCodeForOutfit = (outfit: WardrobeItem): string => {
+    const outfitItemsCode = outfit.outfitItems && outfit.outfitItems.length > 0
+      ? `outfitItems: [
+${outfit.outfitItems.map(item => `      {
+        name: '${item.name}',
+        price: ${item.price || 0},
+        shopUrl: '${item.shopUrl || ''}'
+      }`).join(',\n')}
+    ]`
+      : 'outfitItems: []';
+
+    return `  {
+    id: '${outfit.id}',
+    name: '${outfit.name}',
+    url: '${outfit.url}',
+    secondaryImageUrl: '${outfit.secondaryImageUrl || ''}',
+    folder: '${outfit.folder || ''}',
+    price: ${outfit.price || 0},
+    description: '${outfit.description || ''}',
+    collection: '${outfit.collection || ''}',
+    shopUrl: '${outfit.shopUrl || ''}',
+    ${outfitItemsCode}
+  }`;
+  };
+
   const handleSaveOutfit = (outfit: WardrobeItem) => {
-    if (editingOutfit) {
-      // Update existing
-      const updatedOutfits = outfits.map((o) => (o.id === outfit.id ? outfit : o));
-      saveOutfits(updatedOutfits);
-    } else {
-      // Add new
-      saveOutfits([...outfits, outfit]);
-    }
-    setCurrentView('dashboard');
+    // Generate the code for this outfit
+    const code = generateCodeForOutfit(outfit);
+    setGeneratedCode(code);
+    setCurrentView('code-viewer');
     setEditingOutfit(undefined);
   };
 
@@ -162,6 +183,51 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) =
           </div>
         </div>
         <AnalyticsDashboard />
+      </div>
+    );
+  }
+
+  if (currentView === 'code-viewer') {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Generated Code</h2>
+            <p className="text-gray-600 mb-4">
+              Copy this code and paste it into your <code className="bg-gray-100 px-2 py-1 rounded">wardrobe.ts</code> file in the <code className="bg-gray-100 px-2 py-1 rounded">defaultWardrobe</code> array.
+            </p>
+
+            <div className="relative">
+              <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto text-sm">
+                <code>{generatedCode}</code>
+              </pre>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(generatedCode);
+                  alert('Code copied to clipboard!');
+                }}
+                className="absolute top-4 right-4 px-4 py-2 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors"
+              >
+                Copy Code
+              </button>
+            </div>
+
+            <div className="mt-6 flex gap-3">
+              <button
+                onClick={() => setCurrentView('form')}
+                className="px-6 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
+              >
+                Create Another
+              </button>
+              <button
+                onClick={() => setCurrentView('dashboard')}
+                className="px-6 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors"
+              >
+                Back to Dashboard
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
