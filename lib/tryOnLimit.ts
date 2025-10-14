@@ -5,7 +5,7 @@
 
 const STORAGE_KEY = 'virtualTryOnUsage';
 const MODEL_STORAGE_KEY = 'userGeneratedModel';
-const DAILY_LIMIT = 2;
+const DAILY_LIMIT = 5; // Max try-ons per day
 
 interface TryOnUsage {
   date: string; // Format: YYYY-MM-DD
