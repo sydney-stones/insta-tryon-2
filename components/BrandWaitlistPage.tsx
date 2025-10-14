@@ -39,7 +39,7 @@ const BrandWaitlistPage: React.FC = () => {
               Join the Waitlist
             </a>
             <a
-              href="#how-it-works"
+              href="/demo-product"
               className="inline-block border-2 border-gray-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition-colors"
             >
               See How It Works

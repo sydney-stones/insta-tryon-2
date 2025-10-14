@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StoreHeader from './components/StoreHeader';
 import ProductGrid from './components/ProductGrid';
 import ProductDetailPage from './components/ProductDetailPage';
+import DemoProductPage from './components/DemoProductPage';
 import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
@@ -89,6 +90,10 @@ const App: React.FC = () => {
                   <Route
                     path="/brand-waitlist"
                     element={<BrandWaitlistPage />}
+                  />
+                  <Route
+                    path="/demo-product"
+                    element={<DemoProductPage onTryOnClick={handleTryOnClick} />}
                   />
                 </Routes>
 
