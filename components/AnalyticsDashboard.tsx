@@ -4,23 +4,25 @@
 */
 
 import React, { useState, useEffect } from 'react';
-import { getAnalyticsSummary, getRecentTryOns, getAverageTryOnsPerDay, AnalyticsSummary } from '../lib/tryOnAnalytics';
+import { getPersistentAnalyticsSummary, PersistentAnalyticsSummary } from '../lib/persistentAnalytics';
 
 const AnalyticsDashboard: React.FC = () => {
-  const [analytics, setAnalytics] = useState<AnalyticsSummary | null>(null);
-  const [last7Days, setLast7Days] = useState<Record<string, number>>({});
+  const [analytics, setAnalytics] = useState<PersistentAnalyticsSummary | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load analytics data
-    const summary = getAnalyticsSummary();
-    setAnalytics(summary);
+    // Load analytics data from persistent API
+    const loadAnalytics = async () => {
+      setLoading(true);
+      const summary = await getPersistentAnalyticsSummary();
+      setAnalytics(summary);
+      setLoading(false);
+    };
 
-    // Get last 7 days data
-    const recentData = getRecentTryOns(7);
-    setLast7Days(recentData);
+    loadAnalytics();
   }, []);
 
-  if (!analytics) {
+  if (loading || !analytics) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
@@ -30,7 +32,21 @@ const AnalyticsDashboard: React.FC = () => {
     );
   }
 
-  const avgPerDay = getAverageTryOnsPerDay();
+  // Calculate average try-ons per day
+  const dates = Object.keys(analytics.tryOnsByDate);
+  const avgPerDay = dates.length > 0
+    ? analytics.totalTryOns / dates.length
+    : 0;
+
+  // Get last 7 days of data for chart
+  const last7Days: Record<string, number> = {};
+  const today = new Date();
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(date.getDate() - i);
+    const dateStr = date.toISOString().split('T')[0];
+    last7Days[dateStr] = analytics.tryOnsByDate[dateStr] || 0;
+  }
 
   // Calculate max for chart scaling
   const maxTryOns = Math.max(...Object.values(last7Days), 1);
