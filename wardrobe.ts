@@ -321,10 +321,10 @@ export const defaultWardrobe: WardrobeItem[] = [
     ]
   },
   {
-    id: 'Russelandbrombley',
-    name: 'Russelandbrombley',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Russelandbrombley.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Russelandbrombley.png',
+    id: 'Russellandbrombley',
+    name: 'Russell and Brombley',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Russellandbromley.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Russellandbromley.png',
     folder: '30Brands',
     price: 0,
     description: '',
