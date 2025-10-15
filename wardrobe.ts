@@ -137,7 +137,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     shopUrl: '',
     outfitItems: [
       {
-        name: 'Bag',
+        name: 'Bag - SOLD OUT',
         price: 0,
         shopUrl: 'https://go.shopmy.us/p-26708783'
       },
@@ -497,6 +497,44 @@ export const defaultWardrobe: WardrobeItem[] = [
         name: 'Loafers',
         price: 269,
         shopUrl: 'https://go.shopmy.us/p-27590819'
+      }
+    ]
+  },
+    {
+    id: 'Traitors1',
+    name: 'Traitors 1',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Traitors/Traitors1Flatlay.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Traitors1.png',
+    folder: 'Traitors',
+    price: 0,
+    description: '',
+    collection: 'Traitors',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Blouse',
+        price: 195,
+        shopUrl: 'https://go.shopmy.us/p-27850501'
+      },
+      {
+        name: 'Scarf',
+        price: 44.95,
+        shopUrl: 'https://go.shopmy.us/p-27850742'
+      },
+      {
+        name: 'Kilt',
+        price: 275,
+        shopUrl: 'https://go.shopmy.us/p-27850515'
+      },
+      {
+        name: 'Socks',
+        price: 19,
+        shopUrl: 'https://go.shopmy.us/p-27851010'
+      },
+      {
+        name: 'Watch',
+        price: 54.99,
+        shopUrl: 'https://go.shopmy.us/p-27850684'
       }
     ]
   }
