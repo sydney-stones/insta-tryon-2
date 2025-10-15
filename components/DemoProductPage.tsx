@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WardrobeItem } from '../types';
 import { getSavedModel } from '../lib/tryOnLimit';
+import AffiliateDisclaimer from './AffiliateDisclaimer';
 
 interface DemoProductPageProps {
   onTryOnClick: (product: WardrobeItem) => void;
@@ -492,6 +493,8 @@ const DemoProductPage: React.FC<DemoProductPageProps> = ({ onTryOnClick }) => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <AffiliateDisclaimer />
     </div>
   );
 };

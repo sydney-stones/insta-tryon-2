@@ -13,6 +13,7 @@ import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
 import BrandWaitlistPage from './components/BrandWaitlistPage';
+import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -102,6 +103,8 @@ const App: React.FC = () => {
                   onClose={handleCloseTryOnModal}
                   product={selectedProduct}
                 />
+
+                <AffiliateDisclaimer />
               </>
             }
           />

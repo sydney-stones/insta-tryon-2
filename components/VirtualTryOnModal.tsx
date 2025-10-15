@@ -367,7 +367,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
                     <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg">
                       <p className="text-sm text-blue-900">
-                        <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. AI intepretation of how these itmes could look on.
+                        <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. AI interpretation of how these items could look on.
                       </p>
                     </div>
                   </div>
