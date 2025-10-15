@@ -4,7 +4,6 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { kv } from '@vercel/kv';
 
 const ANALYTICS_KEY = 'analytics:events';
 
@@ -14,6 +13,22 @@ interface AnalyticsEvent {
   outfitId: string;
   outfitName: string;
   date: string;
+}
+
+// Fallback in-memory storage when KV is not available
+let memoryStorage: AnalyticsEvent[] = [];
+
+// Check if KV is available
+async function getKV() {
+  try {
+    const { kv } = await import('@vercel/kv');
+    // Test if KV is properly configured
+    await kv.ping();
+    return kv;
+  } catch (error) {
+    console.log('KV not available, using in-memory storage');
+    return null;
+  }
 }
 
 export default async function handler(
@@ -47,19 +62,28 @@ export default async function handler(
         date: new Date().toISOString().split('T')[0]
       };
 
-      // Get existing events from KV
-      const existingEvents = await kv.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
+      const kvStore = await getKV();
 
-      // Add new event
-      existingEvents.push(event);
+      if (kvStore) {
+        // Use KV storage (persistent)
+        const existingEvents = await kvStore.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
+        existingEvents.push(event);
 
-      // Keep only last 10000 events to prevent storage issues
-      if (existingEvents.length > 10000) {
-        existingEvents.splice(0, existingEvents.length - 10000);
+        // Keep only last 10000 events to prevent storage issues
+        if (existingEvents.length > 10000) {
+          existingEvents.splice(0, existingEvents.length - 10000);
+        }
+
+        await kvStore.set(ANALYTICS_KEY, existingEvents);
+      } else {
+        // Use in-memory storage (fallback)
+        memoryStorage.push(event);
+
+        // Keep only last 10000 events
+        if (memoryStorage.length > 10000) {
+          memoryStorage = memoryStorage.slice(-10000);
+        }
       }
-
-      // Save back to KV
-      await kv.set(ANALYTICS_KEY, existingEvents);
 
       return res.status(200).json({ success: true });
     } catch (error) {
@@ -71,8 +95,16 @@ export default async function handler(
   if (req.method === 'GET') {
     // Get analytics data
     try {
-      // Get events from KV
-      const events = await kv.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
+      const kvStore = await getKV();
+      let events: AnalyticsEvent[];
+
+      if (kvStore) {
+        // Use KV storage (persistent)
+        events = await kvStore.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
+      } else {
+        // Use in-memory storage (fallback)
+        events = memoryStorage;
+      }
 
       // Calculate summary
       const totalTryOns = events.length;
