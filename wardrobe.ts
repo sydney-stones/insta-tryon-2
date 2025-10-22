@@ -537,8 +537,193 @@ export const defaultWardrobe: WardrobeItem[] = [
         shopUrl: 'https://go.shopmy.us/p-27850684'
       }
     ]
+  },
+  {
+    id: 'EmiliaWickstead',
+    name: 'Emilia Wickstead',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/EmiliaWickstead.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/EmiliaWickstead.png',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Dress',
+        price: 2100,
+        shopUrl: 'https://go.shopmy.us/p-28351154'
+      },
+      {
+        name: 'Shoes',
+        price: 610,
+        shopUrl: 'https://go.shopmy.us/p-28351221'
+      },
+      {
+        name: 'Watch',
+        price: 12800,
+        shopUrl: 'https://go.shopmy.us/p-28351271'
+      },
+      {
+        name: 'Earrings',
+        price: 975,
+        shopUrl: 'https://go.shopmy.us/p-28351287'
+      }
+    ]
+  },
+  {
+    id: 'Uniqlo',
+    name: 'Uniqlo',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Uniqlo.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Uniqlo.png',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Shoes',
+        price: 540,
+        shopUrl: 'https://go.shopmy.us/p-28351463'
+      },
+      {
+        name: 'Poncho',
+        price: 49.90,
+        shopUrl: 'https://go.shopmy.us/p-28351494'
+      },
+      {
+        name: 'Hat',
+        price: 24.90,
+        shopUrl: 'https://go.shopmy.us/p-28351508'
+      },
+      {
+        name: 'Gloves',
+        price: 19.90,
+        shopUrl: 'https://go.shopmy.us/p-28351518'
+      },
+      {
+        name: 'Bag',
+        price: 12.90,
+        shopUrl: 'https://go.shopmy.us/p-28351528'
+      },
+      {
+        name: 'Trousers',
+        price: 39.90,
+        shopUrl: 'https://go.shopmy.us/p-28351557'
+      }
+    ]
+  },
+  {
+    id: 'ReallyWild',
+    name: 'Really Wild',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ReallyWild.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ReallyWild.png',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Scarf',
+        price: 195,
+        shopUrl: 'https://go.shopmy.us/p-28351858'
+      },
+      {
+        name: 'Trousers',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28351872'
+      },
+      {
+        name: 'Boots',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28351883'
+      },
+      {
+        name: 'Belt',
+        price: 78,
+        shopUrl: 'https://go.shopmy.us/p-28351891'
+      },
+      {
+        name: 'Jacket',
+        price: 625,
+        shopUrl: 'https://go.shopmy.us/p-28351901'
+      }
+    ]
+  },
+  {
+    id: 'Erdem',
+    name: 'ERDEM',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Erdem.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Erdem.png',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Jumper',
+        price: 895,
+        shopUrl: 'https://go.shopmy.us/p-28352268'
+      },
+      {
+        name: 'Shoes',
+        price: 139,
+        shopUrl: 'https://go.shopmy.us/p-28352262'
+      },
+      {
+        name: 'Skirt',
+        price: 1095,
+        shopUrl: 'https://go.shopmy.us/p-28352299'
+      },
+      {
+        name: 'Bag',
+        price: 2195,
+        shopUrl: 'https://go.shopmy.us/p-28352309'
+      },
+      {
+        name: 'Earrings',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28352358'
+      }
+    ]
+  },
+  {
+    id: 'ManaloBlahnik',
+    name: 'Manolo Blahnik',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ManaloBlahnik.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ManaloBlahnik.png',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Earrings',
+        price: 230,
+        shopUrl: 'https://go.shopmy.us/p-28353887'
+      },
+      {
+        name: 'Shoes',
+        price: 675,
+        shopUrl: 'https://go.shopmy.us/p-28353952'
+      },
+      {
+        name: 'Bag',
+        price: 1616,
+        shopUrl: 'https://go.shopmy.us/p-28353991'
+      },
+      {
+        name: 'Dress',
+        price: 620,
+        shopUrl: 'https://go.shopmy.us/p-28354055'
+      }
+    ]
   }
-  
+
 ]
 
 // Helper function to organize wardrobe items by folders
