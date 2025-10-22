@@ -1,0 +1,10 @@
+# robots.txt for renderedfits.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://renderedfits.com/sitemap.xml
+
+# Crawl-delay (optional, helps with server load)
+Crawl-delay: 1
