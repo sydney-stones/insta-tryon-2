@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { getSavedModel } from '../lib/tryOnLimit';
 
 interface ErdemProductPageProps {
@@ -16,7 +16,10 @@ interface ErdemProductPageProps {
 
 const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnClick }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const savedModel = getSavedModel();
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   // Main product item (Jumper)
   const mainProduct = {
@@ -78,6 +81,30 @@ const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnCli
       .reduce((sum, item) => sum + (item.affiliateCommission || 0), 0);
   }, []);
 
+  // Handle touch swipe for mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      // Swiped left - next image
+      setSelectedImageIndex(prev => prev === productMedia.length - 1 ? 0 : prev + 1);
+    }
+    if (touchEndX.current - touchStartX.current > 50) {
+      // Swiped right - previous image
+      setSelectedImageIndex(prev => prev === 0 ? productMedia.length - 1 : prev - 1);
+    }
+  };
+
+  const handleAddToCart = () => {
+    setShowPurchaseModal(true);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* ERDEM Header */}
@@ -123,7 +150,12 @@ const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnCli
 
           {/* Main Product Image - Left Side (Full Height) */}
           <div className="relative bg-gray-100 rounded-sm overflow-hidden">
-            <div className="aspect-[3/4] lg:aspect-[2/3] xl:aspect-[3/4] relative">
+            <div
+              className="aspect-[3/4] lg:aspect-[2/3] xl:aspect-[3/4] relative"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               {productMedia[selectedImageIndex]?.type === 'video' ? (
                 <video
                   src={productMedia[selectedImageIndex].url}
@@ -185,10 +217,10 @@ const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnCli
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className={`relative aspect-[3/4] w-20 flex-shrink-0 overflow-hidden transition-all rounded-sm ${
+                    className={`relative aspect-[3/4] w-20 flex-shrink-0 overflow-hidden transition-all rounded-sm bg-white ${
                       selectedImageIndex === index
-                        ? 'ring-2 ring-black'
-                        : 'ring-1 ring-gray-200'
+                        ? 'ring-2 ring-black ring-offset-0'
+                        : 'ring-1 ring-gray-300'
                     }`}
                   >
                     {media.type === 'video' ? (
@@ -226,10 +258,10 @@ const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnCli
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className={`relative aspect-[3/4] w-20 flex-shrink-0 overflow-hidden transition-all rounded-sm ${
+                    className={`relative aspect-[3/4] w-20 flex-shrink-0 overflow-hidden transition-all rounded-sm bg-white ${
                       selectedImageIndex === index
-                        ? 'ring-2 ring-black'
-                        : 'ring-1 ring-gray-200'
+                        ? 'ring-2 ring-black ring-offset-0'
+                        : 'ring-1 ring-gray-300'
                     }`}
                   >
                     {media.type === 'video' ? (
@@ -279,52 +311,15 @@ const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnCli
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-pink-500 transition-all"></div>
             </motion.button>
 
-            {/* Size Selection */}
-            <div className="mb-4">
-              <div className="flex gap-2 mb-2">
-                <button className="flex-1 border border-gray-300 py-3 px-4 text-left text-sm hover:border-black transition-colors">
-                  Select size
-                </button>
-                <button className="border border-gray-300 py-3 px-4 hover:border-black transition-colors text-xs sm:text-sm">
-                  Size guide
-                </button>
-              </div>
-              <button className="text-sm underline hover:no-underline">
-                Find your size
-              </button>
-            </div>
-
-            {/* Add to Cart Button - Links to Waitlist */}
-            <Link to="/brand-waitlist">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-black text-white py-3 sm:py-4 px-6 mb-6 font-medium tracking-wide hover:bg-gray-800 transition-colors"
-              >
-                ADD TO CART
-              </motion.button>
-            </Link>
-
-            {/* Product Description */}
-            <div className="mb-6 text-sm leading-relaxed">
-              <p className="mb-4">
-                Shaped for a classic fit, this olive wool jumper showcases a cable knit design. It is detailed with a needle felt flower at the chest.
-              </p>
-              <ul className="space-y-1 ml-4">
-                <li className="list-disc">Classic silhouette</li>
-                <li className="list-disc">Dense cable knit</li>
-                <li className="list-disc">Crew neck</li>
-                <li className="list-disc">Long sleeves</li>
-                <li className="list-disc">Ribbed cuffs and hem</li>
-                <li className="list-disc">Needle Felt Flower Detail</li>
-                <li className="list-disc">Product code: PF25_KT24_30023004</li>
-              </ul>
-            </div>
-
-            <div className="text-sm mb-6 pb-6 border-b border-gray-200">
-              <p className="font-medium mb-1">Fits true to size.</p>
-              <p className="text-gray-600">Model is 5'11" (180cm) and wears size S.</p>
-            </div>
+            {/* Add to Cart Button - Opens Modal */}
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleAddToCart}
+              className="w-full bg-black text-white py-3 sm:py-4 px-6 mb-6 font-medium tracking-wide hover:bg-gray-800 transition-colors"
+            >
+              ADD TO CART
+            </motion.button>
 
             {/* COMPLETE THE LOOK - Key Revenue Feature */}
             <div className="border-t pt-6 mb-6">
@@ -411,37 +406,61 @@ const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnCli
               </div>
             </div>
 
-            {/* Collapsible Sections */}
-            <div className="border-t pt-6 space-y-4">
-              <details className="group">
-                <summary className="flex items-center justify-between cursor-pointer py-3 border-b border-gray-200">
-                  <span className="font-medium tracking-wide text-sm">Fabric & Care</span>
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="py-4 text-sm text-gray-600">
-                  <p>100% Wool</p>
-                  <p className="mt-2">Dry clean only</p>
-                </div>
-              </details>
-
-              <details className="group">
-                <summary className="flex items-center justify-between cursor-pointer py-3 border-b border-gray-200">
-                  <span className="font-medium tracking-wide text-sm">Shipping & Returns</span>
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="py-4 text-sm text-gray-600">
-                  <p>Free UK delivery on orders over £200</p>
-                  <p className="mt-2">Free returns within 28 days</p>
-                </div>
-              </details>
-            </div>
           </div>
         </div>
       </div>
+
+      {/* Purchase Modal */}
+      <AnimatePresence>
+        {showPurchaseModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowPurchaseModal(false)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Interested in This Technology?
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  This is a demo showcasing virtual try-on technology for e-commerce brands.
+                  Want to add this to your store?
+                </p>
+                <div className="space-y-3">
+                  <a
+                    href="https://tally.so/r/mOOqZ7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+                  >
+                    Join Brand Waitlist
+                  </a>
+                  <button
+                    onClick={() => setShowPurchaseModal(false)}
+                    className="block w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                  >
+                    Continue Exploring Demo
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         @keyframes gradient-x {
