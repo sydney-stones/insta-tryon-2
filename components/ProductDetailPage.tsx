@@ -20,17 +20,23 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
 
-  const productImages = useMemo(() => {
+  const productMedia = useMemo(() => {
     if (!product) return [];
-    const images = [product.url];
+    const media: Array<{ url: string; type: 'image' | 'video' }> = [
+      { url: product.url, type: 'image' }
+    ];
     if (product.secondaryImageUrl) {
-      images.push(product.secondaryImageUrl);
+      media.push({ url: product.secondaryImageUrl, type: 'image' });
     }
-    // Add saved model as 3rd image if it exists
+    // Add video as 3rd media if it exists
+    if (product.videoUrl) {
+      media.push({ url: product.videoUrl, type: 'video' });
+    }
+    // Add saved model as last item if it exists
     if (savedModel) {
-      images.push(savedModel);
+      media.push({ url: savedModel, type: 'image' });
     }
-    return images;
+    return media;
   }, [product, savedModel]);
 
   if (!product) {
@@ -64,16 +70,27 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
 
         {/* Product Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Product Image with Gallery */}
+          {/* Product Image/Video with Gallery */}
           <div className="space-y-4">
             <div className="relative aspect-[3/4] lg:aspect-[2/3] overflow-hidden rounded-lg bg-gray-100">
-              <img
-                src={productImages[selectedImageIndex]}
-                alt={product.name}
-                className="h-full w-full object-cover"
-              />
+              {productMedia[selectedImageIndex]?.type === 'video' ? (
+                <video
+                  src={productMedia[selectedImageIndex].url}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <img
+                  src={productMedia[selectedImageIndex]?.url}
+                  alt={product.name}
+                  className="h-full w-full object-cover"
+                />
+              )}
               {/* "Try on this look" button overlay if viewing saved model */}
-              {savedModel && selectedImageIndex === productImages.length - 1 && (
+              {savedModel && selectedImageIndex === productMedia.length - 1 && (
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -86,10 +103,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                 </div>
               )}
             </div>
-            {/* Image Thumbnails */}
-            {productImages.length > 1 && (
+            {/* Media Thumbnails */}
+            {productMedia.length > 1 && (
               <div className="flex gap-2">
-                {productImages.map((image, index) => (
+                {productMedia.map((media, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
@@ -99,13 +116,30 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                         : 'ring-1 ring-gray-200 hover:ring-gray-400'
                     }`}
                   >
-                    <img
-                      src={image}
-                      alt={`${product.name} view ${index + 1}`}
-                      className="h-full w-full object-cover"
-                    />
+                    {media.type === 'video' ? (
+                      <>
+                        <video
+                          src={media.url}
+                          muted
+                          playsInline
+                          className="h-full w-full object-cover pointer-events-none"
+                        />
+                        {/* Video play icon overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg className="w-6 h-6 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </div>
+                      </>
+                    ) : (
+                      <img
+                        src={media.url}
+                        alt={`${product.name} view ${index + 1}`}
+                        className="h-full w-full object-cover"
+                      />
+                    )}
                     {/* Label for model image thumbnail */}
-                    {savedModel && index === productImages.length - 1 && (
+                    {savedModel && index === productMedia.length - 1 && (
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
                         <span className="text-white text-xs font-semibold">You</span>
                       </div>
