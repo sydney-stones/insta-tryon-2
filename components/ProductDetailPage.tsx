@@ -8,6 +8,7 @@ import { useParams, Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion } from 'framer-motion';
 import { getSavedModel } from '../lib/tryOnLimit';
+import ErdemProductPage from './ErdemProductPage';
 
 interface ProductDetailPageProps {
   products: WardrobeItem[];
@@ -17,6 +18,11 @@ interface ProductDetailPageProps {
 const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOnClick }) => {
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
+
+  // Use ERDEM-specific layout for ERDEM products
+  if (product && product.id === 'Erdem') {
+    return <ErdemProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
 
