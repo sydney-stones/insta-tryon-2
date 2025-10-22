@@ -14,6 +14,7 @@ export interface WardrobeItem {
   name: string;
   url: string;
   secondaryImageUrl?: string; // For hover/touch display
+  videoUrl?: string; // Video showcase of the outfit
   folder?: string;
   // E-commerce fields
   price?: number;
