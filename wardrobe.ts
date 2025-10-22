@@ -699,7 +699,7 @@ export const defaultWardrobe: WardrobeItem[] = [
     name: 'Manolo Blahnik',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ManaloBlahnik.png',
     secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ManaloBlahnik.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/bhalnik.mp4',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Blahnik.mp4',
     folder: 'Festival_Of_Fashion',
     price: 0,
     description: '',
