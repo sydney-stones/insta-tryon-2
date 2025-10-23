@@ -5,6 +5,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import Testimonials from './Testimonials';
 
 // Tier definitions with new pricing structure
 const TIERS = [
@@ -315,10 +316,15 @@ const ROICalculator: React.FC<ROICalculatorProps> = ({ defaultRevenue = 100000 }
             >
               Join Brand Waitlist
             </motion.a>
-            
+            <p className="text-sm text-gray-600 mt-4">
+              Start with a 14-day free trial • No credit card required
+            </p>
           </div>
         </div>
       </div>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       <style>{`
         .slider::-webkit-slider-thumb {

@@ -7,6 +7,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
 import ProductCard from './ProductCard';
+import Testimonials from './Testimonials';
 
 interface ProductGridProps {
   products: WardrobeItem[];
@@ -63,15 +64,9 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center mb-4">
             Virtual Try Before You Buy
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 text-center max-w-2xl mx-auto mb-2">
-            Looking to use AI try-on technology for your business or content?
-          </p>
-          <p className="text-sm sm:text-base text-gray-500 text-center max-w-2xl mx-auto mb-6">
-            Join our waitlist to get early access and exclusive benefits
-          </p>
 
           {/* Waitlist Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8">
             <Link
               to="/waitlist"
               className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-lg hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
@@ -88,6 +83,9 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
           </div>
         </div>
       </div>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Collection Filter */}
       <div className="border-b border-gray-200 bg-white sticky top-0 z-10">
