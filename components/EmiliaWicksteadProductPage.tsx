@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getSavedModel } from '../lib/tryOnLimit';
+import ROICalculator from './ROICalculator';
 
 interface EmiliaWicksteadProductPageProps {
   product: WardrobeItem;
@@ -17,7 +18,6 @@ interface EmiliaWicksteadProductPageProps {
 const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({ product, onTryOnClick }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
-  const [monthlyRevenue, setMonthlyRevenue] = useState(600000);
   const savedModel = getSavedModel();
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -83,39 +83,6 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
       .filter(item => !item.isEmiliaWickstead)
       .reduce((sum, item) => sum + (item.affiliateCommission || 0), 0);
   }, []);
-
-  // ROI Calculator
-  const roiCalculation = useMemo(() => {
-    const salesUplift = monthlyRevenue * 0.20; // 20% uplift
-    const returnSavings = monthlyRevenue * 0.15; // 15% return savings
-    const totalAddedValue = salesUplift + returnSavings;
-
-    // Determine tier based on revenue
-    let tier = 'Boutique Tier';
-    let monthlyCost = 1200;
-
-    if (monthlyRevenue >= 10000000) {
-      tier = 'Enterprise Tier';
-      monthlyCost = 12000;
-    } else if (monthlyRevenue >= 1000000) {
-      tier = 'Prestige Tier';
-      monthlyCost = 6000;
-    } else if (monthlyRevenue >= 400000) {
-      tier = 'Designer Tier';
-      monthlyCost = 3000;
-    }
-
-    const roi = totalAddedValue / monthlyCost;
-
-    return {
-      salesUplift,
-      returnSavings,
-      totalAddedValue,
-      tier,
-      monthlyCost,
-      roi
-    };
-  }, [monthlyRevenue]);
 
   // Handle touch swipe for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -420,108 +387,7 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
           </div>
         </div>
 
-        {/* ROI CALCULATOR SECTION */}
-        <div className="mt-16 border-t pt-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-4">
-                Calculate Your ROI
-              </h2>
-              <p className="text-lg text-gray-600">
-                See how virtual try-on technology could transform your online revenue
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 sm:p-12">
-              {/* Revenue Slider */}
-              <div className="mb-8">
-                <label className="block text-sm font-semibold text-gray-900 mb-4">
-                  Your Monthly Online Revenue
-                </label>
-                <input
-                  type="range"
-                  min="100000"
-                  max="20000000"
-                  step="100000"
-                  value={monthlyRevenue}
-                  onChange={(e) => setMonthlyRevenue(Number(e.target.value))}
-                  className="w-full h-3 bg-indigo-200 rounded-lg appearance-none cursor-pointer slider"
-                />
-                <div className="flex justify-between items-center mt-4">
-                  <span className="text-sm text-gray-600">£100k</span>
-                  <div className="text-3xl font-bold text-indigo-600">
-                    £{(monthlyRevenue / 1000000).toFixed(1)}M
-                  </div>
-                  <span className="text-sm text-gray-600">£20M</span>
-                </div>
-              </div>
-
-              {/* Recommended Tier */}
-              <div className="mb-8 p-6 bg-white rounded-xl border-2 border-indigo-200">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <div className="text-sm font-medium text-gray-600 mb-1">Recommended Tier</div>
-                    <div className="text-2xl font-bold text-gray-900">{roiCalculation.tier}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-medium text-gray-600 mb-1">Monthly Cost</div>
-                    <div className="text-2xl font-bold text-indigo-600">£{roiCalculation.monthlyCost.toLocaleString()}</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* ROI Metrics */}
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white rounded-xl p-6">
-                  <div className="text-sm font-medium text-gray-600 mb-2">Sales Uplift (+20%)</div>
-                  <div className="text-2xl font-bold text-green-600">
-                    +£{(roiCalculation.salesUplift / 1000).toFixed(0)}k
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">per month</div>
-                </div>
-
-                <div className="bg-white rounded-xl p-6">
-                  <div className="text-sm font-medium text-gray-600 mb-2">Return Savings (15%)</div>
-                  <div className="text-2xl font-bold text-green-600">
-                    +£{(roiCalculation.returnSavings / 1000).toFixed(0)}k
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">saved per month</div>
-                </div>
-
-                <div className="bg-white rounded-xl p-6">
-                  <div className="text-sm font-medium text-gray-600 mb-2">Total Added Value</div>
-                  <div className="text-2xl font-bold text-indigo-600">
-                    £{(roiCalculation.totalAddedValue / 1000).toFixed(0)}k
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">per month</div>
-                </div>
-              </div>
-
-              {/* ROI Summary */}
-              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl p-8 text-center">
-                <div className="text-sm font-medium mb-2 opacity-90">Return on Investment</div>
-                <div className="text-5xl font-bold mb-2">{roiCalculation.roi.toFixed(1)}×</div>
-                <div className="text-sm opacity-90">
-                  For every £1 spent, gain £{roiCalculation.roi.toFixed(1)} in value
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="mt-8 text-center">
-                <motion.a
-                  href="https://tally.so/r/mOOqZ7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-block bg-indigo-600 text-white py-4 px-8 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
-                >
-                  Join Brand Waitlist
-                </motion.a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ROICalculator defaultRevenue={150000} />
       </div>
 
       {/* Purchase Modal */}

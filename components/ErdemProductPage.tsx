@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getSavedModel } from '../lib/tryOnLimit';
+import ROICalculator from './ROICalculator';
 
 interface ErdemProductPageProps {
   product: WardrobeItem;
@@ -408,6 +409,8 @@ const ErdemProductPage: React.FC<ErdemProductPageProps> = ({ product, onTryOnCli
 
           </div>
         </div>
+
+        <ROICalculator defaultRevenue={400000} />
       </div>
 
       {/* Purchase Modal */}
