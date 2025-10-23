@@ -9,6 +9,10 @@ import { WardrobeItem } from '../types';
 import { motion } from 'framer-motion';
 import { getSavedModel } from '../lib/tryOnLimit';
 import ErdemProductPage from './ErdemProductPage';
+import EmiliaWicksteadProductPage from './EmiliaWicksteadProductPage';
+import ManaloBlahnikProductPage from './ManaloBlahnikProductPage';
+import ReallyWildProductPage from './ReallyWildProductPage';
+import UniqloProductPage from './UniqloProductPage';
 
 interface ProductDetailPageProps {
   products: WardrobeItem[];
@@ -19,9 +23,21 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
 
-  // Use ERDEM-specific layout for ERDEM products
+  // Use brand-specific layouts for Festival of Fashion brands
   if (product && product.id === 'Erdem') {
     return <ErdemProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'EmiliaWickstead') {
+    return <EmiliaWicksteadProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'ManaloBlahnik') {
+    return <ManaloBlahnikProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'ReallyWild') {
+    return <ReallyWildProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'Uniqlo') {
+    return <UniqloProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
