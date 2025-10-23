@@ -3,111 +3,73 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: "Studies have shown that virtual Try-On technology can boost sales by up to 30% and reduce returns by 20%.",
-    source: "Forbes",
-    icon: "📈"
+    quote: "Virtual Try-On technology can boost sales by up to 30% and reduce returns by 20%.",
+    source: "Forbes"
   },
   {
-    quote: "Allowing ecommerce customers to try on clothes virtually via an augmented reality app can increase sales and reduce returns.",
-    source: "Shopify",
-    url: "shopify.com",
-    icon: "🛍️"
+    quote: "Allowing customers to try on clothes virtually can increase sales and reduce returns.",
+    source: "Shopify"
   },
   {
-    quote: "55% of online apparel shoppers have returned an item because it looked different on them than expected, and 42% say they don't feel represented by images of models while shopping for clothes.",
-    source: "Lilian Rincon, Senior Director of Consumer Shopping Product, Google",
-    icon: "👔"
+    quote: "55% of online apparel shoppers have returned an item because it looked different than expected.",
+    source: "Google"
   }
 ];
 
 const Testimonials: React.FC = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 7000); // Change quote every 7 seconds
 
-    let animationFrameId: number;
-    let scrollPosition = 0;
-
-    const scroll = () => {
-      if (!isPaused && scrollContainer) {
-        scrollPosition += 0.5; // Adjust speed here
-
-        // Reset scroll when we've scrolled through one set of testimonials
-        const maxScroll = scrollContainer.scrollWidth / 2;
-        if (scrollPosition >= maxScroll) {
-          scrollPosition = 0;
-        }
-
-        scrollContainer.scrollLeft = scrollPosition;
-      }
-      animationFrameId = requestAnimationFrame(scroll);
-    };
-
-    animationFrameId = requestAnimationFrame(scroll);
-
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-    };
-  }, [isPaused]);
-
-  // Duplicate testimonials for seamless loop
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 py-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-2">
-          Industry Insights
-        </h2>
-        <p className="text-gray-600 text-center text-sm sm:text-base">
-          What leading experts say about virtual try-on technology
-        </p>
-      </div>
-
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-hidden"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        style={{ scrollBehavior: 'auto' }}
-      >
-        {duplicatedTestimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-[90%] sm:w-[500px] bg-white rounded-xl shadow-lg p-6 sm:p-8 mx-3"
-          >
-            <div className="text-4xl mb-4">{testimonial.icon}</div>
-            <blockquote className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
-              "{testimonial.quote}"
-            </blockquote>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-              </svg>
-              <cite className="not-italic font-medium">
-                {testimonial.source}
-                {testimonial.url && (
-                  <span className="text-gray-400 ml-1">({testimonial.url})</span>
-                )}
+    <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 py-6 sm:py-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="relative h-[120px] sm:h-[100px] flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
+            >
+              <blockquote className="text-gray-700 text-sm sm:text-base leading-relaxed mb-2">
+                "{testimonials[currentIndex].quote}"
+              </blockquote>
+              <cite className="not-italic text-xs sm:text-sm font-semibold text-indigo-600">
+                ~ {testimonials[currentIndex].source}
               </cite>
-            </div>
-          </div>
-        ))}
-      </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-      <div className="text-center mt-6">
-        <p className="text-xs text-gray-500">
-          Hover to pause • Auto-scrolling testimonials
-        </p>
+        {/* Dots indicator */}
+        <div className="flex justify-center gap-2 mt-4">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                index === currentIndex
+                  ? 'bg-indigo-600 w-6'
+                  : 'bg-indigo-300 hover:bg-indigo-400'
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
