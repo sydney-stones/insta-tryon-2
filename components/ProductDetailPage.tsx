@@ -13,6 +13,7 @@ import EmiliaWicksteadProductPage from './EmiliaWicksteadProductPage';
 import ManaloBlahnikProductPage from './ManaloBlahnikProductPage';
 import ReallyWildProductPage from './ReallyWildProductPage';
 import UniqloProductPage from './UniqloProductPage';
+import MaisonSchiaparelliProductPage from './MaisonSchiaparelliProductPage';
 
 interface ProductDetailPageProps {
   products: WardrobeItem[];
@@ -38,6 +39,9 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   }
   if (product && product.id === 'Uniqlo') {
     return <UniqloProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'MaisonSchiaparelli') {
+    return <MaisonSchiaparelliProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
