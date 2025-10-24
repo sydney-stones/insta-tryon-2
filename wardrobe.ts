@@ -727,6 +727,45 @@ export const defaultWardrobe: WardrobeItem[] = [
         shopUrl: 'https://go.shopmy.us/p-28354055'
       }
     ]
+  },
+  {
+    id: 'MaisonSchiaparelli',
+    name: 'Maison Schiaparelli',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/MaisonSchiaparelli.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/MaisonSchiaparellirendered.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/MaisonSchiaperalliVideo.mp4',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Snake Scale Trompe L\'Oeil Cardigan',
+        price: 4345.09,
+        shopUrl: 'https://go.shopmy.us/p-28554672'
+      },
+      {
+        name: 'Wide-Leg Embroidered Pants',
+        price: 4343.02,
+        shopUrl: 'https://go.shopmy.us/p-28554922'
+      },
+      {
+        name: 'Eyes Earrings',
+        price: 1042.26,
+        shopUrl: 'https://go.shopmy.us/p-28554964'
+      },
+      {
+        name: 'Measuring Tape Sandals',
+        price: 1650.05,
+        shopUrl: 'https://go.shopmy.us/p-28555046'
+      },
+      {
+        name: 'Mini Secret Bag',
+        price: 11291.15,
+        shopUrl: 'https://go.shopmy.us/p-28555071'
+      }
+    ]
   }
 
 ]
