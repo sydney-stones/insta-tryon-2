@@ -256,19 +256,16 @@ const ManaloBlahnikProductPage: React.FC<ManaloBlahnikProductPageProps> = ({ pro
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onTryOnClick(product)}
-              className="w-full mb-4 relative overflow-hidden group"
+              className="w-full mb-4 relative overflow-hidden rounded-lg"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 animate-gradient-x"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
-              <div className="relative bg-black text-white py-3 sm:py-4 px-6 flex items-center justify-center gap-3 font-medium tracking-wide">
+              <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white py-3 sm:py-4 px-6 flex items-center justify-center gap-3 font-medium tracking-wide">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
                 <span className="font-semibold text-sm sm:text-base">VIRTUAL TRY-ON</span>
-                <span className="ml-2 text-xs bg-gradient-to-r from-pink-400 to-purple-400 text-white px-2 py-1 rounded-full font-bold animate-pulse">NEW</span>
+                <span className="ml-2 text-xs bg-black text-white px-2 py-1 rounded-full font-bold animate-pulse">NEW</span>
               </div>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-pink-500 transition-all"></div>
             </motion.button>
 
             {/* Add to Cart Button */}
