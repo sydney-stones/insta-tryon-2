@@ -766,6 +766,80 @@ export const defaultWardrobe: WardrobeItem[] = [
         shopUrl: 'https://go.shopmy.us/p-28555071'
       }
     ]
+  },
+  {
+    id: 'ReallyWild2',
+    name: 'Really Wild Countryside',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Reallywild2.png',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Windsor Tweed Country Waistcoat',
+        price: 425,
+        shopUrl: 'https://go.shopmy.us/p-28897841'
+      },
+      {
+        name: 'Windsor Tweed Country Trousers',
+        price: 495,
+        shopUrl: 'https://go.shopmy.us/p-28897867'
+      },
+      {
+        name: 'Kinalba Lambswool High-Neck Sweater',
+        price: 175,
+        shopUrl: 'https://go.shopmy.us/p-28897949'
+      },
+      {
+        name: 'La Mancha Waterproof Spanish Boots',
+        price: 395,
+        shopUrl: 'https://go.shopmy.us/p-28898164'
+      },
+      {
+        name: 'Lady Rannoch Long Socks',
+        price: 55,
+        shopUrl: 'https://go.shopmy.us/p-28898226'
+      }
+    ]
+  },
+  {
+    id: 'ReallyWild3',
+    name: 'Really Wild Luxe',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/reallywild3.png',
+    folder: 'Festival_Of_Fashion',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Brompton Silk Wool Puffer Jacket',
+        price: 845,
+        shopUrl: 'https://go.shopmy.us/p-28898013'
+      },
+      {
+        name: 'Cadogan Silk Tie Neck Blouse',
+        price: 275,
+        shopUrl: 'https://go.shopmy.us/p-28898045'
+      },
+      {
+        name: 'Mayfair Velvet Flare Trousers',
+        price: 395,
+        shopUrl: 'https://go.shopmy.us/p-28898097'
+      },
+      {
+        name: 'Heritage Calf Length Leather Boots',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28898185'
+      },
+      {
+        name: 'Logo Baseball Cap',
+        price: 35,
+        shopUrl: 'https://go.shopmy.us/p-28898254'
+      }
+    ]
   }
 
 ]

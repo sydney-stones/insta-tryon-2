@@ -12,6 +12,8 @@ import ErdemProductPage from './ErdemProductPage';
 import EmiliaWicksteadProductPage from './EmiliaWicksteadProductPage';
 import ManaloBlahnikProductPage from './ManaloBlahnikProductPage';
 import ReallyWildProductPage from './ReallyWildProductPage';
+import ReallyWild2ProductPage from './ReallyWild2ProductPage';
+import ReallyWild3ProductPage from './ReallyWild3ProductPage';
 import UniqloProductPage from './UniqloProductPage';
 import MaisonSchiaparelliProductPage from './MaisonSchiaparelliProductPage';
 
@@ -36,6 +38,12 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   }
   if (product && product.id === 'ReallyWild') {
     return <ReallyWildProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'ReallyWild2') {
+    return <ReallyWild2ProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'ReallyWild3') {
+    return <ReallyWild3ProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
   if (product && product.id === 'Uniqlo') {
     return <UniqloProductPage product={product} onTryOnClick={onTryOnClick} />;
