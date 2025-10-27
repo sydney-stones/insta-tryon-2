@@ -147,6 +147,13 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
   };
 
   const handleUseSavedModel = async () => {
+    // Check limit before processing (unless unlimited mode)
+    if (!isUnlimited && !canUseTryOn()) {
+      setStep('limit-reached');
+      setRemainingTries(0);
+      return;
+    }
+
     const savedModel = getSavedModel();
     if (!savedModel || !product) return;
 
