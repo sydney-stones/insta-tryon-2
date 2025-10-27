@@ -139,94 +139,83 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] xl:grid-cols-[1fr_500px] gap-6 lg:gap-12">
 
           {/* Main Product Image */}
-          <div className="relative bg-gray-100 rounded-sm overflow-hidden">
-            <div
-              className="aspect-[3/4] lg:aspect-[2/3] xl:aspect-[3/4] relative"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              {productMedia[selectedImageIndex]?.type === 'video' ? (
-                <video
-                  src={productMedia[selectedImageIndex].url}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <img
-                  src={productMedia[selectedImageIndex]?.url}
-                  alt={mainProduct.name}
-                  className="h-full w-full object-cover"
-                />
-              )}
+          <div className="space-y-3">
+            {/* Large Image/Video Display */}
+            <div className="relative bg-gray-100 rounded-sm overflow-hidden">
+              <div
+                className="relative aspect-[3/4] sm:aspect-[4/5] cursor-pointer"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                <AnimatePresence mode="wait">
+                  {productMedia[selectedImageIndex]?.type === 'video' ? (
+                    <motion.video
+                      key="video"
+                      src={productMedia[selectedImageIndex].url}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    />
+                  ) : (
+                    <motion.img
+                      key={selectedImageIndex}
+                      src={productMedia[selectedImageIndex]?.url}
+                      alt={mainProduct.name}
+                      className="w-full h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    />
+                  )}
+                </AnimatePresence>
 
-              {/* Navigation Arrows */}
-              {productMedia.length > 1 && (
-                <>
-                  <button
-                    onClick={() => setSelectedImageIndex(prev => prev === 0 ? productMedia.length - 1 : prev - 1)}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={() => setSelectedImageIndex(prev => prev === productMedia.length - 1 ? 0 : prev + 1)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </>
-              )}
-
-              {/* Try On Overlay */}
-              {savedModel && selectedImageIndex === productMedia.length - 1 && (
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => onTryOnClick(product)}
-                    className="bg-white text-black px-8 sm:px-12 py-4 sm:py-5 rounded-sm font-medium text-base sm:text-lg shadow-2xl"
-                  >
-                    Try on this look
-                  </motion.button>
-                </div>
-              )}
+                {/* Navigation Arrows */}
+                {productMedia.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => setSelectedImageIndex(prev => prev === 0 ? productMedia.length - 1 : prev - 1)}
+                      className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={() => setSelectedImageIndex(prev => prev === productMedia.length - 1 ? 0 : prev + 1)}
+                      className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
 
-            {/* Thumbnails - Mobile */}
+            {/* Thumbnail Gallery - Always Visible */}
             {productMedia.length > 1 && (
-              <div className="lg:hidden flex gap-2 mt-4 overflow-x-auto pb-2">
+              <div className="flex gap-2 overflow-x-auto pb-2">
                 {productMedia.map((media, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className={`relative aspect-[3/4] w-20 flex-shrink-0 overflow-hidden transition-all rounded-sm bg-white ${
-                      selectedImageIndex === index ? 'ring-2 ring-black ring-offset-0' : 'ring-1 ring-gray-300'
+                    className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded overflow-hidden bg-white transition-all ${
+                      selectedImageIndex === index
+                        ? 'ring-2 ring-offset-0 ring-gray-900'
+                        : 'opacity-60 hover:opacity-100'
                     }`}
                   >
                     {media.type === 'video' ? (
-                      <>
-                        <video src={media.url} muted playsInline className="h-full w-full object-cover pointer-events-none" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                          </svg>
-                        </div>
-                      </>
+                      <video src={media.url} className="w-full h-full object-cover" muted />
                     ) : (
-                      <img src={media.url} alt={`View ${index + 1}`} className="h-full w-full object-cover" />
-                    )}
-                    {savedModel && index === productMedia.length - 1 && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
-                        <span className="text-white text-xs font-semibold">You</span>
-                      </div>
+                      <img src={media.url} alt="" className="w-full h-full object-cover" />
                     )}
                   </button>
                 ))}
@@ -239,38 +228,6 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
             <h1 className="text-2xl sm:text-3xl font-serif mb-2">{mainProduct.name}</h1>
             <p className="text-xl sm:text-2xl mb-6">£{mainProduct.price.toLocaleString()}</p>
 
-            {/* Thumbnails - Desktop */}
-            {productMedia.length > 1 && (
-              <div className="hidden lg:flex gap-2 mb-6 overflow-x-auto pb-2">
-                {productMedia.map((media, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImageIndex(index)}
-                    className={`relative aspect-[3/4] w-20 flex-shrink-0 overflow-hidden transition-all rounded-sm bg-white ${
-                      selectedImageIndex === index ? 'ring-2 ring-black ring-offset-0' : 'ring-1 ring-gray-300'
-                    }`}
-                  >
-                    {media.type === 'video' ? (
-                      <>
-                        <video src={media.url} muted playsInline className="h-full w-full object-cover pointer-events-none" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                          </svg>
-                        </div>
-                      </>
-                    ) : (
-                      <img src={media.url} alt={`View ${index + 1}`} className="h-full w-full object-cover" />
-                    )}
-                    {savedModel && index === productMedia.length - 1 && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
-                        <span className="text-white text-xs font-semibold">You</span>
-                      </div>
-                    )}
-                  </button>
-                ))}
-              </div>
-            )}
 
             {/* VIRTUAL TRY-ON BUTTON */}
             <motion.button

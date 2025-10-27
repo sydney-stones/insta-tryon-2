@@ -146,71 +146,74 @@ const ReallyWild3ProductPage: React.FC<ReallyWild3ProductPageProps> = ({ product
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] xl:grid-cols-[1fr_500px] gap-6 lg:gap-12">
 
           {/* Main Product Image */}
-          <div className="relative bg-gray-100 rounded-sm overflow-hidden">
-            <div
-              className="relative aspect-[4/5] cursor-pointer"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <AnimatePresence mode="wait">
-                {productMedia[selectedImageIndex]?.type === 'video' ? (
-                  <motion.video
-                    key="video"
-                    src={productMedia[selectedImageIndex].url}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  />
-                ) : (
-                  <motion.img
-                    key={selectedImageIndex}
-                    src={productMedia[selectedImageIndex]?.url}
-                    alt={mainProduct.name}
-                    className="w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  />
-                )}
-              </AnimatePresence>
+          <div className="space-y-3">
+            {/* Large Image/Video Display */}
+            <div className="relative bg-gray-100 rounded-sm overflow-hidden">
+              <div
+                className="relative aspect-[3/4] sm:aspect-[4/5] cursor-pointer"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                <AnimatePresence mode="wait">
+                  {productMedia[selectedImageIndex]?.type === 'video' ? (
+                    <motion.video
+                      key="video"
+                      src={productMedia[selectedImageIndex].url}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    />
+                  ) : (
+                    <motion.img
+                      key={selectedImageIndex}
+                      src={productMedia[selectedImageIndex]?.url}
+                      alt={mainProduct.name}
+                      className="w-full h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    />
+                  )}
+                </AnimatePresence>
 
-              {/* Navigation Arrows */}
-              {productMedia.length > 1 && (
-                <>
-                  <button
-                    onClick={() => setSelectedImageIndex(prev => prev === 0 ? productMedia.length - 1 : prev - 1)}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all"
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={() => setSelectedImageIndex(prev => prev === productMedia.length - 1 ? 0 : prev + 1)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all"
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </>
-              )}
+                {/* Navigation Arrows */}
+                {productMedia.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => setSelectedImageIndex(prev => prev === 0 ? productMedia.length - 1 : prev - 1)}
+                      className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={() => setSelectedImageIndex(prev => prev === productMedia.length - 1 ? 0 : prev + 1)}
+                      className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
 
-            {/* Thumbnail Gallery */}
+            {/* Thumbnail Gallery - Always Visible */}
             {productMedia.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-white/80 backdrop-blur-sm p-2 rounded-lg">
+              <div className="flex gap-2 overflow-x-auto pb-2">
                 {productMedia.map((media, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className={`w-12 h-12 sm:w-16 sm:h-16 rounded overflow-hidden bg-white transition-all ${
+                    className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded overflow-hidden bg-white transition-all ${
                       selectedImageIndex === index
                         ? 'ring-2 ring-offset-0 ring-gray-900'
                         : 'opacity-60 hover:opacity-100'
