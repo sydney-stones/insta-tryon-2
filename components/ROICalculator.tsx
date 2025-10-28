@@ -51,7 +51,7 @@ const ROICalculator: React.FC<ROICalculatorProps> = ({ defaultRevenue = 100000 }
           <input
             type="range"
             min="10000"
-            max="5000000"
+            max="2000000"
             step="10000"
             value={monthlyRevenue}
             onChange={(e) => setMonthlyRevenue(Number(e.target.value))}
