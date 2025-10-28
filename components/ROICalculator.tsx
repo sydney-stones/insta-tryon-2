@@ -62,7 +62,7 @@ const ROICalculator: React.FC<ROICalculatorProps> = ({ defaultRevenue = 100000 }
             <div className="text-4xl font-bold text-indigo-600">
               £{monthlyRevenue >= 1000000 ? (monthlyRevenue / 1000000).toFixed(1) + 'M' : (monthlyRevenue / 1000).toFixed(0) + 'k'}
             </div>
-            <span className="text-sm text-gray-600">£5M+</span>
+            <span className="text-sm text-gray-600">£2M+</span>
           </div>
         </div>
 
