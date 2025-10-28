@@ -695,10 +695,10 @@ export const defaultWardrobe: WardrobeItem[] = [
     ]
   },
   {
-    id: 'manoloBlahnik',
+    id: 'ManoloBlahnik',
     name: 'Manolo Blahnik',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/manoloBlahnik.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/manoloBlahnik.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ManoloBlahnik.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ManoloBlahnik.png',
     videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Blahnik.mp4',
     folder: 'Festival_Of_Fashion',
     price: 0,
@@ -707,24 +707,14 @@ export const defaultWardrobe: WardrobeItem[] = [
     shopUrl: '',
     outfitItems: [
       {
-        name: 'Earrings',
-        price: 230,
-        shopUrl: 'https://go.shopmy.us/p-28353887'
-      },
-      {
-        name: 'Shoes',
+        name: 'Blue Wool Tartan Pointed Toe Pumps',
         price: 675,
         shopUrl: 'https://go.shopmy.us/p-28353952'
       },
       {
-        name: 'Bag',
+        name: 'Dark Gold Glitter Jewel Buckle Clutch',
         price: 1616,
         shopUrl: 'https://go.shopmy.us/p-28353991'
-      },
-      {
-        name: 'Dress',
-        price: 620,
-        shopUrl: 'https://go.shopmy.us/p-28354055'
       }
     ]
   },

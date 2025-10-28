@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import { getSavedModel } from '../lib/tryOnLimit';
 import ErdemProductPage from './ErdemProductPage';
 import EmiliaWicksteadProductPage from './EmiliaWicksteadProductPage';
-import manoloBlahnikProductPage from './manoloBlahnikProductPage';
+import ManoloBlahnikProductPage from './ManoloBlahnikProductPage';
 import ReallyWildProductPage from './ReallyWildProductPage';
 import ReallyWild2ProductPage from './ReallyWild2ProductPage';
 import ReallyWild3ProductPage from './ReallyWild3ProductPage';
@@ -33,8 +33,8 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   if (product && product.id === 'EmiliaWickstead') {
     return <EmiliaWicksteadProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
-  if (product && product.id === 'manoloBlahnik') {
-    return <manoloBlahnikProductPage product={product} onTryOnClick={onTryOnClick} />;
+  if (product && product.id === 'ManoloBlahnik') {
+    return <ManoloBlahnikProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
   if (product && product.id === 'ReallyWild') {
     return <ReallyWildProductPage product={product} onTryOnClick={onTryOnClick} />;
