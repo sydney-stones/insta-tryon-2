@@ -695,10 +695,10 @@ export const defaultWardrobe: WardrobeItem[] = [
     ]
   },
   {
-    id: 'ManaloBlahnik',
+    id: 'manoloBlahnik',
     name: 'Manolo Blahnik',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ManaloBlahnik.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ManaloBlahnik.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/manoloBlahnik.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/manoloBlahnik.png',
     videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Blahnik.mp4',
     folder: 'Festival_Of_Fashion',
     price: 0,

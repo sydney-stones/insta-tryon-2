@@ -10,12 +10,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { getSavedModel, getSavedTryOnResult } from '../lib/tryOnLimit';
 import ROICalculator from './ROICalculator';
 
-interface ManaloBlahnikProductPageProps {
+interface manoloBlahnikProductPageProps {
   product: WardrobeItem;
   onTryOnClick: (product: WardrobeItem) => void;
 }
 
-const ManaloBlahnikProductPage: React.FC<ManaloBlahnikProductPageProps> = ({ product, onTryOnClick }) => {
+const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ product, onTryOnClick }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const savedModel = getSavedModel();
@@ -40,7 +40,7 @@ const ManaloBlahnikProductPage: React.FC<ManaloBlahnikProductPageProps> = ({ pro
   const mainProduct = {
     name: 'Dark Gold Glitter Jewel Buckle Clutch',
     price: 1616,
-    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManloloBlahnik/ManaloBlahnik-DarkGoldGlitterJewelBuckleClutch.png',
+    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManoloBlahnik/manoloBlahnik-DarkGoldGlitterJewelBuckleClutch.png',
     shopUrl: 'https://go.shopmy.us/p-28353991',
     isManoloBlahnik: true
   };
@@ -50,7 +50,7 @@ const ManaloBlahnikProductPage: React.FC<ManaloBlahnikProductPageProps> = ({ pro
     {
       name: 'Blue Wool Tartan Pointed Toe Pumps',
       price: 675,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManloloBlahnik/ManaloBlahnik-BlueWoolTartanPointedToePumps.png',
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManoloBlahnik/manoloBlahnik-BlueWoolTartanPointedToePumps.png',
       shopUrl: 'https://go.shopmy.us/p-28353952',
       isManoloBlahnik: true
     }
@@ -423,4 +423,4 @@ const ManaloBlahnikProductPage: React.FC<ManaloBlahnikProductPageProps> = ({ pro
   );
 };
 
-export default ManaloBlahnikProductPage;
+export default manoloBlahnikProductPage;
