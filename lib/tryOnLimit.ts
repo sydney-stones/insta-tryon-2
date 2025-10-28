@@ -5,6 +5,7 @@
 
 const STORAGE_KEY = 'virtualTryOnUsage';
 const MODEL_STORAGE_KEY = 'userGeneratedModel';
+const TRYON_RESULT_KEY = 'latestTryOnResult';
 const DAILY_LIMIT = 2; // Max try-ons per day
 
 interface TryOnUsage {
@@ -147,4 +148,51 @@ export const getSavedModel = (): string | null => {
  */
 export const clearSavedModel = (): void => {
   localStorage.removeItem(MODEL_STORAGE_KEY);
+};
+
+/**
+ * Save the latest try-on result
+ */
+export const saveTryOnResult = (tryOnImageUrl: string): void => {
+  try {
+    const data = {
+      tryOnImageUrl,
+      date: getTodayDate(),
+      timestamp: Date.now()
+    };
+    localStorage.setItem(TRYON_RESULT_KEY, JSON.stringify(data));
+  } catch (e) {
+    console.error('Error saving try-on result:', e);
+  }
+};
+
+/**
+ * Get the saved try-on result if it exists and is from today
+ */
+export const getSavedTryOnResult = (): string | null => {
+  try {
+    const stored = localStorage.getItem(TRYON_RESULT_KEY);
+    if (stored) {
+      const data = JSON.parse(stored);
+      const today = getTodayDate();
+
+      // Only return the result if it's from today
+      if (data.date === today) {
+        return data.tryOnImageUrl;
+      } else {
+        // Clear old result
+        localStorage.removeItem(TRYON_RESULT_KEY);
+      }
+    }
+  } catch (e) {
+    console.error('Error reading saved try-on result:', e);
+  }
+  return null;
+};
+
+/**
+ * Clear saved try-on result
+ */
+export const clearTryOnResult = (): void => {
+  localStorage.removeItem(TRYON_RESULT_KEY);
 };
