@@ -11,7 +11,7 @@ import { generateModelImage, generateVirtualTryOnImage } from '../services/gemin
 import { UploadCloudIcon } from './icons';
 import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
-import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage, saveGeneratedModel, getSavedModel } from '../lib/tryOnLimit';
+import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage, saveGeneratedModel, getSavedModel, saveTryOnResult } from '../lib/tryOnLimit';
 import { logTryOnEvent } from '../lib/tryOnAnalytics';
 import { logPersistentTryOnEvent } from '../lib/persistentAnalytics';
 import { addWatermark } from '../lib/watermark';
@@ -107,6 +107,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
           const watermarkedImage = await addWatermark(tryOnResult);
           setTryOnImageUrl(watermarkedImage);
 
+          // Save the try-on result for display in product page
+          saveTryOnResult(watermarkedImage);
+
           // Increment usage count on success (unless unlimited mode)
           if (!isUnlimited) {
             incrementTryOnUsage();
@@ -116,6 +119,12 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
           // Log analytics for successful try-on (both local and persistent)
           logTryOnEvent(product.id, product.name);
           logPersistentTryOnEvent(product.id, product.name);
+
+          // For Festival of Fashion products, close modal and show result in product page
+          if (product.folder === 'Festival_Of_Fashion') {
+            handleClose();
+            return;
+          }
 
           setStep('result');
 
@@ -172,6 +181,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       const watermarkedImage = await addWatermark(tryOnResult);
       setTryOnImageUrl(watermarkedImage);
 
+      // Save the try-on result for display in product page
+      saveTryOnResult(watermarkedImage);
+
       // Increment usage count on success (unless unlimited mode)
       if (!isUnlimited) {
         incrementTryOnUsage();
@@ -181,6 +193,12 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       // Log analytics for successful try-on (both local and persistent)
       logTryOnEvent(product.id, product.name);
       logPersistentTryOnEvent(product.id, product.name);
+
+      // For Festival of Fashion products, close modal and show result in product page
+      if (product.folder === 'Festival_Of_Fashion') {
+        handleClose();
+        return;
+      }
 
       setStep('result');
 

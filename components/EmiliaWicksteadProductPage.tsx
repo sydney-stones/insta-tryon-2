@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getSavedModel } from '../lib/tryOnLimit';
+import { getSavedModel, getSavedTryOnResult } from '../lib/tryOnLimit';
 import ROICalculator from './ROICalculator';
 
 interface EmiliaWicksteadProductPageProps {
@@ -19,6 +19,16 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const savedModel = getSavedModel();
+  const [tryOnResult, setTryOnResult] = useState<string | null>(getSavedTryOnResult());
+
+  // Refresh try-on result when modal might have closed
+  useEffect(() => {
+    const handleFocus = () => {
+      setTryOnResult(getSavedTryOnResult());
+    };
+    window.addEventListener('focus', handleFocus);
+    return () => window.removeEventListener('focus', handleFocus);
+  }, []);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -56,8 +66,11 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
     if (savedModel) {
       media.push({ url: savedModel, type: 'image' });
     }
+    if (tryOnResult) {
+      media.push({ url: tryOnResult, type: 'image' });
+    }
     return media;
-  }, [product, savedModel]);
+  }, [product, savedModel, tryOnResult]);
 
 
   // Handle touch swipe for mobile
@@ -155,6 +168,20 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
                   )}
                 </AnimatePresence>
 
+      {/* "Try on this look" button overlay if viewing saved model */}
+      {(savedModel || tryOnResult) && selectedImageIndex === productMedia.length - 1 && productMedia[selectedImageIndex]?.type === 'image' && (
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => onTryOnClick(product)}
+            className="bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg shadow-xl"
+          >
+            Try on this look
+          </motion.button>
+        </div>
+      )}
+
                 {/* Navigation Arrows */}
                 {productMedia.length > 1 && (
                   <>
@@ -186,7 +213,7 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded overflow-hidden bg-white transition-all ${
+                    className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded overflow-hidden bg-white transition-all ${
                       selectedImageIndex === index
                         ? 'ring-2 ring-offset-0 ring-gray-900'
                         : 'opacity-60 hover:opacity-100'
@@ -196,6 +223,12 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
                       <video src={media.url} className="w-full h-full object-cover" muted />
                     ) : (
                       <img src={media.url} alt="" className="w-full h-full object-cover" />
+                    )}
+                    {/* "You" label on saved model thumbnail */}
+                    {index === productMedia.length - 1 && (savedModel || tryOnResult) && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
+                        <span className="text-white text-xs font-semibold">You</span>
+                      </div>
                     )}
                   </button>
                 ))}
@@ -234,6 +267,16 @@ const EmiliaWicksteadProductPage: React.FC<EmiliaWicksteadProductPageProps> = ({
               className="w-full bg-black text-white py-3 sm:py-4 px-6 mb-6 font-medium tracking-wide hover:bg-gray-800 transition-colors"
             >
               ADD TO CART
+            </motion.button>
+
+            {/* Add Outfit to Cart Button */}
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleAddToCart}
+              className="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white py-3 sm:py-4 px-6 text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity mb-6"
+            >
+              ADD COMPLETE OUTFIT TO CART
             </motion.button>
 
             {/* COMPLETE THE LOOK */}
