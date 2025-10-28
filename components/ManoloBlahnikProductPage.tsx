@@ -10,12 +10,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { getSavedModel, getSavedTryOnResult } from '../lib/tryOnLimit';
 import ROICalculator from './ROICalculator';
 
-interface manoloBlahnikProductPageProps {
+interface ManoloBlahnikProductPageProps {
   product: WardrobeItem;
   onTryOnClick: (product: WardrobeItem) => void;
 }
 
-const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ product, onTryOnClick }) => {
+const ManoloBlahnikProductPage: React.FC<ManoloBlahnikProductPageProps> = ({ product, onTryOnClick }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const savedModel = getSavedModel();
@@ -36,21 +36,21 @@ const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ pro
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Main product item (Bag)
+  // Main product item (Clutch)
   const mainProduct = {
     name: 'Dark Gold Glitter Jewel Buckle Clutch',
     price: 1616,
-    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManoloBlahnik/manoloBlahnik-DarkGoldGlitterJewelBuckleClutch.png',
+    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManoloBlahnik/ManoloBlahnik-DarkGoldGlitterJewelBuckleClutch.png',
     shopUrl: 'https://go.shopmy.us/p-28353991',
     isManoloBlahnik: true
   };
 
-  // Complete the look items
+  // Complete the look items (only Manolo Blahnik items)
   const completeTheLookItems = [
     {
       name: 'Blue Wool Tartan Pointed Toe Pumps',
       price: 675,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManoloBlahnik/manoloBlahnik-BlueWoolTartanPointedToePumps.png',
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/FOF-individualitems/ManoloBlahnik/ManoloBlahnik-BlueWoolTartanPointedToePumps.png',
       shopUrl: 'https://go.shopmy.us/p-28353952',
       isManoloBlahnik: true
     }
@@ -86,6 +86,7 @@ const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ pro
     }
   }, [tryOnResult, productMedia.length]);
 
+  // Handle touch swipe for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -180,19 +181,19 @@ const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ pro
                   )}
                 </AnimatePresence>
 
-      {/* "Try on this look" button overlay - only on saved model, not try-on result */}
-      {savedModel && selectedImageIndex === productMedia.length - (tryOnResult ? 2 : 1) && productMedia[selectedImageIndex]?.type === 'image' && (
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => onTryOnClick(product)}
-            className="bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg shadow-xl"
-          >
-            Try on this look
-          </motion.button>
-        </div>
-      )}
+                {/* "Try on this look" button overlay - only on saved model, not try-on result */}
+                {savedModel && selectedImageIndex === productMedia.length - (tryOnResult ? 2 : 1) && productMedia[selectedImageIndex]?.type === 'image' && (
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => onTryOnClick(product)}
+                      className="bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg shadow-xl"
+                    >
+                      Try on this look
+                    </motion.button>
+                  </div>
+                )}
 
                 {/* Navigation Arrows */}
                 {productMedia.length > 1 && (
@@ -248,11 +249,12 @@ const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ pro
             )}
           </div>
 
-          {/* Product Info Column */}
-          <div className="flex flex-col">
-            <h1 className="text-2xl sm:text-3xl font-serif mb-2">{mainProduct.name}</h1>
-            <p className="text-xl sm:text-2xl mb-6">£{mainProduct.price.toLocaleString()}</p>
-
+          {/* Product Details */}
+          <div className="space-y-6">
+            <div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif tracking-wide mb-2">{mainProduct.name}</h1>
+              <p className="text-xl sm:text-2xl font-light">£{mainProduct.price.toFixed(2)}</p>
+            </div>
 
             {/* VIRTUAL TRY-ON BUTTON */}
             <motion.button
@@ -276,64 +278,54 @@ const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ pro
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleAddToCart}
-              className="w-full bg-black text-white py-3 sm:py-4 px-6 rounded-lg mb-6 font-medium tracking-wide hover:bg-gray-800 transition-colors"
+              className="w-full bg-black text-white py-3 sm:py-4 px-6 rounded-lg text-sm tracking-widest hover:bg-gray-900 transition-colors"
             >
               ADD TO CART
             </motion.button>
 
-            {/* Add Outfit to Cart Button */}
+            {/* Add Complete Outfit to Cart Button */}
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleAddToCart}
-              className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 text-white py-3 sm:py-4 px-6 rounded-lg text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity mb-6"
+              className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 text-white py-3 sm:py-4 px-6 rounded-lg text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity"
             >
               ADD COMPLETE OUTFIT TO CART
             </motion.button>
 
-            {/* COMPLETE THE LOOK */}
-            <div className="border-t pt-6 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-medium tracking-wide text-base sm:text-lg">COMPLETE THE LOOK</h3>
-                <div className="bg-green-50 px-3 py-1 rounded-full flex items-center gap-1">
-                  <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-xs font-semibold text-green-700">Boosts AOV</span>
-                </div>
-              </div>
-
-              <p className="text-sm text-gray-600 mb-4">
-                Shop the complete look to recreate this styled outfit
-              </p>
-
-              <div className="grid grid-cols-3 gap-3 sm:gap-4">
-                {completeTheLookItems.map((item, index) => (
-                  <div key={index} className="group">
-                    <a href={item.shopUrl} target="_blank" rel="noopener noreferrer" className="block relative">
-                      <div className="relative aspect-[3/4] bg-gray-100 rounded-sm overflow-hidden mb-2">
+            {/* Complete the Look */}
+            {completeTheLookItems.length > 0 && (
+              <div className="border-t border-gray-200 pt-6 mt-8">
+                <h3 className="text-lg sm:text-xl font-serif tracking-wide mb-4">Complete the Look</h3>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {completeTheLookItems.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.shopUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <div className="relative aspect-square bg-gray-100 rounded-sm overflow-hidden mb-2">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-
-                      <h4 className="text-xs sm:text-sm font-medium mb-1 line-clamp-2 group-hover:underline">
-                        {item.name}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-gray-600">£{item.price.toLocaleString()}</p>
+                      <p className="text-xs sm:text-sm tracking-wide mb-1 line-clamp-2">{item.name}</p>
+                      <p className="text-sm sm:text-base font-light">£{item.price.toFixed(2)}</p>
                     </a>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
-
-        <ROICalculator defaultRevenue={800000} />
       </div>
+
+      {/* ROI Calculator */}
+      <ROICalculator />
 
       {/* Purchase Modal */}
       <AnimatePresence>
@@ -342,85 +334,47 @@ const manoloBlahnikProductPage: React.FC<manoloBlahnikProductPageProps> = ({ pro
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setShowPurchaseModal(false)}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setShowPurchaseModal(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl"
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl"
             >
               <div className="text-center">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Interested in This Technology?
-                </h3>
+                <h3 className="text-2xl font-serif mb-3">Interested in This Technology?</h3>
                 <p className="text-gray-600 mb-6">
-                  This is a demo showcasing virtual try-on technology for e-commerce brands.
-                  Want to add this to your store?
+                  Join our waitlist to bring AI virtual try-on to your brand's website.
                 </p>
-                <div className="space-y-3">
-                  <a
-                    href="https://tally.so/r/mOOqZ7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
-                  >
-                    Join Brand Waitlist
-                  </a>
-                  <button
-                    onClick={() => setShowPurchaseModal(false)}
-                    className="block w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-                  >
-                    Continue Exploring Demo
-                  </button>
-                </div>
+                <a
+                  href="https://tally.so/r/mOOqZ7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all mb-3"
+                >
+                  Join Brand Waitlist
+                </a>
+                <button
+                  onClick={() => setShowPurchaseModal(false)}
+                  className="text-gray-500 hover:text-gray-700 text-sm"
+                >
+                  Close
+                </button>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <style>{`
-        @keyframes gradient-x {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        .animate-gradient-x {
-          background-size: 200% 200%;
-          animation: gradient-x 3s ease infinite;
-        }
-        .slider::-webkit-slider-thumb {
-          appearance: none;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background: #4f46e5;
-          cursor: pointer;
-          box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
-        }
-        .slider::-moz-range-thumb {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background: #4f46e5;
-          cursor: pointer;
-          box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
-          border: none;
-        }
-      `}</style>
     </div>
   );
 };
 
-export default manoloBlahnikProductPage;
+export default ManoloBlahnikProductPage;
