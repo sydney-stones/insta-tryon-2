@@ -151,12 +151,13 @@ export const clearSavedModel = (): void => {
 };
 
 /**
- * Save the latest try-on result
+ * Save the latest try-on result for a specific product
  */
-export const saveTryOnResult = (tryOnImageUrl: string): void => {
+export const saveTryOnResult = (tryOnImageUrl: string, productId: string): void => {
   try {
     const data = {
       tryOnImageUrl,
+      productId,
       date: getTodayDate(),
       timestamp: Date.now()
     };
@@ -167,19 +168,19 @@ export const saveTryOnResult = (tryOnImageUrl: string): void => {
 };
 
 /**
- * Get the saved try-on result if it exists and is from today
+ * Get the saved try-on result if it exists, is from today, and matches the product
  */
-export const getSavedTryOnResult = (): string | null => {
+export const getSavedTryOnResult = (productId: string): string | null => {
   try {
     const stored = localStorage.getItem(TRYON_RESULT_KEY);
     if (stored) {
       const data = JSON.parse(stored);
       const today = getTodayDate();
 
-      // Only return the result if it's from today
-      if (data.date === today) {
+      // Only return the result if it's from today and matches the product
+      if (data.date === today && data.productId === productId) {
         return data.tryOnImageUrl;
-      } else {
+      } else if (data.date !== today) {
         // Clear old result
         localStorage.removeItem(TRYON_RESULT_KEY);
       }
