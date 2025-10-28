@@ -21,14 +21,17 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
   const savedModel = getSavedModel();
   const [tryOnResult, setTryOnResult] = useState<string | null>(getSavedTryOnResult(product.id));
 
-  // Refresh try-on result when modal might have closed
+  // Poll for try-on result updates
   useEffect(() => {
-    const handleFocus = () => {
-      setTryOnResult(getSavedTryOnResult(product.id));
-    };
-    window.addEventListener('focus', handleFocus);
-    return () => window.removeEventListener('focus', handleFocus);
-  }, [product.id]);
+    const interval = setInterval(() => {
+      const result = getSavedTryOnResult(product.id);
+      if (result && result !== tryOnResult) {
+        setTryOnResult(result);
+      }
+    }, 500); // Check every 500ms
+
+    return () => clearInterval(interval);
+  }, [product.id, tryOnResult]);
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -97,7 +100,10 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
   // Auto-select try-on result when it's generated
   useEffect(() => {
     if (tryOnResult && productMedia.length > 0) {
-      setSelectedImageIndex(productMedia.length - 1);
+      // Use setTimeout to ensure state updates have completed
+      setTimeout(() => {
+        setSelectedImageIndex(productMedia.length - 1);
+      }, 100);
     }
   }, [tryOnResult, productMedia.length]);
 
