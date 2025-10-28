@@ -19,16 +19,17 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const savedModel = getSavedModel();
-  const [tryOnResult, setTryOnResult] = useState<string | null>(getSavedTryOnResult());
+  const [tryOnResult, setTryOnResult] = useState<string | null>(getSavedTryOnResult(product.id));
 
   // Refresh try-on result when modal might have closed
   useEffect(() => {
     const handleFocus = () => {
-      setTryOnResult(getSavedTryOnResult());
+      setTryOnResult(getSavedTryOnResult(product.id));
     };
     window.addEventListener('focus', handleFocus);
     return () => window.removeEventListener('focus', handleFocus);
-  }, []);
+  }, [product.id]);
+
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -92,6 +93,13 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
     }
     return media;
   }, [product, savedModel, tryOnResult]);
+
+  // Auto-select try-on result when it's generated
+  useEffect(() => {
+    if (tryOnResult && productMedia.length > 0) {
+      setSelectedImageIndex(productMedia.length - 1);
+    }
+  }, [tryOnResult, productMedia.length]);
 
   // Handle touch swipe for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -188,8 +196,8 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
                   )}
                 </AnimatePresence>
 
-      {/* "Try on this look" button overlay if viewing saved model */}
-      {(savedModel || tryOnResult) && selectedImageIndex === productMedia.length - 1 && productMedia[selectedImageIndex]?.type === 'image' && (
+      {/* "Try on this look" button overlay - only on saved model, not try-on result */}
+      {savedModel && selectedImageIndex === productMedia.length - (tryOnResult ? 2 : 1) && productMedia[selectedImageIndex]?.type === 'image' && (
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -244,8 +252,8 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
                     ) : (
                       <img src={media.url} alt="" className="w-full h-full object-cover" />
                     )}
-                    {/* "You" label on saved model thumbnail */}
-                    {index === productMedia.length - 1 && (savedModel || tryOnResult) && (
+                    {/* "You" label on saved model and try-on result thumbnails */}
+                    {savedModel && index >= productMedia.length - (tryOnResult ? 2 : 1) && (
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
                         <span className="text-white text-xs font-semibold">You</span>
                       </div>
@@ -284,7 +292,7 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleAddToCart}
-              className="w-full bg-black text-white py-3 sm:py-4 px-6 mb-6 font-medium tracking-wide hover:bg-gray-800 transition-colors"
+              className="w-full bg-black text-white py-3 sm:py-4 px-6 rounded-lg mb-6 font-medium tracking-wide hover:bg-gray-800 transition-colors"
             >
               ADD TO CART
             </motion.button>
@@ -294,7 +302,7 @@ const MaisonSchiaparelliProductPage: React.FC<MaisonSchiaparelliProductPageProps
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleAddToCart}
-              className="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white py-3 sm:py-4 px-6 text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity mb-6"
+              className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 text-white py-3 sm:py-4 px-6 rounded-lg text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity mb-6"
             >
               ADD COMPLETE OUTFIT TO CART
             </motion.button>

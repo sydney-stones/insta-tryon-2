@@ -108,7 +108,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
           setTryOnImageUrl(watermarkedImage);
 
           // Save the try-on result for display in product page
-          saveTryOnResult(watermarkedImage);
+          saveTryOnResult(watermarkedImage, product.id);
 
           // Increment usage count on success (unless unlimited mode)
           if (!isUnlimited) {
@@ -182,7 +182,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       setTryOnImageUrl(watermarkedImage);
 
       // Save the try-on result for display in product page
-      saveTryOnResult(watermarkedImage);
+      saveTryOnResult(watermarkedImage, product.id);
 
       // Increment usage count on success (unless unlimited mode)
       if (!isUnlimited) {
