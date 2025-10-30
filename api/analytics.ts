@@ -4,6 +4,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { createClient } from 'redis';
 
 const ANALYTICS_KEY = 'analytics:events';
 
@@ -18,18 +19,46 @@ interface AnalyticsEvent {
   referrer?: string;
 }
 
-// Fallback in-memory storage when KV is not available
+// Fallback in-memory storage when Redis is not available
 let memoryStorage: AnalyticsEvent[] = [];
 
-// Check if KV is available
-async function getKV() {
+// Redis client singleton
+let redisClient: any = null;
+
+// Get or create Redis connection
+async function getRedis() {
+  if (redisClient && redisClient.isOpen) {
+    return redisClient;
+  }
+
   try {
-    const { kv } = await import('@vercel/kv');
-    // Test if KV is properly configured
-    await kv.ping();
-    return kv;
+    const redisUrl = process.env.REDIS_URL;
+
+    if (!redisUrl) {
+      console.log('REDIS_URL not configured, using in-memory storage');
+      return null;
+    }
+
+    redisClient = createClient({
+      url: redisUrl,
+      socket: {
+        reconnectStrategy: (retries) => {
+          if (retries > 3) return new Error('Max reconnection attempts reached');
+          return Math.min(retries * 100, 3000);
+        }
+      }
+    });
+
+    redisClient.on('error', (err: any) => {
+      console.error('Redis Client Error:', err);
+    });
+
+    await redisClient.connect();
+    console.log('Connected to Redis successfully');
+    return redisClient;
   } catch (error) {
-    console.log('KV not available, using in-memory storage');
+    console.error('Failed to connect to Redis:', error);
+    redisClient = null;
     return null;
   }
 }
@@ -68,22 +97,34 @@ export default async function handler(
         referrer: req.headers['referer'] || undefined
       };
 
-      const kvStore = await getKV();
+      const redis = await getRedis();
 
-      if (kvStore) {
-        // Use KV storage (persistent)
-        const existingEvents = await kvStore.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
-        existingEvents.push(event);
+      if (redis) {
+        try {
+          // Use Redis storage (persistent)
+          const existingData = await redis.get(ANALYTICS_KEY);
+          const existingEvents: AnalyticsEvent[] = existingData ? JSON.parse(existingData) : [];
+          existingEvents.push(event);
 
-        // Keep only last 10000 events to prevent storage issues
-        if (existingEvents.length > 10000) {
-          existingEvents.splice(0, existingEvents.length - 10000);
+          // Keep only last 10000 events to prevent storage issues
+          if (existingEvents.length > 10000) {
+            existingEvents.splice(0, existingEvents.length - 10000);
+          }
+
+          await redis.set(ANALYTICS_KEY, JSON.stringify(existingEvents));
+          console.log('Event saved to Redis:', event.outfitName);
+        } catch (redisError) {
+          console.error('Redis operation failed, falling back to memory:', redisError);
+          // Fallback to memory storage
+          memoryStorage.push(event);
+          if (memoryStorage.length > 10000) {
+            memoryStorage = memoryStorage.slice(-10000);
+          }
         }
-
-        await kvStore.set(ANALYTICS_KEY, existingEvents);
       } else {
         // Use in-memory storage (fallback)
         memoryStorage.push(event);
+        console.log('Event saved to memory (Redis unavailable):', event.outfitName);
 
         // Keep only last 10000 events
         if (memoryStorage.length > 10000) {
@@ -101,15 +142,23 @@ export default async function handler(
   if (req.method === 'GET') {
     // Get analytics data
     try {
-      const kvStore = await getKV();
-      let events: AnalyticsEvent[];
+      const redis = await getRedis();
+      let events: AnalyticsEvent[] = [];
 
-      if (kvStore) {
-        // Use KV storage (persistent)
-        events = await kvStore.get<AnalyticsEvent[]>(ANALYTICS_KEY) || [];
+      if (redis) {
+        try {
+          // Use Redis storage (persistent)
+          const data = await redis.get(ANALYTICS_KEY);
+          events = data ? JSON.parse(data) : [];
+          console.log(`Retrieved ${events.length} events from Redis`);
+        } catch (redisError) {
+          console.error('Redis get failed, falling back to memory:', redisError);
+          events = memoryStorage;
+        }
       } else {
         // Use in-memory storage (fallback)
         events = memoryStorage;
+        console.log(`Retrieved ${events.length} events from memory`);
       }
 
       // Calculate summary

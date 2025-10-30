@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import StoreHeader from './components/StoreHeader';
 import ProductGrid from './components/ProductGrid';
 import ProductDetailPage from './components/ProductDetailPage';
@@ -109,6 +110,7 @@ const App: React.FC = () => {
             }
           />
         </Routes>
+        <Analytics />
       </div>
     </Router>
   );
