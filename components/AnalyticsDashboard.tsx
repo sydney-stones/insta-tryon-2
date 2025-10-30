@@ -64,7 +64,7 @@ const AnalyticsDashboard: React.FC = () => {
         </div>
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {/* Total Try-Ons */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <div className="flex items-center justify-between">
@@ -80,6 +80,22 @@ const AnalyticsDashboard: React.FC = () => {
               </div>
             </div>
             <p className="text-xs text-gray-500 mt-2">All-time virtual try-ons</p>
+          </div>
+
+          {/* Unique Sessions */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600 mb-1">Unique Sessions</p>
+                <p className="text-3xl font-bold text-gray-900">{analytics.uniqueSessions}</p>
+              </div>
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+            </div>
+            <p className="text-xs text-gray-500 mt-2">Unique user sessions</p>
           </div>
 
           {/* Unique Outfits */}
@@ -98,12 +114,12 @@ const AnalyticsDashboard: React.FC = () => {
             <p className="text-xs text-gray-500 mt-2">Different outfits tried</p>
           </div>
 
-          {/* Average Per Day */}
+          {/* Avg Try-ons Per Session */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600 mb-1">Average Per Day</p>
-                <p className="text-3xl font-bold text-gray-900">{avgPerDay.toFixed(1)}</p>
+                <p className="text-sm font-medium text-gray-600 mb-1">Avg Per Session</p>
+                <p className="text-3xl font-bold text-gray-900">{analytics.conversionRate.toFixed(1)}</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +127,7 @@ const AnalyticsDashboard: React.FC = () => {
                 </svg>
               </div>
             </div>
-            <p className="text-xs text-gray-500 mt-2">Try-ons per active day</p>
+            <p className="text-xs text-gray-500 mt-2">Try-ons per session</p>
           </div>
         </div>
 

@@ -13,6 +13,9 @@ interface AnalyticsEvent {
   outfitId: string;
   outfitName: string;
   date: string;
+  sessionId?: string;
+  userAgent?: string;
+  referrer?: string;
 }
 
 // Fallback in-memory storage when KV is not available
@@ -49,7 +52,7 @@ export default async function handler(
   if (req.method === 'POST') {
     // Log a new try-on event
     try {
-      const { outfitId, outfitName } = req.body;
+      const { outfitId, outfitName, sessionId } = req.body;
 
       if (!outfitId || !outfitName) {
         return res.status(400).json({ error: 'Missing required fields' });
@@ -59,7 +62,10 @@ export default async function handler(
         timestamp: Date.now(),
         outfitId,
         outfitName,
-        date: new Date().toISOString().split('T')[0]
+        date: new Date().toISOString().split('T')[0],
+        sessionId: sessionId || undefined,
+        userAgent: req.headers['user-agent'] || undefined,
+        referrer: req.headers['referer'] || undefined
       };
 
       const kvStore = await getKV();
@@ -140,9 +146,17 @@ export default async function handler(
       // Recent events
       const recentEvents = events.slice(-20).reverse();
 
+      // Calculate unique sessions
+      const uniqueSessions = new Set(events.filter(e => e.sessionId).map(e => e.sessionId)).size;
+
+      // Calculate conversion rate (try-ons / sessions)
+      const conversionRate = uniqueSessions > 0 ? (totalTryOns / uniqueSessions) : 0;
+
       return res.status(200).json({
         totalTryOns,
         uniqueOutfits: outfitMap.size,
+        uniqueSessions,
+        conversionRate,
         mostPopularOutfits,
         tryOnsByDate,
         recentEvents
