@@ -73,17 +73,13 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       setStep('generating-model');
 
       try {
-        // Step 1: Check if we have a saved model from today, otherwise generate new one
-        let generatedModel = getSavedModel();
+        // Step 1: Generate new model from user's selfie
+        // Always generate fresh model when user uploads a new image
+        const generatedModel = await generateModelImage(file);
 
-        if (!generatedModel) {
-          // Generate new model from user's selfie
-          generatedModel = await generateModelImage(file);
-
-          // Save the model for reuse (unless unlimited mode)
-          if (!isUnlimited) {
-            saveGeneratedModel(generatedModel);
-          }
+        // Save the model for reuse (unless unlimited mode)
+        if (!isUnlimited) {
+          saveGeneratedModel(generatedModel);
         }
 
         setModelImageUrl(generatedModel);
