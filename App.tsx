@@ -10,6 +10,7 @@ import StoreHeader from './components/StoreHeader';
 import ProductGrid from './components/ProductGrid';
 import ProductDetailPage from './components/ProductDetailPage';
 import DemoProductPage from './components/DemoProductPage';
+import CampbellsOfBeaulyProductPage from './components/CampbellsOfBeaulyProductPage';
 import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
@@ -96,6 +97,10 @@ const App: React.FC = () => {
                   <Route
                     path="/demo-product"
                     element={<DemoProductPage onTryOnClick={handleTryOnClick} />}
+                  />
+                  <Route
+                    path="/campbells-demo"
+                    element={<CampbellsOfBeaulyProductPage onTryOnClick={handleTryOnClick} />}
                   />
                 </Routes>
 

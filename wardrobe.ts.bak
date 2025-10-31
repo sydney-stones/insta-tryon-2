@@ -445,6 +445,8 @@ export const defaultWardrobe: WardrobeItem[] = [
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn2.png',
     secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Autumn2.png',
     folder: 'Autumn',
+    gender: 'WOMENS',
+    gender: 'WOMENS',
     price: 0,
     description: '',
     collection: 'Autumn',

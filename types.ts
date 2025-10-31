@@ -16,6 +16,7 @@ export interface WardrobeItem {
   secondaryImageUrl?: string; // For hover/touch display
   videoUrl?: string; // Video showcase of the outfit
   folder?: string;
+  gender?: 'MENS' | 'WOMENS'; // Gender category for filtering
   // E-commerce fields
   price?: number;
   description?: string;
