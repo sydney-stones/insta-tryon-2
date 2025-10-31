@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion } from 'framer-motion';
-import { getSavedModel } from '../lib/tryOnLimit';
+import { getSavedModel, getSavedTryOnResult } from '../lib/tryOnLimit';
 import ErdemProductPage from './ErdemProductPage';
 import EmiliaWicksteadProductPage from './EmiliaWicksteadProductPage';
 import ManoloBlahnikProductPage from './ManoloBlahnikProductPage';
@@ -53,6 +53,23 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   }
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
+  const [tryOnResult, setTryOnResult] = useState<string | null>(
+    product ? getSavedTryOnResult(product.id) : null
+  );
+
+  // Poll for try-on result updates
+  useEffect(() => {
+    if (!product) return;
+
+    const interval = setInterval(() => {
+      const result = getSavedTryOnResult(product.id);
+      if (result && result !== tryOnResult) {
+        setTryOnResult(result);
+      }
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [product, tryOnResult]);
 
   const productMedia = useMemo(() => {
     if (!product) return [];
@@ -66,12 +83,25 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
     if (product.videoUrl) {
       media.push({ url: product.videoUrl, type: 'video' });
     }
-    // Add saved model as last item if it exists
+    // Add saved model if it exists
     if (savedModel) {
       media.push({ url: savedModel, type: 'image' });
     }
+    // Add try-on result as last item if it exists
+    if (tryOnResult) {
+      media.push({ url: tryOnResult, type: 'image' });
+    }
     return media;
-  }, [product, savedModel]);
+  }, [product, savedModel, tryOnResult]);
+
+  // Auto-select try-on result when it's generated
+  useEffect(() => {
+    if (tryOnResult && productMedia.length > 0) {
+      setTimeout(() => {
+        setSelectedImageIndex(productMedia.length - 1);
+      }, 100);
+    }
+  }, [tryOnResult, productMedia.length]);
 
   if (!product) {
     return (
@@ -123,8 +153,8 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                   className="h-full w-full object-cover"
                 />
               )}
-              {/* "Try on this look" button overlay if viewing saved model */}
-              {savedModel && selectedImageIndex === productMedia.length - 1 && (
+              {/* "Try on this look" button overlay - only on saved model, not try-on result */}
+              {savedModel && selectedImageIndex === productMedia.length - (tryOnResult ? 2 : 1) && productMedia[selectedImageIndex]?.type === 'image' && (
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -172,8 +202,8 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
                         className="h-full w-full object-cover"
                       />
                     )}
-                    {/* Label for model image thumbnail */}
-                    {savedModel && index === productMedia.length - 1 && (
+                    {/* "You" label on saved model and try-on result thumbnails */}
+                    {savedModel && index >= productMedia.length - (tryOnResult ? 2 : 1) && (
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
                         <span className="text-white text-xs font-semibold">You</span>
                       </div>
