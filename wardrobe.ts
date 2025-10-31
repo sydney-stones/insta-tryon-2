@@ -8,318 +8,12 @@ import { WardrobeItem, WardrobeFolder } from './types';
 // Default wardrobe items with folder organization
 export const defaultWardrobe: WardrobeItem[] = [
   // Festival of Fashion Collection - Keep at top
-  {
-    id: 'EmiliaWickstead',
-    name: 'Emilia Wickstead',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/EmiliaWickstead.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/EmiliaWickstead.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/emiliawickstead.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Dress',
-        price: 2100,
-        shopUrl: 'https://go.shopmy.us/p-28351154'
-      },
-      {
-        name: 'Shoes',
-        price: 610,
-        shopUrl: 'https://go.shopmy.us/p-28351221'
-      },
-      {
-        name: 'Watch',
-        price: 12800,
-        shopUrl: 'https://go.shopmy.us/p-28351271'
-      },
-      {
-        name: 'Earrings',
-        price: 975,
-        shopUrl: 'https://go.shopmy.us/p-28351287'
-      }
-    ]
-  },
-  {
-    id: 'Uniqlo',
-    name: 'Uniqlo',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Uniqlo.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Uniqlo.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/uniqlo.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Shoes',
-        price: 540,
-        shopUrl: 'https://go.shopmy.us/p-28351463'
-      },
-      {
-        name: 'Poncho',
-        price: 49.90,
-        shopUrl: 'https://go.shopmy.us/p-28351494'
-      },
-      {
-        name: 'Hat',
-        price: 24.90,
-        shopUrl: 'https://go.shopmy.us/p-28351508'
-      },
-      {
-        name: 'Gloves',
-        price: 19.90,
-        shopUrl: 'https://go.shopmy.us/p-28351518'
-      },
-      {
-        name: 'Bag',
-        price: 12.90,
-        shopUrl: 'https://go.shopmy.us/p-28351528'
-      },
-      {
-        name: 'Trousers',
-        price: 39.90,
-        shopUrl: 'https://go.shopmy.us/p-28351557'
-      }
-    ]
-  },
-  {
-    id: 'ReallyWild',
-    name: 'Really Wild',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ReallyWild.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ReallyWild.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Scarf',
-        price: 195,
-        shopUrl: 'https://go.shopmy.us/p-28351858'
-      },
-      {
-        name: 'Trousers',
-        price: 295,
-        shopUrl: 'https://go.shopmy.us/p-28351872'
-      },
-      {
-        name: 'Boots',
-        price: 295,
-        shopUrl: 'https://go.shopmy.us/p-28351883'
-      },
-      {
-        name: 'Belt',
-        price: 78,
-        shopUrl: 'https://go.shopmy.us/p-28351891'
-      },
-      {
-        name: 'Jacket',
-        price: 625,
-        shopUrl: 'https://go.shopmy.us/p-28351901'
-      }
-    ]
-  },
-  {
-    id: 'Erdem',
-    name: 'ERDEM',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Erdem.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Erdem.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/erdem.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Jumper',
-        price: 895,
-        shopUrl: 'https://go.shopmy.us/p-28352268'
-      },
-      {
-        name: 'Shoes',
-        price: 139,
-        shopUrl: 'https://go.shopmy.us/p-28352262'
-      },
-      {
-        name: 'Skirt',
-        price: 1095,
-        shopUrl: 'https://go.shopmy.us/p-28352299'
-      },
-      {
-        name: 'Bag',
-        price: 2195,
-        shopUrl: 'https://go.shopmy.us/p-28352309'
-      },
-      {
-        name: 'Earrings',
-        price: 295,
-        shopUrl: 'https://go.shopmy.us/p-28352358'
-      }
-    ]
-  },
-  {
-    id: 'ManoloBlahnik',
-    name: 'Manolo Blahnik',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ManoloBlahnik.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ManoloBlahnik.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Blahnik.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Blue Wool Tartan Pointed Toe Pumps',
-        price: 675,
-        shopUrl: 'https://go.shopmy.us/p-28353952'
-      },
-      {
-        name: 'Dark Gold Glitter Jewel Buckle Clutch',
-        price: 1616,
-        shopUrl: 'https://go.shopmy.us/p-28353991'
-      }
-    ]
-  },
-  {
-    id: 'MaisonSchiaparelli',
-    name: 'Maison Schiaparelli',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/MaisonSchiaparelli.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/MaisonSchiaparellirendered.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/MaisonSchiaperalliVideo.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Snake Scale Trompe L\'Oeil Cardigan',
-        price: 4345.09,
-        shopUrl: 'https://go.shopmy.us/p-28554672'
-      },
-      {
-        name: 'Wide-Leg Embroidered Pants',
-        price: 4343.02,
-        shopUrl: 'https://go.shopmy.us/p-28554922'
-      },
-      {
-        name: 'Eyes Earrings',
-        price: 1042.26,
-        shopUrl: 'https://go.shopmy.us/p-28554964'
-      },
-      {
-        name: 'Measuring Tape Sandals',
-        price: 1650.05,
-        shopUrl: 'https://go.shopmy.us/p-28555046'
-      },
-      {
-        name: 'Mini Secret Bag',
-        price: 11291.15,
-        shopUrl: 'https://go.shopmy.us/p-28555071'
-      }
-    ]
-  },
-  {
-    id: 'ReallyWild2',
-    name: 'Really Wild Countryside',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Reallywild2.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild2.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Reallywild2video.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Windsor Tweed Country Waistcoat',
-        price: 425,
-        shopUrl: 'https://go.shopmy.us/p-28897841'
-      },
-      {
-        name: 'Windsor Tweed Country Trousers',
-        price: 495,
-        shopUrl: 'https://go.shopmy.us/p-28897867'
-      },
-      {
-        name: 'Kinalba Lambswool High-Neck Sweater',
-        price: 175,
-        shopUrl: 'https://go.shopmy.us/p-28897949'
-      },
-      {
-        name: 'La Mancha Waterproof Spanish Boots',
-        price: 395,
-        shopUrl: 'https://go.shopmy.us/p-28898164'
-      },
-      {
-        name: 'Lady Rannoch Long Socks',
-        price: 55,
-        shopUrl: 'https://go.shopmy.us/p-28898226'
-      }
-    ]
-  },
-  {
-    id: 'ReallyWild3',
-    name: 'Really Wild Luxe',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/reallywild3.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild3.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild3video.mp4',
-    folder: 'Festival_Of_Fashion',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: 'Festival_Of_Fashion',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Brompton Silk Wool Puffer Jacket',
-        price: 845,
-        shopUrl: 'https://go.shopmy.us/p-28898013'
-      },
-      {
-        name: 'Cadogan Silk Tie Neck Blouse',
-        price: 275,
-        shopUrl: 'https://go.shopmy.us/p-28898045'
-      },
-      {
-        name: 'Mayfair Velvet Flare Trousers',
-        price: 395,
-        shopUrl: 'https://go.shopmy.us/p-28898097'
-      },
-      {
-        name: 'Heritage Calf Length Leather Boots',
-        price: 295,
-        shopUrl: 'https://go.shopmy.us/p-28898185'
-      },
-      {
-        name: 'Logo Baseball Cap',
-        price: 35,
-        shopUrl: 'https://go.shopmy.us/p-28898254'
-      }
-    ]
-  },
-
   // Men's Collection
   {
     id: 'Maharishi',
     name: 'Maharishi',
-    url: '/outfits/maharishi.png',
-    secondaryImageUrl: '/Renderings/Maharishi.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/maharishi.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Maharishi.png',
     folder: 'MENS',
     gender: 'MENS',
     price: 0,
@@ -347,9 +41,9 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'RHUDE',
     name: 'RHUDE',
-    url: '/outfits/RHUDE.png',
-    secondaryImageUrl: '/Renderings/rhude.png',
-    videoUrl: '/Renderings/RHUDEvideo.mp4',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/RHUDE.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/rhude.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/RHUDEvideo.mp4',
     folder: 'MENS',
     gender: 'MENS',
     price: 0,
@@ -382,8 +76,8 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'MassimoDutti',
     name: 'Massimo Dutti',
-    url: '/outfits/Massimo Dutti.png',
-    secondaryImageUrl: '/Renderings/massimodutti.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Massimo Dutti.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/massimodutti.png',
     folder: 'MENS',
     gender: 'MENS',
     price: 0,
@@ -411,8 +105,8 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'BarbourXLevis',
     name: 'Barbour X Levi\'s',
-    url: '/outfits/BarbourXLevis.png',
-    secondaryImageUrl: '/Renderings/barbourxlevis.png',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/BarbourXLevis.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/barbourxlevis.png',
     folder: 'MENS',
     gender: 'MENS',
     price: 0,
@@ -983,6 +677,312 @@ export const defaultWardrobe: WardrobeItem[] = [
       }
     ]
   },
+
+  {
+    id: 'EmiliaWickstead',
+    name: 'Emilia Wickstead',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/EmiliaWickstead.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/EmiliaWickstead.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/emiliawickstead.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Dress',
+        price: 2100,
+        shopUrl: 'https://go.shopmy.us/p-28351154'
+      },
+      {
+        name: 'Shoes',
+        price: 610,
+        shopUrl: 'https://go.shopmy.us/p-28351221'
+      },
+      {
+        name: 'Watch',
+        price: 12800,
+        shopUrl: 'https://go.shopmy.us/p-28351271'
+      },
+      {
+        name: 'Earrings',
+        price: 975,
+        shopUrl: 'https://go.shopmy.us/p-28351287'
+      }
+    ]
+  },
+  {
+    id: 'Uniqlo',
+    name: 'Uniqlo',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Uniqlo.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Uniqlo.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/uniqlo.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Shoes',
+        price: 540,
+        shopUrl: 'https://go.shopmy.us/p-28351463'
+      },
+      {
+        name: 'Poncho',
+        price: 49.90,
+        shopUrl: 'https://go.shopmy.us/p-28351494'
+      },
+      {
+        name: 'Hat',
+        price: 24.90,
+        shopUrl: 'https://go.shopmy.us/p-28351508'
+      },
+      {
+        name: 'Gloves',
+        price: 19.90,
+        shopUrl: 'https://go.shopmy.us/p-28351518'
+      },
+      {
+        name: 'Bag',
+        price: 12.90,
+        shopUrl: 'https://go.shopmy.us/p-28351528'
+      },
+      {
+        name: 'Trousers',
+        price: 39.90,
+        shopUrl: 'https://go.shopmy.us/p-28351557'
+      }
+    ]
+  },
+  {
+    id: 'ReallyWild',
+    name: 'Really Wild',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ReallyWild.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ReallyWild.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Scarf',
+        price: 195,
+        shopUrl: 'https://go.shopmy.us/p-28351858'
+      },
+      {
+        name: 'Trousers',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28351872'
+      },
+      {
+        name: 'Boots',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28351883'
+      },
+      {
+        name: 'Belt',
+        price: 78,
+        shopUrl: 'https://go.shopmy.us/p-28351891'
+      },
+      {
+        name: 'Jacket',
+        price: 625,
+        shopUrl: 'https://go.shopmy.us/p-28351901'
+      }
+    ]
+  },
+  {
+    id: 'Erdem',
+    name: 'ERDEM',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Erdem.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Erdem.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/erdem.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Jumper',
+        price: 895,
+        shopUrl: 'https://go.shopmy.us/p-28352268'
+      },
+      {
+        name: 'Shoes',
+        price: 139,
+        shopUrl: 'https://go.shopmy.us/p-28352262'
+      },
+      {
+        name: 'Skirt',
+        price: 1095,
+        shopUrl: 'https://go.shopmy.us/p-28352299'
+      },
+      {
+        name: 'Bag',
+        price: 2195,
+        shopUrl: 'https://go.shopmy.us/p-28352309'
+      },
+      {
+        name: 'Earrings',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28352358'
+      }
+    ]
+  },
+  {
+    id: 'ManoloBlahnik',
+    name: 'Manolo Blahnik',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/ManoloBlahnik.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/ManoloBlahnik.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Blahnik.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Blue Wool Tartan Pointed Toe Pumps',
+        price: 675,
+        shopUrl: 'https://go.shopmy.us/p-28353952'
+      },
+      {
+        name: 'Dark Gold Glitter Jewel Buckle Clutch',
+        price: 1616,
+        shopUrl: 'https://go.shopmy.us/p-28353991'
+      }
+    ]
+  },
+  {
+    id: 'MaisonSchiaparelli',
+    name: 'Maison Schiaparelli',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/MaisonSchiaparelli.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/MaisonSchiaparellirendered.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/MaisonSchiaperalliVideo.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Snake Scale Trompe L\'Oeil Cardigan',
+        price: 4345.09,
+        shopUrl: 'https://go.shopmy.us/p-28554672'
+      },
+      {
+        name: 'Wide-Leg Embroidered Pants',
+        price: 4343.02,
+        shopUrl: 'https://go.shopmy.us/p-28554922'
+      },
+      {
+        name: 'Eyes Earrings',
+        price: 1042.26,
+        shopUrl: 'https://go.shopmy.us/p-28554964'
+      },
+      {
+        name: 'Measuring Tape Sandals',
+        price: 1650.05,
+        shopUrl: 'https://go.shopmy.us/p-28555046'
+      },
+      {
+        name: 'Mini Secret Bag',
+        price: 11291.15,
+        shopUrl: 'https://go.shopmy.us/p-28555071'
+      }
+    ]
+  },
+  {
+    id: 'ReallyWild2',
+    name: 'Really Wild Countryside',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/Reallywild2.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild2.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Reallywild2video.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Windsor Tweed Country Waistcoat',
+        price: 425,
+        shopUrl: 'https://go.shopmy.us/p-28897841'
+      },
+      {
+        name: 'Windsor Tweed Country Trousers',
+        price: 495,
+        shopUrl: 'https://go.shopmy.us/p-28897867'
+      },
+      {
+        name: 'Kinalba Lambswool High-Neck Sweater',
+        price: 175,
+        shopUrl: 'https://go.shopmy.us/p-28897949'
+      },
+      {
+        name: 'La Mancha Waterproof Spanish Boots',
+        price: 395,
+        shopUrl: 'https://go.shopmy.us/p-28898164'
+      },
+      {
+        name: 'Lady Rannoch Long Socks',
+        price: 55,
+        shopUrl: 'https://go.shopmy.us/p-28898226'
+      }
+    ]
+  },
+  {
+    id: 'ReallyWild3',
+    name: 'Really Wild Luxe',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Festival_Of_Fashion/reallywild3.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild3.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/reallywild3video.mp4',
+    folder: 'Festival_Of_Fashion',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Festival_Of_Fashion',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Brompton Silk Wool Puffer Jacket',
+        price: 845,
+        shopUrl: 'https://go.shopmy.us/p-28898013'
+      },
+      {
+        name: 'Cadogan Silk Tie Neck Blouse',
+        price: 275,
+        shopUrl: 'https://go.shopmy.us/p-28898045'
+      },
+      {
+        name: 'Mayfair Velvet Flare Trousers',
+        price: 395,
+        shopUrl: 'https://go.shopmy.us/p-28898097'
+      },
+      {
+        name: 'Heritage Calf Length Leather Boots',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-28898185'
+      },
+      {
+        name: 'Logo Baseball Cap',
+        price: 35,
+        shopUrl: 'https://go.shopmy.us/p-28898254'
+      }
+    ]
+  }
 
 ]
 
