@@ -5,7 +5,6 @@
 
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { generateModelImage, generateVirtualTryOnImage } from '../services/geminiService';
 import { UploadCloudIcon } from './icons';
@@ -23,17 +22,15 @@ interface VirtualTryOnModalProps {
   isUnlimited?: boolean; // For admin mode
 }
 
-type ModalStep = 'upload' | 'limit-reached' | 'generating-model' | 'model-ready' | 'generating-tryon' | 'result';
+type ModalStep = 'upload' | 'limit-reached' | 'generating-model' | 'model-ready' | 'generating-tryon';
 
 const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false }) => {
-  const navigate = useNavigate();
   const [step, setStep] = useState<ModalStep>('upload');
   const [userImageUrl, setUserImageUrl] = useState<string | null>(null);
   const [modelImageUrl, setModelImageUrl] = useState<string | null>(null);
   const [tryOnImageUrl, setTryOnImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [remainingTries, setRemainingTries] = useState(3);
-  const [showPurchasePopup, setShowPurchasePopup] = useState(false);
 
   const handleClose = () => {
     setStep('upload');
@@ -41,7 +38,6 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
     setModelImageUrl(null);
     setTryOnImageUrl(null);
     setError(null);
-    setShowPurchasePopup(false);
     onClose();
   };
 
@@ -116,20 +112,8 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
           logTryOnEvent(product.id, product.name);
           logPersistentTryOnEvent(product.id, product.name);
 
-          // For Festival of Fashion products, close modal and show result in product page
-          if (product.folder === 'Festival_Of_Fashion') {
-            handleClose();
-            return;
-          }
-
-          setStep('result');
-
-          // Show purchase popup after 2 seconds for demo product
-          if (product.folder === 'Demo') {
-            setTimeout(() => {
-              setShowPurchasePopup(true);
-            }, 2000);
-          }
+          // Close modal and show result in product page for all products
+          handleClose();
         }
       } catch (err) {
         setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
@@ -144,11 +128,6 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
     if (e.target.files && e.target.files[0]) {
       handleFileSelect(e.target.files[0]);
     }
-  };
-
-  const handleTryAgain = () => {
-    handleClose();
-    navigate('/');
   };
 
   const handleUseSavedModel = async () => {
@@ -190,20 +169,8 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       logTryOnEvent(product.id, product.name);
       logPersistentTryOnEvent(product.id, product.name);
 
-      // For Festival of Fashion products, close modal and show result in product page
-      if (product.folder === 'Festival_Of_Fashion') {
-        handleClose();
-        return;
-      }
-
-      setStep('result');
-
-      // Show purchase popup after 2 seconds for demo product
-      if (product.folder === 'Demo') {
-        setTimeout(() => {
-          setShowPurchasePopup(true);
-        }, 2000);
-      }
+      // Close modal and show result in product page for all products
+      handleClose();
     } catch (err) {
       setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
       setStep('upload');
@@ -482,163 +449,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                 </motion.div>
               )}
 
-              {/* Result Step */}
-              {step === 'result' && tryOnImageUrl && (
-                <motion.div
-                  key="result"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="p-8 sm:p-12"
-                >
-                  <div className="text-center mb-6">
-                    <h2 className="text-3xl font-serif font-bold text-gray-900 mb-2">
-                      Here's How It Looks!
-                    </h2>
-                    <p className="text-gray-600">
-                      Your personalized try-on result
-                    </p>
-                  </div>
-
-                  <div className="max-w-md mx-auto mb-6">
-                    <img
-                      src={tryOnImageUrl}
-                      alt="Virtual try-on result"
-                      className="w-full h-auto rounded-xl shadow-lg"
-                    />
-                  </div>
-
-                  {/* Outfit Items */}
-                  {product?.outfitItems && product.outfitItems.length > 0 && (
-                    <div className="max-w-md mx-auto mb-6">
-                      <h3 className="text-sm font-semibold text-gray-900 mb-3">Shop This Outfit</h3>
-                      <div className="space-y-2">
-                        {product.outfitItems.map((item, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                          >
-                            <div className="flex-1">
-                              <p className="text-sm font-medium text-gray-900">{item.name}</p>
-                              {item.price && (
-                                <p className="text-xs text-gray-600 mt-0.5">
-                                  £{item.price.toFixed(2)}
-                                </p>
-                              )}
-                            </div>
-                            {item.shopUrl && (
-                              <a
-                                href={item.shopUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ml-3 px-3 py-1.5 bg-gray-900 text-white text-xs font-semibold rounded-md hover:bg-gray-800 transition-colors"
-                              >
-                                Shop
-                              </a>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                    <button
-                      onClick={handleTryAgain}
-                      className="flex-1 px-6 py-3 bg-gray-100 text-gray-900 rounded-md font-semibold hover:bg-gray-200 transition-colors"
-                    >
-                      Try Another Outfit
-                    </button>
-                    {product?.shopUrl ? (
-                      <a
-                        href={product.shopUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800 transition-colors text-center"
-                      >
-                        Shop this Look
-                      </a>
-                    ) : (
-                      <button
-                        onClick={handleClose}
-                        className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800 transition-colors"
-                      >
-                        Close
-                      </button>
-                    )}
-                  </div>
-                </motion.div>
-              )}
             </AnimatePresence>
           </div>
         </motion.div>
-
-        {/* Purchase Popup (for Demo Product) */}
-        <AnimatePresence>
-          {showPurchasePopup && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="absolute inset-0 flex items-center justify-center p-4 z-10"
-              onClick={() => setShowPurchasePopup(false)}
-            >
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-              <motion.div
-                initial={{ y: 20 }}
-                animate={{ y: 0 }}
-                onClick={(e: React.MouseEvent) => e.stopPropagation()}
-                className="relative bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl"
-              >
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    Love the Look?
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    Ready to add <strong>{product?.name}</strong> to your wardrobe? This virtual try-on experience can be yours!
-                  </p>
-                  <div className="space-y-3">
-                    {product?.outfitItems && product.outfitItems.length > 0 && (
-                      <>
-                        <p className="text-sm font-semibold text-gray-900 mb-2">Shop Individual Items:</p>
-                        <div className="space-y-2 mb-4">
-                          {product.outfitItems.slice(0, 2).map((item: { name: string; price?: number; shopUrl?: string }, index: number) => (
-                            <a
-                              key={index}
-                              href={item.shopUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
-                            >
-                              Shop {item.name} - £{item.price?.toFixed(2)}
-                            </a>
-                          ))}
-                        </div>
-                      </>
-                    )}
-                    <button
-                      onClick={() => setShowPurchasePopup(false)}
-                      className="block w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-                    >
-                      Maybe Later
-                    </button>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-4">
-                    This is a demo. Want this tech for your store?{' '}
-                    <a href="/brand-waitlist" className="text-indigo-600 underline hover:text-indigo-800">
-                      Learn more
-                    </a>
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </AnimatePresence>
   );
