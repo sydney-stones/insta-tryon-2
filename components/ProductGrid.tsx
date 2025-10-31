@@ -66,7 +66,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
           </h1>
 
           {/* Waitlist Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4">
             <Link
               to="/waitlist"
               className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-lg hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
@@ -79,6 +79,20 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
               className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
             >
               For Brands
+            </Link>
+          </div>
+
+          {/* See How It Works Demo Button */}
+          <div className="flex justify-center">
+            <Link
+              to="/campbells-demo"
+              className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 transition-all hover:scale-105 shadow-lg text-center flex items-center justify-center gap-2"
+            >
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              See How It Works
             </Link>
           </div>
         </div>
