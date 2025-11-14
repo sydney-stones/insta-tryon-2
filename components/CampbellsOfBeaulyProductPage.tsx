@@ -334,7 +334,7 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
               onClick={handleAddToCart}
               className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 text-white py-3 sm:py-4 px-6 rounded-lg text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity mb-6"
             >
-              ADD COMPLETE OUTFIT TO CART - £{totalPrice}
+              ADD COMPLETE OUTFIT TO CART
             </motion.button>
 
             {/* Product Description */}

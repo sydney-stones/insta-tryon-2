@@ -221,7 +221,7 @@ const WaitlistPage: React.FC = () => {
             </a>
 
             <p className="text-sm text-gray-500 mt-6">
-              No credit card required • Early bird pricing for waitlist members
+              Early bird pricing for waitlist members
             </p>
           </div>
         </motion.div>

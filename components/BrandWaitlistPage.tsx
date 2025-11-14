@@ -403,7 +403,7 @@ const BrandWaitlistPage: React.FC = () => {
             Join the Waitlist
           </a>
           <p className="text-sm text-indigo-200 mt-6">
-            No credit card required • Early adopter pricing • Priority onboarding
+            Early adopter pricing • Priority onboarding
           </p>
         </motion.div>
       </div>
