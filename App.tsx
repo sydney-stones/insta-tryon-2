@@ -11,8 +11,6 @@ import ProductGrid from './components/ProductGrid';
 import ProductDetailPage from './components/ProductDetailPage';
 import DemoProductPage from './components/DemoProductPage';
 import CampbellsOfBeaulyProductPage from './components/CampbellsOfBeaulyProductPage';
-import YaittProductPage from './components/YaittProductPage';
-import OnThePegProductPage from './components/OnThePegProductPage';
 import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
@@ -103,14 +101,6 @@ const App: React.FC = () => {
                   <Route
                     path="/campbells-demo"
                     element={<CampbellsOfBeaulyProductPage onTryOnClick={handleTryOnClick} />}
-                  />
-                  <Route
-                    path="/yaitt-demo"
-                    element={<YaittProductPage onTryOnClick={handleTryOnClick} />}
-                  />
-                  <Route
-                    path="/onthepeg-demo"
-                    element={<OnThePegProductPage onTryOnClick={handleTryOnClick} />}
                   />
                 </Routes>
 

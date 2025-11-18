@@ -986,9 +986,9 @@ export const defaultWardrobe: WardrobeItem[] = [
   {
     id: 'Yaitt',
     name: 'Yaitte',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/yaitt-outfit.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/yaitt.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/yaitt-video.mp4',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Yaitte.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Yaitte.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/YaitteVideo.mp4',
     folder: 'Demo',
     gender: 'WOMENS',
     price: 0,
@@ -997,38 +997,28 @@ export const defaultWardrobe: WardrobeItem[] = [
     shopUrl: '',
     outfitItems: [
       {
-        name: 'BRAEMAR - Oversized Ice Grey Plaid Flannel Shirt',
+        name: 'PUGLIA - Wide Bespoke Olive Green Striped Shirt',
         price: 225,
-        shopUrl: 'https://go.shopmy.us/p-31547859'
+        shopUrl: 'https://go.shopmy.us/p-31581064'
       },
       {
-        name: 'Logo Crew Sock',
-        price: 20,
-        shopUrl: 'https://go.shopmy.us/p-31547914'
+        name: 'JANEIRO - Wide Bespoke Olive Green Striped Trouser',
+        price: 225,
+        shopUrl: 'https://go.shopmy.us/p-31581310'
       },
       {
-        name: 'Bella Patch Pocket Wide Leg Jeans in Mid Blue',
-        price: 170,
-        shopUrl: 'https://go.shopmy.us/p-31547944'
-      },
-      {
-        name: 'Carmen Rib-Knit Socks With Cashmere in Grey',
-        price: 18,
-        shopUrl: 'https://go.shopmy.us/p-31547969'
-      },
-      {
-        name: 'GEL-1130',
-        price: 95,
-        shopUrl: 'https://go.shopmy.us/p-31547996'
+        name: 'Arizona PROF',
+        price: 80,
+        shopUrl: 'https://go.shopmy.us/p-31581982'
       }
     ]
   },
   {
     id: 'OnThePeg',
     name: 'On the Peg',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/onthepeg-outfit.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/onthepeg.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/onthepeg-video.mp4',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/OnthePeg.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/OnThePeg.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/OnThePegVideo.mp4',
     folder: 'Demo',
     gender: 'WOMENS',
     price: 0,
