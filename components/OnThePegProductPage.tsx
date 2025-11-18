@@ -20,15 +20,15 @@ const OnThePegProductPage: React.FC<OnThePegProductPageProps> = ({ onTryOnClick 
   // Create a demo product for the virtual try-on
   const demoProduct: WardrobeItem = useMemo(() => ({
     id: 'onthepeg-outfit',
-    name: 'Ginger & Jardine Silky Roll Neck Tattersall',
+    name: 'ALAN PAINE WOMEN\'S COMBROOK BREEKS GROVE',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/onthepeg-outfit.png',
     secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/onthepeg.png',
     videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/onthepeg-video.mp4',
     folder: 'Demo',
-    price: 44.99,
-    description: 'Elegant silky roll neck with classic tattersall check pattern. Perfect for country pursuits and smart casual occasions.',
+    price: 214.95,
+    description: 'Premium quality breeks in Grove colorway. Perfect for country pursuits, shooting, and outdoor activities.',
     collection: 'Demo',
-    shopUrl: 'https://go.shopmy.us/p-31548107',
+    shopUrl: 'https://go.shopmy.us/p-31548156',
   }), []);
 
   const savedModel = getSavedModel();
@@ -49,21 +49,21 @@ const OnThePegProductPage: React.FC<OnThePegProductPageProps> = ({ onTryOnClick 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Main product item (Top)
+  // Main product item (Trousers)
   const mainProduct = {
-    name: 'Ginger & Jardine Silky Roll Neck Tattersall',
-    price: 44.99,
-    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/onthepeg-top.png',
-    shopUrl: 'https://go.shopmy.us/p-31548107',
+    name: 'ALAN PAINE WOMEN\'S COMBROOK BREEKS GROVE',
+    price: 214.95,
+    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/onthepeg-trousers.png',
+    shopUrl: 'https://go.shopmy.us/p-31548156',
   };
 
   // Complete the look items
   const completeTheLookItems = [
     {
-      name: 'ALAN PAINE WOMEN\'S COMBROOK BREEKS GROVE',
-      price: 214.95,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/onthepeg-trousers.png',
-      shopUrl: 'https://go.shopmy.us/p-31548156',
+      name: 'Ginger & Jardine Silky Roll Neck Tattersall',
+      price: 44.99,
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/onthepeg-top.png',
+      shopUrl: 'https://go.shopmy.us/p-31548107',
     },
     {
       name: 'On The Peg Women\'s Baker Boy Hat',
