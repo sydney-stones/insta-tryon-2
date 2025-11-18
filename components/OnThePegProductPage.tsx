@@ -67,7 +67,7 @@ const OnThePegProductPage: React.FC<OnThePegProductPageProps> = ({ product, onTr
     {
       name: 'HERITAGE CALF LENGTH LEATHER BOOTS',
       price: 295,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/OnThePegboots.png',
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/OnthePegboots.png',
       shopUrl: 'https://go.shopmy.us/p-31548265',
     }
   ];
