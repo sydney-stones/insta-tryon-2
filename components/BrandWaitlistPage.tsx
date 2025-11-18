@@ -361,11 +361,6 @@ const BrandWaitlistPage: React.FC = () => {
               <p className="text-gray-400 text-sm">Clothing, accessories, footwear</p>
             </div>
             <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-              <div className="text-4xl mb-4">💄</div>
-              <h3 className="text-lg font-bold mb-2">Beauty Brands</h3>
-              <p className="text-gray-400 text-sm">Makeup, eyewear, jewelry</p>
-            </div>
-            <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
               <div className="text-4xl mb-4">🏪</div>
               <h3 className="text-lg font-bold mb-2">Marketplaces</h3>
               <p className="text-gray-400 text-sm">Multi-brand platforms</p>
