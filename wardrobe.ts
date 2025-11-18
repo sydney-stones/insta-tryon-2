@@ -982,6 +982,86 @@ export const defaultWardrobe: WardrobeItem[] = [
         shopUrl: 'https://go.shopmy.us/p-28898254'
       }
     ]
+  },
+  {
+    id: 'Yaitt',
+    name: 'Yaitte',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/yaitt-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/yaitt.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/yaitt-video.mp4',
+    folder: 'Demo',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'BRAEMAR - Oversized Ice Grey Plaid Flannel Shirt',
+        price: 225,
+        shopUrl: 'https://go.shopmy.us/p-31547859'
+      },
+      {
+        name: 'Logo Crew Sock',
+        price: 20,
+        shopUrl: 'https://go.shopmy.us/p-31547914'
+      },
+      {
+        name: 'Bella Patch Pocket Wide Leg Jeans in Mid Blue',
+        price: 170,
+        shopUrl: 'https://go.shopmy.us/p-31547944'
+      },
+      {
+        name: 'Carmen Rib-Knit Socks With Cashmere in Grey',
+        price: 18,
+        shopUrl: 'https://go.shopmy.us/p-31547969'
+      },
+      {
+        name: 'GEL-1130',
+        price: 95,
+        shopUrl: 'https://go.shopmy.us/p-31547996'
+      }
+    ]
+  },
+  {
+    id: 'OnThePeg',
+    name: 'On the Peg',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/onthepeg-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/onthepeg.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/onthepeg-video.mp4',
+    folder: 'Demo',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'ALAN PAINE WOMEN\'S COMBROOK BREEKS GROVE',
+        price: 214.95,
+        shopUrl: 'https://go.shopmy.us/p-31548156'
+      },
+      {
+        name: 'Ginger & Jardine Silky Roll Neck Tattersall',
+        price: 44.99,
+        shopUrl: 'https://go.shopmy.us/p-31548107'
+      },
+      {
+        name: 'On The Peg Women\'s Baker Boy Hat',
+        price: 90,
+        shopUrl: 'https://go.shopmy.us/p-31548200'
+      },
+      {
+        name: 'HOUSE OF CHEVIOT LADY RANNOCH SHOOTING SOCKS BILBERRY LARGE',
+        price: 30,
+        shopUrl: 'https://go.shopmy.us/p-31548238'
+      },
+      {
+        name: 'HERITAGE CALF LENGTH LEATHER BOOTS',
+        price: 295,
+        shopUrl: 'https://go.shopmy.us/p-31548265'
+      }
+    ]
   }
 
 ]
