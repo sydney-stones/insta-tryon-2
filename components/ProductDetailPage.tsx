@@ -16,6 +16,8 @@ import ReallyWild2ProductPage from './ReallyWild2ProductPage';
 import ReallyWild3ProductPage from './ReallyWild3ProductPage';
 import UniqloProductPage from './UniqloProductPage';
 import MaisonSchiaparelliProductPage from './MaisonSchiaparelliProductPage';
+import YaittProductPage from './YaittProductPage';
+import OnThePegProductPage from './OnThePegProductPage';
 
 interface ProductDetailPageProps {
   products: WardrobeItem[];
@@ -50,6 +52,12 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   }
   if (product && product.id === 'MaisonSchiaparelli') {
     return <MaisonSchiaparelliProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'Yaitt') {
+    return <YaittProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'OnThePeg') {
+    return <OnThePegProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
