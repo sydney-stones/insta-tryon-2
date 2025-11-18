@@ -61,13 +61,13 @@ const OnThePegProductPage: React.FC<OnThePegProductPageProps> = ({ product, onTr
     {
       name: 'HOUSE OF CHEVIOT LADY RANNOCH SHOOTING SOCKS BILBERRY LARGE',
       price: 30,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Onthepegsocks.png',
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/OnthePegsocks.png',
       shopUrl: 'https://go.shopmy.us/p-31548238',
     },
     {
       name: 'HERITAGE CALF LENGTH LEATHER BOOTS',
       price: 295,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Onthepegboots.png',
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/OnThePegboots.png',
       shopUrl: 'https://go.shopmy.us/p-31548265',
     }
   ];
