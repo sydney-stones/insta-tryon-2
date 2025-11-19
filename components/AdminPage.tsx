@@ -8,7 +8,8 @@ import AdminLogin from './AdminLogin';
 import AdminDashboard from './AdminDashboard';
 import { WardrobeItem } from '../types';
 
-const ADMIN_PASSWORD = 'admin123'; // Change this to your secure password
+// Use environment variable for secure password
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'change-this-password';
 
 interface AdminPageProps {
   products: WardrobeItem[];
