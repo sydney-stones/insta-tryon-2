@@ -18,6 +18,11 @@ import UniqloProductPage from './UniqloProductPage';
 import MaisonSchiaparelliProductPage from './MaisonSchiaparelliProductPage';
 import YaittProductPage from './YaittProductPage';
 import OnThePegProductPage from './OnThePegProductPage';
+import StAndrewsProductPage from './StAndrewsProductPage';
+import FarlowsProductPage from './FarlowsProductPage';
+import BeaufortAndBlakeProductPage from './BeaufortAndBlakeProductPage';
+import HouseOfBraurProductPage from './HouseOfBraurProductPage';
+import StAndrewsMensProductPage from './StAndrewsMensProductPage';
 
 interface ProductDetailPageProps {
   products: WardrobeItem[];
@@ -58,6 +63,21 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   }
   if (product && product.id === 'OnThePeg') {
     return <OnThePegProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'StAndrews') {
+    return <StAndrewsProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'Farlows') {
+    return <FarlowsProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'BeaufortAndBlake') {
+    return <BeaufortAndBlakeProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'HouseOfBraur') {
+    return <HouseOfBraurProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'StAndrewsMens') {
+    return <StAndrewsMensProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
