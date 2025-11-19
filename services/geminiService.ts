@@ -55,7 +55,14 @@ const handleApiResponse = (response: GenerateContentResponse): string => {
     throw new Error(errorMessage);
 };
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+// Use environment variable for API key - NEVER commit the actual key
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!apiKey || apiKey === 'NULL' || apiKey === 'your_gemini_api_key_here') {
+  console.warn('WARNING: Gemini API key is not configured. Virtual try-on features will not work.');
+}
+
+const ai = new GoogleGenAI({ apiKey: apiKey || '' });
 const model = 'gemini-2.5-flash-image-preview';
 
 export const generateModelImage = async (userImage: File): Promise<string> => {
