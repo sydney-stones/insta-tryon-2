@@ -1052,6 +1052,161 @@ export const defaultWardrobe: WardrobeItem[] = [
         shopUrl: 'https://go.shopmy.us/p-31548265'
       }
     ]
+  },
+  {
+    id: 'StAndrews',
+    name: 'St Andrews',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/standrews-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/StAndrews.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/StAndrewsVideo.mp4',
+    folder: 'Demo',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'SCUBA OVERSIZED HALF-ZIP HOODIE',
+        price: 116,
+        shopUrl: 'https://go.shopmy.us/p-31708803'
+      },
+      {
+        name: 'PACE BREAKER LINERLESS SHORT 7"',
+        price: 56,
+        shopUrl: 'https://go.shopmy.us/p-31708934'
+      },
+      {
+        name: 'Clifton 9',
+        price: 130,
+        shopUrl: 'https://go.shopmy.us/p-31708866'
+      }
+    ]
+  },
+  {
+    id: 'Farlows',
+    name: 'Farlows',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/farlows-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Farlows.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/FarlowsVideo.mp4',
+    folder: 'Demo',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'FARLOWS LADIES COTSWOLD TWEED FIELDCOAT',
+        price: 750,
+        shopUrl: 'https://go.shopmy.us/p-31709195'
+      },
+      {
+        name: 'FARLOWS CORD SHOOTING BREEKS',
+        price: 220,
+        shopUrl: 'https://go.shopmy.us/p-31709255'
+      },
+      {
+        name: 'FARLOWS CLASSIC 8 PIECE TWEED HAT',
+        price: 80,
+        shopUrl: 'https://go.shopmy.us/p-31709270'
+      },
+      {
+        name: 'WOMEN\'S VIERZON JERSEY LINED WELLINGTON BOOT',
+        price: 180,
+        shopUrl: 'https://go.shopmy.us/p-31709550'
+      }
+    ]
+  },
+  {
+    id: 'BeaufortAndBlake',
+    name: 'Beaufort and Blake',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblake-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/BeaufortAndBlake.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/BeaufortAndBlakeVideo.mp4',
+    folder: 'Demo',
+    gender: 'MENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'The Best Friend Jumper',
+        price: 130,
+        shopUrl: 'https://go.shopmy.us/p-31709312'
+      },
+      {
+        name: 'Blackridge Cord Trousers',
+        price: 99,
+        shopUrl: 'https://go.shopmy.us/p-31709335'
+      },
+      {
+        name: 'Chocolate Brown Apron Derby Boot',
+        price: 149,
+        shopUrl: 'https://go.shopmy.us/p-31709365'
+      }
+    ]
+  },
+  {
+    id: 'HouseOfBraur',
+    name: 'House of Braur',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/houseofbraur-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/HouseOfBraur.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/HouseOfBraurVideo.mp4',
+    folder: 'Demo',
+    gender: 'MENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Men\'s Lambswool Graphic Crew Neck',
+        price: 65,
+        shopUrl: 'https://go.shopmy.us/p-31709401'
+      },
+      {
+        name: 'Men\'s Heavyweight Cord Trousers',
+        price: 129.95,
+        shopUrl: 'https://go.shopmy.us/p-31709443'
+      },
+      {
+        name: 'Men\'s Gant Mc Julien Sneakers',
+        price: 140,
+        shopUrl: 'https://go.shopmy.us/p-31709509'
+      }
+    ]
+  },
+  {
+    id: 'StAndrewsMens',
+    name: 'St Andrews Mens',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/standrewsmens-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/StAndrewsMens.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/StAndrewsMensVideo.mp4',
+    folder: 'Demo',
+    gender: 'MENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: '1/4 ZIP FLEECE',
+        price: 45,
+        shopUrl: 'https://go.shopmy.us/p-31710081'
+      },
+      {
+        name: 'COLLEGE CUFFED SWEATPANTS',
+        price: 35,
+        shopUrl: 'https://go.shopmy.us/p-31710070'
+      },
+      {
+        name: 'HOKA Cloud 6',
+        price: 140,
+        shopUrl: 'https://go.shopmy.us/p-31710109'
+      }
+    ]
   }
 
 ]
