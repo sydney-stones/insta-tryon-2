@@ -14,6 +14,7 @@ import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage, saveGeneratedMode
 import { logTryOnEvent } from '../lib/tryOnAnalytics';
 import { logPersistentTryOnEvent } from '../lib/persistentAnalytics';
 import { addWatermark } from '../lib/watermark';
+import { FEATURE_FLAGS } from '../config/featureFlags';
 
 interface VirtualTryOnModalProps {
   isOpen: boolean;
@@ -212,6 +213,51 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
           <div className="overflow-y-auto max-h-[90vh]">
             <AnimatePresence mode="wait">
+              {/* Feature Disabled - Under Development */}
+              {!FEATURE_FLAGS.VIRTUAL_TRY_ON_ENABLED ? (
+                <motion.div
+                  key="under-development"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="p-8 sm:p-12"
+                >
+                  <div className="text-center max-w-md mx-auto">
+                    <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center">
+                      <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                    </div>
+                    <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
+                      Site is Currently Under Development
+                    </h2>
+                    <p className="text-gray-600 text-lg mb-6">
+                      Try again soon
+                    </p>
+                    <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg mb-6">
+                      <p className="text-sm text-gray-800">
+                        Follow{' '}
+                        <a
+                          href="https://www.instagram.com/renderedfits"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-blue-600 hover:text-blue-800 underline"
+                        >
+                          @renderedfits
+                        </a>
+                        {' '}for updates
+                      </p>
+                    </div>
+                    <button
+                      onClick={handleClose}
+                      className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </motion.div>
+              ) : (
+                <>
               {/* Limit Reached Step */}
               {step === 'limit-reached' && (
                 <motion.div
@@ -447,6 +493,8 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     </div>
                   </div>
                 </motion.div>
+              )}
+                </>
               )}
 
             </AnimatePresence>
