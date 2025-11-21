@@ -1207,6 +1207,71 @@ export const defaultWardrobe: WardrobeItem[] = [
         shopUrl: 'https://go.shopmy.us/p-31710109'
       }
     ]
+  },
+  {
+    id: 'NouvelleHabit',
+    name: 'Nouvelle Habit',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/nouvellehabit-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/NouvelleHabit.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/nouvellehabit-video.mp4',
+    folder: 'Demo',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'The Compass',
+        price: 290,
+        shopUrl: 'https://go.shopmy.us/p-28478306'
+      },
+      {
+        name: 'Kevin\'s Ladies Huntress Untucked Shooting Shirt',
+        price: 131,
+        shopUrl: 'https://go.shopmy.us/p-28478422'
+      },
+      {
+        name: 'Merino Plain Shooting Socks',
+        price: 59.95,
+        shopUrl: 'https://go.shopmy.us/p-28478566'
+      },
+      {
+        name: 'Women\'s National Trust Vierzon Jersey Lined Wellington Boot - Oak Green',
+        price: 220,
+        shopUrl: 'https://go.shopmy.us/p-28478577'
+      }
+    ]
+  },
+  {
+    id: 'BeaufortAndBlakeSienna',
+    name: 'Beaufort and Blake Sienna',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblakesienna-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/BeaufortAndBlakeSienna.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/baufortandblake-video.mp4',
+    folder: 'Demo',
+    gender: 'WOMENS',
+    price: 0,
+    description: '',
+    collection: 'Demo',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Montadale Sheep Half Zip Jumper',
+        price: 170,
+        shopUrl: 'https://go.shopmy.us/p-31046835'
+      },
+      {
+        name: 'Tb.490 Rife Leather Lace Up Trainers',
+        price: 150,
+        shopUrl: 'https://go.shopmy.us/p-32062209'
+      },
+      {
+        name: 'Felden Pocket Jeans',
+        price: 89,
+        shopUrl: 'https://go.shopmy.us/p-31549687'
+      }
+    ]
   }
 
 ]

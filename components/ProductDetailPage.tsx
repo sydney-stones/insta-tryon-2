@@ -23,6 +23,8 @@ import FarlowsProductPage from './FarlowsProductPage';
 import BeaufortAndBlakeProductPage from './BeaufortAndBlakeProductPage';
 import HouseOfBraurProductPage from './HouseOfBraurProductPage';
 import StAndrewsMensProductPage from './StAndrewsMensProductPage';
+import NouvelleHabitProductPage from './NouvelleHabitProductPage';
+import BeaufortAndBlakeSiennaProductPage from './BeaufortAndBlakeSiennaProductPage';
 
 interface ProductDetailPageProps {
   products: WardrobeItem[];
@@ -78,6 +80,12 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products, onTryOn
   }
   if (product && product.id === 'StAndrewsMens') {
     return <StAndrewsMensProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'NouvelleHabit') {
+    return <NouvelleHabitProductPage product={product} onTryOnClick={onTryOnClick} />;
+  }
+  if (product && product.id === 'BeaufortAndBlakeSienna') {
+    return <BeaufortAndBlakeSiennaProductPage product={product} onTryOnClick={onTryOnClick} />;
   }
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const savedModel = getSavedModel();
