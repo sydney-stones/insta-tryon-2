@@ -1245,10 +1245,10 @@ export const defaultWardrobe: WardrobeItem[] = [
   },
   {
     id: 'BeaufortAndBlakeSienna',
-    name: 'Beaufort and Blake Sienna',
+    name: 'Beaufort and Blake Womens',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblakesienna-outfit.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/BeaufortAndBlakeSienna.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/baufortandblake-video.mp4',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/beaufortandblake-sienna.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/baufortandblakevideo-sienna.mp4',
     folder: 'Demo',
     gender: 'WOMENS',
     price: 0,
