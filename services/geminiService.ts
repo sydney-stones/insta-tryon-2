@@ -56,10 +56,12 @@ const handleApiResponse = (response: GenerateContentResponse): string => {
 };
 
 // Use environment variable for API key - NEVER commit the actual key
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+// Support both Vite (VITE_GEMINI_API_KEY) and Vercel (GEMINI_API_KEY) naming conventions
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.GEMINI_API_KEY;
 
 if (!apiKey || apiKey === 'NULL' || apiKey === 'your_gemini_api_key_here') {
   console.warn('WARNING: Gemini API key is not configured. Virtual try-on features will not work.');
+  console.warn('Set either VITE_GEMINI_API_KEY (for local dev) or GEMINI_API_KEY (for Vercel) environment variable.');
 }
 
 const ai = new GoogleGenAI({ apiKey: apiKey || '' });
