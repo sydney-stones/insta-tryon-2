@@ -8,5 +8,5 @@
  */
 export const FEATURE_FLAGS = {
   // Set to false to temporarily disable try-on functionality
-  VIRTUAL_TRY_ON_ENABLED: false,
+  VIRTUAL_TRY_ON_ENABLED: true,
 } as const;
