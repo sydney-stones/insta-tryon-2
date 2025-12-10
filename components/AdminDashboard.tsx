@@ -8,13 +8,14 @@ import { WardrobeItem } from '../types';
 import OutfitForm from './OutfitForm';
 import CustomTryOn from './CustomTryOn';
 import AnalyticsDashboard from './AnalyticsDashboard';
+import VertexTryOnDemo from './VertexTryOnDemo';
 
 interface AdminDashboardProps {
   onLogout: () => void;
   products: WardrobeItem[];
 }
 
-type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'form' | 'code-viewer';
+type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'vertex-tryon' | 'form' | 'code-viewer';
 
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) => {
   const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
@@ -144,6 +145,10 @@ ${outfit.outfitItems.map(item => `      {
   // Render views based on currentView
   if (currentView === 'tryon') {
     return <CustomTryOn onBack={() => setCurrentView('dashboard')} />;
+  }
+
+  if (currentView === 'vertex-tryon') {
+    return <VertexTryOnDemo onBack={() => setCurrentView('dashboard')} products={products} />;
   }
 
   if (currentView === 'analytics') {
@@ -307,6 +312,15 @@ ${outfit.outfitItems.map(item => `      {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
                 Custom Try-On (5/day)
+              </button>
+              <button
+                onClick={() => setCurrentView('vertex-tryon')}
+                className="px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                Vertex AI Try-On
               </button>
               <button
                 onClick={handleExportJSON}
