@@ -19,16 +19,16 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
 
   // Create a demo product for the virtual try-on
   const demoProduct: WardrobeItem = useMemo(() => ({
-    id: 'campbells-of-beauly-jumper',
-    name: 'Land Rover Defender Jumper',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Campbellsofbeauly-outfit.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/campbellsofbeauly.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Campbellsofbeauly-video.mp4',
+    id: 'beaufortandblakesienna-jumper',
+    name: 'Montadale Sheep Half Zip Jumper',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblakesienna-jumper.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/beaufortandblakesienna.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/beaufortandblakesienna-video.mp4',
     folder: 'Demo',
-    price: 189,
-    description: 'Premium quality jumper featuring the iconic Land Rover Defender design. Perfect for country living and outdoor adventures.',
+    price: 170,
+    description: 'Premium quality Montadale Sheep Half Zip Jumper from Beaufort & Blake.',
     collection: 'Demo',
-    shopUrl: 'https://go.shopmy.us/p-27968843',
+    shopUrl: 'https://go.shopmy.us/p-31046835',
   }), []);
 
   const savedModel = getSavedModel();
@@ -51,31 +51,25 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
 
   // Main product item (Jumper)
   const mainProduct = {
-    name: 'Campbells of Beauly Land Rover Defender Jumper',
-    price: 189,
-    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Campbellsofbeauly-landroverdefenderjumper.jpeg',
-    shopUrl: 'https://go.shopmy.us/p-27968843',
+    name: 'Montadale Sheep Half Zip Jumper',
+    price: 170,
+    image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblakesienna-jumper.png',
+    shopUrl: 'https://go.shopmy.us/p-31046835',
   };
 
   // Complete the look items
   const completeTheLookItems = [
     {
-      name: 'Campbells of Beauly Tweed Kilt',
-      price: 175,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Campbellsofbeauly-tweedkilt.jpg',
-      shopUrl: 'https://go.shopmy.us/p-27968860',
+      name: 'Tb.490 Rife Leather Lace Up Trainers',
+      price: 150,
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblakesienna-shoes.png',
+      shopUrl: 'https://go.shopmy.us/p-32062209',
     },
     {
-      name: 'Fairfax & Favor Pembridge Navy Pumps',
-      price: 175,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Fairfax&favor-pembridgenavypumps.jpeg',
-      shopUrl: 'https://go.shopmy.us/p-27968876',
-    },
-    {
-      name: 'Fairfax & Favor Tetbury Navy Handbag',
-      price: 295,
-      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Fairfax&favor-tetburynavyhandbag.jpg',
-      shopUrl: 'https://go.shopmy.us/p-27969022',
+      name: 'Felden Pocket Jeans',
+      price: 89,
+      image: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblakesienna-jeans.png',
+      shopUrl: 'https://go.shopmy.us/p-31549687',
     }
   ];
 

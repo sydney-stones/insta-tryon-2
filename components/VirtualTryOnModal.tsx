@@ -375,15 +375,58 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     {/* Upload New Photo */}
                     <label
                       htmlFor="tryon-upload"
-                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
+                      className="block w-full cursor-pointer"
                     >
-                      <UploadCloudIcon className="w-16 h-16 text-gray-400 mb-4" />
-                      <p className="text-lg font-semibold text-gray-700 mb-1">
-                        {savedModelExists ? 'Upload New Photo' : 'Upload a Selfie'}
-                      </p>
-                      <p className="text-sm text-gray-500">
-                        PNG, JPG, or WEBP (MAX. 10MB)
-                      </p>
+                      <div className="border-2 border-dashed border-purple-300 rounded-lg overflow-hidden hover:border-purple-400 transition-colors bg-gradient-to-br from-purple-50 to-pink-50">
+                        <div className="flex flex-col md:flex-row items-center gap-4 p-6">
+                          {/* Example Image */}
+                          <div className="flex-shrink-0">
+                            <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-white shadow-lg">
+                              <img
+                                src="/example_image.png"
+                                alt="Example selfie style"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          </div>
+
+                          {/* Instructions */}
+                          <div className="flex-1 text-center md:text-left">
+                            <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                              <UploadCloudIcon className="w-6 h-6 text-purple-600" />
+                              <p className="text-lg font-bold text-gray-900">
+                                {savedModelExists ? 'Upload New Photo' : 'Upload Your Photo'}
+                              </p>
+                            </div>
+                            <p className="text-sm text-gray-700 mb-3">
+                              For best results, upload a <span className="font-semibold text-purple-700">close-up, passport-style photo</span> of yourself:
+                            </p>
+                            <ul className="text-xs text-gray-600 space-y-1 text-left inline-block">
+                              <li className="flex items-start gap-2">
+                                <svg className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                                <span>Face clearly visible and well-lit</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <svg className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                                <span>Head and shoulders visible</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <svg className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                                <span>Plain background (avoid busy patterns)</span>
+                              </li>
+                            </ul>
+                            <p className="text-xs text-gray-500 mt-3">
+                              Accepted formats: PNG, JPG, WEBP (MAX. 10MB)
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </label>
                     <input
                       id="tryon-upload"
@@ -398,12 +441,6 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                         <p className="text-red-700 text-sm">{error}</p>
                       </div>
                     )}
-
-                    <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg">
-                      <p className="text-sm text-blue-900">
-                        <span className="font-semibold">Tips:</span> Use a clear, well-lit photo. AI interpretation of how these items could look on.
-                      </p>
-                    </div>
                   </div>
                 </motion.div>
               )}
