@@ -132,7 +132,7 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="text-xl sm:text-2xl font-serif tracking-wider">
-              CAMPBELLS OF BEAULY
+              DEMO
             </Link>
             <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-xs lg:text-sm tracking-wide">
               <Link to="/" className="hover:opacity-60 transition-opacity">COUNTRY WEAR</Link>
@@ -334,7 +334,7 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
             {/* Product Description */}
             <div className="mb-6 pb-6 border-b">
               <p className="text-sm text-gray-600 leading-relaxed">
-                Premium quality jumper featuring the iconic Land Rover Defender design. Perfect for country living and outdoor adventures. Made from soft, durable fabric that keeps you warm and comfortable.
+                Premium quality jumper featuring a sheep design. Perfect for country living and outdoor adventures. Made from soft, durable fabric that keeps you warm and comfortable.
               </p>
             </div>
 
