@@ -329,6 +329,11 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                         </span>
                       </div>
                     )}
+                    {/* Upload Instructions */}
+                    <div className="mt-4">
+                      <p className="text-lg font-semibold text-gray-900 mb-1">Upload Your Photo</p>
+                      <p className="text-sm text-gray-600">Take a photo like this</p>
+                    </div>
                   </div>
 
                   <div className="max-w-md mx-auto space-y-4">
@@ -379,21 +384,19 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     >
                       <div className="relative">
                         {/* Example Image */}
-                        <div className="relative aspect-[16/9] max-w-2xl mx-auto rounded-2xl overflow-hidden">
+                        <div className="relative aspect-[16/9] max-w-2xl mx-auto rounded-2xl overflow-hidden border-2 border-gray-200 group-hover:border-purple-400 transition-colors">
                           <img
                             src="/example_image.png"
                             alt="Upload your photo"
                             className="w-full h-full object-cover"
                           />
 
-                          {/* Overlay with upload instruction */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-8">
-                            <div className="text-center px-6">
-                              <div className="w-16 h-16 mx-auto mb-4 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <UploadCloudIcon className="w-8 h-8 text-gray-900" />
+                          {/* Subtle hover overlay */}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                              <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <UploadCloudIcon className="w-10 h-10 text-gray-900" />
                               </div>
-                              <p className="text-white font-semibold text-lg mb-1">Upload Your Photo</p>
-                              <p className="text-white/80 text-sm">Take a photo like this</p>
                             </div>
                           </div>
                         </div>
