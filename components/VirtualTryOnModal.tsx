@@ -379,9 +379,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     >
                       <div className="relative">
                         {/* Example Image */}
-                        <div className="relative aspect-[3/4] max-w-xs mx-auto rounded-2xl overflow-hidden">
+                        <div className="relative aspect-[16/9] max-w-2xl mx-auto rounded-2xl overflow-hidden">
                           <img
-                            src="example_image.png"
+                            src="/example_image.png"
                             alt="Upload your photo"
                             className="w-full h-full object-cover"
                           />
