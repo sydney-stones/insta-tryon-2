@@ -99,7 +99,7 @@ const App: React.FC = () => {
                     element={<DemoProductPage onTryOnClick={handleTryOnClick} />}
                   />
                   <Route
-                    path="/campbells-demo"
+                    path="/demo"
                     element={<CampbellsOfBeaulyProductPage onTryOnClick={handleTryOnClick} />}
                   />
                 </Routes>

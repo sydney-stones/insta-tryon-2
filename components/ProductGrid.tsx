@@ -85,7 +85,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
           {/* See How It Works Demo Button */}
           <div className="flex justify-center">
             <Link
-              to="/campbells-demo"
+              to="/demo"
               className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 transition-all hover:scale-105 shadow-lg text-center flex items-center justify-center gap-2"
             >
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
