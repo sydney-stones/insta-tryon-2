@@ -375,55 +375,26 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     {/* Upload New Photo */}
                     <label
                       htmlFor="tryon-upload"
-                      className="block w-full cursor-pointer"
+                      className="block w-full cursor-pointer group"
                     >
-                      <div className="border-2 border-dashed border-purple-300 rounded-lg overflow-hidden hover:border-purple-400 transition-colors bg-gradient-to-br from-purple-50 to-pink-50">
-                        <div className="flex flex-col md:flex-row items-center gap-4 p-6">
-                          {/* Example Image */}
-                          <div className="flex-shrink-0">
-                            <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-white shadow-lg">
-                              <img
-                                src="/example_image.png"
-                                alt="Example selfie style"
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          </div>
+                      <div className="relative">
+                        {/* Example Image */}
+                        <div className="relative aspect-[3/4] max-w-xs mx-auto rounded-2xl overflow-hidden">
+                          <img
+                            src="/example_image.png"
+                            alt="Upload your photo"
+                            className="w-full h-full object-cover"
+                          />
 
-                          {/* Instructions */}
-                          <div className="flex-1 text-center md:text-left">
-                            <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                              <UploadCloudIcon className="w-6 h-6 text-purple-600" />
-                              <p className="text-lg font-bold text-gray-900">
-                                {savedModelExists ? 'Upload New Photo' : 'Upload Your Photo'}
-                              </p>
+                          {/* Overlay with upload instruction */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-8">
+                            <div className="text-center px-6">
+                              <div className="w-16 h-16 mx-auto mb-4 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <UploadCloudIcon className="w-8 h-8 text-gray-900" />
+                              </div>
+                              <p className="text-white font-semibold text-lg mb-1">Upload Your Photo</p>
+                              <p className="text-white/80 text-sm">Take a photo like this</p>
                             </div>
-                            <p className="text-sm text-gray-700 mb-3">
-                              For best results, upload a <span className="font-semibold text-purple-700">close-up, passport-style photo</span> of yourself:
-                            </p>
-                            <ul className="text-xs text-gray-600 space-y-1 text-left inline-block">
-                              <li className="flex items-start gap-2">
-                                <svg className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                                <span>Face clearly visible and well-lit</span>
-                              </li>
-                              <li className="flex items-start gap-2">
-                                <svg className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                                <span>Head and shoulders visible</span>
-                              </li>
-                              <li className="flex items-start gap-2">
-                                <svg className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                                <span>Plain background (avoid busy patterns)</span>
-                              </li>
-                            </ul>
-                            <p className="text-xs text-gray-500 mt-3">
-                              Accepted formats: PNG, JPG, WEBP (MAX. 10MB)
-                            </p>
                           </div>
                         </div>
                       </div>
