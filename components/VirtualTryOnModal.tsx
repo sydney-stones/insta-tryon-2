@@ -395,7 +395,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                             <div className="group-hover:scale-110 transition-transform">
                               <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-                                <UploadCloudIcon className="w-10 h-10 text-gray-900" />
+                                <UploadCloudIcon className="w-6 h-6 text-gray-900" />
                               </div>
                             </div>
                           </div>
