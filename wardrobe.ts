@@ -131,6 +131,36 @@ export const defaultWardrobe: WardrobeItem[] = [
       }
     ]
   },
+  {
+    id: 'FarlowsMen',
+    name: 'Farlows',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/farlowsmen-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/farlowsmen.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/farlowsmenvideo.mp4',
+    folder: 'MENS',
+    gender: 'MENS',
+    price: 0,
+    description: '',
+    collection: 'MENS',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Natural Fairisle Yolk Chunky Crew Neck Jumper',
+        price: 160,
+        shopUrl: 'https://go.shopmy.us/p-35190940'
+      },
+      {
+        name: 'Fine Cord Trousers',
+        price: 155,
+        shopUrl: 'https://go.shopmy.us/p-35190799'
+      },
+      {
+        name: 'Soft Loafer',
+        price: 250,
+        shopUrl: 'https://go.shopmy.us/p-35289657'
+      }
+    ]
+  },
 
   // Autumn Collection
   {
