@@ -67,6 +67,17 @@ if (!apiKey || apiKey === 'NULL' || apiKey === 'your_gemini_api_key_here') {
 const ai = new GoogleGenAI({ apiKey: apiKey || '' });
 const model = 'gemini-2.5-flash-image-preview';
 
+export interface UserMeasurements {
+  height: number;      // cm
+  weight: number;      // kg
+  chest: number;       // cm
+  waist: number;       // cm
+  hips: number;        // cm
+  shoulder: number;    // cm
+  inseam: number;      // cm
+  armLength: number;   // cm
+}
+
 export const generateModelImage = async (userImage: File): Promise<string> => {
     const userImagePart = await fileToPart(userImage);
     const prompt = "You are an expert fashion photographer AI. Transform the person in this image into a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic and MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio). Return ONLY the final image.";
@@ -112,5 +123,65 @@ export const generatePoseVariation = async (tryOnImageUrl: string, poseInstructi
             responseModalities: [Modality.IMAGE, Modality.TEXT],
         },
     });
+    return handleApiResponse(response);
+};
+
+export const generateCustomModelFromMeasurements = async (
+    faceImage: File,
+    bodyImage: File,
+    measurements: UserMeasurements,
+    additionalImages?: File[]
+): Promise<string> => {
+    // Convert all images to parts
+    const faceImagePart = await fileToPart(faceImage);
+    const bodyImagePart = await fileToPart(bodyImage);
+    const additionalParts = additionalImages
+        ? await Promise.all(additionalImages.map(fileToPart))
+        : [];
+
+    // Build enhanced prompt with measurements
+    const prompt = `You are an expert fashion photographer AI. Create a full-body professional studio model photo using the provided reference images and exact measurements.
+
+**Reference Images:**
+- Image 1: Facial likeness reference - preserve this person's unique facial features, skin tone, and identity
+- Image 2: Full body reference - use this for understanding body proportions and posture
+${additionalImages?.length ? `- Additional images: Use these for more accurate representation` : ''}
+
+**Exact Body Measurements:**
+- Height: ${measurements.height} cm
+- Weight: ${measurements.weight} kg
+- Chest/Bust: ${measurements.chest} cm
+- Waist: ${measurements.waist} cm
+- Hips: ${measurements.hips} cm
+- Shoulder width: ${measurements.shoulder} cm
+- Inseam: ${measurements.inseam} cm
+- Arm length: ${measurements.armLength} cm
+
+**Requirements:**
+1. **Identity Preservation**: The face must perfectly match Image 1's facial features, expression, skin tone, and identity
+2. **Accurate Proportions**: Use the exact measurements provided to create a realistic body that matches these dimensions precisely
+3. **Professional Pose**: Place the person in a natural, relaxed standing model pose suitable for e-commerce fashion photography
+4. **Studio Environment**: Clean, neutral studio backdrop (light gray, #f0f0f0) with professional studio lighting
+5. **Photorealistic Quality**: The final image must be completely photorealistic and indistinguishable from a real studio photograph
+6. **Exact Dimensions**: Output MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio)
+
+Return ONLY the final photorealistic studio model image.`;
+
+    // Prepare content parts array
+    const contentParts = [
+        faceImagePart,
+        bodyImagePart,
+        ...additionalParts,
+        { text: prompt }
+    ];
+
+    const response = await ai.models.generateContent({
+        model: 'gemini-3-pro-image-preview',
+        contents: { parts: contentParts },
+        config: {
+            responseModalities: [Modality.IMAGE, Modality.TEXT],
+        },
+    });
+
     return handleApiResponse(response);
 };

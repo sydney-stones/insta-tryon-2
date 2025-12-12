@@ -8,14 +8,14 @@ import { WardrobeItem } from '../types';
 import OutfitForm from './OutfitForm';
 import CustomTryOn from './CustomTryOn';
 import AnalyticsDashboard from './AnalyticsDashboard';
-import VertexTryOnDemo from './VertexTryOnDemo';
+import ModelGenerationTool from './ModelGenerationTool';
 
 interface AdminDashboardProps {
   onLogout: () => void;
   products: WardrobeItem[];
 }
 
-type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'vertex-tryon' | 'form' | 'code-viewer';
+type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'model-generator' | 'form' | 'code-viewer';
 
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) => {
   const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
@@ -147,8 +147,8 @@ ${outfit.outfitItems.map(item => `      {
     return <CustomTryOn onBack={() => setCurrentView('dashboard')} />;
   }
 
-  if (currentView === 'vertex-tryon') {
-    return <VertexTryOnDemo onBack={() => setCurrentView('dashboard')} products={products} />;
+  if (currentView === 'model-generator') {
+    return <ModelGenerationTool onBack={() => setCurrentView('dashboard')} />;
   }
 
   if (currentView === 'analytics') {
@@ -314,13 +314,13 @@ ${outfit.outfitItems.map(item => `      {
                 Custom Try-On (5/day)
               </button>
               <button
-                onClick={() => setCurrentView('vertex-tryon')}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
+                onClick={() => setCurrentView('model-generator')}
+                className="px-4 py-2 bg-emerald-600 text-white rounded-md font-medium hover:bg-emerald-700 transition-colors flex items-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                Vertex AI Try-On
+                Model Generator
               </button>
               <button
                 onClick={handleExportJSON}
