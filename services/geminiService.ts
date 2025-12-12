@@ -130,7 +130,8 @@ export const generateCustomModelFromMeasurements = async (
     faceImage: File,
     bodyImage: File,
     measurements: UserMeasurements,
-    additionalImages?: File[]
+    additionalImages?: File[],
+    modelName?: 'gemini-2.5-flash-image-preview' | 'gemini-3-pro-image-preview'
 ): Promise<string> => {
     // Convert all images to parts
     const faceImagePart = await fileToPart(faceImage);
@@ -176,7 +177,7 @@ Return ONLY the final photorealistic studio model image.`;
     ];
 
     const response = await ai.models.generateContent({
-        model: 'gemini-3-pro-image-preview',
+        model: modelName || 'gemini-3-pro-image-preview',
         contents: { parts: contentParts },
         config: {
             responseModalities: [Modality.IMAGE, Modality.TEXT],

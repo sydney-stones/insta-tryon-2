@@ -78,6 +78,8 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
     inseam: 0,
     armLength: 0,
   });
+  const [selectedModel, setSelectedModel] = useState<'gemini-2.5-flash' | 'gemini-3-pro'>('gemini-3-pro');
+  const [showPrompt, setShowPrompt] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [resultImage, setResultImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -128,6 +130,40 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
     setMeasurements(preset.measurements);
   };
 
+  // Generate live prompt preview
+  const generatePromptPreview = (): string => {
+    const additionalImagesText = additionalImages.length > 0
+      ? `- Additional images: Use these for more accurate representation (${additionalImages.length} image${additionalImages.length > 1 ? 's' : ''})`
+      : '';
+
+    return `You are an expert fashion photographer AI. Create a full-body professional studio model photo using the provided reference images and exact measurements.
+
+**Reference Images:**
+- Image 1: Facial likeness reference - preserve this person's unique facial features, skin tone, and identity
+- Image 2: Full body reference - use this for understanding body proportions and posture
+${additionalImagesText}
+
+**Exact Body Measurements:**
+- Height: ${measurements.height || '[not set]'} cm
+- Weight: ${measurements.weight || '[not set]'} kg
+- Chest/Bust: ${measurements.chest || '[not set]'} cm
+- Waist: ${measurements.waist || '[not set]'} cm
+- Hips: ${measurements.hips || '[not set]'} cm
+- Shoulder width: ${measurements.shoulder || '[not set]'} cm
+- Inseam: ${measurements.inseam || '[not set]'} cm
+- Arm length: ${measurements.armLength || '[not set]'} cm
+
+**Requirements:**
+1. **Identity Preservation**: The face must perfectly match Image 1's facial features, expression, skin tone, and identity
+2. **Accurate Proportions**: Use the exact measurements provided to create a realistic body that matches these dimensions precisely
+3. **Professional Pose**: Place the person in a natural, relaxed standing model pose suitable for e-commerce fashion photography
+4. **Studio Environment**: Clean, neutral studio backdrop (light gray, #f0f0f0) with professional studio lighting
+5. **Photorealistic Quality**: The final image must be completely photorealistic and indistinguishable from a real studio photograph
+6. **Exact Dimensions**: Output MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio)
+
+Return ONLY the final photorealistic studio model image.`;
+  };
+
   const isFormValid = (): boolean => {
     return (
       faceImage !== null &&
@@ -151,11 +187,16 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
     setResultImage(null);
 
     try {
+      const modelName = selectedModel === 'gemini-2.5-flash'
+        ? 'gemini-2.5-flash-image-preview'
+        : 'gemini-3-pro-image-preview';
+
       const result = await generateCustomModelFromMeasurements(
         faceImage,
         bodyImage,
         measurements,
-        additionalImages.length > 0 ? additionalImages : undefined
+        additionalImages.length > 0 ? additionalImages : undefined,
+        modelName
       );
       setResultImage(result);
     } catch (err) {
@@ -315,6 +356,44 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Measurements</h2>
 
+            {/* Model Selection */}
+            <div className="mb-6 space-y-3">
+              <label className="block text-sm font-medium text-gray-700">AI Model Selection</label>
+              <div className="space-y-2">
+                <label className="flex items-start p-3 border-2 rounded-lg cursor-pointer transition-colors hover:bg-gray-50 relative"
+                  style={{ borderColor: selectedModel === 'gemini-2.5-flash' ? '#10b981' : '#e5e7eb' }}>
+                  <input
+                    type="radio"
+                    name="model"
+                    value="gemini-2.5-flash"
+                    checked={selectedModel === 'gemini-2.5-flash'}
+                    onChange={(e) => setSelectedModel(e.target.value as 'gemini-2.5-flash' | 'gemini-3-pro')}
+                    className="mt-1 mr-3"
+                  />
+                  <div className="flex-1">
+                    <div className="font-medium text-sm">Gemini 2.5 Flash</div>
+                    <div className="text-xs text-gray-500 mt-1">Faster generation, supports up to 3 additional images</div>
+                  </div>
+                </label>
+                <label className="flex items-start p-3 border-2 rounded-lg cursor-pointer transition-colors hover:bg-gray-50 relative"
+                  style={{ borderColor: selectedModel === 'gemini-3-pro' ? '#10b981' : '#e5e7eb' }}>
+                  <input
+                    type="radio"
+                    name="model"
+                    value="gemini-3-pro"
+                    checked={selectedModel === 'gemini-3-pro'}
+                    onChange={(e) => setSelectedModel(e.target.value as 'gemini-2.5-flash' | 'gemini-3-pro')}
+                    className="mt-1 mr-3"
+                  />
+                  <div className="flex-1">
+                    <div className="font-medium text-sm">Gemini 3.0 Pro</div>
+                    <div className="text-xs text-gray-500 mt-1">Higher quality, supports up to 5 high-fidelity images</div>
+                  </div>
+                </label>
+              </div>
+              <div className="border-t border-gray-200 my-4"></div>
+            </div>
+
             {/* Preset Selector */}
             <div className="mb-6 space-y-3">
               <label className="block text-sm font-medium text-gray-700">Quick Presets</label>
@@ -458,6 +537,33 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Generate Model</h2>
 
+            {/* Prompt Preview Section */}
+            <div className="mb-6">
+              <button
+                onClick={() => setShowPrompt(!showPrompt)}
+                className="flex items-center justify-between w-full p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <span className="text-sm font-medium text-gray-700">
+                  {showPrompt ? 'Hide' : 'View'} Generation Prompt
+                </span>
+                <svg
+                  className={`w-5 h-5 text-gray-500 transition-transform ${showPrompt ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {showPrompt && (
+                <div className="mt-3 p-4 bg-gray-900 rounded-lg overflow-auto max-h-96">
+                  <pre className="text-xs text-gray-100 whitespace-pre-wrap font-mono leading-relaxed">
+                    {generatePromptPreview()}
+                  </pre>
+                </div>
+              )}
+            </div>
+
             {error && (
               <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-sm text-red-700">{error}</p>
@@ -483,9 +589,9 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
                 {faceImage && bodyImage && (
                   <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                     <p className="text-xs text-blue-900">
-                      <strong>Model:</strong> gemini-3-pro-image-preview
+                      <strong>Model:</strong> {selectedModel === 'gemini-2.5-flash' ? 'gemini-2.5-flash-image-preview' : 'gemini-3-pro-image-preview'}
                       <br />
-                      <strong>Images:</strong> {2 + additionalImages.length} ({additionalImages.length <= 5 ? 'high fidelity' : 'standard'})
+                      <strong>Images:</strong> {2 + additionalImages.length} total ({additionalImages.length + 2 <= 5 ? 'high fidelity' : 'standard quality'})
                     </p>
                   </div>
                 )}
