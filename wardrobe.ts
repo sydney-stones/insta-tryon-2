@@ -7,7 +7,39 @@ import { WardrobeItem, WardrobeFolder } from './types';
 
 // Default wardrobe items with folder organization
 export const defaultWardrobe: WardrobeItem[] = [
-  // Festival of Fashion Collection - Keep at top
+  // Featured Collection - Farlows
+  {
+    id: 'FarlowsMen',
+    name: 'Farlows',
+    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/farlowsmen-outfit.png',
+    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/farlowsmen.png',
+    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/farlowsmenvideo.mp4',
+    folder: 'MENS',
+    gender: 'MENS',
+    price: 0,
+    description: '',
+    collection: 'MENS',
+    shopUrl: '',
+    outfitItems: [
+      {
+        name: 'Natural Fairisle Yolk Chunky Crew Neck Jumper',
+        price: 160,
+        shopUrl: 'https://go.shopmy.us/p-35190940'
+      },
+      {
+        name: 'Fine Cord Trousers',
+        price: 155,
+        shopUrl: 'https://go.shopmy.us/p-35190799'
+      },
+      {
+        name: 'Soft Loafer',
+        price: 250,
+        shopUrl: 'https://go.shopmy.us/p-35289657'
+      }
+    ]
+  },
+
+  // Festival of Fashion Collection
   // Men's Collection
   {
     id: 'Maharishi',
@@ -128,36 +160,6 @@ export const defaultWardrobe: WardrobeItem[] = [
         name: 'Pure Cashmere Crew Neck Jumper',
         price: 99,
         shopUrl: 'https://go.shopmy.us/p-29365239'
-      }
-    ]
-  },
-  {
-    id: 'FarlowsMen',
-    name: 'Farlows',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/farlowsmen-outfit.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/farlowsmen.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/farlowsmenvideo.mp4',
-    folder: 'MENS',
-    gender: 'MENS',
-    price: 0,
-    description: '',
-    collection: 'MENS',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Natural Fairisle Yolk Chunky Crew Neck Jumper',
-        price: 160,
-        shopUrl: 'https://go.shopmy.us/p-35190940'
-      },
-      {
-        name: 'Fine Cord Trousers',
-        price: 155,
-        shopUrl: 'https://go.shopmy.us/p-35190799'
-      },
-      {
-        name: 'Soft Loafer',
-        price: 250,
-        shopUrl: 'https://go.shopmy.us/p-35289657'
       }
     ]
   },

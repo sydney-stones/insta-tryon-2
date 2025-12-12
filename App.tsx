@@ -11,6 +11,7 @@ import ProductGrid from './components/ProductGrid';
 import ProductDetailPage from './components/ProductDetailPage';
 import DemoProductPage from './components/DemoProductPage';
 import CampbellsOfBeaulyProductPage from './components/CampbellsOfBeaulyProductPage';
+import FarlowsMenProductPage from './components/FarlowsMenProductPage';
 import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
@@ -101,6 +102,15 @@ const App: React.FC = () => {
                   <Route
                     path="/demo"
                     element={<CampbellsOfBeaulyProductPage onTryOnClick={handleTryOnClick} />}
+                  />
+                  <Route
+                    path="/farlows"
+                    element={
+                      <FarlowsMenProductPage
+                        product={wardrobe.find(p => p.id === 'FarlowsMen') || wardrobe[0]}
+                        onTryOnClick={handleTryOnClick}
+                      />
+                    }
                   />
                 </Routes>
 

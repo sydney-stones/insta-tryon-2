@@ -14,8 +14,14 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Special route handling for specific products
+  const getProductLink = (productId: string) => {
+    if (productId === 'FarlowsMen') return '/farlows';
+    return `/product/${productId}`;
+  };
+
   return (
-    <Link to={`/product/${product.id}`} className="group">
+    <Link to={getProductLink(product.id)} className="group">
       <div
         className="relative aspect-[3/4] overflow-hidden rounded-lg bg-gray-100"
         onMouseEnter={() => setIsHovered(true)}
