@@ -186,3 +186,87 @@ Return ONLY the final photorealistic studio model image.`;
 
     return handleApiResponse(response);
 };
+
+export const generateDirectVirtualTryOn = async (
+    faceImage: File,
+    bodyImage: File,
+    garmentImage: File,
+    additionalUserImages?: File[],
+    resolution: '1K' | '2K' | '4K' = '2K'
+): Promise<string> => {
+    // Convert all images to parts
+    const faceImagePart = await fileToPart(faceImage);
+    const bodyImagePart = await fileToPart(bodyImage);
+    const garmentImagePart = await fileToPart(garmentImage);
+    const additionalParts = additionalUserImages
+        ? await Promise.all(additionalUserImages.map(fileToPart))
+        : [];
+
+    // Calculate aspect ratio based on resolution
+    const aspectRatio = '4:5'; // Standard e-commerce ratio (1080x1350)
+
+    // Build enhanced prompt combining model generation + virtual try-on in one step
+    const prompt = `You are an expert virtual fashion photographer and try-on AI. Create a photorealistic full-body fashion photo where the person from the reference images is wearing the garment from the garment image.
+
+**Reference Images Provided:**
+- Image 1 (Face): Facial likeness reference - preserve this person's unique facial features, skin tone, hair, and identity
+- Image 2 (Body): Full body reference - use this for understanding body proportions, posture, and shape
+- Image 3 (Garment): The clothing item to be worn by the person
+${additionalUserImages?.length ? `- Additional reference images (${additionalUserImages.length}): Use these for more accurate representation of the person` : ''}
+
+**Critical Requirements:**
+
+1. **Complete Identity Preservation**:
+   - The face MUST perfectly match the facial reference images (features, skin tone, expression, hair)
+   - Maintain the person's body type and proportions from the body reference image
+   - The person should look EXACTLY like themselves, just wearing the new garment
+
+2. **Complete Garment Replacement**:
+   - REMOVE all original clothing from the person
+   - REPLACE it entirely with the garment from the garment image
+   - The garment should fit naturally on the person's body
+   - Preserve the exact style, color, pattern, and details of the garment
+   - Adapt the garment to the person's pose with realistic wrinkles, folds, and draping
+   - Ensure proper shadows and lighting consistent with the garment material
+
+3. **Professional Model Pose**:
+   - Place the person in a natural, relaxed standing model pose suitable for e-commerce
+   - The pose should showcase the garment effectively
+   - Natural, confident posture with good balance
+
+4. **Studio Environment**:
+   - Clean, neutral studio backdrop (light gray, #f0f0f0)
+   - Professional studio lighting that highlights both the person and the garment
+   - Soft, even lighting with appropriate shadows
+
+5. **Photorealistic Quality**:
+   - The final image must be completely photorealistic and indistinguishable from a professional studio photograph
+   - Seamless integration between the person and the garment
+   - Natural skin tones, fabric textures, and lighting
+
+6. **Image Composition**:
+   - Full-body shot showing the complete garment
+   - Person should be centered and well-framed
+   - Professional fashion photography composition
+
+Return ONLY the final photorealistic virtual try-on image showing this person wearing the garment.`;
+
+    // Prepare content parts array
+    const contentParts = [
+        { text: prompt },
+        faceImagePart,
+        bodyImagePart,
+        garmentImagePart,
+        ...additionalParts
+    ];
+
+    const response = await ai.models.generateContent({
+        model: 'gemini-3-pro-image-preview',
+        contents: { parts: contentParts },
+        config: {
+            responseModalities: [Modality.IMAGE, Modality.TEXT],
+        } as any, // Using any to bypass TypeScript restrictions for Gemini 3 Pro specific config
+    });
+
+    return handleApiResponse(response);
+};
