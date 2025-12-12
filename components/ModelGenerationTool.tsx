@@ -10,6 +10,57 @@ interface ModelGenerationToolProps {
   onBack: () => void;
 }
 
+interface MeasurementPreset {
+  name: string;
+  measurements: UserMeasurements;
+}
+
+const WOMEN_PRESETS: MeasurementPreset[] = [
+  {
+    name: 'W1 — Petite / Slim',
+    measurements: { height: 158, weight: 49, chest: 80, waist: 62, hips: 86, shoulder: 38, inseam: 72, armLength: 56 }
+  },
+  {
+    name: 'W2 — Average / Proportional',
+    measurements: { height: 165, weight: 63, chest: 90, waist: 72, hips: 98, shoulder: 40, inseam: 76, armLength: 58 }
+  },
+  {
+    name: 'W3 — Curvy / Pear-shaped',
+    measurements: { height: 170, weight: 78, chest: 102, waist: 81, hips: 112, shoulder: 41, inseam: 79, armLength: 60 }
+  },
+  {
+    name: 'W4 — Tall / Athletic',
+    measurements: { height: 178, weight: 70, chest: 94, waist: 72, hips: 96, shoulder: 43, inseam: 85, armLength: 62 }
+  },
+  {
+    name: 'W5 — Plus-size',
+    measurements: { height: 168, weight: 95, chest: 118, waist: 103, hips: 126, shoulder: 45, inseam: 75, armLength: 60 }
+  }
+];
+
+const MEN_PRESETS: MeasurementPreset[] = [
+  {
+    name: 'M1 — Short / Slim',
+    measurements: { height: 165, weight: 60, chest: 88, waist: 75, hips: 90, shoulder: 44, inseam: 74, armLength: 59 }
+  },
+  {
+    name: 'M2 — Average / Proportional',
+    measurements: { height: 178, weight: 78, chest: 102, waist: 86, hips: 100, shoulder: 47, inseam: 80, armLength: 63 }
+  },
+  {
+    name: 'M3 — Athletic / Broad-shouldered',
+    measurements: { height: 183, weight: 88, chest: 112, waist: 82, hips: 104, shoulder: 51, inseam: 83, armLength: 65 }
+  },
+  {
+    name: 'M4 — Tall / Lean',
+    measurements: { height: 190, weight: 84, chest: 100, waist: 82, hips: 98, shoulder: 48, inseam: 90, armLength: 67 }
+  },
+  {
+    name: 'M5 — Plus-size / Stocky',
+    measurements: { height: 175, weight: 105, chest: 118, waist: 108, hips: 120, shoulder: 52, inseam: 77, armLength: 63 }
+  }
+];
+
 const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => {
   const [faceImage, setFaceImage] = useState<File | null>(null);
   const [facePreview, setFacePreview] = useState<string | null>(null);
@@ -71,6 +122,10 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
   const handleMeasurementChange = (field: keyof UserMeasurements, value: string) => {
     const numValue = parseFloat(value) || 0;
     setMeasurements({ ...measurements, [field]: numValue });
+  };
+
+  const handlePresetSelect = (preset: MeasurementPreset) => {
+    setMeasurements(preset.measurements);
   };
 
   const isFormValid = (): boolean => {
@@ -259,6 +314,39 @@ const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => 
           {/* Column 2: Measurements Form */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Measurements</h2>
+
+            {/* Preset Selector */}
+            <div className="mb-6 space-y-3">
+              <label className="block text-sm font-medium text-gray-700">Quick Presets</label>
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-gray-600 uppercase">Women</p>
+                <div className="grid grid-cols-1 gap-1">
+                  {WOMEN_PRESETS.map((preset) => (
+                    <button
+                      key={preset.name}
+                      onClick={() => handlePresetSelect(preset)}
+                      className="px-3 py-2 text-xs text-left bg-pink-50 hover:bg-pink-100 border border-pink-200 rounded-md transition-colors"
+                    >
+                      {preset.name}
+                    </button>
+                  ))}
+                </div>
+                <p className="text-xs font-semibold text-gray-600 uppercase mt-3">Men</p>
+                <div className="grid grid-cols-1 gap-1">
+                  {MEN_PRESETS.map((preset) => (
+                    <button
+                      key={preset.name}
+                      onClick={() => handlePresetSelect(preset)}
+                      className="px-3 py-2 text-xs text-left bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-md transition-colors"
+                    >
+                      {preset.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="border-t border-gray-200 my-4"></div>
+            </div>
+
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
