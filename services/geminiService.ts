@@ -270,3 +270,77 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
 
     return handleApiResponse(response);
 };
+
+export const generateSimplifiedVirtualTryOn = async (
+    customerImages: File[],
+    garmentImage: File,
+    resolution: '1K' | '2K' | '4K' = '2K'
+): Promise<string> => {
+    // Convert all images to parts
+    const customerImageParts = await Promise.all(customerImages.map(fileToPart));
+    const garmentImagePart = await fileToPart(garmentImage);
+
+    // Calculate aspect ratio based on resolution
+    const aspectRatio = '4:5'; // Standard e-commerce ratio (1080x1350)
+
+    // Build simplified prompt for testing
+    const prompt = `You are an expert virtual fashion photographer and try-on AI. Create a photorealistic full-body fashion photo where the person from the customer reference images is wearing the garment from the garment image.
+
+**Reference Images Provided:**
+- Customer Images (${customerImages.length}): Use ALL of these images to understand the person's face, body proportions, and overall appearance
+- Garment Image (1): The clothing item to be worn by the person
+
+**Critical Requirements:**
+
+1. **Complete Identity Preservation**:
+   - The face MUST perfectly match the customer reference images (features, skin tone, expression, hair)
+   - Maintain the person's body type and proportions from the customer images
+   - The person should look EXACTLY like themselves, just wearing the new garment
+
+2. **Complete Garment Replacement**:
+   - REMOVE all original clothing from the person
+   - REPLACE it entirely with the garment from the garment image
+   - The garment should fit naturally on the person's body
+   - Preserve the exact style, color, pattern, and details of the garment
+   - Adapt the garment to the person's pose with realistic wrinkles, folds, and draping
+   - Ensure proper shadows and lighting consistent with the garment material
+
+3. **Professional Model Pose**:
+   - Place the person in a natural, relaxed standing model pose suitable for e-commerce
+   - The pose should showcase the garment effectively
+   - Natural, confident posture with good balance
+
+4. **Studio Environment**:
+   - Clean, neutral studio backdrop (light gray, #f0f0f0)
+   - Professional studio lighting that highlights both the person and the garment
+   - Soft, even lighting with appropriate shadows
+
+5. **Photorealistic Quality**:
+   - The final image must be completely photorealistic and indistinguishable from a professional studio photograph
+   - Seamless integration between the person and the garment
+   - Natural skin tones, fabric textures, and lighting
+
+6. **Image Composition**:
+   - Full-body shot showing the complete garment
+   - Person should be centered and well-framed
+   - Professional fashion photography composition
+
+Return ONLY the final photorealistic virtual try-on image showing this person wearing the garment.`;
+
+    // Prepare content parts array - customer images first, then garment
+    const contentParts = [
+        { text: prompt },
+        ...customerImageParts,
+        garmentImagePart
+    ];
+
+    const response = await ai.models.generateContent({
+        model: 'gemini-3-pro-image-preview',
+        contents: { parts: contentParts },
+        config: {
+            responseModalities: [Modality.IMAGE, Modality.TEXT],
+        } as any, // Using any to bypass TypeScript restrictions for Gemini 3 Pro specific config
+    });
+
+    return handleApiResponse(response);
+};
