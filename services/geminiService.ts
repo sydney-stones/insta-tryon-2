@@ -344,3 +344,69 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
 
     return handleApiResponse(response);
 };
+
+export const generateSimplifiedCustomModel = async (
+    referenceImages: File[],
+    modelName?: 'gemini-2.5-flash-image-preview' | 'gemini-3-pro-image-preview'
+): Promise<string> => {
+    // Convert all images to parts
+    const imageParts = await Promise.all(referenceImages.map(fileToPart));
+
+    // Build simplified prompt without measurements
+    const prompt = `You are an expert fashion photographer AI. Create a full-body professional studio model photo using the provided reference images.
+
+**Reference Images Provided:**
+- ${referenceImages.length} reference image${referenceImages.length > 1 ? 's' : ''}: Use ALL of these images to understand the person's unique facial features, body proportions, skin tone, hair, and overall appearance
+
+**Critical Requirements:**
+
+1. **Complete Identity Preservation**:
+   - The face MUST perfectly match the reference images (facial features, expression, skin tone, hair, identity)
+   - Maintain the person's natural body type and proportions as shown in the reference images
+   - The person should look EXACTLY like themselves in a professional model pose
+
+2. **Professional Model Pose**:
+   - Place the person in a natural, relaxed standing model pose suitable for e-commerce fashion photography
+   - Natural, confident posture with good balance
+   - Arms relaxed at sides or one hand on hip
+   - Straight posture showcasing body proportions
+
+3. **Studio Environment**:
+   - Clean, neutral studio backdrop (light gray, #f0f0f0)
+   - Professional studio lighting with soft, even illumination
+   - Appropriate shadows that highlight body contours naturally
+
+4. **Photorealistic Quality**:
+   - The final image must be completely photorealistic and indistinguishable from a real studio photograph
+   - Natural skin tones, textures, and lighting
+   - Professional fashion photography quality
+
+5. **Image Composition**:
+   - Full-body shot from head to toe
+   - Person centered and well-framed
+   - Professional e-commerce model photography composition
+   - Exact dimensions: 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio)
+
+**Clothing:**
+- Simple, neutral clothing (plain t-shirt or simple top, neutral pants or jeans)
+- Nothing that distracts from the person's appearance
+- Clothing should fit naturally and look professional
+
+Return ONLY the final photorealistic studio model image.`;
+
+    // Prepare content parts array
+    const contentParts = [
+        ...imageParts,
+        { text: prompt }
+    ];
+
+    const response = await ai.models.generateContent({
+        model: modelName || 'gemini-3-pro-image-preview',
+        contents: { parts: contentParts },
+        config: {
+            responseModalities: [Modality.IMAGE, Modality.TEXT],
+        },
+    });
+
+    return handleApiResponse(response);
+};
