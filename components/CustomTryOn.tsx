@@ -17,6 +17,7 @@ const CustomTryOn: React.FC<CustomTryOnProps> = ({ onBack }) => {
   const [bodyPreview, setBodyPreview] = useState<string | null>(null);
   const [garmentImage, setGarmentImage] = useState<File | null>(null);
   const [garmentPreview, setGarmentPreview] = useState<string | null>(null);
+  const [garmentFileName, setGarmentFileName] = useState<string>('');
   const [additionalImages, setAdditionalImages] = useState<File[]>([]);
   const [additionalPreviews, setAdditionalPreviews] = useState<string[]>([]);
   const [resolution, setResolution] = useState<'1K' | '2K' | '4K'>('2K');
@@ -48,6 +49,9 @@ const CustomTryOn: React.FC<CustomTryOnProps> = ({ onBack }) => {
         } else if (type === 'garment') {
           setGarmentImage(file);
           setGarmentPreview(preview);
+          // Extract filename without extension for download naming
+          const nameWithoutExt = file.name.replace(/\.[^/.]+$/, '');
+          setGarmentFileName(nameWithoutExt);
         } else if (type === 'additional') {
           if (additionalImages.length < 5) {
             setAdditionalImages([...additionalImages, file]);
@@ -146,12 +150,23 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
   };
 
   const handleReset = () => {
+    // Only clear garment and result, keep face/body/additional images for faster iteration
+    setGarmentImage(null);
+    setGarmentPreview(null);
+    setGarmentFileName('');
+    setResultImage(null);
+    setError(null);
+  };
+
+  const handleFullReset = () => {
+    // Full reset clears everything
     setFaceImage(null);
     setFacePreview(null);
     setBodyImage(null);
     setBodyPreview(null);
     setGarmentImage(null);
     setGarmentPreview(null);
+    setGarmentFileName('');
     setAdditionalImages([]);
     setAdditionalPreviews([]);
     setResultImage(null);
@@ -467,7 +482,11 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
                     onClick={() => {
                       const link = document.createElement('a');
                       link.href = resultImage;
-                      link.download = `virtual-tryon-${resolution}-result.png`;
+                      // Use garment filename if available, otherwise use default
+                      const fileName = garmentFileName
+                        ? `${garmentFileName}-tryon-${resolution}.png`
+                        : `virtual-tryon-${resolution}-result.png`;
+                      link.download = fileName;
                       link.click();
                     }}
                     className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
@@ -476,9 +495,15 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
                   </button>
                   <button
                     onClick={handleReset}
+                    className="w-full px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                  >
+                    Try Another Outfit
+                  </button>
+                  <button
+                    onClick={handleFullReset}
                     className="w-full px-6 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-700 transition-colors"
                   >
-                    Generate Another
+                    Reset All
                   </button>
                 </div>
               </div>
