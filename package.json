@@ -17,6 +17,7 @@
     "@vercel/kv": "^3.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.12",
+    "jszip": "^3.10.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-image-crop": "^11.0.6",
@@ -25,6 +26,7 @@
     "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
+    "@types/jszip": "^3.4.0",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
