@@ -62,7 +62,7 @@ const BrandWaitlistPage: React.FC = () => {
               <p className="text-gray-300">Higher conversion rate with virtual try-on</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-indigo-400 mb-2">45%</p>
+              <p className="text-4xl font-bold text-indigo-400 mb-2">20%</p>
               <p className="text-gray-300">Reduction in product returns</p>
             </div>
             <div>

@@ -111,7 +111,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
               <p className="text-gray-200 text-lg">Higher conversion rate with virtual try-on</p>
             </div>
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-white mb-2">45%</p>
+              <p className="text-4xl sm:text-5xl font-bold text-white mb-2">20%</p>
               <p className="text-gray-200 text-lg">Reduction in product returns</p>
             </div>
             <div>
