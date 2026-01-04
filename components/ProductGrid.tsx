@@ -94,11 +94,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
       </div>
 
       {/* Large Image Section */}
-      <div className="w-full">
+      <div className="w-full flex justify-center bg-white py-8 sm:py-12">
         <img
           src="/outfits/gymking.png"
           alt="Virtual Try-On Demo"
-          className="w-full h-[500px] sm:h-[600px] lg:h-[700px] object-cover"
+          className="w-full max-w-7xl h-auto object-contain"
         />
       </div>
 
