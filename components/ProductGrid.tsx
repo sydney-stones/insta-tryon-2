@@ -170,11 +170,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
       <footer className="bg-[#444833] py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center space-y-4">
-            <img
-              src="/Renderedfits-TM-2.png"
-              alt="Rendered Fits"
-              className="h-8 sm:h-10 w-auto mb-2"
-            />
+            
             <div className="text-xs sm:text-sm text-white space-y-2">
               <p>Get in touch: <a href="mailto:renderedfits@gmail.com" className="hover:underline">renderedfits@gmail.com</a></p>
               <p>Rendered Fits Ltd registered in England and Wales under the company registration number 16922551.</p>
