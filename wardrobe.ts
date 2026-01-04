@@ -163,36 +163,6 @@ export const defaultWardrobe: WardrobeItem[] = [
       }
     ]
   },
-
-  // Autumn Collection
-  {
-    id: 'Autumn-2',
-    name: 'Autumn Leather',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/Autumn/Autumn2.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Autumn2.png',
-    folder: 'Autumn',
-    price: 0,
-    description: '',
-    collection: 'Autumn',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Jacket',
-        price: 589,
-        shopUrl: 'https://go.shopmy.us/p-26118888'
-      },
-      {
-        name: 'Skirt',
-        price: 379,
-        shopUrl: 'https://go.shopmy.us/p-26119124'
-      },
-      {
-        name: 'Bag',
-        price: 350,
-        shopUrl: 'https://go.shopmy.us/p-26119216'
-      }
-    ]
-  },
   {
     id: 'Barbour',
     name: 'Barbour',
