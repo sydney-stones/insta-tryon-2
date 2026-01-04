@@ -96,27 +96,27 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
       {/* Large Image Section */}
       <div className="w-full">
         <img
-          src="/GymKing.png"
+          src="/outfits/gymking.png"
           alt="Virtual Try-On Demo"
           className="w-full h-[500px] sm:h-[600px] lg:h-[700px] object-cover"
         />
       </div>
 
       {/* Benefits Statistics Section */}
-      <div className="bg-gray-50 border-y border-gray-200">
+      <div className="bg-[#444833]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-indigo-600 mb-2">30%</p>
-              <p className="text-gray-700 text-lg">Higher conversion rate with virtual try-on</p>
+              <p className="text-4xl sm:text-5xl font-bold text-white mb-2">30%</p>
+              <p className="text-gray-200 text-lg">Higher conversion rate with virtual try-on</p>
             </div>
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-indigo-600 mb-2">45%</p>
-              <p className="text-gray-700 text-lg">Reduction in product returns</p>
+              <p className="text-4xl sm:text-5xl font-bold text-white mb-2">45%</p>
+              <p className="text-gray-200 text-lg">Reduction in product returns</p>
             </div>
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-indigo-600 mb-2">20%</p>
-              <p className="text-gray-700 text-lg">Increase in average order value</p>
+              <p className="text-4xl sm:text-5xl font-bold text-white mb-2">20%</p>
+              <p className="text-gray-200 text-lg">Increase in average order value</p>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         <div className="mb-4 sm:mb-6">
           <p className="text-sm text-gray-600">
-            @siennastones wardrobe - {filteredProducts.length} {filteredProducts.length === 1 ? 'outfit' : 'outfits'}
+            @renderedfits wardrobe - {filteredProducts.length} {filteredProducts.length === 1 ? 'outfit' : 'outfits'}
           </p>
         </div>
         {filteredProducts.length === 0 ? (

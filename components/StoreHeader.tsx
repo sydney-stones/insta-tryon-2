@@ -39,11 +39,13 @@ const StoreHeader: React.FC<StoreHeaderProps> = ({ searchQuery = '', setSearchQu
             </a>
           </div>
 
-          {/* Center - Title (always centered) */}
+          {/* Center - Logo (always centered) */}
           <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 tracking-tight whitespace-nowrap">
-              RENDERED FITS
-            </h1>
+            <img
+              src="/Renderedfits-TM-2.png"
+              alt="Rendered Fits"
+              className="h-8 sm:h-10 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Right Side - Search */}

@@ -330,50 +330,6 @@ export const defaultWardrobe: WardrobeItem[] = [
     ]
   },
   {
-    id: 'Lockandco',
-    name: 'Lockandco',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Lockandco.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Lockandco.png',
-    folder: '30Brands',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: '30Brands',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Loafers',
-        price: 38,
-        shopUrl: 'https://go.shopmy.us/p-26777827'
-      },
-      {
-        name: 'Jeans',
-        price: 158,
-        shopUrl: 'https://go.shopmy.us/p-26777836'
-      },
-      {
-        name: 'Belt',
-        price: 38,
-        shopUrl: 'https://go.shopmy.us/p-26777838'
-      },
-      {
-        name: 'Bag',
-        price: 3500,
-        shopUrl: 'https://go.shopmy.us/p-26777840'
-      },
-      {
-        name: 'Shirt',
-        price: 125,
-        shopUrl: 'https://go.shopmy.us/p-26777843'
-      },
-      {
-        name: 'Hat',
-        price: 395,
-        shopUrl: 'https://go.shopmy.us/p-26777847'
-      }
-    ]
-  },
-  {
     id: 'Penelopechilvers',
     name: 'Penelopechilvers',
     url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Penelopechilvers.png',
@@ -404,84 +360,6 @@ export const defaultWardrobe: WardrobeItem[] = [
         name: 'Trousers',
         price: 225,
         shopUrl: 'https://go.shopmy.us/p-26949607'
-      }
-    ]
-  },
-  {
-    id: 'Brora',
-    name: 'Brora',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Brora.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Brora.png',
-    folder: '30Brands',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: '30Brands',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Wrist-warmers',
-        price: 65,
-        shopUrl: 'https://go.shopmy.us/p-27000989'
-      },
-      {
-        name: 'Shoes',
-        price: 135,
-        shopUrl: 'https://go.shopmy.us/p-27001000'
-      },
-      {
-        name: 'Jacket',
-        price: 495,
-        shopUrl: 'https://go.shopmy.us/p-27002929'
-      },
-      {
-        name: 'Shorts',
-        price: 195,
-        shopUrl: 'https://go.shopmy.us/p-27002937'
-      },
-      {
-        name: 'Brooch',
-        price: 95,
-        shopUrl: 'https://go.shopmy.us/p-27002942'
-      },
-      {
-        name: 'Scarf',
-        price: 159,
-        shopUrl: 'https://go.shopmy.us/p-27002949'
-      }
-    ]
-  },
-  {
-    id: 'Johnstonesofelgin',
-    name: 'Johnstonesofelgin',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Johnstonesofelgin.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Johnstonesofelgin.png',
-    folder: '30Brands',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: '30Brands',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Shirt',
-        price: 1250,
-        shopUrl: 'https://go.shopmy.us/p-27089921'
-      },
-      {
-        name: 'Trousers',
-        price: 795,
-        shopUrl: 'https://go.shopmy.us/p-27089943'
-      },
-      {
-        name: 'Bag',
-        price: 24.99,
-        shopUrl: 'https://go.shopmy.us/p-27090028'
-      },
-      {
-        name: 'Loafers',
-        price: 250,
-        shopUrl: 'https://go.shopmy.us/p-27090119'
       }
     ]
   },
@@ -594,40 +472,6 @@ export const defaultWardrobe: WardrobeItem[] = [
         name: 'Bag',
         price: 345,
         shopUrl: 'https://go.shopmy.us/p-27388487'
-      }
-    ]
-  },
-  {
-    id: 'Loake',
-    name: 'Loake',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/30Brands/Loake.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/Loake.png',
-    folder: '30Brands',
-    gender: 'WOMENS',
-    price: 0,
-    description: '',
-    collection: '30Brands',
-    shopUrl: '',
-    outfitItems: [
-      {
-        name: 'Jumper',
-        price: 1700,
-        shopUrl: 'https://go.shopmy.us/p-27488824'
-      },
-      {
-        name: 'Trousers',
-        price: 520,
-        shopUrl: 'https://go.shopmy.us/p-27489280'
-      },
-      {
-        name: 'Belt',
-        price: 115,
-        shopUrl: 'https://go.shopmy.us/p-27489628'
-      },
-      {
-        name: 'Loafers',
-        price: 260,
-        shopUrl: 'https://go.shopmy.us/p-27489687'
       }
     ]
   },
