@@ -19,7 +19,7 @@ const BrandWaitlistPage: React.FC = () => {
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-full">
-              For E-Commerce Brands
+              For Shopify E-Commerce Brands
             </span>
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold mb-6">
@@ -27,7 +27,7 @@ const BrandWaitlistPage: React.FC = () => {
             <span className="block text-indigo-400">Converts Browsers Into Buyers</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Reduce returns by 40%. Increase conversions by 85%. Give your customers confidence before they click "buy".
+            Reduce returns by ~40%. Increase conversions by 30%. Give your customers confidence before they click "buy".
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
@@ -39,7 +39,7 @@ const BrandWaitlistPage: React.FC = () => {
               Join the Waitlist
             </a>
             <a
-              href="/demo-product"
+              href="/demo"
               className="inline-block border-2 border-gray-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition-colors"
             >
               See How It Works
@@ -58,16 +58,16 @@ const BrandWaitlistPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-4xl font-bold text-indigo-400 mb-2">85%</p>
+              <p className="text-4xl font-bold text-indigo-400 mb-2">30%</p>
               <p className="text-gray-300">Higher conversion rate with virtual try-on</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-indigo-400 mb-2">40%</p>
+              <p className="text-4xl font-bold text-indigo-400 mb-2">45%</p>
               <p className="text-gray-300">Reduction in product returns</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-indigo-400 mb-2">3x</p>
-              <p className="text-gray-300">Increase in customer engagement</p>
+              <p className="text-4xl font-bold text-indigo-400 mb-2">20%</p>
+              <p className="text-gray-300">Increase in average order value</p>
             </div>
           </div>
         </div>
@@ -269,7 +269,7 @@ const BrandWaitlistPage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Proven ROI</h3>
               <p className="text-gray-400">
-                Our clients see an average 85% increase in conversion rates and 40% decrease in returns
+                Our clients see an average 30% increase in conversion rates and 40% decrease in returns
               </p>
             </motion.div>
           </div>

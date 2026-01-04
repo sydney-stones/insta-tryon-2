@@ -66,34 +66,58 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
           </h1>
 
           {/* Waitlist Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4">
-            <Link
-              to="/waitlist"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-lg hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
-            >
-              For Creators
-            </Link>
-
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Link
               to="/brand-waitlist"
               className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
             >
               For Brands
             </Link>
-          </div>
 
-          {/* See How It Works Demo Button */}
-          <div className="flex justify-center">
             <Link
               to="/demo"
-              className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 transition-all hover:scale-105 shadow-lg text-center flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 transition-all hover:scale-105 shadow-lg text-center"
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
               See How It Works
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Description Section */}
+      <div className="bg-[#444833] py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center leading-relaxed">
+            Rendered Fits is an AI-powered virtual try-on solution for Shopify fashion e-commerce, redefining the way people shop online.
+          </p>
+        </div>
+      </div>
+
+      {/* Large Image Section */}
+      <div className="w-full">
+        <img
+          src="/Gym King.png"
+          alt="Virtual Try-On Demo"
+          className="w-full h-[500px] sm:h-[600px] lg:h-[700px] object-cover"
+        />
+      </div>
+
+      {/* Benefits Statistics Section */}
+      <div className="bg-gray-50 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-4xl sm:text-5xl font-bold text-indigo-600 mb-2">30%</p>
+              <p className="text-gray-700 text-lg">Higher conversion rate with virtual try-on</p>
+            </div>
+            <div>
+              <p className="text-4xl sm:text-5xl font-bold text-indigo-600 mb-2">45%</p>
+              <p className="text-gray-700 text-lg">Reduction in product returns</p>
+            </div>
+            <div>
+              <p className="text-4xl sm:text-5xl font-bold text-indigo-600 mb-2">20%</p>
+              <p className="text-gray-700 text-lg">Increase in average order value</p>
+            </div>
           </div>
         </div>
       </div>
