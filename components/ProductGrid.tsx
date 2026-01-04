@@ -96,7 +96,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
       {/* Large Image Section */}
       <div className="w-full">
         <img
-          src="/Gym King.png"
+          src="/GymKing.png"
           alt="Virtual Try-On Demo"
           className="w-full h-[500px] sm:h-[600px] lg:h-[700px] object-cover"
         />
