@@ -386,7 +386,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                         {/* Example Image */}
                         <div className="relative aspect-[16/9] max-w-2xl mx-auto rounded-2xl overflow-hidden border-2 border-gray-200 group-hover:border-purple-400 transition-colors">
                           <img
-                            src="/example.jpg"
+                            src="/Users/sydneystones/insta-tryon-2-1/example.jpg"
                             alt="Upload your photo"
                             className="w-full h-full object-cover"
                           />
