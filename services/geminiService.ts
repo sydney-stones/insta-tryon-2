@@ -131,7 +131,7 @@ export const generateCustomModelFromMeasurements = async (
     bodyImage: File,
     measurements: UserMeasurements,
     additionalImages?: File[],
-    modelName?: 'gemini-2.5-flash-image' | 'gemini-3-pro-image'
+    modelName?: 'gemini-2.5-flash-image' | 'gemini-3-pro-image-preview'
 ): Promise<string> => {
     // Convert all images to parts
     const faceImagePart = await fileToPart(faceImage);
@@ -177,7 +177,7 @@ Return ONLY the final photorealistic studio model image.`;
     ];
 
     const response = await ai.models.generateContent({
-        model: modelName || 'gemini-3-pro-image',
+        model: modelName || 'gemini-3-pro-image-preview',
         contents: { parts: contentParts },
         config: {
             responseModalities: [Modality.IMAGE, Modality.TEXT],
@@ -261,7 +261,7 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
     ];
 
     const response = await ai.models.generateContent({
-        model: 'gemini-3-pro-image',
+        model: 'gemini-3-pro-image-preview',
         contents: { parts: contentParts },
         config: {
             responseModalities: [Modality.IMAGE, Modality.TEXT],
@@ -335,7 +335,7 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
     ];
 
     const response = await ai.models.generateContent({
-        model: 'gemini-3-pro-image',
+        model: 'gemini-3-pro-image-preview',
         contents: { parts: contentParts },
         config: {
             responseModalities: [Modality.IMAGE, Modality.TEXT],
@@ -347,7 +347,7 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
 
 export const generateSimplifiedCustomModel = async (
     referenceImages: File[],
-    modelName?: 'gemini-2.5-flash-image' | 'gemini-3-pro-image'
+    modelName?: 'gemini-2.5-flash-image' | 'gemini-3-pro-image-preview'
 ): Promise<string> => {
     // Convert all images to parts
     const imageParts = await Promise.all(referenceImages.map(fileToPart));
@@ -401,7 +401,7 @@ Return ONLY the final photorealistic studio model image.`;
     ];
 
     const response = await ai.models.generateContent({
-        model: modelName || 'gemini-3-pro-image',
+        model: modelName || 'gemini-3-pro-image-preview',
         contents: { parts: contentParts },
         config: {
             responseModalities: [Modality.IMAGE, Modality.TEXT],
