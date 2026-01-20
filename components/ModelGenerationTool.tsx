@@ -106,8 +106,8 @@ Return ONLY the final photorealistic studio model image.`;
 
     try {
       const modelName = selectedModel === 'gemini-2.5-flash'
-        ? 'gemini-2.5-flash-image-preview'
-        : 'gemini-3-pro-image-preview';
+        ? 'gemini-2.5-flash-image'
+        : 'gemini-3-pro-image';
 
       const result = await generateSimplifiedCustomModel(
         referenceImages,

@@ -17,6 +17,7 @@ import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
 import BrandWaitlistPage from './components/BrandWaitlistPage';
 import AffiliateDisclaimer from './components/AffiliateDisclaimer';
+import ScrollToTop from './components/ScrollToTop';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -56,6 +57,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Routes>
           {/* Admin Route - Hidden from navigation */}
