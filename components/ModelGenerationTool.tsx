@@ -13,7 +13,7 @@ interface ModelGenerationToolProps {
 const ModelGenerationTool: React.FC<ModelGenerationToolProps> = ({ onBack }) => {
   const [referenceImages, setReferenceImages] = useState<File[]>([]);
   const [referencePreviews, setReferencePreviews] = useState<string[]>([]);
-  const [selectedModel, setSelectedModel] = useState<'gemini-2.5-flash' | 'gemini-3-pro'>('gemini-3-pro');
+  const [selectedModel, setSelectedModel] = useState<'gemini-2.5-flash' | 'gemini-3-pro-image-preview'>('gemini-3-pro-image-preview');
   const [showPrompt, setShowPrompt] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [resultImage, setResultImage] = useState<string | null>(null);
@@ -208,7 +208,7 @@ Return ONLY the final photorealistic studio model image.`;
                     value="gemini-2.5-flash"
                     checked={selectedModel === 'gemini-2.5-flash'}
                     onChange={(e) => {
-                      setSelectedModel(e.target.value as 'gemini-2.5-flash' | 'gemini-3-pro');
+                      setSelectedModel(e.target.value as 'gemini-2.5-flash' | 'gemini-3-pro-image-preview');
                       // If switching to flash and have more than 3 images, show warning
                       if (e.target.value === 'gemini-2.5-flash' && referenceImages.length > 3) {
                         setError('Gemini 2.5 Flash supports up to 3 images. Please remove some images.');
@@ -224,14 +224,14 @@ Return ONLY the final photorealistic studio model image.`;
                   </div>
                 </label>
                 <label className="flex items-start p-3 border-2 rounded-lg cursor-pointer transition-colors hover:bg-gray-50 relative"
-                  style={{ borderColor: selectedModel === 'gemini-3-pro' ? '#10b981' : '#e5e7eb' }}>
+                  style={{ borderColor: selectedModel === 'gemini-3-pro-image-preview' ? '#10b981' : '#e5e7eb' }}>
                   <input
                     type="radio"
                     name="model"
-                    value="gemini-3-pro"
-                    checked={selectedModel === 'gemini-3-pro'}
+                    value="gemini-3-pro-image-preview"
+                    checked={selectedModel === 'gemini-3-pro-image-preview'}
                     onChange={(e) => {
-                      setSelectedModel(e.target.value as 'gemini-2.5-flash' | 'gemini-3-pro');
+                      setSelectedModel(e.target.value as 'gemini-2.5-flash' | 'gemini-3-pro-image-preview');
                       setError(null);
                     }}
                     className="mt-1 mr-3"
