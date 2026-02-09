@@ -58,37 +58,48 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Full Screen */}
-      <div className="relative bg-[#444833] min-h-screen flex items-end overflow-hidden">
-        {/* Hero Image - Right Side */}
-        <div className="absolute right-0 bottom-0 h-full w-full sm:w-[60%] lg:w-[55%] pointer-events-none">
-          <img
-            src="/hero-models.png"
-            alt="Virtual Try-On Models"
-            className="h-full w-full object-contain object-right-bottom"
-          />
-        </div>
+      {/* Hero Section - Waitlist CTAs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center mb-4">
+            Virtual Try Before You Buy
+          </h1>
 
-        {/* Hero Content - Left Side */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16 sm:pb-20 lg:pb-24 pt-24 sm:pt-28">
-          <div className="max-w-xl lg:max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif italic font-light text-white leading-[0.95] mb-8 sm:mb-10">
-              AI- Powered<br />
-              Virtual Try-on
-            </h1>
-
-            <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-8 sm:mb-10 max-w-md">
-              solution for Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to every screen 24/7.
-            </p>
+          {/* Waitlist Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+            <Link
+              to="/brand-waitlist"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg text-center"
+            >
+              For Brands
+            </Link>
 
             <Link
               to="/demo"
-              className="inline-block border border-white text-white px-8 sm:px-10 py-3 sm:py-3.5 text-sm sm:text-base font-medium hover:bg-white hover:text-[#444833] transition-all"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 transition-all hover:scale-105 shadow-lg text-center"
             >
-              Try Our Demo
+              See How It Works
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Description Section */}
+      <div className="bg-[#444833] py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center leading-relaxed">
+            Rendered Fits is an AI-powered virtual try-on solution for Shopify fashion e-commerce, redefining the way people shop online.
+          </p>
+        </div>
+      </div>
+
+      {/* Large Image Section */}
+      <div className="w-full flex justify-center bg-white py-8 sm:py-12">
+        <img
+          src="/outfits/gymking.png"
+          alt="Virtual Try-On Demo"
+          className="w-full max-w-7xl h-auto object-contain"
+        />
       </div>
 
       {/* Benefits Statistics Section */}
