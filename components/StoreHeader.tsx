@@ -46,11 +46,9 @@ const StoreHeader: React.FC<StoreHeaderProps> = ({ searchQuery = '', setSearchQu
 
           {/* Center - Logo */}
           <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
-            <img
-              src="/Renderedfits-TM-2.png"
-              alt="Rendered Fits"
-              className={`h-8 sm:h-10 md:h-12 w-auto ${isHomePage ? 'brightness-0 invert' : ''}`}
-            />
+            <span className={`text-base sm:text-lg md:text-xl font-black tracking-wider whitespace-nowrap ${isHomePage ? 'text-white' : 'text-gray-900'}`}>
+              RENDERED FITS<sup className="text-[8px] sm:text-[9px] md:text-[10px] align-super ml-0.5">™</sup>
+            </span>
           </Link>
 
           {/* Right Side - Search Icon */}

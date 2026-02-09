@@ -6,7 +6,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
-import ProductCard from './ProductCard';
 
 interface ProductGridProps {
   products: WardrobeItem[];
@@ -14,81 +13,56 @@ interface ProductGridProps {
   searchQuery?: string;
 }
 
-const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuery = '' }) => {
-  const [selectedCollection, setSelectedCollection] = useState<string>('All');
-  const [roiOrders, setRoiOrders] = useState<string>('500');
+const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
+  const [roiOrders, setRoiOrders] = useState<number>(500);
+  const [roiRevenue, setRoiRevenue] = useState<number>(25000);
 
-  const collectionNames = useMemo(() => {
-    return ['All', ...folders.map(f => f.name)];
-  }, [folders]);
-
-  const sortedProducts = useMemo(() => {
-    return [...products].reverse();
-  }, [products]);
-
-  const filteredProducts = useMemo(() => {
-    let filtered = sortedProducts;
-    if (selectedCollection !== 'All') {
-      filtered = filtered.filter(p => p.folder === selectedCollection);
-    }
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase().trim();
-      filtered = filtered.filter(p => {
-        if (p.name.toLowerCase().includes(query)) return true;
-        if (p.outfitItems && p.outfitItems.length > 0) {
-          return p.outfitItems.some((item: { name: string }) =>
-            item.name.toLowerCase().includes(query)
-          );
-        }
-        return false;
-      });
-    }
-    return filtered;
-  }, [sortedProducts, selectedCollection, searchQuery]);
-
-  // ROI Calculator logic based on the pricing table
+  // ROI Calculator logic with correct pricing tiers
   const roiData = useMemo(() => {
-    const orders = parseInt(roiOrders) || 0;
-    const monthlyOrders = orders;
+    const orders = roiOrders;
+    const revenue = roiRevenue;
+    const avgOrderValue = orders > 0 ? revenue / orders : 50;
 
-    if (monthlyOrders <= 750) {
-      // Starter tier
-      const returnsPrevented = Math.round(monthlyOrders * 0.075);
-      const returnSavings = returnsPrevented * 20;
-      const conversionLift = Math.round(monthlyOrders * 0.05 * 75);
-      const totalMonthly = returnSavings + conversionLift;
-      const cost = 99;
-      const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
-      return { tier: 'Starter', returnsPrevented: `${Math.max(21, returnsPrevented)}`, savingsReturns: `£${Math.max(420, returnSavings).toLocaleString()}`, conversionLift: `£${Math.max(1875, conversionLift).toLocaleString()}`, totalMonthly: `£${Math.max(2295, totalMonthly).toLocaleString()}`, roiMultiple: `${Math.max(9, roiMultiple)}x`, cost: '£99/mo' };
-    } else if (monthlyOrders <= 2500) {
-      // Growth tier
-      const returnsPrevented = Math.round(monthlyOrders * 0.06);
-      const returnSavings = returnsPrevented * 20;
-      const conversionLift = Math.round(monthlyOrders * 0.05 * 75);
-      const totalMonthly = returnSavings + conversionLift;
-      const cost = 249;
-      const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
-      return { tier: 'Growth', returnsPrevented: `${Math.max(56, returnsPrevented)}`, savingsReturns: `£${Math.max(1120, returnSavings).toLocaleString()}`, conversionLift: `£${Math.max(5625, conversionLift).toLocaleString()}`, totalMonthly: `£${Math.max(6745, totalMonthly).toLocaleString()}`, roiMultiple: `${Math.max(15, roiMultiple)}x`, cost: '£249/mo' };
-    } else if (monthlyOrders <= 7500) {
-      // Scale tier
-      const returnsPrevented = Math.round(monthlyOrders * 0.05);
-      const returnSavings = returnsPrevented * 20;
-      const conversionLift = Math.round(monthlyOrders * 0.05 * 100);
-      const totalMonthly = returnSavings + conversionLift;
-      const cost = 499;
-      const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
-      return { tier: 'Scale', returnsPrevented: `${Math.max(154, returnsPrevented)}`, savingsReturns: `£${Math.max(3080, returnSavings).toLocaleString()}`, conversionLift: `£${Math.max(15000, conversionLift).toLocaleString()}`, totalMonthly: `£${Math.max(18080, totalMonthly).toLocaleString()}`, roiMultiple: `${Math.max(24, roiMultiple)}x`, cost: '£499/mo' };
+    // Determine tier based on order volume
+    let tier: string;
+    let cost: number;
+    if (orders <= 500) {
+      tier = 'Starter';
+      cost = 249;
+    } else if (orders <= 1500) {
+      tier = 'Growth';
+      cost = 449;
+    } else if (orders <= 5000) {
+      tier = 'Scale';
+      cost = 749;
+    } else if (orders <= 15000) {
+      tier = 'Professional';
+      cost = 1249;
     } else {
-      // Professional tier
-      const returnsPrevented = Math.round(monthlyOrders * 0.05);
-      const returnSavings = returnsPrevented * 20;
-      const conversionLift = Math.round(monthlyOrders * 0.05 * 100);
-      const totalMonthly = returnSavings + conversionLift;
-      const cost = 999;
-      const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
-      return { tier: 'Professional', returnsPrevented: `${Math.max(385, returnsPrevented)}`, savingsReturns: `£${Math.max(7700, returnSavings).toLocaleString()}`, conversionLift: `£${Math.max(37500, conversionLift).toLocaleString()}`, totalMonthly: `£${Math.max(45200, totalMonthly).toLocaleString()}`, roiMultiple: `${Math.max(36, roiMultiple)}x`, cost: '£999/mo' };
+      tier = 'Enterprise';
+      cost = 0; // Custom pricing
     }
-  }, [roiOrders]);
+
+    // Calculate ROI metrics
+    const returnRate = 0.07; // ~7% return reduction
+    const conversionLiftRate = 0.05; // ~5% conversion lift
+    const returnsPrevented = Math.round(orders * returnRate);
+    const returnSavings = returnsPrevented * 20; // £20 per return saved
+    const conversionLift = Math.round(orders * conversionLiftRate * avgOrderValue);
+    const totalMonthly = returnSavings + conversionLift;
+    const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
+
+    return {
+      tier,
+      cost,
+      costDisplay: cost > 0 ? `£${cost.toLocaleString()}/mo` : 'Custom',
+      returnsPrevented,
+      returnSavings,
+      conversionLift,
+      totalMonthly,
+      roiMultiple,
+    };
+  }, [roiOrders, roiRevenue]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -261,20 +235,78 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
             ROI Calculator
           </h2>
           <p className="text-center text-gray-500 text-sm mb-10 sm:mb-14 max-w-xl mx-auto">
-            See the estimated return on investment for your business based on your monthly order volume.
+            Adjust the sliders to see the estimated return on investment for your business.
           </p>
 
-          {/* Order Input */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14">
-            <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Orders:</label>
-            <input
-              type="number"
-              value={roiOrders}
-              onChange={(e) => setRoiOrders(e.target.value)}
-              className="w-36 px-4 py-2.5 text-center text-lg font-semibold border-2 border-[#444833] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#444833]/50"
-              min="0"
-              step="100"
-            />
+          {/* Sliders */}
+          <div className="max-w-2xl mx-auto space-y-8 mb-10 sm:mb-14">
+            {/* Monthly Orders Slider */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Orders</label>
+                <span className="text-lg font-bold text-[#444833]">{roiOrders.toLocaleString()}</span>
+              </div>
+              <input
+                type="range"
+                min="100"
+                max="20000"
+                step="100"
+                value={roiOrders}
+                onChange={(e) => setRoiOrders(parseInt(e.target.value))}
+                className="w-full h-2 bg-[#444833]/20 rounded-lg appearance-none cursor-pointer accent-[#444833]"
+              />
+              <div className="flex justify-between text-xs text-gray-400 mt-1">
+                <span>100</span>
+                <span>20,000</span>
+              </div>
+            </div>
+
+            {/* Monthly Revenue Slider */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Revenue</label>
+                <span className="text-lg font-bold text-[#444833]">£{roiRevenue.toLocaleString()}</span>
+              </div>
+              <input
+                type="range"
+                min="5000"
+                max="1000000"
+                step="5000"
+                value={roiRevenue}
+                onChange={(e) => setRoiRevenue(parseInt(e.target.value))}
+                className="w-full h-2 bg-[#444833]/20 rounded-lg appearance-none cursor-pointer accent-[#444833]"
+              />
+              <div className="flex justify-between text-xs text-gray-400 mt-1">
+                <span>£5,000</span>
+                <span>£1,000,000</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Tier Selection Visual */}
+          <div className="max-w-3xl mx-auto mb-8">
+            <div className="grid grid-cols-5 gap-1 sm:gap-2 text-center">
+              {[
+                { name: 'Starter', price: '£249', orders: '0-500' },
+                { name: 'Growth', price: '£449', orders: '501-1,500' },
+                { name: 'Scale', price: '£749', orders: '1,501-5,000' },
+                { name: 'Professional', price: '£1,249', orders: '5,001-15,000' },
+                { name: 'Enterprise', price: 'Custom', orders: '15,000+' },
+              ].map((t) => (
+                <div
+                  key={t.name}
+                  className={`rounded-lg py-3 sm:py-4 px-1 sm:px-3 transition-all ${
+                    roiData.tier === t.name
+                      ? 'bg-[#444833] text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-500 border border-gray-200'
+                  }`}
+                >
+                  <p className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider ${roiData.tier === t.name ? 'text-white/80' : 'text-gray-400'}`}>{t.name}</p>
+                  <p className={`text-sm sm:text-xl font-black mt-1 ${roiData.tier === t.name ? 'text-white' : 'text-gray-700'}`}>{t.price}</p>
+                  <p className={`text-[9px] sm:text-xs mt-1 ${roiData.tier === t.name ? 'text-white/60' : 'text-gray-400'}`}>{t.orders} orders</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* ROI Results Card */}
@@ -282,86 +314,42 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
             {/* Tier Header */}
             <div className="bg-[#444833] px-6 py-4 flex items-center justify-between">
               <div>
-                <p className="text-white/70 text-xs uppercase tracking-wider">Your Tier</p>
+                <p className="text-white/70 text-xs uppercase tracking-wider">Your Recommended Tier</p>
                 <p className="text-white text-xl sm:text-2xl font-bold">{roiData.tier}</p>
               </div>
-              <p className="text-white text-sm font-medium">{roiData.cost}</p>
+              <p className="text-white text-lg sm:text-xl font-bold">{roiData.costDisplay}</p>
             </div>
             {/* Stats Grid */}
             <div className="p-6 space-y-4">
               <div className="flex justify-between items-center py-3 border-b border-gray-100">
                 <span className="text-gray-600 text-sm">Returns Prevented*</span>
-                <span className="text-gray-900 font-semibold">{roiData.returnsPrevented}/mo</span>
+                <span className="text-gray-900 font-semibold">{roiData.returnsPrevented.toLocaleString()}/mo</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-gray-100">
                 <span className="text-gray-600 text-sm">Savings @ £20/return</span>
-                <span className="text-gray-900 font-semibold">{roiData.savingsReturns}</span>
+                <span className="text-gray-900 font-semibold">£{roiData.returnSavings.toLocaleString()}</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-gray-100">
                 <span className="text-gray-600 text-sm">Conversion Lift Value**</span>
-                <span className="text-gray-900 font-semibold">{roiData.conversionLift}</span>
+                <span className="text-gray-900 font-semibold">£{roiData.conversionLift.toLocaleString()}</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-gray-100">
                 <span className="text-gray-600 text-sm font-medium">Total Monthly Value</span>
-                <span className="text-gray-900 font-bold text-lg">{roiData.totalMonthly}</span>
+                <span className="text-gray-900 font-bold text-lg">£{roiData.totalMonthly.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between items-center py-3 bg-[#444833]/5 rounded-lg px-4 -mx-2">
-                <span className="text-[#444833] text-sm font-bold">ROI Multiple</span>
-                <span className="text-[#444833] font-black text-2xl">{roiData.roiMultiple}</span>
-              </div>
+              {roiData.cost > 0 && (
+                <div className="flex justify-between items-center py-3 bg-[#444833]/5 rounded-lg px-4 -mx-2">
+                  <span className="text-[#444833] text-sm font-bold">ROI Multiple</span>
+                  <span className="text-[#444833] font-black text-2xl">{roiData.roiMultiple}x</span>
+                </div>
+              )}
+              {roiData.tier === 'Enterprise' && (
+                <div className="text-center py-3">
+                  <p className="text-[#444833] font-semibold text-sm">Contact us for custom Enterprise pricing</p>
+                  <a href="mailto:mail@renderedfits.com" className="text-[#444833] underline text-sm">mail@renderedfits.com</a>
+                </div>
+              )}
             </div>
-          </div>
-
-          {/* Full Tier Comparison Table */}
-          <div className="mt-10 sm:mt-14 overflow-x-auto">
-            <table className="w-full text-xs sm:text-sm">
-              <thead>
-                <tr className="bg-[#1a2332] text-white">
-                  <th className="text-left py-3 px-3 sm:px-4 font-semibold">ROI Metric</th>
-                  <th className="text-center py-3 px-2 sm:px-4 font-semibold">Starter</th>
-                  <th className="text-center py-3 px-2 sm:px-4 font-semibold">Growth</th>
-                  <th className="text-center py-3 px-2 sm:px-4 font-semibold">Scale</th>
-                  <th className="text-center py-3 px-2 sm:px-4 font-semibold">Professional</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white">
-                <tr className="border-b border-gray-200">
-                  <td className="py-2.5 px-3 sm:px-4 font-medium text-gray-700">Returns Prevented*</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">21-56/mo</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">56-154/mo</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">154-385/mo</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">385-1,120/mo</td>
-                </tr>
-                <tr className="border-b border-gray-200 bg-gray-50">
-                  <td className="py-2.5 px-3 sm:px-4 font-medium text-gray-700">Savings @ £20/return</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£420-£1,120</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£1,120-£3,080</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£3,080-£7,700</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£7,700-£22,400</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-2.5 px-3 sm:px-4 font-medium text-gray-700">Conversion Lift Value**</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£1,875-£5,625</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£5,625-£15,000</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£15,000-£37,500</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£37,500-£112,500</td>
-                </tr>
-                <tr className="border-b border-gray-200 bg-gray-50">
-                  <td className="py-2.5 px-3 sm:px-4 font-medium text-gray-700">Total Monthly Value</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£2,295-£6,745</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£6,745-£18,080</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£18,080-£45,200</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-gray-600">£45,200-£134,900</td>
-                </tr>
-                <tr className="bg-[#444833]/10 font-bold">
-                  <td className="py-2.5 px-3 sm:px-4 text-[#444833]">ROI Multiple</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-[#444833]">9x-27x</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-[#444833]">15x-40x</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-[#444833]">24x-60x</td>
-                  <td className="py-2.5 px-2 sm:px-4 text-center text-[#444833]">36x-108x</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
@@ -407,44 +395,34 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, folders, searchQuer
         </div>
       </div>
 
-      {/* ===== SECTION 8: COLLECTION FILTER + PRODUCT GRID ===== */}
-      <div className="border-b border-gray-200 bg-white sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto py-4 no-scrollbar">
-            {collectionNames.map((collection) => (
-              <button
-                key={collection}
-                onClick={() => setSelectedCollection(collection)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                  selectedCollection === collection
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {collection}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
-        <div className="mb-4 sm:mb-6">
-          <p className="text-sm text-gray-600">
-            @renderedfits wardrobe - {filteredProducts.length} {filteredProducts.length === 1 ? 'outfit' : 'outfits'}
+      {/* ===== SECTION 8: DEMO LINKS ===== */}
+      <div className="bg-white py-16 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-gray-900 mb-4">
+            Try It Yourself
+          </h2>
+          <p className="text-gray-500 text-sm sm:text-base mb-10 max-w-lg mx-auto">
+            Experience our virtual try-on technology with our live demos.
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+            <Link
+              to="/product/RHUDE"
+              className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
+            >
+              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Male Demo</p>
+              <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on menswear</p>
+            </Link>
+            <Link
+              to="/demo"
+              className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
+            >
+              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Female Demo</p>
+              <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on womenswear</p>
+            </Link>
+          </div>
         </div>
-        {filteredProducts.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-gray-500">No outfits available.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );
