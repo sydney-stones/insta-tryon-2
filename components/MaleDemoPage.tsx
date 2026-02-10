@@ -9,26 +9,23 @@ import { WardrobeItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getSavedModel, getSavedTryOnResult } from '../lib/tryOnLimit';
 
-interface CampbellsOfBeaulyProductPageProps {
+interface MaleDemoPageProps {
   onTryOnClick: (product: WardrobeItem) => void;
 }
 
-const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> = ({ onTryOnClick }) => {
+const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   const demoProduct: WardrobeItem = useMemo(() => ({
-    id: 'beaufortandblakesienna-jumper',
-    name: 'Montadale Sheep Half Zip Jumper',
-    url: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/outfits/beaufortandblakesienna-jumper.png',
-    secondaryImageUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/beaufortandblake-sienna.png',
-    videoUrl: 'https://raw.githubusercontent.com/sydney-stones/insta-tryon-2/main/Renderings/beaufortandblakevideo-sienna.mp4',
+    id: 'campbellsofbeauly-landroverdefenderjumper',
+    name: 'Land Rover Defender Jumper',
+    url: '/outfits/Campbellsofbeauly-landroverdefenderjumper.jpeg',
     folder: 'Demo',
-    price: 170,
-    description: 'Premium quality Montadale Sheep Half Zip Jumper from Beaufort & Blake.',
+    price: 120,
+    description: 'Premium Land Rover Defender jumper from Campbells of Beauly. A rugged yet refined knit inspired by the iconic off-road vehicle.',
     collection: 'Demo',
-    shopUrl: 'https://go.shopmy.us/p-31046835',
   }), []);
 
   const savedModel = getSavedModel();
@@ -51,12 +48,6 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
     const media: Array<{ url: string; type: 'image' | 'video' }> = [
       { url: demoProduct.url, type: 'image' }
     ];
-    if (demoProduct.secondaryImageUrl) {
-      media.push({ url: demoProduct.secondaryImageUrl, type: 'image' });
-    }
-    if (demoProduct.videoUrl) {
-      media.push({ url: demoProduct.videoUrl, type: 'video' });
-    }
     if (savedModel) {
       media.push({ url: savedModel, type: 'image' });
     }
@@ -64,7 +55,7 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
       media.push({ url: tryOnResult, type: 'image' });
     }
     return media;
-  }, [savedModel, tryOnResult, demoProduct.url, demoProduct.secondaryImageUrl, demoProduct.videoUrl]);
+  }, [savedModel, tryOnResult, demoProduct.url]);
 
   useEffect(() => {
     if (tryOnResult && productMedia.length > 0) {
@@ -93,7 +84,7 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
     setShowPurchaseModal(true);
   };
 
-  const sizes = ['XXS', 'XS', 'S', 'M', 'L'];
+  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
   return (
     <div className="min-h-screen bg-white">
@@ -131,7 +122,7 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
           <span>/</span>
           <span>Knitwear</span>
           <span>/</span>
-          <span className="text-gray-900">Half Zip Jumper</span>
+          <span className="text-gray-900">Defender Jumper</span>
         </nav>
       </div>
 
@@ -246,13 +237,13 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
           <div className="flex flex-col lg:pt-0">
             {/* Product Name */}
             <h1 className="text-[13px] tracking-[0.15em] font-normal uppercase mb-4">
-              MONTADALE SHEEP HALF ZIP JUMPER
+              LAND ROVER DEFENDER JUMPER
             </h1>
 
             {/* Price */}
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-[13px] line-through text-gray-400">&pound;200</span>
-              <span className="text-[13px]">&pound;170</span>
+              <span className="text-[13px] line-through text-gray-400">&pound;150</span>
+              <span className="text-[13px]">&pound;120</span>
             </div>
 
             {/* Size Guide */}
@@ -356,10 +347,10 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
             {/* Product Description */}
             <div className="border-t border-gray-200 py-6">
               <p className="text-[12px] text-gray-600 leading-relaxed">
-                Premium quality half zip jumper featuring a Montadale sheep design, crafted from soft wool blend. Finished with ribbed cuffs and hem. Cut to a relaxed fit. Perfect for country living and outdoor adventures.
+                Premium Land Rover Defender jumper from Campbells of Beauly. A rugged yet refined knit inspired by the iconic off-road vehicle, featuring intricate Defender motif detail. Crafted from quality yarn with ribbed cuffs and hem.
               </p>
               <p className="text-[11px] text-gray-400 mt-4 leading-relaxed">
-                Relaxed fit. Ribbed cuffs and hem. Model is 180 cm / 5'9 and wears a size S.
+                Regular fit. Crew neck. Model is 185 cm / 6'1 and wears a size M.
               </p>
             </div>
           </div>
@@ -424,4 +415,4 @@ const CampbellsOfBeaulyProductPage: React.FC<CampbellsOfBeaulyProductPageProps> 
   );
 };
 
-export default CampbellsOfBeaulyProductPage;
+export default MaleDemoPage;

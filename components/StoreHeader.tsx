@@ -23,7 +23,7 @@ const StoreHeader: React.FC<StoreHeaderProps> = ({ searchQuery = '', setSearchQu
           {/* Left Side - Navigation Links */}
           <div className="flex items-center gap-3 sm:gap-5 flex-shrink-0">
             <Link
-              to="/demo"
+              to="/demo-male"
               className={`text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${isHomePage ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
             >
               Male Demo

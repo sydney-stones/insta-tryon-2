@@ -11,6 +11,7 @@ import ProductGrid from './components/ProductGrid';
 import ProductDetailPage from './components/ProductDetailPage';
 import DemoProductPage from './components/DemoProductPage';
 import CampbellsOfBeaulyProductPage from './components/CampbellsOfBeaulyProductPage';
+import MaleDemoPage from './components/MaleDemoPage';
 import FarlowsMenProductPage from './components/FarlowsMenProductPage';
 import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
@@ -104,6 +105,10 @@ const App: React.FC = () => {
                   <Route
                     path="/demo"
                     element={<CampbellsOfBeaulyProductPage onTryOnClick={handleTryOnClick} />}
+                  />
+                  <Route
+                    path="/demo-male"
+                    element={<MaleDemoPage onTryOnClick={handleTryOnClick} />}
                   />
                   <Route
                     path="/farlows"

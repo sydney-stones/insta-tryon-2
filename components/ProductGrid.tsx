@@ -18,36 +18,42 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
   const [roiRevenue, setRoiRevenue] = useState<number>(25000);
 
   // ROI Calculator logic with correct pricing tiers
+  // Works with either monthly orders or monthly revenue independently
   const roiData = useMemo(() => {
     const orders = roiOrders;
     const revenue = roiRevenue;
-    const avgOrderValue = orders > 0 ? revenue / orders : 50;
 
-    // Determine tier based on order volume
-    let tier: string;
-    let cost: number;
-    if (orders <= 500) {
-      tier = 'Starter';
-      cost = 249;
-    } else if (orders <= 1500) {
-      tier = 'Growth';
-      cost = 449;
-    } else if (orders <= 5000) {
-      tier = 'Scale';
-      cost = 749;
-    } else if (orders <= 15000) {
-      tier = 'Professional';
-      cost = 1249;
-    } else {
-      tier = 'Enterprise';
-      cost = 0; // Custom pricing
-    }
+    // Tier from orders
+    const getTierFromOrders = (o: number) => {
+      if (o <= 500) return { tier: 'Starter', cost: 249, rank: 1 };
+      if (o <= 1500) return { tier: 'Growth', cost: 449, rank: 2 };
+      if (o <= 5000) return { tier: 'Scale', cost: 749, rank: 3 };
+      if (o <= 15000) return { tier: 'Professional', cost: 1249, rank: 4 };
+      return { tier: 'Enterprise', cost: 0, rank: 5 };
+    };
+
+    // Tier from revenue
+    const getTierFromRevenue = (r: number) => {
+      if (r <= 25000) return { tier: 'Starter', cost: 249, rank: 1 };
+      if (r <= 75000) return { tier: 'Growth', cost: 449, rank: 2 };
+      if (r <= 250000) return { tier: 'Scale', cost: 749, rank: 3 };
+      if (r <= 750000) return { tier: 'Professional', cost: 1249, rank: 4 };
+      return { tier: 'Enterprise', cost: 0, rank: 5 };
+    };
+
+    const orderTier = getTierFromOrders(orders);
+    const revenueTier = getTierFromRevenue(revenue);
+
+    // Use whichever gives the higher tier
+    const selected = orderTier.rank >= revenueTier.rank ? orderTier : revenueTier;
+    const { tier, cost } = selected;
 
     // Calculate ROI metrics
-    const returnRate = 0.07; // ~7% return reduction
-    const conversionLiftRate = 0.05; // ~5% conversion lift
+    const avgOrderValue = orders > 0 ? revenue / orders : 50;
+    const returnRate = 0.07;
+    const conversionLiftRate = 0.05;
     const returnsPrevented = Math.round(orders * returnRate);
-    const returnSavings = returnsPrevented * 20; // £20 per return saved
+    const returnSavings = returnsPrevented * 20;
     const conversionLift = Math.round(orders * conversionLiftRate * avgOrderValue);
     const totalMonthly = returnSavings + conversionLift;
     const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
@@ -141,7 +147,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
                 <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/outfits/gymking.png" alt="Browse products" className="w-full h-full object-cover rounded-lg" />
+                  <img src="/3.png" alt="Browse products" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 1</p>
@@ -152,14 +158,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             {/* Phone 2 - Try It On */}
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
-                <div className="bg-[#444833] rounded-lg aspect-[3/4] flex flex-col items-center justify-center px-3">
-                  <svg className="w-8 h-8 sm:w-12 sm:h-12 text-white mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  <p className="text-white text-xs sm:text-sm font-bold text-center">TRY IT ON, VIRTUALLY</p>
-                  <p className="text-white/60 text-[8px] sm:text-[10px] text-center mt-1">Take a selfie</p>
+                <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
+                  <img src="/4.png" alt="Upload your pictures" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 2</p>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900">Try It On Virtually</p>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900">Upload Your Pictures</p>
                 </div>
               </div>
             </div>
@@ -167,11 +171,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
                 <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <div className="text-center px-2">
-                    <svg className="w-8 h-8 sm:w-12 sm:h-12 text-[#444833] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>
-                    <p className="text-[#444833] text-xs sm:text-sm font-bold">Your Result</p>
-                    <p className="text-gray-400 text-[8px] sm:text-[10px] mt-1">AI-generated try-on</p>
-                  </div>
+                  <img src="/5.png" alt="See your results" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 3</p>
@@ -287,11 +287,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           <div className="max-w-3xl mx-auto mb-8">
             <div className="grid grid-cols-5 gap-1 sm:gap-2 text-center">
               {[
-                { name: 'Starter', price: '£249', orders: '0-500' },
-                { name: 'Growth', price: '£449', orders: '501-1,500' },
-                { name: 'Scale', price: '£749', orders: '1,501-5,000' },
-                { name: 'Professional', price: '£1,249', orders: '5,001-15,000' },
-                { name: 'Enterprise', price: 'Custom', orders: '15,000+' },
+                { name: 'Starter', price: '£249', orders: '0-500', revenue: '£0-25k' },
+                { name: 'Growth', price: '£449', orders: '501-1,500', revenue: '£25k-75k' },
+                { name: 'Scale', price: '£749', orders: '1,501-5,000', revenue: '£75k-250k' },
+                { name: 'Professional', price: '£1,249', orders: '5,001-15,000', revenue: '£250k-750k' },
+                { name: 'Enterprise', price: 'Custom', orders: '15,000+', revenue: '£750k+' },
               ].map((t) => (
                 <div
                   key={t.name}
@@ -304,6 +304,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                   <p className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider ${roiData.tier === t.name ? 'text-white/80' : 'text-gray-400'}`}>{t.name}</p>
                   <p className={`text-sm sm:text-xl font-black mt-1 ${roiData.tier === t.name ? 'text-white' : 'text-gray-700'}`}>{t.price}</p>
                   <p className={`text-[9px] sm:text-xs mt-1 ${roiData.tier === t.name ? 'text-white/60' : 'text-gray-400'}`}>{t.orders} orders</p>
+                  <p className={`text-[9px] sm:text-xs ${roiData.tier === t.name ? 'text-white/60' : 'text-gray-400'}`}>{t.revenue} rev</p>
                 </div>
               ))}
             </div>
@@ -406,7 +407,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
             <Link
-              to="/product/RHUDE"
+              to="/demo-male"
               className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
             >
               <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
