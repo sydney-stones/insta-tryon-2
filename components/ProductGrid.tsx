@@ -6,6 +6,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
+import ScrollingQuotes from './ScrollingQuotes';
 
 interface ProductGridProps {
   products: WardrobeItem[];
@@ -105,42 +106,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       </div>
 
       {/* ===== SCROLLING QUOTES BANNER ===== */}
-      <div className="bg-[#3a3d2d] py-4 overflow-hidden">
-        <div className="animate-scroll whitespace-nowrap">
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Virtual try-on increased our conversion rate by 35%" — Fashion Retailer
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Returns dropped by 25% in the first month" — E-commerce Brand
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Customers love seeing themselves in our products" — Boutique Owner
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Game-changer for our online store" — Shopify Merchant
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Virtual try-on increased our conversion rate by 35%" — Fashion Retailer
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Returns dropped by 25% in the first month" — E-commerce Brand
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Customers love seeing themselves in our products" — Boutique Owner
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-          <span className="inline-block px-8 text-white/70 text-sm">
-            "Game-changer for our online store" — Shopify Merchant
-          </span>
-          <span className="inline-block px-8 text-white/70 text-sm">•</span>
-        </div>
-      </div>
+      <ScrollingQuotes />
 
       {/* ===== SECTION 2: STAT INTRO ===== */}
       <div className="bg-gray-100 py-16 sm:py-20">
