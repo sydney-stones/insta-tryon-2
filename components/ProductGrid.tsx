@@ -74,7 +74,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
     <div className="min-h-screen bg-white">
 
       {/* ===== SECTION 1: HERO ===== */}
-      <div className="relative bg-[#444833] min-h-screen flex items-end overflow-hidden">
+      <div className="relative bg-[#444833] min-h-screen flex items-start overflow-hidden">
         {/* Hero Image - Right Side */}
         <div className="absolute right-0 bottom-0 h-full w-full sm:w-[65%] lg:w-[60%] pointer-events-none">
           <img
@@ -85,10 +85,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         </div>
 
         {/* Hero Content - Left Side */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16 sm:pb-20 lg:pb-24 pt-24 sm:pt-28">
-          <div className="max-w-2xl lg:max-w-3xl">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-serif italic font-light text-white leading-[0.9] mb-8 sm:mb-10">
-              AI- Powered<br />
+        <div className="relative z-10 w-full pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-none">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-serif italic font-light text-white leading-[0.85] mb-8 sm:mb-10">
+              AI-Powered<br />
               Virtual Try-on
             </h1>
             <p className="text-white/80 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg">
@@ -355,42 +355,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         </div>
       </div>
 
-      {/* ===== SECTION 6: BRANDED FOOTER / CTA ===== */}
-      <div className="bg-[#444833] py-16 sm:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-10 lg:gap-16">
-            {/* Left - Large brand name */}
-            <div className="text-center lg:text-left">
-              <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight">
-                RENDERED<br />FITS
-              </h2>
-            </div>
-            {/* Right - CTA */}
-            <div className="flex flex-col items-center lg:items-end gap-6">
-              <div className="text-center lg:text-right">
-                <p className="text-white/70 text-xs sm:text-sm mb-1">Contact Us: <a href="mailto:mail@renderedfits.com" className="text-white hover:underline">mail@renderedfits.com</a></p>
-                <Link
-                  to="/demo"
-                  className="inline-block border border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all mt-3"
-                >
-                  Try Our Demo
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ===== SECTION 7: LEGAL FOOTER ===== */}
-      <div className="bg-[#3a3d2d] py-6">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-white/50 text-[10px] sm:text-xs leading-relaxed">
-            Rendered Fits Ltd registered in England and Wales under the company registration number 16922551. Registered office address: 50-54 Oswald Road, Scunthorpe, North Lincolnshire, United Kingdom, DN15 7PQ
-          </p>
-        </div>
-      </div>
-
-      {/* ===== SECTION 8: DEMO LINKS ===== */}
+      {/* ===== SECTION 6: DEMO LINKS ===== */}
       <div className="bg-white py-16 sm:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-gray-900 mb-4">
@@ -417,6 +382,41 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on womenswear</p>
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* ===== SECTION 7: BRANDED FOOTER / CTA ===== */}
+      <div className="bg-[#444833] py-16 sm:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-10 lg:gap-16">
+            {/* Left - Large brand name */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight">
+                RENDERED<br />FITS
+              </h2>
+            </div>
+            {/* Right - CTA */}
+            <div className="flex flex-col items-center lg:items-end gap-6">
+              <div className="text-center lg:text-right">
+                <p className="text-white/70 text-xs sm:text-sm mb-1">Contact Us: <a href="mailto:mail@renderedfits.com" className="text-white hover:underline">mail@renderedfits.com</a></p>
+                <Link
+                  to="/demo"
+                  className="inline-block border border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all mt-3"
+                >
+                  Try Our Demo
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== SECTION 8: LEGAL FOOTER ===== */}
+      <div className="bg-[#3a3d2d] py-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white/50 text-[10px] sm:text-xs leading-relaxed">
+            Rendered Fits Ltd registered in England and Wales under the company registration number 16922551. Registered office address: 50-54 Oswald Road, Scunthorpe, North Lincolnshire, United Kingdom, DN15 7PQ
+          </p>
         </div>
       </div>
     </div>

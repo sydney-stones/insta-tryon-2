@@ -7,7 +7,7 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getSavedModel, getSavedTryOnResult } from '../lib/tryOnLimit';
+import { getSavedTryOnResult } from '../lib/tryOnLimit';
 
 interface MaleDemoPageProps {
   onTryOnClick: (product: WardrobeItem) => void;
@@ -28,7 +28,6 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
     collection: 'Demo',
   }), []);
 
-  const savedModel = getSavedModel();
   const [tryOnResult, setTryOnResult] = useState<string | null>(getSavedTryOnResult(demoProduct.id));
 
   useEffect(() => {
@@ -48,14 +47,11 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
     const media: Array<{ url: string; type: 'image' | 'video' }> = [
       { url: demoProduct.url, type: 'image' }
     ];
-    if (savedModel) {
-      media.push({ url: savedModel, type: 'image' });
-    }
     if (tryOnResult) {
       media.push({ url: tryOnResult, type: 'image' });
     }
     return media;
-  }, [savedModel, tryOnResult, demoProduct.url]);
+  }, [tryOnResult, demoProduct.url]);
 
   useEffect(() => {
     if (tryOnResult && productMedia.length > 0) {
@@ -166,20 +162,6 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
                   )}
                 </AnimatePresence>
 
-                {/* Try on overlay on saved model */}
-                {savedModel && selectedImageIndex === productMedia.length - (tryOnResult ? 2 : 1) && productMedia[selectedImageIndex]?.type === 'image' && (
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => onTryOnClick(demoProduct)}
-                      className="bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 font-medium text-sm tracking-wide"
-                    >
-                      Try on this look
-                    </motion.button>
-                  </div>
-                )}
-
                 {/* Nav Arrows */}
                 {productMedia.length > 1 && (
                   <>
@@ -222,7 +204,7 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
                     ) : (
                       <img src={media.url} alt="" className="w-full h-full object-cover" />
                     )}
-                    {savedModel && index >= productMedia.length - (tryOnResult ? 2 : 1) && (
+                    {tryOnResult && index === productMedia.length - 1 && (
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-1">
                         <span className="text-white text-[10px] font-medium">You</span>
                       </div>
