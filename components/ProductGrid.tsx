@@ -76,23 +76,23 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 1: HERO ===== */}
       <div className="relative bg-[#444833] min-h-screen flex items-end overflow-hidden">
         {/* Hero Image - Right Side */}
-        <div className="absolute right-0 bottom-0 h-full w-full sm:w-[60%] lg:w-[55%] pointer-events-none">
+        <div className="absolute right-0 bottom-0 h-full w-full sm:w-[65%] lg:w-[60%] pointer-events-none">
           <img
             src="/hero-models.png"
             alt="Virtual Try-On Models"
-            className="h-full w-full object-contain object-right-bottom"
+            className="h-full w-full object-contain object-right-bottom scale-110 origin-bottom-right"
           />
         </div>
 
         {/* Hero Content - Left Side */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16 sm:pb-20 lg:pb-24 pt-24 sm:pt-28">
-          <div className="max-w-xl lg:max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif italic font-light text-white leading-[0.95] mb-8 sm:mb-10">
+          <div className="max-w-2xl lg:max-w-3xl">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-serif italic font-light text-white leading-[0.9] mb-8 sm:mb-10">
               AI- Powered<br />
               Virtual Try-on
             </h1>
-            <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-8 sm:mb-10 max-w-md">
-              solution for Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to every screen 24/7.
+            <p className="text-white/80 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg">
+              Solution for Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to every screen 24/7.
             </p>
             <Link
               to="/demo"

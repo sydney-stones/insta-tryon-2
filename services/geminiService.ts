@@ -65,7 +65,7 @@ if (!apiKey || apiKey === 'NULL' || apiKey === 'your_gemini_api_key_here') {
 }
 
 const ai = new GoogleGenAI({ apiKey: apiKey || '' });
-const model = 'gemini-2.5-flash-image';
+const model = 'gemini-2.0-flash-exp';
 
 export interface UserMeasurements {
   height: number;      // cm
@@ -78,12 +78,21 @@ export interface UserMeasurements {
   armLength: number;   // cm
 }
 
-export const generateModelImage = async (userImage: File): Promise<string> => {
-    const userImagePart = await fileToPart(userImage);
-    const prompt = "You are an expert fashion photographer AI. Transform the person in this image into a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic and MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio). Return ONLY the final image.";
+export const generateModelImage = async (faceImage: File, bodyImage?: File): Promise<string> => {
+    const faceImagePart = await fileToPart(faceImage);
+    const parts: Array<{ inlineData: { mimeType: string; data: string } } | { text: string }> = [faceImagePart];
+
+    if (bodyImage) {
+        const bodyImagePart = await fileToPart(bodyImage);
+        parts.push(bodyImagePart);
+        parts.push({ text: "You are an expert fashion photographer AI. You are given two images: the first is a face/selfie photo and the second is a full body photo of the same person. Using the face from the first image and the body proportions from the second image, create a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique facial features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic and MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio). Return ONLY the final image." });
+    } else {
+        parts.push({ text: "You are an expert fashion photographer AI. Transform the person in this image into a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic and MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio). Return ONLY the final image." });
+    }
+
     const response = await ai.models.generateContent({
         model,
-        contents: { parts: [userImagePart, { text: prompt }] },
+        contents: { parts },
         config: {
             responseModalities: [Modality.IMAGE, Modality.TEXT],
         },

@@ -7,7 +7,6 @@ import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WardrobeItem } from '../types';
 import { generateModelImage, generateVirtualTryOnImage } from '../services/geminiService';
-import { UploadCloudIcon } from './icons';
 import Spinner from './Spinner';
 import { getFriendlyErrorMessage } from '../lib/utils';
 import { canUseTryOn, getRemainingTryOns, incrementTryOnUsage, saveGeneratedModel, getSavedModel, saveTryOnResult } from '../lib/tryOnLimit';
@@ -20,119 +19,124 @@ interface VirtualTryOnModalProps {
   isOpen: boolean;
   onClose: () => void;
   product: WardrobeItem | null;
-  isUnlimited?: boolean; // For admin mode
+  isUnlimited?: boolean;
 }
 
 type ModalStep = 'upload' | 'limit-reached' | 'generating-model' | 'model-ready' | 'generating-tryon';
 
 const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false }) => {
   const [step, setStep] = useState<ModalStep>('upload');
-  const [userImageUrl, setUserImageUrl] = useState<string | null>(null);
+  const [faceImage, setFaceImage] = useState<File | null>(null);
+  const [facePreview, setFacePreview] = useState<string | null>(null);
+  const [bodyImage, setBodyImage] = useState<File | null>(null);
+  const [bodyPreview, setBodyPreview] = useState<string | null>(null);
   const [modelImageUrl, setModelImageUrl] = useState<string | null>(null);
   const [tryOnImageUrl, setTryOnImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [remainingTries, setRemainingTries] = useState(3);
+  const [remainingTries, setRemainingTries] = useState(1);
 
   const handleClose = () => {
     setStep('upload');
-    setUserImageUrl(null);
+    setFaceImage(null);
+    setFacePreview(null);
+    setBodyImage(null);
+    setBodyPreview(null);
     setModelImageUrl(null);
     setTryOnImageUrl(null);
     setError(null);
     onClose();
   };
 
-  // Update remaining tries when modal opens
   React.useEffect(() => {
     if (isOpen && !isUnlimited) {
       setRemainingTries(getRemainingTryOns());
     }
   }, [isOpen, isUnlimited]);
 
-  const handleFileSelect = useCallback(async (file: File) => {
-    // Check limit before processing (unless unlimited mode)
+  const handleFaceSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (!file.type.startsWith('image/')) {
+        setError('Please select an image file.');
+        return;
+      }
+      setFaceImage(file);
+      setError(null);
+      const reader = new FileReader();
+      reader.onload = (ev) => setFacePreview(ev.target?.result as string);
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleBodySelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (!file.type.startsWith('image/')) {
+        setError('Please select an image file.');
+        return;
+      }
+      setBodyImage(file);
+      setError(null);
+      const reader = new FileReader();
+      reader.onload = (ev) => setBodyPreview(ev.target?.result as string);
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleGenerate = useCallback(async () => {
+    if (!faceImage || !bodyImage) {
+      setError('Please upload both a face photo and a full body photo.');
+      return;
+    }
+
     if (!isUnlimited && !canUseTryOn()) {
       setStep('limit-reached');
       setRemainingTries(0);
       return;
     }
 
-    if (!file.type.startsWith('image/')) {
-      setError('Please select an image file.');
-      return;
-    }
+    setError(null);
+    setStep('generating-model');
 
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      const dataUrl = e.target?.result as string;
-      setUserImageUrl(dataUrl);
-      setError(null);
-      setStep('generating-model');
+    try {
+      // Generate model from both face and body photos
+      const generatedModel = await generateModelImage(faceImage, bodyImage);
 
-      try {
-        // Step 1: Generate new model from user's selfie
-        // Always generate fresh model when user uploads a new image
-        const generatedModel = await generateModelImage(file);
-
-        // Save the model for reuse (unless unlimited mode)
-        if (!isUnlimited) {
-          saveGeneratedModel(generatedModel);
-        }
-
-        setModelImageUrl(generatedModel);
-
-        // Show model-ready step with the generated model
-        setStep('model-ready');
-
-        // Step 2: Generate try-on with the product in the background
-        if (product) {
-          // Start generating try-on
-          setStep('generating-tryon');
-
-          // Convert product URL to File
-          const response = await fetch(product.url);
-          const blob = await response.blob();
-          const garmentFile = new File([blob], product.name, { type: blob.type });
-
-          const tryOnResult = await generateVirtualTryOnImage(generatedModel, garmentFile);
-
-          // Add watermark to the generated image
-          const watermarkedImage = await addWatermark(tryOnResult);
-          setTryOnImageUrl(watermarkedImage);
-
-          // Save the try-on result for display in product page
-          saveTryOnResult(watermarkedImage, product.id);
-
-          // Increment usage count on success (unless unlimited mode)
-          if (!isUnlimited) {
-            incrementTryOnUsage();
-            setRemainingTries(getRemainingTryOns());
-          }
-
-          // Log analytics for successful try-on (both local and persistent)
-          logTryOnEvent(product.id, product.name);
-          logPersistentTryOnEvent(product.id, product.name);
-
-          // Close modal and show result in product page for all products
-          handleClose();
-        }
-      } catch (err) {
-        setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
-        setStep('upload');
-        setUserImageUrl(null);
+      if (!isUnlimited) {
+        saveGeneratedModel(generatedModel);
       }
-    };
-    reader.readAsDataURL(file);
-  }, [product, isUnlimited]);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      handleFileSelect(e.target.files[0]);
+      setModelImageUrl(generatedModel);
+      setStep('model-ready');
+
+      if (product) {
+        setStep('generating-tryon');
+
+        const response = await fetch(product.url);
+        const blob = await response.blob();
+        const garmentFile = new File([blob], product.name, { type: blob.type });
+
+        const tryOnResult = await generateVirtualTryOnImage(generatedModel, garmentFile);
+        const watermarkedImage = await addWatermark(tryOnResult);
+        setTryOnImageUrl(watermarkedImage);
+        saveTryOnResult(watermarkedImage, product.id);
+
+        if (!isUnlimited) {
+          incrementTryOnUsage();
+          setRemainingTries(getRemainingTryOns());
+        }
+
+        logTryOnEvent(product.id, product.name);
+        logPersistentTryOnEvent(product.id, product.name);
+        handleClose();
+      }
+    } catch (err) {
+      setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
+      setStep('upload');
     }
-  };
+  }, [faceImage, bodyImage, product, isUnlimited]);
 
   const handleUseSavedModel = async () => {
-    // Check limit before processing (unless unlimited mode)
     if (!isUnlimited && !canUseTryOn()) {
       setStep('limit-reached');
       setRemainingTries(0);
@@ -146,31 +150,22 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
     setModelImageUrl(savedModel);
 
     try {
-      // Convert product URL to File
       const response = await fetch(product.url);
       const blob = await response.blob();
       const garmentFile = new File([blob], product.name, { type: blob.type });
 
       const tryOnResult = await generateVirtualTryOnImage(savedModel, garmentFile);
-
-      // Add watermark to the generated image
       const watermarkedImage = await addWatermark(tryOnResult);
       setTryOnImageUrl(watermarkedImage);
-
-      // Save the try-on result for display in product page
       saveTryOnResult(watermarkedImage, product.id);
 
-      // Increment usage count on success (unless unlimited mode)
       if (!isUnlimited) {
         incrementTryOnUsage();
         setRemainingTries(getRemainingTryOns());
       }
 
-      // Log analytics for successful try-on (both local and persistent)
       logTryOnEvent(product.id, product.name);
       logPersistentTryOnEvent(product.id, product.name);
-
-      // Close modal and show result in product page for all products
       handleClose();
     } catch (err) {
       setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
@@ -181,6 +176,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
   if (!isOpen) return null;
 
   const savedModelExists = getSavedModel() !== null;
+  const bothImagesUploaded = faceImage !== null && bodyImage !== null;
 
   return (
     <AnimatePresence>
@@ -213,7 +209,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
           <div className="overflow-y-auto max-h-[90vh]">
             <AnimatePresence mode="wait">
-              {/* Feature Disabled - Under Development */}
+              {/* Feature Disabled */}
               {!FEATURE_FLAGS.VIRTUAL_TRY_ON_ENABLED ? (
                 <motion.div
                   key="under-development"
@@ -231,23 +227,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
                       Site is Currently Under Development
                     </h2>
-                    <p className="text-gray-600 text-lg mb-6">
-                      Try again soon
-                    </p>
-                    <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg mb-6">
-                      <p className="text-sm text-gray-800">
-                        Follow{' '}
-                        <a
-                          href="https://www.instagram.com/renderedfits"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-semibold text-blue-600 hover:text-blue-800 underline"
-                        >
-                          @renderedfits
-                        </a>
-                        {' '}for updates
-                      </p>
-                    </div>
+                    <p className="text-gray-600 text-lg mb-6">Try again soon</p>
                     <button
                       onClick={handleClose}
                       className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
@@ -258,7 +238,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                 </motion.div>
               ) : (
                 <>
-              {/* Limit Reached Step */}
+              {/* Limit Reached */}
               {step === 'limit-reached' && (
                 <motion.div
                   key="limit-reached"
@@ -277,7 +257,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       <strong>Out of tries for today!</strong>
                     </h2>
                     <p className="text-gray-600 mb-4">
-                      Come back tomorrow for your next 2 FREE try-ons
+                      Come back tomorrow for your next FREE try-on
                     </p>
                     <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg mb-6">
                       <p className="text-sm text-gray-800">
@@ -303,7 +283,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                 </motion.div>
               )}
 
-              {/* Upload Step */}
+              {/* Upload Step - Face + Full Body */}
               {step === 'upload' && (
                 <motion.div
                   key="upload"
@@ -317,7 +297,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       Try On {product?.name}
                     </h2>
                     <p className="text-gray-600">
-                      {savedModelExists ? 'Use your existing model or upload a new photo' : 'Upload a selfie to see how this item looks on you'}
+                      {savedModelExists ? 'Use your existing model or upload new photos' : 'Upload a face photo and a full body photo to see how this item looks on you'}
                     </p>
                     {!isUnlimited && (
                       <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-full">
@@ -329,89 +309,135 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                         </span>
                       </div>
                     )}
-                    {/* Upload Instructions */}
-                    <div className="mt-4">
-                      <p className="text-lg font-semibold text-gray-900 mb-1">Upload Your Photo</p>
-                      <p className="text-sm text-gray-600">Take a photo like this</p>
-                    </div>
                   </div>
 
-                  <div className="max-w-md mx-auto space-y-4">
-                    {/* Use Saved Model Button */}
+                  <div className="max-w-lg mx-auto space-y-6">
+                    {/* Use Saved Model */}
                     {savedModelExists && (
-                      <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        onClick={handleUseSavedModel}
-                        className="w-full p-6 bg-gradient-to-r from-indigo-50 to-purple-50 border-2 border-indigo-300 rounded-lg hover:border-indigo-400 transition-colors group"
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className="flex-shrink-0 w-16 h-16 bg-indigo-600 rounded-lg flex items-center justify-center">
-                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      <>
+                        <motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          onClick={handleUseSavedModel}
+                          className="w-full p-6 bg-gradient-to-r from-indigo-50 to-purple-50 border-2 border-indigo-300 rounded-lg hover:border-indigo-400 transition-colors group"
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="flex-shrink-0 w-16 h-16 bg-indigo-600 rounded-lg flex items-center justify-center">
+                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                            </div>
+                            <div className="flex-1 text-left">
+                              <p className="text-lg font-semibold text-gray-900 mb-1">Use Your Saved Model</p>
+                              <p className="text-sm text-gray-600">Skip the upload and try on instantly</p>
+                            </div>
+                            <svg className="w-6 h-6 text-indigo-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </div>
-                          <div className="flex-1 text-left">
-                            <p className="text-lg font-semibold text-gray-900 mb-1">
-                              Use Your Saved Model
-                            </p>
-                            <p className="text-sm text-gray-600">
-                              Skip the upload and try on instantly
-                            </p>
+                        </motion.button>
+                        <div className="relative">
+                          <div className="absolute inset-0 flex items-center">
+                            <div className="w-full border-t border-gray-300"></div>
                           </div>
-                          <svg className="w-6 h-6 text-indigo-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
+                          <div className="relative flex justify-center text-sm">
+                            <span className="px-2 bg-white text-gray-500">or upload new photos</span>
+                          </div>
                         </div>
-                      </motion.button>
+                      </>
                     )}
 
-                    {savedModelExists && (
-                      <div className="relative">
-                        <div className="absolute inset-0 flex items-center">
-                          <div className="w-full border-t border-gray-300"></div>
-                        </div>
-                        <div className="relative flex justify-center text-sm">
-                          <span className="px-2 bg-white text-gray-500">or</span>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Upload New Photo */}
-                    <label
-                      htmlFor="tryon-upload"
-                      className="block w-full cursor-pointer group"
-                    >
-                      <div className="relative">
-                        {/* Example Image */}
-                        <div className="relative aspect-[16/9] max-w-2xl mx-auto rounded-2xl overflow-hidden border-2 border-gray-200 group-hover:border-purple-400 transition-colors">
-                          <img
-                            src="/Users/sydneystones/insta-tryon-2-1/example.png"
-                            alt="Upload your photo"
-                            className="w-full h-full object-cover"
-                          />
-
-                          {/* Upload icon overlay */}
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                            <div className="group-hover:scale-110 transition-transform">
-                              <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-                                <UploadCloudIcon className="w-10 h-10 text-gray-900" />
-                              </div>
+                    {/* Two Upload Boxes */}
+                    <div className="grid grid-cols-2 gap-4">
+                      {/* Face Photo Upload */}
+                      <label htmlFor="face-upload" className="block cursor-pointer group">
+                        <div className={`relative aspect-square rounded-xl border-2 border-dashed transition-colors overflow-hidden ${
+                          facePreview ? 'border-green-400 bg-green-50' : 'border-gray-300 hover:border-gray-400 bg-gray-50'
+                        }`}>
+                          {facePreview ? (
+                            <img src={facePreview} alt="Face photo" className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                              {/* Face Icon */}
+                              <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M9 9.5a1 1 0 011-1h0a1 1 0 011 1" />
+                                <path d="M13 9.5a1 1 0 011-1h0a1 1 0 011 1" />
+                                <path d="M10 13a2.5 2.5 0 004 0" />
+                              </svg>
+                              <p className="text-sm font-semibold text-gray-700 text-center">Face Photo</p>
+                              <p className="text-[11px] text-gray-400 mt-1 text-center">Clear front-facing selfie</p>
                             </div>
-                          </div>
+                          )}
+                          {facePreview && (
+                            <div className="absolute bottom-2 left-2 right-2 bg-green-600 text-white text-[11px] font-medium py-1 px-2 rounded text-center">
+                              Face photo uploaded
+                            </div>
+                          )}
                         </div>
-                      </div>
-                    </label>
-                    <input
-                      id="tryon-upload"
-                      type="file"
-                      className="hidden"
-                      accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif"
-                      onChange={handleFileChange}
-                    />
+                      </label>
+                      <input
+                        id="face-upload"
+                        type="file"
+                        className="hidden"
+                        accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif"
+                        onChange={handleFaceSelect}
+                      />
+
+                      {/* Full Body Photo Upload */}
+                      <label htmlFor="body-upload" className="block cursor-pointer group">
+                        <div className={`relative aspect-square rounded-xl border-2 border-dashed transition-colors overflow-hidden ${
+                          bodyPreview ? 'border-green-400 bg-green-50' : 'border-gray-300 hover:border-gray-400 bg-gray-50'
+                        }`}>
+                          {bodyPreview ? (
+                            <img src={bodyPreview} alt="Body photo" className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                              {/* Full Body Icon */}
+                              <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
+                                <circle cx="12" cy="4" r="2.5" />
+                                <path d="M12 7v5" />
+                                <path d="M8 9l4 1 4-1" />
+                                <path d="M10 12l-2 8" />
+                                <path d="M14 12l2 8" />
+                              </svg>
+                              <p className="text-sm font-semibold text-gray-700 text-center">Full Body Photo</p>
+                              <p className="text-[11px] text-gray-400 mt-1 text-center">Head-to-toe standing photo</p>
+                            </div>
+                          )}
+                          {bodyPreview && (
+                            <div className="absolute bottom-2 left-2 right-2 bg-green-600 text-white text-[11px] font-medium py-1 px-2 rounded text-center">
+                              Body photo uploaded
+                            </div>
+                          )}
+                        </div>
+                      </label>
+                      <input
+                        id="body-upload"
+                        type="file"
+                        className="hidden"
+                        accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif"
+                        onChange={handleBodySelect}
+                      />
+                    </div>
+
+                    {/* Generate Button */}
+                    <motion.button
+                      whileHover={bothImagesUploaded ? { scale: 1.02 } : {}}
+                      whileTap={bothImagesUploaded ? { scale: 0.98 } : {}}
+                      onClick={handleGenerate}
+                      disabled={!bothImagesUploaded}
+                      className={`w-full py-4 px-6 rounded-lg font-semibold text-sm tracking-wide transition-all ${
+                        bothImagesUploaded
+                          ? 'bg-[#1a1a1a] text-white hover:bg-black'
+                          : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      }`}
+                    >
+                      {bothImagesUploaded ? 'GENERATE TRY-ON' : 'Upload both photos to continue'}
+                    </motion.button>
 
                     {error && (
-                      <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                         <p className="text-red-700 text-sm">{error}</p>
                       </div>
                     )}
@@ -433,7 +459,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     Creating Your Model
                   </h3>
                   <p className="text-gray-600 text-center max-w-md">
-                    Our AI is analyzing your photo and creating a personalized model...
+                    Our AI is analyzing your photos and creating a personalized model...
                   </p>
                 </motion.div>
               )}
@@ -455,15 +481,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       Now applying {product?.name} to your model...
                     </p>
                   </div>
-
                   <div className="max-w-md mx-auto mb-6">
-                    <img
-                      src={modelImageUrl}
-                      alt="Your model"
-                      className="w-full h-auto rounded-xl shadow-lg"
-                    />
+                    <img src={modelImageUrl} alt="Your model" className="w-full h-auto rounded-xl shadow-lg" />
                   </div>
-
                   <div className="flex justify-center">
                     <Spinner />
                   </div>
@@ -487,14 +507,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                       Applying {product?.name} to your model...
                     </p>
                   </div>
-
                   <div className="max-w-md mx-auto mb-6">
                     <div className="relative">
-                      <img
-                        src={modelImageUrl}
-                        alt="Your model"
-                        className="w-full h-auto rounded-xl shadow-lg"
-                      />
+                      <img src={modelImageUrl} alt="Your model" className="w-full h-auto rounded-xl shadow-lg" />
                       <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px] rounded-xl flex items-center justify-center">
                         <div className="bg-white/90 px-6 py-4 rounded-lg shadow-lg">
                           <Spinner />
@@ -507,7 +522,6 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
               )}
                 </>
               )}
-
             </AnimatePresence>
           </div>
         </motion.div>

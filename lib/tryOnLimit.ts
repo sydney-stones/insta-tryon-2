@@ -6,7 +6,7 @@
 const STORAGE_KEY = 'virtualTryOnUsage';
 const MODEL_STORAGE_KEY = 'userGeneratedModel';
 const TRYON_RESULT_KEY = 'latestTryOnResult';
-const DAILY_LIMIT = 3; // Effectively unlimited for regular users (admin has separate 5/day limit)
+const DAILY_LIMIT = 1; // Hard limit: 1 try-on per day for all visitors to cap API costs
 
 interface TryOnUsage {
   date: string; // Format: YYYY-MM-DD
