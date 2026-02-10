@@ -24,7 +24,7 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
     url: '/outfits/Campbellsofbeauly-landroverdefenderjumper.jpeg',
     folder: 'Demo',
     price: 120,
-    description: 'Premium Land Rover Defender jumper from Campbells of Beauly. A rugged yet refined knit inspired by the iconic off-road vehicle.',
+    description: 'Premium Land Rover Defender jumper. A rugged yet refined knit inspired by the iconic off-road vehicle.',
     collection: 'Demo',
   }), []);
 
@@ -347,7 +347,7 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
             {/* Product Description */}
             <div className="border-t border-gray-200 py-6">
               <p className="text-[12px] text-gray-600 leading-relaxed">
-                Premium Land Rover Defender jumper from Campbells of Beauly. A rugged yet refined knit inspired by the iconic off-road vehicle, featuring intricate Defender motif detail. Crafted from quality yarn with ribbed cuffs and hem.
+                Premium Land Rover Defender jumper. A rugged yet refined knit inspired by the iconic off-road vehicle, featuring intricate Defender motif detail. Crafted from quality yarn with ribbed cuffs and hem.
               </p>
               <p className="text-[11px] text-gray-400 mt-4 leading-relaxed">
                 Regular fit. Crew neck. Model is 185 cm / 6'1 and wears a size M.

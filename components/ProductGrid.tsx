@@ -115,7 +115,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="flex flex-col items-center text-center">
               <div className="bg-[#444833] rounded-lg w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center mb-4 relative">
                 <svg className="w-10 h-10 sm:w-14 sm:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 17l-4 4m0 0l-4-4m4 4V3" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v4a1 1 0 001 1h3M21 7v4a1 1 0 01-1 1h-3" /></svg>
-                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm">~20%</span>
+                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm"></span>
               </div>
               <p className="text-gray-800 text-xs sm:text-sm font-medium">Reduce Returns Rates<br />by ~20%</p>
             </div>
@@ -123,7 +123,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="flex flex-col items-center text-center">
               <div className="bg-[#444833] rounded-lg w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center mb-4 relative">
                 <svg className="w-10 h-10 sm:w-14 sm:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm">~30%</span>
+                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm"></span>
               </div>
               <p className="text-gray-800 text-xs sm:text-sm font-medium">Boosts Conversions<br />by ~30%</p>
             </div>
@@ -131,7 +131,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="flex flex-col items-center text-center">
               <div className="bg-[#444833] rounded-lg w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center mb-4 relative">
                 <svg className="w-10 h-10 sm:w-14 sm:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm">~20%</span>
+                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm"></span>
               </div>
               <p className="text-gray-800 text-xs sm:text-sm font-medium">Increase AOV<br />by ~20%</p>
             </div>
@@ -365,14 +365,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                 RENDERED<br />FITS
               </h2>
             </div>
-            {/* Right - Hanger icon + CTA */}
+            {/* Right - CTA */}
             <div className="flex flex-col items-center lg:items-end gap-6">
-              {/* Hanger SVG */}
-              <svg className="w-24 h-24 sm:w-32 sm:h-32 text-white/80" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M50 15 C50 10, 55 5, 60 5 C65 5, 70 10, 65 15" strokeLinecap="round" />
-                <path d="M50 15 L15 50 L85 50 L50 15 Z" strokeLinejoin="round" />
-                <line x1="15" y1="50" x2="85" y2="50" />
-              </svg>
               <div className="text-center lg:text-right">
                 <p className="text-white/70 text-xs sm:text-sm mb-1">Contact Us: <a href="mailto:mail@renderedfits.com" className="text-white hover:underline">mail@renderedfits.com</a></p>
                 <Link

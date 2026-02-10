@@ -65,7 +65,7 @@ if (!apiKey || apiKey === 'NULL' || apiKey === 'your_gemini_api_key_here') {
 }
 
 const ai = new GoogleGenAI({ apiKey: apiKey || '' });
-const model = 'gemini-2.0-flash-exp';
+const model = 'gemini-3-pro-image-preview';
 
 export interface UserMeasurements {
   height: number;      // cm
