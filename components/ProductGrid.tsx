@@ -74,33 +74,71 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
     <div className="min-h-screen bg-white">
 
       {/* ===== SECTION 1: HERO ===== */}
-      <div className="relative bg-[#444833] min-h-screen flex items-start overflow-hidden">
-        {/* Hero Image - Right Side */}
-        <div className="absolute right-0 bottom-0 h-full w-full sm:w-[65%] lg:w-[60%] pointer-events-none">
+      <div className="relative bg-[#444833] min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Hero Image - Background */}
+        <div className="absolute inset-0 opacity-20">
           <img
             src="/hero-models.png"
             alt="Virtual Try-On Models"
-            className="h-full w-full object-contain object-right-bottom scale-110 origin-bottom-right"
+            className="h-full w-full object-cover"
           />
         </div>
 
-        {/* Hero Content - Left Side */}
-        <div className="relative z-10 w-full pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-none">
-            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-serif italic font-light text-white leading-[0.85] mb-8 sm:mb-10">
+        {/* Hero Content - Centered */}
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-serif italic font-light text-white leading-[0.9] mb-8 sm:mb-10">
               AI-Powered<br />
               Virtual Try-on
             </h1>
-            <p className="text-white/80 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg">
+            <p className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed mb-10 sm:mb-12 max-w-3xl mx-auto font-light">
               Solution for Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to every screen 24/7.
             </p>
             <Link
-              to="/demo"
-              className="inline-block border border-white text-white px-8 sm:px-10 py-3 sm:py-3.5 text-sm sm:text-base font-medium hover:bg-white hover:text-[#444833] transition-all"
+              to="/contact"
+              className="inline-block border-2 border-white text-white px-10 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-white hover:text-[#444833] transition-all"
             >
-              Try Our Demo
+              Book a Demo
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* ===== SCROLLING QUOTES BANNER ===== */}
+      <div className="bg-[#3a3d2d] py-4 overflow-hidden">
+        <div className="animate-scroll whitespace-nowrap">
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Virtual try-on increased our conversion rate by 35%" — Fashion Retailer
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Returns dropped by 25% in the first month" — E-commerce Brand
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Customers love seeing themselves in our products" — Boutique Owner
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Game-changer for our online store" — Shopify Merchant
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Virtual try-on increased our conversion rate by 35%" — Fashion Retailer
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Returns dropped by 25% in the first month" — E-commerce Brand
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Customers love seeing themselves in our products" — Boutique Owner
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
+          <span className="inline-block px-8 text-white/70 text-sm">
+            "Game-changer for our online store" — Shopify Merchant
+          </span>
+          <span className="inline-block px-8 text-white/70 text-sm">•</span>
         </div>
       </div>
 
@@ -400,10 +438,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               <div className="text-center lg:text-right">
                 <p className="text-white/70 text-xs sm:text-sm mb-1">Contact Us: <a href="mailto:mail@renderedfits.com" className="text-white hover:underline">mail@renderedfits.com</a></p>
                 <Link
-                  to="/demo"
+                  to="/contact"
                   className="inline-block border border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all mt-3"
                 >
-                  Try Our Demo
+                  Book a Demo
                 </Link>
               </div>
             </div>

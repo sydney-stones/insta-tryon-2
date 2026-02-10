@@ -17,6 +17,7 @@ import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
 import BrandWaitlistPage from './components/BrandWaitlistPage';
+import ContactPage from './components/ContactPage';
 import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import ScrollToTop from './components/ScrollToTop';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
@@ -63,6 +64,9 @@ const App: React.FC = () => {
         <Routes>
           {/* Admin Route - Hidden from navigation */}
           <Route path="/admin" element={<AdminPage products={wardrobe} />} />
+
+          {/* Contact Page - No header */}
+          <Route path="/contact" element={<ContactPage />} />
 
           {/* Public Routes */}
           <Route
