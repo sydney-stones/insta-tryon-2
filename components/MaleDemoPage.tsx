@@ -263,7 +263,7 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
             {/* AI TRY ON Button */}
             <button
               onClick={() => onTryOnClick(demoProduct)}
-              className="w-full bg-[#1a1a1a] text-white py-4 px-6 text-[12px] tracking-[0.15em] font-medium flex items-center justify-center gap-3 mb-1 hover:bg-black transition-colors"
+              className="w-full bg-[#444833] text-white py-4 px-6 text-[12px] tracking-[0.15em] font-medium flex items-center justify-center gap-3 mb-1 hover:bg-[#3a3d2d] transition-all shadow-[0_0_20px_rgba(68,72,51,0.4)] hover:shadow-[0_0_30px_rgba(68,72,51,0.6)]"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -373,14 +373,13 @@ const MaleDemoPage: React.FC<MaleDemoPageProps> = ({ onTryOnClick }) => {
                   >
                     TRY VIRTUAL TRY-ON
                   </button>
-                  <a
-                    href="https://tally.so/r/mOOqZ7"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/contact"
                     className="block w-full bg-black text-white py-3 px-6 text-[12px] tracking-[0.1em] font-medium hover:bg-gray-900 transition-colors"
+                    onClick={() => setShowPurchaseModal(false)}
                   >
-                    JOIN BRAND WAITLIST
-                  </a>
+                    CONTACT US
+                  </Link>
                   <button
                     onClick={() => setShowPurchaseModal(false)}
                     className="block w-full border border-gray-300 text-gray-700 py-3 px-6 text-[12px] tracking-[0.1em] font-medium hover:border-gray-500 transition-colors"

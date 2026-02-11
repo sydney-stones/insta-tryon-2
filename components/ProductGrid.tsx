@@ -78,11 +78,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 1: HERO ===== */}
       <div className="relative bg-[#444833] min-h-screen flex items-center justify-center overflow-hidden">
         {/* Hero Image - Background */}
-        <div className="absolute inset-0 opacity-30 flex items-center justify-center">
+        <div className="absolute inset-0 opacity-30">
           <img
             src="/hero-models.png"
             alt="Virtual Try-On Models"
-            className="h-[85%] w-auto object-contain"
+            className="h-full w-full object-cover"
           />
         </div>
 
@@ -332,11 +332,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               to="/demo-male"
               className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
             >
-              {/* Male icon - shirt with tie */}
-              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L8 6H4v12h16V6h-4l-4-3z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v6M10 7l2-1 2 1" />
-              </svg>
               <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Male Demo</p>
               <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on menswear</p>
             </Link>
@@ -344,10 +339,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               to="/demo"
               className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
             >
-              {/* Female icon - dress */}
-              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L8 6H6v3h12V6h-2l-4-4zM6 9v3c0 2 1 3 3 3h6c2 0 3-1 3-3V9H6zM9 15v7M15 15v7" />
-              </svg>
               <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Female Demo</p>
               <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on womenswear</p>
             </Link>
