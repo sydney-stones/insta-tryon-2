@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Benefit {
@@ -96,10 +96,42 @@ const benefits: Benefit[] = [
 ];
 
 const BenefitsSection: React.FC = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0); // Start with Boost Sales (index 0)
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const rotationTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-rotation logic
+  useEffect(() => {
+    const startRotation = () => {
+      rotationTimerRef.current = setInterval(() => {
+        if (!isUserInteracting) {
+          setExpandedIndex((prev) => {
+            if (prev === null) return 0;
+            return (prev + 1) % benefits.length;
+          });
+        }
+      }, 7000); // Rotate every 7 seconds
+    };
+
+    startRotation();
+
+    return () => {
+      if (rotationTimerRef.current) clearInterval(rotationTimerRef.current);
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+    };
+  }, [isUserInteracting]);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
+
+    // Pause auto-rotation for 10 seconds after user clicks
+    setIsUserInteracting(true);
+
+    if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+    pauseTimerRef.current = setTimeout(() => {
+      setIsUserInteracting(false);
+    }, 10000); // Resume rotation after 10 seconds
   };
 
   return (
@@ -115,7 +147,11 @@ const BenefitsSection: React.FC = () => {
             <div key={index} className="flex flex-col items-center text-center">
               <button
                 onClick={() => toggleExpand(index)}
-                className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-xl flex items-center justify-center mb-3 sm:mb-4 hover:bg-[#3a3d2d] transition-all cursor-pointer"
+                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 transition-all cursor-pointer ${
+                  expandedIndex === index
+                    ? 'bg-[#6b7544] ring-2 ring-[#6b7544] ring-offset-2'
+                    : 'bg-[#444833] hover:bg-[#3a3d2d]'
+                }`}
               >
                 {benefit.icon}
               </button>
@@ -130,7 +166,11 @@ const BenefitsSection: React.FC = () => {
             <div key={index + 3} className="flex flex-col items-center text-center">
               <button
                 onClick={() => toggleExpand(index + 3)}
-                className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-xl flex items-center justify-center mb-3 sm:mb-4 hover:bg-[#3a3d2d] transition-all cursor-pointer"
+                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 transition-all cursor-pointer ${
+                  expandedIndex === index + 3
+                    ? 'bg-[#6b7544] ring-2 ring-[#6b7544] ring-offset-2'
+                    : 'bg-[#444833] hover:bg-[#3a3d2d]'
+                }`}
               >
                 {benefit.icon}
               </button>
