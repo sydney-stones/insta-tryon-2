@@ -7,6 +7,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
 import ScrollingQuotes from './ScrollingQuotes';
+import BenefitsSection from './BenefitsSection';
 
 interface ProductGridProps {
   products: WardrobeItem[];
@@ -77,11 +78,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 1: HERO ===== */}
       <div className="relative bg-[#444833] min-h-screen flex items-center justify-center overflow-hidden">
         {/* Hero Image - Background */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-30 flex items-center justify-center">
           <img
             src="/hero-models.png"
             alt="Virtual Try-On Models"
-            className="h-full w-full object-cover"
+            className="h-[85%] w-auto object-contain"
           />
         </div>
 
@@ -188,49 +189,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       </div>
 
       {/* ===== SECTION 4: BENEFITS OF VIRTUAL TRY-ON ===== */}
-      <div className="bg-white py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-12 sm:mb-16">
-            Benefits of Virtual Try-on
-          </h2>
-          {/* Top row - 3 benefits */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-              </div>
-              <p className="text-xs sm:text-sm font-medium text-gray-800">Boost Sales</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-              </div>
-              <p className="text-xs sm:text-sm font-medium text-gray-800">Sustainability</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" /></svg>
-              </div>
-              <p className="text-xs sm:text-sm font-medium text-gray-800">Reduce Returns</p>
-            </div>
-          </div>
-          {/* Bottom row - 2 benefits centered */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xs sm:max-w-md mx-auto">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </div>
-              <p className="text-xs sm:text-sm font-medium text-gray-800">Increase<br />AOV</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-              </div>
-              <p className="text-xs sm:text-sm font-medium text-gray-800">Customer<br />Acquisition</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BenefitsSection />
 
       {/* ===== SECTION 5: ROI CALCULATOR ===== */}
       <div className="bg-gray-100 py-16 sm:py-20">
@@ -373,7 +332,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               to="/demo-male"
               className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
             >
-              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              {/* Male icon - shirt with tie */}
+              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L8 6H4v12h16V6h-4l-4-3z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v6M10 7l2-1 2 1" />
+              </svg>
               <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Male Demo</p>
               <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on menswear</p>
             </Link>
@@ -381,7 +344,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               to="/demo"
               className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
             >
-              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              {/* Female icon - dress */}
+              <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#444833] group-hover:text-white mx-auto mb-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L8 6H6v3h12V6h-2l-4-4zM6 9v3c0 2 1 3 3 3h6c2 0 3-1 3-3V9H6zM9 15v7M15 15v7" />
+              </svg>
               <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Female Demo</p>
               <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on womenswear</p>
             </Link>

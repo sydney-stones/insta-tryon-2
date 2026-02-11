@@ -7,10 +7,16 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const quotes = [
-  '"Virtual try-on increased our conversion rate by 35%" — Fashion Retailer',
-  '"Returns dropped by 25% in the first month" — E-commerce Brand',
-  '"Customers love seeing themselves in our products" — Boutique Owner',
-  '"Game-changer for our online store" — Shopify Merchant',
+  '"Retailers report up to 30% increase in conversions with virtual try-on" — Onix Systems Research Summary',
+  '"Virtual try-on reduces return rates by 20-30%" — Research compiled by Onix Systems',
+  '"AR try-ons lead to 200% rise in user interaction" — Multiple industry studies',
+  '"Up to 40% increase in conversion rates for retailers adopting AR technology" — McKinsey & Company',
+  '"320% growth in conversion rate reported by global beauty brand using AR try-on" — Inc. Magazine',
+  '"64% reduction in return rates with virtual fitting rooms" — Banuba Research',
+  '"Fashion returns cost retailers $743 billion globally" — Industry analysis',
+  '"Time spent on product pages increases by 180% with virtual try-on" — E-commerce research data',
+  '"Virtual try-on market projected to reach $46.42 billion by 2030" — Grand View Research',
+  '"45% boost in buyer confidence with virtual fitting technology" — E-commerce studies',
 ];
 
 const ScrollingQuotes: React.FC = () => {
