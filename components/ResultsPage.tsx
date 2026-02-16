@@ -34,7 +34,7 @@ const demoProducts: DemoProduct[] = [
     sizes: ['XXS', 'XS', 'S', 'M', 'L'],
     productSrc: '/result-images/brielle.webp',
     productLabel: 'Product: Corset Knit Midi Dress',
-    faceSrc: '/result-images/siennaface.png',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
     bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/brielle-tryon-2K.png',
     afterLabel: 'Try-On Result',
@@ -49,7 +49,7 @@ const demoProducts: DemoProduct[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     productSrc: '/result-images/daisystreet.webp',
     productLabel: 'Product: Miffy Knit Jumper',
-    faceSrc: '/result-images/siennaface.png',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
     bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/daisystreet-tryon-2K.png',
     afterLabel: 'Try-On Result',
@@ -65,7 +65,7 @@ const demoProducts: DemoProduct[] = [
     sizes: ['28', '30', '32', '34', '36'],
     productSrc: '/result-images/elysianclo.webp',
     productLabel: 'Product: Distressed Wide Leg Jeans',
-    faceSrc: '/result-images/face.png',
+    faceSrc: '/result-images/IMG_8175.jpeg',
     bodySrc: '/result-images/sydbody--new.jpeg',
     afterSrc: '/result-images/elysianclo-tryon-2K.png',
     afterLabel: 'Try-On Result',
@@ -80,7 +80,7 @@ const demoProducts: DemoProduct[] = [
     sizes: ['S', 'M', 'L', 'XL'],
     productSrc: '/result-images/heliotemil.webp',
     productLabel: 'Product: Tech Panelled Jacket',
-    faceSrc: '/result-images/face.png',
+    faceSrc: '/result-images/IMG_8175.jpeg',
     bodySrc: '/result-images/sydbody--new.jpeg',
     afterSrc: '/result-images/heliotemil-tryon-1K.png',
     afterLabel: 'Try-On Result',
@@ -95,8 +95,8 @@ const demoProducts: DemoProduct[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     productSrc: '/result-images/heresy.jpg',
     productLabel: 'Product: Fleece Zip Hoodie',
-    faceSrc: '/result-images/siennaface.png',
-    bodySrc: '/result-images/siennaneutral--new.JPG',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
+    bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/heresy-tryon-1K.png',
     afterLabel: 'Try-On Result',
     description: 'Olive green fleece zip-up hoodie with embroidered pinwheel motif. Cosy oversized fit.',
@@ -111,7 +111,7 @@ const demoProducts: DemoProduct[] = [
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     productSrc: '/result-images/mellowclo.webp',
     productLabel: 'Product: Lightweight Windbreaker',
-    faceSrc: '/result-images/face.png',
+    faceSrc: '/result-images/IMG_8175.jpeg',
     bodySrc: '/result-images/sydbody--new.jpeg',
     afterSrc: '/result-images/mellowclo-tryon-1K.png',
     afterLabel: 'Try-On Result',
@@ -126,7 +126,7 @@ const demoProducts: DemoProduct[] = [
     sizes: ['One Size'],
     productSrc: '/result-images/lvbag.webp',
     productLabel: 'Product: Alma BB Monogram Bag',
-    faceSrc: '/result-images/siennaface.png',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
     bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/lvbag-tryon-4K.png',
     afterLabel: 'Try-On Result',
@@ -141,11 +141,26 @@ const demoProducts: DemoProduct[] = [
     sizes: ['One Size'],
     productSrc: '/result-images/RHUDEcap.jpg',
     productLabel: 'Product: Logo Denim Hat',
-    faceSrc: '/result-images/siennaface.png',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
     bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/RHPF25HA01741_RHUDE_LOGO_DENIM_HAT-OXFORD_INDIGO_1-tryon-4K.png',
     afterLabel: 'Try-On Result',
     description: 'Oxford indigo wash denim snapback with embroidered Rhude logo.',
+  },
+  {
+    id: 9,
+    name: 'Airlift Intrigue Bra & High-Waist Pant',
+    brand: 'Alo',
+    price: 168,
+    category: 'Activewear',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L'],
+    productSrc: '/result-images/alo.webp',
+    productLabel: 'Product: Airlift Intrigue Bra & Pant',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '/result-images/alo-tryon-1K.png',
+    afterLabel: 'Try-On Result',
+    description: 'Sculpted airlift sports bra with high-waist leggings in steel blue. Performance meets style.',
   },
 ];
 
@@ -177,14 +192,14 @@ const ProductDemoCard: React.FC<{ product: DemoProduct }> = ({ product }) => {
   const handleTryOn = () => {
     setModalStep('upload');
     setModalOpen(true);
-    // After 5 seconds, show loading screen
+    // After 3 seconds, show loading screen
     timerRef.current = setTimeout(() => {
       setModalStep('loading');
-      // After 7 seconds of loading, show result
+      // After 5 seconds of loading, show result
       timerRef.current = setTimeout(() => {
         setModalStep('result');
-      }, 7000);
-    }, 5000);
+      }, 5000);
+    }, 3000);
   };
 
   const handleClose = () => {
@@ -424,7 +439,7 @@ const ResultsPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-[#444833] py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <a href="/" className="text-2xl sm:text-3xl font-black text-white tracking-tight">
             RENDERED FITS™
           </a>
@@ -435,10 +450,10 @@ const ResultsPage: React.FC = () => {
       <div className="bg-white py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif italic text-gray-900 leading-tight mb-6">
-            See What Virtual Try-On Actually Looks Like
+            See What Virtual Try-On Looks Like
           </h1>
           <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto">
-            Real customers. Real products. Generated in 20 seconds.
+            The future of online shopping.
           </p>
         </div>
       </div>
@@ -462,17 +477,17 @@ const ResultsPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-bold text-white">28%</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">~20%</p>
               <p className="text-sm text-white/70 mt-1">fewer returns</p>
             </div>
             <div className="hidden sm:block w-px h-10 bg-white/20" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-bold text-white">20%</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">~30%</p>
               <p className="text-sm text-white/70 mt-1">higher conversion</p>
             </div>
             <div className="hidden sm:block w-px h-10 bg-white/20" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-bold text-white">15-25%</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">~20%</p>
               <p className="text-sm text-white/70 mt-1">higher AOV</p>
             </div>
           </div>

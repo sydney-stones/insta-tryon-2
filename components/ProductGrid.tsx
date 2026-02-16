@@ -327,7 +327,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           <p className="text-gray-500 text-sm sm:text-base mb-10 max-w-lg mx-auto">
             Experience our virtual try-on technology with our live demos.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <Link
               to="/demo-male"
               className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
@@ -341,6 +341,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             >
               <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Female Demo</p>
               <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on womenswear</p>
+            </Link>
+            <Link
+              to="/results"
+              className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
+            >
+              <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">See Results</p>
+              <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">See how it works</p>
             </Link>
           </div>
         </div>

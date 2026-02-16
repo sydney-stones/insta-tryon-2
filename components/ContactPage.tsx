@@ -37,7 +37,7 @@ const ContactPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-[#444833] py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <a href="/" className="text-2xl sm:text-3xl font-black text-white tracking-tight">
             RENDERED FITS™
           </a>
