@@ -383,10 +383,10 @@ const ProductDemoCard: React.FC<{ product: DemoProduct }> = ({ product }) => {
                 {/* Step 3: Result — try-on image with CTA */}
                 {modalStep === 'result' && (
                   <div className="flex flex-col items-center">
-                    {/* Result image */}
-                    <div className="w-full aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200">
+                    {/* Result image — constrained to fit within viewport */}
+                    <div className="w-full max-h-[50vh] rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200 flex items-center justify-center">
                       {product.afterSrc ? (
-                        <img src={product.afterSrc} alt={product.afterLabel} className="w-full h-full object-cover" />
+                        <img src={product.afterSrc} alt={product.afterLabel} className="w-full h-full object-contain" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
                           <span className="text-sm text-gray-400">{product.afterLabel}</span>

@@ -96,12 +96,20 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <p className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed mb-10 sm:mb-12 max-w-3xl mx-auto font-light">
               Solution for Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to every screen 24/7.
             </p>
-            <Link
-              to="/contact"
-              className="inline-block border-2 border-white text-white px-10 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-white hover:text-[#444833] transition-all"
-            >
-              Book a Demo
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-block border-2 border-white text-white px-10 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-white hover:text-[#444833] transition-all"
+              >
+                Book a Demo
+              </Link>
+              <Link
+                to="/results"
+                className="inline-block border-2 border-white/50 text-white px-10 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-white hover:text-[#444833] transition-all"
+              >
+                See How It Works
+              </Link>
+            </div>
           </div>
         </div>
       </div>

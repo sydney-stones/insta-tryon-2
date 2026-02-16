@@ -138,6 +138,24 @@ const ContactPage: React.FC = () => {
             </p>
           </form>
 
+          {/* Calendly Booking Option */}
+          <div className="mt-10 bg-[#444833] rounded-2xl p-8 text-center">
+            <h3 className="text-xl sm:text-2xl font-serif italic text-white mb-3">
+              Prefer to book directly?
+            </h3>
+            <p className="text-white/70 text-sm mb-6">
+              Skip the form and schedule a 15-minute call at a time that suits you.
+            </p>
+            <a
+              href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-[#444833] px-10 py-4 rounded-lg font-semibold text-base hover:bg-gray-100 transition-all"
+            >
+              Book a 15-Minute Meeting
+            </a>
+          </div>
+
           {/* Back to Home */}
           <div className="mt-12 text-center">
             <a
