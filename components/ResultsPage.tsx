@@ -3,51 +3,393 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-interface ComparisonCard {
+interface DemoProduct {
   id: number;
-  productType: string;
-  beforeLabel: string;
-  productLabel: string;
-  afterLabel: string;
-  beforeSrc: string;
+  name: string;
+  brand: string;
+  price: number;
+  originalPrice?: number;
+  category: string;
+  sizes: string[];
   productSrc: string;
+  productLabel: string;
+  faceSrc: string;
+  bodySrc: string;
   afterSrc: string;
+  afterLabel: string;
+  description: string;
 }
 
-const comparisons: ComparisonCard[] = [
-  { id: 1, productType: 'Summer Dress', beforeLabel: 'Customer Photo 1', productLabel: 'Product: Summer Dress', afterLabel: 'Try-On Result 1', beforeSrc: '/result-images/face.png', productSrc: '', afterSrc: '' },
-  { id: 2, productType: 'Denim Jacket', beforeLabel: 'Customer Photo 2', productLabel: 'Product: Denim Jacket', afterLabel: 'Try-On Result 2', beforeSrc: '/result-images/fullbody Large.jpeg', productSrc: '', afterSrc: '' },
-  { id: 3, productType: 'Evening Gown', beforeLabel: 'Customer Photo 3', productLabel: 'Product: Evening Gown', afterLabel: 'Try-On Result 3', beforeSrc: '/result-images/IMG_8175.jpeg', productSrc: '', afterSrc: '' },
-  { id: 4, productType: 'Casual T-Shirt', beforeLabel: 'Customer Photo 4', productLabel: 'Product: Casual T-Shirt', afterLabel: 'Try-On Result 4', beforeSrc: '/result-images/siennabody--new.JPG', productSrc: '', afterSrc: '' },
-  { id: 5, productType: 'Wool Coat', beforeLabel: 'Customer Photo 5', productLabel: 'Product: Wool Coat', afterLabel: 'Try-On Result 5', beforeSrc: '/result-images/siennaface.png', productSrc: '', afterSrc: '' },
-  { id: 6, productType: 'Silk Blouse', beforeLabel: 'Customer Photo 6', productLabel: 'Product: Silk Blouse', afterLabel: 'Try-On Result 6', beforeSrc: '/result-images/siennaneutral--new.JPG', productSrc: '', afterSrc: '' },
-  { id: 7, productType: 'Leather Jacket', beforeLabel: 'Customer Photo 7', productLabel: 'Product: Leather Jacket', afterLabel: 'Try-On Result 7', beforeSrc: '/result-images/sydbody--new.jpeg', productSrc: '', afterSrc: '' },
-  { id: 8, productType: 'Knit Sweater', beforeLabel: 'Customer Photo 8', productLabel: 'Product: Knit Sweater', afterLabel: 'Try-On Result 8', beforeSrc: '', productSrc: '', afterSrc: '' },
+const demoProducts: DemoProduct[] = [
+  {
+    id: 1,
+    name: 'Floral Summer Dress',
+    brand: 'Demo Store',
+    price: 89,
+    originalPrice: 120,
+    category: 'Dresses',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L'],
+    productSrc: '',
+    productLabel: 'Product: Summer Dress',
+    faceSrc: '/result-images/face.png',
+    bodySrc: '/result-images/fullbody Large.jpeg',
+    afterSrc: '',
+    afterLabel: 'Try-On Result 1',
+    description: 'Lightweight floral print dress in breathable cotton. Perfect for warm weather styling.',
+  },
+  {
+    id: 2,
+    name: 'Classic Denim Jacket',
+    brand: 'Demo Store',
+    price: 145,
+    category: 'Outerwear',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    productSrc: '',
+    productLabel: 'Product: Denim Jacket',
+    faceSrc: '/result-images/siennaface.png',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '',
+    afterLabel: 'Try-On Result 2',
+    description: 'Timeless denim jacket with a relaxed fit. A wardrobe essential for layering.',
+  },
+  {
+    id: 3,
+    name: 'Silk Evening Gown',
+    brand: 'Demo Store',
+    price: 320,
+    originalPrice: 420,
+    category: 'Eveningwear',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L'],
+    productSrc: '',
+    productLabel: 'Product: Evening Gown',
+    faceSrc: '/result-images/IMG_8175.jpeg',
+    bodySrc: '/result-images/siennaneutral--new.JPG',
+    afterSrc: '',
+    afterLabel: 'Try-On Result 3',
+    description: 'Elegant silk evening gown with flowing silhouette. Designed for special occasions.',
+  },
+  {
+    id: 4,
+    name: 'Relaxed Cotton T-Shirt',
+    brand: 'Demo Store',
+    price: 45,
+    category: 'Tops',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    productSrc: '',
+    productLabel: 'Product: Casual T-Shirt',
+    faceSrc: '/result-images/face.png',
+    bodySrc: '/result-images/sydbody--new.jpeg',
+    afterSrc: '',
+    afterLabel: 'Try-On Result 4',
+    description: 'Soft organic cotton t-shirt with a relaxed, everyday fit.',
+  },
+  {
+    id: 5,
+    name: 'Tailored Wool Coat',
+    brand: 'Demo Store',
+    price: 275,
+    originalPrice: 350,
+    category: 'Outerwear',
+    sizes: ['XS', 'S', 'M', 'L'],
+    productSrc: '',
+    productLabel: 'Product: Wool Coat',
+    faceSrc: '/result-images/siennaface.png',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '',
+    afterLabel: 'Try-On Result 5',
+    description: 'Structured wool-blend coat with clean tailoring. A statement piece for colder months.',
+  },
+  {
+    id: 6,
+    name: 'Printed Silk Blouse',
+    brand: 'Demo Store',
+    price: 165,
+    category: 'Tops',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L'],
+    productSrc: '',
+    productLabel: 'Product: Silk Blouse',
+    faceSrc: '/result-images/IMG_8175.jpeg',
+    bodySrc: '/result-images/siennaneutral--new.JPG',
+    afterSrc: '',
+    afterLabel: 'Try-On Result 6',
+    description: 'Luxurious printed silk blouse with a relaxed drape. Versatile from desk to dinner.',
+  },
 ];
 
-const ResultsPage: React.FC = () => {
-  const [selectedCard, setSelectedCard] = useState<number | null>(null);
+type ModalStep = 'upload' | 'loading' | 'result';
 
-  // Close lightbox on Escape key
+// Individual product demo card with try-on workflow
+const ProductDemoCard: React.FC<{ product: DemoProduct }> = ({ product }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalStep, setModalStep] = useState<ModalStep>('upload');
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Clean up timers
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedCard(null);
-    };
-    if (selectedCard !== null) {
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    }
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = '';
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [selectedCard]);
+  }, []);
 
-  const selectedComparison = selectedCard !== null ? comparisons.find(c => c.id === selectedCard) : null;
+  // Lock body scroll when modal open
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [modalOpen]);
 
+  const handleTryOn = () => {
+    setModalStep('upload');
+    setModalOpen(true);
+    // After 5 seconds, show loading screen
+    timerRef.current = setTimeout(() => {
+      setModalStep('loading');
+      // After 7 seconds of loading, show result
+      timerRef.current = setTimeout(() => {
+        setModalStep('result');
+      }, 7000);
+    }, 5000);
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+    setModalStep('upload');
+    if (timerRef.current) clearTimeout(timerRef.current);
+  };
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') handleClose();
+  };
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+    }
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [modalOpen]);
+
+  return (
+    <>
+      {/* Product Card — mimics a product page */}
+      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+        {/* Product Image */}
+        <div className="relative aspect-[3/4] bg-gray-50">
+          {product.productSrc ? (
+            <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover" />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="text-xs text-gray-400 text-center px-4">{product.productLabel}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Product Info */}
+        <div className="p-4 sm:p-5">
+          <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-1">{product.brand}</p>
+          <h3 className="text-sm sm:text-base font-medium text-gray-900 mb-2">{product.name}</h3>
+          <div className="flex items-center gap-2 mb-4">
+            {product.originalPrice && (
+              <span className="text-xs text-gray-400 line-through">&pound;{product.originalPrice}</span>
+            )}
+            <span className="text-sm font-medium">&pound;{product.price}</span>
+          </div>
+
+          {/* AI Try On Button */}
+          <button
+            onClick={handleTryOn}
+            className="w-full bg-[#444833] text-white py-3 px-4 text-[11px] tracking-[0.15em] font-medium flex items-center justify-center gap-2 hover:bg-[#3a3d2d] transition-all shadow-[0_0_15px_rgba(68,72,51,0.3)] hover:shadow-[0_0_25px_rgba(68,72,51,0.5)]"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            AI TRY ON
+          </button>
+        </div>
+      </div>
+
+      {/* Try-On Modal */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          onClick={handleClose}
+        >
+          <div
+            className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Top Bar */}
+            <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
+              <div className="flex items-center gap-3">
+                <span className="text-xs text-gray-500 flex items-center gap-1.5">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                  My looks
+                </span>
+                <span className="text-[10px] bg-[#444833] text-white px-2.5 py-1 rounded-full font-medium">
+                  10 credits left
+                </span>
+              </div>
+              <button onClick={handleClose} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors">
+                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Body — Split Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              {/* Left — Product Image */}
+              <div className="bg-gray-50 aspect-[3/4] lg:aspect-auto lg:min-h-[450px]">
+                {product.productSrc ? (
+                  <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-sm text-gray-400">{product.productLabel}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Right — Workflow Steps */}
+              <div className="p-5 sm:p-8 flex flex-col justify-center min-h-[350px]">
+
+                {/* Step 1: Upload — photos pre-loaded */}
+                {modalStep === 'upload' && (
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-light tracking-wide text-gray-900 mb-6 text-center">
+                      TRY IT ON, VIRTUALLY
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Face photo</p>
+                        <div className="aspect-square rounded-lg overflow-hidden bg-gray-100 border-2 border-[#444833]/30">
+                          <img src={product.faceSrc} alt="Face photo" className="w-full h-full object-cover" />
+                        </div>
+                        <p className="text-[10px] text-green-600 mt-1.5 flex items-center gap-1">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Uploaded
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Full body photo</p>
+                        <div className="aspect-square rounded-lg overflow-hidden bg-gray-100 border-2 border-[#444833]/30">
+                          <img src={product.bodySrc} alt="Full body photo" className="w-full h-full object-cover" />
+                        </div>
+                        <p className="text-[10px] text-green-600 mt-1.5 flex items-center gap-1">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Uploaded
+                        </p>
+                      </div>
+                    </div>
+                    {/* Product tags + Generating indicator */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.name}</span>
+                        <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.sizes[2]}</span>
+                      </div>
+                      <span className="text-[10px] text-[#444833] font-medium flex items-center gap-1">
+                        <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Starting...
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Step 2: Loading — "GETTING DRESSED!" */}
+                {modalStep === 'loading' && (
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <h3 className="text-2xl sm:text-3xl font-light tracking-wide text-gray-900 mb-8">
+                      GETTING DRESSED!
+                    </h3>
+                    {/* Hanger icon */}
+                    <div className="relative mb-8">
+                      <svg className="w-20 h-20 text-gray-800" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M32 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" />
+                        <path d="M32 16v4" />
+                        <path d="M32 20 L8 40 L56 40 Z" strokeLinejoin="round" />
+                      </svg>
+                      {/* Animated dots */}
+                      <div className="flex gap-1.5 justify-center mt-4">
+                        <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                        <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                        <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 flex-wrap justify-center">
+                      <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.name}</span>
+                      <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.sizes[2]}</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Step 3: Result — try-on image with CTA */}
+                {modalStep === 'result' && (
+                  <div className="flex flex-col items-center">
+                    {/* Result image */}
+                    <div className="w-full aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200">
+                      {product.afterSrc ? (
+                        <img src={product.afterSrc} alt={product.afterLabel} className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span className="text-sm text-gray-400">{product.afterLabel}</span>
+                        </div>
+                      )}
+                    </div>
+                    {/* Product tags */}
+                    <div className="flex items-center gap-2 mb-4 flex-wrap justify-center">
+                      <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.name}</span>
+                      <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.sizes[2]}</span>
+                      <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">&pound;{product.price}</span>
+                    </div>
+                    {/* Book a Demo button instead of Add to Cart */}
+                    <a
+                      href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-[#444833] text-white py-3 px-6 text-[11px] tracking-[0.15em] font-medium text-center hover:bg-[#3a3d2d] transition-colors block mb-2"
+                    >
+                      BOOK A DEMO
+                    </a>
+                    <Link
+                      to="/demo"
+                      onClick={handleClose}
+                      className="w-full border border-gray-300 text-gray-700 py-3 px-6 text-[11px] tracking-[0.15em] font-medium text-center hover:border-gray-500 transition-colors block"
+                    >
+                      TRY THE LIVE DEMO
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="border-t border-gray-200 px-5 py-3 flex items-center justify-center">
+              <span className="text-[10px] text-gray-400 tracking-wider">
+                Powered by <span className="font-bold text-gray-600">RENDERED FITS</span> &rarr;
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+
+const ResultsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -71,65 +413,15 @@ const ResultsPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Section 2: Before/After Gallery */}
+      {/* Section 2: Product Demo Grid */}
       <div className="bg-gray-50 py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            {comparisons.map((card) => (
-              <button
-                key={card.id}
-                onClick={() => setSelectedCard(card.id)}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer text-left"
-              >
-                <div className="p-4 sm:p-5">
-                  {/* 3-column: Before | Product | After */}
-                  <div className="grid grid-cols-[1fr_auto_1fr] gap-3 items-center">
-                    {/* Before */}
-                    <div>
-                      <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Before</p>
-                      {card.beforeSrc ? (
-                        <img src={card.beforeSrc} alt={card.beforeLabel} className="w-full aspect-[3/4] object-cover rounded-lg" />
-                      ) : (
-                        <div className="w-full aspect-[3/4] bg-gray-200 rounded-lg flex items-center justify-center">
-                          <span className="text-[10px] sm:text-xs text-gray-400 text-center px-2">{card.beforeLabel}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Product (center, smaller) */}
-                    <div className="flex flex-col items-center">
-                      <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Product</p>
-                      {card.productSrc ? (
-                        <img src={card.productSrc} alt={card.productLabel} className="w-16 sm:w-20 aspect-square object-cover rounded-lg" />
-                      ) : (
-                        <div className="w-16 sm:w-20 aspect-square bg-gray-100 rounded-lg flex items-center justify-center border border-gray-200">
-                          <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* After */}
-                    <div>
-                      <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">After</p>
-                      {card.afterSrc ? (
-                        <img src={card.afterSrc} alt={card.afterLabel} className="w-full aspect-[3/4] object-cover rounded-lg" />
-                      ) : (
-                        <div className="w-full aspect-[3/4] bg-gray-200 rounded-lg flex items-center justify-center">
-                          <span className="text-[10px] sm:text-xs text-gray-400 text-center px-2">{card.afterLabel}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Caption */}
-                  <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
-                    <p className="text-sm font-medium text-gray-800">{card.productType}</p>
-                    <span className="text-[10px] text-gray-400 uppercase tracking-wider">Click to enlarge</span>
-                  </div>
-                </div>
-              </button>
+          <p className="text-center text-gray-500 text-sm mb-10 max-w-xl mx-auto">
+            Click &ldquo;AI Try On&rdquo; on any product below to see the full virtual try-on experience.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {demoProducts.map((product) => (
+              <ProductDemoCard key={product.id} product={product} />
             ))}
           </div>
         </div>
@@ -175,7 +467,6 @@ const ResultsPage: React.FC = () => {
               <p className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mb-1">Step 1</p>
               <p className="text-sm sm:text-base font-semibold text-gray-900">Customer uploads photo</p>
             </div>
-
             {/* Step 2 */}
             <div className="text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -186,7 +477,6 @@ const ResultsPage: React.FC = () => {
               <p className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mb-1">Step 2</p>
               <p className="text-sm sm:text-base font-semibold text-gray-900">AI generates try-on in 20 seconds</p>
             </div>
-
             {/* Step 3 */}
             <div className="text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -234,78 +524,6 @@ const ResultsPage: React.FC = () => {
           </p>
         </div>
       </div>
-
-      {/* Lightbox Modal */}
-      {selectedComparison && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-          onClick={() => setSelectedCard(null)}
-        >
-          <div
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900">{selectedComparison.productType}</h3>
-              <button
-                onClick={() => setSelectedCard(null)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              >
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Modal Content */}
-            <div className="p-4 sm:p-6">
-              <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                {/* Before */}
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">Before</p>
-                  {selectedComparison.beforeSrc ? (
-                    <img src={selectedComparison.beforeSrc} alt={selectedComparison.beforeLabel} className="w-full aspect-[3/4] object-cover rounded-lg" />
-                  ) : (
-                    <div className="w-full aspect-[3/4] bg-gray-200 rounded-lg flex items-center justify-center">
-                      <span className="text-sm text-gray-400">{selectedComparison.beforeLabel}</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* After */}
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">After</p>
-                  {selectedComparison.afterSrc ? (
-                    <img src={selectedComparison.afterSrc} alt={selectedComparison.afterLabel} className="w-full aspect-[3/4] object-cover rounded-lg" />
-                  ) : (
-                    <div className="w-full aspect-[3/4] bg-gray-200 rounded-lg flex items-center justify-center">
-                      <span className="text-sm text-gray-400">{selectedComparison.afterLabel}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Product thumbnail below */}
-              <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-3">
-                {selectedComparison.productSrc ? (
-                  <img src={selectedComparison.productSrc} alt={selectedComparison.productLabel} className="w-12 h-12 object-cover rounded-lg" />
-                ) : (
-                  <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center border border-gray-200">
-                    <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                )}
-                <div>
-                  <p className="text-sm font-medium text-gray-800">{selectedComparison.productType}</p>
-                  <p className="text-xs text-gray-400">{selectedComparison.productLabel}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
