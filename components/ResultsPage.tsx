@@ -19,12 +19,12 @@ interface ComparisonCard {
 
 const comparisons: ComparisonCard[] = [
   { id: 1, productType: 'Summer Dress', beforeLabel: 'Customer Photo 1', productLabel: 'Product: Summer Dress', afterLabel: 'Try-On Result 1', beforeSrc: '/result-images/face.png', productSrc: '', afterSrc: '' },
-  { id: 2, productType: 'Denim Jacket', beforeLabel: 'Customer Photo 2', productLabel: 'Product: Denim Jacket', afterLabel: 'Try-On Result 2', beforeSrc: '/Users/sydneystones/insta-tryon-2-1/result-images/fullbody Large.jpeg', productSrc: '', afterSrc: '' },
-  { id: 3, productType: 'Evening Gown', beforeLabel: 'Customer Photo 3', productLabel: 'Product: Evening Gown', afterLabel: 'Try-On Result 3', beforeSrc: '/Users/sydneystones/insta-tryon-2-1/result-images/IMG_8175.jpeg', productSrc: '', afterSrc: '' },
-  { id: 4, productType: 'Casual T-Shirt', beforeLabel: 'Customer Photo 4', productLabel: 'Product: Casual T-Shirt', afterLabel: 'Try-On Result 4', beforeSrc: '/Users/sydneystones/insta-tryon-2-1/result-images/siennabody--new.JPG', productSrc: '', afterSrc: '' },
-  { id: 5, productType: 'Wool Coat', beforeLabel: 'Customer Photo 5', productLabel: 'Product: Wool Coat', afterLabel: 'Try-On Result 5', beforeSrc: '/Users/sydneystones/insta-tryon-2-1/result-images/siennaface.png', productSrc: '', afterSrc: '' },
-  { id: 6, productType: 'Silk Blouse', beforeLabel: 'Customer Photo 6', productLabel: 'Product: Silk Blouse', afterLabel: 'Try-On Result 6', beforeSrc: '/Users/sydneystones/insta-tryon-2-1/result-images/siennaneutral--new.JPG', productSrc: '', afterSrc: '' },
-  { id: 7, productType: 'Leather Jacket', beforeLabel: 'Customer Photo 7', productLabel: 'Product: Leather Jacket', afterLabel: 'Try-On Result 7', beforeSrc: '/Users/sydneystones/insta-tryon-2-1/result-images/sydbody--new.jpeg', productSrc: '', afterSrc: '' },
+  { id: 2, productType: 'Denim Jacket', beforeLabel: 'Customer Photo 2', productLabel: 'Product: Denim Jacket', afterLabel: 'Try-On Result 2', beforeSrc: '/result-images/fullbody Large.jpeg', productSrc: '', afterSrc: '' },
+  { id: 3, productType: 'Evening Gown', beforeLabel: 'Customer Photo 3', productLabel: 'Product: Evening Gown', afterLabel: 'Try-On Result 3', beforeSrc: '/result-images/IMG_8175.jpeg', productSrc: '', afterSrc: '' },
+  { id: 4, productType: 'Casual T-Shirt', beforeLabel: 'Customer Photo 4', productLabel: 'Product: Casual T-Shirt', afterLabel: 'Try-On Result 4', beforeSrc: '/result-images/siennabody--new.JPG', productSrc: '', afterSrc: '' },
+  { id: 5, productType: 'Wool Coat', beforeLabel: 'Customer Photo 5', productLabel: 'Product: Wool Coat', afterLabel: 'Try-On Result 5', beforeSrc: '/result-images/siennaface.png', productSrc: '', afterSrc: '' },
+  { id: 6, productType: 'Silk Blouse', beforeLabel: 'Customer Photo 6', productLabel: 'Product: Silk Blouse', afterLabel: 'Try-On Result 6', beforeSrc: '/result-images/siennaneutral--new.JPG', productSrc: '', afterSrc: '' },
+  { id: 7, productType: 'Leather Jacket', beforeLabel: 'Customer Photo 7', productLabel: 'Product: Leather Jacket', afterLabel: 'Try-On Result 7', beforeSrc: '/result-images/sydbody--new.jpeg', productSrc: '', afterSrc: '' },
   { id: 8, productType: 'Knit Sweater', beforeLabel: 'Customer Photo 8', productLabel: 'Product: Knit Sweater', afterLabel: 'Try-On Result 8', beforeSrc: '', productSrc: '', afterSrc: '' },
 ];
 
