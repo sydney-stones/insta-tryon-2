@@ -18,6 +18,7 @@ import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
 import BrandWaitlistPage from './components/BrandWaitlistPage';
 import ContactPage from './components/ContactPage';
+import ResultsPage from './components/ResultsPage';
 import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import ScrollToTop from './components/ScrollToTop';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
@@ -67,6 +68,9 @@ const App: React.FC = () => {
 
           {/* Contact Page - No header */}
           <Route path="/contact" element={<ContactPage />} />
+
+          {/* Results Page - No header (cold email landing page) */}
+          <Route path="/results" element={<ResultsPage />} />
 
           {/* Public Routes */}
           <Route
