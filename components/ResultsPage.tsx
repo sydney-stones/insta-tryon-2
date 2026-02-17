@@ -163,6 +163,21 @@ const demoProducts: DemoProduct[] = [
     afterLabel: 'Try-On Result',
     description: 'Sculpted airlift sports bra with high-waist leggings in steel blue. Performance meets style.',
   },
+  {
+    id: 10,
+    name: 'Linen Midi Dress',
+    brand: 'Reformation',
+    price: 248,
+    category: 'Dresses',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L'],
+    productSrc: '/result-images/reformation.webp',
+    productLabel: 'Product: Linen Midi Dress',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '/result-images/reformation-tryon-1K.png',
+    afterLabel: 'Try-On Result',
+    description: 'Effortless linen midi dress with a relaxed silhouette. Sustainably made for everyday elegance.',
+  },
 ];
 
 // ─── Animation State Machine ────────────────────────────────────────────────
@@ -190,7 +205,7 @@ type AnimationState =
   | 'result';
 
 const ANIMATION_SEQUENCE: { state: AnimationState; duration: number }[] = [
-  { state: 'idle', duration: 1000 },
+  { state: 'idle', duration: 2000 },
   { state: 'cursor_to_button', duration: 1200 },
   { state: 'click_button', duration: 500 },
   { state: 'popup_open', duration: 800 },
@@ -207,7 +222,7 @@ const ANIMATION_SEQUENCE: { state: AnimationState; duration: number }[] = [
   { state: 'click_photo_library_2', duration: 800 },
   { state: 'show_gallery_2', duration: 1500 },
   { state: 'select_body', duration: 1000 },
-  { state: 'body_uploaded', duration: 800 },
+  { state: 'body_uploaded', duration: 3800 },
   { state: 'loading', duration: 4000 },
   { state: 'result', duration: 0 },
 ];
@@ -384,6 +399,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
   const [animationActive, setAnimationActive] = useState(false);
   const animState = useAnimationSequence(animationActive);
   const [isMobile, setIsMobile] = useState(false);
+  const [fullscreenImage, setFullscreenImage] = useState(false);
 
   const tryOnButtonRef = useRef<HTMLButtonElement>(null);
   const faceUploadRef = useRef<HTMLDivElement>(null);
@@ -518,7 +534,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
           {/* Left — Product Image */}
           <div>
             <div className="relative bg-gray-50 overflow-hidden">
-              <div className="relative aspect-[3/4]">
+              <div className="relative aspect-[3/4] max-h-[40vh] lg:max-h-none">
                 <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover" />
               </div>
             </div>
@@ -535,34 +551,6 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
               )}
               <span className="text-[13px]">&pound;{product.price}</span>
             </div>
-
-            {/* Size Selector */}
-            <div className="flex justify-end mb-3">
-              <button className="text-[11px] underline text-gray-600 flex items-center gap-1 cursor-default">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                </svg>
-                Size guide
-              </button>
-            </div>
-            <div className="flex gap-0 mb-4">
-              {product.sizes.map((size, i) => (
-                <button
-                  key={size}
-                  className={`flex-1 border py-3 text-[12px] tracking-wide transition-colors cursor-default ${
-                    i === Math.min(2, product.sizes.length - 1)
-                      ? 'border-black bg-black text-white'
-                      : 'border-gray-300'
-                  }`}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
-
-            <p className="text-[12px] text-gray-600 mb-6">
-              Out of stock? <span className="underline font-medium">Get notified</span>
-            </p>
 
             {/* AI TRY ON Button */}
             <button
@@ -630,7 +618,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                     1 credit left
                   </span>
                 </div>
-                <button className="p-1.5 cursor-default">
+                <button onClick={onClose} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer">
                   <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -639,13 +627,13 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
 
               {/* Modal Body — Split Layout */}
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Left — Product Image */}
-                <div className="bg-gray-50 aspect-[3/4] lg:aspect-auto lg:min-h-[450px]">
+                {/* Left — Product Image (hidden on mobile to save space) */}
+                <div className="hidden lg:block bg-gray-50 lg:aspect-auto lg:min-h-[450px]">
                   <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover" />
                 </div>
 
                 {/* Right — Workflow Content */}
-                <div className="p-5 sm:p-8 flex flex-col justify-center min-h-[350px] relative">
+                <div className="p-4 sm:p-8 flex flex-col justify-center min-h-[300px] sm:min-h-[350px] relative">
 
                   {/* Upload step — slots start empty, get filled progressively */}
                   {!isLoadingState(animState) && !isResultState(animState) && (
@@ -753,9 +741,17 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                   {/* Result State */}
                   {isResultState(animState) && (
                     <div className="flex flex-col items-center">
-                      <div className="w-full max-h-[50vh] rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200 flex items-center justify-center">
+                      <button
+                        onClick={() => setFullscreenImage(true)}
+                        className="w-full max-h-[40vh] sm:max-h-[50vh] rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200 flex items-center justify-center cursor-zoom-in relative group"
+                      >
                         <img src={product.afterSrc} alt={product.afterLabel} className="w-full h-full object-contain" />
-                      </div>
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-900 text-[10px] tracking-[0.15em] font-medium px-3 py-1.5 rounded">
+                            VIEW FULL SIZE
+                          </span>
+                        </div>
+                      </button>
                       <div className="flex items-center gap-2 mb-4 flex-wrap justify-center">
                         <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.name}</span>
                         <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
@@ -853,6 +849,37 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                 )}
               </AnimatePresence>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ─── Fullscreen Result Image Viewer ─── */}
+      <AnimatePresence>
+        {fullscreenImage && (
+          <motion.div
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
+            onClick={() => setFullscreenImage(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <button
+              onClick={() => setFullscreenImage(false)}
+              className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <motion.img
+              src={product.afterSrc}
+              alt={product.afterLabel}
+              className="max-w-full max-h-full object-contain"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            />
           </motion.div>
         )}
       </AnimatePresence>
