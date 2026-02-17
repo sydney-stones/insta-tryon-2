@@ -532,9 +532,9 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px] gap-6 lg:gap-12">
           {/* Left — Product Image */}
-          <div>
-            <div className="relative bg-gray-50 overflow-hidden">
-              <div className="relative aspect-[3/4] max-h-[40vh] lg:max-h-none">
+          <div className="flex justify-center">
+            <div className="relative bg-gray-50 overflow-hidden w-full lg:w-full max-h-[40vh] lg:max-h-none">
+              <div className="relative aspect-[3/4] max-h-[40vh] lg:max-h-none mx-auto">
                 <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover" />
               </div>
             </div>
