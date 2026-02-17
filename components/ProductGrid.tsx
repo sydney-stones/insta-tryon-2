@@ -101,7 +101,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                 to="/contact"
                 className="inline-block border-2 border-white text-white px-10 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-white hover:text-[#444833] transition-all"
               >
-                Book a Demo
+                Schedule a Meeting
               </Link>
               <Link
                 to="/results"
@@ -379,7 +379,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                   to="/contact"
                   className="inline-block border border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all mt-3"
                 >
-                  Book a Demo
+                  Schedule a Meeting
                 </Link>
               </div>
             </div>

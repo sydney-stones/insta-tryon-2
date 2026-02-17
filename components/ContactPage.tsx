@@ -52,7 +52,7 @@ const ContactPage: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-gray-900 mb-6 text-center">
-            Book a Demo
+            Schedule a Meeting
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-12 text-center max-w-2xl mx-auto">
             Get in touch with us to schedule a demo and see how virtual try-on can transform your e-commerce business.
