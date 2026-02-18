@@ -5,6 +5,7 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Spinner from './Spinner';
 
 type TryOnStep = 'idle' | 'upload' | 'loading' | 'result';
 
@@ -15,9 +16,8 @@ const ReallyWildDemoPage: React.FC = () => {
   const [facePreview, setFacePreview] = useState<string | null>(null);
   const [bodyPreview, setBodyPreview] = useState<string | null>(null);
   const [fullscreenResult, setFullscreenResult] = useState(false);
-  const faceInputRef = useRef<HTMLInputElement>(null);
-  const bodyInputRef = useRef<HTMLInputElement>(null);
-  const loadingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [resultSize, setResultSize] = useState<string | null>(null);
+  const loadingTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -196,7 +196,7 @@ const ReallyWildDemoPage: React.FC = () => {
 
             {/* Price */}
             <div className="mb-6">
-              <span className="text-[14px] font-medium">£345</span>
+              <span className="text-[14px] font-medium">£545</span>
             </div>
 
             {/* Color Swatches */}
@@ -321,192 +321,292 @@ const ReallyWildDemoPage: React.FC = () => {
       {/* Try-On Modal */}
       <AnimatePresence>
         {tryOnStep !== 'idle' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={tryOnStep === 'upload' || tryOnStep === 'result' ? handleCloseTryOn : undefined}
-          >
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto relative"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={tryOnStep === 'upload' || tryOnStep === 'result' ? handleCloseTryOn : undefined}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="relative bg-white shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden rounded-lg"
             >
-              {/* Close button */}
-              <button
-                onClick={handleCloseTryOn}
-                className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
-              {/* Upload Step */}
-              {tryOnStep === 'upload' && (
-                <div className="p-6 sm:p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-[14px] tracking-[0.1em] font-medium mb-1">AI VIRTUAL TRY-ON</h3>
-                    <p className="text-[11px] text-gray-500">Upload your photos to see yourself in this item</p>
-                  </div>
-
-                  {/* Product preview */}
-                  <div className="flex items-center gap-3 mb-6 p-3 bg-gray-50 rounded-lg">
-                    <img src={productImages[0]} alt="Product" className="w-14 h-14 object-cover rounded" />
-                    <div>
-                      <p className="text-[12px] font-medium">Barnsley Merino Wool Jacket</p>
-                      <p className="text-[11px] text-gray-500">£345</p>
-                    </div>
-                  </div>
-
-                  {/* Upload areas */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {/* Face upload */}
-                    <div>
-                      <p className="text-[11px] font-medium mb-2 text-center">Face Photo</p>
-                      <input
-                        ref={faceInputRef}
-                        type="file"
-                        accept="image/*"
-                        onChange={handleFaceSelect}
-                        className="hidden"
-                      />
-                      <button
-                        onClick={() => faceInputRef.current?.click()}
-                        className={`w-full aspect-square border-2 border-dashed rounded-lg flex flex-col items-center justify-center gap-2 transition-colors overflow-hidden ${
-                          facePreview ? 'border-green-400 bg-green-50' : 'border-gray-300 hover:border-gray-400 bg-gray-50'
-                        }`}
-                      >
-                        {facePreview ? (
-                          <img src={facePreview} alt="Face" className="w-full h-full object-cover rounded-lg" />
-                        ) : (
-                          <>
-                            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <span className="text-[10px] text-gray-400">Upload face</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-
-                    {/* Body upload */}
-                    <div>
-                      <p className="text-[11px] font-medium mb-2 text-center">Full Body Photo</p>
-                      <input
-                        ref={bodyInputRef}
-                        type="file"
-                        accept="image/*"
-                        onChange={handleBodySelect}
-                        className="hidden"
-                      />
-                      <button
-                        onClick={() => bodyInputRef.current?.click()}
-                        className={`w-full aspect-square border-2 border-dashed rounded-lg flex flex-col items-center justify-center gap-2 transition-colors overflow-hidden ${
-                          bodyPreview ? 'border-green-400 bg-green-50' : 'border-gray-300 hover:border-gray-400 bg-gray-50'
-                        }`}
-                      >
-                        {bodyPreview ? (
-                          <img src={bodyPreview} alt="Body" className="w-full h-full object-cover rounded-lg" />
-                        ) : (
-                          <>
-                            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                            <span className="text-[10px] text-gray-400">Upload body</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Generate button */}
-                  <button
-                    onClick={handleGenerate}
-                    disabled={!facePreview || !bodyPreview}
-                    className={`w-full py-4 text-[12px] tracking-[0.15em] font-medium transition-all ${
-                      facePreview && bodyPreview
-                        ? 'bg-[#444833] text-white hover:bg-[#3a3d2d] shadow-[0_0_20px_rgba(68,72,51,0.4)]'
-                        : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    }`}
-                  >
-                    GENERATE TRY-ON
-                  </button>
-                </div>
-              )}
-
-              {/* Loading Step */}
-              {tryOnStep === 'loading' && (
-                <div className="p-8 sm:p-12 flex flex-col items-center justify-center min-h-[400px]">
-                  <div className="relative mb-8">
-                    {/* Hanger animation */}
+              <div className="overflow-y-auto max-h-[90vh]">
+                <AnimatePresence mode="wait">
+                  {/* Upload Step — Split Layout */}
+                  {tryOnStep === 'upload' && (
                     <motion.div
-                      animate={{ rotate: [-5, 5, -5] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                      className="text-[60px]"
+                      key="upload"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                     >
-                      👗
-                    </motion.div>
-                  </div>
-                  <h3 className="text-[16px] tracking-[0.15em] font-medium mb-4">GETTING DRESSED!</h3>
-                  <div className="flex gap-1">
-                    {[0, 1, 2].map((i) => (
-                      <motion.div
-                        key={i}
-                        className="w-2 h-2 bg-[#444833] rounded-full"
-                        animate={{ y: [0, -8, 0] }}
-                        transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.2 }}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-[11px] text-gray-400 mt-4">This usually takes a few seconds...</p>
-                </div>
-              )}
+                      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+                        {/* Left — Product Image */}
+                        <div className="hidden lg:block bg-gray-50">
+                          <img
+                            src={productImages[0]}
+                            alt="Barnsley Merino Wool Jacket"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
 
-              {/* Result Step */}
-              {tryOnStep === 'result' && (
-                <div className="p-6 sm:p-8">
-                  <div className="text-center mb-4">
-                    <h3 className="text-[14px] tracking-[0.1em] font-medium mb-1">YOUR VIRTUAL TRY-ON</h3>
-                    <p className="text-[11px] text-gray-500">Barnsley Merino Wool Jacket — £345</p>
-                  </div>
-                  <div
-                    className="relative bg-gray-50 rounded-lg overflow-hidden mb-4 cursor-zoom-in"
-                    onClick={() => setFullscreenResult(true)}
-                  >
-                    <img
-                      src={tryOnResultImage}
-                      alt="Try-on result"
-                      className="w-full object-contain max-h-[60vh]"
-                    />
-                  </div>
-                  <div className="flex gap-3">
-                    <button
-                      onClick={handleCloseTryOn}
-                      className="flex-1 border border-gray-300 py-3 text-[12px] tracking-[0.1em] font-medium hover:bg-gray-50 transition-colors"
+                        {/* Right — Upload Form */}
+                        <div className="flex flex-col">
+                          {/* Top Bar */}
+                          <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
+                            <div className="flex items-center gap-2 text-[13px] text-gray-700">
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                <path d="M12 2L9 9H2l5.5 4-2 7L12 16l6.5 4-2-7L22 9h-7L12 2z" />
+                              </svg>
+                              My looks
+                            </div>
+                            <button
+                              onClick={handleCloseTryOn}
+                              className="p-1 hover:bg-gray-100 rounded transition-colors"
+                            >
+                              <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1 px-5 py-6 overflow-y-auto">
+                            <h2 className="text-xl sm:text-2xl font-light tracking-wide text-gray-900 mb-6">
+                              TRY IT ON, VIRTUALLY
+                            </h2>
+
+                            {/* Face Photo */}
+                            <div className="mb-5">
+                              <p className="text-[13px] font-medium text-gray-900 mb-2">Face photo</p>
+                              <label htmlFor="rw-face-upload" className="block cursor-pointer">
+                                <div className={`relative border rounded-lg p-4 transition-colors ${
+                                  facePreview ? 'border-green-400 bg-green-50' : 'border-gray-200 hover:border-gray-300 bg-white'
+                                }`}>
+                                  {facePreview ? (
+                                    <div className="flex items-center gap-3">
+                                      <img src={facePreview} alt="Face" className="w-12 h-12 rounded object-cover" />
+                                      <div>
+                                        <p className="text-[13px] font-medium text-green-700">Face photo uploaded</p>
+                                        <p className="text-[11px] text-green-600">Tap to change</p>
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <div className="flex items-start gap-3">
+                                      <svg className="w-8 h-8 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
+                                        <circle cx="12" cy="8" r="5" />
+                                        <path d="M9 9.5a1 1 0 011-1h0a1 1 0 011 1" />
+                                        <path d="M13 9.5a1 1 0 011-1h0a1 1 0 011 1" />
+                                        <path d="M10 13a2.5 2.5 0 004 0" />
+                                      </svg>
+                                      <div>
+                                        <p className="text-[13px] font-medium text-gray-900">Upload your photo here</p>
+                                        <p className="text-[11px] text-gray-400 mt-0.5">Format: png, jpg, heic &amp; Max file size: 25 MB</p>
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              </label>
+                              <input
+                                id="rw-face-upload"
+                                type="file"
+                                className="hidden"
+                                accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif"
+                                onChange={handleFaceSelect}
+                              />
+                            </div>
+
+                            {/* Full Body Photo */}
+                            <div className="mb-5">
+                              <p className="text-[13px] font-medium text-gray-900 mb-2">Full body photo</p>
+                              <label htmlFor="rw-body-upload" className="block cursor-pointer">
+                                <div className={`relative border rounded-lg p-4 transition-colors ${
+                                  bodyPreview ? 'border-green-400 bg-green-50' : 'border-gray-200 hover:border-gray-300 bg-white'
+                                }`}>
+                                  {bodyPreview ? (
+                                    <div className="flex items-center gap-3">
+                                      <img src={bodyPreview} alt="Body" className="w-12 h-12 rounded object-cover" />
+                                      <div>
+                                        <p className="text-[13px] font-medium text-green-700">Body photo uploaded</p>
+                                        <p className="text-[11px] text-green-600">Tap to change</p>
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <div className="flex items-start gap-3">
+                                      <svg className="w-8 h-8 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
+                                        <circle cx="12" cy="4" r="2.5" />
+                                        <path d="M12 7v5" />
+                                        <path d="M8 9l4 1 4-1" />
+                                        <path d="M10 12l-2 8" />
+                                        <path d="M14 12l2 8" />
+                                      </svg>
+                                      <div>
+                                        <p className="text-[13px] font-medium text-gray-900">Upload your photo here</p>
+                                        <p className="text-[11px] text-gray-400 mt-0.5">Format: png, jpg, heic &amp; Max file size: 25 MB</p>
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              </label>
+                              <input
+                                id="rw-body-upload"
+                                type="file"
+                                className="hidden"
+                                accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif"
+                                onChange={handleBodySelect}
+                              />
+                            </div>
+                          </div>
+
+                          {/* Bottom Bar */}
+                          <div className="border-t border-gray-200 px-5 py-4">
+                            <div className="flex items-center gap-2 mb-3">
+                              <span className="text-[11px] bg-gray-100 text-gray-700 px-2.5 py-1 rounded border border-gray-200">
+                                Barnsley Merino Wool Jacket
+                              </span>
+                            </div>
+                            <button
+                              onClick={handleGenerate}
+                              disabled={!facePreview || !bodyPreview}
+                              className={`w-full py-3 px-6 rounded-lg text-[13px] font-medium tracking-wide transition-all flex items-center justify-center gap-2 ${
+                                facePreview && bodyPreview
+                                  ? 'bg-[#1a1a1a] text-white hover:bg-black'
+                                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                              }`}
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                              </svg>
+                              Try on
+                            </button>
+                          </div>
+
+                          {/* Footer */}
+                          <div className="border-t border-gray-100 px-5 py-2.5 text-center">
+                            <p className="text-[11px] text-gray-400">
+                              Powered by <span className="font-bold text-gray-600">RENDERED FITS</span> &rarr;
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {/* Generating Step — Split Layout */}
+                  {tryOnStep === 'loading' && (
+                    <motion.div
+                      key="generating"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                     >
-                      CLOSE
-                    </button>
-                    <button
-                      onClick={() => {
-                        handleCloseTryOn();
-                        setTryOnStep('upload');
-                        setFacePreview(null);
-                        setBodyPreview(null);
-                      }}
-                      className="flex-1 bg-[#444833] text-white py-3 text-[12px] tracking-[0.1em] font-medium hover:bg-[#3a3d2d] transition-colors"
+                      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+                        <div className="hidden lg:block bg-gray-50">
+                          <img
+                            src={productImages[0]}
+                            alt="Barnsley Merino Wool Jacket"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex flex-col items-center justify-center p-8 sm:p-12 min-h-[400px] relative">
+                          <Spinner />
+                          <h3 className="text-xl font-light tracking-wide text-gray-900 mt-6 mb-2">
+                            Generating Your Try-On
+                          </h3>
+                          <p className="text-gray-500 text-[13px] text-center max-w-xs">
+                            Our AI is creating a personalized try-on with your photos and the garment...
+                          </p>
+                          <div className="absolute bottom-0 left-0 right-0 border-t border-gray-100 px-5 py-2.5 text-center">
+                            <p className="text-[11px] text-gray-400">
+                              Powered by <span className="font-bold text-gray-600">RENDERED FITS</span> &rarr;
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {/* Result Step */}
+                  {tryOnStep === 'result' && (
+                    <motion.div
+                      key="result"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                     >
-                      TRY AGAIN
-                    </button>
-                  </div>
-                </div>
-              )}
+                      <div className="p-6 sm:p-8">
+                        {/* Close button */}
+                        <button
+                          onClick={handleCloseTryOn}
+                          className="absolute top-3 right-3 z-10 p-1 hover:bg-gray-100 rounded transition-colors"
+                        >
+                          <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+
+                        <div className="text-center mb-4">
+                          <h3 className="text-[14px] tracking-[0.1em] font-medium mb-1">YOUR VIRTUAL TRY-ON</h3>
+                          <p className="text-[11px] text-gray-500">Barnsley Merino Wool Jacket — £545</p>
+                        </div>
+                        <div
+                          className="relative bg-gray-50 rounded-lg overflow-hidden mb-6 cursor-zoom-in"
+                          onClick={() => setFullscreenResult(true)}
+                        >
+                          <img
+                            src={tryOnResultImage}
+                            alt="Try-on result"
+                            className="w-full object-contain max-h-[50vh]"
+                          />
+                        </div>
+
+                        {/* Size selector */}
+                        <div className="mb-4">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-[11px] tracking-[0.1em] font-medium">SELECT SIZE</span>
+                            <button className="text-[11px] underline text-gray-500">size guide</button>
+                          </div>
+                          <div className="flex gap-0">
+                            {sizes.map((size) => (
+                              <button
+                                key={size}
+                                onClick={() => setResultSize(size)}
+                                className={`flex-1 border py-3 text-[12px] tracking-wide transition-colors ${
+                                  resultSize === size
+                                    ? 'border-black bg-black text-white'
+                                    : 'border-gray-300 hover:border-gray-500'
+                                }`}
+                              >
+                                {size}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Add to Cart */}
+                        <button className="w-full bg-black text-white py-4 px-6 text-[12px] tracking-[0.15em] font-medium hover:bg-gray-900 transition-colors">
+                          ADD TO CART
+                        </button>
+
+                        {/* Footer */}
+                        <div className="mt-4 pt-3 border-t border-gray-100 text-center">
+                          <p className="text-[11px] text-gray-400">
+                            Powered by <span className="font-bold text-gray-600">RENDERED FITS</span> &rarr;
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
