@@ -19,6 +19,8 @@ import WaitlistPage from './components/WaitlistPage';
 import BrandWaitlistPage from './components/BrandWaitlistPage';
 import ContactPage from './components/ContactPage';
 import ResultsPage from './components/ResultsPage';
+import ReallyWildDemoPage from './components/ReallyWildDemoPage';
+import ReallyWildDemoPage2 from './components/ReallyWildDemoPage2';
 import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import ScrollToTop from './components/ScrollToTop';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
@@ -71,6 +73,10 @@ const App: React.FC = () => {
 
           {/* Results Page - No header (cold email landing page) */}
           <Route path="/results" element={<ResultsPage />} />
+
+          {/* Really Wild Demo Pages - Not linked from anywhere */}
+          <Route path="/reallywild" element={<ReallyWildDemoPage />} />
+          <Route path="/reallywild2" element={<ReallyWildDemoPage2 />} />
 
           {/* Public Routes */}
           <Route
