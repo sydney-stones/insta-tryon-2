@@ -21,6 +21,7 @@ import ContactPage from './components/ContactPage';
 import ResultsPage from './components/ResultsPage';
 import ReallyWildDemoPage from './components/ReallyWildDemoPage';
 import ReallyWildDemoPage2 from './components/ReallyWildDemoPage2';
+import WastedParisDemoPage from './components/WastedParisDemoPage';
 import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import ScrollToTop from './components/ScrollToTop';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
@@ -77,6 +78,7 @@ const App: React.FC = () => {
           {/* Really Wild Demo Pages - Not linked from anywhere */}
           <Route path="/reallywild" element={<ReallyWildDemoPage />} />
           <Route path="/reallywild2" element={<ReallyWildDemoPage2 />} />
+          <Route path="/wastedparis" element={<WastedParisDemoPage />} />
 
           {/* Public Routes */}
           <Route
