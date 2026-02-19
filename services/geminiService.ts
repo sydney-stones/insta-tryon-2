@@ -65,7 +65,63 @@ if (!apiKey || apiKey === 'NULL' || apiKey === 'your_gemini_api_key_here') {
 }
 
 const ai = new GoogleGenAI({ apiKey: apiKey || '' });
-const model = 'gemini-3-pro-image-preview';
+const PRIMARY_MODEL = 'gemini-3-pro-image-preview';
+const FALLBACK_MODEL = 'gemini-2.5-flash-image';
+
+/**
+ * Attempts to generate content with the primary model, retrying once on failure,
+ * then falls back to the fallback model if the primary remains unavailable.
+ */
+const generateWithFallback = async (
+    contentParts: Array<any>,
+    primaryModel: string = PRIMARY_MODEL,
+    fallbackModel: string = FALLBACK_MODEL,
+    configOverride?: any
+): Promise<string> => {
+    const config = configOverride || {
+        responseModalities: [Modality.IMAGE, Modality.TEXT],
+    };
+
+    // Attempt 1: Primary model
+    try {
+        const response = await ai.models.generateContent({
+            model: primaryModel,
+            contents: { parts: contentParts },
+            config,
+        });
+        return handleApiResponse(response);
+    } catch (err: any) {
+        const isServiceError = err?.status === 503 || err?.status === 429 ||
+            err?.message?.includes('503') || err?.message?.includes('overloaded') ||
+            err?.message?.includes('Service Unavailable') || err?.message?.includes('UNAVAILABLE') ||
+            err?.message?.includes('429') || err?.message?.includes('rate limit');
+
+        if (!isServiceError) throw err;
+
+        console.warn(`Primary model (${primaryModel}) unavailable, retrying once...`);
+    }
+
+    // Attempt 2: Retry primary model after a short delay
+    try {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        const response = await ai.models.generateContent({
+            model: primaryModel,
+            contents: { parts: contentParts },
+            config,
+        });
+        return handleApiResponse(response);
+    } catch (err: any) {
+        console.warn(`Primary model (${primaryModel}) still unavailable, falling back to ${fallbackModel}...`);
+    }
+
+    // Attempt 3: Fallback model
+    const response = await ai.models.generateContent({
+        model: fallbackModel,
+        contents: { parts: contentParts },
+        config,
+    });
+    return handleApiResponse(response);
+};
 
 export interface UserMeasurements {
   height: number;      // cm
@@ -90,14 +146,7 @@ export const generateModelImage = async (faceImage: File, bodyImage?: File): Pro
         parts.push({ text: "You are an expert fashion photographer AI. Transform the person in this image into a full-body fashion model photo suitable for an e-commerce website. The background must be a clean, neutral studio backdrop (light gray, #f0f0f0). The person should have a neutral, professional model expression. Preserve the person's identity, unique features, and body type, but place them in a standard, relaxed standing model pose. The final image must be photorealistic and MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio). Return ONLY the final image." });
     }
 
-    const response = await ai.models.generateContent({
-        model,
-        contents: { parts },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-    return handleApiResponse(response);
+    return generateWithFallback(parts);
 };
 
 export const generateVirtualTryOnImage = async (modelImageUrl: string, garmentImage: File): Promise<string> => {
@@ -112,27 +161,13 @@ export const generateVirtualTryOnImage = async (modelImageUrl: string, garmentIm
 4.  **Apply the Garment:** Realistically fit the new outfit onto the person. It should adapt to their pose with natural folds, shadows, and lighting consistent with the original scene.
 5.  **Exact Dimensions:** The output image MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio), matching the exact dimensions of the model image.
 6.  **Output:** Return ONLY the final, edited image. Do not include any text.`;
-    const response = await ai.models.generateContent({
-        model,
-        contents: { parts: [modelImagePart, garmentImagePart, { text: prompt }] },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-    return handleApiResponse(response);
+    return generateWithFallback([modelImagePart, garmentImagePart, { text: prompt }]);
 };
 
 export const generatePoseVariation = async (tryOnImageUrl: string, poseInstruction: string): Promise<string> => {
     const tryOnImagePart = dataUrlToPart(tryOnImageUrl);
     const prompt = `You are an expert fashion photographer AI. Take this image and regenerate it from a different perspective. The person, clothing, and background style must remain identical. The new perspective should be: "${poseInstruction}". The output image MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio), maintaining the exact same dimensions as the input image. Return ONLY the final image.`;
-    const response = await ai.models.generateContent({
-        model,
-        contents: { parts: [tryOnImagePart, { text: prompt }] },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-    return handleApiResponse(response);
+    return generateWithFallback([tryOnImagePart, { text: prompt }]);
 };
 
 export const generateCustomModelFromMeasurements = async (
@@ -185,15 +220,7 @@ Return ONLY the final photorealistic studio model image.`;
         { text: prompt }
     ];
 
-    const response = await ai.models.generateContent({
-        model: modelName || 'gemini-3-pro-image-preview',
-        contents: { parts: contentParts },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-
-    return handleApiResponse(response);
+    return generateWithFallback(contentParts, modelName || PRIMARY_MODEL);
 };
 
 export const generateDirectVirtualTryOn = async (
@@ -269,15 +296,7 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
         ...additionalParts
     ];
 
-    const response = await ai.models.generateContent({
-        model: 'gemini-3-pro-image-preview',
-        contents: { parts: contentParts },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        } as any, // Using any to bypass TypeScript restrictions for Gemini 3 Pro specific config
-    });
-
-    return handleApiResponse(response);
+    return generateWithFallback(contentParts);
 };
 
 export const generateSimplifiedVirtualTryOn = async (
@@ -343,15 +362,7 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
         garmentImagePart
     ];
 
-    const response = await ai.models.generateContent({
-        model: 'gemini-3-pro-image-preview',
-        contents: { parts: contentParts },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        } as any, // Using any to bypass TypeScript restrictions for Gemini 3 Pro specific config
-    });
-
-    return handleApiResponse(response);
+    return generateWithFallback(contentParts);
 };
 
 export const generateSimplifiedCustomModel = async (
@@ -409,13 +420,5 @@ Return ONLY the final photorealistic studio model image.`;
         { text: prompt }
     ];
 
-    const response = await ai.models.generateContent({
-        model: modelName || 'gemini-3-pro-image-preview',
-        contents: { parts: contentParts },
-        config: {
-            responseModalities: [Modality.IMAGE, Modality.TEXT],
-        },
-    });
-
-    return handleApiResponse(response);
+    return generateWithFallback(contentParts, modelName || PRIMARY_MODEL);
 };
