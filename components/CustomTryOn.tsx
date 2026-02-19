@@ -32,6 +32,7 @@ const CustomTryOn: React.FC<CustomTryOnProps> = ({ onBack }) => {
   const [additionalPreviews, setAdditionalPreviews] = useState<string[]>([]);
   const [resolution, setResolution] = useState<'1K' | '2K' | '4K'>('2K');
   const [showPrompt, setShowPrompt] = useState(false);
+  const [customPrompt, setCustomPrompt] = useState<string | null>(null);
 
   // Batch processing state
   const [processingMode, setProcessingMode] = useState<'sequential' | 'bulk'>('sequential');
@@ -201,7 +202,8 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
             bodyImage,
             garmentImages[i],
             additionalImages.length > 0 ? additionalImages : undefined,
-            resolution
+            resolution,
+            { customPrompt: customPrompt || undefined, useFallback: false }
           );
 
           // Update with completed result
@@ -237,7 +239,8 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
             bodyImage,
             garment,
             additionalImages.length > 0 ? additionalImages : undefined,
-            resolution
+            resolution,
+            { customPrompt: customPrompt || undefined, useFallback: false }
           );
 
           // Update with completed result
@@ -635,7 +638,7 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
                 </div>
               </div>
 
-              {/* Prompt Preview Section */}
+              {/* Prompt Editor Section */}
               <div className="mb-6">
                 <button
                   onClick={() => setShowPrompt(!showPrompt)}
@@ -643,7 +646,7 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
                   disabled={isBatchProcessing}
                 >
                   <span className="text-sm font-medium text-gray-700">
-                    {showPrompt ? 'Hide' : 'View'} Generation Prompt
+                    {showPrompt ? 'Hide' : 'Edit'} Generation Prompt
                   </span>
                   <svg
                     className={`w-5 h-5 text-gray-500 transition-transform ${showPrompt ? 'rotate-180' : ''}`}
@@ -655,10 +658,27 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
                   </svg>
                 </button>
                 {showPrompt && (
-                  <div className="mt-3 p-4 bg-gray-900 rounded-lg overflow-auto max-h-96">
-                    <pre className="text-xs text-gray-100 whitespace-pre-wrap font-mono leading-relaxed">
-                      {generatePromptPreview()}
-                    </pre>
+                  <div className="mt-3 space-y-2">
+                    <textarea
+                      value={customPrompt !== null ? customPrompt : generatePromptPreview()}
+                      onChange={(e) => setCustomPrompt(e.target.value)}
+                      className="w-full h-96 p-4 bg-gray-900 text-gray-100 text-xs font-mono leading-relaxed rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      disabled={isBatchProcessing}
+                    />
+                    <div className="flex items-center justify-between">
+                      <p className="text-xs text-gray-500">
+                        {customPrompt !== null ? 'Using custom prompt' : 'Using default prompt — edit to customise'}
+                      </p>
+                      {customPrompt !== null && (
+                        <button
+                          onClick={() => setCustomPrompt(null)}
+                          className="text-xs text-purple-600 hover:text-purple-700 font-medium"
+                          disabled={isBatchProcessing}
+                        >
+                          Reset to Default
+                        </button>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>

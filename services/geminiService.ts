@@ -233,7 +233,8 @@ export const generateDirectVirtualTryOn = async (
     bodyImage: File,
     garmentImage: File,
     additionalUserImages?: File[],
-    resolution: '1K' | '2K' | '4K' = '2K'
+    resolution: '1K' | '2K' | '4K' = '2K',
+    options?: { customPrompt?: string; useFallback?: boolean }
 ): Promise<string> => {
     // Convert all images to parts
     const faceImagePart = await fileToPart(faceImage);
@@ -292,14 +293,27 @@ ${additionalUserImages?.length ? `- Additional reference images (${additionalUse
 
 Return ONLY the final photorealistic virtual try-on image showing this person wearing the garment.`;
 
+    // Use custom prompt if provided, otherwise use default
+    const finalPrompt = options?.customPrompt || prompt;
+
     // Prepare content parts array
     const contentParts = [
-        { text: prompt },
+        { text: finalPrompt },
         faceImagePart,
         bodyImagePart,
         garmentImagePart,
         ...additionalParts
     ];
+
+    // Admin tools (useFallback === false) use Gemini 3 Pro only, no fallback
+    if (options?.useFallback === false) {
+        const response = await ai.models.generateContent({
+            model: PRIMARY_MODEL,
+            contents: { parts: contentParts },
+            config: { responseModalities: [Modality.IMAGE, Modality.TEXT] },
+        });
+        return handleApiResponse(response);
+    }
 
     return generateWithFallback(contentParts);
 };
@@ -307,7 +321,8 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
 export const generateSimplifiedVirtualTryOn = async (
     customerImages: File[],
     garmentImage: File,
-    resolution: '1K' | '2K' | '4K' = '2K'
+    resolution: '1K' | '2K' | '4K' = '2K',
+    options?: { customPrompt?: string }
 ): Promise<string> => {
     // Convert all images to parts
     const customerImageParts = await Promise.all(customerImages.map(fileToPart));
@@ -360,13 +375,17 @@ export const generateSimplifiedVirtualTryOn = async (
 
 Return ONLY the final photorealistic virtual try-on image showing this person wearing the garment.`;
 
+    // Use custom prompt if provided, otherwise use default
+    const finalPrompt = options?.customPrompt || prompt;
+
     // Prepare content parts array - customer images first, then garment
     const contentParts = [
-        { text: prompt },
+        { text: finalPrompt },
         ...customerImageParts,
         garmentImagePart
     ];
 
+    // Admin tool - always uses Gemini 3 Pro only, no fallback
     const response = await ai.models.generateContent({
         model: PRIMARY_MODEL,
         contents: { parts: contentParts },

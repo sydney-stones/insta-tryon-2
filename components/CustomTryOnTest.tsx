@@ -17,6 +17,7 @@ const CustomTryOnTest: React.FC<CustomTryOnTestProps> = ({ onBack }) => {
   const [garmentPreview, setGarmentPreview] = useState<string | null>(null);
   const [resolution, setResolution] = useState<'1K' | '2K' | '4K'>('2K');
   const [showPrompt, setShowPrompt] = useState(false);
+  const [customPrompt, setCustomPrompt] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [resultImage, setResultImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -126,7 +127,8 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
       const result = await generateSimplifiedVirtualTryOn(
         customerImages,
         garmentImage,
-        resolution
+        resolution,
+        { customPrompt: customPrompt || undefined }
       );
       setResultImage(result);
     } catch (err) {
@@ -324,14 +326,14 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Generate Try-On</h2>
 
-            {/* Prompt Preview Section */}
+            {/* Prompt Editor Section */}
             <div className="mb-6">
               <button
                 onClick={() => setShowPrompt(!showPrompt)}
                 className="flex items-center justify-between w-full p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
               >
                 <span className="text-sm font-medium text-gray-700">
-                  {showPrompt ? 'Hide' : 'View'} Generation Prompt
+                  {showPrompt ? 'Hide' : 'Edit'} Generation Prompt
                 </span>
                 <svg
                   className={`w-5 h-5 text-gray-500 transition-transform ${showPrompt ? 'rotate-180' : ''}`}
@@ -343,10 +345,27 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
                 </svg>
               </button>
               {showPrompt && (
-                <div className="mt-3 p-4 bg-gray-900 rounded-lg overflow-auto max-h-96">
-                  <pre className="text-xs text-gray-100 whitespace-pre-wrap font-mono leading-relaxed">
-                    {generatePromptPreview()}
-                  </pre>
+                <div className="mt-3 space-y-2">
+                  <textarea
+                    value={customPrompt !== null ? customPrompt : generatePromptPreview()}
+                    onChange={(e) => setCustomPrompt(e.target.value)}
+                    className="w-full h-96 p-4 bg-gray-900 text-gray-100 text-xs font-mono leading-relaxed rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    disabled={isProcessing}
+                  />
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs text-gray-500">
+                      {customPrompt !== null ? 'Using custom prompt' : 'Using default prompt — edit to customise'}
+                    </p>
+                    {customPrompt !== null && (
+                      <button
+                        onClick={() => setCustomPrompt(null)}
+                        className="text-xs text-amber-600 hover:text-amber-700 font-medium"
+                        disabled={isProcessing}
+                      >
+                        Reset to Default
+                      </button>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
