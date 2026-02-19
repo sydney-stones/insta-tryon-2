@@ -220,7 +220,12 @@ Return ONLY the final photorealistic studio model image.`;
         { text: prompt }
     ];
 
-    return generateWithFallback(contentParts, modelName || PRIMARY_MODEL);
+    const response = await ai.models.generateContent({
+        model: modelName || PRIMARY_MODEL,
+        contents: { parts: contentParts },
+        config: { responseModalities: [Modality.IMAGE, Modality.TEXT] },
+    });
+    return handleApiResponse(response);
 };
 
 export const generateDirectVirtualTryOn = async (
@@ -362,7 +367,12 @@ Return ONLY the final photorealistic virtual try-on image showing this person we
         garmentImagePart
     ];
 
-    return generateWithFallback(contentParts);
+    const response = await ai.models.generateContent({
+        model: PRIMARY_MODEL,
+        contents: { parts: contentParts },
+        config: { responseModalities: [Modality.IMAGE, Modality.TEXT] },
+    });
+    return handleApiResponse(response);
 };
 
 export const generateSimplifiedCustomModel = async (
@@ -420,5 +430,10 @@ Return ONLY the final photorealistic studio model image.`;
         { text: prompt }
     ];
 
-    return generateWithFallback(contentParts, modelName || PRIMARY_MODEL);
+    const response = await ai.models.generateContent({
+        model: modelName || PRIMARY_MODEL,
+        contents: { parts: contentParts },
+        config: { responseModalities: [Modality.IMAGE, Modality.TEXT] },
+    });
+    return handleApiResponse(response);
 };
