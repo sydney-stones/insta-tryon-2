@@ -19,7 +19,7 @@ const WastedParisDemoPage: React.FC = () => {
   const loadingTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   const productImage = '/result-images/Wastedparis.webp';
-  const tryOnResultImage = '/result-images/Wastedparis-tryon-1k.png';
+  const tryOnResultImage = '/result-images/Wastedparis-tryon-1K.png';
 
   const sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
