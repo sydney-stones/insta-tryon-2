@@ -18,8 +18,8 @@ const WastedParisDemoPage: React.FC = () => {
   const [resultSize, setResultSize] = useState<string | null>(null);
   const loadingTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
-  const productImage = '/result-images/wastedparis.webp';
-  const tryOnResultImage = '/result-images/wastedparis-tryon-1k.png';
+  const productImage = '/result-images/Wastedparis.webp';
+  const tryOnResultImage = '/result-images/Wastedparis-tryon-1k.png';
 
   const sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
