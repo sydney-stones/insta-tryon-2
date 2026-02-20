@@ -456,3 +456,88 @@ Return ONLY the final photorealistic studio model image.`;
     });
     return handleApiResponse(response);
 };
+
+export const generateSingleProductTryOn = async (
+    faceImage: File,
+    bodyImage: File,
+    garmentImages: File[],
+    options?: { customPrompt?: string }
+): Promise<string> => {
+    const faceImagePart = await fileToPart(faceImage);
+    const bodyImagePart = await fileToPart(bodyImage);
+    const garmentImageParts = await Promise.all(garmentImages.map(fileToPart));
+
+    const garmentLabels = garmentImages.map((file, i) => {
+        const name = file.name.toLowerCase();
+        if (name.includes('front')) return `- Garment Image ${i + 1}: FRONT view of the garment`;
+        if (name.includes('back')) return `- Garment Image ${i + 1}: BACK view of the garment`;
+        if (name.includes('model')) return `- Garment Image ${i + 1}: Model wearing the garment (use for fit and drape reference)`;
+        if (name.includes('detail') || name.includes('close')) return `- Garment Image ${i + 1}: Detail/close-up view of the garment`;
+        if (name.includes('side')) return `- Garment Image ${i + 1}: SIDE view of the garment`;
+        return `- Garment Image ${i + 1}: Reference view of the garment`;
+    }).join('\n');
+
+    const prompt = `You are an expert virtual fashion photographer and try-on AI specialising in accurate garment reproduction. You are given a face reference, a body reference, and ${garmentImages.length} image${garmentImages.length > 1 ? 's' : ''} of a SINGLE garment/outfit from different angles. Your task is to create a photorealistic photo of this person wearing this exact garment.
+
+**Reference Images Provided:**
+- Image 1 (Face): Facial likeness reference — preserve this person's unique facial features, skin tone, hair, and identity exactly
+- Image 2 (Body): Full body reference — use this for accurate body proportions, posture, and shape
+${garmentLabels}
+
+**Critical Requirements:**
+
+1. **Complete Identity Preservation**:
+   - The face MUST perfectly match the facial reference (features, skin tone, expression, hair)
+   - Maintain the person's exact body type and proportions from the body reference
+   - The person should look EXACTLY like themselves, just wearing the new garment
+
+2. **Garment Accuracy — THIS IS THE HIGHEST PRIORITY**:
+   - Study ALL provided garment images carefully before generating
+   - Reproduce the EXACT style, silhouette, cut, and shape of the garment — do not alter or simplify the design
+   - Reproduce the EXACT colour(s), pattern, print, texture, and fabric appearance
+   - Preserve every visible detail: logos, embroidery, buttons, zips, stitching, pockets, labels, tags, hems, cuffs, collar shape
+   - If a front AND back view are provided, ensure both sides are accurately represented (the front should match the front image, and the garment structure visible from behind should match the back image)
+   - If a model-worn reference is provided, use it to understand how the garment drapes, fits, and falls on a real body — replicate that same fit and draping behaviour on this person's body type
+   - The garment should fit naturally on this specific person's body proportions — accounting for their height, shoulder width, torso length, and build
+   - Adapt realistic wrinkles, folds, and fabric tension that are consistent with the garment's material and the person's pose
+
+3. **Professional Model Pose**:
+   - Place the person in a natural, relaxed standing model pose suitable for e-commerce
+   - The pose should showcase the garment effectively — front-facing to display the garment's design
+   - Natural, confident posture with good balance
+
+4. **Studio Environment**:
+   - Clean, neutral studio backdrop (light gray, #f0f0f0)
+   - Professional studio lighting that highlights both the person and the garment
+   - Soft, even lighting with appropriate shadows that show fabric texture and depth
+
+5. **Photorealistic Quality**:
+   - The final image must be completely photorealistic and indistinguishable from a professional studio photograph
+   - Seamless integration between the person and the garment
+   - Natural skin tones, fabric textures, and lighting
+   - No AI artefacts, blurring, or distortion on the garment details
+
+6. **Image Composition**:
+   - Full-body shot showing the complete garment from head to toe
+   - Person should be centered and well-framed
+   - Output MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio)
+
+Return ONLY the final photorealistic virtual try-on image.`;
+
+    const finalPrompt = options?.customPrompt || prompt;
+
+    const contentParts = [
+        { text: finalPrompt },
+        faceImagePart,
+        bodyImagePart,
+        ...garmentImageParts
+    ];
+
+    // Admin tool — Gemini 3 Pro only, no fallback
+    const response = await ai.models.generateContent({
+        model: PRIMARY_MODEL,
+        contents: { parts: contentParts },
+        config: { responseModalities: [Modality.IMAGE, Modality.TEXT] },
+    });
+    return handleApiResponse(response);
+};

@@ -10,13 +10,14 @@ import CustomTryOn from './CustomTryOn';
 import CustomTryOnTest from './CustomTryOnTest';
 import AnalyticsDashboard from './AnalyticsDashboard';
 import ModelGenerationTool from './ModelGenerationTool';
+import SingleProductTryOn from './SingleProductTryOn';
 
 interface AdminDashboardProps {
   onLogout: () => void;
   products: WardrobeItem[];
 }
 
-type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'tryon-test' | 'model-generator' | 'form' | 'code-viewer';
+type AdminView = 'dashboard' | 'analytics' | 'tryon' | 'tryon-test' | 'tryon-single' | 'model-generator' | 'form' | 'code-viewer';
 
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, products }) => {
   const [outfits, setOutfits] = useState<WardrobeItem[]>([]);
@@ -150,6 +151,10 @@ ${outfit.outfitItems.map(item => `      {
 
   if (currentView === 'tryon-test') {
     return <CustomTryOnTest onBack={() => setCurrentView('dashboard')} />;
+  }
+
+  if (currentView === 'tryon-single') {
+    return <SingleProductTryOn onBack={() => setCurrentView('dashboard')} />;
   }
 
   if (currentView === 'model-generator') {
@@ -326,6 +331,15 @@ ${outfit.outfitItems.map(item => `      {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
                 Try-On Test
+              </button>
+              <button
+                onClick={() => setCurrentView('tryon-single')}
+                className="px-4 py-2 bg-teal-600 text-white rounded-md font-medium hover:bg-teal-700 transition-colors flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Single Product Try-On
               </button>
               <button
                 onClick={() => setCurrentView('model-generator')}
