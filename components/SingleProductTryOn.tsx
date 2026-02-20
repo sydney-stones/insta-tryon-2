@@ -19,6 +19,7 @@ const SingleProductTryOn: React.FC<SingleProductTryOnProps> = ({ onBack }) => {
   const [garmentImages, setGarmentImages] = useState<File[]>([]);
   const [garmentPreviews, setGarmentPreviews] = useState<string[]>([]);
 
+  const [resolution, setResolution] = useState<'1K' | '2K' | '4K'>('2K');
   const [showPrompt, setShowPrompt] = useState(false);
   const [customPrompt, setCustomPrompt] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -143,6 +144,15 @@ ${garmentLabels || '- (Upload garment images to see labels)'}
    - Output MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio)
 
 Return ONLY the final photorealistic virtual try-on image.`;
+  };
+
+  const getResultFilename = (): string => {
+    if (garmentImages.length === 0) return `tryon-${resolution.toLowerCase()}.png`;
+    // Use the first garment filename, strip extension and common suffixes like -front, -back etc.
+    const firstName = garmentImages[0].name.replace(/\.[^/.]+$/, '');
+    // Try to extract a brand/product name by removing angle suffixes
+    const baseName = firstName.replace(/[-_]?(front|back|model|detail|close|side|closeup)$/i, '').trim();
+    return `${baseName || firstName}-${resolution.toLowerCase()}-tryon.png`;
   };
 
   const isFormValid = (): boolean => {
@@ -340,6 +350,61 @@ Return ONLY the final photorealistic virtual try-on image.`;
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Settings</h2>
 
+              {/* Resolution Selection */}
+              <div className="mb-6 space-y-3">
+                <label className="block text-sm font-medium text-gray-700">Output Resolution</label>
+                <div className="space-y-2">
+                  <label className="flex items-start p-3 border-2 rounded-lg cursor-pointer transition-colors hover:bg-gray-50 relative"
+                    style={{ borderColor: resolution === '1K' ? '#0d9488' : '#e5e7eb' }}>
+                    <input
+                      type="radio"
+                      name="resolution"
+                      value="1K"
+                      checked={resolution === '1K'}
+                      onChange={(e) => setResolution(e.target.value as '1K' | '2K' | '4K')}
+                      className="mt-1 mr-3"
+                      disabled={isProcessing}
+                    />
+                    <div className="flex-1">
+                      <div className="font-medium text-sm">1K Resolution</div>
+                      <div className="text-xs text-gray-500 mt-1">Faster generation, good for previews</div>
+                    </div>
+                  </label>
+                  <label className="flex items-start p-3 border-2 rounded-lg cursor-pointer transition-colors hover:bg-gray-50 relative"
+                    style={{ borderColor: resolution === '2K' ? '#0d9488' : '#e5e7eb' }}>
+                    <input
+                      type="radio"
+                      name="resolution"
+                      value="2K"
+                      checked={resolution === '2K'}
+                      onChange={(e) => setResolution(e.target.value as '1K' | '2K' | '4K')}
+                      className="mt-1 mr-3"
+                      disabled={isProcessing}
+                    />
+                    <div className="flex-1">
+                      <div className="font-medium text-sm">2K Resolution (Recommended)</div>
+                      <div className="text-xs text-gray-500 mt-1">Balanced quality and speed</div>
+                    </div>
+                  </label>
+                  <label className="flex items-start p-3 border-2 rounded-lg cursor-pointer transition-colors hover:bg-gray-50 relative"
+                    style={{ borderColor: resolution === '4K' ? '#0d9488' : '#e5e7eb' }}>
+                    <input
+                      type="radio"
+                      name="resolution"
+                      value="4K"
+                      checked={resolution === '4K'}
+                      onChange={(e) => setResolution(e.target.value as '1K' | '2K' | '4K')}
+                      className="mt-1 mr-3"
+                      disabled={isProcessing}
+                    />
+                    <div className="flex-1">
+                      <div className="font-medium text-sm">4K Resolution</div>
+                      <div className="text-xs text-gray-500 mt-1">Highest quality, slower generation</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
               {/* Info Box */}
               <div className="mb-6 p-4 bg-teal-50 border border-teal-200 rounded-lg">
                 <h3 className="text-sm font-semibold text-teal-900 mb-2">Single Product Mode</h3>
@@ -444,12 +509,12 @@ Return ONLY the final photorealistic virtual try-on image.`;
                       onClick={() => {
                         const link = document.createElement('a');
                         link.href = resultImage;
-                        link.download = `single-product-tryon-result.png`;
+                        link.download = getResultFilename();
                         link.click();
                       }}
                       className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                     >
-                      Download Result
+                      Download Result ({resolution})
                     </button>
                     <button
                       onClick={handleReset}
