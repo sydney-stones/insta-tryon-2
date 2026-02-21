@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
 import ScrollingQuotes from './ScrollingQuotes';
@@ -18,6 +18,52 @@ interface ProductGridProps {
 const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
   const [roiOrders, setRoiOrders] = useState<number>(500);
   const [roiRevenue, setRoiRevenue] = useState<number>(25000);
+
+  useEffect(() => {
+    const injectSchema = (id: string, json: object) => {
+      let el = document.getElementById(id) as HTMLScriptElement | null;
+      if (!el) {
+        el = document.createElement('script');
+        el.id = id;
+        el.type = 'application/ld+json';
+        document.head.appendChild(el);
+      }
+      el.textContent = JSON.stringify(json);
+    };
+
+    injectSchema('schema-organization', {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Rendered Fits',
+      url: 'https://renderedfits.com',
+      description: 'AI-powered virtual try-on technology for Shopify fashion brands. Reduce returns and increase conversions.',
+      foundingDate: '2025',
+      sameAs: [
+        'https://linkedin.com/company/renderedfits',
+        'https://instagram.com/renderedfits',
+      ],
+    });
+
+    injectSchema('schema-software', {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'Rendered Fits',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      description: 'AI-powered virtual try-on for Shopify fashion brands. Let customers see themselves wearing your products before they buy.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'GBP',
+        description: 'Free trial available',
+      },
+    });
+
+    return () => {
+      document.getElementById('schema-organization')?.remove();
+      document.getElementById('schema-software')?.remove();
+    };
+  }, []);
 
   // ROI Calculator logic with correct pricing tiers
   // Works with either monthly orders or monthly revenue independently
