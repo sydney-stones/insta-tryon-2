@@ -24,6 +24,8 @@ import ReallyWildDemoPage2 from './components/ReallyWildDemoPage2';
 import WastedParisDemoPage from './components/WastedParisDemoPage';
 import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import ScrollToTop from './components/ScrollToTop';
+import BlogIndex from './components/BlogIndex';
+import BlogPost from './components/BlogPost';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -74,6 +76,10 @@ const App: React.FC = () => {
 
           {/* Results Page - No header (cold email landing page) */}
           <Route path="/results" element={<ResultsPage />} />
+
+          {/* Blog - No header */}
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
           {/* Really Wild Demo Pages - Not linked from anywhere */}
           <Route path="/reallywild" element={<ReallyWildDemoPage />} />
