@@ -1,0 +1,43 @@
+- Target keyword: virtual try on for fashion brands
+- Title: The Complete Guide to Virtual Try-On for Fashion Brands (2026)
+- Word count: 4,500
+- Key points to cover (copy from pillar 1 outline in strategy doc — 9 sections)
+- Statistics to include from your VTO data bank:
+- Returns reduction: 25-40% (Forrester)
+- Conversion lift: 13-16%
+- 98% of customers say VTO helped decision
+- 67% of returns are fit-related
+- Market size: $15.18B → $48.1B by 2030
+- $21 average cost per return
+- 2.3x lifetime value for VTO users
+- Internal links: [LINK: /blog/virtual-try-on-roi], [LINK: /blog/how-virtual-try-on-reduces-returns], [LINK: /blog/generative-ai-vs-ar], [LINK: /blog/reduce-fashion-ecommerce-returns]
+- 10 FAQ questions Q: What is virtual try-on technology?
+A: [2-3 sentence direct answer]
+
+Q: How does AI virtual try-on work for clothing?
+A: [2-3 sentence direct answer]
+
+Q: How much does virtual try-on reduce returns?
+A: [Specific numbers with source]
+
+Q: What is the ROI of virtual try-on for fashion brands?
+A: [Worked example with numbers]
+
+Q: Which is the best virtual try-on app for Shopify?
+A: [This is where you position Rendered Fits]
+
+Q: How long does it take to set up virtual try-on on Shopify?
+A: [Practical answer]
+
+Q: Does virtual try-on work for all clothing types?
+A: [Honest, nuanced answer]
+
+Q: How much does virtual try-on cost for small fashion brands?
+A: [Transparent pricing context]
+
+Q: What's the difference between AR try-on and AI try-on?
+A: [Technical but accessible answer]
+
+Q: Do customers actually use virtual try-on?
+A: [Data: 98% say it helped, 71% would shop more]
+- CTA: “Try Rendered Fits on your Shopify store”

@@ -1,8 +1,10 @@
 import { BlogPost } from '../types';
+import virtualTryOnFashionBrandsGuide from './virtual-try-on-fashion-brands-guide';
 import virtualTryOnShopify from './virtual-try-on-shopify';
 
 // Add new posts here — newest first
 export const allPosts: BlogPost[] = [
+  virtualTryOnFashionBrandsGuide,
   virtualTryOnShopify,
 ];
 
