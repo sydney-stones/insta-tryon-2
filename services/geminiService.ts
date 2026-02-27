@@ -542,7 +542,7 @@ Return ONLY the final photorealistic virtual try-on image.`;
     return handleApiResponse(response);
 };
 
-const NANO_BANANA_2_MODEL = 'gemini-3.1-flash-image';
+const NANO_BANANA_2_MODEL = 'gemini-3.1-flash-image-preview';
 
 export const generateSingleProductTryOnNanoBanana = async (
     faceImage: File,
