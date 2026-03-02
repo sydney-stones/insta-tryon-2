@@ -15,9 +15,18 @@ interface ProductGridProps {
   searchQuery?: string;
 }
 
+const TIERS = [
+  { name: 'Starter',      monthly: 249,  annual: 2490,  tryons: 1400,  ordersMax: 500,   revenueMax: 25000  },
+  { name: 'Growth',       monthly: 449,  annual: 4490,  tryons: 2800,  ordersMax: 1500,  revenueMax: 75000  },
+  { name: 'Scale',        monthly: 749,  annual: 7490,  tryons: 5200,  ordersMax: 5000,  revenueMax: 250000 },
+  { name: 'Professional', monthly: 1249, annual: 12490, tryons: 10000, ordersMax: 15000, revenueMax: 750000 },
+  { name: 'Enterprise',   monthly: 0,    annual: 0,     tryons: 0,     ordersMax: Infinity, revenueMax: Infinity },
+];
+
 const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
   const [roiOrders, setRoiOrders] = useState<number>(500);
   const [roiRevenue, setRoiRevenue] = useState<number>(25000);
+  const [isAnnual, setIsAnnual] = useState<boolean>(false);
 
   useEffect(() => {
     const injectSchema = (id: string, json: object) => {
@@ -65,58 +74,44 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
     };
   }, []);
 
-  // ROI Calculator logic with correct pricing tiers
-  // Works with either monthly orders or monthly revenue independently
+  // ROI Calculator logic — uses whichever of orders/revenue gives the higher tier
   const roiData = useMemo(() => {
-    const orders = roiOrders;
-    const revenue = roiRevenue;
-
-    // Tier from orders
-    const getTierFromOrders = (o: number) => {
-      if (o <= 500) return { tier: 'Starter', cost: 249, rank: 1 };
-      if (o <= 1500) return { tier: 'Growth', cost: 449, rank: 2 };
-      if (o <= 5000) return { tier: 'Scale', cost: 749, rank: 3 };
-      if (o <= 15000) return { tier: 'Professional', cost: 1249, rank: 4 };
-      return { tier: 'Enterprise', cost: 0, rank: 5 };
+    const getTier = (orders: number, revenue: number) => {
+      const byOrders = TIERS.findIndex(t => orders <= t.ordersMax);
+      const byRevenue = TIERS.findIndex(t => revenue <= t.revenueMax);
+      const idx = Math.max(
+        byOrders === -1 ? TIERS.length - 1 : byOrders,
+        byRevenue === -1 ? TIERS.length - 1 : byRevenue,
+      );
+      return TIERS[idx];
     };
 
-    // Tier from revenue
-    const getTierFromRevenue = (r: number) => {
-      if (r <= 25000) return { tier: 'Starter', cost: 249, rank: 1 };
-      if (r <= 75000) return { tier: 'Growth', cost: 449, rank: 2 };
-      if (r <= 250000) return { tier: 'Scale', cost: 749, rank: 3 };
-      if (r <= 750000) return { tier: 'Professional', cost: 1249, rank: 4 };
-      return { tier: 'Enterprise', cost: 0, rank: 5 };
-    };
+    const tier = getTier(roiOrders, roiRevenue);
+    const cost = isAnnual
+      ? (tier.annual > 0 ? Math.round(tier.annual / 12) : 0)
+      : tier.monthly;
 
-    const orderTier = getTierFromOrders(orders);
-    const revenueTier = getTierFromRevenue(revenue);
-
-    // Use whichever gives the higher tier
-    const selected = orderTier.rank >= revenueTier.rank ? orderTier : revenueTier;
-    const { tier, cost } = selected;
-
-    // Calculate ROI metrics
-    const avgOrderValue = orders > 0 ? revenue / orders : 50;
-    const returnRate = 0.07;
-    const conversionLiftRate = 0.05;
-    const returnsPrevented = Math.round(orders * returnRate);
+    const avgOrderValue = roiOrders > 0 ? roiRevenue / roiOrders : 50;
+    const returnsPrevented = Math.round(roiOrders * 0.07);
     const returnSavings = returnsPrevented * 20;
-    const conversionLift = Math.round(orders * conversionLiftRate * avgOrderValue);
+    const conversionLift = Math.round(roiOrders * 0.05 * avgOrderValue);
     const totalMonthly = returnSavings + conversionLift;
     const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
 
     return {
-      tier,
+      tier: tier.name,
+      tryons: tier.tryons,
+      monthly: tier.monthly,
+      annual: tier.annual,
       cost,
-      costDisplay: cost > 0 ? `£${cost.toLocaleString()}/mo` : 'Custom',
+      costDisplay: tier.monthly > 0 ? `£${cost.toLocaleString()}/mo` : 'Custom',
       returnsPrevented,
       returnSavings,
       conversionLift,
       totalMonthly,
       roiMultiple,
     };
-  }, [roiOrders, roiRevenue]);
+  }, [roiOrders, roiRevenue, isAnnual]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -245,9 +240,75 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 4: BENEFITS OF VIRTUAL TRY-ON ===== */}
       <BenefitsSection />
 
-      {/* ===== SECTION 5: ROI CALCULATOR ===== */}
+      {/* ===== SECTION 5: PRICING + ROI CALCULATOR ===== */}
       <div className="bg-gray-100 py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Pricing Header */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p className="text-center text-gray-500 text-sm mb-8 max-w-xl mx-auto">
+            Start with a 7-day free trial. No developer required. Cancel anytime.
+          </p>
+
+          {/* Monthly / Annual Toggle */}
+          <div className="flex items-center justify-center gap-4 mb-10">
+            <span className={`text-sm font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-400'}`}>Monthly</span>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors focus:outline-none ${isAnnual ? 'bg-[#444833]' : 'bg-gray-300'}`}
+              aria-label="Toggle annual pricing"
+            >
+              <span
+                className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${isAnnual ? 'translate-x-8' : 'translate-x-1'}`}
+              />
+            </button>
+            <span className={`text-sm font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-400'}`}>
+              Annual
+              <span className="ml-2 inline-block bg-[#444833] text-white text-[10px] font-bold px-2 py-0.5 rounded-full">2 months free</span>
+            </span>
+          </div>
+
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {TIERS.filter(t => t.name !== 'Enterprise').map((t) => {
+              const displayPrice = isAnnual ? Math.round(t.annual / 12) : t.monthly;
+              const isActive = roiData.tier === t.name;
+              return (
+                <div
+                  key={t.name}
+                  className={`rounded-2xl p-6 flex flex-col transition-all ${
+                    isActive
+                      ? 'bg-[#444833] text-white shadow-xl scale-[1.03] ring-2 ring-[#444833]'
+                      : 'bg-white text-gray-900 border border-gray-200 shadow-sm'
+                  }`}
+                >
+                  <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${isActive ? 'text-white/70' : 'text-gray-400'}`}>
+                    {t.name}
+                  </p>
+                  <div className="mb-1">
+                    <span className={`text-3xl font-black ${isActive ? 'text-white' : 'text-gray-900'}`}>
+                      £{displayPrice.toLocaleString()}
+                    </span>
+                    <span className={`text-sm ml-1 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>/mo</span>
+                  </div>
+                  {isAnnual && (
+                    <p className={`text-xs mb-4 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>
+                      £{t.annual.toLocaleString()}/yr
+                    </p>
+                  )}
+                  <div className={`mt-auto pt-4 border-t ${isActive ? 'border-white/20' : 'border-gray-100'}`}>
+                    <p className={`text-xs font-semibold ${isActive ? 'text-white/80' : 'text-gray-600'}`}>
+                      {t.tryons.toLocaleString()} try-ons/mo
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ROI Calculator heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-4">
             ROI Calculator
           </h2>
@@ -257,7 +318,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
 
           {/* Sliders */}
           <div className="max-w-2xl mx-auto space-y-8 mb-10 sm:mb-14">
-            {/* Monthly Orders Slider */}
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Orders</label>
@@ -278,7 +338,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               </div>
             </div>
 
-            {/* Monthly Revenue Slider */}
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Revenue</label>
@@ -300,45 +359,51 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             </div>
           </div>
 
-          {/* Tier Selection Visual */}
+          {/* Tier indicator strip */}
           <div className="max-w-3xl mx-auto mb-8">
             <div className="grid grid-cols-5 gap-1 sm:gap-2 text-center">
-              {[
-                { name: 'Starter', price: '£249', orders: '0-500', revenue: '£0-25k' },
-                { name: 'Growth', price: '£449', orders: '501-1,500', revenue: '£25k-75k' },
-                { name: 'Scale', price: '£749', orders: '1,501-5,000', revenue: '£75k-250k' },
-                { name: 'Professional', price: '£1,249', orders: '5,001-15,000', revenue: '£250k-750k' },
-                { name: 'Enterprise', price: 'Custom', orders: '15,000+', revenue: '£750k+' },
-              ].map((t) => (
-                <div
-                  key={t.name}
-                  className={`rounded-lg py-3 sm:py-4 px-1 sm:px-3 transition-all ${
-                    roiData.tier === t.name
-                      ? 'bg-[#444833] text-white shadow-lg scale-105'
-                      : 'bg-white text-gray-500 border border-gray-200'
-                  }`}
-                >
-                  <p className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider ${roiData.tier === t.name ? 'text-white/80' : 'text-gray-400'}`}>{t.name}</p>
-                  <p className={`text-sm sm:text-xl font-black mt-1 ${roiData.tier === t.name ? 'text-white' : 'text-gray-700'}`}>{t.price}</p>
-                  <p className={`text-[9px] sm:text-xs mt-1 ${roiData.tier === t.name ? 'text-white/60' : 'text-gray-400'}`}>{t.orders} orders</p>
-                  <p className={`text-[9px] sm:text-xs ${roiData.tier === t.name ? 'text-white/60' : 'text-gray-400'}`}>{t.revenue} rev</p>
-                </div>
-              ))}
+              {TIERS.map((t) => {
+                const price = t.name === 'Enterprise' ? 'Custom' : `£${(isAnnual ? Math.round(t.annual / 12) : t.monthly).toLocaleString()}`;
+                const isActive = roiData.tier === t.name;
+                return (
+                  <div
+                    key={t.name}
+                    className={`rounded-lg py-3 sm:py-4 px-1 sm:px-3 transition-all ${
+                      isActive ? 'bg-[#444833] text-white shadow-lg scale-105' : 'bg-white text-gray-500 border border-gray-200'
+                    }`}
+                  >
+                    <p className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider ${isActive ? 'text-white/80' : 'text-gray-400'}`}>{t.name}</p>
+                    <p className={`text-sm sm:text-xl font-black mt-1 ${isActive ? 'text-white' : 'text-gray-700'}`}>{price}</p>
+                    {t.tryons > 0 && (
+                      <p className={`text-[9px] sm:text-xs mt-1 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>{t.tryons.toLocaleString()} try-ons</p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           {/* ROI Results Card */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-2xl mx-auto">
-            {/* Tier Header */}
             <div className="bg-[#444833] px-6 py-4 flex items-center justify-between">
               <div>
                 <p className="text-white/70 text-xs uppercase tracking-wider">Your Recommended Tier</p>
                 <p className="text-white text-xl sm:text-2xl font-bold">{roiData.tier}</p>
               </div>
-              <p className="text-white text-lg sm:text-xl font-bold">{roiData.costDisplay}</p>
+              <div className="text-right">
+                <p className="text-white text-lg sm:text-xl font-bold">{roiData.costDisplay}</p>
+                {isAnnual && roiData.annual > 0 && (
+                  <p className="text-white/60 text-xs">£{roiData.annual.toLocaleString()}/yr</p>
+                )}
+              </div>
             </div>
-            {/* Stats Grid */}
             <div className="p-6 space-y-4">
+              {roiData.tryons > 0 && (
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600 text-sm">Try-ons Included</span>
+                  <span className="text-gray-900 font-semibold">{roiData.tryons.toLocaleString()}/mo</span>
+                </div>
+              )}
               <div className="flex justify-between items-center py-3 border-b border-gray-100">
                 <span className="text-gray-600 text-sm">Returns Prevented*</span>
                 <span className="text-gray-900 font-semibold">{roiData.returnsPrevented.toLocaleString()}/mo</span>
@@ -369,6 +434,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               )}
             </div>
           </div>
+
         </div>
       </div>
 
