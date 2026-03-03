@@ -242,7 +242,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               Simple, Transparent Pricing
             </h2>
             <p className="text-gray-500 text-base max-w-lg mx-auto mb-8">
-              Start with a 7-day free trial. No developer required. Cancel anytime.
+              No developer required. Cancel anytime.
             </p>
 
             {/* Toggle */}
@@ -324,10 +324,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                       {[
                         'Shopify integration',
                         'AI-powered try-on',
-                        'All garment types',
+                        'All product types',
                         'Analytics dashboard',
                         i >= 1 && 'Priority support',
-                        i >= 2 && 'Custom branding',
+                        i >= 2 && '1-on-1 onboarding support',
                         i >= 3 && 'Dedicated account manager',
                       ].filter(Boolean).map((feature, fi) => (
                         <li key={fi} className="flex items-center gap-2.5">
@@ -345,10 +345,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                       className={`block text-center py-3 px-6 rounded-xl text-sm font-semibold transition-all ${
                         isPopular
                           ? 'bg-white text-[#444833] hover:bg-gray-100'
-                          : 'bg-[#444833] text-white hover:bg-[#3a3d2d]'
+                          : 'border-2 border-[#444833] text-[#444833] hover:bg-[#444833] hover:text-white'
                       }`}
                     >
-                      Start free trial
+                      Schedule a demo
                     </Link>
                   </div>
                 </div>
@@ -375,106 +375,121 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       </div>
 
       {/* ===== SECTION 6: ROI CALCULATOR ===== */}
-      <div className="bg-gray-100 py-16 sm:py-20">
+      <div className="bg-gray-50 py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-4">
-            ROI Calculator
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
+            Calculate Your ROI
           </h2>
-          <p className="text-center text-gray-500 text-sm mb-10 sm:mb-14 max-w-xl mx-auto">
-            Adjust the sliders to see your estimated return on investment.
+          <p className="text-center text-gray-500 text-sm mb-12 max-w-md mx-auto">
+            Enter your store's numbers to see your estimated return and recommended plan.
           </p>
 
-          {/* Sliders */}
-          <div className="max-w-2xl mx-auto space-y-8 mb-10 sm:mb-14">
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Orders</label>
-                <span className="text-lg font-bold text-[#444833]">{roiOrders.toLocaleString()}</span>
-              </div>
-              <input
-                type="range" min="100" max="20000" step="100" value={roiOrders}
-                onChange={(e) => setRoiOrders(parseInt(e.target.value))}
-                className="w-full h-2 bg-[#444833]/20 rounded-lg appearance-none cursor-pointer accent-[#444833]"
-              />
-              <div className="flex justify-between text-xs text-gray-400 mt-1"><span>100</span><span>20,000</span></div>
-            </div>
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Revenue</label>
-                <span className="text-lg font-bold text-[#444833]">£{roiRevenue.toLocaleString()}</span>
-              </div>
-              <input
-                type="range" min="5000" max="200000" step="1000" value={roiRevenue}
-                onChange={(e) => setRoiRevenue(parseInt(e.target.value))}
-                className="w-full h-2 bg-[#444833]/20 rounded-lg appearance-none cursor-pointer accent-[#444833]"
-              />
-              <div className="flex justify-between text-xs text-gray-400 mt-1"><span>£5,000</span><span>£200,000</span></div>
-            </div>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
-          {/* Tier strip */}
-          <div className="max-w-3xl mx-auto mb-8">
-            <div className="grid grid-cols-4 gap-2 text-center">
-              {TIERS.map((t) => {
-                const isActive = roiData.tier === t.name;
-                const price = `£${(isAnnual ? Math.round(t.annual / 12) : t.monthly).toLocaleString()}`;
-                const tryon = (isAnnual ? t.tryonsAnnual : t.tryonsMonthly).toLocaleString();
-                return (
-                  <div key={t.name} className={`rounded-xl py-3 px-2 transition-all ${isActive ? 'bg-[#444833] text-white shadow-lg scale-105' : 'bg-white text-gray-500 border border-gray-200'}`}>
-                    <p className={`text-[10px] font-bold uppercase tracking-wider ${isActive ? 'text-white/70' : 'text-gray-400'}`}>{t.name}</p>
-                    <p className={`text-base sm:text-lg font-black mt-1 ${isActive ? 'text-white' : 'text-gray-800'}`}>{price}<span className={`text-[10px] font-normal ml-0.5 ${isActive ? 'text-white/50' : 'text-gray-400'}`}>/mo</span></p>
-                    <p className={`text-[10px] mt-1 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>{tryon} try-ons</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* ROI Results Card */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-2xl mx-auto">
-            <div className="bg-[#444833] px-6 py-5 flex items-center justify-between">
+            {/* Left — inputs */}
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 space-y-8">
               <div>
-                <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Recommended Plan</p>
-                <p className="text-white text-2xl font-bold">{roiData.tier}</p>
-              </div>
-              <div className="text-right">
-                <p className="text-white text-xl font-bold">{roiData.costDisplay}</p>
-                {isAnnual && <p className="text-white/50 text-xs mt-0.5">£{roiData.annual.toLocaleString()}/yr</p>}
-              </div>
-            </div>
-            <div className="p-6 divide-y divide-gray-100">
-              <div className="flex justify-between items-center py-3">
-                <span className="text-gray-500 text-sm">Try-ons included</span>
-                <span className="text-gray-900 font-semibold">{roiData.tryons.toLocaleString()} {isAnnual ? '/yr' : '/mo'}</span>
-              </div>
-              <div className="flex justify-between items-center py-3">
-                <span className="text-gray-500 text-sm">Returns prevented*</span>
-                <span className="text-gray-900 font-semibold">{roiData.returnsPrevented.toLocaleString()}/mo</span>
-              </div>
-              <div className="flex justify-between items-center py-3">
-                <span className="text-gray-500 text-sm">Return savings @ £20/return</span>
-                <span className="text-gray-900 font-semibold">£{roiData.returnSavings.toLocaleString()}</span>
-              </div>
-              <div className="flex justify-between items-center py-3">
-                <span className="text-gray-500 text-sm">Conversion lift value**</span>
-                <span className="text-gray-900 font-semibold">£{roiData.conversionLift.toLocaleString()}</span>
-              </div>
-              <div className="flex justify-between items-center py-3">
-                <span className="text-gray-700 text-sm font-semibold">Total monthly value</span>
-                <span className="text-gray-900 font-bold text-lg">£{roiData.totalMonthly.toLocaleString()}</span>
-              </div>
-              <div className="pt-4">
-                <div className="flex justify-between items-center bg-[#444833]/5 rounded-xl px-5 py-4">
-                  <span className="text-[#444833] text-sm font-bold">Estimated ROI</span>
-                  <span className="text-[#444833] font-black text-3xl">{roiData.roiMultiple}x</span>
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <label className="text-sm font-semibold text-gray-800">Monthly Orders</label>
+                    <p className="text-xs text-gray-400 mt-0.5">How many orders does your store process per month?</p>
+                  </div>
+                  <span className="text-xl font-black text-[#444833] tabular-nums">{roiOrders.toLocaleString()}</span>
                 </div>
-                <p className="text-[10px] text-gray-400 mt-3 leading-relaxed">
-                  *Based on 7% return reduction. **Based on 5% conversion lift at your average order value. Estimates only.
-                </p>
+                <input
+                  type="range" min="100" max="20000" step="100" value={roiOrders}
+                  onChange={(e) => setRoiOrders(parseInt(e.target.value))}
+                  className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#444833]"
+                />
+                <div className="flex justify-between text-xs text-gray-300 mt-1.5">
+                  <span>100</span><span>20,000</span>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <label className="text-sm font-semibold text-gray-800">Monthly Revenue</label>
+                    <p className="text-xs text-gray-400 mt-0.5">Your average monthly revenue in GBP</p>
+                  </div>
+                  <span className="text-xl font-black text-[#444833] tabular-nums">£{roiRevenue.toLocaleString()}</span>
+                </div>
+                <input
+                  type="range" min="5000" max="200000" step="1000" value={roiRevenue}
+                  onChange={(e) => setRoiRevenue(parseInt(e.target.value))}
+                  className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#444833]"
+                />
+                <div className="flex justify-between text-xs text-gray-300 mt-1.5">
+                  <span>£5k</span><span>£200k</span>
+                </div>
+              </div>
+
+              {/* Avg order value derived stat */}
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 flex items-center justify-between">
+                <span className="text-sm text-gray-500">Avg. order value</span>
+                <span className="text-sm font-bold text-gray-800">
+                  £{roiOrders > 0 ? Math.round(roiRevenue / roiOrders).toLocaleString() : '—'}
+                </span>
               </div>
             </div>
-          </div>
 
+            {/* Right — results */}
+            <div className="space-y-4">
+              {/* Recommended tier callout */}
+              <div className="bg-[#444833] rounded-2xl p-6 text-white">
+                <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Recommended plan</p>
+                <div className="flex items-end justify-between">
+                  <p className="text-3xl font-black">{roiData.tier}</p>
+                  <div className="text-right">
+                    <p className="text-2xl font-black">{roiData.costDisplay}</p>
+                    {isAnnual && <p className="text-white/50 text-xs">£{roiData.annual.toLocaleString()}/yr</p>}
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-white/70 text-sm">{isAnnual ? 'Try-ons per year' : 'Try-ons per month'}</span>
+                  <span className="text-white font-bold">{roiData.tryons.toLocaleString()}</span>
+                </div>
+              </div>
+
+              {/* ROI breakdown */}
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm divide-y divide-gray-100">
+                <div className="px-6 py-4 flex justify-between items-center">
+                  <div>
+                    <p className="text-sm font-medium text-gray-800">Fewer returns</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{roiData.returnsPrevented.toLocaleString()} returns prevented/mo @ £20 each</p>
+                  </div>
+                  <p className="text-base font-bold text-gray-900">+£{roiData.returnSavings.toLocaleString()}</p>
+                </div>
+                <div className="px-6 py-4 flex justify-between items-center">
+                  <div>
+                    <p className="text-sm font-medium text-gray-800">Higher conversions</p>
+                    <p className="text-xs text-gray-400 mt-0.5">5% lift on {roiOrders.toLocaleString()} orders @ £{roiOrders > 0 ? Math.round(roiRevenue / roiOrders) : 0} AOV</p>
+                  </div>
+                  <p className="text-base font-bold text-gray-900">+£{roiData.conversionLift.toLocaleString()}</p>
+                </div>
+                <div className="px-6 py-4 flex justify-between items-center bg-gray-50 rounded-b-2xl">
+                  <p className="text-sm font-semibold text-gray-700">Total monthly value added</p>
+                  <p className="text-lg font-black text-gray-900">£{roiData.totalMonthly.toLocaleString()}</p>
+                </div>
+              </div>
+
+              {/* ROI multiple highlight */}
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm px-6 py-5 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">Estimated ROI</p>
+                  <p className="text-xs text-gray-400 mt-0.5">Value generated vs. plan cost</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-4xl font-black text-[#444833]">{roiData.roiMultiple}x</p>
+                </div>
+              </div>
+
+              <p className="text-[10px] text-gray-400 px-1 leading-relaxed">
+                Based on industry averages: 7% return rate reduction, 5% conversion lift. Estimates only — actual results vary.
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
 

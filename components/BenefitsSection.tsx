@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
 
 interface Benefit {
   title: string;
@@ -95,140 +94,38 @@ const benefits: Benefit[] = [
   },
 ];
 
-const BenefitsSection: React.FC = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0); // Start with Boost Sales (index 0)
-  const [isUserInteracting, setIsUserInteracting] = useState(false);
-  const rotationTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
+const BenefitsSection: React.FC = () => (
+  <div className="bg-white py-16 sm:py-20">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-12 sm:mb-16">
+        Benefits of Virtual Try-on
+      </h2>
 
-  // Auto-rotation logic
-  useEffect(() => {
-    const startRotation = () => {
-      rotationTimerRef.current = setInterval(() => {
-        if (!isUserInteracting) {
-          setExpandedIndex((prev) => {
-            if (prev === null) return 0;
-            return (prev + 1) % benefits.length;
-          });
-        }
-      }, 7000); // Rotate every 7 seconds
-    };
-
-    startRotation();
-
-    return () => {
-      if (rotationTimerRef.current) clearInterval(rotationTimerRef.current);
-      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
-    };
-  }, [isUserInteracting]);
-
-  const toggleExpand = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-
-    // Pause auto-rotation for 10 seconds after user clicks
-    setIsUserInteracting(true);
-
-    if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
-    pauseTimerRef.current = setTimeout(() => {
-      setIsUserInteracting(false);
-    }, 10000); // Resume rotation after 10 seconds
-  };
-
-  return (
-    <div className="bg-white py-16 sm:py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-12 sm:mb-16">
-          Benefits of Virtual Try-on
-        </h2>
-
-        {/* Top row - 3 benefits */}
-        <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
-          {benefits.slice(0, 3).map((benefit, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <button
-                onClick={() => toggleExpand(index)}
-                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 transition-all cursor-pointer ${
-                  expandedIndex === index
-                    ? 'bg-[#6b7544] ring-2 ring-[#6b7544] ring-offset-2'
-                    : 'bg-[#444833] hover:bg-[#3a3d2d]'
-                }`}
-              >
-                {benefit.icon}
-              </button>
-              <p className="text-xs sm:text-sm font-medium text-gray-800">{benefit.title}</p>
+      {/* Top row — 3 icons */}
+      <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
+        {benefits.slice(0, 3).map((benefit, index) => (
+          <div key={index} className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-[#444833] flex items-center justify-center mb-3 sm:mb-4">
+              {benefit.icon}
             </div>
-          ))}
-        </div>
+            <p className="text-xs sm:text-sm font-medium text-gray-800">{benefit.title}</p>
+          </div>
+        ))}
+      </div>
 
-        {/* Bottom row - 2 benefits centered */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xs sm:max-w-md mx-auto mb-8">
-          {benefits.slice(3, 5).map((benefit, index) => (
-            <div key={index + 3} className="flex flex-col items-center text-center">
-              <button
-                onClick={() => toggleExpand(index + 3)}
-                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 transition-all cursor-pointer ${
-                  expandedIndex === index + 3
-                    ? 'bg-[#6b7544] ring-2 ring-[#6b7544] ring-offset-2'
-                    : 'bg-[#444833] hover:bg-[#3a3d2d]'
-                }`}
-              >
-                {benefit.icon}
-              </button>
-              <p className="text-xs sm:text-sm font-medium text-gray-800">
-                {benefit.title.split(' ').map((word, i) => (
-                  <React.Fragment key={i}>
-                    {word}
-                    {i === 0 && <br />}
-                  </React.Fragment>
-                ))}
-              </p>
+      {/* Bottom row — 2 icons centered */}
+      <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xs sm:max-w-md mx-auto">
+        {benefits.slice(3, 5).map((benefit, index) => (
+          <div key={index + 3} className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-[#444833] flex items-center justify-center mb-3 sm:mb-4">
+              {benefit.icon}
             </div>
-          ))}
-        </div>
-
-        {/* Expanded Details — fixed-height container eliminates layout shift */}
-        <div className="mt-8" style={{ minHeight: '280px' }}>
-          <AnimatePresence mode="sync">
-            {expandedIndex !== null && (
-              <motion.div
-                key={expandedIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-              >
-                <div className="bg-gray-50 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto border border-gray-200">
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
-                      {benefits[expandedIndex].title}
-                    </h3>
-                    <button
-                      onClick={() => setExpandedIndex(null)}
-                      className="p-2 hover:bg-gray-200 rounded-lg transition-colors"
-                    >
-                      <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
-                  </div>
-                  <ul className="space-y-3">
-                    {benefits[expandedIndex].details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-gray-700">
-                        <svg className="w-5 h-5 text-[#444833] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+            <p className="text-xs sm:text-sm font-medium text-gray-800">{benefit.title}</p>
+          </div>
+        ))}
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default BenefitsSection;
