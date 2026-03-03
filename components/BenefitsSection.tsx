@@ -186,45 +186,46 @@ const BenefitsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Expanded Details */}
-        <AnimatePresence mode="wait">
-          {expandedIndex !== null && (
-            <motion.div
-              key={expandedIndex}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden"
-            >
-              <div className="bg-gray-50 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto mt-8 border border-gray-200">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
-                    {benefits[expandedIndex].title}
-                  </h3>
-                  <button
-                    onClick={() => setExpandedIndex(null)}
-                    className="p-2 hover:bg-gray-200 rounded-lg transition-colors"
-                  >
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                <ul className="space-y-3">
-                  {benefits[expandedIndex].details.map((detail, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-gray-700">
-                      <svg className="w-5 h-5 text-[#444833] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+        {/* Expanded Details — fixed-height container eliminates layout shift */}
+        <div className="mt-8" style={{ minHeight: '280px' }}>
+          <AnimatePresence mode="sync">
+            {expandedIndex !== null && (
+              <motion.div
+                key={expandedIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+              >
+                <div className="bg-gray-50 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto border border-gray-200">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                      {benefits[expandedIndex].title}
+                    </h3>
+                    <button
+                      onClick={() => setExpandedIndex(null)}
+                      className="p-2 hover:bg-gray-200 rounded-lg transition-colors"
+                    >
+                      <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                    </button>
+                  </div>
+                  <ul className="space-y-3">
+                    {benefits[expandedIndex].details.map((detail, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-gray-700">
+                        <svg className="w-5 h-5 text-[#444833] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );

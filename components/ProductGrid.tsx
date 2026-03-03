@@ -16,11 +16,10 @@ interface ProductGridProps {
 }
 
 const TIERS = [
-  { name: 'Starter',      monthly: 249,  annual: 2490,  tryons: 1400,  ordersMax: 500,   revenueMax: 25000  },
-  { name: 'Growth',       monthly: 449,  annual: 4490,  tryons: 2800,  ordersMax: 1500,  revenueMax: 75000  },
-  { name: 'Scale',        monthly: 749,  annual: 7490,  tryons: 5200,  ordersMax: 5000,  revenueMax: 250000 },
-  { name: 'Professional', monthly: 1249, annual: 12490, tryons: 10000, ordersMax: 15000, revenueMax: 750000 },
-  { name: 'Enterprise',   monthly: 0,    annual: 0,     tryons: 0,     ordersMax: Infinity, revenueMax: Infinity },
+  { name: 'Starter',      monthly: 249,  annual: 2490,  tryonsMonthly: 1000,  tryonsAnnual: 12000  },
+  { name: 'Growth',       monthly: 449,  annual: 4490,  tryonsMonthly: 2000,  tryonsAnnual: 24000  },
+  { name: 'Scale',        monthly: 749,  annual: 7490,  tryonsMonthly: 3500,  tryonsAnnual: 42000  },
+  { name: 'Professional', monthly: 1249, annual: 12490, tryonsMonthly: 6000,  tryonsAnnual: 72000  },
 ];
 
 const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
@@ -74,22 +73,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
     };
   }, []);
 
-  // ROI Calculator logic — uses whichever of orders/revenue gives the higher tier
+  // ROI Calculator — tier driven by monthly revenue slider
   const roiData = useMemo(() => {
-    const getTier = (orders: number, revenue: number) => {
-      const byOrders = TIERS.findIndex(t => orders <= t.ordersMax);
-      const byRevenue = TIERS.findIndex(t => revenue <= t.revenueMax);
-      const idx = Math.max(
-        byOrders === -1 ? TIERS.length - 1 : byOrders,
-        byRevenue === -1 ? TIERS.length - 1 : byRevenue,
-      );
-      return TIERS[idx];
-    };
-
-    const tier = getTier(roiOrders, roiRevenue);
-    const cost = isAnnual
-      ? (tier.annual > 0 ? Math.round(tier.annual / 12) : 0)
-      : tier.monthly;
+    // Pick tier by revenue bands: <£20k→Starter, <£40k→Growth, <£75k→Scale, else→Professional
+    const idx = roiRevenue < 20000 ? 0 : roiRevenue < 40000 ? 1 : roiRevenue < 75000 ? 2 : 3;
+    const tier = TIERS[idx];
+    const cost = isAnnual ? Math.round(tier.annual / 12) : tier.monthly;
+    const tryons = isAnnual ? tier.tryonsAnnual : tier.tryonsMonthly;
 
     const avgOrderValue = roiOrders > 0 ? roiRevenue / roiOrders : 50;
     const returnsPrevented = Math.round(roiOrders * 0.07);
@@ -100,11 +90,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
 
     return {
       tier: tier.name,
-      tryons: tier.tryons,
+      tryons,
+      tryonsMonthly: tier.tryonsMonthly,
+      tryonsAnnual: tier.tryonsAnnual,
       monthly: tier.monthly,
       annual: tier.annual,
       cost,
-      costDisplay: tier.monthly > 0 ? `£${cost.toLocaleString()}/mo` : 'Custom',
+      costDisplay: `£${cost.toLocaleString()}/mo`,
       returnsPrevented,
       returnSavings,
       conversionLift,
@@ -240,80 +232,156 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 4: BENEFITS OF VIRTUAL TRY-ON ===== */}
       <BenefitsSection />
 
-      {/* ===== SECTION 5: PRICING + ROI CALCULATOR ===== */}
-      <div className="bg-gray-100 py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ===== SECTION 5: PRICING ===== */}
+      <div className="bg-white py-20 sm:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Pricing Header */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-4">
-            Simple, Transparent Pricing
-          </h2>
-          <p className="text-center text-gray-500 text-sm mb-8 max-w-xl mx-auto">
-            Start with a 7-day free trial. No developer required. Cancel anytime.
-          </p>
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-gray-900 mb-4">
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-gray-500 text-base max-w-lg mx-auto mb-8">
+              Start with a 7-day free trial. No developer required. Cancel anytime.
+            </p>
 
-          {/* Monthly / Annual Toggle */}
-          <div className="flex items-center justify-center gap-4 mb-10">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-400'}`}>Monthly</span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors focus:outline-none ${isAnnual ? 'bg-[#444833]' : 'bg-gray-300'}`}
-              aria-label="Toggle annual pricing"
-            >
-              <span
-                className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${isAnnual ? 'translate-x-8' : 'translate-x-1'}`}
-              />
-            </button>
-            <span className={`text-sm font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-400'}`}>
-              Annual
-              <span className="ml-2 inline-block bg-[#444833] text-white text-[10px] font-bold px-2 py-0.5 rounded-full">2 months free</span>
-            </span>
+            {/* Toggle */}
+            <div className="inline-flex items-center gap-3 bg-gray-100 rounded-full px-2 py-2">
+              <button
+                onClick={() => setIsAnnual(false)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${!isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                Monthly
+              </button>
+              <button
+                onClick={() => setIsAnnual(true)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                Annual
+                <span className="bg-[#444833] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">2 months free</span>
+              </button>
+            </div>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-            {TIERS.filter(t => t.name !== 'Enterprise').map((t) => {
+          {/* Pricing Table */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TIERS.map((t, i) => {
               const displayPrice = isAnnual ? Math.round(t.annual / 12) : t.monthly;
-              const isActive = roiData.tier === t.name;
+              const displayTryons = isAnnual ? t.tryonsAnnual : t.tryonsMonthly;
+              const isPopular = i === 1; // Growth = most popular
               return (
                 <div
                   key={t.name}
-                  className={`rounded-2xl p-6 flex flex-col transition-all ${
-                    isActive
-                      ? 'bg-[#444833] text-white shadow-xl scale-[1.03] ring-2 ring-[#444833]'
+                  className={`relative rounded-2xl flex flex-col transition-all ${
+                    isPopular
+                      ? 'bg-[#444833] text-white shadow-2xl ring-2 ring-[#444833]'
                       : 'bg-white text-gray-900 border border-gray-200 shadow-sm'
                   }`}
                 >
-                  <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${isActive ? 'text-white/70' : 'text-gray-400'}`}>
-                    {t.name}
-                  </p>
-                  <div className="mb-1">
-                    <span className={`text-3xl font-black ${isActive ? 'text-white' : 'text-gray-900'}`}>
-                      £{displayPrice.toLocaleString()}
-                    </span>
-                    <span className={`text-sm ml-1 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>/mo</span>
-                  </div>
-                  {isAnnual && (
-                    <p className={`text-xs mb-4 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>
-                      £{t.annual.toLocaleString()}/yr
-                    </p>
+                  {isPopular && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                      <span className="bg-[#6b7544] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow">
+                        Most Popular
+                      </span>
+                    </div>
                   )}
-                  <div className={`mt-auto pt-4 border-t ${isActive ? 'border-white/20' : 'border-gray-100'}`}>
-                    <p className={`text-xs font-semibold ${isActive ? 'text-white/80' : 'text-gray-600'}`}>
-                      {t.tryons.toLocaleString()} try-ons/mo
+
+                  <div className="p-7 flex flex-col flex-1">
+                    {/* Tier name */}
+                    <p className={`text-xs font-bold uppercase tracking-widest mb-4 ${isPopular ? 'text-white/60' : 'text-gray-400'}`}>
+                      {t.name}
                     </p>
+
+                    {/* Price */}
+                    <div className="mb-2 flex items-end gap-1">
+                      <span className={`text-4xl font-black leading-none ${isPopular ? 'text-white' : 'text-gray-900'}`}>
+                        £{displayPrice.toLocaleString()}
+                      </span>
+                      <span className={`text-sm pb-1 ${isPopular ? 'text-white/50' : 'text-gray-400'}`}>/mo</span>
+                    </div>
+                    {isAnnual ? (
+                      <p className={`text-xs mb-6 ${isPopular ? 'text-white/50' : 'text-gray-400'}`}>
+                        £{t.annual.toLocaleString()} billed annually
+                      </p>
+                    ) : (
+                      <p className={`text-xs mb-6 ${isPopular ? 'text-white/50' : 'text-gray-400'}`}>
+                        or £{Math.round(t.annual / 12).toLocaleString()}/mo billed annually
+                      </p>
+                    )}
+
+                    {/* Try-on allowance — primary feature */}
+                    <div className={`rounded-xl p-4 mb-6 ${isPopular ? 'bg-white/10' : 'bg-gray-50 border border-gray-100'}`}>
+                      <p className={`text-2xl font-black ${isPopular ? 'text-white' : 'text-gray-900'}`}>
+                        {displayTryons.toLocaleString()}
+                      </p>
+                      <p className={`text-xs font-medium mt-0.5 ${isPopular ? 'text-white/60' : 'text-gray-500'}`}>
+                        {isAnnual ? 'try-ons per year' : 'try-ons per month'}
+                      </p>
+                    </div>
+
+                    {/* Feature list */}
+                    <ul className="space-y-3 mb-8 flex-1">
+                      {[
+                        'Shopify integration',
+                        'AI-powered try-on',
+                        'All garment types',
+                        'Analytics dashboard',
+                        i >= 1 && 'Priority support',
+                        i >= 2 && 'Custom branding',
+                        i >= 3 && 'Dedicated account manager',
+                      ].filter(Boolean).map((feature, fi) => (
+                        <li key={fi} className="flex items-center gap-2.5">
+                          <svg className={`w-4 h-4 flex-shrink-0 ${isPopular ? 'text-white/70' : 'text-[#444833]'}`} fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          <span className={`text-sm ${isPopular ? 'text-white/80' : 'text-gray-600'}`}>{feature as string}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA */}
+                    <Link
+                      to="/contact"
+                      className={`block text-center py-3 px-6 rounded-xl text-sm font-semibold transition-all ${
+                        isPopular
+                          ? 'bg-white text-[#444833] hover:bg-gray-100'
+                          : 'bg-[#444833] text-white hover:bg-[#3a3d2d]'
+                      }`}
+                    >
+                      Start free trial
+                    </Link>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* ROI Calculator heading */}
+          {/* Enterprise row */}
+          <div className="mt-6 rounded-2xl border border-gray-200 bg-white shadow-sm px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Enterprise</p>
+              <p className="text-lg font-bold text-gray-900">Need more volume or a custom integration?</p>
+              <p className="text-sm text-gray-500 mt-1">Custom try-on limits, white-labelling, SLA, and dedicated support.</p>
+            </div>
+            <Link
+              to="/contact"
+              className="flex-shrink-0 border-2 border-[#444833] text-[#444833] px-8 py-3 rounded-xl text-sm font-semibold hover:bg-[#444833] hover:text-white transition-all"
+            >
+              Talk to us
+            </Link>
+          </div>
+
+        </div>
+      </div>
+
+      {/* ===== SECTION 6: ROI CALCULATOR ===== */}
+      <div className="bg-gray-100 py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-4">
             ROI Calculator
           </h2>
           <p className="text-center text-gray-500 text-sm mb-10 sm:mb-14 max-w-xl mx-auto">
-            Adjust the sliders to see the estimated return on investment for your business.
+            Adjust the sliders to see your estimated return on investment.
           </p>
 
           {/* Sliders */}
@@ -324,59 +392,38 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                 <span className="text-lg font-bold text-[#444833]">{roiOrders.toLocaleString()}</span>
               </div>
               <input
-                type="range"
-                min="100"
-                max="20000"
-                step="100"
-                value={roiOrders}
+                type="range" min="100" max="20000" step="100" value={roiOrders}
                 onChange={(e) => setRoiOrders(parseInt(e.target.value))}
                 className="w-full h-2 bg-[#444833]/20 rounded-lg appearance-none cursor-pointer accent-[#444833]"
               />
-              <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>100</span>
-                <span>20,000</span>
-              </div>
+              <div className="flex justify-between text-xs text-gray-400 mt-1"><span>100</span><span>20,000</span></div>
             </div>
-
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-sm sm:text-base font-medium text-gray-700">Monthly Revenue</label>
                 <span className="text-lg font-bold text-[#444833]">£{roiRevenue.toLocaleString()}</span>
               </div>
               <input
-                type="range"
-                min="5000"
-                max="1000000"
-                step="5000"
-                value={roiRevenue}
+                type="range" min="5000" max="200000" step="1000" value={roiRevenue}
                 onChange={(e) => setRoiRevenue(parseInt(e.target.value))}
                 className="w-full h-2 bg-[#444833]/20 rounded-lg appearance-none cursor-pointer accent-[#444833]"
               />
-              <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>£5,000</span>
-                <span>£1,000,000</span>
-              </div>
+              <div className="flex justify-between text-xs text-gray-400 mt-1"><span>£5,000</span><span>£200,000</span></div>
             </div>
           </div>
 
-          {/* Tier indicator strip */}
+          {/* Tier strip */}
           <div className="max-w-3xl mx-auto mb-8">
-            <div className="grid grid-cols-5 gap-1 sm:gap-2 text-center">
+            <div className="grid grid-cols-4 gap-2 text-center">
               {TIERS.map((t) => {
-                const price = t.name === 'Enterprise' ? 'Custom' : `£${(isAnnual ? Math.round(t.annual / 12) : t.monthly).toLocaleString()}`;
                 const isActive = roiData.tier === t.name;
+                const price = `£${(isAnnual ? Math.round(t.annual / 12) : t.monthly).toLocaleString()}`;
+                const tryon = (isAnnual ? t.tryonsAnnual : t.tryonsMonthly).toLocaleString();
                 return (
-                  <div
-                    key={t.name}
-                    className={`rounded-lg py-3 sm:py-4 px-1 sm:px-3 transition-all ${
-                      isActive ? 'bg-[#444833] text-white shadow-lg scale-105' : 'bg-white text-gray-500 border border-gray-200'
-                    }`}
-                  >
-                    <p className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider ${isActive ? 'text-white/80' : 'text-gray-400'}`}>{t.name}</p>
-                    <p className={`text-sm sm:text-xl font-black mt-1 ${isActive ? 'text-white' : 'text-gray-700'}`}>{price}</p>
-                    {t.tryons > 0 && (
-                      <p className={`text-[9px] sm:text-xs mt-1 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>{t.tryons.toLocaleString()} try-ons</p>
-                    )}
+                  <div key={t.name} className={`rounded-xl py-3 px-2 transition-all ${isActive ? 'bg-[#444833] text-white shadow-lg scale-105' : 'bg-white text-gray-500 border border-gray-200'}`}>
+                    <p className={`text-[10px] font-bold uppercase tracking-wider ${isActive ? 'text-white/70' : 'text-gray-400'}`}>{t.name}</p>
+                    <p className={`text-base sm:text-lg font-black mt-1 ${isActive ? 'text-white' : 'text-gray-800'}`}>{price}<span className={`text-[10px] font-normal ml-0.5 ${isActive ? 'text-white/50' : 'text-gray-400'}`}>/mo</span></p>
+                    <p className={`text-[10px] mt-1 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>{tryon} try-ons</p>
                   </div>
                 );
               })}
@@ -385,53 +432,46 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
 
           {/* ROI Results Card */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-2xl mx-auto">
-            <div className="bg-[#444833] px-6 py-4 flex items-center justify-between">
+            <div className="bg-[#444833] px-6 py-5 flex items-center justify-between">
               <div>
-                <p className="text-white/70 text-xs uppercase tracking-wider">Your Recommended Tier</p>
-                <p className="text-white text-xl sm:text-2xl font-bold">{roiData.tier}</p>
+                <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Recommended Plan</p>
+                <p className="text-white text-2xl font-bold">{roiData.tier}</p>
               </div>
               <div className="text-right">
-                <p className="text-white text-lg sm:text-xl font-bold">{roiData.costDisplay}</p>
-                {isAnnual && roiData.annual > 0 && (
-                  <p className="text-white/60 text-xs">£{roiData.annual.toLocaleString()}/yr</p>
-                )}
+                <p className="text-white text-xl font-bold">{roiData.costDisplay}</p>
+                {isAnnual && <p className="text-white/50 text-xs mt-0.5">£{roiData.annual.toLocaleString()}/yr</p>}
               </div>
             </div>
-            <div className="p-6 space-y-4">
-              {roiData.tryons > 0 && (
-                <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                  <span className="text-gray-600 text-sm">Try-ons Included</span>
-                  <span className="text-gray-900 font-semibold">{roiData.tryons.toLocaleString()}/mo</span>
-                </div>
-              )}
-              <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                <span className="text-gray-600 text-sm">Returns Prevented*</span>
+            <div className="p-6 divide-y divide-gray-100">
+              <div className="flex justify-between items-center py-3">
+                <span className="text-gray-500 text-sm">Try-ons included</span>
+                <span className="text-gray-900 font-semibold">{roiData.tryons.toLocaleString()} {isAnnual ? '/yr' : '/mo'}</span>
+              </div>
+              <div className="flex justify-between items-center py-3">
+                <span className="text-gray-500 text-sm">Returns prevented*</span>
                 <span className="text-gray-900 font-semibold">{roiData.returnsPrevented.toLocaleString()}/mo</span>
               </div>
-              <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                <span className="text-gray-600 text-sm">Savings @ £20/return</span>
+              <div className="flex justify-between items-center py-3">
+                <span className="text-gray-500 text-sm">Return savings @ £20/return</span>
                 <span className="text-gray-900 font-semibold">£{roiData.returnSavings.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                <span className="text-gray-600 text-sm">Conversion Lift Value**</span>
+              <div className="flex justify-between items-center py-3">
+                <span className="text-gray-500 text-sm">Conversion lift value**</span>
                 <span className="text-gray-900 font-semibold">£{roiData.conversionLift.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                <span className="text-gray-600 text-sm font-medium">Total Monthly Value</span>
+              <div className="flex justify-between items-center py-3">
+                <span className="text-gray-700 text-sm font-semibold">Total monthly value</span>
                 <span className="text-gray-900 font-bold text-lg">£{roiData.totalMonthly.toLocaleString()}</span>
               </div>
-              {roiData.cost > 0 && (
-                <div className="flex justify-between items-center py-3 bg-[#444833]/5 rounded-lg px-4 -mx-2">
-                  <span className="text-[#444833] text-sm font-bold">ROI Multiple</span>
-                  <span className="text-[#444833] font-black text-2xl">{roiData.roiMultiple}x</span>
+              <div className="pt-4">
+                <div className="flex justify-between items-center bg-[#444833]/5 rounded-xl px-5 py-4">
+                  <span className="text-[#444833] text-sm font-bold">Estimated ROI</span>
+                  <span className="text-[#444833] font-black text-3xl">{roiData.roiMultiple}x</span>
                 </div>
-              )}
-              {roiData.tier === 'Enterprise' && (
-                <div className="text-center py-3">
-                  <p className="text-[#444833] font-semibold text-sm">Contact us for custom Enterprise pricing</p>
-                  <a href="mailto:mail@renderedfits.com" className="text-[#444833] underline text-sm">mail@renderedfits.com</a>
-                </div>
-              )}
+                <p className="text-[10px] text-gray-400 mt-3 leading-relaxed">
+                  *Based on 7% return reduction. **Based on 5% conversion lift at your average order value. Estimates only.
+                </p>
+              </div>
             </div>
           </div>
 
