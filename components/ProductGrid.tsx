@@ -205,7 +205,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
                 <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/4.png" alt="Upload your pictures" className="w-full h-full object-cover rounded-lg" />
+                  <img src="/result-images/siennaface-new.png" alt="Upload your pictures" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 2</p>
@@ -361,7 +361,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Enterprise</p>
               <p className="text-lg font-bold text-gray-900">Need more volume or a custom integration?</p>
-              <p className="text-sm text-gray-500 mt-1">Custom try-on limits, white-labelling, SLA, and dedicated support.</p>
+              <p className="text-sm text-gray-500 mt-1">Custom try-on limits and dedicated support.</p>
             </div>
             <Link
               to="/contact"
