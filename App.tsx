@@ -22,7 +22,6 @@ import ResultsPage from './components/ResultsPage';
 import ReallyWildDemoPage from './components/ReallyWildDemoPage';
 import ReallyWildDemoPage2 from './components/ReallyWildDemoPage2';
 import WastedParisDemoPage from './components/WastedParisDemoPage';
-import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import ScrollToTop from './components/ScrollToTop';
 import BlogIndex from './components/BlogIndex';
 import BlogPost from './components/BlogPost';
@@ -153,8 +152,6 @@ const App: React.FC = () => {
                   onClose={handleCloseTryOnModal}
                   product={selectedProduct}
                 />
-
-                <AffiliateDisclaimer />
               </>
             }
           />

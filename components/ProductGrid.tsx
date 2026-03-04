@@ -205,7 +205,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
                 <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/result-images/siennaface-new.png" alt="Upload your pictures" className="w-full h-full object-cover rounded-lg" />
+                  <img src="/result-images/siennaphone.png" alt="Upload your pictures" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 2</p>
@@ -217,7 +217,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
                 <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/result-images/purdey-tryon-1k.png" alt="See your results" className="w-full h-full object-cover rounded-lg" />
+                  <img src="/result-images/purdey-tryon-1k.png" alt="See your results" className="w-full h-full object-contain rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 3</p>
@@ -555,10 +555,24 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       </div>
 
       {/* ===== SECTION 8: LEGAL FOOTER ===== */}
-      <div className="bg-[#3a3d2d] py-6">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-white/50 text-[10px] sm:text-xs leading-relaxed">
-            Rendered Fits Ltd registered in England and Wales under the company registration number 16922551. Registered office address: 50-54 Oswald Road, Scunthorpe, North Lincolnshire, United Kingdom, DN15 7PQ
+      <div className="bg-[#3a3d2d] py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Legal links row */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-5">
+            <Link to="/legal" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Legal</Link>
+            <Link to="/legal/privacy-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Privacy Policy</Link>
+            <Link to="/legal/terms-of-use" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Terms of Use</Link>
+            <Link to="/legal/cookie-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Cookie Policy</Link>
+            <Link to="/legal/end-user-terms" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">End-User Terms</Link>
+            <Link to="/legal/biometric-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Biometric Policy</Link>
+            <Link to="/legal/acceptable-use" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Acceptable Use</Link>
+          </div>
+          {/* Divider */}
+          <div className="border-t border-white/10 mb-5" />
+          {/* Company info */}
+          <p className="text-white/40 text-[10px] sm:text-[11px] leading-relaxed text-center">
+            © {new Date().getFullYear()} Rendered Fits Ltd &nbsp;·&nbsp; Company No. 16922551 &nbsp;·&nbsp; VAT No. 510026164<br className="hidden sm:block" />
+            <span className="hidden sm:inline"> </span>Registered office: 50-54 Oswald Road, Scunthorpe, North Lincolnshire, DN15 7PQ, United Kingdom &nbsp;·&nbsp; <a href="mailto:mail@renderedfits.com" className="hover:text-white/60 transition-colors">mail@renderedfits.com</a>
           </p>
         </div>
       </div>

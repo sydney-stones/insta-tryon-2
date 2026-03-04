@@ -4,6 +4,7 @@
 */
 
 import React, { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WardrobeItem } from '../types';
 import { generateDirectVirtualTryOn } from '../services/geminiService';
@@ -379,6 +380,21 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                           </svg>
                           Try on
                         </button>
+                      </div>
+
+                      {/* Legal Disclaimer */}
+                      <div className="px-5 pt-2 pb-1 text-center">
+                        <p className="text-[9px] text-gray-400 leading-relaxed">
+                          By uploading your photo, you agree to our{' '}
+                          <Link to="/legal/end-user-terms" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
+                            Terms &amp; Conditions
+                          </Link>{' '}
+                          and{' '}
+                          <Link to="/legal/app-privacy-policy" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
+                            Privacy Policy
+                          </Link>
+                          . Your image is never permanently stored.
+                        </p>
                       </div>
 
                       {/* Footer */}
