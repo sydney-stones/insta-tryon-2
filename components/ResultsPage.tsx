@@ -778,11 +778,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                         GETTING DRESSED!
                       </h3>
                       <div className="relative mb-8">
-                        <svg className="w-20 h-20 text-gray-800" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M32 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" />
-                          <path d="M32 16v4" />
-                          <path d="M32 20 L8 40 L56 40 Z" strokeLinejoin="round" />
-                        </svg>
+                        <img src="/hanger.jpg" alt="Loading" className="w-20 h-20 object-contain" />
                         <div className="flex gap-1.5 justify-center mt-4">
                           <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                           <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
