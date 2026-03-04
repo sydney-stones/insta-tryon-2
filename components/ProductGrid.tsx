@@ -560,12 +560,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           {/* Legal links row */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-5">
             <Link to="/legal" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Legal</Link>
-            <Link to="/legal/privacy-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Privacy Policy</Link>
-            <Link to="/legal/terms-of-use" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Terms of Use</Link>
-            <Link to="/legal/cookie-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Cookie Policy</Link>
+            <Link to="/legal/website-legal-documents" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Website Legal Documents</Link>
+            <Link to="/legal/app-privacy-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">App Privacy Policy</Link>
             <Link to="/legal/end-user-terms" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">End-User Terms</Link>
+            <Link to="/legal/merchant-terms" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Merchant Terms</Link>
             <Link to="/legal/biometric-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Biometric Policy</Link>
-            <Link to="/legal/acceptable-use" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Acceptable Use</Link>
+            <Link to="/legal/data-processing-agreement" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Data Processing Agreement</Link>
           </div>
           {/* Divider */}
           <div className="border-t border-white/10 mb-5" />

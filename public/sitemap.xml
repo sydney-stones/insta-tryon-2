@@ -37,13 +37,7 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://renderedfits.com/legal/privacy-policy</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://renderedfits.com/legal/terms-of-use</loc>
+    <loc>https://renderedfits.com/legal/website-legal-documents</loc>
     <lastmod>2026-03-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
@@ -61,24 +55,6 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://renderedfits.com/legal/cookie-policy</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://renderedfits.com/legal/acceptable-use</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://renderedfits.com/legal/biometric-policy</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://renderedfits.com/legal/merchant-terms</loc>
     <lastmod>2026-03-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -86,6 +62,12 @@
   </url>
   <url>
     <loc>https://renderedfits.com/legal/data-processing-agreement</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://renderedfits.com/legal/biometric-policy</loc>
     <lastmod>2026-03-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>

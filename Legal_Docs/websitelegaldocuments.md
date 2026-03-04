@@ -38,7 +38,6 @@ We are the data controller for personal information collected through this Websi
 2. Information We Collect
 2.1 Information You Provide
 •	Contact form submissions: If you contact us via a form on the Website, we collect your name, email address, and the content of your message.
-•	Waitlist sign-ups: If you join our waitlist, we collect your email address and (optionally) your name and business name.
 •	Newsletter subscriptions: If you subscribe to our newsletter or marketing emails, we collect your email address.
 
 2.2 Information Collected Automatically
@@ -51,14 +50,13 @@ The Website does not collect: payment information, biometric data, special categ
 3. How We Use Your Information
 Purpose	Legal Basis (Article 6 UK GDPR)
 Responding to your enquiries and contact form submissions	Article 6(1)(b) — Steps taken at your request prior to entering into a contract; or Article 6(1)(f) — Legitimate interests (responding to enquiries)
-Managing waitlist sign-ups and sending waitlist updates	Article 6(1)(a) — Consent
 Sending marketing emails and newsletters	Article 6(1)(a) — Consent (you can unsubscribe at any time via the link in each email)
 Website analytics (anonymised/aggregated)	Article 6(1)(f) — Legitimate interests (understanding Website usage to improve our content and services)
 Security monitoring and abuse prevention	Article 6(1)(f) — Legitimate interests (protecting our Website and systems)
 
 4. Sharing Your Information
 We do not sell, rent, or trade your personal information. We may share your information with:
-•	Email service providers (e.g., Instantly) for sending marketing emails and waitlist updates, subject to data processing agreements
+•	Email service providers (e.g., Instantly) for sending marketing emails, subject to data processing agreements
 •	Hosting providers for Website infrastructure
 •	Professional advisers (legal, accounting) where necessary
 •	Law enforcement or regulatory authorities where required by law
@@ -69,7 +67,6 @@ Some of our service providers may process data outside the UK/EEA. Where this oc
 6. Data Retention
 Data	Retention Period
 Contact form submissions	12 months, then deleted unless an ongoing relationship exists
-Waitlist sign-ups	Until the waitlist is closed or you unsubscribe, plus 30 days for processing
 Marketing email subscribers	Until you unsubscribe, plus 30 days for processing
 Server logs	90 days
 
