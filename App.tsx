@@ -26,6 +26,7 @@ import AffiliateDisclaimer from './components/AffiliateDisclaimer';
 import ScrollToTop from './components/ScrollToTop';
 import BlogIndex from './components/BlogIndex';
 import BlogPost from './components/BlogPost';
+import LegalPage, { LegalHub } from './components/LegalPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -80,6 +81,10 @@ const App: React.FC = () => {
           {/* Blog - No header */}
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* Legal Pages - No header */}
+          <Route path="/legal" element={<LegalHub />} />
+          <Route path="/legal/:slug" element={<LegalPage />} />
 
           {/* Really Wild Demo Pages - Not linked from anywhere */}
           <Route path="/reallywild" element={<ReallyWildDemoPage />} />

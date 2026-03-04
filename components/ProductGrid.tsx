@@ -193,7 +193,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
                 <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/3.png" alt="Browse products" className="w-full h-full object-cover rounded-lg" />
+                  <img src="/result-images/purdeyoutfit.png" alt="Browse products" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 1</p>
@@ -217,7 +217,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
               <div className="p-3 sm:p-4">
                 <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/5.png" alt="See your results" className="w-full h-full object-cover rounded-lg" />
+                  <img src="/result-images/purdey-tryon-1k.png" alt="See your results" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-[10px] sm:text-xs text-gray-500">Step 3</p>

@@ -34,8 +34,8 @@ const demoProducts: DemoProduct[] = [
     sizes: ['36', '38', '40', '42', '44'],
     productSrc: '/result-images/angloitalian.jpeg',
     productLabel: 'Product: Sutherland Classic Tweed Suit',
-    faceSrc: '/result-images/siennaneutral--new.JPG',
-    bodySrc: '/result-images/siennabody--new.JPG',
+    faceSrc: '/result-images/IMG_8175.jpeg',
+    bodySrc: '/result-images/sydbody--new.jpeg',
     afterSrc: '/result-images/angloitalian-tryon-1k.png',
     afterLabel: 'Try-On Result',
     description: 'Classic British tweed suit crafted in Scotland. Timeless tailoring with a relaxed, modern fit.',
@@ -49,8 +49,8 @@ const demoProducts: DemoProduct[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     productSrc: '/result-images/nudeproject.jpeg',
     productLabel: 'Product: Essential Slim Trousers',
-    faceSrc: '/result-images/siennaneutral--new.JPG',
-    bodySrc: '/result-images/siennabody--new.JPG',
+    faceSrc: '/result-images/IMG_8175.jpeg',
+    bodySrc: '/result-images/sydbody--new.jpeg',
     afterSrc: '/result-images/nudeproject-tryon-1K.png',
     afterLabel: 'Try-On Result',
     description: 'Clean-cut slim trousers in premium stretch fabric. A wardrobe essential for any occasion.',
@@ -738,6 +738,19 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                           )}
                         </div>
                       </div>
+
+                      {/* Legal disclaimer */}
+                      <p className="text-[9px] text-gray-400 leading-relaxed mb-4 text-center">
+                        By uploading your photo, you agree to our{' '}
+                        <Link to="/legal/end-user-terms" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
+                          Terms &amp; Conditions
+                        </Link>{' '}
+                        and{' '}
+                        <Link to="/legal/app-privacy-policy" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
+                          Privacy Policy
+                        </Link>
+                        . Your image is never permanently stored.
+                      </p>
 
                       {/* Product tags + status */}
                       <div className="flex items-center justify-between">
