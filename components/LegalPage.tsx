@@ -602,7 +602,7 @@ Your rights
 Under applicable data protection laws, you have the right to access, rectify, erase, restrict, port, and object to the processing of your personal data. You can withdraw consent at any time by not using the Feature.
 To exercise your rights, contact the Merchant whose store you used, or email us at mail@renderedfits.com. You also have the right to complain to a supervisory authority (in the UK, this is the Information Commissioner's Office at ico.org.uk).
 
-For our full privacy policy, visit: renderedfits.com/privacy
+For our full privacy policy, visit: renderedfits.com/legal/app-privacy-policy
 
 End of End-User Terms of Use — Version 1.0 — February 2026`;
 
