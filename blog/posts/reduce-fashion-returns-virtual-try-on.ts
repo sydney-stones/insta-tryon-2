@@ -84,10 +84,9 @@ The financial case for virtual try-on is straightforward to model. Here's the fr
 
 ### Step 1: Calculate your current annual returns cost
 
-```
-Annual revenue × Return rate = Annual returned value
-Annual returned value × Processing cost per £1 returned = Annual processing cost
-```
+> Annual revenue × Return rate = Annual returned value
+>
+> Annual returned value × Processing cost per £1 returned = Annual processing cost
 
 **Example:** A Shopify brand with £800,000 annual revenue and a 35% return rate:
 - Annual returned value: £280,000

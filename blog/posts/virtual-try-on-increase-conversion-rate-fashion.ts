@@ -69,9 +69,7 @@ Virtual try-on doesn't intervene at the top of the funnel. It doesn't bring more
 
 Here's where it fits in the standard Shopify conversion funnel:
 
-```
-Traffic → Product Page View → Product Consideration → Add to Cart → Checkout → Purchase
-```
+> **Traffic → Product Page View → Product Consideration → Add to Cart → Checkout → Purchase**
 
 Virtual try-on operates between **Product Consideration** and **Add to Cart** — the stage where confidence gaps are highest and abandonment is most common.
 
