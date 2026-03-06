@@ -6,9 +6,21 @@ import virtualTryOnRoi from './virtual-try-on-roi-shopify-fashion';
 import aiVirtualTryOnHowItWorks from './ai-virtual-try-on-clothing-how-it-works';
 import virtualTryOnAppComparison from './virtual-try-on-shopify-app-comparison';
 import virtualTryOnConversionRate from './virtual-try-on-increase-conversion-rate-fashion';
+import virtualFittingRoomTechnology from './virtual-fitting-room-technology';
+import aiFashionTechnologyTrends from './ai-fashion-technology-trends';
+import bestVirtualTryOnApp from './best-virtual-try-on-app';
+import onlineClothingReturnRateSolutions from './online-clothing-return-rate-solutions';
+import eCommerceCustomerConfidence from './e-commerce-customer-confidence';
+import generativeAiApparelIndustry from './generative-ai-apparel-industry';
 
 // Add new posts here — newest first
 export const allPosts: BlogPost[] = [
+  virtualFittingRoomTechnology,
+  aiFashionTechnologyTrends,
+  bestVirtualTryOnApp,
+  onlineClothingReturnRateSolutions,
+  eCommerceCustomerConfidence,
+  generativeAiApparelIndustry,
   reduceFashionReturns,
   virtualTryOnRoi,
   aiVirtualTryOnHowItWorks,
