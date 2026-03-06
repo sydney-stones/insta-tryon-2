@@ -237,85 +237,6 @@ Before we compare specific platforms, here are the core evaluation criteria:
 | Vto.ai | 7.5/10 | £0.05–£5k/mo | 2–4 weeks | Good | High-volume, cost-optimized |
 | Snapbizz | 6.5/10 | £300–Custom | 2–3 weeks | Excellent | Gen-Z, social-first, accessories |
 
----
-
-## Implementation Recommendations by Brand Profile
-
-### Mid-Market Brands (£500k–£2m/year)
-
-**Recommendation: Rendered Fits**
-
-- Fast implementation (1–2 hours)
-- Affordable (£249–£499/month)
-- Strong accuracy (8.5/10)
-- All features you need without complexity
-- ROI payback: 3–6 months
-- Get started immediately
-
----
-
-### Enterprise Brands (£2m+/year)
-
-**Primary Recommendation: DRESSX**
-
-- Highest accuracy (9.0/10)
-- Supports advanced features (consumer app, influencer partnerships)
-- Customizable for brand integration
-- Dedicated support
-- For premium positioning where image quality matters most
-
-**Secondary Option: Custom Solution**
-
-- If budget allows (£50k–£200k development), build proprietary solution
-- Long-term competitive advantage
-- Control over data and model training
-
----
-
-### High-Return-Rate Brands (35%+ return rate)
-
-**Recommendation: Intellifit or Wanna Fit**
-
-- Both prioritize predictive sizing alongside try-on
-- Address root cause (sizing uncertainty) not just visualization
-- 25–40% return rate reduction possible
-- Better ROI than try-on alone
-
----
-
-### Social/Gamified Brands (Fashion, Accessories, Gen-Z Audiences)
-
-**Recommendation: Snapbizz + Rendered Fits**
-
-- Snapbizz for social shareability (AR, Instagram-native)
-- Rendered Fits for conversion optimization
-- Use both in complementary ways
-
----
-
-## The Implementation Decision Tree
-
-1. **Do you use Shopify or WooCommerce?**
-   - Yes → Rendered Fits (easiest implementation)
-   - No → DRESSX or Vto.ai (custom integration)
-
-2. **Is return rate 35%+ (problematic)?**
-   - Yes → Intellifit or Wanna Fit (sizing-focused)
-   - No → Rendered Fits or DRESSX (try-on focused)
-
-3. **Is your brand premium/luxury?**
-   - Yes → DRESSX (highest quality renders)
-   - No → Rendered Fits (good quality, affordable)
-
-4. **Do you have technical resources (developers)?**
-   - Yes → DRESSX or Vto.ai (can handle complex integration)
-   - No → Rendered Fits or Wanna Fit (plug-and-play)
-
-5. **Is your audience Gen-Z or very social-media-focused?**
-   - Yes → Add Snapbizz for secondary reach
-   - No → Focus on conversion optimization
-
----
 
 ## Red Flags: What to Avoid
 
@@ -382,10 +303,6 @@ A: Yes. Most platforms have 30–60 day contracts. Switching cost is mostly re-c
 **Q: Do I need to retrain customer service on virtual try-on?**
 
 A: Minimally. Most customers understand the feature intuitively. Prepare standard responses for: "Is the photo stored?" (no, deleted after 24h) and "Is this 100% accurate?" (no, illustrative).
-
-**Q: Which platform has the best mobile app for customers?**
-
-A: DRESSX (includes a full wardrobe management app). But if you just want widget-based try-on, all platforms have equally good mobile web experiences.
 
 **Q: Can I A/B test virtual try-on effectiveness?**
 

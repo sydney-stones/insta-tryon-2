@@ -26,6 +26,7 @@ import ScrollToTop from './components/ScrollToTop';
 import BlogIndex from './components/BlogIndex';
 import BlogPost from './components/BlogPost';
 import LegalPage, { LegalHub } from './components/LegalPage';
+import NotFoundPage from './components/NotFoundPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -85,10 +86,14 @@ const App: React.FC = () => {
           <Route path="/legal" element={<LegalHub />} />
           <Route path="/legal/:slug" element={<LegalPage />} />
 
-          {/* Really Wild Demo Pages - Not linked from anywhere */}
+          {/* Demo Pages - Not linked from navigation */}
           <Route path="/reallywild" element={<ReallyWildDemoPage />} />
           <Route path="/reallywild2" element={<ReallyWildDemoPage2 />} />
           <Route path="/wastedparis" element={<WastedParisDemoPage />} />
+
+          {/* 404 catch-all for known top-level paths with no sub-routes */}
+          <Route path="/blog/*" element={<NotFoundPage />} />
+          <Route path="/legal/*" element={<NotFoundPage />} />
 
           {/* Public Routes */}
           <Route
@@ -145,6 +150,7 @@ const App: React.FC = () => {
                       />
                     }
                   />
+                  <Route path="*" element={<NotFoundPage />} />
                 </Routes>
 
                 <VirtualTryOnModal
