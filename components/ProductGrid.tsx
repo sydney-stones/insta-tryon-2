@@ -545,12 +545,14 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
               { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
               { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
-              { original: '/result-images/selfportrait.png', result: '/result-images/selfportrait-4k-tryon.png' },
+              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
+              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
               /* duplicate set for seamless loop */
               { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
               { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
               { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
-              { original: '/result-images/selfportrait.png', result: '/result-images/selfportrait-4k-tryon.png' },
+              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
+              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
             ].map((pair, idx) => (
               <div key={idx} className="flex gap-2 flex-shrink-0">
                 {/* Original */}
