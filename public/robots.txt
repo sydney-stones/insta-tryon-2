@@ -15,4 +15,3 @@ Disallow: /wardrobe
 
 # Sitemap
 Sitemap: https://renderedfits.com/sitemap.xml
-Sitemap: https://www.renderedfits.com/sitemap.xml
