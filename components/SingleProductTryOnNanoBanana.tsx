@@ -98,52 +98,13 @@ const SingleProductTryOnNanoBanana: React.FC<SingleProductTryOnNanoBananaProps> 
       return `- Garment Image ${i + 1}: Reference view of the garment`;
     }).join('\n');
 
-    return `You are an expert virtual fashion photographer and try-on AI specialising in accurate garment reproduction. You are given a face reference, a body reference, and ${garmentImages.length || '?'} image${garmentImages.length !== 1 ? 's' : ''} of a SINGLE garment/outfit from different angles. Your task is to create a photorealistic photo of this person wearing this exact garment.
+    return `Create a photorealistic e-commerce studio photograph of this exact person wearing this exact garment.
 
-**Reference Images Provided:**
-- Image 1 (Face): Facial likeness reference — preserve this person's unique facial features, skin tone, hair, and identity exactly
-- Image 2 (Body): Full body reference — use this for accurate body proportions, posture, and shape
-${garmentLabels || '- (Upload garment images to see labels)'}
+Preserve the person's face, skin tone, hair, body shape, and proportions exactly as shown in the reference images — they must be unmistakably recognisable as themselves. Preserve the garment's exact colour, pattern, texture, and design as shown in the garment image. The garment should fit and drape naturally on their body.
 
-**Critical Requirements:**
+Analyse the garment type and frame the shot appropriately — full-body for dresses and full outfits, three-quarter for tops and jackets, close-up portrait for jewellery and accessories, full-body with lower angle for footwear.
 
-1. **Complete Identity Preservation**:
-   - The face MUST perfectly match the facial reference (features, skin tone, expression, hair)
-   - Maintain the person's exact body type and proportions from the body reference
-   - The person should look EXACTLY like themselves, just wearing the new garment
-
-2. **Garment Accuracy — THIS IS THE HIGHEST PRIORITY**:
-   - Study ALL provided garment images carefully before generating
-   - Reproduce the EXACT style, silhouette, cut, and shape of the garment — do not alter or simplify the design
-   - Reproduce the EXACT colour(s), pattern, print, texture, and fabric appearance
-   - Preserve every visible detail: logos, embroidery, buttons, zips, stitching, pockets, labels, tags, hems, cuffs, collar shape
-   - If a front AND back view are provided, ensure both sides are accurately represented (the front should match the front image, and the garment structure visible from behind should match the back image)
-   - If a model-worn reference is provided, use it to understand how the garment drapes, fits, and falls on a real body — replicate that same fit and draping behaviour on this person's body type
-   - The garment should fit naturally on this specific person's body proportions — accounting for their height, shoulder width, torso length, and build
-   - Adapt realistic wrinkles, folds, and fabric tension that are consistent with the garment's material and the person's pose
-
-3. **Professional Model Pose**:
-   - Place the person in a natural, relaxed standing model pose suitable for e-commerce
-   - The pose should showcase the garment effectively — front-facing to display the garment's design
-   - Natural, confident posture with good balance
-
-4. **Studio Environment**:
-   - Clean, neutral studio backdrop (light gray, #f0f0f0)
-   - Professional studio lighting that highlights both the person and the garment
-   - Soft, even lighting with appropriate shadows that show fabric texture and depth
-
-5. **Photorealistic Quality**:
-   - The final image must be completely photorealistic and indistinguishable from a professional studio photograph
-   - Seamless integration between the person and the garment
-   - Natural skin tones, fabric textures, and lighting
-   - No AI artefacts, blurring, or distortion on the garment details
-
-6. **Image Composition**:
-   - Full-body shot showing the complete garment from head to toe
-   - Person should be centered and well-framed
-   - Output MUST be exactly 1080 pixels wide by 1350 pixels tall (4:5 aspect ratio)
-
-Return ONLY the final photorealistic virtual try-on image.`;
+Natural, relaxed model pose. Clean light grey seamless studio backdrop. Soft, diffused studio lighting. 85mm portrait lens. The photograph must be indistinguishable from a real professional studio shot. 9:16 Aspect ratio`;
   };
 
   const getResultFilename = (): string => {

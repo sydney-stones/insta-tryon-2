@@ -127,7 +127,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               Virtual Try-on
             </h1>
             <p className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed mb-10 sm:mb-12 max-w-3xl mx-auto font-light">
-              Solution for Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to every screen 24/7.
+              The future of Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to your customers screen 24/7.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -239,10 +239,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-gray-900 mb-4">
-              Simple, Transparent Pricing
+              Our Pricing
             </h2>
             <p className="text-gray-500 text-base max-w-lg mx-auto mb-8">
-              No developer required. Cancel anytime.
+              Simple integration. Cancel anytime.
             </p>
 
             {/* Toggle */}
@@ -528,6 +528,61 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         </div>
       </div>
 
+      {/* ===== SECTION 6b: RESULTS CAROUSEL ===== */}
+      <div className="bg-white py-16 sm:py-20 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
+            See the Results
+          </h2>
+          <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
+            Original product images transformed into photorealistic try-on shots.
+          </p>
+        </div>
+        {/* Scrolling track — infinite loop via CSS animation */}
+        <div className="relative">
+          <div className="flex gap-4 animate-scroll-carousel" style={{ width: 'max-content' }}>
+            {[
+              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
+              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
+              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
+              { original: '/result-images/selfportrait.png', result: '/result-images/selfportrait-4k-tryon.png' },
+              /* duplicate set for seamless loop */
+              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
+              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
+              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
+              { original: '/result-images/selfportrait.png', result: '/result-images/selfportrait-4k-tryon.png' },
+            ].map((pair, idx) => (
+              <div key={idx} className="flex gap-2 flex-shrink-0">
+                {/* Original */}
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={pair.original}
+                    alt="Original item"
+                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
+                    loading="lazy"
+                  />
+                  <span className="absolute bottom-2 left-2 bg-black/50 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
+                    Original item
+                  </span>
+                </div>
+                {/* Result */}
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={pair.result}
+                    alt="Rendered Fits result"
+                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
+                    loading="lazy"
+                  />
+                  <span className="absolute bottom-2 right-2 bg-[#444833]/80 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
+                    Rendered Fits
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* ===== SECTION 7: BRANDED FOOTER / CTA ===== */}
       <div className="bg-[#444833] py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -557,15 +612,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 8: LEGAL FOOTER ===== */}
       <div className="bg-[#3a3d2d] py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Legal links row */}
+          {/* Links row */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-5">
             <Link to="/legal" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Legal</Link>
-            <Link to="/legal/website-legal-documents" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Website Legal Documents</Link>
-            <Link to="/legal/app-privacy-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">App Privacy Policy</Link>
-            <Link to="/legal/end-user-terms" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">End-User Terms</Link>
-            <Link to="/legal/merchant-terms" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Merchant Terms</Link>
-            <Link to="/legal/biometric-policy" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Biometric Policy</Link>
-            <Link to="/legal/data-processing-agreement" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Data Processing Agreement</Link>
+            <Link to="/contact" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Contact Us</Link>
           </div>
           {/* Divider */}
           <div className="border-t border-white/10 mb-5" />

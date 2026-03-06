@@ -94,3 +94,7 @@ body {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
+
+.animate-scroll-carousel {
+  animation: scroll 35s linear infinite;
+}
