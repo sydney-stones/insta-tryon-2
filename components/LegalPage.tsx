@@ -247,222 +247,239 @@ Rendered Fits Ltd
 Company No. 16922551 | VAT No. 510026164
 50-54 Oswald Road, Scunthorpe, North Lincolnshire, DN15 7PQ
 mail@renderedfits.com | renderedfits.com
-
+ 
 Privacy Policy
 
 Effective Date: February 2026
 Last Updated: February 2026
 
 1. Introduction
-This Privacy Policy explains how Rendered Fits Ltd ("we", "us", "our", or the "Company") collects, uses, stores, shares, and protects personal information in connection with the Rendered Fits virtual try-on application (the "App"). The App is available to Shopify merchants ("Merchants") via the Shopify App Store and provides an AI-powered virtual try-on feature for the Merchant's customers ("End Users" or "Customers").
+This Privacy Policy explains how Rendered Fits Ltd (“we”, “us”, “our”, or the “Company”) collects, uses, stores, shares, and protects personal information in connection with the Rendered Fits virtual try-on application (the “App”). The App is available to Shopify merchants (“Merchants”) via the Shopify App Store and provides an AI-powered virtual try-on feature for the Merchant’s customers (“End Users” or “Customers”).
 This Privacy Policy applies to all personal information we process in connection with the App, including information relating to Merchants and their Customers. This Privacy Policy should be read in conjunction with our Merchant Terms and Conditions and our Data Processing Agreement.
-We are committed to protecting the privacy and security of personal information. We process personal data in accordance with the UK General Data Protection Regulation ("UK GDPR"), the Data Protection Act 2018, the EU General Data Protection Regulation ("EU GDPR"), the California Consumer Privacy Act/California Privacy Rights Act ("CCPA/CPRA"), and all other applicable data protection and privacy laws.
+We are committed to protecting the privacy and security of personal information. We process personal data in accordance with the UK General Data Protection Regulation (“UK GDPR”), the Data Protection Act 2018, the EU General Data Protection Regulation (“EU GDPR”), the California Consumer Privacy Act/California Privacy Rights Act (“CCPA/CPRA”), and all other applicable data protection and privacy laws.
 
 2. Who We Are
 Data Controller and Data Processor
 The role we play in relation to personal data depends on whose data is being processed:
-•  For Merchant account data (shop domain, billing information, usage analytics): We act as a data controller, meaning we determine the purposes and means of processing this data.
-•  For End User data processed through the Virtual Try-On Feature (customer photographs, IP addresses, session identifiers): We act as a data processor on behalf of the Merchant, who is the data controller. Our processing of End User data is governed by our Data Processing Agreement with the Merchant.
+•	For Merchant account data (shop domain, billing information, usage analytics): We act as a data controller, meaning we determine the purposes and means of processing this data.
+•	For End User data processed through the Virtual Try-On Feature (customer photographs, IP addresses, session identifiers): We act as a data processor on behalf of the Merchant, who is the data controller. Our processing of End User data is governed by our Data Processing Agreement with the Merchant.
 
 Our details:
 Rendered Fits Ltd
 Company Registration Number: 16922551
 Registered Office: 50-54 Oswald Road, Scunthorpe, North Lincolnshire, DN15 7PQ, United Kingdom
 Email: mail@renderedfits.com
+ICO Registration Number: [TO BE OBTAINED PRIOR TO LAUNCH]
 
 3. Information We Collect
 We collect and process the following categories of personal information:
 
-3.1 Information Collected Through Shopify's APIs (Merchant Data)
-When a Merchant installs the App, we collect the following information through Shopify's APIs:
-•  Shop domain and shop ID — used for App authentication, billing, and account identification. Where a sole trader operates the store, this may constitute personal data.
-•  Subscription and billing plan data — collected via the Shopify Billing API, including plan tier, usage limits, and billing period. Used to manage the Merchant's subscription and enforce plan limits.
-•  App subscription status — received via the APP_SUBSCRIPTIONS_UPDATE webhook. Used to manage billing cycle resets and usage limit enforcement.
-•  Order identifiers — received via the orders/create webhook, including order ID, cart token, and product handles. Used solely for the purpose of attributing completed purchases to virtual try-on sessions (conversion tracking).
-We also handle Shopify's mandatory GDPR compliance webhooks: customers/data_request, customers/redact, and shop/redact.
+3.1 Information Collected Through Shopify’s APIs (Merchant Data)
+When a Merchant installs the App, we collect the following information through Shopify’s APIs:
+•	Shop domain and shop ID — used for App authentication, billing, and account identification. Where a sole trader operates the store, this may constitute personal data.
+•	Subscription and billing plan data — collected via the Shopify Billing API, including plan tier, usage limits, and billing period. Used to manage the Merchant’s subscription and enforce plan limits.
+•	App subscription status — received via the APP_SUBSCRIPTIONS_UPDATE webhook. Used to manage billing cycle resets and usage limit enforcement.
+•	Order identifiers — received via the orders/create webhook, including order ID, cart token, and product handles. Used solely for the purpose of attributing completed purchases to virtual try-on sessions (conversion tracking).
+We also handle Shopify’s mandatory GDPR compliance webhooks: customers/data_request, customers/redact, and shop/redact.
 
 3.2 Information Collected Directly from Merchants
-We do not ask Merchants for separate contact details or registration information. Authentication is handled entirely through Shopify's OAuth 2.0 Token Exchange, and Merchants access the App directly from their Shopify Admin.
-The App generates automated usage logs related to the Merchant's use of the App:
-•  Number of AI image generations consumed against the Merchant's plan limit
-•  Aggregated analytics data, including virtual try-on conversion rate, attributed revenue, and conversion comparison metrics
-These logs are used solely to display the Merchant's analytics dashboard and enforce billing plan limits.
+We do not ask Merchants for separate contact details or registration information. Authentication is handled entirely through Shopify’s OAuth 2.0 Token Exchange, and Merchants access the App directly from their Shopify Admin.
+The App generates automated usage logs related to the Merchant’s use of the App:
+•	Number of AI image generations consumed against the Merchant’s plan limit
+•	Aggregated analytics data, including virtual try-on conversion rate, attributed revenue, and conversion comparison metrics
+These logs are used solely to display the Merchant’s analytics dashboard and enforce billing plan limits.
 
 3.3 Information Collected from End Users (Customers)
-When a Customer uses the Virtual Try-On Feature on a Merchant's store, we collect the following:
+When a Customer uses the Virtual Try-On Feature on a Merchant’s store, we collect the following:
 
-Data Type | Purpose | Retention
-Customer-uploaded photograph | Processed by the AI Service (Google Gemini API) to generate a virtual try-on image. The photo is sent directly from the Customer's browser to the AI Service. | Transient. Cached temporarily in cloud storage during the active session. Automatically deleted by a cleanup function that runs every 24 hours and removes files for expired sessions.
-IP address | Used solely for rate limiting (e.g., maximum generations per IP per day) to prevent abuse and protect system resources. | Session-scoped. Stored temporarily in the application's rate-limiting system and expires automatically when the session ends.
-Session ID | Stored in the Customer's browser localStorage to maintain session continuity and enable conversion attribution. | Persists in the Customer's browser until cleared by the Customer or until the session expires.
-Order-related identifiers (order ID, cart token) | Received via Shopify webhooks for the limited purpose of attributing completed purchases to virtual try-on sessions, enabling Merchants to measure ROI. | Retained as aggregated analytics for the duration of the Merchant's active subscription. Individual identifiers are not retained beyond the attribution window.
-Product handles in Shopify cart attributes | Stored to enable conversion tracking between virtual try-on sessions and completed purchases. | Session-scoped, managed through Shopify's cart attribute system.
+Data Type	Purpose	Retention
+Customer-uploaded photograph	Processed by the AI Service to generate a virtual try-on image. The photo is sent directly from the Customer’s browser to the AI Service.	Transient. Cached temporarily in cloud storage during the active session. Automatically deleted by a cleanup function that runs every 24 hours and removes files for expired sessions.
+IP address	Used solely for rate limiting (e.g., maximum generations per IP per day) to prevent abuse and protect system resources.	Session-scoped. Stored temporarily in the application’s rate-limiting system and expires automatically when the session ends.
+Session ID	Stored in the Customer’s browser localStorage to maintain session continuity and enable conversion attribution.	Persists in the Customer’s browser until cleared by the Customer or until the session expires.
+Order-related identifiers (order ID, cart token)	Received via Shopify webhooks for the limited purpose of attributing completed purchases to virtual try-on sessions, enabling Merchants to measure ROI.	Retained as aggregated analytics for the duration of the Merchant’s active subscription. Individual identifiers are not retained beyond the attribution window.
+Product handles in Shopify cart attributes	Stored to enable conversion tracking between virtual try-on sessions and completed purchases.	Session-scoped, managed through Shopify’s cart attribute system.
 
 3.4 Information We Do NOT Collect
 We want to be clear about the data we do not collect or process:
-•  Customer names
-•  Customer email addresses
-•  Customer postal addresses
-•  Customer payment or financial details
-•  Persistent, non-essential cookies
-•  Browsing history or navigation data
-•  Behavioural tracking data
-•  Biometric identifiers or biometric templates (we do not extract, store, or create facial geometry scans, fingerprints, voiceprints, or any biometric template from Customer photographs)
+•	Customer names
+•	Customer email addresses
+•	Customer postal addresses
+•	Customer payment or financial details
+•	Persistent, non-essential cookies
+•	Browsing history or navigation data
+•	Behavioural tracking data
+•	Biometric identifiers or biometric templates (we do not extract, store, or create facial geometry scans, fingerprints, voiceprints, or any biometric template from Customer photographs)
 
 4. How We Use Information
 All personal information we collect is used exclusively for the following purposes:
-•  Generating AI virtual try-on images for Customers
-•  Providing and operating the App for Merchants
-•  Managing Merchant subscriptions, billing, and plan enforcement
-•  Enforcing rate limits to prevent abuse
-•  Attributing conversions to enable Merchants to measure the ROI of the Virtual Try-On Feature
-•  Displaying analytics and usage data on the Merchant's dashboard
-•  Complying with Shopify's mandatory GDPR webhooks (customer data request, customer data erasure, shop data erasure)
-•  Maintaining the security and integrity of the App
+•	Generating AI virtual try-on images for Customers
+•	Providing and operating the App for Merchants
+•	Managing Merchant subscriptions, billing, and plan enforcement
+•	Enforcing rate limits to prevent abuse
+•	Attributing conversions to enable Merchants to measure the ROI of the Virtual Try-On Feature
+•	Displaying analytics and usage data on the Merchant’s dashboard
+•	Complying with Shopify’s mandatory GDPR webhooks (customer data request, customer data erasure, shop data erasure)
+•	Maintaining the security and integrity of the App
 
 We do not use any collected data for:
-•  Advertising or ad targeting
-•  Marketing or promotional purposes
-•  Profiling or automated decision-making
-•  Selling, renting, leasing, or trading to third parties
-•  Training artificial intelligence or machine learning models (other than the real-time generation of the requested virtual try-on image)
+•	Advertising or ad targeting
+•	Marketing or promotional purposes
+•	Profiling or automated decision-making
+•	Selling, renting, leasing, or trading to third parties
+•	Training artificial intelligence or machine learning models (other than the real-time generation of the requested virtual try-on image)
 
 5. Legal Basis for Processing
 Under the UK GDPR and EU GDPR, we must have a valid legal basis for processing personal data. The legal bases we rely on for each category of processing are set out below:
 
-Processing Activity | Legal Basis (Article 6 UK GDPR) | Additional Basis (if applicable)
-Processing Merchant account data (shop domain, billing, subscription) | Article 6(1)(b) — Performance of a contract (the Merchant Agreement) | N/A
-Processing Merchant usage analytics | Article 6(1)(f) — Legitimate interests (providing dashboard analytics and enforcing plan limits) | N/A
-Processing End User photographs for virtual try-on image generation | Article 6(1)(a) — Consent (obtained via the in-widget consent mechanism before photo upload) | To the extent that photo processing involves special category data (biometric data), we rely on Article 9(2)(a) — Explicit consent
-Processing End User IP addresses for rate limiting | Article 6(1)(f) — Legitimate interests (preventing abuse and protecting system resources) | N/A
-Processing End User session IDs for conversion attribution | Article 6(1)(f) — Legitimate interests (enabling Merchants to measure ROI) | N/A
-Processing order identifiers for conversion attribution | Article 6(1)(f) — Legitimate interests (enabling Merchants to measure ROI) | N/A
-Responding to GDPR compliance webhooks | Article 6(1)(c) — Legal obligation (compliance with data protection laws) | N/A
+Processing Activity	Legal Basis (Article 6 UK GDPR)	Additional Basis (if applicable)
+Processing Merchant account data (shop domain, billing, subscription)	Article 6(1)(b) — Performance of a contract (the Merchant Agreement)	N/A
+Processing Merchant usage analytics	Article 6(1)(f) — Legitimate interests (providing dashboard analytics and enforcing plan limits)	N/A
+Processing End User photographs for virtual try-on image generation	Article 6(1)(a) — Consent (obtained via the in-widget consent mechanism before photo upload)	To the extent that photo processing involves special category data (biometric data), we rely on Article 9(2)(a) — Explicit consent
+Processing End User IP addresses for rate limiting	Article 6(1)(f) — Legitimate interests (preventing abuse and protecting system resources)	N/A
+Processing End User session IDs for conversion attribution	Article 6(1)(f) — Legitimate interests (enabling Merchants to measure ROI)	N/A
+Processing order identifiers for conversion attribution	Article 6(1)(f) — Legitimate interests (enabling Merchants to measure ROI)	N/A
+Responding to GDPR compliance webhooks	Article 6(1)(c) — Legal obligation (compliance with data protection laws)	N/A
 
 Where we rely on legitimate interests as a legal basis, we have conducted a balancing assessment to ensure that our interests do not override the rights and freedoms of the individuals concerned. Details of these assessments are available upon request.
 
 6. Consent for End User Photo Processing
 Before any Customer photograph is uploaded or processed through the Virtual Try-On Feature, the Customer is presented with a consent notice within the storefront widget. This consent notice:
-•  Clearly explains that the Customer's photograph will be processed using AI technology to generate a virtual try-on image
-•  Identifies Rendered Fits Ltd as the processor and the Merchant as the controller
-•  States that the photograph will be sent to Google's AI service (Gemini API) for processing
-•  Confirms that the photograph is processed transiently and is not stored long-term
-•  Provides a link to this Privacy Policy for full details
-•  Requires the Customer to actively confirm their consent before the upload function is enabled
+•	Clearly explains that the Customer’s photograph will be processed using AI technology to generate a virtual try-on image
+•	Identifies Rendered Fits Ltd as the processor and the Merchant as the controller
+•	States that the photograph will be sent to the AI service for processing
+•	Confirms that the photograph is processed transiently and is not stored long-term
+•	Provides a link to this Privacy Policy for full details
+•	Requires the Customer to actively confirm their consent before the upload function is enabled
 
 Consent is specific, informed, and unambiguous. Customers may withdraw consent at any time by choosing not to use the Virtual Try-On Feature. Withdrawal of consent does not affect the lawfulness of processing based on consent before its withdrawal.
-
 7. Sharing and Disclosure of Personal Information
 We do not sell, rent, lease, trade, or otherwise commercially exploit personal information. We share personal information only in the following limited circumstances:
 
 7.1 Third-Party Service Providers (Sub-Processors)
 We use the following third-party service providers who may process personal information on our behalf:
 
-Sub-Processor | Purpose | Data Processed | Location
-Google LLC (Gemini API) | AI image generation — processing Customer photographs to generate virtual try-on images | Customer photographs (transient processing) | europe-west2
-Google Cloud Platform | Cloud infrastructure hosting and temporary file storage | Temporary photo cache, application data | europe-west2
-Shopify Inc. | Platform hosting, authentication, billing, webhooks | Merchant account data, order identifiers | Canada / United States
+Sub-Processor	Purpose	Data Processed	Location
+AI image generation service — processing Customer photographs to generate virtual try-on images	Customer photographs (transient processing)	europe-west2
+Google Cloud Platform	Cloud infrastructure hosting and temporary file storage	Temporary photo cache, application data	europe-west2
+Shopify Inc.	Platform hosting, authentication, billing, webhooks	Merchant account data, order identifiers	Canada / United States
 
 All sub-processors are bound by contractual obligations to process personal information only in accordance with our instructions and applicable data protection laws. We maintain an up-to-date sub-processor register which is available upon request.
 
 7.2 Other Disclosures
 We may also disclose personal information where:
-•  Required by law, regulation, court order, or governmental or regulatory authority
-•  Necessary to protect our rights, property, or safety, or the rights, property, or safety of others
-•  In connection with a merger, acquisition, reorganisation, or sale of all or substantially all of our assets, in which case the acquiring entity will be bound by this Privacy Policy
+•	Required by law, regulation, court order, or governmental or regulatory authority
+•	Necessary to protect our rights, property, or safety, or the rights, property, or safety of others
+•	In connection with a merger, acquisition, reorganisation, or sale of all or substantially all of our assets, in which case the acquiring entity will be bound by this Privacy Policy
 
 8. International Data Transfers
-Personal information processed through the App may be transferred to and processed in countries outside the United Kingdom and the European Economic Area ("EEA"), including to:
-•  Google servers (for AI image generation and cloud hosting) — which may be located in the United States or other jurisdictions
-•  Shopify servers — located in Canada and the United States
+Personal information processed through the App may be transferred to and processed in countries outside the United Kingdom and the European Economic Area (“EEA”), including to:
+•	Google servers (for AI image generation and cloud hosting) — which may be located in the United States or other jurisdictions
+•	Shopify servers — located in Canada and the United States
 
 Where personal data is transferred outside the UK or EEA, we ensure that adequate safeguards are in place in accordance with applicable data protection laws. These safeguards include:
-•  The UK International Data Transfer Agreement (UK IDTA) or the UK Addendum to the EU Standard Contractual Clauses, where applicable
-•  The European Commission's Standard Contractual Clauses (SCCs) for transfers from the EEA
-•  Adequacy decisions, where the destination country has been recognised as providing an adequate level of data protection
-•  Additional technical and organisational measures, including encryption in transit and at rest, and transient-only processing of sensitive data
+•	The UK International Data Transfer Agreement (UK IDTA) or the UK Addendum to the EU Standard Contractual Clauses, where applicable
+•	The European Commission’s Standard Contractual Clauses (SCCs) for transfers from the EEA
+•	Adequacy decisions, where the destination country has been recognised as providing an adequate level of data protection
+•	Additional technical and organisational measures, including encryption in transit and at rest, and transient-only processing of sensitive data
 
 Google LLC participates in the EU-U.S. Data Privacy Framework, which has been recognised as providing adequate protection by the European Commission. Further details on our international transfer safeguards are available upon request.
 
 9. Data Retention
 We retain personal information only for as long as necessary to fulfil the purposes for which it was collected, or as required by law:
 
-Data Type | Retention Period | Deletion Method
-Customer photographs and generated images | Transient. Cached temporarily in cloud storage during the active session. Automatically deleted by a cleanup function that runs every 24 hours and removes all files for expired sessions. | Automated deletion via scheduled cleanup function
-IP-based rate-limit records | Session-scoped. Stored in the application's rate-limiting system and expire automatically. | Automatic expiry
-Session IDs (in Customer's browser localStorage) | Persists until cleared by the Customer or session expiry | Customer-controlled (browser data)
-Merchant billing and subscription data | Retained for the duration of the Merchant's active subscription | Deleted upon app uninstall in accordance with Shopify's GDPR webhook requirements (shop/redact)
-Merchant aggregated analytics data | Retained for the duration of the Merchant's active subscription | Deleted upon app uninstall in accordance with Shopify's GDPR webhook requirements (shop/redact)
+Data Type	Retention Period	Deletion Method
+Customer photographs and generated images	Transient. Cached temporarily in cloud storage during the active session. Automatically deleted by a cleanup function that runs every 24 hous and removes all files for expired sessions.	Automated deletion via scheduled cleanup function
+IP-based rate-limit records	Session-scoped. Stored in the application’s rate-limiting system and expire automatically.	Automatic expiry
+Session IDs (in Customer’s browser localStorage)	Persists until cleared by the Customer or session expiry	Customer-controlled (browser data)
+Merchant billing and subscription data	Retained for the duration of the Merchant’s active subscription	Deleted upon app uninstall in accordance with Shopify’s GDPR webhook requirements (shop/redact)
+Merchant aggregated analytics data	Retained for the duration of the Merchant’s active subscription	Deleted upon app uninstall in accordance with Shopify’s GDPR webhook requirements (shop/redact)
 
 10. Your Rights
 Under applicable data protection laws, individuals have the following rights in relation to their personal information:
 
-Right | Description
-Right of access | You have the right to request a copy of the personal information we hold about you.
-Right to rectification | You have the right to request that we correct any inaccurate or incomplete personal information.
-Right to erasure | You have the right to request that we delete your personal information, subject to certain legal exceptions.
-Right to restriction of processing | You have the right to request that we restrict the processing of your personal information in certain circumstances.
-Right to data portability | You have the right to receive your personal information in a structured, commonly used, and machine-readable format, and to transmit it to another controller.
-Right to object | You have the right to object to processing based on legitimate interests. We will cease processing unless we can demonstrate compelling legitimate grounds.
-Right to withdraw consent | Where processing is based on consent, you have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before withdrawal.
-Right not to be subject to automated decision-making | You have the right not to be subject to decisions based solely on automated processing that produce legal or similarly significant effects. We do not make such decisions.
+Right	Description
+Right of access	You have the right to request a copy of the personal information we hold about you.
+Right to rectification	You have the right to request that we correct any inaccurate or incomplete personal information.
+Right to erasure	You have the right to request that we delete your personal information, subject to certain legal exceptions.
+Right to restriction of processing	You have the right to request that we restrict the processing of your personal information in certain circumstances.
+Right to data portability	You have the right to receive your personal information in a structured, commonly used, and machine-readable format, and to transmit it to another controller.
+Right to object	You have the right to object to processing based on legitimate interests. We will cease processing unless we can demonstrate compelling legitimate grounds.
+Right to withdraw consent	Where processing is based on consent, you have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before withdrawal.
+Right not to be subject to automated decision-making	You have the right not to be subject to decisions based solely on automated processing that produce legal or similarly significant effects. We do not make such decisions.
 
 How to exercise your rights:
-•  Merchants: Contact us at mail@renderedfits.com with your request.
-•  End Users (Customers): In the first instance, please contact the Merchant whose store you used the Virtual Try-On Feature on, as the Merchant is the data controller for your data. You may also contact us directly at mail@renderedfits.com and we will assist in facilitating your request.
+•	Merchants: Contact us at mail@renderedfits.com with your request.
+•	End Users (Customers): In the first instance, please contact the Merchant whose store you used the Virtual Try-On Feature on, as the Merchant is the data controller for your data. You may also contact us directly at mail@renderedfits.com and we will assist in facilitating your request.
 
 We will respond to all data subject requests within one (1) month of receipt, or within the timeframe required by applicable law. In complex cases, we may extend this period by up to two (2) additional months, and we will inform you of any such extension and the reasons for it.
 
-Additional rights for California residents (CCPA/CPRA):
-If you are a California resident, you may also have the following additional rights:
-•  Right to know what personal information is collected, used, disclosed, and sold
-•  Right to delete personal information
-•  Right to opt out of the sale or sharing of personal information (note: we do not sell or share personal information)
-•  Right to non-discrimination for exercising your privacy rights
-•  Right to limit the use and disclosure of sensitive personal information
+11. Additional Information for US Residents
+11.1 Biometric Information Notice (All US States)
+This section provides additional information for residents of the United States regarding the processing of biometric data through the Virtual Try-On Feature.
+When you upload a photograph to the Virtual Try-On Feature, our AI technology analyses the facial features and body shape in your photograph to generate a virtual try-on image. To the extent that this processing may involve biometric identifiers or biometric information as defined under applicable state law, the following applies:
+a)	What is collected. Your photograph, which contains your facial image, is transmitted to the AI service for processing. The AI analyses the visual content of your photograph, including your facial features, to generate the composite try-on image.
+b)	What is NOT collected. We do not extract, compute, create, or store any biometric identifier or biometric template from your photograph. No facial geometry scan, faceprint, iris scan, fingerprint, voiceprint, or other biometric template is created or retained at any point during processing.
+c)	Purpose. Your photograph is processed solely for the purpose of generating the virtual try-on image you requested. It is not used for identification, verification, surveillance, profiling, advertising, or any other purpose.
+d)	Retention and destruction. Your photograph is cached temporarily for the duration of your active session (maximum 24 hours) and is permanently and automatically destroyed when the session expires. We do not maintain any permanent database of photographs or biometric data. Our full retention schedule and destruction procedures are set out in our Biometric Data Retention and Destruction Policy, available at: renderedfits.com/legal/biometric-policy
+e)	No sale or disclosure. We do not sell, lease, trade, or otherwise profit from your photograph or any data derived from it. We do not disclose your photograph to any third party other than the AI service for the sole purpose of generating your try-on image.
+f)	Consent. By uploading your photograph to the Virtual Try-On Feature, you acknowledge that you have received this notice and you provide your informed, written consent and release for your photograph to be processed as described above, including the analysis of your facial features for the sole purpose of generating a virtual try-on image.
+g)	Applicable laws. This notice is provided in compliance with the Illinois Biometric Information Privacy Act (740 ILCS 14) (BIPA), the Texas Capture or Use of Biometric Identifier Act (Tex. Bus. & Com. Code § 503.001), the Washington Biometric Privacy Protection Act (RCW 19.375), and other applicable US state biometric privacy laws.
+11.2 California Privacy Rights (CCPA/CPRA)
+If you are a California resident, the following additional rights and disclosures apply under the California Consumer Privacy Act, as amended by the California Privacy Rights Act:
+a)	Categories of personal information collected. Photographs (which may constitute biometric information and are classified as sensitive personal information under the CPRA), IP addresses (internet or other electronic network activity information), and session identifiers (unique personal identifiers).
+b)	Purpose of collection. As set out in Section 4 of this Privacy Policy. We do not use or disclose sensitive personal information for purposes other than those permitted under CPRA Section 1798.121.
+c)	Sale and sharing. We do not sell personal information. We do not share personal information for cross-context behavioural advertising.
+d)	Right to know. You have the right to request that we disclose the categories and specific pieces of personal information we have collected about you.
+e)	Right to delete. You have the right to request deletion of personal information we have collected. Given our transient processing model, your photograph will typically have been automatically deleted before any such request is received.
+f)	Right to limit use of sensitive personal information. You have the right to limit the use and disclosure of your sensitive personal information. We already limit use to the purposes disclosed in this Privacy Policy.
+g)	Non-discrimination. We will not discriminate against you for exercising any of your CCPA/CPRA rights.
+To exercise your California privacy rights, contact us at: mail@renderedfits.com. We will verify your identity before processing your request.
+11.3 Other US State Privacy Laws
+Residents of other US states with applicable consumer privacy or biometric privacy laws (including but not limited to Colorado, Connecticut, Virginia, Utah, Montana, Oregon, and New Jersey) may have additional rights regarding their personal information. To the extent required by applicable state law, we will honour requests to access, correct, delete, or opt out of the processing of your personal data. To exercise any such rights, please contact us at: mail@renderedfits.com
+For full details of our biometric data retention and destruction practices, please refer to our Biometric Data Retention and Destruction Policy at: renderedfits.com/legal/biometric-policy
 
-11. Children's Privacy
+12. Children’s Privacy
 The Virtual Try-On Feature is intended for individuals aged 16 and over. We do not knowingly collect personal information from children under the age of 16 (or under the age of 13 in jurisdictions where that is the applicable minimum age).
 If we become aware that we have collected personal information from a child under the applicable minimum age without appropriate consent, we will take steps to delete such information as soon as reasonably practicable.
 If you are a parent or guardian and believe your child has provided personal information through the Virtual Try-On Feature, please contact us at mail@renderedfits.com.
 
-12. Data Security
+13. Data Security
 We implement appropriate technical and organisational security measures to protect personal information against unauthorised access, alteration, disclosure, or destruction. These measures include:
-•  Encryption of data in transit using TLS/HTTPS
-•  Transient processing of Customer photographs with automated deletion
-•  Session-scoped data storage with automatic expiry
-•  Authentication via Shopify's OAuth 2.0 Token Exchange (no separate credentials stored)
-•  Rate limiting to prevent abuse and protect system resources
-•  Access controls restricting access to personal data to authorised personnel only
-•  Regular review and monitoring of security measures
+•	Encryption of data in transit using TLS/HTTPS
+•	Transient processing of Customer photographs with automated deletion
+•	Session-scoped data storage with automatic expiry
+•	Authentication via Shopify’s OAuth 2.0 Token Exchange (no separate credentials stored)
+•	Rate limiting to prevent abuse and protect system resources
+•	Access controls restricting access to personal data to authorised personnel only
+•	Regular review and monitoring of security measures
 
 While we take reasonable steps to protect personal information, no method of transmission over the internet or method of electronic storage is 100% secure. We cannot guarantee the absolute security of personal information.
 
-13. Cookies and Similar Technologies
+14. Cookies and Similar Technologies
 The App only uses essential and functional cookies.
-The App uses browser localStorage to store a session ID for the purpose of maintaining session continuity and enabling conversion attribution. This session ID is not a cookie and is not shared with any third party. It remains in the Customer's browser and can be cleared by the Customer at any time through their browser settings.
+The App uses browser localStorage to store a session ID for the purpose of maintaining session continuity and enabling conversion attribution. This session ID is not a cookie and is not shared with any third party. It remains in the Customer’s browser and can be cleared by the Customer at any time through their browser settings.
 We do not log browsing behaviour, store navigation data, or use any form of behavioural tracking.
 
-14. AI-Generated Content Transparency
-Virtual Try-On Images produced by the App are generated using artificial intelligence (currently Google's Gemini API). In accordance with emerging AI transparency regulations, including the EU AI Act (Article 50, effective August 2026):
-•  All Virtual Try-On Images are clearly identified to the Customer as AI-generated within the storefront widget
-•  Virtual Try-On Images are illustrative only and do not constitute photographs or exact representations of real-world products
-•  We will implement machine-readable marking of AI-generated content in accordance with applicable legal requirements as they come into effect
+15. AI-Generated Content Transparency
+Virtual Try-On Images produced by the App are generated using artificial intelligence. In accordance with emerging AI transparency regulations, including the EU AI Act (Article 50, effective August 2026):
+•	All Virtual Try-On Images are clearly identified to the Customer as AI-generated within the storefront widget
+•	Virtual Try-On Images are illustrative only and do not constitute photographs or exact representations of real-world products
+•	We will implement machine-readable marking of AI-generated content in accordance with applicable legal requirements as they come into effect
 
-15. Changes to This Privacy Policy
+16. Changes to This Privacy Policy
 We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will notify Merchants of any material changes by email or in-app notification at least thirty (30) days before such changes take effect.
-We encourage you to review this Privacy Policy periodically. The "Last Updated" date at the top of this policy indicates when it was last revised. Continued use of the App after changes take effect constitutes acceptance of the updated Privacy Policy.
+We encourage you to review this Privacy Policy periodically. The “Last Updated” date at the top of this policy indicates when it was last revised. Continued use of the App after changes take effect constitutes acceptance of the updated Privacy Policy.
 
-16. Complaints
+17. Complaints
 If you have any concerns or complaints about our processing of personal information, we encourage you to contact us first at mail@renderedfits.com so that we can try to resolve the matter.
-You also have the right to lodge a complaint with a supervisory authority. In the United Kingdom, this is the Information Commissioner's Office (ICO):
-•  Website: ico.org.uk
-•  Telephone: 0303 123 1113
-•  Post: Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF
+You also have the right to lodge a complaint with a supervisory authority. In the United Kingdom, this is the Information Commissioner’s Office (ICO):
+•	Website: ico.org.uk
+•	Telephone: 0303 123 1113
+•	Post: Information Commissioner’s Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF
 
 If you are located in the European Economic Area, you may lodge a complaint with the data protection authority in your country of residence.
 
-17. Contact Us
+18. Contact Us
 If you have any questions about this Privacy Policy, our data practices, or wish to exercise your data subject rights, please contact us:
 
 Rendered Fits Ltd
@@ -492,76 +509,91 @@ mail@renderedfits.com | renderedfits.com
 
 
 This document contains: (A) the End-User Terms of Use; (B) the End-User Privacy Notice; (C) the Standard Consent Flow (UK/EU/ROW); and (D) the Enhanced US Consent Flow (BIPA-compliant).
-
+ 
 PART A: END-USER TERMS OF USE
 Virtual Try-On Feature
 
 IMPORTANT — PLEASE READ BEFORE USING THE VIRTUAL TRY-ON FEATURE
-By clicking "I Agree" or by uploading a photograph to the Virtual Try-On feature, you agree to these Terms of Use and to the processing of your photograph as described below. If you do not agree, please do not use the Virtual Try-On feature.
+By clicking “I Agree” or by uploading a photograph to the Virtual Try-On feature, you agree to these Terms of Use and to the processing of your photograph as described below. If you do not agree, please do not use the Virtual Try-On feature.
 
 1. What is the Virtual Try-On Feature?
-1.1  The Virtual Try-On feature (the "Feature") is provided by Rendered Fits Ltd ("we", "us", or "our") and is embedded in this online store (operated by the "Merchant"). The Feature allows you to upload a photograph of yourself and receive an AI-generated image showing you wearing a product from this store.
-1.2  The Feature is powered by artificial intelligence (currently Google's Gemini AI). The images it produces are AI-generated and are not photographs. They are illustrative only and may not accurately represent how the product will look or fit in real life.
+1.1	The Virtual Try-On feature (the “Feature”) is provided by Rendered Fits Ltd (“we”, “us”, or “our”) and is embedded in this online store (operated by the “Merchant”). The Feature allows you to upload a photograph of yourself and receive an AI-generated image showing you wearing a product from this store.
+1.2	The Feature is powered by artificial intelligence. The images it produces are AI-generated and are not photographs. They are illustrative only and may not accurately represent how the product will look or fit in real life.
 
 2. How Your Photograph is Processed
-2.1  When you upload a photograph:
-(a)  Your photograph is sent from your browser to Google's AI service (Gemini API), along with an image of the product you selected.
-(b)  Google's AI combines these to generate a virtual try-on image, which is sent back to your browser.
-(c)  Your original photograph is cached temporarily on our cloud servers during your active session. It is automatically and permanently deleted when your session expires (our cleanup system runs every 24 hours).
-(d)  The generated try-on image follows the same temporary lifecycle and is also automatically deleted.
-2.2  We do not:
-(a)  store your photograph long-term or in any permanent database;
-(b)  extract, create, or store any facial geometry scan, biometric template, or biometric identifier from your photograph;
-(c)  use your photograph for advertising, marketing, profiling, or any purpose other than generating the virtual try-on image you requested;
-(d)  sell, rent, trade, or share your photograph or any data derived from it with any third party (other than Google's AI service for the purpose of generating your try-on image); or
-(e)  use your photograph to train AI models.
+2.1	When you upload a photograph:
+(a)	Your photograph is sent from your browser to Google’s AI service, along with an image of the product you selected.
+(b)	Google’s AI combines these to generate a virtual try-on image, which is sent back to your browser.
+(c)	Your original photograph is cached temporarily on our cloud servers during your active session. It is automatically and permanently deleted when your session expires (our cleanup system runs every 24 hours).
+(d)	The generated try-on image follows the same temporary lifecycle and is also automatically deleted.
+2.2	We do not:
+(a)	store your photograph long-term or in any permanent database;
+(b)	extract, create, or store any facial geometry scan, biometric template, or biometric identifier from your photograph;
+(c)	use your photograph for advertising, marketing, profiling, or any purpose other than generating the virtual try-on image you requested;
+(d)	sell, rent, trade, or share your photograph or any data derived from it with any third party (other than Google’s AI service for the purpose of generating your try-on image); or
+(e)	use your photograph to train AI models.
 
 3. AI-Generated Content Disclaimer
-3.1  Virtual try-on images are generated by artificial intelligence. You acknowledge and agree that:
-(a)  virtual try-on images are AI-generated interpretations, not photographs or exact representations;
-(b)  the AI may not perfectly replicate colours, textures, fit, proportions, or other characteristics of the actual product;
-(c)  you should not rely on virtual try-on images as a guarantee of how a product will look or fit;
-(d)  the AI may occasionally produce unexpected, imperfect, or inaccurate results; and
-(e)  virtual try-on images are digitally marked as AI-generated content.
-(f)  the AI may slightly modify the appearance of customers, including adjustments to lighting, hair positioning, or posture
+3.1	Virtual try-on images are generated by artificial intelligence. You acknowledge and agree that:
+(a)	virtual try-on images are AI-generated interpretations, not photographs or exact representations;
+(b)	the AI may not perfectly replicate colours, textures, fit, proportions, or other characteristics of the actual product;
+(c)	you should not rely on virtual try-on images as a guarantee of how a product will look or fit;
+(d)	the AI may occasionally produce unexpected, imperfect, or inaccurate results; and
+(e)	virtual try-on images are digitally marked as AI-generated content.
+(f)	the AI may slightly modify the appearance of customers, including adjustments to lighting, hair positioning, or posture
+4. Notice Regarding Facial Features and Biometric Data
+4.1	In the course of generating your virtual try-on image, our AI technology analyses the facial features and body shape contained in the photograph you upload. We want you to understand the following before you proceed:
 
-4. Age Restriction
-4.1  The Virtual Try-On Feature is intended for use by individuals aged 16 and over. If you are under 16, you must not use this Feature. In jurisdictions where the applicable minimum age is lower (such as 13 in the United States under COPPA), the minimum age of that jurisdiction applies.
-4.2  By using the Feature, you confirm that you meet the applicable minimum age requirement.
+(a)	Purpose. Your facial features are analysed solely for the purpose of generating a virtual try-on image showing you wearing the selected product. This is the only purpose for which your photograph is processed.
 
-5. Acceptable Use
-5.1  When using the Virtual Try-On Feature, you agree that you will:
-(a)  only upload photographs of yourself;
-(b)  not upload photographs of other individuals, including children, without their explicit consent;
-(c)  not upload any image that is illegal, offensive, harmful, defamatory, obscene, or that infringes any third party's rights;
-(d)  not attempt to manipulate, reverse engineer, or abuse the Feature in any way; and
-(e)  not use the Feature for any unlawful or fraudulent purpose.
-5.2  We reserve the right to refuse or disable access to the Feature if we reasonably believe these Acceptable Use rules have been violated.
+(b)	No biometric data stored. We do not extract, create, or store any biometric identifier or biometric template (such as a facial geometry scan, faceprint, or voiceprint) from your photograph. The AI processes your photograph as a whole image to generate the try-on output — it does not isolate or record your facial measurements.
 
-6. Rate Limiting and Session Data
-6.1  To prevent abuse, we temporarily record your IP address for the purpose of rate limiting (for example, limiting the number of virtual try-on images that can be generated per hour). This record expires automatically when your session ends.
-6.2  A session identifier is stored in your browser's local storage to maintain session continuity. This is not a cookie and is not shared with third parties. You can clear it at any time through your browser settings.
-6.3  If you complete a purchase after using the Feature, an anonymous session identifier may be used to attribute the purchase to the try-on session. This allows the Merchant to measure the effectiveness of the Feature. No personally identifiable information is used for this purpose.
+(c)	No sale or disclosure. Your photograph and any data relating to your facial features will not be sold, leased, traded, or otherwise disclosed to any third party, except to the AI service solely for the purpose of generating your virtual try-on image.
+(d)	Automatic deletion. Your photograph is cached temporarily during your active session and is permanently and automatically destroyed when your session expires. Sessions last a maximum of 24 hours. No photographs are retained beyond this period.
 
-7. Intellectual Property
-7.1  You retain ownership of any photograph you upload to the Feature. By uploading a photograph, you grant us a limited, temporary, non-exclusive licence to process it solely for the purpose of generating your virtual try-on image.
-7.2  The virtual try-on images generated by the Feature are AI-generated content. The copyright status of AI-generated images may be uncertain under applicable law. The Merchant is granted a licence to use the generated images in connection with the operation of their store. You may save and use the generated images for your personal, non-commercial use.
-7.3  All intellectual property rights in the Feature itself (including its software, design, and underlying technology) belong to Rendered Fits Ltd.
+(e)	Retention and destruction policy. We maintain a publicly available Biometric Data Retention and Destruction Policy, which sets out our full retention schedule and destruction procedures. This policy is available at: renderedfits.com/legal/biometric-policy
 
-8. No Warranties
-8.1  The Virtual Try-On Feature is provided "as is" and "as available". To the maximum extent permitted by applicable law, we disclaim all warranties, express or implied, including warranties of accuracy, merchantability, fitness for a particular purpose, and non-infringement.
-8.2  We do not guarantee that the Feature will be available at all times. The Feature may be temporarily unavailable due to maintenance, technical issues, or the unavailability of our AI service provider.
-8.3  Nothing in these Terms affects your statutory rights as a consumer under applicable law.
+4.2 	By uploading your photograph, you acknowledge that you have read and understood this notice. You consent to and release Rendered Fits Ltd to process your photograph as described in these Terms, including the analysis of your facial features for the sole purpose of generating a virtual try-on image.
 
-9. Limitation of Liability
-9.1  Nothing in these Terms limits or excludes our liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be limited or excluded by applicable law.
-9.2  Subject to the above, to the maximum extent permitted by applicable law, we shall not be liable to you for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, or goodwill arising from your use of the Feature, including any losses arising from inaccurate or unexpected AI-generated outputs.
-9.3  Our total aggregate liability to you in connection with the Feature shall not exceed one hundred pounds sterling (£100).
+4.3	You may withdraw your consent at any time by choosing not to use the Virtual Try-On Feature. Any photographs already cached will be automatically deleted when the session expires.
 
-10. Governing Law
-10.1  These Terms are governed by the laws of England and Wales. If you are a consumer, you may also benefit from any mandatory consumer protection provisions of the laws of the country in which you are resident.
+5. Age Restriction
+5.1	The Virtual Try-On Feature is intended for use by individuals aged 16 and over. If you are under 16, you must not use this Feature. In jurisdictions where the applicable minimum age is lower (such as 13 in the United States under COPPA), the minimum age of that jurisdiction applies.
+5.2	By using the Feature, you confirm that you meet the applicable minimum age requirement.
 
+6. Acceptable Use
+6.1	When using the Virtual Try-On Feature, you agree that you will:
+(a)	only upload photographs of yourself;
+(b)	not upload photographs of other individuals, including children, without their explicit consent;
+(c)	not upload any image that is illegal, offensive, harmful, defamatory, obscene, or that infringes any third party’s rights;
+(d)	not attempt to manipulate, reverse engineer, or abuse the Feature in any way; and
+(e)	not use the Feature for any unlawful or fraudulent purpose.
+6.2	We reserve the right to refuse or disable access to the Feature if we reasonably believe these Acceptable Use rules have been violated.
 
+7. Rate Limiting and Session Data
+7.1	To prevent abuse, we temporarily record your IP address for the purpose of rate limiting (for example, limiting the number of virtual try-on images that can be generated per hour). This record expires automatically when your session ends.
+7.2	A session identifier is stored in your browser’s local storage to maintain session continuity. This is not a cookie and is not shared with third parties. You can clear it at any time through your browser settings.
+7.3	If you complete a purchase after using the Feature, an anonymous session identifier may be used to attribute the purchase to the try-on session. This allows the Merchant to measure the effectiveness of the Feature. No personally identifiable information is used for this purpose.
+
+8. Intellectual Property
+8.1	You retain ownership of any photograph you upload to the Feature. By uploading a photograph, you grant us a limited, temporary, non-exclusive licence to process it solely for the purpose of generating your virtual try-on image.
+8.2	The virtual try-on images generated by the Feature are AI-generated content. The copyright status of AI-generated images may be uncertain under applicable law. The Merchant is granted a licence to use the generated images in connection with the operation of their store. You may save and use the generated images for your personal, non-commercial use.
+8.3	All intellectual property rights in the Feature itself (including its software, design, and underlying technology) belong to Rendered Fits Ltd.
+
+9. No Warranties
+9.1	The Virtual Try-On Feature is provided “as is” and “as available”. To the maximum extent permitted by applicable law, we disclaim all warranties, express or implied, including warranties of accuracy, merchantability, fitness for a particular purpose, and non-infringement.
+9.2	We do not guarantee that the Feature will be available at all times. The Feature may be temporarily unavailable due to maintenance, technical issues, or the unavailability of our AI service provider.
+9.3	Nothing in these Terms affects your statutory rights as a consumer under applicable law.
+
+10. Limitation of Liability
+10.1	Nothing in these Terms limits or excludes our liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be limited or excluded by applicable law.
+10.2	Subject to the above, to the maximum extent permitted by applicable law, we shall not be liable to you for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, or goodwill arising from your use of the Feature, including any losses arising from inaccurate or unexpected AI-generated outputs.
+10.3	Our total aggregate liability to you in connection with the Feature shall not exceed one hundred pounds sterling (£100).
+
+11. Governing Law
+11.1	These Terms are governed by the laws of England and Wales. If you are a consumer, you may also benefit from any mandatory consumer protection provisions of the laws of the country in which you are resident.
+
+ 
 PART B: END-USER PRIVACY NOTICE
 Virtual Try-On Feature — Privacy Information
 
@@ -571,38 +603,37 @@ PRIVACY AT A GLANCE
 •  We do NOT collect your name, email, address, or payment details
 •  We do NOT create or store any biometric templates or facial scans
 •  We do NOT sell, share, or use your photo for advertising or AI training
-•  Your photo is sent to Google's Gemini AI solely to generate your try-on image
+•  Your photo is sent to the AI service solely to generate your try-on image
 
 Who is responsible for your data?
 Data Controller: The Merchant whose store you are visiting (the shop owner) is the data controller — they determine why and how your data is used in connection with their store.
 Data Processor: Rendered Fits Ltd processes your data on behalf of the Merchant. We provide the Virtual Try-On technology.
 
 What data is collected?
-
-Data | Why | How Long
-Your photograph | To generate the virtual try-on image | Temporary only — deleted automatically when your session expires (cleanup runs daily)
-Your IP address | To enforce rate limits and prevent abuse | Session-scoped — expires automatically
-Session ID (in your browser) | To maintain session continuity and enable conversion tracking | Until you clear your browser data
+Data	Why	How Long
+Your photograph	To generate the virtual try-on image	Temporary only — deleted automatically when your session expires (cleanup runs daily)
+Your IP address	To enforce rate limits and prevent abuse	Session-scoped — expires automatically
+Session ID (in your browser)	To maintain session continuity and enable conversion tracking	Until you clear your browser data
 
 What data is NOT collected?
 We do not collect: your name, email address, postal address, phone number, payment details, browsing history, or any biometric identifiers or facial geometry data.
 
 Who processes your data?
-•  Google LLC (Gemini API) — receives your photograph to generate the try-on image. Google is bound by its Cloud Data Processing Addendum and does not use your photo to train AI models.
-•  Shopify Inc. — hosts the Merchant's store and processes order data for conversion attribution.
+•	Google LLC  — receives your photograph to generate the try-on image. Google is bound by its Cloud Data Processing Addendum and does not use your photo to train AI models.
+•	Shopify Inc. — hosts the Merchant’s store and processes order data for conversion attribution.
 
 International transfers
-Your photograph may be transferred to Google's servers, which may be located outside the UK/EU (including in the United States). Appropriate safeguards are in place, including Standard Contractual Clauses and the EU-U.S. Data Privacy Framework.
+Your photograph may be transferred to Google’s servers, which may be located outside the UK/EU (including in the United States). Appropriate safeguards are in place, including Standard Contractual Clauses and the EU-U.S. Data Privacy Framework.
 
 Your legal basis (UK/EU)
-Consent (Article 6(1)(a) and Article 9(2)(a) UK GDPR/EU GDPR): We process your photograph based on your explicit consent, which you provide by clicking "I Agree" before uploading.
+Consent (Article 6(1)(a) and Article 9(2)(a) UK GDPR/EU GDPR): We process your photograph based on your explicit consent, which you provide by clicking “I Agree” before uploading.
 Legitimate interests (Article 6(1)(f)): We process your IP address for rate limiting (preventing abuse) and your session ID for conversion attribution.
 
 Your rights
 Under applicable data protection laws, you have the right to access, rectify, erase, restrict, port, and object to the processing of your personal data. You can withdraw consent at any time by not using the Feature.
-To exercise your rights, contact the Merchant whose store you used, or email us at mail@renderedfits.com. You also have the right to complain to a supervisory authority (in the UK, this is the Information Commissioner's Office at ico.org.uk).
+To exercise your rights, contact the Merchant whose store you used, or email us at mail@renderedfits.com. You also have the right to complain to a supervisory authority (in the UK, this is the Information Commissioner’s Office at ico.org.uk).
 
-For our full privacy policy, visit: renderedfits.com/legal/app-privacy-policy
+For our full privacy policy, visit: renderedfits.com/privacy
 
 End of End-User Terms of Use — Version 1.0 — February 2026`;
 
@@ -640,7 +671,7 @@ The App is developed and operated by the Company. Shopify Inc. is not a party to
 1.1  In these Terms, unless the context otherwise requires, the following definitions apply:
 
 "App" means the Rendered Fits virtual try-on application, including all software, code, interfaces, widgets, and associated documentation made available by the Company to the Merchant via the Shopify App Store or otherwise.
-"AI Service" means the third-party artificial intelligence image generation service (currently Google Gemini API) used by the App to generate Virtual Try-On Images.
+"AI Service" means the third-party artificial intelligence image generation service used by the App to generate Virtual Try-On Images.
 "Company" means Rendered Fits Ltd, a company incorporated in England and Wales (company number 16922551), whose registered office is at 50-54 Oswald Road, Scunthorpe, North Lincolnshire, DN15 7PQ, United Kingdom.
 "Customer" means any individual who visits or transacts via the Merchant Store, including any end user who interacts with the Virtual Try-On Feature.
 "Customer Data" means information (including Personal Information) relating to a Customer, including order information, payment information, account information, photographs uploaded to the Virtual Try-On Feature, and any data derived from Customer interactions with the App.
@@ -684,7 +715,7 @@ The App is developed and operated by the Company. Shopify Inc. is not a party to
 3.3  The Merchant shall not represent or imply to its Customers that Virtual Try-On Images are actual photographs, exact representations, or guarantees of product appearance, fit, colour, or quality.
 
 4. AI Service Availability and Graceful Degradation
-4.1  The App incorporates a graceful degradation pattern. In the event that the AI Service (currently the Google Gemini API) is unavailable, experiences downtime, or is otherwise non-operational:
+4.1  The App incorporates a graceful degradation pattern. In the event that the AI Service is unavailable, experiences downtime, or is otherwise non-operational:
 (a)  the Virtual Try-On button will be automatically disabled or hidden on the Merchant's storefront;
 (b)  this behaviour is intentional and is designed to prevent broken functionality or a poor Customer experience;
 (c)  the rest of the Merchant's store functionality, checkout process, and core Shopify operations shall not be affected; and
@@ -693,7 +724,7 @@ The App is developed and operated by the Company. Shopify Inc. is not a party to
 
 5. Third-Party Service Providers
 5.1  The Merchant acknowledges that the App relies on third-party service providers, including but not limited to:
-(a)  Google (Gemini API) for AI image generation;
+(a)  AI service for AI image generation;
 (b)  Shopify for platform hosting, billing, authentication, and API access; and
 (c)  cloud infrastructure providers for hosting and data processing.
 5.2  Where any downtime, delay, degradation, failure, error, inaccuracy, or interruption of the App or the Virtual Try-On Feature arises from the acts or omissions of a third-party service provider, the Company shall not be responsible or liable for such downtime, delay, degradation, failure, error, inaccuracy, or interruption, provided that the Company has used reasonable endeavours in its selection of and contractual arrangements with such third-party provider.
@@ -712,7 +743,7 @@ The App is developed and operated by the Company. Shopify Inc. is not a party to
 6.7  The Company may offer a free trial period at its discretion. The terms and duration of any free trial will be communicated to the Merchant at the time of installation. At the conclusion of the free trial, the Merchant will be required to select a paid Subscription Plan to continue using the App, unless the Merchant uninstalls the App before the trial expires.
 
 7. Pricing Changes
-7.1  The Company reserves the right to change the fees for any Subscription Plan at any time. Pricing changes may be necessitated by, among other things, increases in third-party AI service costs (including Google Gemini API costs), infrastructure costs, or changes to the App's features.
+7.1  The Company reserves the right to change the fees for any Subscription Plan at any time. Pricing changes may be necessitated by, among other things, increases in third-party AI service costs, infrastructure costs, or changes to the App's features.
 7.2  The Company shall provide the Merchant with at least thirty (30) days' advance written notice (via email or in-app notification) before any price increase takes effect.
 7.3  If the Merchant does not agree to a price increase, the Merchant may cancel their Subscription Plan and uninstall the App before the new pricing takes effect. Continued use of the App after a price increase takes effect constitutes the Merchant's acceptance of the new pricing.
 
@@ -826,10 +857,10 @@ Schedule 1: Subscription Plans and Pricing
 The following Subscription Plans are available as at the date of these Terms. The Company reserves the right to amend pricing in accordance with Clause 7.
 
 Subscription Plan | Monthly Fee (excl. VAT) | Virtual Try-On Generations / Month
-Starter | £249 | 700
-Growth | £449 | 1,400
-Scale | £749 | 2,600
-Professional | £1,249 | 5,000
+Starter | £249 | 1,000
+Growth | £449 | 2,00
+Scale | £749 | 3,500
+Professional | £1,249 | 7,000
 
 Annual billing is available at a discounted rate. Annual pricing details are displayed within the App at the time of plan selection.
 Upon reaching the monthly generation limit, the Virtual Try-On Feature will be disabled for the remainder of the billing period. The Merchant may upgrade to a higher plan at any time to increase the allocation.
@@ -887,7 +918,7 @@ Background
 2.1  The Processor shall process Personal Data on behalf of the Controller only to the extent necessary to provide the App and the Virtual Try-On Feature, and only in accordance with this DPA and the Controller's documented instructions.
 2.2  The details of the processing are set out in Annex 1 (Processing Details), which forms part of this DPA. In summary:
 (a)  Subject matter: Provision of the Rendered Fits virtual try-on application
-(b)  Nature of processing: Collection, temporary storage, transmission to sub-processor (Google Gemini API), AI image generation, conversion attribution, and automated deletion
+(b)  Nature of processing: Collection, temporary storage, transmission to sub-processor, AI image generation, conversion attribution, and automated deletion
 (c)  Purpose of processing: Generating virtual try-on images for the Controller's End Users; enforcing rate limits; attributing conversions; and providing analytics to the Controller
 (d)  Duration of processing: For the term of the Principal Agreement (i.e., for as long as the App remains installed on the Controller's Merchant Store), plus any period necessary to complete deletion obligations
 
@@ -930,7 +961,7 @@ Background
 (b)  appropriate safeguards are in place in accordance with Article 46 of the UK GDPR or EU GDPR, including the UK International Data Transfer Agreement ("UK IDTA"), the UK Addendum to the EU Standard Contractual Clauses, or the European Commission's Standard Contractual Clauses ("SCCs"); or
 (c)  a derogation applies under Article 49 of the UK GDPR or EU GDPR.
 6.2  As at the date of this DPA, the following international transfers take place in connection with the Processing:
-(a)  Customer photographs are transmitted to Google's Gemini API for AI image generation. Google LLC participates in the EU-U.S. Data Privacy Framework and is bound by Google's Cloud Data Processing Addendum, which incorporates the European Commission's Standard Contractual Clauses.
+(a)  Customer photographs are transmitted to the AI service for AI image generation. Google LLC participates in the EU-U.S. Data Privacy Framework and is bound by Google's Cloud Data Processing Addendum, which incorporates the European Commission's Standard Contractual Clauses.
 (b)  Merchant account data (shop domain, billing data) is processed by Shopify Inc. in Canada and the United States. Shopify's data processing terms incorporate Standard Contractual Clauses.
 6.3  The Processor shall ensure that any sub-processor engaged in international transfers of Personal Data has entered into appropriate transfer mechanisms and that the overall level of protection for Personal Data is not undermined.
 6.4  Details of the transfer mechanisms in place for each sub-processor are set out in Annex 2 (Sub-Processor Register).
@@ -996,7 +1027,7 @@ This Annex 1 forms part of the DPA and sets out the details of the Processing in
 
 Element | Detail
 Subject matter of Processing | Provision of the Rendered Fits virtual try-on application, enabling End Users to upload photographs and receive AI-generated virtual try-on images
-Nature of Processing | Collection, temporary caching, transmission to AI sub-processor (Google Gemini API), AI-assisted image generation and compositing, session-scoped rate limiting, conversion attribution, aggregated analytics computation, and automated deletion
+Nature of Processing | Collection, temporary caching, transmission to AI sub-processor, AI-assisted image generation and compositing, session-scoped rate limiting, conversion attribution, aggregated analytics computation, and automated deletion
 Purpose of Processing | Generating virtual try-on images for End Users at the Controller's direction; enforcing per-session rate limits to prevent abuse; attributing completed purchases to virtual try-on sessions to enable the Controller to measure ROI; providing usage analytics to the Controller; and complying with Shopify's GDPR webhooks
 Duration of Processing | For the term of the Principal Agreement (from installation to uninstallation of the App), plus any period necessary to complete deletion obligations under this DPA. End User photographs are processed transiently within the active session only.
 Categories of Data Subjects | End Users (customers of the Controller who interact with the Virtual Try-On Feature on the Controller's Merchant Store)
@@ -1009,7 +1040,7 @@ Annex 2: Sub-Processor Register
 This Annex 2 forms part of the DPA and lists the sub-processors approved by the Controller as at the date of this DPA.
 
 Sub-Processor | Processing Activity | Data Processed | Location | Transfer Mechanism
-Google LLC (Gemini API) | AI image generation: receives End User photographs and product images, generates composite virtual try-on images | End User photographs, product images (transient processing) | europe-west2 | EU-U.S. Data Privacy Framework; Google Cloud Data Processing Addendum with SCCs
+AI Service | AI image generation: receives End User photographs and product images, generates composite virtual try-on images | End User photographs, product images (transient processing) | europe-west2 | EU-U.S. Data Privacy Framework; Google Cloud Data Processing Addendum with SCCs
 Google Cloud Platform (GCP) | Cloud infrastructure: temporary file storage (photo cache), application hosting, Redis rate-limiting database | End User photographs (cached), IP addresses, session data | europe-west2 | EU-U.S. Data Privacy Framework; Google Cloud Data Processing Addendum with SCCs
 Shopify Inc. | Platform hosting: authentication via OAuth 2.0, subscription billing via Billing API, webhook delivery (orders, GDPR compliance) | Merchant store domain, billing data, order identifiers | Canada / United States | Shopify Data Processing Addendum with SCCs; Canada adequacy decision (EU)
 
@@ -1020,7 +1051,7 @@ This Annex 3 forms part of the DPA and describes the technical and organisationa
 
 A. Encryption and Data Protection in Transit
 •  All data transmitted between the End User's browser and the App's backend, and between the App's backend and sub-processors, is encrypted using TLS (Transport Layer Security) / HTTPS
-•  API communications with the Google Gemini API and Shopify APIs are conducted over encrypted HTTPS connections
+•  API communications with the AI service API and Shopify APIs are conducted over encrypted HTTPS connections
 •  No Personal Data is transmitted in plaintext
 
 B. Transient Data Processing and Minimisation
@@ -1044,7 +1075,7 @@ E. Automated Deletion
 •  Upon App uninstallation, all Merchant Data and associated Customer Data is deleted in response to Shopify's mandatory GDPR shop/redact webhook
 
 F. Sub-Processor Security
-•  Google (Gemini API and GCP): Subject to Google's Cloud Data Processing Addendum, ISO 27001/27017/27018 certified, SOC 2 Type II audited
+•  Google: Subject to Google's Cloud Data Processing Addendum, ISO 27001/27017/27018 certified, SOC 2 Type II audited
 •  Shopify: SOC 2 Type II audited, PCI DSS Level 1 certified
 •  All sub-processors are bound by contractual data protection obligations no less protective than those in this DPA
 
@@ -1065,8 +1096,8 @@ This Annex 4 forms part of the DPA and sets out the Controller's documented inst
 By installing the App and entering into the Principal Agreement and this DPA, the Controller instructs the Processor to process Personal Data as follows:
 
 Instruction | Detail
-Process End User photographs | Receive photographs uploaded by End Users through the storefront widget; transmit photographs to the Google Gemini API for virtual try-on image generation; cache photographs temporarily in cloud storage during the active session; permanently delete photographs upon session expiry via the automated cleanup function
-Generate virtual try-on images | Use the Google Gemini API to generate composite images depicting the End User wearing products from the Controller's store; deliver generated images to the End User's browser; cache generated images temporarily; permanently delete upon session expiry
+Process End User photographs | Receive photographs uploaded by End Users through the storefront widget; transmit photographs to the AI service API for virtual try-on image generation; cache photographs temporarily in cloud storage during the active session; permanently delete photographs upon session expiry via the automated cleanup function
+Generate virtual try-on images | Use the AI service to generate composite images depicting the End User wearing products from the Controller's store; deliver generated images to the End User's browser; cache generated images temporarily; permanently delete upon session expiry
 Enforce rate limits | Record IP addresses in the session-scoped rate-limiting system to enforce per-session generation limits; allow records to expire automatically upon session end
 Attribute conversions | Store session identifiers in the End User's browser localStorage; receive order webhooks from Shopify; match completed orders to virtual try-on sessions using cart attributes and product handles; present attributed conversion data to the Controller via the analytics dashboard
 Manage subscriptions and billing | Receive billing plan data and subscription status via Shopify's Billing API and APP_SUBSCRIPTIONS_UPDATE webhook; enforce plan-level generation limits; present usage data to the Controller via the App dashboard
@@ -1118,7 +1149,7 @@ Rendered Fits Ltd does not permanently store biometric data. Customer photograph
 (c)  "Customer photograph" means a photograph uploaded by an end user (a customer of a Shopify merchant) to the App's Virtual Try-On Feature.
 (d)  "Virtual Try-On Feature" means the functionality of the App that enables end users to upload a photograph of themselves and receive an AI-generated image depicting the end user wearing a product from the merchant's store.
 (e)  "Session" means the period during which an end user actively interacts with the Virtual Try-On Feature, as tracked by a session identifier stored in the end user's browser.
-(f)  "AI Service" means the third-party artificial intelligence service used by the App to generate virtual try-on images (currently Google's Gemini API).
+(f)  "AI Service" means the third-party artificial intelligence service used by the App to generate virtual try-on images.
 
 3. What Biometric Data We Process
 3.1  The App processes customer photographs through the Virtual Try-On Feature. In the course of generating a virtual try-on image, the AI Service may analyse the facial features contained in the customer's photograph. To the extent that such processing constitutes the collection of biometric identifiers or biometric information under applicable law, the following applies:
@@ -1141,7 +1172,7 @@ We wish to be unequivocally clear about the following:
 
 Data Type | Retention Period | Maximum Retention | Trigger for Destruction
 Customer photograph (original upload) | Transient. Cached temporarily in cloud storage during the active session only. | No more than the duration of the active session plus twenty four (24) hours (the interval of the automated cleanup cycle) | Session expiry triggers automated cleanup
-AI-processed data (facial feature analysis within Google Gemini API) | Transient. Processed in real-time within the API call. Google's paid API does not retain prompts or responses for model training. | Duration of the API call (seconds) | Completion of the API response
+AI-processed data | Transient. Processed in real-time within the API call. Google's paid API does not retain prompts or responses for model training. | Duration of the API call (seconds) | Completion of the API response
 Generated virtual try-on image | Transient. Cached temporarily in cloud storage during the active session only. | No more than the duration of the active session plus twenty four (24) hours | Session expiry triggers automated cleanup
 Session identifier | Stored in the end user's browser localStorage | Until cleared by the end user or browser data expiry | End user action (clearing browser data)
 Consent records (timestamp, session ID) | Retained for the duration of the Merchant's active subscription for compliance audit purposes | Duration of Merchant's subscription plus ninety (90) days for deletion processing | Merchant uninstalls the App (triggers Shopify shop/redact webhook)
@@ -1159,7 +1190,7 @@ A scheduled cleanup function runs on the App's cloud infrastructure at a frequen
 (d)  logs the deletion event (without logging the content of the deleted data) for internal audit purposes.
 
 5.2 AI Service Processing
-Customer photographs transmitted to the AI Service (Google Gemini API) are processed in real-time. Under Google's Cloud Data Processing Addendum for paid API usage:
+Customer photographs transmitted to the AI Service are processed in real-time. Under Google's Cloud Data Processing Addendum for paid API usage:
 (a)  Google does not use prompts (including customer photographs) or responses (including generated images) to train, improve, or develop its AI models;
 (b)  processing is transient and occurs within the duration of the API call; and
 (c)  Google's data processing terms prohibit the retention of prompt data beyond the time necessary to deliver the API response, subject to limited exceptions for abuse monitoring and legal compliance.
@@ -1193,7 +1224,7 @@ All destruction of biometric data is carried out using methods that render the d
 7. Prohibition on Sale, Lease, Trade, and Disclosure
 7.1  The Company shall not sell, lease, trade, or otherwise profit from any individual's biometric identifiers or biometric information.
 7.2  The Company shall not disclose, redisclose, or otherwise disseminate any individual's biometric identifier or biometric information to any third party, except:
-(a)  to Google LLC (via the Gemini API) solely for the purpose of generating the requested virtual try-on image, with the individual's written consent; or
+(a)  to Google LLC solely for the purpose of generating the requested virtual try-on image, with the individual's written consent; or
 (b)  as required by law, court order, or valid legal process, provided that the Company shall use reasonable efforts to notify the affected individual before making such disclosure (unless prohibited from doing so by law).
 
 8. Security Measures
@@ -1212,8 +1243,8 @@ Step | Action | Data Location | Duration
 1 | End user views the Virtual Try-On widget and is presented with the consent notice | End user's browser only | Until user action
 2 | End user selects and uploads a photograph from their device | Transmitted from browser to App backend via HTTPS | Seconds
 3 | Photograph is temporarily cached in cloud storage (GCP) and a session reference is created | GCP Cloud Storage (temporary cache) | Duration of session + max 24 hours
-4 | Photograph is transmitted to Google Gemini API along with the selected product image | Google Gemini API servers (transient processing) | Seconds (duration of API call)
-5 | Gemini API generates the virtual try-on composite image and returns it | Google Gemini API servers → App backend | Seconds
+4 | Photograph is transmitted to AI service along with the selected product image | AI service servers (transient processing) | Seconds (duration of API call)
+5 | AI service generates the virtual try-on composite image and returns it | AI service servers → App backend | Seconds
 6 | Generated image is delivered to the end user's browser for display | End user's browser + temporary cloud cache | Duration of session + max 24 hours
 7 | Session expires | N/A | N/A
 8 | Automated cleanup function runs (daily) and permanently deletes all cached photographs and generated images for expired sessions | Deletion from GCP Cloud Storage | Automated, within 24 hours of session expiry
