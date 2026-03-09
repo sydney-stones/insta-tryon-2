@@ -522,15 +522,15 @@ By clicking “I Agree” or by uploading a photograph to the Virtual Try-On fea
 
 2. How Your Photograph is Processed
 2.1	When you upload a photograph:
-(a)	Your photograph is sent from your browser to Google’s AI service, along with an image of the product you selected.
-(b)	Google’s AI combines these to generate a virtual try-on image, which is sent back to your browser.
+(a)	Your photograph is sent from your browser to the AI service, along with an image of the product you selected.
+(b)	The AI combines these to generate a virtual try-on image, which is sent back to your browser.
 (c)	Your original photograph is cached temporarily on our cloud servers during your active session. It is automatically and permanently deleted when your session expires (our cleanup system runs every 24 hours).
 (d)	The generated try-on image follows the same temporary lifecycle and is also automatically deleted.
 2.2	We do not:
 (a)	store your photograph long-term or in any permanent database;
 (b)	extract, create, or store any facial geometry scan, biometric template, or biometric identifier from your photograph;
 (c)	use your photograph for advertising, marketing, profiling, or any purpose other than generating the virtual try-on image you requested;
-(d)	sell, rent, trade, or share your photograph or any data derived from it with any third party (other than Google’s AI service for the purpose of generating your try-on image); or
+(d)	sell, rent, trade, or share your photograph or any data derived from it with any third party; or
 (e)	use your photograph to train AI models.
 
 3. AI-Generated Content Disclaimer
