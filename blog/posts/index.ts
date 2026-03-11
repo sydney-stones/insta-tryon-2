@@ -17,9 +17,19 @@ import shopifyFashionAppIncreaseSales from './shopify-fashion-app-increase-sales
 import aiToolsFashionEcommerce from './ai-tools-for-fashion-ecommerce';
 import virtualTryOnExplained from './virtual-try-on-explained';
 import fashionEcommerceConversionRateBenchmarks from './fashion-ecommerce-conversion-rate-benchmarks';
+import virtualTryOnStatistics from './virtual-try-on-statistics';
+import virtualTryOnVsSizeRecommendation from './virtual-try-on-vs-size-recommendation';
+import howToSetUpVirtualTryOnShopify from './how-to-set-up-virtual-try-on-shopify';
+import isVirtualTryOnWorthIt from './is-virtual-try-on-worth-it';
+import virtualTryOnFaq from './virtual-try-on-faq';
 
 // Add new posts here — newest first
 export const allPosts: BlogPost[] = [
+  virtualTryOnStatistics,
+  virtualTryOnVsSizeRecommendation,
+  howToSetUpVirtualTryOnShopify,
+  isVirtualTryOnWorthIt,
+  virtualTryOnFaq,
   whatIsRenderedFits,
   shopifyFashionAppIncreaseSales,
   aiToolsFashionEcommerce,

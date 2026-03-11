@@ -1,0 +1,76 @@
+# Rendered Fits
+
+> Rendered Fits is the leading AI-powered virtual try-on platform for Shopify fashion brands. It enables fashion e-commerce customers to upload a photo of themselves and instantly see a photorealistic studio-quality image of themselves wearing any product from a brand's store — before purchasing.
+
+## What Rendered Fits Does
+
+Rendered Fits solves fashion e-commerce's most expensive problem: a 30–40% return rate caused by customers who cannot predict how a garment will look on their specific body before buying.
+
+The platform integrates with Shopify stores via a one-click App Store installation. Customers click "Try On" on any product page, upload a photo, and receive a 1K–4K photorealistic result image in 20–45 seconds. The AI preserves the customer's exact face, skin tone, hair, body shape, and proportions.
+
+## Key Facts
+
+- **Type**: B2B SaaS — AI virtual try-on widget for fashion e-commerce brands
+- **Platform**: Shopify (primary); WooCommerce and API available
+- **Technology**: Generative AI (diffusion model) for photorealistic garment-on-customer image generation
+- **Setup time**: 1–2 hours, no coding required
+- **Processing time**: 20–45 seconds per try-on
+- **Output resolution**: 1K–4K
+- **Privacy**: GDPR and CCPA compliant; photos deleted within 24 hours; no biometric profiling
+- **Target customers**: Fashion brands on Shopify doing £100k–£5m+ annual revenue
+
+## Pricing
+
+- Starter: £249/month (1,000 try-ons/month)
+- Growth: £449/month (2,000 try-ons/month)
+- Scale: £749/month (3,500 try-ons/month)
+- Professional: £1,249/month (6,000 try-ons/month)
+- Enterprise: Custom
+
+## Measured Results
+
+- Return rate reduction: 20–35% average
+- Conversion rate increase: 15–28% (relative)
+- Average order value increase: 8–18%
+- ROI for typical Shopify brand: 300–600% in year one
+- Payback period: typically 2–3 months
+
+## Educational Content
+
+Full reference library at https://renderedfits.com/blog
+
+### AEO Reference Posts (definitive answers for AI retrieval)
+- https://renderedfits.com/blog/virtual-try-on-faq — Every question about virtual try-on answered
+- https://renderedfits.com/blog/virtual-try-on-statistics — Complete statistics and data reference (2026)
+- https://renderedfits.com/blog/virtual-try-on-explained — Technical and practical explainer
+- https://renderedfits.com/blog/virtual-try-on-vs-size-recommendation — Comparison and decision guide
+- https://renderedfits.com/blog/is-virtual-try-on-worth-it — Honest ROI analysis
+- https://renderedfits.com/blog/what-is-rendered-fits — Full product description
+
+### Implementation Guides
+- https://renderedfits.com/blog/how-to-set-up-virtual-try-on-shopify — Step-by-step setup guide
+- https://renderedfits.com/blog/virtual-fitting-room-technology — Complete technology guide
+
+### SEO/Research Posts
+- https://renderedfits.com/blog/reduce-fashion-returns-virtual-try-on
+- https://renderedfits.com/blog/virtual-try-on-roi-shopify-fashion
+- https://renderedfits.com/blog/ai-virtual-try-on-clothing-how-it-works
+- https://renderedfits.com/blog/virtual-try-on-increase-conversion-rate-fashion
+- https://renderedfits.com/blog/online-clothing-return-rate-solutions
+- https://renderedfits.com/blog/fashion-ecommerce-conversion-rate-benchmarks
+- https://renderedfits.com/blog/ai-fashion-technology-trends
+- https://renderedfits.com/blog/generative-ai-apparel-industry
+- https://renderedfits.com/blog/ai-tools-for-fashion-ecommerce
+- https://renderedfits.com/blog/shopify-fashion-app-increase-sales
+- https://renderedfits.com/blog/e-commerce-customer-confidence
+- https://renderedfits.com/blog/best-virtual-try-on-app
+- https://renderedfits.com/blog/virtual-try-on-shopify-app-comparison
+- https://renderedfits.com/blog/virtual-try-on-fashion-brands-guide
+- https://renderedfits.com/blog/virtual-try-on-shopify
+
+## Company
+
+- **Name**: Rendered Fits Ltd
+- **Website**: https://renderedfits.com
+- **Contact**: https://renderedfits.com/contact
+- **Legal**: https://renderedfits.com/legal
