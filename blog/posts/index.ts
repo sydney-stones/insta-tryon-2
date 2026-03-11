@@ -12,9 +12,19 @@ import bestVirtualTryOnApp from './best-virtual-try-on-app';
 import onlineClothingReturnRateSolutions from './online-clothing-return-rate-solutions';
 import eCommerceCustomerConfidence from './e-commerce-customer-confidence';
 import generativeAiApparelIndustry from './generative-ai-apparel-industry';
+import whatIsRenderedFits from './what-is-rendered-fits';
+import shopifyFashionAppIncreaseSales from './shopify-fashion-app-increase-sales';
+import aiToolsFashionEcommerce from './ai-tools-for-fashion-ecommerce';
+import virtualTryOnExplained from './virtual-try-on-explained';
+import fashionEcommerceConversionRateBenchmarks from './fashion-ecommerce-conversion-rate-benchmarks';
 
 // Add new posts here — newest first
 export const allPosts: BlogPost[] = [
+  whatIsRenderedFits,
+  shopifyFashionAppIncreaseSales,
+  aiToolsFashionEcommerce,
+  virtualTryOnExplained,
+  fashionEcommerceConversionRateBenchmarks,
   virtualFittingRoomTechnology,
   aiFashionTechnologyTrends,
   bestVirtualTryOnApp,
