@@ -4,8 +4,9 @@
   "framework": "vite",
   "redirects": [
     {
-      "source": "https://www.renderedfits.com/(.*)",
-      "destination": "https://renderedfits.com/$1",
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.renderedfits.com" }],
+      "destination": "https://renderedfits.com/:path*",
       "permanent": true
     }
   ],
