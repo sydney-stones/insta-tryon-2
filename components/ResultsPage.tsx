@@ -223,6 +223,21 @@ const demoProducts: DemoProduct[] = [
     afterLabel: 'Try-On Result',
     description: 'Effortless linen midi dress with a relaxed silhouette. Sustainably made for everyday elegance.',
   },
+  {
+    id: 20,
+    name: 'SS26 Lookbook Dress',
+    brand: 'Andrea Iyamah',
+    price: 485,
+    category: 'Dresses',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L'],
+    productSrc: '/result-images/ANDREAIYAMAH_SS26_LOOKBOOKDSCF0054.jpg.webp',
+    productLabel: 'Product: SS26 Lookbook Dress',
+    faceSrc: '/result-images/siennaneutral--new.JPG',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '/result-images/ANDREAIYAMAH_SS26_LOOKBOOKDSCF0054.jpg-nb2-2k-tryon.png',
+    afterLabel: 'Try-On Result',
+    description: 'A bold, sculptural silhouette from the Andrea Iyamah SS26 collection. Vibrant print with a flowing silhouette.',
+  },
 ];
 
 // ─── Animation State Machine ────────────────────────────────────────────────
