@@ -22,6 +22,7 @@ import ResultsPage from './components/ResultsPage';
 import ReallyWildDemoPage from './components/ReallyWildDemoPage';
 import ReallyWildDemoPage2 from './components/ReallyWildDemoPage2';
 import WastedParisDemoPage from './components/WastedParisDemoPage';
+import AndreaIyamahDemoPage from './components/AndreaIyamahDemoPage';
 import ScrollToTop from './components/ScrollToTop';
 import BlogIndex from './components/BlogIndex';
 import BlogPost from './components/BlogPost';
@@ -90,6 +91,7 @@ const App: React.FC = () => {
           <Route path="/reallywild" element={<ReallyWildDemoPage />} />
           <Route path="/reallywild2" element={<ReallyWildDemoPage2 />} />
           <Route path="/wastedparis" element={<WastedParisDemoPage />} />
+          <Route path="/andrea-iyamah" element={<AndreaIyamahDemoPage />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />

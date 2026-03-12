@@ -12,6 +12,7 @@ Disallow: /demo-male
 Disallow: /demo-product
 Disallow: /farlows
 Disallow: /wardrobe
+Disallow: /andrea-iyamah
 
 # Allow all AI crawlers explicitly
 User-agent: GPTBot
