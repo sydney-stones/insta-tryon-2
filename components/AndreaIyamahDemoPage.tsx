@@ -4,6 +4,7 @@
 */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface DemoProduct {
@@ -122,25 +123,28 @@ function useAnimationSequence(active: boolean): AnimationState {
 }
 
 function isPopupVisible(state: AnimationState): boolean {
-  return [
+  const popupStates: AnimationState[] = [
     'popup_open', 'cursor_to_face', 'click_face',
     'show_upload_modal', 'click_photo_library', 'show_gallery', 'select_face', 'face_uploaded',
     'cursor_to_body', 'click_body',
     'show_upload_modal_2', 'click_photo_library_2', 'show_gallery_2', 'select_body', 'body_uploaded',
     'loading', 'result',
-  ].includes(state);
+  ];
+  return popupStates.includes(state);
 }
 
 function isFaceUploaded(state: AnimationState): boolean {
-  return [
+  const afterFace: AnimationState[] = [
     'face_uploaded', 'cursor_to_body', 'click_body',
     'show_upload_modal_2', 'click_photo_library_2', 'show_gallery_2', 'select_body', 'body_uploaded',
     'loading', 'result',
-  ].includes(state);
+  ];
+  return afterFace.includes(state);
 }
 
 function isBodyUploaded(state: AnimationState): boolean {
-  return ['body_uploaded', 'loading', 'result'].includes(state);
+  const afterBody: AnimationState[] = ['body_uploaded', 'loading', 'result'];
+  return afterBody.includes(state);
 }
 
 function isUploadModalVisible(state: AnimationState): boolean {
@@ -149,6 +153,14 @@ function isUploadModalVisible(state: AnimationState): boolean {
 
 function isGalleryVisible(state: AnimationState): boolean {
   return ['show_gallery', 'select_face', 'show_gallery_2', 'select_body'].includes(state);
+}
+
+function isLoadingState(state: AnimationState): boolean {
+  return state === 'loading';
+}
+
+function isResultState(state: AnimationState): boolean {
+  return state === 'result';
 }
 
 function isCursorVisible(state: AnimationState): boolean {
@@ -163,45 +175,93 @@ function isCursorVisible(state: AnimationState): boolean {
   ].includes(state);
 }
 
+// ─── Animated Cursor ────────────────────────────────────────────────────────
+
 const CursorSVG: React.FC = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M5 3L19 12L12 13L9 20L5 3Z" fill="black" stroke="white" strokeWidth="1" />
   </svg>
 );
 
-const AnimatedCursor: React.FC<{ x: number; y: number; visible: boolean; clicking: boolean }> = ({ x, y, visible, clicking }) => (
-  <AnimatePresence>
-    {visible && (
-      <motion.div
-        className="fixed pointer-events-none"
-        style={{ zIndex: 9999 }}
-        initial={{ opacity: 0, x, y }}
-        animate={{ opacity: 1, x, y, scale: clicking ? [1, 0.8, 1] : 1 }}
-        exit={{ opacity: 0 }}
-        transition={{
-          x: { type: 'tween', duration: 0.8, ease: 'easeInOut' },
-          y: { type: 'tween', duration: 0.8, ease: 'easeInOut' },
-          scale: { duration: 0.3 },
-          opacity: { duration: 0.2 },
-        }}
-      >
-        <CursorSVG />
-      </motion.div>
-    )}
-  </AnimatePresence>
+interface AnimatedCursorProps {
+  x: number;
+  y: number;
+  visible: boolean;
+  clicking: boolean;
+}
+
+const AnimatedCursor: React.FC<AnimatedCursorProps> = ({ x, y, visible, clicking }) => {
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          className="fixed pointer-events-none"
+          style={{ zIndex: 9999 }}
+          initial={{ opacity: 0, x, y }}
+          animate={{
+            opacity: 1,
+            x,
+            y,
+            scale: clicking ? [1, 0.8, 1] : 1,
+          }}
+          exit={{ opacity: 0 }}
+          transition={{
+            x: { type: 'tween', duration: 0.8, ease: 'easeInOut' },
+            y: { type: 'tween', duration: 0.8, ease: 'easeInOut' },
+            scale: { duration: 0.3 },
+            opacity: { duration: 0.2 },
+          }}
+        >
+          <CursorSVG />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+// ─── Simple Product Card ─────────────────────────────────────────────────────
+
+const ProductCard: React.FC<{ product: DemoProduct; onClick: () => void }> = ({ product, onClick }) => (
+  <button
+    onClick={onClick}
+    className="bg-white border border-gray-200 rounded-lg overflow-hidden text-left hover:shadow-lg transition-shadow group cursor-pointer"
+  >
+    <div className="relative aspect-[3/4] bg-gray-50 overflow-hidden">
+      <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-900 text-[11px] tracking-[0.15em] font-medium px-4 py-2">
+          VIEW DEMO
+        </span>
+      </div>
+    </div>
+    <div className="p-4 sm:p-5">
+      <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-1">{product.brand}</p>
+      <h3 className="text-sm sm:text-base font-medium text-gray-900 mb-2">{product.name}</h3>
+      <div className="flex items-center gap-2">
+        <span className="text-sm font-medium">&pound;{product.price}</span>
+      </div>
+    </div>
+  </button>
 );
 
-// ─── Mock Product Page ───────────────────────────────────────────────────────
+// ─── Mock Product Page Overlay ───────────────────────────────────────────────
 
-const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> = ({ product, onClose }) => {
+interface MockProductPageProps {
+  product: DemoProduct;
+  onClose: () => void;
+}
+
+const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) => {
   const [animationActive, setAnimationActive] = useState(false);
   const animState = useAnimationSequence(animationActive);
   const [isMobile, setIsMobile] = useState(false);
+  const [fullscreenImage, setFullscreenImage] = useState(false);
 
   const tryOnButtonRef = useRef<HTMLButtonElement>(null);
   const faceUploadRef = useRef<HTMLDivElement>(null);
   const bodyUploadRef = useRef<HTMLDivElement>(null);
   const overlayContainerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
@@ -218,7 +278,9 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
   }, []);
 
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
   }, [onClose]);
@@ -230,6 +292,7 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
 
   const updateCursorPosition = useCallback(() => {
     let targetEl: HTMLElement | null = null;
+
     if (animState === 'cursor_to_button' || animState === 'click_button') {
       targetEl = tryOnButtonRef.current;
     } else if (animState === 'cursor_to_face' || animState === 'click_face') {
@@ -249,6 +312,7 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
         return;
       }
     }
+
     if (targetEl) {
       const rect = targetEl.getBoundingClientRect();
       setCursorPos({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
@@ -256,7 +320,9 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
   }, [animState]);
 
   useEffect(() => {
-    const raf = requestAnimationFrame(() => updateCursorPosition());
+    const raf = requestAnimationFrame(() => {
+      updateCursorPosition();
+    });
     return () => cancelAnimationFrame(raf);
   }, [animState, updateCursorPosition]);
 
@@ -265,20 +331,17 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
     'select_face', 'click_body', 'click_photo_library_2', 'select_body',
   ].includes(animState);
 
-  const showPopup = isPopupVisible(animState);
-  const faceUploaded = isFaceUploaded(animState);
-  const bodyUploaded = isBodyUploaded(animState);
-  const showUploadModal = isUploadModalVisible(animState);
-  const showGallery = isGalleryVisible(animState);
-  const showLoading = animState === 'loading';
-  const showResult = animState === 'result';
-  const isSecondUpload = ['cursor_to_body', 'click_body', 'show_upload_modal_2', 'click_photo_library_2', 'show_gallery_2', 'select_body', 'body_uploaded', 'loading', 'result'].includes(animState);
-
   return (
-    <div className="fixed inset-0 z-50 bg-white overflow-auto">
-      <AnimatedCursor x={cursorPos.x} y={cursorPos.y} visible={isCursorVisible(animState)} clicking={isClicking} />
+    <div ref={containerRef} className="fixed inset-0 z-50 bg-white overflow-auto">
+      {/* Animated Cursor */}
+      <AnimatedCursor
+        x={cursorPos.x}
+        y={cursorPos.y}
+        visible={isCursorVisible(animState)}
+        clicking={isClicking}
+      />
 
-      {/* Header */}
+      {/* Store Header */}
       <header className="border-b border-gray-200 sticky top-0 bg-white z-40">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
@@ -291,11 +354,13 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
             <span className="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl tracking-[0.25em] font-light text-gray-900 uppercase">
               Andrea Iyamah
             </span>
-            <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Close">
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+            <div className="flex items-center gap-4">
+              <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Close">
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -303,18 +368,20 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
       {/* Breadcrumb */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <nav className="flex items-center gap-2 text-[11px] text-gray-500">
-          <span>Dresses</span>
+          <span className="hover:text-gray-900 cursor-default">Clothing</span>
+          <span>/</span>
+          <span>{product.category}</span>
           <span>/</span>
           <span className="text-gray-900">{product.name}</span>
         </nav>
       </div>
 
-      {/* Product */}
+      {/* Product Content */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px] gap-6 lg:gap-12">
           {/* Left — Product Image */}
           <div className="flex justify-center">
-            <div className="relative bg-gray-50 overflow-hidden w-full">
+            <div className="relative bg-gray-50 overflow-hidden w-full lg:w-full max-h-[40vh] lg:max-h-none">
               <div className="relative aspect-[3/4] max-h-[40vh] lg:max-h-none mx-auto">
                 <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover" />
               </div>
@@ -324,7 +391,9 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
           {/* Right — Product Info */}
           <div className="flex flex-col lg:pt-0">
             <p className="text-[11px] tracking-[0.2em] text-gray-400 uppercase mb-2">{product.brand}</p>
-            <h1 className="text-[13px] tracking-[0.15em] font-normal uppercase mb-4">{product.name}</h1>
+            <h1 className="text-[13px] tracking-[0.15em] font-normal uppercase mb-4">
+              {product.name.toUpperCase()}
+            </h1>
             <div className="flex items-center gap-3 mb-6">
               <span className="text-[13px]">&pound;{product.price}</span>
             </div>
@@ -354,236 +423,330 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
               AI TRY ON
               <span className="text-[10px] border border-white/40 px-2 py-0.5 tracking-wider">New</span>
             </button>
-            <p className="text-[11px] text-gray-500 text-center mb-6">Upload your photo and see yourself in this item</p>
+            <p className="text-[11px] text-gray-500 text-center mb-6">
+              Upload your photo and see yourself in this item
+            </p>
 
-            {/* Add to Bag */}
+            {/* ADD TO BAG */}
             <div className="flex gap-0 mb-6">
               <button className="flex-1 border border-black py-4 px-6 text-[12px] tracking-[0.15em] font-medium text-center cursor-default">
                 ADD TO BAG
               </button>
+              <button className="border border-black border-l-0 px-4 flex items-center justify-center cursor-default">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </button>
             </div>
 
             {/* Description */}
-            <p className="text-[13px] text-gray-600 leading-relaxed">{product.description}</p>
+            <div className="border-t border-gray-200 pt-6">
+              <p className="text-[12px] text-gray-600 leading-relaxed">{product.description}</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ─── Try-On Popup ─────────────────────────────────────────────────── */}
+      {/* ─── Try-On Popup Overlay ─── */}
       <AnimatePresence>
-        {showPopup && (
+        {isPopupVisible(animState) && (
           <motion.div
-            ref={overlayContainerRef}
-            className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
             <motion.div
-              className="relative bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-auto overflow-hidden"
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto shadow-2xl relative"
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3 }}
             >
-              {/* Popup Header */}
-              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-[#444833] flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              {/* Modal Top Bar */}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs text-gray-500 flex items-center gap-1.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h8m-8 6h16" />
                     </svg>
-                  </div>
-                  <span className="text-sm font-semibold text-gray-900">AI Try On</span>
+                    My looks
+                  </span>
+                  <span className="text-[10px] bg-[#444833] text-white px-2.5 py-1 rounded-full font-medium">
+                    1 credit left
+                  </span>
                 </div>
-                <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onClick={onClose} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer">
+                  <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
-              {/* Loading State */}
-              {showLoading && (
-                <div className="flex flex-col items-center justify-center py-16 px-6">
-                  <div className="w-14 h-14 rounded-full border-4 border-[#444833]/20 border-t-[#444833] animate-spin mb-6" />
-                  <p className="text-sm font-medium text-gray-900 mb-2">Generating your try-on</p>
-                  <p className="text-xs text-gray-500 text-center">Our AI is placing the garment on you...</p>
+              {/* Modal Body — Split Layout */}
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Left — Product Image (hidden on mobile) */}
+                <div className="hidden lg:block bg-gray-50 lg:aspect-auto lg:min-h-[450px]">
+                  <img src={product.productSrc} alt={product.name} className="w-full h-full object-cover" />
                 </div>
-              )}
 
-              {/* Result State */}
-              {showResult && (
-                <div className="flex flex-col">
-                  <div className="relative">
-                    <motion.img
-                      src={product.afterSrc}
-                      alt="Try-on result"
-                      className="w-full object-cover"
-                      initial={{ opacity: 0, scale: 1.03 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.7, ease: 'easeOut' }}
-                    />
-                    <div className="absolute bottom-3 left-3 bg-[#444833]/90 text-white text-[10px] font-medium px-3 py-1 rounded-full tracking-wider">
-                      RENDERED FITS
-                    </div>
-                  </div>
-                  <div className="px-5 py-4">
-                    <p className="text-sm font-medium text-gray-900 mb-1">{product.name}</p>
-                    <p className="text-xs text-gray-500">{product.brand} · £{product.price}</p>
-                  </div>
-                </div>
-              )}
+                {/* Right — Workflow Content */}
+                <div className="p-4 sm:p-8 flex flex-col justify-center min-h-[300px] sm:min-h-[350px] relative">
 
-              {/* Upload Panels (not loading/result) */}
-              {!showLoading && !showResult && (
-                <div className="p-5">
-                  {/* Step indicator */}
-                  <div className="flex items-center gap-2 mb-5">
-                    <div className={`flex-1 h-1 rounded-full transition-colors duration-500 ${faceUploaded ? 'bg-[#444833]' : 'bg-gray-200'}`} />
-                    <div className={`flex-1 h-1 rounded-full transition-colors duration-500 ${bodyUploaded ? 'bg-[#444833]' : 'bg-gray-200'}`} />
-                  </div>
-
-                  <p className="text-[11px] text-gray-500 text-center mb-4">
-                    {isSecondUpload ? 'Step 2 of 2 — Upload a body photo' : 'Step 1 of 2 — Upload a face photo'}
-                  </p>
-
-                  {/* Upload areas */}
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    {/* Face Upload */}
-                    <div
-                      ref={!isSecondUpload ? faceUploadRef : undefined}
-                      className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-300 flex items-center justify-center cursor-pointer ${
-                        faceUploaded
-                          ? 'border-[#444833] bg-[#444833]/5'
-                          : !isSecondUpload
-                          ? 'border-[#444833] border-dashed animate-pulse bg-[#444833]/5'
-                          : 'border-gray-200 border-dashed bg-gray-50'
-                      }`}
-                    >
-                      {faceUploaded ? (
-                        <>
-                          <img src={product.faceSrc} alt="Face" className="w-full h-full object-cover" />
-                          <div className="absolute bottom-1.5 right-1.5 w-5 h-5 rounded-full bg-[#444833] flex items-center justify-center shadow">
-                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                        </>
-                      ) : (
-                        <div className="flex flex-col items-center gap-1 p-3">
-                          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                          </svg>
-                          <span className="text-[10px] text-gray-400 text-center leading-tight">Face photo</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Body Upload */}
-                    <div
-                      ref={isSecondUpload && !bodyUploaded ? bodyUploadRef : undefined}
-                      className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-300 flex items-center justify-center cursor-pointer ${
-                        bodyUploaded
-                          ? 'border-[#444833] bg-[#444833]/5'
-                          : isSecondUpload
-                          ? 'border-[#444833] border-dashed animate-pulse bg-[#444833]/5'
-                          : 'border-gray-200 border-dashed bg-gray-50'
-                      }`}
-                    >
-                      {bodyUploaded ? (
-                        <>
-                          <img src={product.bodySrc} alt="Body" className="w-full h-full object-cover" />
-                          <div className="absolute bottom-1.5 right-1.5 w-5 h-5 rounded-full bg-[#444833] flex items-center justify-center shadow">
-                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                        </>
-                      ) : (
-                        <div ref={isSecondUpload ? bodyUploadRef : undefined} className="flex flex-col items-center gap-1 p-3">
-                          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                          <span className="text-[10px] text-gray-400 text-center leading-tight">Body photo</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Upload modal overlay */}
-                  <AnimatePresence>
-                    {(showUploadModal || showGallery) && (
-                      <motion.div
-                        className="absolute inset-0 z-10 bg-white rounded-2xl flex flex-col overflow-hidden"
-                        initial={{ y: '100%' }}
-                        animate={{ y: 0 }}
-                        exit={{ y: '100%' }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 35 }}
-                      >
-                        {showUploadModal && (
-                          <div className="flex flex-col h-full">
-                            <div className="flex items-center justify-between px-5 py-4 border-b">
-                              <span className="text-sm font-semibold">Upload photo</span>
-                            </div>
-                            <div className="flex-1 flex flex-col items-center justify-center gap-4 p-6">
-                              <div className={`w-20 h-20 rounded-full flex items-center justify-center ${isSecondUpload ? 'bg-blue-50' : 'bg-purple-50'}`}>
-                                <svg className={`w-10 h-10 ${isSecondUpload ? 'text-blue-400' : 'text-purple-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {/* Upload step */}
+                  {!isLoadingState(animState) && !isResultState(animState) && (
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-light tracking-wide text-gray-900 mb-6 text-center">
+                        TRY IT ON, VIRTUALLY
+                      </h3>
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        {/* Face Photo Slot */}
+                        <div ref={faceUploadRef}>
+                          <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Face photo</p>
+                          <div className="aspect-square rounded-lg overflow-hidden bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center">
+                            {isFaceUploaded(animState) ? (
+                              <img src={product.faceSrc} alt="Face photo" className="w-full h-full object-cover" />
+                            ) : (
+                              <div className="text-center p-2">
+                                <svg className="w-8 h-8 text-gray-300 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
+                                <p className="text-[9px] text-gray-400">Upload your photo here</p>
                               </div>
-                              <div className="text-center">
-                                <p className="text-sm font-medium text-gray-900 mb-1">Take a photo or</p>
-                                <p className="text-[11px] text-gray-500">choose from library</p>
-                              </div>
-                              <div className="flex flex-col w-full gap-2">
-                                <button className="w-full py-3 bg-[#444833] text-white text-[12px] tracking-wider rounded-xl">Take Photo</button>
-                                <button className="w-full py-3 bg-gray-100 text-gray-700 text-[12px] tracking-wider rounded-xl">Photo Library</button>
-                              </div>
-                            </div>
+                            )}
                           </div>
-                        )}
+                          {isFaceUploaded(animState) && (
+                            <p className="text-[10px] text-green-600 mt-1.5 flex items-center gap-1">
+                              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                              Uploaded
+                            </p>
+                          )}
+                        </div>
 
-                        {showGallery && (
-                          <div className="flex flex-col h-full">
-                            <div className="flex items-center justify-between px-5 py-4 border-b">
-                              <span className="text-sm font-semibold">Choose a photo</span>
-                            </div>
-                            <div className="flex-1 grid grid-cols-3 gap-1 p-2 overflow-auto">
-                              {[
-                                product.faceSrc,
-                                product.bodySrc,
-                                '/result-images/siennaface-new.png',
-                                '/result-images/siennaface.png',
-                                '/result-images/siennaphone.png',
-                                product.faceSrc,
-                              ].map((src, i) => (
-                                <div
-                                  key={i}
-                                  className={`relative aspect-square bg-gray-100 overflow-hidden rounded cursor-pointer ${
-                                    (animState === 'select_face' || animState === 'select_body') && i === (isSecondUpload ? 1 : 0)
-                                      ? 'ring-2 ring-[#444833]'
-                                      : ''
-                                  }`}
-                                >
-                                  <img src={src} alt="" className="w-full h-full object-cover" />
-                                </div>
-                              ))}
-                            </div>
+                        {/* Body Photo Slot */}
+                        <div ref={bodyUploadRef}>
+                          <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Full body photo</p>
+                          <div className="aspect-square rounded-lg overflow-hidden bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center">
+                            {isBodyUploaded(animState) ? (
+                              <img src={product.bodySrc} alt="Full body photo" className="w-full h-full object-cover" />
+                            ) : (
+                              <div className="text-center p-2">
+                                <svg className="w-8 h-8 text-gray-300 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                                <p className="text-[9px] text-gray-400">Upload your photo here</p>
+                              </div>
+                            )}
                           </div>
-                        )}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                          {isBodyUploaded(animState) && (
+                            <p className="text-[10px] text-green-600 mt-1.5 flex items-center gap-1">
+                              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                              Uploaded
+                            </p>
+                          )}
+                        </div>
+                      </div>
 
-                  <button className="w-full py-3 bg-[#444833] text-white text-[12px] tracking-wider rounded-xl opacity-50 cursor-default">
-                    {faceUploaded && bodyUploaded ? 'Generating...' : 'Upload photos to continue'}
-                  </button>
+                      {/* Legal disclaimer */}
+                      <p className="text-[9px] text-gray-400 leading-relaxed mb-4 text-center">
+                        By uploading your photo, you agree to our{' '}
+                        <Link to="/legal/end-user-terms" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
+                          Terms &amp; Conditions
+                        </Link>{' '}
+                        and{' '}
+                        <Link to="/legal/app-privacy-policy" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
+                          Privacy Policy
+                        </Link>
+                        . Your image is never permanently stored.
+                      </p>
+
+                      {/* Product tags + status */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.name}</span>
+                          <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                        </div>
+                        {isBodyUploaded(animState) && (
+                          <span className="text-[10px] text-[#444833] font-medium flex items-center gap-1">
+                            <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                            </svg>
+                            Starting...
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Loading State */}
+                  {isLoadingState(animState) && (
+                    <div className="flex flex-col items-center justify-center text-center">
+                      <h3 className="text-2xl sm:text-3xl font-light tracking-wide text-gray-900 mb-8">
+                        GETTING DRESSED!
+                      </h3>
+                      <div className="relative mb-8">
+                        <img src="/hanger.jpg" alt="Loading" className="w-20 h-20 object-contain" />
+                        <div className="flex gap-1.5 justify-center mt-4">
+                          <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                          <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                          <span className="w-2 h-2 bg-[#444833] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 flex-wrap justify-center">
+                        <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.name}</span>
+                        <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Result State */}
+                  {isResultState(animState) && (
+                    <div className="flex flex-col items-center">
+                      <button
+                        onClick={() => setFullscreenImage(true)}
+                        className="w-full max-h-[40vh] sm:max-h-[50vh] rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200 flex items-center justify-center cursor-zoom-in relative group"
+                      >
+                        <img src={product.afterSrc} alt={product.afterLabel} className="w-full h-full object-contain" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-900 text-[10px] tracking-[0.15em] font-medium px-3 py-1.5 rounded">
+                            VIEW FULL SIZE
+                          </span>
+                        </div>
+                      </button>
+                      <div className="flex items-center gap-2 mb-4 flex-wrap justify-center">
+                        <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.name}</span>
+                        <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">{product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                        <span className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded">&pound;{product.price}</span>
+                      </div>
+                      {/* Schedule a Meeting button */}
+                      <a
+                        href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-[#444833] text-white py-3 px-6 text-[11px] tracking-[0.15em] font-medium text-center hover:bg-[#3a3d2d] transition-colors block mb-2"
+                      >
+                        SCHEDULE A MEETING
+                      </a>
+                      <Link
+                        to="/demo"
+                        className="w-full border border-gray-300 text-gray-700 py-3 px-6 text-[11px] tracking-[0.15em] font-medium text-center hover:border-gray-500 transition-colors block"
+                      >
+                        TRY THE LIVE DEMO
+                      </Link>
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
+
+              {/* Modal Footer */}
+              <div className="border-t border-gray-200 px-5 py-3 flex items-center justify-center">
+                <span className="text-[10px] text-gray-400 tracking-wider">
+                  Powered by <span className="font-bold text-gray-600">RENDERED FITS</span> &rarr;
+                </span>
+              </div>
+
+              {/* ─── Upload Modal Overlay ─── */}
+              <AnimatePresence>
+                {isUploadModalVisible(animState) && (
+                  <motion.div
+                    ref={overlayContainerRef}
+                    className="absolute inset-0 z-[70] flex items-end sm:items-center justify-center bg-black/40"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <motion.img
+                      src={isMobile ? '/result-images/phoneupload.PNG' : '/result-images/desktopupload.png'}
+                      alt="Upload dialog"
+                      className="max-w-[85%] sm:max-w-[60%] max-h-[70%] object-contain rounded-xl shadow-2xl"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 30 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* ─── Gallery Overlay ─── */}
+              <AnimatePresence>
+                {isGalleryVisible(animState) && (
+                  <motion.div
+                    ref={overlayContainerRef}
+                    className="absolute inset-0 z-[70] flex items-center justify-center bg-black/40"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <div className="relative max-w-[85%] sm:max-w-[60%] max-h-[80%]">
+                      <motion.img
+                        src="/result-images/phonegallery.PNG"
+                        alt="Photo gallery"
+                        className="w-full h-full object-contain rounded-xl shadow-2xl"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 30 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                      {/* Selection highlight indicator */}
+                      {(animState === 'select_face' || animState === 'select_body') && (
+                        <motion.div
+                          className="absolute border-4 border-blue-500 rounded-lg"
+                          style={{
+                            top: '22%',
+                            right: '5%',
+                            width: '28%',
+                            height: '15%',
+                          }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: [0, 1, 0.7, 1] }}
+                          transition={{ duration: 0.6 }}
+                        />
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ─── Fullscreen Result Image Viewer ─── */}
+      <AnimatePresence>
+        {fullscreenImage && (
+          <motion.div
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
+            onClick={() => setFullscreenImage(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <button
+              onClick={() => setFullscreenImage(false)}
+              className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <motion.img
+              src={product.afterSrc}
+              alt={product.afterLabel}
+              className="max-w-full max-h-full object-contain"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -594,89 +757,166 @@ const MockProductPage: React.FC<{ product: DemoProduct; onClose: () => void }> =
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 const AndreaIyamahDemoPage: React.FC = () => {
-  const [activeProduct, setActiveProduct] = useState<DemoProduct | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<DemoProduct | null>(null);
 
   // Auto-launch the demo on page load
   useEffect(() => {
     const timer = setTimeout(() => {
-      setActiveProduct(demoProducts[0]);
+      setSelectedProduct(demoProducts[0]);
     }, 800);
     return () => clearTimeout(timer);
   }, []);
 
   const handleClose = useCallback(() => {
-    setActiveProduct(null);
+    setSelectedProduct(null);
     // Re-launch after a pause so the demo loops
-    setTimeout(() => setActiveProduct(demoProducts[0]), 1500);
+    setTimeout(() => setSelectedProduct(demoProducts[0]), 1500);
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Minimal branded header */}
-      <header className="border-b border-gray-100 sticky top-0 bg-white z-10">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="text-xl tracking-[0.25em] font-light uppercase text-gray-900">Andrea Iyamah</span>
-          <span className="text-[11px] tracking-[0.15em] text-gray-400 uppercase hidden sm:block">
-            Powered by Rendered Fits
-          </span>
+      {/* Header */}
+      <header className="bg-[#444833] py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <a href="/" className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            RENDERED FITS™
+          </a>
         </div>
       </header>
 
-      {/* Hero / intro */}
-      <div className="max-w-6xl mx-auto px-6 py-12 text-center">
-        <p className="text-[11px] tracking-[0.2em] text-gray-400 uppercase mb-3">AI Virtual Try-On Demo</p>
-        <h1 className="text-3xl sm:text-4xl font-serif italic text-gray-900 mb-4">
-          See Our Pieces On You
-        </h1>
-        <p className="text-sm text-gray-500 max-w-md mx-auto mb-10">
-          Watch how Rendered Fits lets your customers try on Andrea Iyamah pieces before they buy — reducing returns and increasing confidence.
-        </p>
-
-        {/* Product card */}
-        <div className="max-w-xs mx-auto">
-          {demoProducts.map(product => (
-            <button
-              key={product.id}
-              onClick={() => setActiveProduct(product)}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden text-left hover:shadow-xl transition-all group w-full"
-            >
-              <div className="relative aspect-[3/4] bg-gray-50 overflow-hidden">
-                <img
-                  src={product.productSrc}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-900 text-[11px] tracking-[0.15em] font-medium px-5 py-2.5">
-                    WATCH DEMO
-                  </span>
-                </div>
-              </div>
-              <div className="p-5">
-                <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-1">{product.brand}</p>
-                <h3 className="text-sm font-medium text-gray-900 mb-2">{product.name}</h3>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">&pound;{product.price}</span>
-                  <span className="text-[10px] tracking-wider text-[#444833] font-medium">TRY ON →</span>
-                </div>
-              </div>
-            </button>
-          ))}
+      {/* Hero */}
+      <div className="bg-white py-16 sm:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif italic text-gray-900 leading-tight mb-6">
+            See What Virtual Try-On Looks Like
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto">
+            Powered by Rendered Fits — built for brands like Andrea Iyamah.
+          </p>
         </div>
       </div>
 
-      {/* Full-screen demo overlay */}
-      <AnimatePresence>
-        {activeProduct && (
-          <motion.div
-            key={activeProduct.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+      {/* Product Grid */}
+      <div className="bg-gray-50 py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-gray-500 text-sm mb-10 max-w-xl mx-auto">
+            Click the product below to see the full virtual try-on experience.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-sm mx-auto lg:max-w-none">
+            {demoProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onClick={() => setSelectedProduct(product)}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Bar */}
+      <div className="bg-[#444833] py-10 sm:py-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl font-bold text-white">~20%</p>
+              <p className="text-sm text-white/70 mt-1">fewer returns</p>
+            </div>
+            <div className="hidden sm:block w-px h-10 bg-white/20" />
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl font-bold text-white">~30%</p>
+              <p className="text-sm text-white/70 mt-1">higher conversion</p>
+            </div>
+            <div className="hidden sm:block w-px h-10 bg-white/20" />
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl font-bold text-white">~20%</p>
+              <p className="text-sm text-white/70 mt-1">higher AOV</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works */}
+      <div className="bg-white py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-12 sm:mb-16">
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6">
+            <div className="text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <p className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mb-1">Step 1</p>
+              <p className="text-sm sm:text-base font-semibold text-gray-900">Customer uploads photo</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <p className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mb-1">Step 2</p>
+              <p className="text-sm sm:text-base font-semibold text-gray-900">AI generates try-on in 20 seconds</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#444833] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                </svg>
+              </div>
+              <p className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mb-1">Step 3</p>
+              <p className="text-sm sm:text-base font-semibold text-gray-900">Customer selects size and adds to cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="bg-gray-50 py-16 sm:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-gray-900 mb-8">
+            Want to see this on your products?
+          </h2>
+          <a
+            href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#444833] text-white px-10 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-[#3a3d2d] transition-colors"
           >
-            <MockProductPage product={activeProduct} onClose={handleClose} />
-          </motion.div>
+            Schedule a 15-Minute Meeting
+          </a>
+          <div className="mt-6">
+            <Link
+              to="/demo"
+              className="text-[#444833] font-medium hover:underline transition-colors"
+            >
+              Or try it yourself on our live demo &rarr;
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-[#3a3d2d] py-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white/50 text-[10px] sm:text-xs leading-relaxed">
+            Rendered Fits Ltd registered in England and Wales under the company registration number 16922551. Registered office address: 50-54 Oswald Road, Scunthorpe, North Lincolnshire, United Kingdom, DN15 7PQ
+          </p>
+        </div>
+      </div>
+
+      {/* ─── Full-screen Mock Product Page Overlay ─── */}
+      <AnimatePresence>
+        {selectedProduct && (
+          <MockProductPage
+            key={selectedProduct.id}
+            product={selectedProduct}
+            onClose={handleClose}
+          />
         )}
       </AnimatePresence>
     </div>
