@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
 import ScrollingQuotes from './ScrollingQuotes';
@@ -23,8 +23,6 @@ const TIERS = [
 ];
 
 const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
-  const [roiOrders, setRoiOrders] = useState<number>(500);
-  const [roiRevenue, setRoiRevenue] = useState<number>(25000);
   const [isAnnual, setIsAnnual] = useState<boolean>(false);
 
   useEffect(() => {
@@ -73,38 +71,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
     };
   }, []);
 
-  // ROI Calculator — tier driven by monthly revenue slider
-  const roiData = useMemo(() => {
-    // Pick tier by revenue bands: <£20k→Starter, <£40k→Growth, <£75k→Scale, else→Professional
-    const idx = roiRevenue < 20000 ? 0 : roiRevenue < 40000 ? 1 : roiRevenue < 75000 ? 2 : 3;
-    const tier = TIERS[idx];
-    const cost = isAnnual ? Math.round(tier.annual / 12) : tier.monthly;
-    const tryons = isAnnual ? tier.tryonsAnnual : tier.tryonsMonthly;
-
-    const avgOrderValue = roiOrders > 0 ? roiRevenue / roiOrders : 50;
-    const returnsPrevented = Math.round(roiOrders * 0.07);
-    const returnSavings = returnsPrevented * 20;
-    const conversionLift = Math.round(roiOrders * 0.05 * avgOrderValue);
-    const totalMonthly = returnSavings + conversionLift;
-    const roiMultiple = cost > 0 ? Math.round(totalMonthly / cost) : 0;
-
-    return {
-      tier: tier.name,
-      tryons,
-      tryonsMonthly: tier.tryonsMonthly,
-      tryonsAnnual: tier.tryonsAnnual,
-      monthly: tier.monthly,
-      annual: tier.annual,
-      cost,
-      costDisplay: `£${cost.toLocaleString()}/mo`,
-      returnsPrevented,
-      returnSavings,
-      conversionLift,
-      totalMonthly,
-      roiMultiple,
-    };
-  }, [roiOrders, roiRevenue, isAnnual]);
-
   return (
     <div className="min-h-screen bg-white">
 
@@ -150,37 +116,59 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SCROLLING QUOTES BANNER ===== */}
       <ScrollingQuotes />
 
-      {/* ===== SECTION 2: STAT INTRO ===== */}
-      <div className="bg-gray-100 py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-700 text-base sm:text-lg mb-12 sm:mb-16 max-w-2xl mx-auto">
-            Allowing customers to visualise clothes on themselves before buying has been shown to:
+      {/* ===== SECTION 6b: RESULTS CAROUSEL ===== */}
+      <div className="bg-white py-16 sm:py-20 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
+            See the Results
+          </h2>
+          <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
+            Original product images transformed into photorealistic try-on shots.
           </p>
-          <div className="grid grid-cols-3 gap-4 sm:gap-8">
-            {/* Reduce Returns */}
-            <div className="flex flex-col items-center text-center">
-              <div className="bg-[#444833] rounded-lg w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center mb-4 relative">
-                <svg className="w-10 h-10 sm:w-14 sm:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 17l-4 4m0 0l-4-4m4 4V3" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v4a1 1 0 001 1h3M21 7v4a1 1 0 01-1 1h-3" /></svg>
-                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm"></span>
+        </div>
+        {/* Scrolling track — infinite loop via CSS animation */}
+        <div className="relative">
+          <div className="flex gap-4 animate-scroll-carousel" style={{ width: 'max-content' }}>
+            {[
+              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
+              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
+              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
+              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
+              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
+              /* duplicate set for seamless loop */
+              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
+              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
+              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
+              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
+              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
+            ].map((pair, idx) => (
+              <div key={idx} className="flex gap-2 flex-shrink-0">
+                {/* Original */}
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={pair.original}
+                    alt="Original item"
+                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
+                    loading="lazy"
+                  />
+                  <span className="absolute bottom-2 left-2 bg-black/50 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
+                    Original item
+                  </span>
+                </div>
+                {/* Result */}
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={pair.result}
+                    alt="Rendered Fits result"
+                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
+                    loading="lazy"
+                  />
+                  <span className="absolute bottom-2 right-2 bg-[#444833]/80 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
+                    Rendered Fits
+                  </span>
+                </div>
               </div>
-              <p className="text-gray-800 text-xs sm:text-sm font-medium">Reduce Returns Rates<br />by ~20%</p>
-            </div>
-            {/* Boost Conversions */}
-            <div className="flex flex-col items-center text-center">
-              <div className="bg-[#444833] rounded-lg w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center mb-4 relative">
-                <svg className="w-10 h-10 sm:w-14 sm:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm"></span>
-              </div>
-              <p className="text-gray-800 text-xs sm:text-sm font-medium">Boosts Conversions<br />by ~30%</p>
-            </div>
-            {/* Increase AOV */}
-            <div className="flex flex-col items-center text-center">
-              <div className="bg-[#444833] rounded-lg w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center mb-4 relative">
-                <svg className="w-10 h-10 sm:w-14 sm:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span className="absolute bottom-2 right-2 text-white font-bold text-xs sm:text-sm"></span>
-              </div>
-              <p className="text-gray-800 text-xs sm:text-sm font-medium">Increase AOV<br />by ~20%</p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -374,125 +362,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         </div>
       </div>
 
-      {/* ===== SECTION 6: ROI CALCULATOR ===== */}
-      <div className="bg-gray-50 py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
-            Calculate Your ROI
-          </h2>
-          <p className="text-center text-gray-500 text-sm mb-12 max-w-md mx-auto">
-            Enter your store's numbers to see your estimated return and recommended plan.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-
-            {/* Left — inputs */}
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 space-y-8">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <label className="text-sm font-semibold text-gray-800">Monthly Orders</label>
-                    <p className="text-xs text-gray-400 mt-0.5">How many orders does your store process per month?</p>
-                  </div>
-                  <span className="text-xl font-black text-[#444833] tabular-nums">{roiOrders.toLocaleString()}</span>
-                </div>
-                <input
-                  type="range" min="100" max="20000" step="100" value={roiOrders}
-                  onChange={(e) => setRoiOrders(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#444833]"
-                />
-                <div className="flex justify-between text-xs text-gray-300 mt-1.5">
-                  <span>100</span><span>20,000</span>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <label className="text-sm font-semibold text-gray-800">Monthly Revenue</label>
-                    <p className="text-xs text-gray-400 mt-0.5">Your average monthly revenue in GBP</p>
-                  </div>
-                  <span className="text-xl font-black text-[#444833] tabular-nums">£{roiRevenue.toLocaleString()}</span>
-                </div>
-                <input
-                  type="range" min="5000" max="200000" step="1000" value={roiRevenue}
-                  onChange={(e) => setRoiRevenue(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#444833]"
-                />
-                <div className="flex justify-between text-xs text-gray-300 mt-1.5">
-                  <span>£5k</span><span>£200k</span>
-                </div>
-              </div>
-
-              {/* Avg order value derived stat */}
-              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 flex items-center justify-between">
-                <span className="text-sm text-gray-500">Avg. order value</span>
-                <span className="text-sm font-bold text-gray-800">
-                  £{roiOrders > 0 ? Math.round(roiRevenue / roiOrders).toLocaleString() : '—'}
-                </span>
-              </div>
-            </div>
-
-            {/* Right — results */}
-            <div className="space-y-4">
-              {/* Recommended tier callout */}
-              <div className="bg-[#444833] rounded-2xl p-6 text-white">
-                <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Recommended plan</p>
-                <div className="flex items-end justify-between">
-                  <p className="text-3xl font-black">{roiData.tier}</p>
-                  <div className="text-right">
-                    <p className="text-2xl font-black">{roiData.costDisplay}</p>
-                    {isAnnual && <p className="text-white/50 text-xs">£{roiData.annual.toLocaleString()}/yr</p>}
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-white/70 text-sm">{isAnnual ? 'Try-ons per year' : 'Try-ons per month'}</span>
-                  <span className="text-white font-bold">{roiData.tryons.toLocaleString()}</span>
-                </div>
-              </div>
-
-              {/* ROI breakdown */}
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm divide-y divide-gray-100">
-                <div className="px-6 py-4 flex justify-between items-center">
-                  <div>
-                    <p className="text-sm font-medium text-gray-800">Fewer returns</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{roiData.returnsPrevented.toLocaleString()} returns prevented/mo @ £20 each</p>
-                  </div>
-                  <p className="text-base font-bold text-gray-900">+£{roiData.returnSavings.toLocaleString()}</p>
-                </div>
-                <div className="px-6 py-4 flex justify-between items-center">
-                  <div>
-                    <p className="text-sm font-medium text-gray-800">Higher conversions</p>
-                    <p className="text-xs text-gray-400 mt-0.5">5% lift on {roiOrders.toLocaleString()} orders @ £{roiOrders > 0 ? Math.round(roiRevenue / roiOrders) : 0} AOV</p>
-                  </div>
-                  <p className="text-base font-bold text-gray-900">+£{roiData.conversionLift.toLocaleString()}</p>
-                </div>
-                <div className="px-6 py-4 flex justify-between items-center bg-gray-50 rounded-b-2xl">
-                  <p className="text-sm font-semibold text-gray-700">Total monthly value added</p>
-                  <p className="text-lg font-black text-gray-900">£{roiData.totalMonthly.toLocaleString()}</p>
-                </div>
-              </div>
-
-              {/* ROI multiple highlight */}
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm px-6 py-5 flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-gray-800">Estimated ROI</p>
-                  <p className="text-xs text-gray-400 mt-0.5">Value generated vs. plan cost</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-4xl font-black text-[#444833]">{roiData.roiMultiple}x</p>
-                </div>
-              </div>
-
-              <p className="text-[10px] text-gray-400 px-1 leading-relaxed">
-                Based on industry averages: 7% return rate reduction, 5% conversion lift. Estimates only — actual results vary.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
       {/* ===== SECTION 6: DEMO LINKS ===== */}
       <div className="bg-white py-16 sm:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -524,63 +393,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">See Results</p>
               <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">See how it works</p>
             </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ===== SECTION 6b: RESULTS CAROUSEL ===== */}
-      <div className="bg-white py-16 sm:py-20 overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
-            See the Results
-          </h2>
-          <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
-            Original product images transformed into photorealistic try-on shots.
-          </p>
-        </div>
-        {/* Scrolling track — infinite loop via CSS animation */}
-        <div className="relative">
-          <div className="flex gap-4 animate-scroll-carousel" style={{ width: 'max-content' }}>
-            {[
-              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
-              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
-              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
-              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
-              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
-              /* duplicate set for seamless loop */
-              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
-              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
-              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
-              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
-              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
-            ].map((pair, idx) => (
-              <div key={idx} className="flex gap-2 flex-shrink-0">
-                {/* Original */}
-                <div className="relative flex-shrink-0">
-                  <img
-                    src={pair.original}
-                    alt="Original item"
-                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                  <span className="absolute bottom-2 left-2 bg-black/50 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
-                    Original item
-                  </span>
-                </div>
-                {/* Result */}
-                <div className="relative flex-shrink-0">
-                  <img
-                    src={pair.result}
-                    alt="Rendered Fits result"
-                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                  <span className="absolute bottom-2 right-2 bg-[#444833]/80 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
-                    Rendered Fits
-                  </span>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

@@ -139,7 +139,8 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="relative bg-white shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden rounded-lg"
+          className="shadow-2xl"
+          style={{ borderRadius: '0px', backgroundColor: '#fff', width: '768px', maxWidth: '100%', maxHeight: '90vh', overflow: 'hidden', position: 'relative', fontFamily: "'Jost', sans-serif" }}
         >
           <div className="overflow-y-auto max-h-[90vh]">
             <AnimatePresence mode="wait">
@@ -217,231 +218,208 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                 </motion.div>
               )}
 
-              {/* Upload Step — Split Layout */}
+              {/* Upload Step — Figma Design */}
               {step === 'upload' && (
-                <motion.div
-                  key="upload"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+                <motion.div key="upload" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <div style={{ display: 'flex', minHeight: '500px' }}>
                     {/* Left — Product Image */}
-                    <div className="hidden lg:block bg-gray-50">
-                      <img
-                        src={product?.url}
-                        alt={product?.name}
-                        className="w-full h-full object-cover"
-                      />
+                    <div style={{ width: '50%', flexShrink: 0, backgroundColor: '#F9FAFB', position: 'relative', display: 'flex' }} className="hidden lg:flex">
+                      <img src={product?.url} alt={product?.name} style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '500px' }} />
+                      <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', gap: '6px' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: 'rgba(255,255,255,0.92)', padding: '3px 8px', border: '1px solid #D1D5DC' }}>
+                          {product?.name}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Right — Upload Form */}
-                    <div className="flex flex-col">
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                       {/* Top Bar */}
-                      <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
-                        <div className="flex items-center gap-2 text-[13px] text-gray-700">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                            <path d="M12 2L9 9H2l5.5 4-2 7L12 16l6.5 4-2-7L22 9h-7L12 2z" />
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '48px', padding: '0 16px', borderBottom: '1px solid #D1D5DC', flexShrink: 0 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 2h11L21 7l-3 2-1-1v12H7V8L6 9 3 7l3.5-5z" />
                           </svg>
-                          My looks
-                        </div>
-                        <div className="flex items-center gap-3">
+                          <span style={{ fontSize: '14px', fontWeight: 500, color: '#101828' }}>Fits</span>
+                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#fff', backgroundColor: '#1E2939', padding: '2px 8px', letterSpacing: '0.05em' }}>Rendered Fits</span>
                           {!isUnlimited && (
-                            <span className="text-[12px] font-medium bg-[#1a1a1a] text-white px-3 py-1 rounded">
+                            <span style={{ fontSize: '11px', fontWeight: 500, color: '#fff', backgroundColor: '#1E2939', padding: '2px 8px' }}>
                               {remainingTries} {remainingTries === 1 ? 'credit' : 'credits'} left
                             </span>
                           )}
-                          <button
-                            onClick={handleClose}
-                            className="p-1 hover:bg-gray-100 rounded transition-colors"
-                          >
-                            <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                          </button>
                         </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 px-5 py-6 overflow-y-auto">
-                        <h2 className="text-xl sm:text-2xl font-light tracking-wide text-gray-900 mb-6">
-                          TRY IT ON, VIRTUALLY
-                        </h2>
-
-                        {/* Face Photo */}
-                        <div className="mb-5">
-                          <p className="text-[13px] font-medium text-gray-900 mb-2">Face photo</p>
-                          <label htmlFor="face-upload" className="block cursor-pointer">
-                            <div className={`relative border rounded-lg p-4 transition-colors ${
-                              facePreview ? 'border-green-400 bg-green-50' : 'border-gray-200 hover:border-gray-300 bg-white'
-                            }`}>
-                              {facePreview ? (
-                                <div className="flex items-center gap-3">
-                                  <img src={facePreview} alt="Face" className="w-12 h-12 rounded object-cover" />
-                                  <div>
-                                    <p className="text-[13px] font-medium text-green-700">Face photo uploaded</p>
-                                    <p className="text-[11px] text-green-600">Tap to change</p>
-                                  </div>
-                                </div>
-                              ) : (
-                                <div className="flex items-start gap-3">
-                                  <svg className="w-8 h-8 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
-                                    <circle cx="12" cy="8" r="5" />
-                                    <path d="M9 9.5a1 1 0 011-1h0a1 1 0 011 1" />
-                                    <path d="M13 9.5a1 1 0 011-1h0a1 1 0 011 1" />
-                                    <path d="M10 13a2.5 2.5 0 004 0" />
-                                  </svg>
-                                  <div>
-                                    <p className="text-[13px] font-medium text-gray-900">Upload your photo here</p>
-                                    <p className="text-[11px] text-gray-400 mt-0.5">Format: png, jpg, heic &amp; Max file size: 25 MB</p>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </label>
-                          <input
-                            id="face-upload"
-                            type="file"
-                            className="hidden"
-                            accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif"
-                            onChange={handleFaceSelect}
-                          />
-                        </div>
-
-                        {/* Full Body Photo */}
-                        <div className="mb-5">
-                          <p className="text-[13px] font-medium text-gray-900 mb-2">Full body photo</p>
-                          <label htmlFor="body-upload" className="block cursor-pointer">
-                            <div className={`relative border rounded-lg p-4 transition-colors ${
-                              bodyPreview ? 'border-green-400 bg-green-50' : 'border-gray-200 hover:border-gray-300 bg-white'
-                            }`}>
-                              {bodyPreview ? (
-                                <div className="flex items-center gap-3">
-                                  <img src={bodyPreview} alt="Body" className="w-12 h-12 rounded object-cover" />
-                                  <div>
-                                    <p className="text-[13px] font-medium text-green-700">Body photo uploaded</p>
-                                    <p className="text-[11px] text-green-600">Tap to change</p>
-                                  </div>
-                                </div>
-                              ) : (
-                                <div className="flex items-start gap-3">
-                                  <svg className="w-8 h-8 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
-                                    <circle cx="12" cy="4" r="2.5" />
-                                    <path d="M12 7v5" />
-                                    <path d="M8 9l4 1 4-1" />
-                                    <path d="M10 12l-2 8" />
-                                    <path d="M14 12l2 8" />
-                                  </svg>
-                                  <div>
-                                    <p className="text-[13px] font-medium text-gray-900">Upload your photo here</p>
-                                    <p className="text-[11px] text-gray-400 mt-0.5">Format: png, jpg, heic &amp; Max file size: 25 MB</p>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </label>
-                          <input
-                            id="body-upload"
-                            type="file"
-                            className="hidden"
-                            accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif"
-                            onChange={handleBodySelect}
-                          />
-                        </div>
-
-                        {error && (
-                          <div className="p-3 bg-red-50 border border-red-200 rounded-lg mb-4">
-                            <p className="text-red-700 text-[12px]">{error}</p>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Bottom Bar */}
-                      <div className="border-t border-gray-200 px-5 py-4">
-                        {/* Product Tags */}
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-[11px] bg-gray-100 text-gray-700 px-2.5 py-1 rounded border border-gray-200">
-                            {product?.name}
-                          </span>
-                        </div>
-
-                        {/* Try On Button */}
-                        <button
-                          onClick={handleGenerate}
-                          disabled={!bothImagesUploaded}
-                          className={`w-full py-3 px-6 rounded-lg text-[13px] font-medium tracking-wide transition-all flex items-center justify-center gap-2 ${
-                            bothImagesUploaded
-                              ? 'bg-[#1a1a1a] text-white hover:bg-black'
-                              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                          }`}
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        <button onClick={handleClose} style={{ width: '28px', height: '28px', backgroundColor: '#F3F4F6', border: 'none', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                           </svg>
-                          Try on
                         </button>
                       </div>
 
-                      {/* Legal Disclaimer */}
-                      <div className="px-5 pt-2 pb-1 text-center">
-                        <p className="text-[9px] text-gray-400 leading-relaxed">
-                          By uploading your photo, you agree to our{' '}
-                          <Link to="/legal/end-user-terms" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
-                            Terms &amp; Conditions
-                          </Link>{' '}
-                          and{' '}
-                          <Link to="/legal/app-privacy-policy" target="_blank" className="underline underline-offset-1 hover:text-gray-600">
-                            Privacy Policy
-                          </Link>
-                          . Your image is never permanently stored.
+                      {/* Title */}
+                      <div style={{ padding: '24px 24px 0' }}>
+                        <p style={{ fontSize: '22px', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#101828', marginBottom: '20px', lineHeight: 1.2 }}>
+                          TRY IT ON,<br />VIRTUALLY
                         </p>
                       </div>
 
-                      {/* Footer */}
-                      <div className="border-t border-gray-100 px-5 py-2.5 text-center">
-                        <p className="text-[11px] text-gray-400">
-                          Powered by <span className="font-bold text-gray-600">RENDERED FITS</span> &rarr;
+                      {/* Upload rows */}
+                      <div style={{ flex: 1 }}>
+                        {/* Face uploader */}
+                        <label htmlFor="face-upload" style={{ display: 'flex', alignItems: 'center', gap: '14px', padding: '14px 24px', backgroundColor: '#F9FAFB', borderBottom: '1px solid #D1D5DC', cursor: 'pointer' }}>
+                          {facePreview ? (
+                            <div style={{ position: 'relative', flexShrink: 0 }}>
+                              <img src={facePreview} alt="Face" style={{ width: '52px', height: '52px', objectFit: 'cover', borderRadius: '50%' }} />
+                              <div style={{ position: 'absolute', bottom: 0, right: 0, width: '16px', height: '16px', borderRadius: '50%', backgroundColor: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <svg width="9" height="9" viewBox="0 0 20 20" fill="white"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                              </div>
+                            </div>
+                          ) : (
+                            <div style={{ width: '52px', height: '52px', borderRadius: '50%', border: '1.5px dashed #D1D5DC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="1.5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                            </div>
+                          )}
+                          <div>
+                            <p style={{ fontSize: '14px', fontWeight: 500, color: '#101828', marginBottom: '2px' }}>
+                              {facePreview ? 'Face photo uploaded' : 'Upload face photo'}
+                            </p>
+                            <p style={{ fontSize: '12px', color: '#6A7282' }}>
+                              {facePreview ? 'Tap to change' : 'Clear, front-facing photo'}
+                            </p>
+                          </div>
+                        </label>
+                        <input id="face-upload" type="file" className="hidden" accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif" onChange={handleFaceSelect} />
+
+                        {/* Body uploader */}
+                        <label htmlFor="body-upload" style={{ display: 'flex', alignItems: 'center', gap: '14px', padding: '14px 24px', backgroundColor: '#F9FAFB', borderBottom: '1px solid #D1D5DC', cursor: 'pointer' }}>
+                          {bodyPreview ? (
+                            <div style={{ position: 'relative', flexShrink: 0 }}>
+                              <img src={bodyPreview} alt="Body" style={{ width: '52px', height: '52px', objectFit: 'cover', borderRadius: '4px' }} />
+                              <div style={{ position: 'absolute', bottom: 0, right: 0, width: '16px', height: '16px', borderRadius: '50%', backgroundColor: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <svg width="9" height="9" viewBox="0 0 20 20" fill="white"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                              </div>
+                            </div>
+                          ) : (
+                            <div style={{ width: '52px', height: '52px', borderRadius: '4px', border: '1.5px dashed #D1D5DC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="1.5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                              </svg>
+                            </div>
+                          )}
+                          <div>
+                            <p style={{ fontSize: '14px', fontWeight: 500, color: '#101828', marginBottom: '2px' }}>
+                              {bodyPreview ? 'Full body photo uploaded' : 'Upload full body photo'}
+                            </p>
+                            <p style={{ fontSize: '12px', color: '#6A7282' }}>
+                              {bodyPreview ? 'Tap to change' : 'Standing, full-length photo'}
+                            </p>
+                          </div>
+                        </label>
+                        <input id="body-upload" type="file" className="hidden" accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif" onChange={handleBodySelect} />
+                      </div>
+
+                      {/* Error */}
+                      {error && (
+                        <div style={{ padding: '0 24px', marginTop: '8px' }}>
+                          <p style={{ fontSize: '12px', color: '#dc2626', backgroundColor: '#fef2f2', padding: '8px 12px', border: '1px solid #fecaca' }}>{error}</p>
+                        </div>
+                      )}
+
+                      {/* Terms */}
+                      <div style={{ padding: '10px 24px 14px' }}>
+                        <p style={{ fontSize: '11px', color: '#9CA3AF', lineHeight: 1.5 }}>
+                          By uploading your photo, you agree to our{' '}
+                          <Link to="/legal/end-user-terms" target="_blank" style={{ color: '#6A7282', textDecoration: 'underline' }}>Terms</Link>{' '}
+                          and{' '}
+                          <Link to="/legal/app-privacy-policy" target="_blank" style={{ color: '#6A7282', textDecoration: 'underline' }}>Privacy Policy</Link>.
+                          Your image is never permanently stored.
                         </p>
+                      </div>
+
+                      {/* Generate button */}
+                      <div style={{ padding: '0 24px 16px' }}>
+                        <button
+                          onClick={handleGenerate}
+                          disabled={!bothImagesUploaded}
+                          style={{
+                            width: '100%',
+                            padding: '12px',
+                            fontSize: '13px',
+                            fontWeight: 500,
+                            letterSpacing: '0.08em',
+                            textTransform: 'uppercase',
+                            color: '#fff',
+                            backgroundColor: bothImagesUploaded ? '#1E2939' : '#6A7282',
+                            border: 'none',
+                            borderRadius: '0px',
+                            cursor: bothImagesUploaded ? 'pointer' : 'not-allowed',
+                            fontFamily: "'Jost', sans-serif",
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '8px',
+                          }}
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                          </svg>
+                          Generate Try-On
+                        </button>
+                      </div>
+
+                      {/* Footer */}
+                      <div style={{ height: '36px', borderTop: '1px solid #D1D5DC', backgroundColor: '#F3F4F6', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', flexShrink: 0 }}>
+                        <span style={{ fontSize: '11px', color: '#6A7282' }}>Powered by</span>
+                        <span style={{ fontSize: '11px', fontWeight: 700, color: '#1E2939', letterSpacing: '0.05em' }}>RENDERED FITS</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1E2939" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
                       </div>
                     </div>
                   </div>
                 </motion.div>
               )}
 
-              {/* Generating Step — Split Layout */}
+              {/* Generating Step — Figma Design */}
               {step === 'generating' && (
-                <motion.div
-                  key="generating"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-                    {/* Left — Product Image */}
-                    <div className="hidden lg:block bg-gray-50">
-                      <img
-                        src={product?.url}
-                        alt={product?.name}
-                        className="w-full h-full object-cover"
-                      />
+                <motion.div key="generating" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <div style={{ fontFamily: "'Jost', sans-serif" }}>
+                    {/* Top Bar */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '48px', padding: '0 16px', borderBottom: '1px solid #D1D5DC' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 2h11L21 7l-3 2-1-1v12H7V8L6 9 3 7l3.5-5z" />
+                        </svg>
+                        <span style={{ fontSize: '14px', fontWeight: 500, color: '#101828' }}>Fits</span>
+                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#fff', backgroundColor: '#1E2939', padding: '2px 8px' }}>Rendered Fits</span>
+                      </div>
+                      <button onClick={handleClose} style={{ width: '28px', height: '28px', backgroundColor: '#F3F4F6', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
                     </div>
 
-                    {/* Right — Loading */}
-                    <div className="flex flex-col items-center justify-center p-8 sm:p-12 min-h-[400px]">
-                      <Spinner />
-                      <h3 className="text-xl font-light tracking-wide text-gray-900 mt-6 mb-2">
-                        Generating Your Try-On
-                      </h3>
-                      <p className="text-gray-500 text-[13px] text-center max-w-xs">
-                        Our AI is creating a personalized try-on with your photos and the garment...
+                    {/* Loading body */}
+                    <div style={{ padding: '48px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '400px', textAlign: 'center' }}>
+                      <p style={{ fontSize: '26px', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#101828', marginBottom: '32px' }}>
+                        GETTING DRESSED!
                       </p>
+                      <Spinner />
+                      <p style={{ fontSize: '13px', color: '#6A7282', marginTop: '16px', maxWidth: '240px', lineHeight: 1.6 }}>
+                        Our AI is creating a personalised try-on with your photos and the garment...
+                      </p>
+                    </div>
 
-                      {/* Footer */}
-                      <div className="absolute bottom-0 left-0 right-0 border-t border-gray-100 px-5 py-2.5 text-center">
-                        <p className="text-[11px] text-gray-400">
-                          Powered by <span className="font-bold text-gray-600">RENDERED FITS</span> &rarr;
-                        </p>
-                      </div>
+                    {/* Footer */}
+                    <div style={{ height: '36px', borderTop: '1px solid #D1D5DC', backgroundColor: '#F3F4F6', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                      <span style={{ fontSize: '11px', color: '#6A7282' }}>Powered by</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#1E2939', letterSpacing: '0.05em' }}>RENDERED FITS</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1E2939" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
                     </div>
                   </div>
                 </motion.div>
