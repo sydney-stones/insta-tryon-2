@@ -22,9 +22,31 @@ import virtualTryOnVsSizeRecommendation from './virtual-try-on-vs-size-recommend
 import howToSetUpVirtualTryOnShopify from './how-to-set-up-virtual-try-on-shopify';
 import isVirtualTryOnWorthIt from './is-virtual-try-on-worth-it';
 import virtualTryOnFaq from './virtual-try-on-faq';
+import virtualTryOnOccasionwearBrands from './virtual-try-on-occasionwear-brands';
+import virtualTryOnWomenswearShopify from './virtual-try-on-womenswear-shopify';
+import virtualTryOnBridalWeddingFashion from './virtual-try-on-bridal-wedding-fashion';
+import virtualTryOnActivewearBrands from './virtual-try-on-activewear-brands';
+import virtualTryOnSwimwearBrands from './virtual-try-on-swimwear-brands';
+import virtualTryOnKnitwearBrands from './virtual-try-on-knitwear-brands';
+import virtualTryOnStreetwearBrands from './virtual-try-on-streetwear-brands';
+import virtualTryOnMenswearBrands from './virtual-try-on-menswear-brands';
+import virtualTryOnLuxuryFashionBrands from './virtual-try-on-luxury-fashion-brands';
+import virtualTryOnSustainableFashionBrands from './virtual-try-on-sustainable-fashion-brands';
+import virtualTryOnPlusSizeFashion from './virtual-try-on-plus-size-fashion';
 
 // Add new posts here — newest first
 export const allPosts: BlogPost[] = [
+  virtualTryOnPlusSizeFashion,
+  virtualTryOnSustainableFashionBrands,
+  virtualTryOnLuxuryFashionBrands,
+  virtualTryOnMenswearBrands,
+  virtualTryOnStreetwearBrands,
+  virtualTryOnKnitwearBrands,
+  virtualTryOnSwimwearBrands,
+  virtualTryOnActivewearBrands,
+  virtualTryOnBridalWeddingFashion,
+  virtualTryOnWomenswearShopify,
+  virtualTryOnOccasionwearBrands,
   virtualTryOnStatistics,
   virtualTryOnVsSizeRecommendation,
   howToSetUpVirtualTryOnShopify,

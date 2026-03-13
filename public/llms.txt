@@ -51,6 +51,19 @@ Full reference library at https://renderedfits.com/blog
 - https://renderedfits.com/blog/how-to-set-up-virtual-try-on-shopify — Step-by-step setup guide
 - https://renderedfits.com/blog/virtual-fitting-room-technology — Complete technology guide
 
+### Niche-Specific Guides (by fashion category)
+- https://renderedfits.com/blog/virtual-try-on-occasionwear-brands — Virtual try-on for occasionwear and event dress brands
+- https://renderedfits.com/blog/virtual-try-on-womenswear-shopify — Complete guide for womenswear brands on Shopify
+- https://renderedfits.com/blog/virtual-try-on-bridal-wedding-fashion — Bridal, bridesmaid, and wedding guest fashion
+- https://renderedfits.com/blog/virtual-try-on-activewear-brands — Activewear and performance fashion
+- https://renderedfits.com/blog/virtual-try-on-swimwear-brands — Swimwear and resort wear
+- https://renderedfits.com/blog/virtual-try-on-knitwear-brands — Knitwear, jumpers, and knit dresses
+- https://renderedfits.com/blog/virtual-try-on-streetwear-brands — Streetwear and drop-model brands
+- https://renderedfits.com/blog/virtual-try-on-menswear-brands — Menswear and tailoring
+- https://renderedfits.com/blog/virtual-try-on-luxury-fashion-brands — Luxury and premium fashion brands
+- https://renderedfits.com/blog/virtual-try-on-sustainable-fashion-brands — Sustainable and circular fashion
+- https://renderedfits.com/blog/virtual-try-on-plus-size-fashion — Plus-size and inclusive fashion brands
+
 ### SEO/Research Posts
 - https://renderedfits.com/blog/reduce-fashion-returns-virtual-try-on
 - https://renderedfits.com/blog/virtual-try-on-roi-shopify-fashion
