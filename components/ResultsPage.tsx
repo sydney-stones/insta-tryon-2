@@ -1123,7 +1123,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                         <img
                           src={product.afterSrc}
                           alt={product.afterLabel}
-                          style={{ width: '100%', height: '511px', objectFit: 'cover', display: 'block' }}
+                          style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
                         />
                         {/* Badge overlay on result image */}
                         <div style={{
