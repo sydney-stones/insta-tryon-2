@@ -35,7 +35,7 @@ const demoProducts: DemoProduct[] = [
     productSrc: '/result-images/angloitalian.jpeg',
     productLabel: 'Product: Sutherland Classic Tweed Suit',
     faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody--new.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/angloitalian-tryon-1k.png',
     afterLabel: 'Try-On Result',
     description: 'Classic British tweed suit crafted in Scotland. Timeless tailoring with a relaxed, modern fit.',
@@ -50,25 +50,10 @@ const demoProducts: DemoProduct[] = [
     productSrc: '/result-images/nudeproject.jpeg',
     productLabel: 'Product: Essential Slim Trousers',
     faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody--new.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/nudeproject-tryon-1K.png',
     afterLabel: 'Try-On Result',
     description: 'Clean-cut slim trousers in premium stretch fabric. A wardrobe essential for any occasion.',
-  },
-  {
-    id: 13,
-    name: 'Field Sport Shooting Outfit',
-    brand: 'Purdey',
-    price: 895,
-    category: 'Outerwear',
-    sizes: ['S', 'M', 'L', 'XL'],
-    productSrc: '/result-images/purdeyoutfit.png',
-    productLabel: 'Product: Field Sport Shooting Outfit',
-    faceSrc: '/result-images/siennaneutral--new.JPG',
-    bodySrc: '/result-images/siennabody--new.JPG',
-    afterSrc: '/result-images/purdey-tryon-1k.png',
-    afterLabel: 'Try-On Result',
-    description: 'Classic British field sport attire from the renowned Purdey house. Heritage design meets countryside performance.',
   },
   {
     id: 1,
@@ -112,7 +97,7 @@ const demoProducts: DemoProduct[] = [
     productSrc: '/result-images/elysianclo.webp',
     productLabel: 'Product: Distressed Wide Leg Jeans',
     faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody--new.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/elysianclo-tryon-2K.png',
     afterLabel: 'Try-On Result',
     description: 'Olive wash wide-leg jeans with heavy distressing. Relaxed streetwear fit.',
@@ -127,7 +112,7 @@ const demoProducts: DemoProduct[] = [
     productSrc: '/result-images/heliotemil.webp',
     productLabel: 'Product: Tech Panelled Jacket',
     faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody--new.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/heliotemil-tryon-1K.png',
     afterLabel: 'Try-On Result',
     description: 'Deconstructed technical jacket with mesh panel inserts. Avant-garde hooded silhouette.',
@@ -158,7 +143,7 @@ const demoProducts: DemoProduct[] = [
     productSrc: '/result-images/mellowclo.webp',
     productLabel: 'Product: Lightweight Windbreaker',
     faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody--new.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/mellowclo-tryon-1K.png',
     afterLabel: 'Try-On Result',
     description: 'Cropped olive windbreaker with funnel neck. Water-resistant nylon shell.',
@@ -248,7 +233,7 @@ const demoProducts: DemoProduct[] = [
     productSrc: '/result-images/1100261_ALT3_dibagogf.webp',
     productLabel: 'Product: Scabal Wool Suit',
     faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody--new.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/1100261_ALT1_dibagogf-nb2-4k-tryon.png',
     afterLabel: 'Try-On Result',
     description: 'Impeccably tailored suit in premium Scabal wool. The definitive expression of British tailoring excellence.',
@@ -263,7 +248,7 @@ const demoProducts: DemoProduct[] = [
     productSrc: '/result-images/1201075_B_1243711962_uhypmiuo.webp',
     productLabel: 'Product: Scabal Tailored Jacket',
     faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody--new.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/1201075_B_1243711962_uhypmiuo-nb2-4k-tryon.png',
     afterLabel: 'Try-On Result',
     description: 'A signature Scabal tailored jacket in fine-grain cloth. Structured shoulders, clean lines, timeless craftsmanship.',
@@ -281,15 +266,11 @@ type AnimationState =
   | 'click_face'
   | 'show_upload_modal'
   | 'click_photo_library'
-  | 'show_gallery'
-  | 'select_face'
   | 'face_uploaded'
   | 'cursor_to_body'
   | 'click_body'
   | 'show_upload_modal_2'
   | 'click_photo_library_2'
-  | 'show_gallery_2'
-  | 'select_body'
   | 'body_uploaded'
   | 'loading'
   | 'result';
@@ -303,15 +284,11 @@ const ANIMATION_SEQUENCE: { state: AnimationState; duration: number }[] = [
   { state: 'click_face', duration: 400 },
   { state: 'show_upload_modal', duration: 1500 },
   { state: 'click_photo_library', duration: 800 },
-  { state: 'show_gallery', duration: 1500 },
-  { state: 'select_face', duration: 1000 },
   { state: 'face_uploaded', duration: 800 },
   { state: 'cursor_to_body', duration: 1000 },
   { state: 'click_body', duration: 400 },
   { state: 'show_upload_modal_2', duration: 1500 },
   { state: 'click_photo_library_2', duration: 800 },
-  { state: 'show_gallery_2', duration: 1500 },
-  { state: 'select_body', duration: 1000 },
   { state: 'body_uploaded', duration: 3800 },
   { state: 'loading', duration: 4000 },
   { state: 'result', duration: 0 },
@@ -355,9 +332,9 @@ function useAnimationSequence(active: boolean): AnimationState {
 function isPopupVisible(state: AnimationState): boolean {
   const popupStates: AnimationState[] = [
     'popup_open', 'cursor_to_face', 'click_face',
-    'show_upload_modal', 'click_photo_library', 'show_gallery', 'select_face', 'face_uploaded',
+    'show_upload_modal', 'click_photo_library', 'face_uploaded',
     'cursor_to_body', 'click_body',
-    'show_upload_modal_2', 'click_photo_library_2', 'show_gallery_2', 'select_body', 'body_uploaded',
+    'show_upload_modal_2', 'click_photo_library_2', 'body_uploaded',
     'loading', 'result',
   ];
   return popupStates.includes(state);
@@ -366,7 +343,7 @@ function isPopupVisible(state: AnimationState): boolean {
 function isFaceUploaded(state: AnimationState): boolean {
   const afterFace: AnimationState[] = [
     'face_uploaded', 'cursor_to_body', 'click_body',
-    'show_upload_modal_2', 'click_photo_library_2', 'show_gallery_2', 'select_body', 'body_uploaded',
+    'show_upload_modal_2', 'click_photo_library_2', 'body_uploaded',
     'loading', 'result',
   ];
   return afterFace.includes(state);
@@ -379,10 +356,6 @@ function isBodyUploaded(state: AnimationState): boolean {
 
 function isUploadModalVisible(state: AnimationState): boolean {
   return ['show_upload_modal', 'click_photo_library', 'show_upload_modal_2', 'click_photo_library_2'].includes(state);
-}
-
-function isGalleryVisible(state: AnimationState): boolean {
-  return ['show_gallery', 'select_face', 'show_gallery_2', 'select_body'].includes(state);
 }
 
 function isLoadingState(state: AnimationState): boolean {
@@ -399,10 +372,8 @@ function isCursorVisible(state: AnimationState): boolean {
     'cursor_to_button', 'click_button',
     'cursor_to_face', 'click_face',
     'click_photo_library',
-    'select_face',
     'cursor_to_body', 'click_body',
     'click_photo_library_2',
-    'select_body',
   ].includes(state);
 }
 
@@ -545,13 +516,6 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
         setCursorPos({ x: rect.left + rect.width * 0.35, y: rect.top + rect.height * 0.42 });
         return;
       }
-    } else if (animState === 'select_face' || animState === 'select_body') {
-      // Target: a photo in the gallery — roughly 30% from top, 65% horizontal
-      if (overlayContainerRef.current) {
-        const rect = overlayContainerRef.current.getBoundingClientRect();
-        setCursorPos({ x: rect.left + rect.width * 0.65, y: rect.top + rect.height * 0.3 });
-        return;
-      }
     }
 
     if (targetEl) {
@@ -570,7 +534,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
 
   const isClicking = [
     'click_button', 'click_face', 'click_photo_library',
-    'select_face', 'click_body', 'click_photo_library_2', 'select_body',
+    'click_body', 'click_photo_library_2',
   ].includes(animState);
 
   return (
@@ -706,49 +670,66 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
               {/* ── UPLOAD SCREEN ── */}
               {!isLoadingState(animState) && !isResultState(animState) && (
                 <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  {/* Top Bar */}
+                  {/* Top Bar — Figma: My looks tab | credits badge + close */}
                   <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     height: '48px',
-                    padding: '0 16px',
                     borderBottom: '1px solid #D1D5DC',
                     flexShrink: 0,
+                    backgroundColor: '#fff',
                   }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      {/* T-shirt icon */}
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5">
+                    {/* Left: My looks button with border-right */}
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      padding: '0px 16px',
+                      gap: '8px',
+                      height: '48px',
+                      borderRight: '1px solid #D1D5DC',
+                      minWidth: '113px',
+                    }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 2h11L21 7l-3 2-1-1v12H7V8L6 9 3 7l3.5-5z" />
                       </svg>
-                      <span style={{ fontSize: '14px', fontWeight: 500, color: '#101828' }}>Fits</span>
-                      <span style={{
-                        fontSize: '11px',
-                        fontWeight: 500,
-                        color: '#fff',
-                        backgroundColor: '#1E2939',
-                        padding: '2px 8px',
-                        letterSpacing: '0.05em',
-                      }}>Rendered Fits</span>
+                      <span style={{ fontSize: '14px', fontWeight: 400, color: '#101828', whiteSpace: 'nowrap' }}>My looks</span>
                     </div>
-                    <button
-                      onClick={onClose}
-                      style={{
-                        width: '28px',
-                        height: '28px',
-                        backgroundColor: '#F3F4F6',
-                        border: 'none',
-                        borderRadius: '0px',
+                    {/* Right: credits badge + close */}
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0px' }}>
+                      <div style={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
+                        padding: '2px 8px',
+                        backgroundColor: '#1E2939',
+                        height: '20px',
+                        marginRight: '16px',
+                      }}>
+                        <span style={{ fontSize: '12px', fontWeight: 500, color: '#F9FAFB', whiteSpace: 'nowrap' }}>10 credits left</span>
+                      </div>
+                      <button
+                        onClick={onClose}
+                        style={{
+                          width: '48px',
+                          height: '48px',
+                          backgroundColor: '#F3F4F6',
+                          border: 'none',
+                          borderLeft: '1px solid #D1D5DC',
+                          borderRadius: '0px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          flexShrink: 0,
+                        }}
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E2939" strokeWidth="1.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
 
                   {/* Body — two panel */}
@@ -800,35 +781,38 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                       display: 'flex',
                       flexDirection: 'column',
                     }}>
-                      {/* Title */}
-                      <div style={{ padding: '24px 24px 0' }}>
-                        <p style={{
-                          fontSize: '22px',
-                          fontWeight: 400,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.06em',
-                          color: '#101828',
-                          marginBottom: '20px',
-                          lineHeight: 1.2,
-                        }}>
-                          TRY IT ON,<br />VIRTUALLY
-                        </p>
-                      </div>
+                      {/* Title + uploaders container */}
+                      <div style={{ padding: '0px 0px 0', display: 'flex', flexDirection: 'column', gap: '32px', flex: 1, paddingTop: '0px' }}>
+                        <div style={{ padding: '24px 24px 0' }}>
+                          <p style={{
+                            fontSize: '30px',
+                            fontWeight: 400,
+                            textTransform: 'uppercase',
+                            color: '#101828',
+                            lineHeight: '36px',
+                          }}>
+                            TRY IT ON, VIRTUALLY
+                          </p>
+                        </div>
 
                       {/* Upload rows */}
-                      <div style={{ flex: 1 }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
+                        {/* Face photo label */}
+                        <p style={{ fontSize: '16px', fontWeight: 400, color: '#101828', padding: '0 24px', marginBottom: '4px' }}>Face photo</p>
                         {/* Face uploader */}
                         <div
                           ref={faceUploadRef}
                           style={{
                             display: 'flex',
-                            alignItems: 'center',
-                            gap: '14px',
-                            padding: '14px 24px',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            padding: '16px',
+                            gap: '20px',
                             backgroundColor: '#F9FAFB',
                             borderBottom: '1px solid #D1D5DC',
                             cursor: 'pointer',
-                            position: 'relative',
+                            marginLeft: '24px',
+                            marginRight: '24px',
                           }}
                         >
                           {isFaceUploaded(animState) ? (
@@ -836,7 +820,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                               <img
                                 src={product.faceSrc}
                                 alt="Face"
-                                style={{ width: '52px', height: '52px', objectFit: 'cover', borderRadius: '50%' }}
+                                style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '0px' }}
                               />
                               <div style={{
                                 position: 'absolute', bottom: 0, right: 0,
@@ -850,40 +834,42 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                               </div>
                             </div>
                           ) : (
-                            <div style={{
-                              width: '52px', height: '52px',
-                              borderRadius: '50%',
-                              border: '1.5px dashed #D1D5DC',
-                              display: 'flex', alignItems: 'center', justifyContent: 'center',
-                              flexShrink: 0,
-                            }}>
-                              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="1.5">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <div style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              {/* Face icon */}
+                              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="15" r="7" stroke="#101828" strokeWidth="1.5" fill="none" />
+                                <path d="M8 36c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#101828" strokeWidth="1.5" fill="none" />
                               </svg>
                             </div>
                           )}
-                          <div>
-                            <p style={{ fontSize: '14px', fontWeight: 500, color: '#101828', marginBottom: '2px' }}>
-                              {isFaceUploaded(animState) ? 'Face photo uploaded' : 'Upload face photo'}
+                          <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <p style={{ fontSize: '16px', fontWeight: 500, color: '#101828', marginBottom: '0px', lineHeight: '24px' }}>
+                              {isFaceUploaded(animState) ? 'Face photo uploaded' : 'Upload your photo here'}
                             </p>
-                            <p style={{ fontSize: '12px', color: '#6A7282' }}>
-                              {isFaceUploaded(animState) ? 'Tap to change' : 'Clear, front-facing photo'}
+                            <p style={{ fontSize: '14px', color: '#6A7282', lineHeight: '20px' }}>
+                              {isFaceUploaded(animState) ? 'Tap to change' : 'Format: png, jpg, heic & Max file size: 25 MB'}
                             </p>
                           </div>
                         </div>
 
+                        {/* Spacer between uploaders */}
+                        <div style={{ height: '32px' }} />
+                        {/* Full body photo label */}
+                        <p style={{ fontSize: '16px', fontWeight: 400, color: '#101828', padding: '0 24px', marginBottom: '4px' }}>Full body photo</p>
                         {/* Body uploader */}
                         <div
                           ref={bodyUploadRef}
                           style={{
                             display: 'flex',
-                            alignItems: 'center',
-                            gap: '14px',
-                            padding: '14px 24px',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            padding: '16px',
+                            gap: '20px',
                             backgroundColor: '#F9FAFB',
                             borderBottom: '1px solid #D1D5DC',
                             cursor: 'pointer',
+                            marginLeft: '24px',
+                            marginRight: '24px',
                           }}
                         >
                           {isBodyUploaded(animState) ? (
@@ -891,7 +877,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                               <img
                                 src={product.bodySrc}
                                 alt="Body"
-                                style={{ width: '52px', height: '52px', objectFit: 'cover', borderRadius: '4px' }}
+                                style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '0px' }}
                               />
                               <div style={{
                                 position: 'absolute', bottom: 0, right: 0,
@@ -905,56 +891,54 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                               </div>
                             </div>
                           ) : (
-                            <div style={{
-                              width: '52px', height: '52px',
-                              borderRadius: '4px',
-                              border: '1.5px dashed #D1D5DC',
-                              display: 'flex', alignItems: 'center', justifyContent: 'center',
-                              flexShrink: 0,
-                            }}>
-                              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="1.5">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            <div style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              {/* Full body icon */}
+                              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="9" r="4" stroke="#101828" strokeWidth="1.5" fill="none" />
+                                <line x1="20" y1="13" x2="20" y2="28" stroke="#101828" strokeWidth="1.5" />
+                                <line x1="12" y1="18" x2="28" y2="18" stroke="#101828" strokeWidth="1.5" />
+                                <line x1="20" y1="28" x2="14" y2="38" stroke="#101828" strokeWidth="1.5" />
+                                <line x1="20" y1="28" x2="26" y2="38" stroke="#101828" strokeWidth="1.5" />
                               </svg>
                             </div>
                           )}
-                          <div>
-                            <p style={{ fontSize: '14px', fontWeight: 500, color: '#101828', marginBottom: '2px' }}>
-                              {isBodyUploaded(animState) ? 'Full body photo uploaded' : 'Upload full body photo'}
+                          <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <p style={{ fontSize: '16px', fontWeight: 500, color: '#101828', marginBottom: '0px', lineHeight: '24px' }}>
+                              {isBodyUploaded(animState) ? 'Full body photo uploaded' : 'Upload your photo here'}
                             </p>
-                            <p style={{ fontSize: '12px', color: '#6A7282' }}>
-                              {isBodyUploaded(animState) ? 'Tap to change' : 'Standing, full-length photo'}
+                            <p style={{ fontSize: '14px', color: '#6A7282', lineHeight: '20px' }}>
+                              {isBodyUploaded(animState) ? 'Tap to change' : 'Format: png, jpg, heic & Max file size: 25 MB'}
                             </p>
                           </div>
                         </div>
                       </div>
+                      </div>{/* end Title + uploaders container */}
 
-                      {/* Terms */}
-                      <div style={{ padding: '10px 24px 14px' }}>
-                        <p style={{ fontSize: '11px', color: '#9CA3AF', lineHeight: 1.5 }}>
-                          By uploading your photo, you agree to our{' '}
-                          <Link to="/legal/end-user-terms" target="_blank" style={{ color: '#6A7282', textDecoration: 'underline' }}>
-                            Terms
-                          </Link>{' '}
-                          and{' '}
-                          <Link to="/legal/app-privacy-policy" target="_blank" style={{ color: '#6A7282', textDecoration: 'underline' }}>
-                            Privacy Policy
-                          </Link>
-                          . Your image is never permanently stored.
-                        </p>
-                      </div>
+                      {/* Terms + Button block */}
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ padding: '8px 24px', display: 'flex', alignItems: 'center' }}>
+                          <p style={{ fontSize: '12px', color: '#6A7282', lineHeight: '16px' }}>
+                            By uploading your photo, you agree to our{' '}
+                            <Link to="/legal/end-user-terms" target="_blank" style={{ color: '#6A7282', textDecoration: 'underline' }}>
+                              Terms & Conditions
+                            </Link>{' '}
+                            and{' '}
+                            <Link to="/legal/app-privacy-policy" target="_blank" style={{ color: '#6A7282', textDecoration: 'underline' }}>
+                              Privacy Policy
+                            </Link>
+                            . Your image is never permanently stored.
+                          </p>
+                        </div>
 
-                      {/* Generate button */}
-                      <div style={{ padding: '0 24px 16px' }}>
+                        {/* Generate / Try on button */}
                         <button
                           disabled
                           style={{
                             width: '100%',
-                            padding: '12px',
-                            fontSize: '13px',
-                            fontWeight: 500,
-                            letterSpacing: '0.08em',
-                            textTransform: 'uppercase',
-                            color: '#fff',
+                            height: '48px',
+                            fontSize: '14px',
+                            fontWeight: 400,
+                            color: isBodyUploaded(animState) ? '#fff' : '#D1D5DC',
                             backgroundColor: isBodyUploaded(animState) ? '#1E2939' : '#6A7282',
                             border: 'none',
                             borderRadius: '0px',
@@ -968,13 +952,21 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                         >
                           {isBodyUploaded(animState) ? (
                             <>
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="animate-spin">
-                                <circle cx="12" cy="12" r="10" strokeOpacity="0.25" />
-                                <path d="M12 2a10 10 0 0110 10" strokeOpacity="0.75" />
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="2" className="animate-spin">
+                                <circle cx="12" cy="12" r="10" stroke="#D1D5DC" strokeOpacity="0.5" />
+                                <path d="M12 2a10 10 0 0110 10" stroke="#D1D5DC" strokeOpacity="0.9" />
                               </svg>
-                              Generating…
+                              Try on
                             </>
-                          ) : 'Generate Try-On'}
+                          ) : (
+                            <>
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" fill="#D1D5DC" />
+                                <path d="M19 15l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="#D1D5DC" />
+                              </svg>
+                              Try on
+                            </>
+                          )}
                         </button>
                       </div>
 
@@ -1251,40 +1243,6 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                 )}
               </AnimatePresence>
 
-              {/* ─── Gallery Overlay ─── */}
-              <AnimatePresence>
-                {isGalleryVisible(animState) && (
-                  <motion.div
-                    ref={overlayContainerRef}
-                    className="absolute inset-0 z-[70] flex items-center justify-center bg-black/40"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <div className="relative max-w-[85%] sm:max-w-[60%] max-h-[80%]">
-                      <motion.img
-                        src="/result-images/phonegallery.PNG"
-                        alt="Photo gallery"
-                        className="w-full h-full object-contain rounded-xl shadow-2xl"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 30 }}
-                        transition={{ duration: 0.2 }}
-                      />
-                      {(animState === 'select_face' || animState === 'select_body') && (
-                        <motion.div
-                          className="absolute border-4 border-blue-500 rounded-lg"
-                          style={{ top: '22%', right: '5%', width: '28%', height: '15%' }}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: [0, 1, 0.7, 1] }}
-                          transition={{ duration: 0.6 }}
-                        />
-                      )}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </motion.div>
           </motion.div>
         )}

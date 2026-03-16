@@ -268,13 +268,13 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                         <label htmlFor="face-upload" style={{ display: 'flex', alignItems: 'center', gap: '14px', padding: '14px 24px', backgroundColor: '#F9FAFB', borderBottom: '1px solid #D1D5DC', cursor: 'pointer' }}>
                           {facePreview ? (
                             <div style={{ position: 'relative', flexShrink: 0 }}>
-                              <img src={facePreview} alt="Face" style={{ width: '52px', height: '52px', objectFit: 'cover', borderRadius: '50%' }} />
+                              <img src={facePreview} alt="Face" style={{ width: '52px', height: '52px', objectFit: 'cover', borderRadius: '0px' }} />
                               <div style={{ position: 'absolute', bottom: 0, right: 0, width: '16px', height: '16px', borderRadius: '50%', backgroundColor: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <svg width="9" height="9" viewBox="0 0 20 20" fill="white"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                               </div>
                             </div>
                           ) : (
-                            <div style={{ width: '52px', height: '52px', borderRadius: '50%', border: '1.5px dashed #D1D5DC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <div style={{ width: '52px', height: '52px', borderRadius: '0px', border: '1.5px dashed #D1D5DC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="1.5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
