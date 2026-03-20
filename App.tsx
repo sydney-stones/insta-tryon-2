@@ -28,6 +28,7 @@ import BlogIndex from './components/BlogIndex';
 import BlogPost from './components/BlogPost';
 import LegalPage, { LegalHub } from './components/LegalPage';
 import NotFoundPage from './components/NotFoundPage';
+import ScabalDemoPage from './components/ScabalDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -92,6 +93,8 @@ const App: React.FC = () => {
           <Route path="/reallywild2" element={<ReallyWildDemoPage2 />} />
           <Route path="/wastedparis" element={<WastedParisDemoPage />} />
           <Route path="/andrea-iyamah" element={<AndreaIyamahDemoPage />} />
+          <Route path="/scabal/wool-suit" element={<ScabalDemoPage productSlug="wool-suit" />} />
+          <Route path="/scabal/tailored-jacket" element={<ScabalDemoPage productSlug="tailored-jacket" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
