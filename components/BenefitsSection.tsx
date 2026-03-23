@@ -5,147 +5,206 @@
 
 import React from 'react';
 
-const benefits = [
-  {
-    title: 'Boost Sales',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Sustainability',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3C7 3 3 7.03 3 12c0 2.39.86 4.58 2.28 6.28M12 3c5 0 9 4.03 9 9 0 2.39-.86 4.58-2.28 6.28M12 3v18M3 12h18" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7.5S9.5 10 12 10s4-2.5 4-2.5M8 16.5S9.5 14 12 14s4 2.5 4 2.5" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Reduce Returns',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 9h1.5M9 12h6M9 15h4" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 6l1.5 1.5L15 9" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Increase AOV',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Customer\nAcquisition',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Studio\nBackground',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <rect x="2" y="6" width="20" height="14" rx="2" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 10h20M6 6V4M18 6V4" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Advanced\nanalytics',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Competitive\nEdge',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Committed to on-going updates and support',
-    icon: (
-      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 3v4a1 1 0 001 1h4" />
-      </svg>
-    ),
-  },
+/* Icon paths from Figma vector proportions */
+const BoostSalesIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <path d="M14 10h4l2 4-4 4h-2a8 8 0 000 16h2l4 4-2 4h-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M20 12c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8 24h32M24 8v32" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M16 16l4-4 4 4M28 32l4-4 4 4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const SustainabilityIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <path d="M24 8C15.16 8 8 15.16 8 24s7.16 16 16 16 16-7.16 16-16" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M32 8c0 0-2 6-8 8s-8 8-8 8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M40 16c-2 0-10 4-10 14" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M30 10l10 6-6 10" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ReduceReturnsIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <rect x="6" y="16" width="36" height="28" rx="2" stroke="#fff" strokeWidth="2" />
+    <path d="M6 24h36" stroke="#fff" strokeWidth="2" />
+    <path d="M16 8h16" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M12 8v8M36 8v8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M18 34l4-4 4 4M22 30v8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const IncreaseAOVIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <path d="M8 40h6V28H8zM21 40h6V20h-6zM34 40h6V12h-6z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10 20l8-8 8 6 12-14" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M34 4h6v6" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const CustomerAcquisitionIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <circle cx="17" cy="16" r="6" stroke="#fff" strokeWidth="2" />
+    <circle cx="31" cy="16" r="6" stroke="#fff" strokeWidth="2" />
+    <path d="M4 40c0-7.18 5.82-13 13-13h14c7.18 0 13 5.82 13 13" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const StudioBackgroundIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <rect x="4" y="12" width="40" height="28" rx="2" stroke="#fff" strokeWidth="2" />
+    <path d="M4 20h40" stroke="#fff" strokeWidth="2" />
+    <path d="M12 12V8M36 12V8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="24" cy="32" r="5" stroke="#fff" strokeWidth="2" />
+  </svg>
+);
+
+const AdvancedAnalyticsIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <rect x="6" y="28" width="8" height="12" rx="1" stroke="#fff" strokeWidth="2" />
+    <rect x="20" y="20" width="8" height="20" rx="1" stroke="#fff" strokeWidth="2" />
+    <rect x="34" y="10" width="8" height="30" rx="1" stroke="#fff" strokeWidth="2" />
+    <path d="M10 22l10-10 10 8 10-16" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const CompetitiveEdgeIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <path d="M24 6l4.5 9 9.9 1.4-7.2 7 1.7 9.9L24 28.8l-8.9 4.6 1.7-9.9-7.2-7 9.9-1.4z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M18 26l4 4 8-9" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const OngoingSupportIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <rect x="6" y="8" width="36" height="32" rx="2" stroke="#fff" strokeWidth="2" />
+    <path d="M6 18h36" stroke="#fff" strokeWidth="2" />
+    <path d="M14 8V6M34 8V6" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M14 26h12M14 32h8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="36" cy="34" r="7" fill="#2e3a08" stroke="#fff" strokeWidth="2" />
+    <path d="M33 34l2 2 4-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const row1 = [
+  { title: 'Boost Sales', Icon: BoostSalesIcon },
+  { title: 'Sustainability', Icon: SustainabilityIcon },
+  { title: 'Reduce Returns', Icon: ReduceReturnsIcon },
+  { title: 'Increase AOV', Icon: IncreaseAOVIcon },
 ];
 
+const row2 = [
+  { title: 'Customer\nAcquisition', Icon: CustomerAcquisitionIcon },
+  { title: 'Studio Background', Icon: StudioBackgroundIcon },
+  { title: 'Advanced analytics', Icon: AdvancedAnalyticsIcon },
+  { title: 'Competitive Edge', Icon: CompetitiveEdgeIcon },
+  { title: 'Committed to on-going updates and support', Icon: OngoingSupportIcon },
+];
+
+const BenefitCell: React.FC<{ title: string; Icon: React.FC }> = ({ title, Icon }) => (
+  <div style={{
+    width: 256,
+    minHeight: 232,
+    background: 'rgba(255,255,255,0.05)',
+    border: '1px solid rgba(255,255,255,0.3)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    flexShrink: 0,
+    marginRight: -1,
+  }}>
+    {/* Icon area — 72×72 padded container */}
+    <div style={{ padding: 12, width: 72, height: 72, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Icon />
+    </div>
+    {/* Label */}
+    <div style={{ padding: '24px', width: '100%' }}>
+      <span style={{
+        fontFamily: 'Inter Tight, Inter, sans-serif',
+        fontWeight: 500,
+        fontSize: 24,
+        lineHeight: '32px',
+        color: 'rgba(255,255,255,0.9)',
+        whiteSpace: 'pre-line',
+        display: 'block',
+      }}>
+        {title}
+      </span>
+    </div>
+  </div>
+);
+
 const BenefitsSection: React.FC = () => (
-  <div className="relative bg-[#2e3520] overflow-hidden">
-    {/* Grid overlay */}
-    <div className="absolute inset-0 opacity-20" style={{
-      backgroundImage: 'linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)',
-      backgroundSize: '80px 80px'
-    }} />
+  <div className="relative overflow-hidden" style={{
+    background: 'linear-gradient(91.71deg, #444833 2.65%, #181E01 98.8%)',
+    minHeight: 900,
+  }}>
+    {/* Logo rectangle top-left */}
+    <div className="absolute top-0 left-0 z-20 flex items-center px-8" style={{
+      width: 346, height: 104,
+      background: 'rgba(255,255,255,0.15)',
+    }}>
+      <span style={{ fontFamily: 'Jost, sans-serif', fontWeight: 700, fontSize: 18, color: '#fff', letterSpacing: '0.08em' }}>
+        RENDERED FITS™
+      </span>
+    </div>
 
-    <div className="relative z-10 max-w-7xl mx-auto">
-      {/* Header row */}
-      <div className="px-8 sm:px-12 lg:px-16 pt-16 sm:pt-20 pb-10 sm:pb-14 flex items-start justify-between">
-        <div className="max-w-2xl">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Benefits{' '}
-            <span className="font-light text-white/50">of our Virtual Try-on</span>
-          </h2>
+    {/* Horizontal rule below logo */}
+    <div className="absolute inset-x-0" style={{ top: 101, borderTop: '1px solid #B9BCAC' }} />
+
+    {/* Vertical separator right of logo area */}
+    <div className="absolute" style={{ left: 322, top: 0, height: 101, borderLeft: '1px solid #B9BCAC' }} />
+
+    {/* Models photo — right side, behind content */}
+    <div className="absolute inset-y-0 right-0" style={{ width: '45%' }}>
+      <img
+        src="/result-images/Website Design -4.png"
+        alt="Virtual try-on models"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+      />
+      {/* Gradient fade from left */}
+      <div className="absolute inset-y-0 left-0" style={{ width: '50%', background: 'linear-gradient(to right, #181E01, transparent)' }} />
+    </div>
+
+    {/* Bottom gradient overlay */}
+    <div className="absolute inset-x-0 bottom-0" style={{ height: 463, background: 'linear-gradient(180deg, rgba(25,31,2,0) 0%, #1D2206 100%)' }} />
+
+    {/* Content */}
+    <div className="relative z-10" style={{ padding: '0 0 0 0' }}>
+
+      {/* Headline */}
+      <h2 style={{
+        fontFamily: 'Jost, sans-serif',
+        fontWeight: 500,
+        fontSize: 'clamp(42px, 4.6vw, 74px)',
+        lineHeight: '100%',
+        color: '#FFFFFF',
+        position: 'relative',
+        padding: '232px 0 0 40px',
+        marginBottom: 0,
+        maxWidth: 929,
+      }}>
+        Benefits <span style={{ fontWeight: 400 }}>of our Virtual Try-on</span>
+      </h2>
+
+      {/* Benefit grid rows */}
+      <div style={{ marginTop: 0, paddingBottom: 0 }}>
+        {/* Row 1 */}
+        <div style={{ display: 'flex', alignItems: 'stretch', borderTop: '1px solid rgba(185,188,172,0.4)', marginTop: 32 }}>
+          {row1.map((b) => (
+            <BenefitCell key={b.title} title={b.title} Icon={b.Icon} />
+          ))}
+        </div>
+
+        {/* Row 2 */}
+        <div style={{ display: 'flex', alignItems: 'stretch', borderTop: '1px solid rgba(185,188,172,0.4)' }}>
+          {row2.map((b) => (
+            <BenefitCell key={b.title} title={b.title} Icon={b.Icon} />
+          ))}
         </div>
       </div>
 
-      {/* Two-column layout: grid on left, models on right */}
-      <div className="flex items-end">
-        {/* Benefit grid */}
-        <div className="flex-1 min-w-0">
-          {/* Row 1 — 4 cells */}
-          <div className="grid grid-cols-4 border-t border-white/15">
-            {benefits.slice(0, 4).map((b, i) => (
-              <div
-                key={i}
-                className="border-r border-white/15 last:border-r-0 px-6 sm:px-8 py-8 sm:py-10 flex flex-col gap-8"
-              >
-                {b.icon}
-                <p className="text-white text-sm sm:text-base font-medium leading-snug whitespace-pre-line">{b.title}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Row 2 — 5 cells (last one gets special treatment) */}
-          <div className="grid grid-cols-5 border-t border-white/15">
-            {benefits.slice(4, 9).map((b, i) => (
-              <div
-                key={i + 4}
-                className="border-r border-white/15 last:border-r-0 px-5 sm:px-7 py-8 sm:py-10 flex flex-col gap-8"
-              >
-                {b.icon}
-                <p className="text-white text-sm sm:text-base font-medium leading-snug whitespace-pre-line">{b.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Models photo — bleeds to right edge */}
-        <div className="hidden lg:block flex-shrink-0 w-[340px] xl:w-[400px] self-stretch relative">
-          <img
-            src="/result-images/Website Design -4.png"
-            alt="Virtual try-on models"
-            className="absolute bottom-0 right-0 h-full w-full object-cover object-top"
-          />
-          {/* Fade on left edge to blend with grid */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#2e3520] to-transparent pointer-events-none" />
-        </div>
-      </div>
     </div>
   </div>
 );
