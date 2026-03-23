@@ -24,7 +24,7 @@ const StoreHeader: React.FC<StoreHeaderProps> = () => {
             <img
               src="/result-images/RENDEREDFITS.png"
               alt="Rendered Fits"
-              className={`h-8 sm:h-10 w-auto object-contain ${isHomePage ? '' : 'brightness-0'}`}
+              className={`h-32 sm:h-40 w-auto object-contain ${isHomePage ? '' : 'brightness-0'}`}
             />
           </Link>
 

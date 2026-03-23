@@ -478,7 +478,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               <img
                 src="/result-images/whitelogonobackground.png"
                 alt="Rendered Fits"
-                className="h-[80px] sm:h-[96px] md:h-[112px] lg:h-[128px] w-auto object-contain"
+                className="h-[160px] sm:h-[192px] md:h-[224px] lg:h-[256px] w-auto object-contain"
               />
             </div>
             {/* Right - CTA */}
