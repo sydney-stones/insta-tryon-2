@@ -594,6 +594,14 @@ const ScabalDemoPage: React.FC<ScabalDemoPageProps> = ({ productSlug }) => {
                       <span style={{ fontSize: '14px', fontWeight: 500, color: '#101828' }}>Fits</span>
                       <span style={{ fontSize: '11px', fontWeight: 500, color: '#fff', backgroundColor: '#1E2939', padding: '2px 8px' }}>Rendered Fits</span>
                     </div>
+                    <button
+                      onClick={() => { setAnimationActive(false); setTimeout(() => setAnimationActive(true), 50); }}
+                      style={{ width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'none', border: '1px solid #D1D5DC', cursor: 'pointer', flexShrink: 0 }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#101828" strokeWidth="1.5">
+                        <path d="M1 1l12 12M13 1L1 13" />
+                      </svg>
+                    </button>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'center', padding: '20px', backgroundColor: '#F9FAFB', overflowY: 'auto', maxHeight: '75vh' }}>
@@ -626,10 +634,10 @@ const ScabalDemoPage: React.FC<ScabalDemoPageProps> = ({ productSlug }) => {
                           Schedule a Meeting
                         </a>
                         <Link
-                          to="/demo"
+                          to="/results"
                           style={{ display: 'block', width: '100%', padding: '12px', fontSize: '12px', fontWeight: 400, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#6A7282', backgroundColor: '#fff', textAlign: 'center', textDecoration: 'none', fontFamily: "'Jost', sans-serif", marginTop: '6px', border: '1px solid #E5E7EB', boxSizing: 'border-box' }}
                         >
-                          Try the live demo
+                          Try another demo
                         </Link>
                       </div>
                     </div>
