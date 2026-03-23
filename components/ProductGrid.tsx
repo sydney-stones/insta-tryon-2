@@ -75,224 +75,208 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
     <div className="min-h-screen bg-white">
 
       {/* ===== SECTION 1: HERO ===== */}
-      {/* Figma: 1600×900, gradient #444833→#151A00, grid lines at x=322,644,966,1288 y=101,214,327,440,553,666,779 */}
       <div className="relative overflow-hidden" style={{
         background: 'linear-gradient(91.71deg, #444833 2.65%, #151A00 98.8%)',
-        height: 900,
       }}>
-        {/* Logo box — Figma: x=-25,y=-4, w=346,h=104 */}
-        <div style={{
-          position: 'absolute', top: -4, left: -25, width: 346, height: 104,
-          background: 'rgba(255,255,255,0.15)',
-          display: 'flex', alignItems: 'center', paddingLeft: 58,
-        }}>
-          <span style={{ fontFamily: 'Jost, sans-serif', fontWeight: 700, fontSize: 18, color: '#fff', letterSpacing: '0.08em' }}>
-            RENDERED FITS™
-          </span>
+        {/* Grid lines — decorative, desktop only */}
+        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
+          {/* Horizontal full-width lines */}
+          {['11.2%', '86.6%'].map(y => (
+            <div key={y} style={{ position: 'absolute', left: 0, right: 0, top: y, borderTop: '1px solid #B9BCAC' }} />
+          ))}
+          {/* Horizontal right-half lines */}
+          {['23.8%', '36.3%', '48.9%', '61.4%', '74%'].map(y => (
+            <div key={y} style={{ position: 'absolute', left: '40%', right: 0, top: y, borderTop: '1px solid #B9BCAC' }} />
+          ))}
+          {/* Vertical lines */}
+          {['20.1%', '40.3%', '60.4%', '80.5%'].map(x => (
+            <div key={x} style={{ position: 'absolute', left: x, top: 0, bottom: 0, borderLeft: '1px solid #B9BCAC' }} />
+          ))}
         </div>
 
-        {/* Grid lines — exact Figma coordinates scaled proportionally */}
-        {/* Horizontal: y=101, y=779 */}
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 101, borderTop: '1px solid #B9BCAC', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 779, borderTop: '1px solid #B9BCAC', pointerEvents: 'none' }} />
-        {/* Horizontal mid lines (right half only, y=214,327,440,553,666) */}
-        {[214, 327, 440, 553, 666].map(y => (
-          <div key={y} style={{ position: 'absolute', left: '40%', right: 0, top: y, borderTop: '1px solid #B9BCAC', pointerEvents: 'none' }} />
-        ))}
-        {/* Vertical: x=644,966,1288 (full height right half) */}
-        {['40.25%', '60.375%', '80.5%'].map(x => (
-          <div key={x} style={{ position: 'absolute', left: x, top: 0, bottom: 0, borderLeft: '1px solid #B9BCAC', pointerEvents: 'none' }} />
-        ))}
-        {/* Vertical: x=322, height=779 */}
-        <div style={{ position: 'absolute', left: '20.125%', top: 0, height: 779, borderLeft: '1px solid #B9BCAC', pointerEvents: 'none' }} />
-
-        {/* Radial gradient overlay left side */}
-        <div style={{
-          position: 'absolute', inset: 0,
+        {/* Radial gradient overlay — keeps left text legible over grid */}
+        <div className="hidden lg:block absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(102.25% 52.91% at 20.03% 50.72%, #444833 0%, rgba(68,72,51,0) 100%)',
-          pointerEvents: 'none',
         }} />
 
-        {/* Left text content — Figma: headline at y=284, subtext at y=810 */}
-        <div style={{ position: 'absolute', left: 40, top: 0, width: 699, height: 900, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', paddingBottom: 60, paddingTop: 0 }}>
-          {/* Spacer to push headline to y≈284 */}
-          <div style={{ flex: '0 0 284px' }} />
-          <h1 style={{
-            fontFamily: 'Jost, sans-serif',
-            fontWeight: 500,
-            fontSize: 64,
-            lineHeight: '110%',
-            color: '#FFFFFF',
-            margin: 0,
-          }}>
-            Rendered Fits is a virtual try-on application{' '}
-            <span style={{ color: 'rgba(255,255,255,0.45)' }}>that brings the dressing room online</span>
-          </h1>
-          <div style={{ flex: 1 }} />
-          {/* Subtext — Figma: y=810, w=549 */}
-          <div>
-            <p style={{
-              fontFamily: 'Inter Tight, Inter, sans-serif',
+        {/* Content wrapper — responsive, centred */}
+        <div className="relative z-10 max-w-[1600px] mx-auto flex flex-col lg:flex-row min-h-[100vh] lg:min-h-[900px]">
+
+          {/* ---- LEFT: Text ---- */}
+          <div className="flex-1 flex flex-col justify-center px-6 sm:px-10 lg:px-12 xl:px-16 py-20 lg:py-0" style={{ maxWidth: 750 }}>
+            <h1 style={{
+              fontFamily: 'Jost, sans-serif',
               fontWeight: 500,
-              fontSize: 20,
-              lineHeight: '32px',
-              color: 'rgba(255,255,255,0.8)',
-              maxWidth: 549,
-              marginBottom: 24,
-            }}>
-              Allow your customers to virtually visualise garments on themselves before buying
-            </p>
-            <div style={{ display: 'flex', gap: 12 }}>
-              <Link to="/contact" style={{
-                display: 'inline-block', border: '1px solid #FFFFFF', color: '#FFFFFF',
-                padding: '14px 32px', fontFamily: 'Inter Tight, Inter, sans-serif',
-                fontWeight: 500, fontSize: 14, textDecoration: 'none',
-              }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#fff'; (e.currentTarget as HTMLElement).style.color = '#444833'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#fff'; }}
-              >Schedule a Meeting</Link>
-              <Link to="/results" style={{
-                display: 'inline-block', border: '1px solid rgba(255,255,255,0.4)',
-                color: 'rgba(255,255,255,0.8)', padding: '14px 32px',
-                fontFamily: 'Inter Tight, Inter, sans-serif', fontWeight: 500, fontSize: 14, textDecoration: 'none',
-              }}>See How It Works</Link>
-            </div>
-          </div>
-        </div>
+              lineHeight: '110%',
+              color: '#FFFFFF',
+              margin: 0,
+            }} className="text-[clamp(32px,5vw,64px)]">
+              Rendered Fits is a virtual try-on application{' '}
+              <span style={{ color: 'rgba(255,255,255,0.45)' }}>that brings the dressing room online</span>
+            </h1>
 
-        {/* Right panel: two widgets */}
-        {/* Figma: Widget1 x=801,y=133 w=322,h=673 | Widget2 x=1213,y=81 w=322,h=673 */}
-        <div className="hidden lg:block" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
-
-          {/* Widget 1 — "Try it on" — left widget, offset lower (y=133) */}
-          <div style={{
-            position: 'absolute', top: 133, left: '50.0625%',
-            width: 300, border: '2px solid #FFFFFF', background: '#FFFFFF',
-            display: 'flex', flexDirection: 'column', pointerEvents: 'all',
-          }}>
-            {/* Top bar */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #D1D5DC', height: 38.5, flexShrink: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', borderRight: '1px solid #D1D5DC', height: '100%', padding: '0 12px', gap: 6 }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z" />
-                </svg>
-                <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#101828' }}>My looks</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', paddingRight: 0, gap: 0 }}>
-                <div style={{ background: '#1E2939', color: '#F9FAFB', fontSize: 9.6, fontWeight: 500, fontFamily: 'Jost, sans-serif', padding: '1.6px 6.4px', marginRight: 12.8 }}>10 credits left</div>
-                <div style={{ borderLeft: '1px solid #D1D5DC', height: 38.5, width: 38.5, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F3F4F6', flexShrink: 0 }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E2939" strokeWidth="1.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
-                </div>
-              </div>
-            </div>
-            {/* Product image */}
-            <img src="/result-images/etta_collection.png" alt="Product" style={{ width: '100%', height: 205, objectFit: 'cover', objectPosition: 'top', display: 'block', borderBottom: '1px solid #D1D5DC' }} />
-            {/* Tag row */}
-            <div style={{ display: 'flex', gap: 3.2, padding: '6.4px 12.8px', borderBottom: '1px solid #D1D5DC' }}>
-              {['Crewneck sweater','XXS','Beige'].map(t => (
-                <span key={t} style={{ fontFamily: 'Jost, sans-serif', fontSize: 9.6, color: '#101828', background: '#fff', border: '0px', padding: '1.6px 6.4px' }}>{t}</span>
-              ))}
-            </div>
-            {/* Body: form */}
-            <div style={{ padding: '12.8px 19.2px', display: 'flex', flexDirection: 'column', gap: 9.6 }}>
-              <p style={{ fontFamily: 'Jost, sans-serif', fontWeight: 400, fontSize: 24.06, lineHeight: '29px', textTransform: 'uppercase', color: '#101828', margin: 0 }}>TRY IT ON, VIRTUALLY</p>
-              {/* Face upload */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 3.2 }}>
-                <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 12.8, color: '#101828' }}>Face photo</span>
-                <div style={{ background: '#F9FAFB', borderBottom: '1px solid #D1D5DC', padding: 12.8, display: 'flex', alignItems: 'flex-start', gap: 9.6 }}>
-                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-                  <div>
-                    <p style={{ fontFamily: 'Jost, sans-serif', fontWeight: 500, fontSize: 12.8, color: '#101828', margin: 0 }}>Upload your photo here</p>
-                    <p style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#6A7282', margin: 0 }}>Format: png, jpg, heic &amp; Max file size: 25 MB</p>
-                  </div>
-                </div>
-              </div>
-              {/* Full body upload */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 3.2 }}>
-                <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 12.8, color: '#101828' }}>Full body photo</span>
-                <div style={{ background: '#F9FAFB', borderBottom: '1px solid #D1D5DC', padding: 12.8, display: 'flex', alignItems: 'flex-start', gap: 9.6 }}>
-                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1.2"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="14"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="10" y1="14" x2="8" y2="20"/><line x1="14" y1="14" x2="16" y2="20"/></svg>
-                  <div>
-                    <p style={{ fontFamily: 'Jost, sans-serif', fontWeight: 500, fontSize: 12.8, color: '#101828', margin: 0 }}>Upload your photo here</p>
-                    <p style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#6A7282', margin: 0 }}>Format: png, jpg, heic &amp; Max file size: 25 MB</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Terms */}
-            <div style={{ padding: '0 19.2px 6.4px' }}>
-              <p style={{ fontFamily: 'Jost, sans-serif', fontSize: 9.6, color: '#6A7282', margin: 0 }}>
-                By uploading your photo, you agree to our <u>Terms &amp; Conditions</u> and <u>Privacy Policy</u>. Your image is never permanently stored.
+            <div className="mt-auto pt-10 lg:pt-16">
+              <p style={{
+                fontFamily: '"Inter Tight", Inter, sans-serif',
+                fontWeight: 500,
+                fontSize: 'clamp(16px, 1.25vw, 20px)',
+                lineHeight: '32px',
+                color: 'rgba(255,255,255,0.8)',
+              }} className="max-w-[549px] mb-6">
+                Allow your customers to virtually visualise garments on themselves before buying
               </p>
-            </div>
-            {/* Try on button */}
-            <div style={{ background: '#6A7282', height: 38.5, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6.4 }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" fill="#D1D5DC"/></svg>
-              <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#D1D5DC' }}>Try on</span>
-            </div>
-            {/* Powered by */}
-            <div style={{ background: '#F3F4F6', borderTop: '1px solid #99A1AF', height: 29.8, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1.6 }}>
-              <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#6A7282' }}>Powered by</span>
-              <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, fontWeight: 700, color: '#101828' }}> RENDERED FITS™</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link to="/contact" className="inline-block border border-white text-white px-8 py-3.5 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
+                  Schedule a Meeting
+                </Link>
+                <Link to="/results" className="inline-block border border-white/40 text-white/80 px-8 py-3.5 text-sm font-medium hover:bg-white/10 transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
+                  See How It Works
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Widget 2 — Result — right widget, offset higher (y=81) */}
-          <div style={{
-            position: 'absolute', top: 81, left: '75.8125%',
-            width: 300, border: '2px solid #FFFFFF', background: '#FFFFFF',
-            display: 'flex', flexDirection: 'column', pointerEvents: 'all',
-          }}>
-            {/* Top bar */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #D1D5DC', height: 38.5, flexShrink: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
-                <div style={{ borderRight: '1px solid #D1D5DC', height: '100%', width: 38.5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+          {/* ---- RIGHT: Two widgets with arrow ---- */}
+          <div className="relative flex-shrink-0 flex items-center justify-center px-4 pb-10 lg:pb-0 lg:pr-8 xl:pr-12">
+
+            {/* Widget container — stagger the two cards */}
+            <div className="relative flex items-start gap-4 sm:gap-5 lg:gap-6">
+
+              {/* Widget 1 — Product / "Try it on" (offset down) */}
+              <div className="mt-10 lg:mt-14 flex-shrink-0" style={{
+                width: 'clamp(240px, 19vw, 300px)',
+                border: '2px solid #FFFFFF', background: '#FFFFFF',
+                display: 'flex', flexDirection: 'column',
+              }}>
+                {/* Top bar */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #D1D5DC', height: 38, flexShrink: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', borderRight: '1px solid #D1D5DC', height: '100%', padding: '0 10px', gap: 6 }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg>
+                    <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#101828' }}>My looks</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+                    <span style={{ background: '#1E2939', color: '#F9FAFB', fontSize: 9.5, fontWeight: 500, fontFamily: 'Jost, sans-serif', padding: '1.5px 6px', marginRight: 10 }}>10 credits left</span>
+                    <div style={{ borderLeft: '1px solid #D1D5DC', height: 38, width: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F3F4F6' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E2939" strokeWidth="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </div>
+                  </div>
                 </div>
-                <div style={{ borderRight: '1px solid #D1D5DC', height: '100%', display: 'flex', alignItems: 'center', padding: '0 10px', gap: 6.4 }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1.2" strokeLinecap="round">
-                    <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z" />
-                  </svg>
-                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#101828' }}>My looks</span>
+                {/* Product image */}
+                <img src="/result-images/etta_collection.png" alt="Product" style={{ width: '100%', aspectRatio: '3/2.8', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+                {/* Tag row */}
+                <div style={{ display: 'flex', gap: 3, padding: '6px 12px', borderTop: '1px solid #D1D5DC' }}>
+                  {['Crewneck sweater','XXS','Beige'].map(t => (
+                    <span key={t} style={{ fontFamily: 'Jost, sans-serif', fontSize: 9.5, color: '#101828', background: '#fff', padding: '1.5px 6px' }}>{t}</span>
+                  ))}
+                </div>
+                {/* Form body */}
+                <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: 9 }}>
+                  <p style={{ fontFamily: 'Jost, sans-serif', fontWeight: 400, fontSize: 'clamp(16px, 1.5vw, 24px)', lineHeight: '29px', textTransform: 'uppercase', color: '#101828', margin: 0 }}>TRY IT ON, VIRTUALLY</p>
+                  {/* Face upload */}
+                  <div>
+                    <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 12, color: '#101828', display: 'block', marginBottom: 3 }}>Face photo</span>
+                    <div style={{ background: '#F9FAFB', borderBottom: '1px solid #D1D5DC', padding: 12, display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                      <div>
+                        <p style={{ fontFamily: 'Jost, sans-serif', fontWeight: 500, fontSize: 12, color: '#101828', margin: 0 }}>Upload your photo here</p>
+                        <p style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#6A7282', margin: 0 }}>Format: png, jpg, heic &amp; Max file size: 25 MB</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Full body upload */}
+                  <div>
+                    <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 12, color: '#101828', display: 'block', marginBottom: 3 }}>Full body photo</span>
+                    <div style={{ background: '#F9FAFB', borderBottom: '1px solid #D1D5DC', padding: 12, display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1.2"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="14"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="10" y1="14" x2="8" y2="20"/><line x1="14" y1="14" x2="16" y2="20"/></svg>
+                      <div>
+                        <p style={{ fontFamily: 'Jost, sans-serif', fontWeight: 500, fontSize: 12, color: '#101828', margin: 0 }}>Upload your photo here</p>
+                        <p style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#6A7282', margin: 0 }}>Format: png, jpg, heic &amp; Max file size: 25 MB</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Terms */}
+                <div style={{ padding: '0 16px 6px' }}>
+                  <p style={{ fontFamily: 'Jost, sans-serif', fontSize: 9.5, color: '#6A7282', margin: 0, lineHeight: '13px' }}>
+                    By uploading your photo, you agree to our <u>Terms &amp; Conditions</u> and <u>Privacy Policy</u>. Your image is never permanently stored.
+                  </p>
+                </div>
+                {/* Try on button */}
+                <div style={{ background: '#6A7282', height: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" fill="#D1D5DC"/></svg>
+                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#D1D5DC' }}>Try on</span>
+                </div>
+                {/* Powered by */}
+                <div style={{ background: '#F3F4F6', borderTop: '1px solid #99A1AF', height: 30, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#6A7282' }}>Powered by</span>
+                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, fontWeight: 700, color: '#101828' }}>&nbsp;RENDERED FITS™</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', paddingRight: 0, gap: 0 }}>
-                <div style={{ background: '#1E2939', color: '#F9FAFB', fontSize: 9.6, fontWeight: 500, fontFamily: 'Jost, sans-serif', padding: '1.6px 6.4px', marginRight: 12.8 }}>9 credits left</div>
-                <div style={{ borderLeft: '1px solid #D1D5DC', height: 38.5, width: 38.5, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F3F4F6', flexShrink: 0 }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E2939" strokeWidth="1.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
+
+              {/* Arrow between widgets — curved connector */}
+              <div className="hidden sm:flex absolute z-20 items-center justify-center" style={{
+                left: '50%', top: '50%', transform: 'translate(-50%, -50%)',
+                width: 80, height: 80,
+              }}>
+                <svg width="80" height="50" viewBox="0 0 80 50" fill="none">
+                  <path d="M8 42C20 42 30 8 50 8C60 8 68 14 72 20" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+                  <path d="M64 14L72 20L64 24" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+
+              {/* Widget 2 — Result (offset up) */}
+              <div className="mb-10 lg:mb-14 flex-shrink-0" style={{
+                width: 'clamp(240px, 19vw, 300px)',
+                border: '2px solid #FFFFFF', background: '#FFFFFF',
+                display: 'flex', flexDirection: 'column',
+              }}>
+                {/* Top bar */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #D1D5DC', height: 38, flexShrink: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    <div style={{ borderRight: '1px solid #D1D5DC', height: '100%', width: 38, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+                    </div>
+                    <div style={{ borderRight: '1px solid #D1D5DC', height: '100%', display: 'flex', alignItems: 'center', padding: '0 10px', gap: 6 }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1.2" strokeLinecap="round"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg>
+                      <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#101828' }}>My looks</span>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+                    <span style={{ background: '#1E2939', color: '#F9FAFB', fontSize: 9.5, fontWeight: 500, fontFamily: 'Jost, sans-serif', padding: '1.5px 6px', marginRight: 10 }}>9 credits left</span>
+                    <div style={{ borderLeft: '1px solid #D1D5DC', height: 38, width: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F3F4F6' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E2939" strokeWidth="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </div>
+                  </div>
+                </div>
+                {/* Result image */}
+                <div style={{ position: 'relative', overflow: 'hidden' }}>
+                  <img src="/result-images/etta_collection -tryon-1K.png" alt="Try-on result" style={{ width: '100%', aspectRatio: '3/4.3', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+                </div>
+                {/* Color / Size row */}
+                <div style={{ display: 'flex', borderTop: '1px solid #D1D5DC' }}>
+                  <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 9px', borderRight: '1px solid #E5E7EB' }}>
+                    <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 12, color: '#6A7282' }}>Color: <strong style={{ color: '#101828' }}>Brown</strong></span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M9 18l6-6-6-6"/></svg>
+                  </div>
+                  <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 9px' }}>
+                    <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#6A7282' }}>Size: <strong style={{ color: '#101828' }}>XS</strong></span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M9 18l6-6-6-6"/></svg>
+                  </div>
+                </div>
+                {/* Add to cart */}
+                <div style={{ background: '#1E2939', height: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#F9FAFB' }}>Add to cart · <s style={{ opacity: 0.6 }}>$34</s> $24</span>
+                </div>
+                {/* Powered by */}
+                <div style={{ background: '#F3F4F6', borderTop: '1px solid #99A1AF', height: 30, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, color: '#6A7282' }}>Powered by</span>
+                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11, fontWeight: 700, color: '#101828' }}>&nbsp;RENDERED FITS™</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
               </div>
-            </div>
-            {/* Result image — fills most of the card */}
-            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
-              <img src="/result-images/etta_collection -tryon-1K.png" alt="Try-on result" style={{ width: '100%', height: 490, objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
-              {/* "Crewneck sweater" badge overlay */}
-              <div style={{ position: 'absolute', bottom: 6.4, left: '50%', transform: 'translateX(-50%)', background: '#fff', padding: '1.6px 6.4px' }}>
-                <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 9.6, fontWeight: 500, color: '#101828' }}>Crewneck sweater</span>
-              </div>
-            </div>
-            {/* Color / Size row */}
-            <div style={{ display: 'flex', borderTop: '1px solid #D1D5DC' }}>
-              <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6.4px 9.6px', borderRight: '1px solid #E5E7EB' }}>
-                <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 14, color: '#6A7282' }}>Color: <strong style={{ color: '#101828' }}>Brown</strong></span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M9 18l6-6-6-6"/></svg>
-              </div>
-              <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6.4px 9.6px' }}>
-                <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#6A7282' }}>Size: <strong style={{ color: '#101828' }}>XS</strong></span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M9 18l6-6-6-6"/></svg>
-              </div>
-            </div>
-            {/* Add to cart */}
-            <div style={{ background: '#1E2939', height: 38.5, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6.4 }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-              <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#F9FAFB' }}>Add to cart · <s style={{ opacity: 0.6 }}>$34</s> $24</span>
-            </div>
-            {/* Powered by */}
-            <div style={{ background: '#F3F4F6', borderTop: '1px solid #99A1AF', height: 29.8, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1.6 }}>
-              <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, color: '#6A7282' }}>Powered by</span>
-              <span style={{ fontFamily: 'Jost, sans-serif', fontSize: 11.2, fontWeight: 700, color: '#101828' }}> RENDERED FITS™</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.2" strokeLinecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
             </div>
           </div>
 
