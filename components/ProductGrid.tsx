@@ -110,7 +110,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               <Link to="/contact" className="inline-block border border-white text-white px-8 py-3.5 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
                 Schedule a Meeting
               </Link>
-              <Link to="/results" className="inline-block border border-white/40 text-white/80 px-8 py-3.5 text-sm font-medium hover:bg-white/10 transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
+              <Link to="/results" className="inline-block bg-white text-[#444833] px-8 py-3.5 text-sm font-semibold hover:bg-white/90 transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
                 See How It Works
               </Link>
             </div>
@@ -338,26 +338,22 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 7: BRANDED FOOTER / CTA ===== */}
       <div className="bg-[#444833] py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-10 lg:gap-16">
-            {/* Left - Hanger logo */}
-            <div className="text-center lg:text-left">
-              <img
-                src="/result-images/whitelogonobackground.png"
-                alt="Rendered Fits"
-                className="h-[160px] sm:h-[192px] md:h-[224px] lg:h-[256px] w-auto object-contain"
-              />
-            </div>
-            {/* Right - CTA */}
-            <div className="flex flex-col items-center lg:items-end gap-6">
-              <div className="text-center lg:text-right">
-                <p className="text-white/70 text-xs sm:text-sm mb-1">Contact Us: <a href="mailto:mail@renderedfits.com" className="text-white hover:underline">mail@renderedfits.com</a></p>
-                <Link
-                  to="/contact"
-                  className="inline-block border border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all mt-3"
-                >
-                  Schedule a Meeting
-                </Link>
-              </div>
+          <div className="flex flex-col items-center gap-8 text-center">
+            {/* Hanger logo */}
+            <img
+              src="/result-images/whitelogonobackground.png"
+              alt="Rendered Fits"
+              className="h-[160px] sm:h-[192px] md:h-[224px] lg:h-[256px] w-auto object-contain"
+            />
+            {/* CTA */}
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-white/70 text-xs sm:text-sm">Contact Us: <a href="mailto:mail@renderedfits.com" className="text-white hover:underline">mail@renderedfits.com</a></p>
+              <Link
+                to="/contact"
+                className="inline-block border border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all"
+              >
+                Schedule a Meeting
+              </Link>
             </div>
           </div>
         </div>
