@@ -78,26 +78,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       <div className="relative overflow-hidden" style={{
         background: 'linear-gradient(91.71deg, #444833 2.65%, #151A00 98.8%)',
       }}>
-        {/* Grid lines — decorative, desktop only */}
-        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
-          {/* Horizontal full-width lines */}
-          {['11.2%', '86.6%'].map(y => (
-            <div key={y} style={{ position: 'absolute', left: 0, right: 0, top: y, borderTop: '1px solid #B9BCAC' }} />
-          ))}
-          {/* Horizontal right-half lines */}
-          {['23.8%', '36.3%', '48.9%', '61.4%', '74%'].map(y => (
-            <div key={y} style={{ position: 'absolute', left: '40%', right: 0, top: y, borderTop: '1px solid #B9BCAC' }} />
-          ))}
-          {/* Vertical lines */}
-          {['20.1%', '40.3%', '60.4%', '80.5%'].map(x => (
-            <div key={x} style={{ position: 'absolute', left: x, top: 0, bottom: 0, borderLeft: '1px solid #B9BCAC' }} />
-          ))}
-        </div>
-
-        {/* Radial gradient overlay — keeps left text legible over grid */}
-        <div className="hidden lg:block absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(102.25% 52.91% at 20.03% 50.72%, #444833 0%, rgba(68,72,51,0) 100%)',
-        }} />
 
         {/* Content wrapper — responsive, centred */}
         <div className="relative z-10 max-w-[1600px] mx-auto flex flex-col lg:flex-row min-h-[100vh] lg:min-h-[900px]">
