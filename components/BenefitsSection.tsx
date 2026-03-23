@@ -5,124 +5,146 @@
 
 import React from 'react';
 
-interface Benefit {
-  title: string;
-  icon: JSX.Element;
-  details: string[];
-}
-
-const benefits: Benefit[] = [
+const benefits = [
   {
     title: 'Boost Sales',
     icon: (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" />
       </svg>
     ),
-    details: [
-      'Conversion rates increase by 20-40% with virtual try-on technology',
-      'Shoppers who engage with AR features are 27% more likely to purchase (Shopify)',
-      'One beauty brand saw 320% conversion growth after implementing VTO',
-      '40% higher click-through rates when AR tools are available',
-      'Creates buyer confidence, reducing purchase hesitation by 60%',
-    ],
   },
   {
     title: 'Sustainability',
     icon: (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3C7 3 3 7.03 3 12c0 2.39.86 4.58 2.28 6.28M12 3c5 0 9 4.03 9 9 0 2.39-.86 4.58-2.28 6.28M12 3v18M3 12h18" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7.5S9.5 10 12 10s4-2.5 4-2.5M8 16.5S9.5 14 12 14s4 2.5 4 2.5" />
       </svg>
     ),
-    details: [
-      'Fashion returns generate 16 million metric tons of CO2 emissions annually',
-      'In 2022, UK alone discarded 23 million returned items, creating 750,000 tonnes of CO2',
-      '22-44% of returned products never reach another consumer',
-      'Virtual try-on reduces the need for physical samples and bracketing (buying multiple sizes)',
-      'Cutting returns by just 10% globally could save 2.4 million metric tonnes of CO2 annually',
-      'Reverse logistics accounts for 25% of total e-commerce carbon footprint',
-    ],
   },
   {
     title: 'Reduce Returns',
     icon: (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 9h1.5M9 12h6M9 15h4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 6l1.5 1.5L15 9" />
       </svg>
     ),
-    details: [
-      'Fashion e-commerce return rates average 30-40% without VTO',
-      'Virtual try-on can reduce returns by 20-64% depending on implementation',
-      'Returns cost retailers an average of $24 per item in processing and restocking',
-      '53% of returns stem from fit issues - directly addressable with VTO',
-      'One retailer reduced returns from 35% to 12% after implementing AR try-on',
-      'Sizing is the #1 cause of apparel returns globally',
-    ],
   },
   {
     title: 'Increase AOV',
     icon: (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18" />
       </svg>
     ),
-    details: [
-      'Virtual try-on increases average order value by 25-33%',
-      'Customers with VTO confidence explore complementary products, increasing basket size',
-      'Session duration improves by 65% with virtual try-on features',
-      'Pages per session increase by 45% when AR is available',
-      'Users spend 25% more time exploring products with VTO',
-      'Interactive product experiences drive cross-selling and upselling opportunities',
-    ],
   },
   {
-    title: 'Customer Acquisition',
+    title: 'Customer\nAcquisition',
     icon: (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    details: [
-      'AR experiences boost engagement by 200% compared to static product views',
-      '79% of shoppers show interest in interacting with AR before buying',
-      '58% of online shoppers more likely to buy if they can share VTO looks with others',
-      'Net Promoter Scores increase by 15-25 points after VTO implementation',
-      'Only 1% of retailers currently use AR, providing significant competitive advantage',
-      'Virtual try-on creates shareable, viral moments that reduce customer acquisition costs',
-      'Sephora recorded 35% higher engagement and 200% more trials with AR implementation',
-    ],
+  },
+  {
+    title: 'Studio\nBackground',
+    icon: (
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <rect x="2" y="6" width="20" height="14" rx="2" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 10h20M6 6V4M18 6V4" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Advanced\nanalytics',
+    icon: (
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Competitive\nEdge',
+    icon: (
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Committed to on-going updates and support',
+    icon: (
+      <svg className="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 3v4a1 1 0 001 1h4" />
+      </svg>
+    ),
   },
 ];
 
 const BenefitsSection: React.FC = () => (
-  <div className="bg-white py-16 sm:py-20">
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-12 sm:mb-16">
-        Benefits of Virtual Try-on
-      </h2>
+  <div className="relative bg-[#2e3520] overflow-hidden">
+    {/* Grid overlay */}
+    <div className="absolute inset-0 opacity-20" style={{
+      backgroundImage: 'linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)',
+      backgroundSize: '80px 80px'
+    }} />
 
-      {/* Top row — 3 icons */}
-      <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
-        {benefits.slice(0, 3).map((benefit, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-[#444833] flex items-center justify-center mb-3 sm:mb-4">
-              {benefit.icon}
-            </div>
-            <p className="text-xs sm:text-sm font-medium text-gray-800">{benefit.title}</p>
-          </div>
-        ))}
+    <div className="relative z-10 max-w-7xl mx-auto">
+      {/* Header row */}
+      <div className="px-8 sm:px-12 lg:px-16 pt-16 sm:pt-20 pb-10 sm:pb-14 flex items-start justify-between">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            Benefits{' '}
+            <span className="font-light text-white/50">of our Virtual Try-on</span>
+          </h2>
+        </div>
       </div>
 
-      {/* Bottom row — 2 icons centered */}
-      <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xs sm:max-w-md mx-auto">
-        {benefits.slice(3, 5).map((benefit, index) => (
-          <div key={index + 3} className="flex flex-col items-center text-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-[#444833] flex items-center justify-center mb-3 sm:mb-4">
-              {benefit.icon}
-            </div>
-            <p className="text-xs sm:text-sm font-medium text-gray-800">{benefit.title}</p>
+      {/* Two-column layout: grid on left, models on right */}
+      <div className="flex items-end">
+        {/* Benefit grid */}
+        <div className="flex-1 min-w-0">
+          {/* Row 1 — 4 cells */}
+          <div className="grid grid-cols-4 border-t border-white/15">
+            {benefits.slice(0, 4).map((b, i) => (
+              <div
+                key={i}
+                className="border-r border-white/15 last:border-r-0 px-6 sm:px-8 py-8 sm:py-10 flex flex-col gap-8"
+              >
+                {b.icon}
+                <p className="text-white text-sm sm:text-base font-medium leading-snug whitespace-pre-line">{b.title}</p>
+              </div>
+            ))}
           </div>
-        ))}
+
+          {/* Row 2 — 5 cells (last one gets special treatment) */}
+          <div className="grid grid-cols-5 border-t border-white/15">
+            {benefits.slice(4, 9).map((b, i) => (
+              <div
+                key={i + 4}
+                className="border-r border-white/15 last:border-r-0 px-5 sm:px-7 py-8 sm:py-10 flex flex-col gap-8"
+              >
+                {b.icon}
+                <p className="text-white text-sm sm:text-base font-medium leading-snug whitespace-pre-line">{b.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Models photo — bleeds to right edge */}
+        <div className="hidden lg:block flex-shrink-0 w-[340px] xl:w-[400px] self-stretch relative">
+          <img
+            src="/result-images/Website Design -4.png"
+            alt="Virtual try-on models"
+            className="absolute bottom-0 right-0 h-full w-full object-cover object-top"
+          />
+          {/* Fade on left edge to blend with grid */}
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#2e3520] to-transparent pointer-events-none" />
+        </div>
       </div>
     </div>
   </div>

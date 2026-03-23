@@ -75,41 +75,93 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
     <div className="min-h-screen bg-white">
 
       {/* ===== SECTION 1: HERO ===== */}
-      <div className="relative bg-[#444833] min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Hero Image - Background */}
-        <div className="absolute inset-0 opacity-30">
-          <img
-            src="/hero-models.png"
-            alt="Virtual Try-On Models"
-            className="h-full w-full object-cover"
-          />
-        </div>
+      <div className="relative bg-[#444833] min-h-screen flex items-center overflow-hidden">
+        {/* Grid overlay */}
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
+          backgroundSize: '80px 80px'
+        }} />
 
-        {/* Hero Content - Centered */}
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-serif italic font-light text-white leading-[0.9] mb-8 sm:mb-10">
-              AI-Powered<br />
-              Virtual Try-on
-            </h1>
-            <p className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed mb-10 sm:mb-12 max-w-3xl mx-auto font-light">
-              The future of Shopify fashion e-commerce, redefining the way people shop online. We bring the in-store try-on experience to your customers screen 24/7.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-block border-2 border-white text-white px-10 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-white hover:text-[#444833] transition-all"
-              >
-                Schedule a Meeting
-              </Link>
-              <Link
-                to="/results"
-                className="inline-block border-2 border-white/50 text-white px-10 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium hover:bg-white hover:text-[#444833] transition-all"
-              >
-                See How It Works
-              </Link>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-28 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+
+          {/* Left: Text */}
+          <div className="flex-1 flex flex-col justify-between min-h-[420px] lg:min-h-[560px]">
+            {/* Brand name top-left */}
+            <p className="text-white font-bold text-sm tracking-widest uppercase mb-6 lg:mb-0">RENDERED FITS™</p>
+
+            {/* Main headline */}
+            <div className="flex-1 flex items-center">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.25rem] font-serif font-light text-white leading-[1.05] max-w-xl">
+                Rendered Fits is a virtual try-on application{' '}
+                <span className="text-white/45">that brings the dressing room online</span>
+              </h1>
+            </div>
+
+            {/* Bottom subtext + CTAs */}
+            <div className="mt-10 lg:mt-0">
+              <p className="text-white/60 text-sm sm:text-base max-w-sm mb-8">
+                Allow your customers to virtually visualise garments on themselves before buying
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-block border border-white text-white px-8 py-3.5 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all"
+                >
+                  Schedule a Meeting
+                </Link>
+                <Link
+                  to="/results"
+                  className="inline-block border border-white/40 text-white/80 px-8 py-3.5 text-sm font-medium hover:bg-white/10 transition-all"
+                >
+                  See How It Works
+                </Link>
+              </div>
             </div>
           </div>
+
+          {/* Right: Two phone mockup widgets */}
+          <div className="flex-shrink-0 flex items-end gap-4 sm:gap-5">
+            {/* Phone 1 - Product widget */}
+            <div className="w-[220px] sm:w-[260px] lg:w-[300px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/10 mb-8">
+              <img
+                src="/result-images/etta_collection.png"
+                alt="Product image"
+                className="w-full aspect-[3/4] object-cover"
+              />
+              {/* Widget bar */}
+              <div className="flex items-center justify-between px-4 py-3 border-t border-gray-100">
+                <div className="flex gap-2">
+                  <span className="bg-gray-100 text-gray-700 text-[10px] font-medium px-2.5 py-1 rounded-full">Dress</span>
+                  <span className="bg-gray-100 text-gray-700 text-[10px] font-medium px-2.5 py-1 rounded-full">XS</span>
+                  <span className="bg-gray-100 text-gray-700 text-[10px] font-medium px-2.5 py-1 rounded-full">Black</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Phone 2 - Try-on result widget */}
+            <div className="w-[220px] sm:w-[260px] lg:w-[300px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/10">
+              {/* Widget header */}
+              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 0v10m0-10a2 2 0 012 2h2a2 2 0 012-2V7" /></svg>
+                  <span className="text-xs font-medium text-gray-700">My looks</span>
+                </div>
+                <span className="bg-[#2d2d2d] text-white text-[10px] font-semibold px-2.5 py-1 rounded-full">9 credits left</span>
+              </div>
+              <img
+                src="/result-images/etta_collection -tryon-1K.png"
+                alt="Try-on result"
+                className="w-full aspect-[3/4] object-cover object-top"
+              />
+              {/* Widget footer */}
+              <div className="px-4 py-3 border-t border-gray-100 text-center">
+                <p className="text-[10px] text-gray-400 font-medium tracking-wide">
+                  Powered by <span className="font-bold text-gray-700">RENDERED FITS™</span> →
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -173,6 +225,9 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         </div>
       </div>
 
+      {/* ===== SECTION 2b: BENEFITS OF VIRTUAL TRY-ON ===== */}
+      <BenefitsSection />
+
       {/* ===== SECTION 3: PHONE MOCKUPS ===== */}
       <div className="bg-[#444833] py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,9 +271,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           </div>
         </div>
       </div>
-
-      {/* ===== SECTION 4: BENEFITS OF VIRTUAL TRY-ON ===== */}
-      <BenefitsSection />
 
       {/* ===== SECTION 5: PRICING ===== */}
       <div className="bg-white py-20 sm:py-28">
