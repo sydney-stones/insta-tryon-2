@@ -28,18 +28,6 @@ const StoreHeader: React.FC<StoreHeaderProps> = () => {
 
           {/* Navigation Links - Right side */}
           <nav className="flex items-center gap-4 sm:gap-8 ml-auto">
-            <Link
-              to="/demo-male"
-              className={`text-sm sm:text-base font-medium transition-colors whitespace-nowrap ${isHomePage ? 'text-white/90 hover:text-white' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              Male Demo
-            </Link>
-            <Link
-              to="/demo"
-              className={`text-sm sm:text-base font-medium transition-colors whitespace-nowrap ${isHomePage ? 'text-white/90 hover:text-white' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              Female Demo
-            </Link>
           </nav>
         </div>
       </div>

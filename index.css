@@ -98,3 +98,14 @@ body {
 .animate-scroll-carousel {
   animation: scroll 35s linear infinite;
 }
+
+/* 3-copy carousel: translates by exactly -33.333% for a perfect seamless loop */
+@keyframes scroll-3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+.animate-scroll-carousel-3 {
+  animation: scroll-3 40s linear infinite;
+  will-change: transform;
+}

@@ -110,29 +110,29 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               lineHeight: '110%',
               color: '#FFFFFF',
               margin: 0,
+              marginBottom: 'clamp(24px, 3vw, 48px)',
             }} className="text-[clamp(32px,5vw,64px)]">
               Rendered Fits is a virtual try-on application{' '}
               <span style={{ color: 'rgba(255,255,255,0.45)' }}>that brings the dressing room online</span>
             </h1>
 
-            <div className="mt-auto pt-10 lg:pt-16">
-              <p style={{
-                fontFamily: '"Inter Tight", Inter, sans-serif',
-                fontWeight: 500,
-                fontSize: 'clamp(16px, 1.25vw, 20px)',
-                lineHeight: '32px',
-                color: 'rgba(255,255,255,0.8)',
-              }} className="max-w-[549px] mb-6">
-                Allow your customers to virtually visualise garments on themselves before buying
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link to="/contact" className="inline-block border border-white text-white px-8 py-3.5 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
-                  Schedule a Meeting
-                </Link>
-                <Link to="/results" className="inline-block border border-white/40 text-white/80 px-8 py-3.5 text-sm font-medium hover:bg-white/10 transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
-                  See How It Works
-                </Link>
-              </div>
+            <p style={{
+              fontFamily: '"Inter Tight", Inter, sans-serif',
+              fontWeight: 500,
+              fontSize: 'clamp(16px, 1.25vw, 20px)',
+              lineHeight: '32px',
+              color: 'rgba(255,255,255,0.8)',
+              margin: '0 0 24px 0',
+            }} className="max-w-[549px]">
+              Allow your customers to virtually visualise garments on themselves before buying
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link to="/contact" className="inline-block border border-white text-white px-8 py-3.5 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
+                Schedule a Meeting
+              </Link>
+              <Link to="/results" className="inline-block border border-white/40 text-white/80 px-8 py-3.5 text-sm font-medium hover:bg-white/10 transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
+                See How It Works
+              </Link>
             </div>
           </div>
 
@@ -214,14 +214,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                 </div>
               </div>
 
-              {/* Arrow between widgets — curved connector */}
-              <div className="hidden sm:flex absolute z-20 items-center justify-center" style={{
-                left: '50%', top: '50%', transform: 'translate(-50%, -50%)',
-                width: 80, height: 80,
+              {/* Arrow between widgets — exact Figma SVG */}
+              <div className="hidden sm:flex absolute z-20 pointer-events-none" style={{
+                left: '50%', top: '38%', transform: 'translate(-50%, -50%)',
+                width: 73, height: 27,
               }}>
-                <svg width="80" height="50" viewBox="0 0 80 50" fill="none">
-                  <path d="M8 42C20 42 30 8 50 8C60 8 68 14 72 20" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M64 14L72 20L64 24" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg width="146" height="54" viewBox="0 0 146 54" fill="none" style={{ width: 73, height: 27 }}>
+                  <path d="M7.01344 52.3448L7.52233 53.2057L9.24399 52.1879L8.7351 51.327L7.87427 51.8359L7.01344 52.3448ZM145.874 21.836L138.032 13.3605L134.613 24.3897L145.874 21.836ZM7.87427 51.8359C8.7351 51.327 8.73521 51.3272 8.73513 51.3271C8.73484 51.3266 8.73457 51.3261 8.734 51.3252C8.73285 51.3232 8.73093 51.3199 8.72825 51.3154C8.7229 51.3062 8.71453 51.2918 8.70327 51.2724C8.68075 51.2334 8.64669 51.1739 8.60217 51.0949C8.51311 50.9369 8.38224 50.7006 8.21822 50.3932C7.8901 49.7781 7.42973 48.8789 6.90616 47.7516C5.85801 45.4948 4.56186 42.3352 3.56478 38.7192C1.55831 31.4425 0.824176 22.5488 5.43494 15.3856C10.0184 8.26477 20.1167 2.50917 40.5983 2.03201C61.0694 1.55509 91.6963 6.36445 136.974 20.1239L137.264 19.1671L137.555 18.2103C92.1988 4.42684 61.335 -0.451642 40.5517 0.0325504C19.7789 0.5165 8.85887 6.37097 3.75321 14.3031C-1.32513 22.1928 -0.419167 31.7949 1.63673 39.2508C2.67084 43.0011 4.01145 46.2669 5.09225 48.594C5.63316 49.7587 6.11032 50.691 6.45362 51.3345C6.6253 51.6564 6.76361 51.9061 6.8598 52.0768C6.9079 52.1622 6.94548 52.2278 6.97144 52.2727C6.98443 52.2952 6.99451 52.3125 7.00155 52.3246C7.00508 52.3306 7.00784 52.3353 7.00982 52.3387C7.01082 52.3404 7.01172 52.3419 7.01222 52.3428C7.01293 52.344 7.01344 52.3448 7.87427 51.8359Z" fill="white"/>
                 </svg>
               </div>
 
@@ -287,108 +286,66 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       <ScrollingQuotes />
 
       {/* ===== SECTION 6b: RESULTS CAROUSEL ===== */}
-      <div className="bg-white py-16 sm:py-20 overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
-            See the Results
-          </h2>
-          <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
-            Original product images transformed into photorealistic try-on shots.
-          </p>
-        </div>
-        {/* Scrolling track — infinite loop via CSS animation */}
-        <div className="relative">
-          <div className="flex gap-4 animate-scroll-carousel" style={{ width: 'max-content' }}>
-            {[
-              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
-              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
-              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
-              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
-              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
-              /* duplicate set for seamless loop */
-              { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
-              { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
-              { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
-              { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
-              { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
-            ].map((pair, idx) => (
-              <div key={idx} className="flex gap-2 flex-shrink-0">
-                {/* Original */}
-                <div className="relative flex-shrink-0">
-                  <img
-                    src={pair.original}
-                    alt="Original item"
-                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                  <span className="absolute bottom-2 left-2 bg-black/50 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
-                    Original item
-                  </span>
-                </div>
-                {/* Result */}
-                <div className="relative flex-shrink-0">
-                  <img
-                    src={pair.result}
-                    alt="Rendered Fits result"
-                    className="h-72 sm:h-80 w-auto object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                  <span className="absolute bottom-2 right-2 bg-[#444833]/80 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
-                    Rendered Fits
-                  </span>
-                </div>
+      {(() => {
+        const pairs = [
+          { original: '/result-images/tribal.webp', result: '/result-images/tribal-nb2-2k-tryon.png' },
+          { original: '/result-images/casquette-tartan-4470282-model.webp', result: '/result-images/wastedcap-tryon.png' },
+          { original: '/result-images/maha_ss26_04_02_130.webp', result: '/result-images/maha_ss26_04_02_129-nb2-2k-tryon.png' },
+          { original: '/result-images/etta_collection.png', result: '/result-images/etta_collection -tryon-1K.png' },
+          { original: '/result-images/nightcityclothing.webp', result: '/result-images/nightcityclothing-tryon-1K.png' },
+        ];
+        /* Three copies: animation scrolls -33.333% so the loop is seamless */
+        const tripled = [...pairs, ...pairs, ...pairs];
+        return (
+          <div className="bg-white py-16 sm:py-20 overflow-hidden">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
+                See the Results
+              </h2>
+              <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
+                Original product images transformed into photorealistic try-on shots.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="flex gap-4 animate-scroll-carousel-3" style={{ width: 'max-content' }}>
+                {tripled.map((pair, idx) => (
+                  <div key={idx} className="flex gap-2 flex-shrink-0">
+                    <div className="relative flex-shrink-0">
+                      <img
+                        src={pair.original}
+                        alt="Original item"
+                        className="h-72 sm:h-80 w-auto object-cover rounded-xl"
+                        loading="eager"
+                        decoding="async"
+                        style={{ display: 'block' }}
+                      />
+                      <span className="absolute bottom-2 left-2 bg-black/50 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
+                        Original item
+                      </span>
+                    </div>
+                    <div className="relative flex-shrink-0">
+                      <img
+                        src={pair.result}
+                        alt="Rendered Fits result"
+                        className="h-72 sm:h-80 w-auto object-cover rounded-xl"
+                        loading="eager"
+                        decoding="async"
+                        style={{ display: 'block' }}
+                      />
+                      <span className="absolute bottom-2 right-2 bg-[#444833]/80 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
+                        Rendered Fits
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </div>
+        );
+      })()}
 
       {/* ===== SECTION 2b: BENEFITS OF VIRTUAL TRY-ON ===== */}
       <BenefitsSection />
-
-      {/* ===== SECTION 3: PHONE MOCKUPS ===== */}
-      <div className="bg-[#444833] py-16 sm:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-3 sm:gap-6">
-            {/* Phone 1 - Browse */}
-            <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
-              <div className="p-3 sm:p-4">
-                <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/result-images/purdeyoutfit.png" alt="Browse products" className="w-full h-full object-cover rounded-lg" />
-                </div>
-                <div className="mt-2 sm:mt-3">
-                  <p className="text-[10px] sm:text-xs text-gray-500">Step 1</p>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900">Browse Products</p>
-                </div>
-              </div>
-            </div>
-            {/* Phone 2 - Try It On */}
-            <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
-              <div className="p-3 sm:p-4">
-                <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/result-images/siennaphone.png" alt="Upload your pictures" className="w-full h-full object-cover rounded-lg" />
-                </div>
-                <div className="mt-2 sm:mt-3">
-                  <p className="text-[10px] sm:text-xs text-gray-500">Step 2</p>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900">Upload Your Pictures</p>
-                </div>
-              </div>
-            </div>
-            {/* Phone 3 - See Results */}
-            <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
-              <div className="p-3 sm:p-4">
-                <div className="bg-gray-100 rounded-lg aspect-[3/4] flex items-center justify-center">
-                  <img src="/result-images/purdey-tryon-1k.png" alt="See your results" className="w-full h-full object-contain rounded-lg" />
-                </div>
-                <div className="mt-2 sm:mt-3">
-                  <p className="text-[10px] sm:text-xs text-gray-500">Step 3</p>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900">See Your Results</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* ===== SECTION 5: PRICING ===== */}
       <div className="bg-white py-20 sm:py-28">
@@ -529,41 +486,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             </Link>
           </div>
 
-        </div>
-      </div>
-
-      {/* ===== SECTION 6: DEMO LINKS ===== */}
-      <div className="bg-white py-16 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-gray-900 mb-4">
-            Try It Yourself
-          </h2>
-          <p className="text-gray-500 text-sm sm:text-base mb-10 max-w-lg mx-auto">
-            Experience our virtual try-on technology with our live demos.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <Link
-              to="/demo-male"
-              className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
-            >
-              <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Male Demo</p>
-              <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on menswear</p>
-            </Link>
-            <Link
-              to="/demo"
-              className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
-            >
-              <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">Female Demo</p>
-              <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">Try on womenswear</p>
-            </Link>
-            <Link
-              to="/results"
-              className="group border-2 border-[#444833] rounded-xl p-6 sm:p-8 hover:bg-[#444833] transition-all"
-            >
-              <p className="text-lg sm:text-xl font-bold text-[#444833] group-hover:text-white transition-colors">See Results</p>
-              <p className="text-sm text-gray-500 group-hover:text-white/70 mt-1 transition-colors">See how it works</p>
-            </Link>
-          </div>
         </div>
       </div>
 
