@@ -29,7 +29,8 @@ import BlogPost from './components/BlogPost';
 import LegalPage, { LegalHub } from './components/LegalPage';
 import NotFoundPage from './components/NotFoundPage';
 import ScabalDemoPage from './components/ScabalDemoPage';
-import ArneTbcoDemoPage from './components/ArneTbcoDemoPage';
+import ArneDemoPage from './components/ArneDemoPage';
+import TbcoDemoPage from './components/TbcoDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -96,11 +97,11 @@ const App: React.FC = () => {
           <Route path="/andrea-iyamah" element={<AndreaIyamahDemoPage />} />
           <Route path="/scabal/wool-suit" element={<ScabalDemoPage productSlug="wool-suit" />} />
           <Route path="/scabal/tailored-jacket" element={<ScabalDemoPage productSlug="tailored-jacket" />} />
-          <Route path="/arne-tbco/arne-jacket" element={<ArneTbcoDemoPage productSlug="arne-jacket" />} />
-          <Route path="/arne-tbco/tbco-dress-1" element={<ArneTbcoDemoPage productSlug="tbco-dress-1" />} />
-          <Route path="/arne-tbco/tbco-top-1" element={<ArneTbcoDemoPage productSlug="tbco-top-1" />} />
-          <Route path="/arne-tbco/tbco-top-2" element={<ArneTbcoDemoPage productSlug="tbco-top-2" />} />
-          <Route path="/arne-tbco/arne-womenswear" element={<ArneTbcoDemoPage productSlug="arne-womenswear" />} />
+          <Route path="/arne/menswear" element={<ArneDemoPage productSlug="menswear" />} />
+          <Route path="/arne/womenswear" element={<ArneDemoPage productSlug="womenswear" />} />
+          <Route path="/tbco/demo1" element={<TbcoDemoPage productSlug="demo1" />} />
+          <Route path="/tbco/demo2" element={<TbcoDemoPage productSlug="demo2" />} />
+          <Route path="/tbco/demo3" element={<TbcoDemoPage productSlug="demo3" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
