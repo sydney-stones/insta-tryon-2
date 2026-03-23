@@ -194,45 +194,70 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                 </div>
               </div>
 
-              {/* Upload boxes — stacked vertically, misaligned, between the two widgets */}
-              <div className="hidden sm:flex flex-col items-start self-center gap-3 flex-shrink-0" style={{ marginTop: '-20px' }}>
+              {/* Upload boxes — stacked, aligned, between the two widgets */}
+              <div className="hidden sm:flex flex-col items-center self-center gap-4 flex-shrink-0" style={{ zIndex: 20 }}>
 
-                {/* Face upload box — offset right slightly */}
-                <div style={{
-                  width: 'clamp(100px, 8vw, 130px)',
-                  background: '#F0F0F0',
-                  borderRadius: 6,
-                  boxShadow: '0 10px 10px rgba(0,0,0,0.04), 0 20px 25px rgba(0,0,0,0.1)',
-                  overflow: 'hidden',
-                  alignSelf: 'flex-end',
-                  marginRight: '-8px',
-                }}>
-                  <img
-                    src="/result-images/siennafacehero.jpeg"
-                    alt="Face upload"
-                    style={{ width: '100%', aspectRatio: '1/1', objectFit: 'cover', display: 'block' }}
-                  />
+                {/* Face upload box + arrow pointing left to Widget1 face row */}
+                <div style={{ position: 'relative' }}>
+                  <div style={{
+                    width: 'clamp(90px, 7vw, 116px)',
+                    height: 'clamp(90px, 7vw, 116px)',
+                    background: '#F0F0F0',
+                    borderRadius: 6,
+                    boxShadow: '0 10px 10px rgba(0,0,0,0.04), 0 20px 25px rgba(0,0,0,0.1)',
+                    overflow: 'hidden',
+                  }}>
+                    <img
+                      src="/result-images/siennafacehero.jpeg"
+                      alt="Face upload"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
+                  {/* Arrow curving left from the box toward face upload row */}
+                  <div style={{ position: 'absolute', right: '100%', top: '50%', transform: 'translateY(-50%)', width: 44, height: 44, pointerEvents: 'none' }}>
+                    <svg viewBox="0 0 44 44" fill="none" style={{ width: '100%', height: '100%' }}>
+                      <path d="M40 22 C28 22, 10 22, 10 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+                      <path d="M6 13 L10 8 L14 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    </svg>
+                  </div>
                 </div>
 
-                {/* Full body upload box — offset left slightly */}
-                <div style={{
-                  width: 'clamp(100px, 8vw, 130px)',
-                  background: '#F0F0F0',
-                  borderRadius: 6,
-                  boxShadow: '0 10px 10px rgba(0,0,0,0.04), 0 20px 25px rgba(0,0,0,0.1)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '16px 0',
-                  alignSelf: 'flex-start',
-                  marginLeft: '-8px',
-                }}>
-                  <svg width="74" height="73" viewBox="0 0 148 147" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M84.75 18.9585H100.875C104.833 18.9585 108.042 22.1671 108.042 26.1252V42.2502M63.25 18.9585H47.125C43.167 18.9585 39.9584 22.1671 39.9584 26.1252V42.2502M63.25 87.0418H47.125C43.167 87.0418 39.9584 83.8333 39.9584 79.8752V63.7502M84.75 87.0418H100.875C104.833 87.0418 108.042 83.8333 108.042 79.8752V63.7502" stroke="#202020" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M76.7063 79.4617L79.412 58.3427H83.9231V44.8144L83.5583 43.3189C83.2568 42.0833 82.2973 41.1017 81.0474 40.7501L76.7063 39.5283L76.7057 36.9429C78.3236 35.8768 79.412 33.8841 79.412 31.6019C79.412 28.1966 76.9886 25.436 73.9994 25.436C71.0101 25.436 68.5868 28.1966 68.5868 31.6019C68.5868 33.8841 69.6753 35.8768 71.2931 36.9429L71.2937 39.5283L66.9796 40.7615C65.7683 41.1079 64.8303 42.0468 64.5061 43.2379L64.0769 44.8144V58.3427H68.5868L71.2937 79.4617" stroke="#202020" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                {/* Full body upload box + arrow pointing left to Widget1 body row */}
+                <div style={{ position: 'relative' }}>
+                  <div style={{
+                    width: 'clamp(90px, 7vw, 116px)',
+                    height: 'clamp(90px, 7vw, 116px)',
+                    background: '#F0F0F0',
+                    borderRadius: 6,
+                    boxShadow: '0 10px 10px rgba(0,0,0,0.04), 0 20px 25px rgba(0,0,0,0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <svg viewBox="0 0 148 147" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '65%', height: '65%' }}>
+                      <path d="M84.75 18.9585H100.875C104.833 18.9585 108.042 22.1671 108.042 26.1252V42.2502M63.25 18.9585H47.125C43.167 18.9585 39.9584 22.1671 39.9584 26.1252V42.2502M63.25 87.0418H47.125C43.167 87.0418 39.9584 83.8333 39.9584 79.8752V63.7502M84.75 87.0418H100.875C104.833 87.0418 108.042 83.8333 108.042 79.8752V63.7502" stroke="#202020" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M76.7063 79.4617L79.412 58.3427H83.9231V44.8144L83.5583 43.3189C83.2568 42.0833 82.2973 41.1017 81.0474 40.7501L76.7063 39.5283L76.7057 36.9429C78.3236 35.8768 79.412 33.8841 79.412 31.6019C79.412 28.1966 76.9886 25.436 73.9994 25.436C71.0101 25.436 68.5868 28.1966 68.5868 31.6019C68.5868 33.8841 69.6753 35.8768 71.2931 36.9429L71.2937 39.5283L66.9796 40.7615C65.7683 41.1079 64.8303 42.0468 64.5061 43.2379L64.0769 44.8144V58.3427H68.5868L71.2937 79.4617" stroke="#202020" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  {/* Arrow curving left from the box toward body upload row */}
+                  <div style={{ position: 'absolute', right: '100%', top: '50%', transform: 'translateY(-50%)', width: 44, height: 44, pointerEvents: 'none' }}>
+                    <svg viewBox="0 0 44 44" fill="none" style={{ width: '100%', height: '100%' }}>
+                      <path d="M40 22 C28 22, 10 22, 10 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+                      <path d="M6 13 L10 8 L14 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    </svg>
+                  </div>
                 </div>
 
+              </div>
+
+              {/* Arrow: Widget1 → Widget2 (restored) */}
+              <div className="hidden sm:flex absolute z-20 pointer-events-none" style={{
+                right: 'clamp(240px,19vw,300px)', top: '18%', transform: 'translateX(50%)',
+                width: 73, height: 27,
+              }}>
+                <svg width="146" height="54" viewBox="0 0 146 54" fill="none" style={{ width: 73, height: 27 }}>
+                  <path d="M7.01344 52.3448L7.52233 53.2057L9.24399 52.1879L8.7351 51.327L7.87427 51.8359L7.01344 52.3448ZM145.874 21.836L138.032 13.3605L134.613 24.3897L145.874 21.836ZM7.87427 51.8359C8.7351 51.327 8.73521 51.3272 8.73513 51.3271C8.73484 51.3266 8.73457 51.3261 8.734 51.3252C8.73285 51.3232 8.73093 51.3199 8.72825 51.3154C8.7229 51.3062 8.71453 51.2918 8.70327 51.2724C8.68075 51.2334 8.64669 51.1739 8.60217 51.0949C8.51311 50.9369 8.38224 50.7006 8.21822 50.3932C7.8901 49.7781 7.42973 48.8789 6.90616 47.7516C5.85801 45.4948 4.56186 42.3352 3.56478 38.7192C1.55831 31.4425 0.824176 22.5488 5.43494 15.3856C10.0184 8.26477 20.1167 2.50917 40.5983 2.03201C61.0694 1.55509 91.6963 6.36445 136.974 20.1239L137.264 19.1671L137.555 18.2103C92.1988 4.42684 61.335 -0.451642 40.5517 0.0325504C19.7789 0.5165 8.85887 6.37097 3.75321 14.3031C-1.32513 22.1928 -0.419167 31.7949 1.63673 39.2508C2.67084 43.0011 4.01145 46.2669 5.09225 48.594C5.63316 49.7587 6.11032 50.691 6.45362 51.3345C6.6253 51.6564 6.76361 51.9061 6.8598 52.0768C6.9079 52.1622 6.94548 52.2278 6.97144 52.2727C6.98443 52.2952 6.99451 52.3125 7.00155 52.3246C7.00508 52.3306 7.00784 52.3353 7.00982 52.3387C7.01082 52.3404 7.01172 52.3419 7.01222 52.3428C7.01293 52.344 7.01344 52.3448 7.87427 51.8359Z" fill="white"/>
+                </svg>
               </div>
 
               {/* Widget 2 — Result (offset up) */}
