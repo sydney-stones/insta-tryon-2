@@ -473,11 +473,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       <div className="bg-[#444833] py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-10 lg:gap-16">
-            {/* Left - Large brand name */}
+            {/* Left - Hanger logo */}
             <div className="text-center lg:text-left">
-              <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight">
-                RENDERED<br />FITS
-              </h2>
+              <img
+                src="/result-images/whitelogonobackground.png"
+                alt="Rendered Fits"
+                className="h-[80px] sm:h-[96px] md:h-[112px] lg:h-[128px] w-auto object-contain"
+              />
             </div>
             {/* Right - CTA */}
             <div className="flex flex-col items-center lg:items-end gap-6">
@@ -498,17 +500,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       {/* ===== SECTION 8: LEGAL FOOTER ===== */}
       <div className="bg-[#3a3d2d] py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Links row + logo */}
-          <div className="flex items-center justify-between mb-5">
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
-              <Link to="/legal" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Legal</Link>
-              <Link to="/contact" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Contact Us</Link>
-            </div>
-            <img
-              src="/result-images/whitelogonobackground.png"
-              alt="Rendered Fits"
-              className="h-10 sm:h-12 w-auto object-contain opacity-80"
-            />
+          {/* Links row */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-5">
+            <Link to="/legal" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Legal</Link>
+            <Link to="/contact" className="text-white/50 hover:text-white/80 text-[11px] transition-colors">Contact Us</Link>
           </div>
           {/* Divider */}
           <div className="border-t border-white/10 mb-5" />
