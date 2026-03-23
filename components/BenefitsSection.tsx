@@ -5,84 +5,98 @@
 
 import React from 'react';
 
-/* Icon paths from Figma vector proportions */
+/*
+ * Icons from exact Figma SVG paths (benefits.txt).
+ * Each icon uses a 48×48 viewBox matching the Figma "Frame" containers.
+ */
+
+/* Boost Sales — price-tag icon */
 const BoostSalesIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <path d="M14 10h4l2 4-4 4h-2a8 8 0 000 16h2l4 4-2 4h-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M20 12c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 24h32M24 8v32" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <path d="M16 16l4-4 4 4M28 32l4-4 4 4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M28 4H16L4 16V28L20 44L44 20L28 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="14" cy="14" r="2" fill="white"/>
   </svg>
 );
 
+/* Sustainability — leaf/recycle */
 const SustainabilityIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <path d="M24 8C15.16 8 8 15.16 8 24s7.16 16 16 16 16-7.16 16-16" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <path d="M32 8c0 0-2 6-8 8s-8 8-8 8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <path d="M40 16c-2 0-10 4-10 14" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <path d="M30 10l10 6-6 10" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M24 6C14 6 6 14 6 24C6 34 14 42 24 42" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M24 6C34 6 42 14 42 24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M30 18C30 18 28 28 18 32" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M42 18L36 24L42 30" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
+/* Reduce Returns — box with return arrow */
 const ReduceReturnsIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <rect x="6" y="16" width="36" height="28" rx="2" stroke="#fff" strokeWidth="2" />
-    <path d="M6 24h36" stroke="#fff" strokeWidth="2" />
-    <path d="M16 8h16" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <path d="M12 8v8M36 8v8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <path d="M18 34l4-4 4 4M22 30v8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* box body */}
+    <path d="M6 18H42V44H6V18Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    {/* box top flap */}
+    <path d="M6 18L16 4H32L42 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    {/* center divider */}
+    <path d="M24 18V4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
+/* Increase AOV — bar chart with up arrow */
 const IncreaseAOVIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <path d="M8 40h6V28H8zM21 40h6V20h-6zM34 40h6V12h-6z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M10 20l8-8 8 6 12-14" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M34 4h6v6" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8 40H16V28H8V40Z" stroke="white" strokeWidth="2" strokeLinecap="square"/>
+    <path d="M20 40H28V20H20V40Z" stroke="white" strokeWidth="2" strokeLinecap="square"/>
+    <path d="M32 40H40V12H32V40Z" stroke="white" strokeWidth="2" strokeLinecap="square"/>
+    <path d="M10 22L19 13L28 20L38 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M34 6H42V14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
+/* Customer Acquisition — two people */
 const CustomerAcquisitionIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <circle cx="17" cy="16" r="6" stroke="#fff" strokeWidth="2" />
-    <circle cx="31" cy="16" r="6" stroke="#fff" strokeWidth="2" />
-    <path d="M4 40c0-7.18 5.82-13 13-13h14c7.18 0 13 5.82 13 13" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="17" cy="16" r="6" stroke="white" strokeWidth="2"/>
+    <circle cx="31" cy="16" r="6" stroke="white" strokeWidth="2"/>
+    <path d="M4 42C4 34 9.82 27 17 27H31C38.18 27 44 34 44 42" stroke="white" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
+/* Studio Background — panoramic frame */
 const StudioBackgroundIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <rect x="4" y="12" width="40" height="28" rx="2" stroke="#fff" strokeWidth="2" />
-    <path d="M4 20h40" stroke="#fff" strokeWidth="2" />
-    <path d="M12 12V8M36 12V8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="24" cy="32" r="5" stroke="#fff" strokeWidth="2" />
+    <rect x="4" y="6" width="40" height="36" rx="1" stroke="white" strokeWidth="2"/>
+    <path d="M4 6L20 24L28 16L38 28L44 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="34" cy="15" r="3" stroke="white" strokeWidth="2"/>
   </svg>
 );
 
+/* Advanced Analytics — bar chart */
 const AdvancedAnalyticsIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <rect x="6" y="28" width="8" height="12" rx="1" stroke="#fff" strokeWidth="2" />
-    <rect x="20" y="20" width="8" height="20" rx="1" stroke="#fff" strokeWidth="2" />
-    <rect x="34" y="10" width="8" height="30" rx="1" stroke="#fff" strokeWidth="2" />
-    <path d="M10 22l10-10 10 8 10-16" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M6 34H14V42H6V34Z" stroke="white" strokeWidth="2" strokeLinecap="square"/>
+    <path d="M20 26H28V42H20V26Z" stroke="white" strokeWidth="2" strokeLinecap="square"/>
+    <path d="M34 14H42V42H34V14Z" stroke="white" strokeWidth="2" strokeLinecap="square"/>
+    <path d="M10 28L19 18L28 24L38 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
+/* Competitive Edge — star/medal */
 const CompetitiveEdgeIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <path d="M24 6l4.5 9 9.9 1.4-7.2 7 1.7 9.9L24 28.8l-8.9 4.6 1.7-9.9-7.2-7 9.9-1.4z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M18 26l4 4 8-9" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M24 6L28.5 17H40L30.5 23.5L34 35L24 28L14 35L17.5 23.5L8 17H19.5L24 6Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M18 28L22 32L30 23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
+/* Committed to ongoing updates — calendar with check */
 const OngoingSupportIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <rect x="6" y="8" width="36" height="32" rx="2" stroke="#fff" strokeWidth="2" />
-    <path d="M6 18h36" stroke="#fff" strokeWidth="2" />
-    <path d="M14 8V6M34 8V6" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <path d="M14 26h12M14 32h8" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="36" cy="34" r="7" fill="#2e3a08" stroke="#fff" strokeWidth="2" />
-    <path d="M33 34l2 2 4-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <rect x="6" y="8" width="36" height="34" rx="1" stroke="white" strokeWidth="2"/>
+    <path d="M6 18H42" stroke="white" strokeWidth="2"/>
+    <path d="M16 6V10M32 6V10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M15 30H26" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M15 36H22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <circle cx="36" cy="36" r="8" fill="#2e3a08" stroke="white" strokeWidth="2"/>
+    <path d="M33 36L35 38L40 33" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -101,6 +115,7 @@ const row2 = [
   { title: 'Committed to on-going updates and support', Icon: OngoingSupportIcon },
 ];
 
+/* Figma: each cell = 256×232px, icon container 72×72 (12px padding + 48×48 frame), label 24px padding, font Inter Tight 24/32 */
 const BenefitCell: React.FC<{ title: string; Icon: React.FC }> = ({ title, Icon }) => (
   <div style={{
     width: 256,
@@ -114,14 +129,14 @@ const BenefitCell: React.FC<{ title: string; Icon: React.FC }> = ({ title, Icon 
     flexShrink: 0,
     marginRight: -1,
   }}>
-    {/* Icon area — 72×72 padded container */}
-    <div style={{ padding: 12, width: 72, height: 72, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    {/* Icon area — 72×72 with 12px padding = 48×48 icon */}
+    <div style={{ width: 72, height: 72, padding: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
       <Icon />
     </div>
-    {/* Label */}
-    <div style={{ padding: '24px', width: '100%' }}>
+    {/* Label — 24px padding, Inter Tight 500 24px/32px */}
+    <div style={{ padding: 24, width: '100%', boxSizing: 'border-box' }}>
       <span style={{
-        fontFamily: 'Inter Tight, Inter, sans-serif',
+        fontFamily: '"Inter Tight", Inter, sans-serif',
         fontWeight: 500,
         fontSize: 24,
         lineHeight: '32px',
@@ -136,69 +151,89 @@ const BenefitCell: React.FC<{ title: string; Icon: React.FC }> = ({ title, Icon 
 );
 
 const BenefitsSection: React.FC = () => (
-  <div className="relative overflow-hidden" style={{
+  /* Figma: 1600×900, gradient #444833→#181E01, models photo right side */
+  <div style={{
+    position: 'relative',
+    overflow: 'hidden',
     background: 'linear-gradient(91.71deg, #444833 2.65%, #181E01 98.8%)',
     minHeight: 900,
   }}>
-    {/* Logo rectangle top-left */}
-    <div className="absolute top-0 left-0 z-20 flex items-center px-8" style={{
-      width: 346, height: 104,
+    {/* Logo box — same as hero: x=-25,y=-4, w=346,h=104 */}
+    <div style={{
+      position: 'absolute', top: -4, left: -25, width: 346, height: 104,
       background: 'rgba(255,255,255,0.15)',
+      display: 'flex', alignItems: 'center', paddingLeft: 58,
+      zIndex: 10,
     }}>
       <span style={{ fontFamily: 'Jost, sans-serif', fontWeight: 700, fontSize: 18, color: '#fff', letterSpacing: '0.08em' }}>
         RENDERED FITS™
       </span>
     </div>
 
-    {/* Horizontal rule below logo */}
-    <div className="absolute inset-x-0" style={{ top: 101, borderTop: '1px solid #B9BCAC' }} />
+    {/* Horizontal rule below logo: y=101 */}
+    <div style={{ position: 'absolute', left: 0, right: 0, top: 101, borderTop: '1px solid #B9BCAC', pointerEvents: 'none' }} />
+    {/* Short vertical rule right of logo: x=322, h=101 */}
+    <div style={{ position: 'absolute', left: 322, top: 0, height: 101, borderLeft: '1px solid #B9BCAC', pointerEvents: 'none' }} />
 
-    {/* Vertical separator right of logo area */}
-    <div className="absolute" style={{ left: 322, top: 0, height: 101, borderLeft: '1px solid #B9BCAC' }} />
-
-    {/* Models photo — right side, behind content */}
-    <div className="absolute inset-y-0 right-0" style={{ width: '45%' }}>
+    {/* Models photo — Figma: right side, w=1599, mirrored, covers right portion */}
+    <div style={{ position: 'absolute', top: 0, right: 0, width: '45%', height: '100%' }}>
       <img
         src="/result-images/Website Design -4.png"
         alt="Virtual try-on models"
         style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
       />
-      {/* Gradient fade from left */}
-      <div className="absolute inset-y-0 left-0" style={{ width: '50%', background: 'linear-gradient(to right, #181E01, transparent)' }} />
+      {/* Gradient fade from left edge of photo into bg */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(to right, #181E01 0%, rgba(24,30,1,0.6) 40%, transparent 100%)',
+      }} />
     </div>
 
-    {/* Bottom gradient overlay */}
-    <div className="absolute inset-x-0 bottom-0" style={{ height: 463, background: 'linear-gradient(180deg, rgba(25,31,2,0) 0%, #1D2206 100%)' }} />
+    {/* Bottom gradient overlay — Figma: y=437, h=463 */}
+    <div style={{
+      position: 'absolute', left: 0, right: 0, bottom: 0, height: 463,
+      background: 'linear-gradient(180deg, rgba(25,31,2,0) 0%, #1D2206 100%)',
+      pointerEvents: 'none',
+    }} />
 
     {/* Content */}
-    <div className="relative z-10" style={{ padding: '0 0 0 0' }}>
+    <div style={{ position: 'relative', zIndex: 5 }}>
 
-      {/* Headline */}
+      {/* Headline — Figma: top=232, left≈119, w=929, font Jost 500 74px */}
       <h2 style={{
         fontFamily: 'Jost, sans-serif',
         fontWeight: 500,
-        fontSize: 'clamp(42px, 4.6vw, 74px)',
+        fontSize: 'clamp(40px, 4.625vw, 74px)',
         lineHeight: '100%',
         color: '#FFFFFF',
-        position: 'relative',
+        margin: 0,
         padding: '232px 0 0 40px',
-        marginBottom: 0,
         maxWidth: 929,
       }}>
-        Benefits <span style={{ fontWeight: 400 }}>of our Virtual Try-on</span>
+        <strong>Benefits</strong>{' '}
+        <span style={{ fontWeight: 400 }}>of our Virtual Try-on</span>
       </h2>
 
-      {/* Benefit grid rows */}
-      <div style={{ marginTop: 0, paddingBottom: 0 }}>
-        {/* Row 1 */}
-        <div style={{ display: 'flex', alignItems: 'stretch', borderTop: '1px solid rgba(185,188,172,0.4)', marginTop: 32 }}>
+      {/* Benefit grid — Figma: row1 y=437, row2 y=668, cells 256×232 */}
+      <div style={{ marginTop: 32 }}>
+        {/* Row 1: 4 cells */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'stretch',
+          borderTop: '1px solid rgba(185,188,172,0.4)',
+          borderBottom: '1px solid rgba(185,188,172,0.4)',
+        }}>
           {row1.map((b) => (
             <BenefitCell key={b.title} title={b.title} Icon={b.Icon} />
           ))}
         </div>
 
-        {/* Row 2 */}
-        <div style={{ display: 'flex', alignItems: 'stretch', borderTop: '1px solid rgba(185,188,172,0.4)' }}>
+        {/* Row 2: 5 cells */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'stretch',
+          borderBottom: '1px solid rgba(185,188,172,0.4)',
+        }}>
           {row2.map((b) => (
             <BenefitCell key={b.title} title={b.title} Icon={b.Icon} />
           ))}
