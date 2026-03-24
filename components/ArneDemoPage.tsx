@@ -629,14 +629,9 @@ const ArneDemoPage: React.FC<ArneDemoPageProps> = ({ productSlug }) => {
                         </div>
                       </button>
 
-                      <div style={{ padding: '12px 12px 0', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '6.42px', paddingLeft: '12px', paddingRight: '12px', height: '29.83px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '0 10px', height: '100%' }}>
-                          <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#8B7355', border: '1px solid #ccc', flexShrink: 0 }} />
-                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Brown</span>
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '0 10px', height: '100%' }}>
-                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                      <div style={{ padding: '12px 12px 0' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '0 12px', height: '44px', width: '100%', boxSizing: 'border-box' }}>
+                          <span style={{ fontSize: '12px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
                           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
                         </div>
                       </div>
