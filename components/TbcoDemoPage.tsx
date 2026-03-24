@@ -411,16 +411,9 @@ const TbcoDemoPage: React.FC<TbcoDemoPageProps> = ({ productSlug }) => {
                       position: 'relative', display: isMobile ? 'none' : 'block',
                     }}>
                       <img src={product.productSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '400px' }} />
-                      <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '6.42px', padding: '0 3.2px', height: '29.83px', backgroundColor: 'rgba(255,255,255,0.92)', border: '1px solid #D1D5DC' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                          <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#8B7355', border: '1px solid #ccc', flexShrink: 0 }} />
-                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Brown</span>
-                        </div>
-                        <div style={{ width: '1px', height: '16px', backgroundColor: '#D1D5DC' }} />
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
-                        </div>
+                      <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', alignItems: 'center', gap: '6px', padding: '0 10px', height: '29.83px', backgroundColor: 'rgba(255,255,255,0.92)', border: '1px solid #D1D5DC' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
                       </div>
                     </div>
 
