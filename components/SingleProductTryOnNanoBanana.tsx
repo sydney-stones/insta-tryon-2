@@ -98,13 +98,11 @@ const SingleProductTryOnNanoBanana: React.FC<SingleProductTryOnNanoBananaProps> 
       return `- Garment Image ${i + 1}: Reference view of the garment`;
     }).join('\n');
 
-    return `Create a photorealistic e-commerce studio photograph of this exact person wearing this exact garment.
+    return `Generate a photorealistic fashion photograph of the person in the customer photos wearing the product from the product images. Where a product image shows the product being worn by a model, use that shot as the direct compositional reference — match its framing, crop, and camera distance exactly. Dress the person in every item shown across the product images, reproducing colours, textures, patterns, logos, and construction exactly. Completely replace all clothing and footwear from the customer photos with the product. Add complementary footwear if none is shown in the product images.
 
-Preserve the person's face, skin tone, hair, body shape, and proportions exactly as shown in the reference images — they must be unmistakably recognisable as themselves. Preserve the garment's exact colour, pattern, texture, and design as shown in the garment image. The garment should fit and drape naturally on their body.
+Preserve this person's face, skin tone, hair, body shape, and natural expression exactly as they appear — do not idealise, alter, or add a smile.
 
-Analyse the garment type and frame the shot appropriately — full-body for dresses and full outfits, three-quarter for tops and jackets, close-up portrait for jewellery and accessories, full-body with lower angle for footwear.
-
-Natural, relaxed model pose. Clean light grey seamless studio backdrop. Soft, diffused studio lighting. 85mm portrait lens. The photograph must be indistinguishable from a real professional studio shot. 9:16 Aspect ratio`;
+The pose should feel natural and confident, as a fashion model would stand. Light grey seamless studio backdrop, soft directional studio lighting, 85mm portrait lens, 9:16 aspect ratio. Indistinguishable from a professional e-commerce shoot.`;
   };
 
   const getResultFilename = (): string => {
