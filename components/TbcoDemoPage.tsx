@@ -411,9 +411,16 @@ const TbcoDemoPage: React.FC<TbcoDemoPageProps> = ({ productSlug }) => {
                       position: 'relative', display: isMobile ? 'none' : 'block',
                     }}>
                       <img src={product.productSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '400px' }} />
-                      <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: 'rgba(255,255,255,0.92)', padding: '3px 8px', border: '1px solid #D1D5DC' }}>{product.category}</span>
-                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: 'rgba(255,255,255,0.92)', padding: '3px 8px', border: '1px solid #D1D5DC' }}>{product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                      <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '6.42px', padding: '0 3.2px', height: '29.83px', backgroundColor: 'rgba(255,255,255,0.92)', border: '1px solid #D1D5DC' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                          <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#8B7355', border: '1px solid #ccc', flexShrink: 0 }} />
+                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Brown</span>
+                        </div>
+                        <div style={{ width: '1px', height: '16px', backgroundColor: '#D1D5DC' }} />
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
                       </div>
                     </div>
 
@@ -580,9 +587,16 @@ const TbcoDemoPage: React.FC<TbcoDemoPageProps> = ({ productSlug }) => {
                       <span className="animate-bounce" style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1E2939', animationDelay: '150ms', display: 'inline-block' }} />
                       <span className="animate-bounce" style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1E2939', animationDelay: '300ms', display: 'inline-block' }} />
                     </div>
-                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: '#F3F4F6', padding: '3px 10px', border: '1px solid #E5E7EB' }}>{product.name}</span>
-                      <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: '#F3F4F6', padding: '3px 10px', border: '1px solid #E5E7EB' }}>{product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '6.42px', padding: '0 3.2px', height: '29.83px', backgroundColor: '#F3F4F6', border: '1px solid #E5E7EB', justifyContent: 'center' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                        <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#8B7355', border: '1px solid #ccc', flexShrink: 0 }} />
+                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Brown</span>
+                      </div>
+                      <div style={{ width: '1px', height: '16px', backgroundColor: '#D1D5DC' }} />
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
+                      </div>
                     </div>
                   </div>
                   <div style={{ height: '36px', borderTop: '1px solid #D1D5DC', backgroundColor: '#F3F4F6', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
@@ -630,27 +644,32 @@ const TbcoDemoPage: React.FC<TbcoDemoPageProps> = ({ productSlug }) => {
                         </div>
                       </button>
 
-                      <div style={{ padding: '12px 12px 0', display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                        <button style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '5px 12px', cursor: 'default', fontFamily: "'Jost', sans-serif" }}>{product.sizes[Math.min(2, product.sizes.length - 1)]}</button>
-                        <button style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '5px 12px', cursor: 'default', fontFamily: "'Jost', sans-serif" }}>{product.category}</button>
-                        <button style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '5px 12px', cursor: 'default', fontFamily: "'Jost', sans-serif" }}>&pound;{product.price}</button>
+                      <div style={{ padding: '12px 12px 0', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '6.42px', paddingLeft: '12px', paddingRight: '12px', height: '29.83px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '0 10px', height: '100%' }}>
+                          <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#8B7355', border: '1px solid #ccc', flexShrink: 0 }} />
+                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Brown</span>
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '0 10px', height: '100%' }}>
+                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {product.sizes[Math.min(2, product.sizes.length - 1)]}</span>
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
                       </div>
 
                       <div style={{ padding: '12px' }}>
+                        <button
+                          style={{ display: 'block', width: '100%', padding: '13px', fontSize: '13px', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#1E2939', textAlign: 'center', fontFamily: "'Jost', sans-serif", boxSizing: 'border-box', border: 'none', cursor: 'default' }}
+                        >
+                          Add to Cart
+                        </button>
                         <a
                           href="https://calendly.com/mail-renderedfits/15-minute-meeting"
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ display: 'block', width: '100%', padding: '13px', fontSize: '13px', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#1E2939', textAlign: 'center', textDecoration: 'none', fontFamily: "'Jost', sans-serif", boxSizing: 'border-box' }}
+                          style={{ display: 'block', width: '100%', padding: '12px', fontSize: '12px', fontWeight: 400, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#6A7282', backgroundColor: '#fff', textAlign: 'center', textDecoration: 'none', fontFamily: "'Jost', sans-serif", marginTop: '6px', border: '1px solid #E5E7EB', boxSizing: 'border-box' }}
                         >
                           Schedule a Meeting
                         </a>
-                        <Link
-                          to="/results"
-                          style={{ display: 'block', width: '100%', padding: '12px', fontSize: '12px', fontWeight: 400, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#6A7282', backgroundColor: '#fff', textAlign: 'center', textDecoration: 'none', fontFamily: "'Jost', sans-serif", marginTop: '6px', border: '1px solid #E5E7EB', boxSizing: 'border-box' }}
-                        >
-                          Try another demo
-                        </Link>
                       </div>
                     </div>
                   </div>
