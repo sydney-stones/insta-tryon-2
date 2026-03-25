@@ -75,13 +75,13 @@ export const HH_PRODUCTS: Record<string, HHProduct> = {
     sizes: ['One Size'],
     description: 'An exquisitely woven silk tie from Holland & Holland\'s Harrow collection. The Flying Mallard motif is a signature of the brand\'s fieldsports heritage, rendered in rich tones on a fine silk ground.',
     productImages: [
-      `${BASE}/HARROWSILKWOVENTIE-FLYING MALLARD/CLO-TIE1_0019copy_891e3c7b-ede9-4f60-bfea-ed8469bcc636_2000x.jpg`,
-      `${BASE}/HARROWSILKWOVENTIE-FLYING MALLARD/CLO-TIE1_0012copy_424f6bcb-c50d-4cea-ad7a-f29e25eb3a54_2000x.jpg.webp`,
-      `${BASE}/HARROWSILKWOVENTIE-FLYING MALLARD/CLO-TIE1_0037copy_01367728-ff74-4de1-80cd-1c0f964b33f5_2000x.jpg.webp`,
+      `${BASE}/HARROWSILKWOVENTIE-FLYINGMALLARD/CLO-TIE1_0019copy_891e3c7b-ede9-4f60-bfea-ed8469bcc636_2000x.jpg`,
+      `${BASE}/HARROWSILKWOVENTIE-FLYINGMALLARD/CLO-TIE1_0012copy_424f6bcb-c50d-4cea-ad7a-f29e25eb3a54_2000x.jpg.webp`,
+      `${BASE}/HARROWSILKWOVENTIE-FLYINGMALLARD/CLO-TIE1_0037copy_01367728-ff74-4de1-80cd-1c0f964b33f5_2000x.jpg.webp`,
     ],
     faceSrc: '/result-images/IMG_8175.jpeg',
     bodySrc: '/result-images/sydbody Background Removed.png',
-    afterSrc: `${BASE}/HARROWSILKWOVENTIE-FLYING MALLARD/CLO-TIE1_0012copy_424f6bcb-c50d-4cea-ad7a-f29e25eb3a54_2000x.jpg-nb2-2k-tryon.png`,
+    afterSrc: `${BASE}/HARROWSILKWOVENTIE-FLYINGMALLARD/CLO-TIE1_0012copy_424f6bcb-c50d-4cea-ad7a-f29e25eb3a54_2000x.jpg-nb2-2k-tryon.png`,
   },
   'tweed-cap': {
     id: 53,
