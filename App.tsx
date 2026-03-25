@@ -31,6 +31,7 @@ import NotFoundPage from './components/NotFoundPage';
 import ScabalDemoPage from './components/ScabalDemoPage';
 import ArneDemoPage from './components/ArneDemoPage';
 import TbcoDemoPage from './components/TbcoDemoPage';
+import HollandHollandDemoPage from './components/HollandHollandDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -102,6 +103,10 @@ const App: React.FC = () => {
           <Route path="/tbco/demo1" element={<TbcoDemoPage productSlug="demo1" />} />
           <Route path="/tbco/demo2" element={<TbcoDemoPage productSlug="demo2" />} />
           <Route path="/tbco/demo3" element={<TbcoDemoPage productSlug="demo3" />} />
+          <Route path="/holland-holland/tweed-field-coat" element={<HollandHollandDemoPage productSlug="tweed-field-coat" />} />
+          <Route path="/holland-holland/shooting-gilet" element={<HollandHollandDemoPage productSlug="shooting-gilet" />} />
+          <Route path="/holland-holland/ladies-shirt" element={<HollandHollandDemoPage productSlug="ladies-shirt" />} />
+          <Route path="/holland-holland/tweed-cap" element={<HollandHollandDemoPage productSlug="tweed-cap" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
