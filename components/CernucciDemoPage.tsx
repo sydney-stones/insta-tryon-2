@@ -39,7 +39,7 @@ const BASE = '/outfits/Cernucci';
 export const CERNUCCI_PRODUCTS: Record<string, DemoProduct> = {
   'womens-chain': {
     id: 60,
-    name: 'Womens Chain - White Gold',
+    name: 'Womens Matching Set',
     brand: 'Cernucci',
     price: '£58.49',
     originalPrice: '£64.99',
@@ -51,7 +51,7 @@ export const CERNUCCI_PRODUCTS: Record<string, DemoProduct> = {
     faceSrc: '/result-images/siennaface-new.png',
     bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: `${BASE}/cernucciwomenstryon.png`,
-    description: 'A Cernucci classic reimagined for women. Delicate yet striking, this white gold chain sits beautifully at any length and elevates every look effortlessly.',
+    description: 'A Cernucci matching reimagined for women.',
     metal: 'Brass · Rhodium Plated · High Quality Cut Cubic Zirconia',
   },
   'cuban-chain': {
