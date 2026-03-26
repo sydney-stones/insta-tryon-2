@@ -37,21 +37,21 @@ interface DemoProduct {
 const BASE = '/outfits/Cernucci';
 
 export const CERNUCCI_PRODUCTS: Record<string, DemoProduct> = {
-  'tennis-chain': {
+  'womens-chain': {
     id: 60,
-    name: 'Tennis Chain - 5mm - White',
+    name: 'Womens Chain - White Gold',
     brand: 'Cernucci',
     price: '£58.49',
     originalPrice: '£64.99',
     discount: '10% OFF',
-    colour: 'Silver',
+    colour: 'White Gold',
     sizes: ['16"', '18"', '20"', '22"', '24"'],
     defaultSize: '20"',
-    productSrc: `${BASE}/tennischain/ys-5mm-tc-wg-1_1200x1800.jpg.webp`,
-    faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody Background Removed.png',
-    afterSrc: `${BASE}/tennischain/ys-5mm-tc-wg-1_1200x1800.jpg-nb2-4k-tryon.png`,
-    description: 'Our 5mm Tennis Chain is a Cernucci classic. The round cut stones catch light from every angle and can be worn on any occasion. This timeless chain is a staple piece for every collection. Outshine everybody.',
+    productSrc: `${BASE}/cernucciwomensproduct.webp`,
+    faceSrc: '/result-images/siennaface-new.png',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: `${BASE}/cernucciwomenstryon.png`,
+    description: 'A Cernucci classic reimagined for women. Delicate yet striking, this white gold chain sits beautifully at any length and elevates every look effortlessly.',
     metal: 'Brass · Rhodium Plated · High Quality Cut Cubic Zirconia',
   },
   'cuban-chain': {

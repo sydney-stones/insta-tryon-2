@@ -39,16 +39,16 @@ const BASE = '/result-images/Holland&Holland';
 export const HH_PRODUCTS: Record<string, DemoProduct> = {
   'tweed-field-coat': {
     id: 50,
-    name: 'Northwood Tweed Field Coat',
+    name: 'Northwood Ladies Tweed Field Coat',
     brand: 'Holland & Holland',
-    price: '£1,095.00',
-    colour: 'Hawthorn',
+    price: '£1,095',
+    colour: 'Hazel',
     category: 'Shooting',
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    productSrc: `${BASE}/NORTHWOODTWEEDFIELDCOAT/clo-fldcoat1hawthorn-frontcopy_377520b7-af93-4b2a-baa4-a0ab41ac4011_2000x.jpg`,
-    faceSrc: '/result-images/IMG_8175.jpeg',
-    bodySrc: '/result-images/sydbody Background Removed.png',
-    afterSrc: `${BASE}/NORTHWOODTWEEDFIELDCOAT/clo-fldcoat1hawthorn-backcopy_1c6442ea-53a5-4063-801f-83f748e78e65_2000x-nb2-2k-tryon.png`,
+    productSrc: `${BASE}/NORTHWOODTWEEDFIELDCOAT/Holland&Holland.jpg`,
+    faceSrc: '/result-images/siennaface-new.png',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: `${BASE}/NORTHWOODTWEEDFIELDCOAT/Holland&Holland2.jpeg`,
     description: 'The quintessential fieldsports essential. The Northwood tweed weatherproof field coat combines shooting features with timeless style. The action back allows for ease of swing and the large bellow cartridge pockets with tab retainer mean fast and instinctive access when on the peg.',
   },
   'shooting-gilet': {
