@@ -640,11 +640,6 @@ const CernucciDemoPage: React.FC<CernucciDemoPageProps> = ({ productSlug }) => {
                     <div style={{ width: '341px', maxWidth: '100%', backgroundColor: '#fff', border: '1px solid #E5E7EB', position: 'relative' }}>
                       <button onClick={() => setFullscreenImage(true)} style={{ display: 'block', width: '100%', background: 'none', border: 'none', padding: 0, cursor: 'zoom-in', position: 'relative' }}>
                         <img src={product.afterSrc} alt="Try-on result" style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }} />
-                        <div style={{ position: 'absolute', top: '10px', left: '10px' }}>
-                          <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', backgroundColor: 'rgba(255,255,255,0.9)', padding: '3px 8px', border: '1px solid #D1D5DC' }}>
-                            {product.brand}
-                          </span>
-                        </div>
                       </button>
 
                       <div style={{ padding: '12px 12px 0' }}>
