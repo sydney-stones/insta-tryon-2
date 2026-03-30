@@ -115,6 +115,7 @@ const App: React.FC = () => {
           <Route path="/cernucci/matching-set" element={<CernucciDemoPage productSlug="matching-set" />} />
           <Route path="/allude/white-jumper" element={<AlludeDemoPage productSlug="white-jumper" />} />
           <Route path="/allude/yellow-jumper" element={<AlludeDemoPage productSlug="yellow-jumper" />} />
+          <Route path="/allude/pink-jumper" element={<AlludeDemoPage productSlug="pink-jumper" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />

@@ -70,6 +70,25 @@ export const ALLUDE_PRODUCTS: Record<string, DemoProduct> = {
     afterSrc: '/result-images/Allude/allude-yellow.png',
     description: 'A vibrant cashmere crewneck in warm yellow — effortlessly elevated colour for every season. Cut in Allude\'s relaxed-yet-refined fit with ribbed cuffs and hem.',
   },
+  'pink-jumper': {
+    id: 72,
+    name: 'Cashmere Wide-Leg Trousers',
+    brand: 'Allude',
+    price: '€495',
+    colour: 'Pink',
+    composition: '100% Cashmere',
+    sizes: ['XS', 'S', 'M', 'L'],
+    defaultSize: 'S',
+    gallerySrcs: [
+      '/result-images/Allude/allude2.JPG',
+      '/result-images/Allude/262-17032-60_0402.webp',
+      '/result-images/Allude/262-17032-60_0421.webp',
+    ],
+    faceSrc: '/result-images/siennaface-new.png',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '/result-images/Allude/Allude-pink.png',
+    description: 'Luxuriously soft cashmere in a delicate rose pink — a piece that moves with effortless grace. Allude\'s signature fine-gauge knit in a relaxed silhouette designed to be worn and loved for years.',
+  },
 };
 
 // ─── Animation State Machine ──────────────────────────────────────────────────
