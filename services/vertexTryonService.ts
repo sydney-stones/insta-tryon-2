@@ -47,13 +47,13 @@ function base64ToDataURL(base64: string): string {
  */
 export async function checkVertexTryonHealth(): Promise<boolean> {
   try {
-    const response = await fetch(`${VERTEX_TRYON_API_URL}/health`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    const response = await fetch(VERTEX_TRYON_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ health_check: true }),
     });
-    return response.ok;
+    // The endpoint exists if we get any response (even 400 for missing fields)
+    return response.status !== 404 && response.status !== 502 && response.status !== 503;
   } catch (error) {
     console.error('Vertex AI Try-On health check failed:', error);
     return false;
@@ -102,7 +102,7 @@ export async function generateVertexTryOn(
     }
 
     // Call Vertex AI Try-On API
-    const response = await fetch(`${VERTEX_TRYON_API_URL}/tryon`, {
+    const response = await fetch(VERTEX_TRYON_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
