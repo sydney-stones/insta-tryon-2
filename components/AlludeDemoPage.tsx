@@ -63,8 +63,7 @@ export const ALLUDE_PRODUCTS: Record<string, DemoProduct> = {
     sizes: ['XS', 'S', 'M', 'L'],
     defaultSize: 'S',
     gallerySrcs: [
-      '/result-images/Allude/allude6.webp',
-      '/result-images/Allude/allude7.webp',
+      '/result-images/Allude/allude5.webp',
     ],
     faceSrc: '/result-images/siennaface-new.png',
     bodySrc: '/result-images/siennabody--new.JPG',
