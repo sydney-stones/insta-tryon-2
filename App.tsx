@@ -33,6 +33,7 @@ import ArneDemoPage from './components/ArneDemoPage';
 import TbcoDemoPage from './components/TbcoDemoPage';
 import HollandHollandDemoPage from './components/HollandHollandDemoPage';
 import CernucciDemoPage from './components/CernucciDemoPage';
+import AlludeDemoPage from './components/AlludeDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -108,10 +109,12 @@ const App: React.FC = () => {
           <Route path="/holland-holland/shooting-gilet" element={<HollandHollandDemoPage productSlug="shooting-gilet" />} />
           <Route path="/holland-holland/ladies-shirt" element={<HollandHollandDemoPage productSlug="ladies-shirt" />} />
           <Route path="/holland-holland/tweed-cap" element={<HollandHollandDemoPage productSlug="tweed-cap" />} />
-          <Route path="/cernucci/womens-chain" element={<CernucciDemoPage productSlug="womens-chain" />} />
+          <Route path="/cernucci/womens-matching-set" element={<CernucciDemoPage productSlug="womens-chain" />} />
           <Route path="/cernucci/cuban-chain" element={<CernucciDemoPage productSlug="cuban-chain" />} />
           <Route path="/cernucci/stud-earring" element={<CernucciDemoPage productSlug="stud-earring" />} />
           <Route path="/cernucci/matching-set" element={<CernucciDemoPage productSlug="matching-set" />} />
+          <Route path="/allude/white-jumper" element={<AlludeDemoPage productSlug="white-jumper" />} />
+          <Route path="/allude/yellow-jumper" element={<AlludeDemoPage productSlug="yellow-jumper" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
