@@ -39,23 +39,25 @@ interface CernucciProduct {
 }
 
 export const CERNUCCI_LIVE_PRODUCTS: Record<string, CernucciProduct> = {
-  'cuban-chain-bracelet': {
+  'gold-chain': {
     wardrobeItem: {
-      id: 'cernucci-live-cuban-chain-bracelet',
-      name: '8mm Cuban Chain & Bracelet Set — White Gold',
-      url: `${BASE}/cubanchainandbracelet/8MM-MCC-MCB-WG_1200x1800.webp`,
+      id: 'cernucci-live-gold-chain',
+      name: 'Iced Out Snake Chain — Gold',
+      url: `${BASE}/goldchain/AU-MCRICRSNK-GM-1_1200x1800.webp`,
       folder: 'Cernucci',
     },
-    price: '£119.99',
-    colour: 'White Gold',
-    sizes: ['18"', '20"', '22"', '24"'],
+    price: '£89.99',
+    colour: 'Gold',
+    sizes: ['18"', '20"', '22"', '24"', '26"'],
     defaultSize: '20"',
     gallerySrcs: [
-      `${BASE}/cubanchainandbracelet/8MM-MCC-MCB-WG_1200x1800.webp`,
-      `${BASE}/cubanchainandbracelet/8MM-MCC-MCB-WG_2_1200x1800.webp`,
+      `${BASE}/goldchain/AU-MCRICRSNK-GM-1_1200x1800.webp`,
+      `${BASE}/goldchain/AU-MCRICRSNK-GM-1_1_1200x1800.jpg`,
+      `${BASE}/goldchain/AU-MCRICRSNK-GM-2_1200x1800.webp`,
+      `${BASE}/goldchain/AU-MCRICRSNK-GM_1200x1800.jpg`,
     ],
-    metal: 'Brass · 18k White Gold Plated · Tarnish Resistant',
-    description: 'The 8mm Cuban Chain paired with a matching Cuban Bracelet — both in White Gold. A co-ordinated set built for stacking and presence. Precision-crafted links with a high-polish finish.',
+    metal: 'Brass · 18k Gold Plated · Tarnish Resistant',
+    description: 'The Iced Out Snake Chain in Gold — a sleek, flexible chain with encrusted cubic zirconia stones running the full length. Maximum sparkle, Cernucci\'s signature precision finish.',
   },
   'mens-tracksuit': {
     wardrobeItem: {

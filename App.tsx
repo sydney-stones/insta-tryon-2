@@ -117,7 +117,7 @@ const App: React.FC = () => {
           <Route path="/allude/white-jumper" element={<AlludeDemoPage productSlug="white-jumper" />} />
           <Route path="/allude/yellow-jumper" element={<AlludeDemoPage productSlug="yellow-jumper" />} />
           <Route path="/allude/pink-jumper" element={<AlludeDemoPage productSlug="pink-jumper" />} />
-          <Route path="/cernucci/live/cuban-chain-bracelet" element={<CernucciLivePage productSlug="cuban-chain-bracelet" />} />
+          <Route path="/cernucci/live/gold-chain" element={<CernucciLivePage productSlug="gold-chain" />} />
           <Route path="/cernucci/live/mens-tracksuit" element={<CernucciLivePage productSlug="mens-tracksuit" />} />
           <Route path="/cernucci/live/pendant" element={<CernucciLivePage productSlug="pendant" />} />
           <Route path="/cernucci/live/stud-earring" element={<CernucciLivePage productSlug="stud-earring" />} />
