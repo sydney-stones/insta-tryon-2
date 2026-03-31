@@ -215,7 +215,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
         <motion.div
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
           className="shadow-2xl w-full sm:w-auto"
-          style={{ borderRadius: '0px', backgroundColor: '#fff', maxWidth: '768px', maxHeight: '95vh', overflow: 'hidden', position: 'relative', fontFamily: "'Jost', sans-serif" }}
+          style={{ borderRadius: '0px', backgroundColor: '#fff', maxWidth: '960px', maxHeight: '95vh', overflow: 'hidden', position: 'relative', fontFamily: "'Jost', sans-serif" }}
         >
           <div className="overflow-y-auto max-h-[95vh]">
             <AnimatePresence mode="wait">
@@ -524,7 +524,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     <motion.div key="generating" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                       <div style={{ fontFamily: "'Jost', sans-serif" }}>
                         <TopBar onMyLooks={handleMyLooks} onClose={handleClose} creditsEl={creditsEl} />
-                        <div style={{ padding: '32px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '300px', textAlign: 'center' }}>
+                        <div style={{ padding: '32px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '480px', textAlign: 'center' }}>
                           <p style={{ fontSize: '22px', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#101828', marginBottom: '28px' }}>
                             GETTING DRESSED!
                           </p>

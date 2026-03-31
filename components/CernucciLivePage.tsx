@@ -13,6 +13,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WardrobeItem } from '../types';
 import VirtualTryOnModal from './VirtualTryOnModal';
+import { getAllTryOnResults, TryOnHistoryEntry } from '../lib/tryOnLimit';
 
 // ─── Product Data ─────────────────────────────────────────────────────────────
 
@@ -187,10 +188,17 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   const [tryOnResult, setTryOnResult] = useState<string | null>(null);
+  const [myLooksOpen, setMyLooksOpen] = useState(false);
+  const [myLooks, setMyLooks] = useState<TryOnHistoryEntry[]>([]);
 
   const handleTryOnResult = (imageUrl: string) => {
     setTryOnResult(imageUrl);
     setFullscreenImage(imageUrl);
+  };
+
+  const openMyLooks = () => {
+    setMyLooks(getAllTryOnResults());
+    setMyLooksOpen(true);
   };
 
   // Gallery is always just the product shots — result is never added
@@ -540,18 +548,27 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
       <AnimatePresence>
         {fullscreenImage && (
           isMobile ? (
-            /* ── MOBILE: full-screen, image scrolls, CTA pinned to bottom ── */
+            /* ── MOBILE: full-screen, natural scroll, CTA sticky at bottom ── */
             <motion.div
-              style={{ position: 'fixed', inset: 0, zIndex: 100, backgroundColor: '#fff', display: 'flex', flexDirection: 'column' }}
+              style={{ position: 'fixed', inset: 0, zIndex: 100, backgroundColor: '#fff', overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
               initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
               transition={{ duration: 0.22 }}
             >
-              {/* Header bar */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', height: '52px', borderBottom: '1px solid #e5e5e5', flexShrink: 0, backgroundColor: '#fff' }}>
-                <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111' }}>{product.name}</span>
+              {/* Header bar — sticky */}
+              <div style={{ position: 'sticky', top: 0, zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', height: '52px', borderBottom: '1px solid #e5e5e5', backgroundColor: '#fff' }}>
+                <button
+                  onClick={openMyLooks}
+                  style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', cursor: 'pointer', padding: '0 8px 0 0' }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 2h11L21 7l-3 2-1-1v12H7V8L6 9 3 7l3.5-5z" />
+                  </svg>
+                  <span style={{ fontSize: '12px', color: '#101828', whiteSpace: 'nowrap' }}>My looks</span>
+                </button>
+                <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', textAlign: 'center', flex: 1 }}>{product.name}</span>
                 <button
                   onClick={() => setFullscreenImage(null)}
-                  style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#f3f4f6', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#f3f4f6', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}
                 >
                   <svg width="14" height="14" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -559,18 +576,15 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
                 </button>
               </div>
 
-              {/* Scrollable image */}
-              <div style={{ flex: 1, overflowY: 'auto', WebkitOverflowScrolling: 'touch' as React.CSSProperties['WebkitOverflowScrolling'] }}>
-                <img
-                  src={fullscreenImage}
-                  alt="Your try-on result"
-                  style={{ width: '100%', display: 'block', objectFit: 'contain' }}
-                />
-              </div>
+              {/* Full image — no crop, no max-height */}
+              <img
+                src={fullscreenImage}
+                alt="Your try-on result"
+                style={{ width: '100%', display: 'block' }}
+              />
 
-              {/* Pinned CTA panel */}
-              <div style={{ flexShrink: 0, backgroundColor: '#fff', borderTop: '1px solid #e5e5e5', padding: '12px 16px 28px', fontFamily: "'Jost', sans-serif" }}>
-                {/* Size selector 1 */}
+              {/* CTA panel — sticky at bottom */}
+              <div style={{ position: 'sticky', bottom: 0, backgroundColor: '#fff', borderTop: '1px solid #e5e5e5', padding: '12px 16px 32px', fontFamily: "'Jost', sans-serif" }}>
                 {p.sizes.length > 1 && (
                   <div style={{ marginBottom: '10px' }}>
                     <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
@@ -586,7 +600,6 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
                     </div>
                   </div>
                 )}
-                {/* Size selector 2 — matching sets */}
                 {p.sizes2 && p.sizes2.length > 0 && (
                   <div style={{ marginBottom: '10px' }}>
                     <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizes2Label}: <strong>{selectedSize2}</strong></p>
@@ -606,9 +619,7 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
                   width: '100%', padding: '15px', fontSize: '13px', fontWeight: 700,
                   letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
                   backgroundColor: '#111', border: 'none', cursor: 'default', marginBottom: '8px',
-                }}>
-                  ADD TO CART
-                </button>
+                }}>ADD TO CART</button>
                 <a
                   href="https://calendly.com/mail-renderedfits/15-minute-meeting"
                   target="_blank" rel="noopener noreferrer"
@@ -618,9 +629,7 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
                     backgroundColor: '#fff', border: '1px solid #1B3A2D', textAlign: 'center',
                     textDecoration: 'none', boxSizing: 'border-box',
                   }}
-                >
-                  Schedule a Meeting
-                </a>
+                >Schedule a Meeting</a>
               </div>
             </motion.div>
           ) : (
@@ -686,6 +695,63 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
               </motion.div>
             </motion.div>
           )
+        )}
+      </AnimatePresence>
+
+      {/* ── My Looks overlay ── */}
+      <AnimatePresence>
+        {myLooksOpen && (
+          <motion.div
+            style={{ position: 'fixed', inset: 0, zIndex: 110, backgroundColor: '#fff', display: 'flex', flexDirection: 'column' }}
+            initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 40 }}
+            transition={{ duration: 0.2 }}
+          >
+            {/* Header */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', height: '52px', borderBottom: '1px solid #e5e5e5', flexShrink: 0, backgroundColor: '#fff' }}>
+              <button
+                onClick={() => setMyLooksOpen(false)}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6"/></svg>
+                <span style={{ fontSize: '13px', color: '#111' }}>Back</span>
+              </button>
+              <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111' }}>My Looks</span>
+              <div style={{ width: '52px' }} />
+            </div>
+
+            {/* Grid or empty state */}
+            <div style={{ flex: 1, overflowY: 'auto', padding: '16px' }}>
+              {myLooks.length === 0 ? (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '300px', textAlign: 'center' }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D1D5DC" strokeWidth="1" style={{ marginBottom: '16px' }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 2h11L21 7l-3 2-1-1v12H7V8L6 9 3 7l3.5-5z" />
+                  </svg>
+                  <p style={{ fontSize: '16px', fontWeight: 500, color: '#101828', marginBottom: '8px' }}>No try-ons yet</p>
+                  <p style={{ fontSize: '13px', color: '#6A7282' }}>Generate your first try-on to see it here</p>
+                </div>
+              ) : (
+                <>
+                  <p style={{ fontSize: '13px', color: '#6A7282', marginBottom: '16px' }}>{myLooks.length} {myLooks.length === 1 ? 'result' : 'results'} saved on this device</p>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                    {myLooks.map((look, i) => (
+                      <div key={i} style={{ cursor: 'pointer' }} onClick={() => { setFullscreenImage(look.tryOnImageUrl); setMyLooksOpen(false); }}>
+                        <img
+                          src={look.tryOnImageUrl}
+                          alt={look.productName || 'Try-on result'}
+                          style={{ width: '100%', aspectRatio: '2/3', objectFit: 'cover', display: 'block', border: '1px solid #E5E7EB' }}
+                        />
+                        {look.productName && (
+                          <p style={{ fontSize: '11px', color: '#444', margin: '4px 0 0', lineHeight: '14px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                            {look.productName}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
