@@ -539,44 +539,40 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
       {/* ── Result overlay ── */}
       <AnimatePresence>
         {fullscreenImage && (
-          <motion.div
-            className="fixed inset-0 z-[100] bg-black/80 flex items-end sm:items-center justify-center"
-            onClick={() => setFullscreenImage(null)}
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          >
+          isMobile ? (
+            /* ── MOBILE: full-screen, image scrolls, CTA pinned to bottom ── */
             <motion.div
-              className="relative bg-white w-full sm:w-auto sm:max-w-sm overflow-y-auto"
-              style={{ maxHeight: '95vh', borderRadius: isMobile ? '16px 16px 0 0' : '0px' }}
-              initial={{ y: isMobile ? 60 : 0, scale: isMobile ? 1 : 0.96 }}
-              animate={{ y: 0, scale: 1 }}
-              exit={{ y: isMobile ? 60 : 0, scale: isMobile ? 1 : 0.96 }}
+              style={{ position: 'fixed', inset: 0, zIndex: 100, backgroundColor: '#fff', display: 'flex', flexDirection: 'column' }}
+              initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
               transition={{ duration: 0.22 }}
-              onClick={e => e.stopPropagation()}
             >
-              {/* Close */}
-              <button
-                onClick={() => setFullscreenImage(null)}
-                style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10, width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,0.5)', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                <svg width="14" height="14" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              {/* Header bar */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', height: '52px', borderBottom: '1px solid #e5e5e5', flexShrink: 0, backgroundColor: '#fff' }}>
+                <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111' }}>{product.name}</span>
+                <button
+                  onClick={() => setFullscreenImage(null)}
+                  style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#f3f4f6', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <svg width="14" height="14" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
 
-              {/* Result image */}
-              <img
-                src={fullscreenImage}
-                alt="Your try-on result"
-                style={{ width: '100%', display: 'block', objectFit: 'cover', maxHeight: isMobile ? '45vh' : '55vh' }}
-              />
+              {/* Scrollable image */}
+              <div style={{ flex: 1, overflowY: 'auto', WebkitOverflowScrolling: 'touch' as React.CSSProperties['WebkitOverflowScrolling'] }}>
+                <img
+                  src={fullscreenImage}
+                  alt="Your try-on result"
+                  style={{ width: '100%', display: 'block', objectFit: 'contain' }}
+                />
+              </div>
 
-              {/* Size + CTA panel */}
-              <div style={{ padding: '16px', fontFamily: "'Jost', sans-serif" }}>
-                <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: '0 0 12px 0' }}>{product.name}</p>
-
+              {/* Pinned CTA panel */}
+              <div style={{ flexShrink: 0, backgroundColor: '#fff', borderTop: '1px solid #e5e5e5', padding: '12px 16px 28px', fontFamily: "'Jost', sans-serif" }}>
                 {/* Size selector 1 */}
                 {p.sizes.length > 1 && (
-                  <div style={{ marginBottom: '12px' }}>
+                  <div style={{ marginBottom: '10px' }}>
                     <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
                     <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                       {p.sizes.map(s => (
@@ -590,10 +586,9 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
                     </div>
                   </div>
                 )}
-
                 {/* Size selector 2 — matching sets */}
                 {p.sizes2 && p.sizes2.length > 0 && (
-                  <div style={{ marginBottom: '12px' }}>
+                  <div style={{ marginBottom: '10px' }}>
                     <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizes2Label}: <strong>{selectedSize2}</strong></p>
                     <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                       {p.sizes2.map(s => (
@@ -607,31 +602,90 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
                     </div>
                   </div>
                 )}
-
                 <button style={{
-                  width: '100%', padding: '14px', fontSize: '13px', fontWeight: 700,
+                  width: '100%', padding: '15px', fontSize: '13px', fontWeight: 700,
                   letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
-                  backgroundColor: '#111', border: 'none', cursor: 'default', marginTop: '4px',
+                  backgroundColor: '#111', border: 'none', cursor: 'default', marginBottom: '8px',
                 }}>
                   ADD TO CART
                 </button>
-
                 <a
                   href="https://calendly.com/mail-renderedfits/15-minute-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target="_blank" rel="noopener noreferrer"
                   style={{
-                    display: 'block', width: '100%', padding: '12px', fontSize: '12px', fontWeight: 500,
+                    display: 'block', width: '100%', padding: '13px', fontSize: '12px', fontWeight: 500,
                     letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1B3A2D',
                     backgroundColor: '#fff', border: '1px solid #1B3A2D', textAlign: 'center',
-                    textDecoration: 'none', marginTop: '8px', boxSizing: 'border-box',
+                    textDecoration: 'none', boxSizing: 'border-box',
                   }}
                 >
                   Schedule a Meeting
                 </a>
               </div>
             </motion.div>
-          </motion.div>
+          ) : (
+            /* ── DESKTOP: centred card ── */
+            <motion.div
+              className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center"
+              onClick={() => setFullscreenImage(null)}
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="relative bg-white w-auto max-w-sm overflow-y-auto"
+                style={{ maxHeight: '95vh', borderRadius: '0px' }}
+                initial={{ scale: 0.96 }} animate={{ scale: 1 }} exit={{ scale: 0.96 }}
+                transition={{ duration: 0.22 }}
+                onClick={e => e.stopPropagation()}
+              >
+                <button
+                  onClick={() => setFullscreenImage(null)}
+                  style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10, width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,0.5)', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <svg width="14" height="14" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <img src={fullscreenImage} alt="Your try-on result" style={{ width: '100%', display: 'block', objectFit: 'cover', maxHeight: '55vh' }} />
+                <div style={{ padding: '16px', fontFamily: "'Jost', sans-serif" }}>
+                  <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: '0 0 12px 0' }}>{product.name}</p>
+                  {p.sizes.length > 1 && (
+                    <div style={{ marginBottom: '12px' }}>
+                      <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
+                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                        {p.sizes.map(s => (
+                          <button key={s} onClick={() => setSelectedSize(s)} style={{
+                            padding: '6px 12px', fontSize: '12px', fontWeight: 500, cursor: 'pointer',
+                            border: selectedSize === s ? '2px solid #111' : '1px solid #ccc',
+                            backgroundColor: selectedSize === s ? '#111' : '#fff',
+                            color: selectedSize === s ? '#fff' : '#111',
+                          }}>{s}</button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {p.sizes2 && p.sizes2.length > 0 && (
+                    <div style={{ marginBottom: '12px' }}>
+                      <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizes2Label}: <strong>{selectedSize2}</strong></p>
+                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                        {p.sizes2.map(s => (
+                          <button key={s} onClick={() => setSelectedSize2(s)} style={{
+                            padding: '6px 12px', fontSize: '12px', fontWeight: 500, cursor: 'pointer',
+                            border: selectedSize2 === s ? '2px solid #111' : '1px solid #ccc',
+                            backgroundColor: selectedSize2 === s ? '#111' : '#fff',
+                            color: selectedSize2 === s ? '#fff' : '#111',
+                          }}>{s}</button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  <button style={{ width: '100%', padding: '14px', fontSize: '13px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#111', border: 'none', cursor: 'default', marginTop: '4px' }}>ADD TO CART</button>
+                  <a href="https://calendly.com/mail-renderedfits/15-minute-meeting" target="_blank" rel="noopener noreferrer"
+                    style={{ display: 'block', width: '100%', padding: '12px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1B3A2D', backgroundColor: '#fff', border: '1px solid #1B3A2D', textAlign: 'center', textDecoration: 'none', marginTop: '8px', boxSizing: 'border-box' }}
+                  >Schedule a Meeting</a>
+                </div>
+              </motion.div>
+            </motion.div>
+          )
         )}
       </AnimatePresence>
     </div>
