@@ -250,201 +250,284 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
       </div>
 
       {/* ── Product Layout ── */}
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px 64px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 480px', gap: isMobile ? '24px' : '48px', alignItems: 'start' }}>
+      {isMobile ? (
+        /* ── MOBILE: single column, image between sizing and CTA ── */
+        <div style={{ padding: '0 0 64px' }}>
+          {/* Product info top */}
+          <div style={{ padding: '0 20px 16px' }}>
+            <h1 style={{ fontSize: '16px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: '0 0 6px 0' }}>
+              {product.name.toUpperCase()}
+            </h1>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
+              {[1,2,3,4,5].map(i => (
+                <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill={i <= 4 ? '#111' : 'none'} stroke="#111" strokeWidth="1.5">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+              <span style={{ fontSize: '11px', color: '#666' }}>317 REVIEWS</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+              <span style={{ fontSize: '12px', color: '#666' }}>NOW</span>
+              <span style={{ fontSize: '18px', fontWeight: 700, color: '#111' }}>{p.price}</span>
+              {p.originalPrice && (
+                <>
+                  <span style={{ fontSize: '12px', color: '#999' }}>WAS</span>
+                  <span style={{ fontSize: '12px', color: '#999', textDecoration: 'line-through' }}>{p.originalPrice}</span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#16a34a' }}>| {p.discount}</span>
+                </>
+              )}
+            </div>
+            <p style={{ fontSize: '13px', color: '#111', margin: '0 0 12px 0' }}>Colour: <strong>{p.colour}</strong></p>
 
-        {/* Left — Gallery */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {/* Size 1 */}
+            {p.sizes.length > 1 && (
+              <div style={{ marginBottom: '12px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+                  <p style={{ fontSize: '13px', color: '#111', margin: 0 }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
+                  <span style={{ fontSize: '11px', color: '#666', textDecoration: 'underline' }}>Size Guide</span>
+                </div>
+                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                  {p.sizes.map(s => (
+                    <button key={s} onClick={() => setSelectedSize(s)} style={{
+                      padding: '7px 12px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
+                      border: selectedSize === s ? '2px solid #111' : '1px solid #ccc',
+                      backgroundColor: selectedSize === s ? '#111' : '#fff',
+                      color: selectedSize === s ? '#fff' : '#111',
+                    }}>{s}</button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Size 2 — matching sets */}
+            {p.sizes2 && p.sizes2.length > 0 && (
+              <div style={{ marginBottom: '12px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+                  <p style={{ fontSize: '13px', color: '#111', margin: 0 }}>{p.sizes2Label}: <strong>{selectedSize2}</strong></p>
+                  <span style={{ fontSize: '11px', color: '#666', textDecoration: 'underline' }}>Size Guide</span>
+                </div>
+                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                  {p.sizes2.map(s => (
+                    <button key={s} onClick={() => setSelectedSize2(s)} style={{
+                      padding: '7px 12px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
+                      border: selectedSize2 === s ? '2px solid #111' : '1px solid #ccc',
+                      backgroundColor: selectedSize2 === s ? '#111' : '#fff',
+                      color: selectedSize2 === s ? '#fff' : '#111',
+                    }}>{s}</button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Product image carousel — full bleed */}
+          <div style={{ position: 'relative', backgroundColor: '#f5f5f5', width: '100%', aspectRatio: '3/4' }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={mainImageSrc}
+                src={mainImageSrc}
+                alt={product.name}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              />
+            </AnimatePresence>
+            {/* Dot indicators overlaid on image */}
+            {galleryImages.length > 1 && (
+              <div style={{ position: 'absolute', bottom: '10px', left: 0, right: 0, display: 'flex', gap: '6px', justifyContent: 'center' }}>
+                {galleryImages.map((_, i) => (
+                  <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{
+                    width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0,
+                    backgroundColor: activeGalleryIndex === i ? '#fff' : 'rgba(255,255,255,0.5)',
+                  }} />
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* CTA section */}
+          <div style={{ padding: '16px 20px 0' }}>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                width: '100%', padding: '16px', fontSize: '13px', fontWeight: 700,
+                letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
+                backgroundColor: '#1B3A2D', border: 'none', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
+                marginBottom: '8px', boxShadow: '0 0 20px rgba(27,58,45,0.35)',
+              }}
+            >
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+              </svg>
+              {tryOnResult ? 'TRY ON AGAIN' : 'AI TRY ON'}
+              <span style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.4)', padding: '1px 8px', letterSpacing: '0.1em' }}>New</span>
+            </button>
+            <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', margin: '0 0 12px 0' }}>Upload your photo and see yourself in this item</p>
+            <button style={{
+              width: '100%', padding: '16px', fontSize: '13px', fontWeight: 700,
+              letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
+              backgroundColor: '#111', border: 'none', cursor: 'default', marginBottom: '12px',
+            }}>ADD TO CART</button>
+            <a
+              href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+              target="_blank" rel="noopener noreferrer"
+              style={{
+                display: 'block', width: '100%', padding: '14px', fontSize: '12px', fontWeight: 500,
+                letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1B3A2D',
+                backgroundColor: '#fff', border: '1px solid #1B3A2D', textAlign: 'center',
+                textDecoration: 'none', marginBottom: '20px', boxSizing: 'border-box',
+              }}
+            >Schedule a Meeting with Rendered Fits</a>
+            <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '16px' }}>
+              <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px', color: '#111' }}>ABOUT</p>
+              <p style={{ fontSize: '13px', color: '#444', lineHeight: '1.7', margin: 0 }}>{p.description}</p>
+              {p.metal && <p style={{ fontSize: '12px', color: '#666', marginTop: '10px' }}><strong>Metal:</strong> {p.metal}</p>}
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* ── DESKTOP: two-column grid ── */
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px 64px', display: 'grid', gridTemplateColumns: '1fr 480px', gap: '48px', alignItems: 'start' }}>
+
+          {/* Left — Gallery */}
           <div style={{ display: 'flex', gap: '12px' }}>
-            {/* Thumbnail strip — desktop only */}
-            {!isMobile && galleryImages.length > 1 && (
+            {galleryImages.length > 1 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '80px', flexShrink: 0 }}>
                 {galleryImages.map((src, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveGalleryIndex(i)}
-                    style={{
-                      width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer',
-                      outline: activeGalleryIndex === i ? '2px solid #111' : '1px solid #e5e5e5',
-                      outlineOffset: '-1px', overflow: 'hidden', backgroundColor: '#f5f5f5', flexShrink: 0,
-                    }}
-                  >
+                  <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{
+                    width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer',
+                    outline: activeGalleryIndex === i ? '2px solid #111' : '1px solid #e5e5e5',
+                    outlineOffset: '-1px', overflow: 'hidden', backgroundColor: '#f5f5f5', flexShrink: 0,
+                  }}>
                     <img src={src} alt={`View ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </button>
                 ))}
               </div>
             )}
-
-            {/* Main image */}
-            <div
-              style={{ flex: 1, backgroundColor: '#f5f5f5', overflow: 'hidden', aspectRatio: '2/3', position: 'relative' }}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
+            <div style={{ flex: 1, backgroundColor: '#f5f5f5', overflow: 'hidden', aspectRatio: '2/3', position: 'relative' }}>
               <AnimatePresence mode="wait">
-                <motion.img
-                  key={mainImageSrc}
-                  src={mainImageSrc}
-                  alt={product.name}
+                <motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}
                 />
               </AnimatePresence>
             </div>
           </div>
 
-          {/* Mobile dot indicators */}
-          {isMobile && galleryImages.length > 1 && (
-            <div style={{ display: 'flex', gap: '6px', justifyContent: 'center' }}>
-              {galleryImages.map((_, i) => (
-                <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{
-                  width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0,
-                  backgroundColor: activeGalleryIndex === i ? '#111' : '#ccc',
-                }} />
+          {/* Right — Product Info */}
+          <div style={{ paddingTop: '8px' }}>
+            <h1 style={{ fontSize: '18px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: '0 0 8px 0' }}>
+              {product.name.toUpperCase()}
+            </h1>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '12px' }}>
+              {[1,2,3,4,5].map(i => (
+                <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill={i <= 4 ? '#111' : 'none'} stroke="#111" strokeWidth="1.5">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
               ))}
+              <span style={{ fontSize: '12px', color: '#666' }}>317 REVIEWS</span>
             </div>
-          )}
-        </div>
-
-        {/* Right — Product Info */}
-        <div style={{ paddingTop: '8px' }}>
-          <h1 style={{ fontSize: '18px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: '0 0 8px 0' }}>
-            {product.name.toUpperCase()}
-          </h1>
-
-          {/* Stars */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '12px' }}>
-            {[1,2,3,4,5].map(i => (
-              <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill={i <= 4 ? '#111' : 'none'} stroke="#111" strokeWidth="1.5">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            ))}
-            <span style={{ fontSize: '12px', color: '#666' }}>317 REVIEWS</span>
-          </div>
-
-          {/* Price */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-            <span style={{ fontSize: '13px', color: '#666' }}>NOW</span>
-            <span style={{ fontSize: '18px', fontWeight: 700, color: '#111' }}>{p.price}</span>
-            {p.originalPrice && (
-              <>
-                <span style={{ fontSize: '13px', color: '#999' }}>WAS</span>
-                <span style={{ fontSize: '13px', color: '#999', textDecoration: 'line-through' }}>{p.originalPrice}</span>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#16a34a' }}>| {p.discount}</span>
-              </>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+              <span style={{ fontSize: '13px', color: '#666' }}>NOW</span>
+              <span style={{ fontSize: '18px', fontWeight: 700, color: '#111' }}>{p.price}</span>
+              {p.originalPrice && (
+                <>
+                  <span style={{ fontSize: '13px', color: '#999' }}>WAS</span>
+                  <span style={{ fontSize: '13px', color: '#999', textDecoration: 'line-through' }}>{p.originalPrice}</span>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#16a34a' }}>| {p.discount}</span>
+                </>
+              )}
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <p style={{ fontSize: '13px', color: '#111', marginBottom: '8px' }}>Colour: <strong>{p.colour}</strong></p>
+            </div>
+            {p.sizes.length > 1 && (
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <p style={{ fontSize: '13px', color: '#111', margin: 0 }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
+                  <span style={{ fontSize: '12px', color: '#666', textDecoration: 'underline', cursor: 'default' }}>Size Guide</span>
+                </div>
+                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                  {p.sizes.map(s => (
+                    <button key={s} onClick={() => setSelectedSize(s)} style={{
+                      padding: '8px 14px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
+                      border: selectedSize === s ? '2px solid #111' : '1px solid #ccc',
+                      backgroundColor: selectedSize === s ? '#111' : '#fff',
+                      color: selectedSize === s ? '#fff' : '#111',
+                    }}>{s}</button>
+                  ))}
+                </div>
+                <p style={{ fontSize: '12px', color: '#666', margin: '6px 0 0 0' }}>Model wears size {p.defaultSize}.</p>
+              </div>
             )}
-          </div>
-
-          {/* Colour */}
-          <div style={{ marginBottom: '20px' }}>
-            <p style={{ fontSize: '13px', color: '#111', marginBottom: '8px' }}>Colour: <strong>{p.colour}</strong></p>
-          </div>
-
-          {/* Size */}
-          {p.sizes.length > 1 && (
-            <div style={{ marginBottom: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <p style={{ fontSize: '13px', color: '#111', margin: 0 }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
-                <span style={{ fontSize: '12px', color: '#666', textDecoration: 'underline', cursor: 'default' }}>Size Guide</span>
+            {p.sizes2 && p.sizes2.length > 0 && (
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <p style={{ fontSize: '13px', color: '#111', margin: 0 }}>{p.sizes2Label}: <strong>{selectedSize2}</strong></p>
+                  <span style={{ fontSize: '12px', color: '#666', textDecoration: 'underline', cursor: 'default' }}>Size Guide</span>
+                </div>
+                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                  {p.sizes2.map(s => (
+                    <button key={s} onClick={() => setSelectedSize2(s)} style={{
+                      padding: '8px 14px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
+                      border: selectedSize2 === s ? '2px solid #111' : '1px solid #ccc',
+                      backgroundColor: selectedSize2 === s ? '#111' : '#fff',
+                      color: selectedSize2 === s ? '#fff' : '#111',
+                    }}>{s}</button>
+                  ))}
+                </div>
+                <p style={{ fontSize: '12px', color: '#666', margin: '6px 0 0 0' }}>Model wears size {p.defaultSize2}.</p>
               </div>
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                {p.sizes.map(s => (
-                  <button key={s} onClick={() => setSelectedSize(s)} style={{
-                    padding: '8px 14px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
-                    border: selectedSize === s ? '2px solid #111' : '1px solid #ccc',
-                    backgroundColor: selectedSize === s ? '#111' : '#fff',
-                    color: selectedSize === s ? '#fff' : '#111',
-                  }}>
-                    {s}
-                  </button>
-                ))}
-              </div>
-              <p style={{ fontSize: '12px', color: '#666', margin: '6px 0 0 0' }}>Model wears size {p.defaultSize}.</p>
-            </div>
-          )}
-
-          {/* Second size selector — matching sets only */}
-          {p.sizes2 && p.sizes2.length > 0 && (
-            <div style={{ marginBottom: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <p style={{ fontSize: '13px', color: '#111', margin: 0 }}>{p.sizes2Label}: <strong>{selectedSize2}</strong></p>
-                <span style={{ fontSize: '12px', color: '#666', textDecoration: 'underline', cursor: 'default' }}>Size Guide</span>
-              </div>
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                {p.sizes2.map(s => (
-                  <button key={s} onClick={() => setSelectedSize2(s)} style={{
-                    padding: '8px 14px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
-                    border: selectedSize2 === s ? '2px solid #111' : '1px solid #ccc',
-                    backgroundColor: selectedSize2 === s ? '#111' : '#fff',
-                    color: selectedSize2 === s ? '#fff' : '#111',
-                  }}>
-                    {s}
-                  </button>
-                ))}
-              </div>
-              <p style={{ fontSize: '12px', color: '#666', margin: '6px 0 0 0' }}>Model wears size {p.defaultSize2}.</p>
-            </div>
-          )}
-
-          {/* AI TRY ON */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
+            )}
+            {/* AI TRY ON */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                width: '100%', padding: '16px', fontSize: '13px', fontWeight: 700,
+                letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
+                backgroundColor: '#1B3A2D', border: 'none', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
+                marginBottom: '8px', transition: 'transform 0.1s',
+                boxShadow: '0 0 20px rgba(27,58,45,0.35)',
+              }}
+            >
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+              </svg>
+              {tryOnResult ? 'TRY ON AGAIN' : 'AI TRY ON'}
+              <span style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.4)', padding: '1px 8px', letterSpacing: '0.1em' }}>New</span>
+            </button>
+            <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', margin: '0 0 12px 0' }}>Upload your photo and see yourself in this item</p>
+            <button style={{
               width: '100%', padding: '16px', fontSize: '13px', fontWeight: 700,
               letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
-              backgroundColor: '#1B3A2D', border: 'none', cursor: 'pointer',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
-              marginBottom: '8px', transition: 'transform 0.1s',
-              boxShadow: '0 0 20px rgba(27,58,45,0.35)',
-            }}
-          >
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-            </svg>
-            {tryOnResult ? 'TRY ON AGAIN' : 'AI TRY ON'}
-            <span style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.4)', padding: '1px 8px', letterSpacing: '0.1em' }}>New</span>
-          </button>
-          <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', margin: '0 0 12px 0' }}>Upload your photo and see yourself in this item</p>
-
-          {/* ADD TO CART */}
-          <button style={{
-            width: '100%', padding: '16px', fontSize: '13px', fontWeight: 700,
-            letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
-            backgroundColor: '#111', border: 'none', cursor: 'default', marginBottom: '16px',
-          }}>
-            ADD TO CART
-          </button>
-
-          {/* Schedule CTA */}
-          <a
-            href="https://calendly.com/mail-renderedfits/15-minute-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'block', width: '100%', padding: '14px', fontSize: '12px', fontWeight: 500,
-              letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1B3A2D',
-              backgroundColor: '#fff', border: '1px solid #1B3A2D', textAlign: 'center',
-              textDecoration: 'none', marginBottom: '20px', boxSizing: 'border-box',
-            }}
-          >
-            Schedule a Meeting with Rendered Fits
-          </a>
-
-          {/* Description */}
-          <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '16px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px', color: '#111' }}>ABOUT</p>
-            <p style={{ fontSize: '13px', color: '#444', lineHeight: '1.7', margin: 0 }}>{p.description}</p>
-            {p.metal && (
-              <p style={{ fontSize: '12px', color: '#666', marginTop: '10px' }}>
-                <strong>Metal:</strong> {p.metal}
-              </p>
-            )}
+              backgroundColor: '#111', border: 'none', cursor: 'default', marginBottom: '16px',
+            }}>ADD TO CART</button>
+            <a
+              href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+              target="_blank" rel="noopener noreferrer"
+              style={{
+                display: 'block', width: '100%', padding: '14px', fontSize: '12px', fontWeight: 500,
+                letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1B3A2D',
+                backgroundColor: '#fff', border: '1px solid #1B3A2D', textAlign: 'center',
+                textDecoration: 'none', marginBottom: '20px', boxSizing: 'border-box',
+              }}
+            >Schedule a Meeting with Rendered Fits</a>
+            <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '16px' }}>
+              <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px', color: '#111' }}>ABOUT</p>
+              <p style={{ fontSize: '13px', color: '#444', lineHeight: '1.7', margin: 0 }}>{p.description}</p>
+              {p.metal && <p style={{ fontSize: '12px', color: '#666', marginTop: '10px' }}><strong>Metal:</strong> {p.metal}</p>}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ── VirtualTryOnModal (the proven infrastructure) ── */}
       <VirtualTryOnModal
