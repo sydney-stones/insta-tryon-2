@@ -2020,6 +2020,13 @@ const legalDocs: LegalDoc[] = [
     lastUpdated: 'February 2026',
     text: biometricPolicy,
   },
+  {
+    slug: 'merchantPrivacyPolicy',
+    title: 'Merchant Terms of Conditions & Privacy Policy',
+    filename: 'biometricdatapolicy.md',
+    lastUpdated: 'March 2026',
+    text: merchantPrivacyPolicy,
+  },
 ];
 
 // ─── LegalHub ─────────────────────────────────────────────────────────────────
