@@ -574,7 +574,7 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
               <img
                 src={fullscreenImage}
                 alt="Your try-on result"
-                style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+                style={{ width: '100%', display: 'block', objectFit: 'cover', maxHeight: isMobile ? '45vh' : '55vh' }}
               />
 
               {/* Size + CTA panel */}
