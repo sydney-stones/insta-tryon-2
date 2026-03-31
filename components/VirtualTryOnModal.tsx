@@ -16,6 +16,16 @@ import { logPersistentTryOnEvent } from '../lib/persistentAnalytics';
 import { addWatermark } from '../lib/watermark';
 import { FEATURE_FLAGS } from '../config/featureFlags';
 
+interface ProductSizeMeta {
+  sizes?: string[];
+  defaultSize?: string;
+  sizesLabel?: string;
+  sizes2?: string[];
+  defaultSize2?: string;
+  sizes2Label?: string;
+  price?: string;
+}
+
 interface VirtualTryOnModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -23,6 +33,7 @@ interface VirtualTryOnModalProps {
   isUnlimited?: boolean;
   customPrompt?: string;
   skipWatermark?: boolean;
+  productMeta?: ProductSizeMeta;
 }
 
 type ModalStep = 'upload' | 'limit-reached' | 'generating' | 'my-looks';
@@ -72,7 +83,7 @@ const Footer: React.FC = () => (
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false, customPrompt, skipWatermark = false }) => {
+const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false, customPrompt, skipWatermark = false, productMeta }) => {
   const [step, setStep] = useState<ModalStep>('upload');
   const [faceImage, setFaceImage] = useState<File | null>(null);
   const [facePreview, setFacePreview] = useState<string | null>(null);
@@ -81,7 +92,10 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
   const [error, setError] = useState<string | null>(null);
   const [remainingTries, setRemainingTries] = useState(1);
   const [myLooks, setMyLooks] = useState<TryOnHistoryEntry[]>([]);
-  const [expandedLook, setExpandedLook] = useState<string | null>(null);
+  const [selectedLook, setSelectedLook] = useState<TryOnHistoryEntry | null>(null);
+  const [lookFullscreen, setLookFullscreen] = useState(false);
+  const [lookSize, setLookSize] = useState('');
+  const [lookSize2, setLookSize2] = useState('');
 
   const handleClose = () => {
     setStep('upload');
@@ -90,14 +104,23 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
     setBodyImage(null);
     setBodyPreview(null);
     setError(null);
-    setExpandedLook(null);
+    setSelectedLook(null);
+    setLookFullscreen(false);
     onClose();
   };
 
   const handleMyLooks = () => {
     setMyLooks(getAllTryOnResults());
-    setExpandedLook(null);
+    setSelectedLook(null);
+    setLookFullscreen(false);
     setStep(step === 'my-looks' ? 'upload' : 'my-looks');
+  };
+
+  const openLook = (look: TryOnHistoryEntry) => {
+    setSelectedLook(look);
+    setLookSize(look.defaultSize ?? '');
+    setLookSize2(look.defaultSize2 ?? '');
+    setLookFullscreen(false);
   };
 
   React.useEffect(() => {
@@ -151,7 +174,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       const garmentFile = new File([blob], product!.name, { type: blob.type });
       const tryOnResult = await generateDirectVirtualTryOn(faceImage, bodyImage, garmentFile, undefined, '2K', customPrompt ? { customPrompt } : undefined);
       const finalImage = skipWatermark ? tryOnResult : await addWatermark(tryOnResult);
-      saveTryOnResult(finalImage, product!.id, product!.name);
+      saveTryOnResult(finalImage, product!.id, product!.name, productMeta);
       if (!isUnlimited) {
         incrementTryOnUsage();
         setRemainingTries(getRemainingTryOns());
@@ -176,6 +199,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
   ) : undefined;
 
   return (
+    <>
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4">
         {/* Backdrop */}
@@ -250,16 +274,91 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                               Try something on
                             </button>
                           </div>
+                        ) : selectedLook ? (
+                          /* ── Look detail view ── */
+                          <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                            {/* Back */}
+                            <button
+                              onClick={() => { setSelectedLook(null); setLookFullscreen(false); }}
+                              style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '10px 16px', background: 'none', border: 'none', borderBottom: '1px solid #E5E7EB', cursor: 'pointer', fontSize: '13px', color: '#6A7282', flexShrink: 0 }}
+                            >
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6"/></svg>
+                              Back to My Looks
+                            </button>
+                            <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+                              {/* Image panel */}
+                              <div style={{ flex: 1, position: 'relative', backgroundColor: '#F9FAFB', overflow: 'hidden' }}>
+                                <img
+                                  src={selectedLook.tryOnImageUrl}
+                                  alt={selectedLook.productName || 'Try-on result'}
+                                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                                />
+                                {/* Fullscreen button */}
+                                <button
+                                  onClick={() => setLookFullscreen(true)}
+                                  style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(0,0,0,0.45)', border: 'none', borderRadius: '4px', padding: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                                >
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+                                </button>
+                              </div>
+                              {/* Info panel */}
+                              <div style={{ width: '220px', flexShrink: 0, padding: '16px', overflowY: 'auto', borderLeft: '1px solid #E5E7EB', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                                {selectedLook.productName && (
+                                  <p style={{ fontSize: '13px', fontWeight: 700, color: '#101828', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>{selectedLook.productName}</p>
+                                )}
+                                {selectedLook.price && (
+                                  <p style={{ fontSize: '16px', fontWeight: 700, color: '#101828', margin: 0 }}>{selectedLook.price}</p>
+                                )}
+                                {/* Size 1 */}
+                                {selectedLook.sizes && selectedLook.sizes.length > 1 && (
+                                  <div>
+                                    <p style={{ fontSize: '12px', color: '#101828', margin: '0 0 6px' }}>{selectedLook.sizesLabel ?? 'Size'}: <strong>{lookSize}</strong></p>
+                                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                                      {selectedLook.sizes.map(s => (
+                                        <button key={s} onClick={() => setLookSize(s)} style={{
+                                          padding: '5px 10px', fontSize: '12px', fontWeight: 500, cursor: 'pointer',
+                                          border: lookSize === s ? '2px solid #111' : '1px solid #ccc',
+                                          backgroundColor: lookSize === s ? '#111' : '#fff',
+                                          color: lookSize === s ? '#fff' : '#111',
+                                        }}>{s}</button>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                                {/* Size 2 — matching sets */}
+                                {selectedLook.sizes2 && selectedLook.sizes2.length > 0 && (
+                                  <div>
+                                    <p style={{ fontSize: '12px', color: '#101828', margin: '0 0 6px' }}>{selectedLook.sizes2Label ?? 'Size 2'}: <strong>{lookSize2}</strong></p>
+                                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                                      {selectedLook.sizes2.map(s => (
+                                        <button key={s} onClick={() => setLookSize2(s)} style={{
+                                          padding: '5px 10px', fontSize: '12px', fontWeight: 500, cursor: 'pointer',
+                                          border: lookSize2 === s ? '2px solid #111' : '1px solid #ccc',
+                                          backgroundColor: lookSize2 === s ? '#111' : '#fff',
+                                          color: lookSize2 === s ? '#fff' : '#111',
+                                        }}>{s}</button>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                                <button style={{
+                                  width: '100%', padding: '12px', fontSize: '12px', fontWeight: 700,
+                                  letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff',
+                                  backgroundColor: '#111', border: 'none', cursor: 'default', marginTop: 'auto',
+                                }}>ADD TO CART</button>
+                              </div>
+                            </div>
+                          </div>
                         ) : (
                           <div style={{ padding: '16px' }}>
                             <p style={{ fontSize: '13px', color: '#6A7282', marginBottom: '16px' }}>{myLooks.length} {myLooks.length === 1 ? 'result' : 'results'} saved on this device</p>
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '12px' }}>
                               {myLooks.map((look, i) => (
-                                <div key={i} style={{ position: 'relative', cursor: 'pointer' }} onClick={() => setExpandedLook(expandedLook === look.tryOnImageUrl ? null : look.tryOnImageUrl)}>
+                                <div key={i} style={{ position: 'relative', cursor: 'pointer' }} onClick={() => openLook(look)}>
                                   <img
                                     src={look.tryOnImageUrl}
                                     alt={look.productName || 'Try-on result'}
-                                    style={{ width: '100%', aspectRatio: '2/3', objectFit: 'cover', display: 'block', border: expandedLook === look.tryOnImageUrl ? '2px solid #1E2939' : '1px solid #E5E7EB' }}
+                                    style={{ width: '100%', aspectRatio: '2/3', objectFit: 'cover', display: 'block', border: '1px solid #E5E7EB' }}
                                   />
                                   {look.productName && (
                                     <p style={{ fontSize: '11px', color: '#444', margin: '4px 0 0', lineHeight: '14px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
@@ -443,6 +542,31 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
         </motion.div>
       </div>
     </AnimatePresence>
+
+    {/* Fullscreen look overlay */}
+    <AnimatePresence>
+      {lookFullscreen && selectedLook && (
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          style={{ position: 'fixed', inset: 0, zIndex: 9999, backgroundColor: 'rgba(0,0,0,0.92)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          onClick={() => setLookFullscreen(false)}
+        >
+          <button
+            onClick={() => setLookFullscreen(false)}
+            style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.15)', border: 'none', borderRadius: '50%', width: '36px', height: '36px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+          <img
+            src={selectedLook.tryOnImageUrl}
+            alt={selectedLook.productName || 'Try-on result'}
+            onClick={e => e.stopPropagation()}
+            style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', display: 'block' }}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 };
 

@@ -157,6 +157,14 @@ export interface TryOnHistoryEntry {
   productId: string;
   productName: string;
   timestamp: number;
+  // Optional size data — populated by pages that have size selectors
+  sizes?: string[];
+  defaultSize?: string;
+  sizesLabel?: string;
+  sizes2?: string[];
+  defaultSize2?: string;
+  sizes2Label?: string;
+  price?: string;
 }
 
 /**
@@ -175,7 +183,12 @@ export const getAllTryOnResults = (): TryOnHistoryEntry[] => {
 /**
  * Save the latest try-on result for a specific product
  */
-export const saveTryOnResult = (tryOnImageUrl: string, productId: string, productName = ''): void => {
+export const saveTryOnResult = (
+  tryOnImageUrl: string,
+  productId: string,
+  productName = '',
+  meta?: Pick<TryOnHistoryEntry, 'sizes' | 'defaultSize' | 'sizesLabel' | 'sizes2' | 'defaultSize2' | 'sizes2Label' | 'price'>
+): void => {
   try {
     const data = {
       tryOnImageUrl,
@@ -187,7 +200,7 @@ export const saveTryOnResult = (tryOnImageUrl: string, productId: string, produc
 
     // Also append to persistent history
     const history = getAllTryOnResults();
-    history.unshift({ tryOnImageUrl, productId, productName, timestamp: Date.now() });
+    history.unshift({ tryOnImageUrl, productId, productName, timestamp: Date.now(), ...meta });
     // Keep at most 50 entries
     localStorage.setItem(TRYON_HISTORY_KEY, JSON.stringify(history.slice(0, 50)));
   } catch (e) {
