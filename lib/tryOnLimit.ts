@@ -152,6 +152,9 @@ export const clearSavedModel = (): void => {
 
 const TRYON_HISTORY_KEY = 'tryOnHistory';
 
+// In-memory fallback for when localStorage quota is exceeded (e.g. mobile Safari with large base64 images)
+let _memoryHistory: TryOnHistoryEntry[] = [];
+
 export interface TryOnHistoryEntry {
   tryOnImageUrl: string;
   productId: string;
@@ -168,16 +171,21 @@ export interface TryOnHistoryEntry {
 }
 
 /**
- * Get all saved try-on results across all products
+ * Get all saved try-on results across all products.
+ * Merges in-memory history (survives localStorage quota failures) with any persisted entries.
  */
 export const getAllTryOnResults = (): TryOnHistoryEntry[] => {
+  let persisted: TryOnHistoryEntry[] = [];
   try {
     const stored = localStorage.getItem(TRYON_HISTORY_KEY);
-    if (stored) return JSON.parse(stored) as TryOnHistoryEntry[];
+    if (stored) persisted = JSON.parse(stored) as TryOnHistoryEntry[];
   } catch (e) {
     console.error('Error reading try-on history:', e);
   }
-  return [];
+  // Merge: memory entries first, then any persisted entries not already in memory
+  const memoryUrls = new Set(_memoryHistory.map(e => e.tryOnImageUrl));
+  const merged = [..._memoryHistory, ...persisted.filter(e => !memoryUrls.has(e.tryOnImageUrl))];
+  return merged.slice(0, 50);
 };
 
 /**
@@ -189,22 +197,20 @@ export const saveTryOnResult = (
   productName = '',
   meta?: Pick<TryOnHistoryEntry, 'sizes' | 'defaultSize' | 'sizesLabel' | 'sizes2' | 'defaultSize2' | 'sizes2Label' | 'price'>
 ): void => {
+  const entry: TryOnHistoryEntry = { tryOnImageUrl, productId, productName, timestamp: Date.now(), ...meta };
+
+  // Always save to memory first — survives quota errors
+  _memoryHistory = [entry, ..._memoryHistory].slice(0, 50);
+
   try {
-    const data = {
-      tryOnImageUrl,
-      productId,
-      date: getTodayDate(),
-      timestamp: Date.now()
-    };
+    const data = { tryOnImageUrl, productId, date: getTodayDate(), timestamp: Date.now() };
     localStorage.setItem(TRYON_RESULT_KEY, JSON.stringify(data));
 
-    // Also append to persistent history
     const history = getAllTryOnResults();
-    history.unshift({ tryOnImageUrl, productId, productName, timestamp: Date.now(), ...meta });
-    // Keep at most 50 entries
     localStorage.setItem(TRYON_HISTORY_KEY, JSON.stringify(history.slice(0, 50)));
   } catch (e) {
-    console.error('Error saving try-on result:', e);
+    console.error('Error saving try-on result to localStorage (quota likely exceeded):', e);
+    // Memory history already updated — My Looks will still work this session
   }
 };
 

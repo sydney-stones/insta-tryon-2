@@ -12,7 +12,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WardrobeItem } from '../types';
-import { getSavedTryOnResult } from '../lib/tryOnLimit';
 import VirtualTryOnModal from './VirtualTryOnModal';
 
 // ─── Product Data ─────────────────────────────────────────────────────────────
@@ -187,19 +186,12 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
-  // Poll for result — used only to show the fullscreen viewer, NOT in the gallery
-  const [tryOnResult, setTryOnResult] = useState<string | null>(getSavedTryOnResult(product.id));
+  const [tryOnResult, setTryOnResult] = useState<string | null>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const result = getSavedTryOnResult(product.id);
-      if (result && result !== tryOnResult) {
-        setTryOnResult(result);
-        setFullscreenImage(result);
-      }
-    }, 500);
-    return () => clearInterval(interval);
-  }, [product.id, tryOnResult]);
+  const handleTryOnResult = (imageUrl: string) => {
+    setTryOnResult(imageUrl);
+    setFullscreenImage(imageUrl);
+  };
 
   // Gallery is always just the product shots — result is never added
   const galleryImages = useMemo(() => [...p.gallerySrcs], [p.gallerySrcs]);
@@ -537,6 +529,7 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
       <VirtualTryOnModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        onResult={handleTryOnResult}
         product={product}
         isUnlimited={true}
         skipWatermark={true}

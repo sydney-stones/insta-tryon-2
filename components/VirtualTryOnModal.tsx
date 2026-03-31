@@ -34,6 +34,7 @@ interface VirtualTryOnModalProps {
   customPrompt?: string;
   skipWatermark?: boolean;
   productMeta?: ProductSizeMeta;
+  onResult?: (imageUrl: string) => void;
 }
 
 type ModalStep = 'upload' | 'limit-reached' | 'generating' | 'my-looks';
@@ -83,7 +84,7 @@ const Footer: React.FC = () => (
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false, customPrompt, skipWatermark = false, productMeta }) => {
+const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false, customPrompt, skipWatermark = false, productMeta, onResult }) => {
   const [step, setStep] = useState<ModalStep>('upload');
   const [faceImage, setFaceImage] = useState<File | null>(null);
   const [facePreview, setFacePreview] = useState<string | null>(null);
@@ -182,6 +183,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       logTryOnEvent(product!.id, product!.name);
       logPersistentTryOnEvent(product!.id, product!.name);
       handleClose();
+      onResult?.(finalImage);
     } catch (err) {
       setError(getFriendlyErrorMessage(err, 'Failed to generate try-on'));
       setStep('upload');
