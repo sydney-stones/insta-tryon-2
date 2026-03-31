@@ -235,20 +235,8 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
 
       {/* ── Header ── */}
       <header style={{ borderBottom: '1px solid #e5e5e5', position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 40 }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', height: '60px' }}>
-          <nav style={{ display: 'flex', gap: '32px', marginRight: 'auto' }}>
-            <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.04em', color: '#111', cursor: 'default' }}>MENS</span>
-            <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.04em', color: '#111', cursor: 'default' }}>WOMENS</span>
-          </nav>
-          <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
-            <span style={{ fontSize: '22px', fontWeight: 700, letterSpacing: '0.06em', color: '#111' }}>CERNUCCI</span>
-          </div>
-          <div style={{ display: 'flex', gap: '16px', marginLeft: 'auto', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #ccc', padding: '6px 12px', gap: '8px', minWidth: '160px' }}>
-              <svg width="14" height="14" fill="none" stroke="#666" strokeWidth="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" strokeLinecap="round"/></svg>
-              <span style={{ fontSize: '12px', color: '#999' }}>Search...</span>
-            </div>
-          </div>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px' }}>
+          <span style={{ fontSize: '22px', fontWeight: 700, letterSpacing: '0.06em', color: '#111' }}>CERNUCCI</span>
         </div>
       </header>
 
@@ -265,47 +253,60 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px 64px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 480px', gap: isMobile ? '24px' : '48px', alignItems: 'start' }}>
 
         {/* Left — Gallery */}
-        <div style={{ display: 'flex', gap: '12px' }}>
-          {/* Thumbnail strip */}
-          {!isMobile && galleryImages.length > 1 && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '80px', flexShrink: 0 }}>
-              {galleryImages.map((src, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveGalleryIndex(i)}
-                  style={{
-                    width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer',
-                    outline: activeGalleryIndex === i ? '2px solid #111' : '1px solid #e5e5e5',
-                    outlineOffset: '-1px', overflow: 'hidden', backgroundColor: '#f5f5f5', flexShrink: 0,
-                    position: 'relative',
-                  }}
-                >
-                  <img src={src} alt={`View ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                </button>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', gap: '12px' }}>
+            {/* Thumbnail strip — desktop only */}
+            {!isMobile && galleryImages.length > 1 && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '80px', flexShrink: 0 }}>
+                {galleryImages.map((src, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveGalleryIndex(i)}
+                    style={{
+                      width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer',
+                      outline: activeGalleryIndex === i ? '2px solid #111' : '1px solid #e5e5e5',
+                      outlineOffset: '-1px', overflow: 'hidden', backgroundColor: '#f5f5f5', flexShrink: 0,
+                    }}
+                  >
+                    <img src={src} alt={`View ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Main image */}
+            <div
+              style={{ flex: 1, backgroundColor: '#f5f5f5', overflow: 'hidden', aspectRatio: '2/3', position: 'relative' }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={mainImageSrc}
+                  src={mainImageSrc}
+                  alt={product.name}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Mobile dot indicators */}
+          {isMobile && galleryImages.length > 1 && (
+            <div style={{ display: 'flex', gap: '6px', justifyContent: 'center' }}>
+              {galleryImages.map((_, i) => (
+                <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{
+                  width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0,
+                  backgroundColor: activeGalleryIndex === i ? '#111' : '#ccc',
+                }} />
               ))}
             </div>
           )}
-
-          {/* Main image */}
-          <div
-            style={{ flex: 1, backgroundColor: '#f5f5f5', overflow: 'hidden', aspectRatio: '2/3', position: 'relative' }}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={mainImageSrc}
-                src={mainImageSrc}
-                alt={product.name}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              />
-            </AnimatePresence>
-          </div>
         </div>
 
         {/* Right — Product Info */}
@@ -455,29 +456,101 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
         customPrompt={CUSTOM_PROMPT}
       />
 
-      {/* ── Fullscreen result viewer ── */}
+      {/* ── Result overlay ── */}
       <AnimatePresence>
         {fullscreenImage && (
           <motion.div
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
+            className="fixed inset-0 z-[100] bg-black/80 flex items-end sm:items-center justify-center"
             onClick={() => setFullscreenImage(null)}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
           >
-            <button
-              onClick={() => setFullscreenImage(null)}
-              className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
-            >
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <motion.img
-              src={fullscreenImage}
-              alt="Try-on result fullscreen"
-              className="max-h-full max-w-full object-contain"
-              initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }}
+            <motion.div
+              className="relative bg-white w-full sm:w-auto sm:max-w-sm overflow-y-auto"
+              style={{ maxHeight: '95vh', borderRadius: isMobile ? '16px 16px 0 0' : '0px' }}
+              initial={{ y: isMobile ? 60 : 0, scale: isMobile ? 1 : 0.96 }}
+              animate={{ y: 0, scale: 1 }}
+              exit={{ y: isMobile ? 60 : 0, scale: isMobile ? 1 : 0.96 }}
+              transition={{ duration: 0.22 }}
               onClick={e => e.stopPropagation()}
-            />
+            >
+              {/* Close */}
+              <button
+                onClick={() => setFullscreenImage(null)}
+                style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10, width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,0.5)', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                <svg width="14" height="14" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Result image */}
+              <img
+                src={fullscreenImage}
+                alt="Your try-on result"
+                style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+              />
+
+              {/* Size + CTA panel */}
+              <div style={{ padding: '16px', fontFamily: "'Jost', sans-serif" }}>
+                <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: '0 0 12px 0' }}>{product.name}</p>
+
+                {/* Size selector 1 */}
+                {p.sizes.length > 1 && (
+                  <div style={{ marginBottom: '12px' }}>
+                    <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
+                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                      {p.sizes.map(s => (
+                        <button key={s} onClick={() => setSelectedSize(s)} style={{
+                          padding: '6px 12px', fontSize: '12px', fontWeight: 500, cursor: 'pointer',
+                          border: selectedSize === s ? '2px solid #111' : '1px solid #ccc',
+                          backgroundColor: selectedSize === s ? '#111' : '#fff',
+                          color: selectedSize === s ? '#fff' : '#111',
+                        }}>{s}</button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Size selector 2 — matching sets */}
+                {p.sizes2 && p.sizes2.length > 0 && (
+                  <div style={{ marginBottom: '12px' }}>
+                    <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizes2Label}: <strong>{selectedSize2}</strong></p>
+                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                      {p.sizes2.map(s => (
+                        <button key={s} onClick={() => setSelectedSize2(s)} style={{
+                          padding: '6px 12px', fontSize: '12px', fontWeight: 500, cursor: 'pointer',
+                          border: selectedSize2 === s ? '2px solid #111' : '1px solid #ccc',
+                          backgroundColor: selectedSize2 === s ? '#111' : '#fff',
+                          color: selectedSize2 === s ? '#fff' : '#111',
+                        }}>{s}</button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <button style={{
+                  width: '100%', padding: '14px', fontSize: '13px', fontWeight: 700,
+                  letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff',
+                  backgroundColor: '#111', border: 'none', cursor: 'default', marginTop: '4px',
+                }}>
+                  ADD TO CART
+                </button>
+
+                <a
+                  href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'block', width: '100%', padding: '12px', fontSize: '12px', fontWeight: 500,
+                    letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1B3A2D',
+                    backgroundColor: '#fff', border: '1px solid #1B3A2D', textAlign: 'center',
+                    textDecoration: 'none', marginTop: '8px', boxSizing: 'border-box',
+                  }}
+                >
+                  Schedule a Meeting
+                </a>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

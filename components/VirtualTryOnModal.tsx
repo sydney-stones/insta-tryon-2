@@ -126,7 +126,7 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -138,11 +138,11 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
         {/* Modal */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          className="shadow-2xl"
-          style={{ borderRadius: '0px', backgroundColor: '#fff', width: '768px', maxWidth: '100%', maxHeight: '90vh', overflow: 'hidden', position: 'relative', fontFamily: "'Jost', sans-serif" }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 40 }}
+          className="shadow-2xl w-full sm:w-auto"
+          style={{ borderRadius: '0px', backgroundColor: '#fff', maxWidth: '768px', maxHeight: '95vh', overflow: 'hidden', position: 'relative', fontFamily: "'Jost', sans-serif" }}
         >
           <div className="overflow-y-auto max-h-[90vh]">
             <AnimatePresence mode="wait">
@@ -254,9 +254,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
 
                       {/* Right — Upload Form */}
                       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', flex: 1 }}>
-                          <div style={{ padding: '24px 24px 0' }}>
-                            <p style={{ fontSize: '30px', fontWeight: 400, textTransform: 'uppercase', color: '#101828', lineHeight: '36px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flex: 1 }}>
+                          <div style={{ padding: '20px 20px 0' }}>
+                            <p style={{ fontSize: '22px', fontWeight: 400, textTransform: 'uppercase', color: '#101828', lineHeight: '28px' }}>
                               TRY IT ON, VIRTUALLY
                             </p>
                           </div>
@@ -264,8 +264,8 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
                             {/* Face uploader */}
                             <label htmlFor="face-upload" style={{ cursor: 'pointer' }}>
-                              <p style={{ fontSize: '16px', fontWeight: 400, color: '#101828', padding: '0 24px', marginBottom: '4px' }}>Face photo</p>
-                              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '16px', gap: '20px', backgroundColor: '#F9FAFB', borderBottom: '1px solid #D1D5DC', marginLeft: '24px', marginRight: '24px' }}>
+                              <p style={{ fontSize: '14px', fontWeight: 400, color: '#101828', padding: '0 20px', marginBottom: '4px' }}>Face photo</p>
+                              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '12px', gap: '12px', backgroundColor: '#F9FAFB', borderBottom: '1px solid #D1D5DC', marginLeft: '20px', marginRight: '20px' }}>
                                 {facePreview ? (
                                   <div style={{ position: 'relative', flexShrink: 0 }}>
                                     <img src={facePreview} alt="Face" style={{ width: '40px', height: '40px', objectFit: 'cover' }} />
@@ -282,23 +282,23 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                                   </div>
                                 )}
                                 <div>
-                                  <p style={{ fontSize: '16px', fontWeight: 500, color: '#101828', marginBottom: '0', lineHeight: '24px' }}>
+                                  <p style={{ fontSize: '14px', fontWeight: 500, color: '#101828', marginBottom: '0', lineHeight: '20px' }}>
                                     {facePreview ? 'Face photo uploaded' : 'Upload your photo here'}
                                   </p>
-                                  <p style={{ fontSize: '14px', color: '#6A7282', lineHeight: '20px' }}>
-                                    {facePreview ? 'Tap to change' : 'Format: png, jpg, heic & Max file size: 25 MB'}
+                                  <p style={{ fontSize: '12px', color: '#6A7282', lineHeight: '18px' }}>
+                                    {facePreview ? 'Tap to change' : 'Format: png, jpg, heic · Max 25 MB'}
                                   </p>
                                 </div>
                               </div>
                             </label>
                             <input id="face-upload" type="file" className="hidden" accept="image/png, image/jpeg, image/webp, image/avif, image/heic, image/heif" onChange={handleFaceSelect} />
 
-                            <div style={{ height: '32px' }} />
+                            <div style={{ height: '20px' }} />
 
                             {/* Body uploader */}
                             <label htmlFor="body-upload" style={{ cursor: 'pointer' }}>
-                              <p style={{ fontSize: '16px', fontWeight: 400, color: '#101828', padding: '0 24px', marginBottom: '4px' }}>Full body photo</p>
-                              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '16px', gap: '20px', backgroundColor: '#F9FAFB', borderBottom: '1px solid #D1D5DC', marginLeft: '24px', marginRight: '24px' }}>
+                              <p style={{ fontSize: '14px', fontWeight: 400, color: '#101828', padding: '0 20px', marginBottom: '4px' }}>Full body photo</p>
+                              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '12px', gap: '12px', backgroundColor: '#F9FAFB', borderBottom: '1px solid #D1D5DC', marginLeft: '20px', marginRight: '20px' }}>
                                 {bodyPreview ? (
                                   <div style={{ position: 'relative', flexShrink: 0 }}>
                                     <img src={bodyPreview} alt="Body" style={{ width: '40px', height: '40px', objectFit: 'cover' }} />
@@ -318,11 +318,11 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                                   </div>
                                 )}
                                 <div>
-                                  <p style={{ fontSize: '16px', fontWeight: 500, color: '#101828', marginBottom: '0', lineHeight: '24px' }}>
+                                  <p style={{ fontSize: '14px', fontWeight: 500, color: '#101828', marginBottom: '0', lineHeight: '20px' }}>
                                     {bodyPreview ? 'Full body photo uploaded' : 'Upload your photo here'}
                                   </p>
-                                  <p style={{ fontSize: '14px', color: '#6A7282', lineHeight: '20px' }}>
-                                    {bodyPreview ? 'Tap to change' : 'Format: png, jpg, heic & Max file size: 25 MB'}
+                                  <p style={{ fontSize: '12px', color: '#6A7282', lineHeight: '18px' }}>
+                                    {bodyPreview ? 'Tap to change' : 'Format: png, jpg, heic · Max 25 MB'}
                                   </p>
                                 </div>
                               </div>
@@ -334,14 +334,14 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                           {/* Error */}
                           {error && (
-                            <div style={{ padding: '0 24px 8px' }}>
+                            <div style={{ padding: '0 20px 8px' }}>
                               <p style={{ fontSize: '12px', color: '#dc2626', backgroundColor: '#fef2f2', padding: '8px 12px', border: '1px solid #fecaca' }}>{error}</p>
                             </div>
                           )}
 
                           {/* Terms */}
-                          <div style={{ padding: '8px 24px' }}>
-                            <p style={{ fontSize: '12px', color: '#6A7282', lineHeight: '16px' }}>
+                          <div style={{ padding: '8px 20px' }}>
+                            <p style={{ fontSize: '11px', color: '#6A7282', lineHeight: '16px' }}>
                               By uploading your photo, you agree to our{' '}
                               <Link to="/legal/end-user-terms" target="_blank" style={{ color: '#6A7282', textDecoration: 'underline' }}>Terms &amp; Conditions</Link>{' '}
                               and{' '}
@@ -400,15 +400,14 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                 <motion.div key="generating" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                   <div style={{ fontFamily: "'Jost', sans-serif" }}>
                     {/* Top Bar */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '48px', padding: '0 16px', borderBottom: '1px solid #D1D5DC' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5">
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '48px', borderBottom: '1px solid #D1D5DC' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', padding: '0 16px', gap: '8px', height: '48px', borderRight: '1px solid #D1D5DC', minWidth: '113px' }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#101828" strokeWidth="1.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 2h11L21 7l-3 2-1-1v12H7V8L6 9 3 7l3.5-5z" />
                         </svg>
-                        <span style={{ fontSize: '14px', fontWeight: 500, color: '#101828' }}>Fits</span>
-                        <span style={{ fontSize: '11px', fontWeight: 500, color: '#fff', backgroundColor: '#1E2939', padding: '2px 8px' }}>Rendered Fits</span>
+                        <span style={{ fontSize: '14px', color: '#101828', whiteSpace: 'nowrap' }}>My looks</span>
                       </div>
-                      <button onClick={handleClose} style={{ width: '28px', height: '28px', backgroundColor: '#F3F4F6', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                      <button onClick={handleClose} style={{ width: '48px', height: '48px', background: 'none', border: 'none', borderLeft: '1px solid #D1D5DC', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -416,8 +415,8 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
                     </div>
 
                     {/* Loading body */}
-                    <div style={{ padding: '48px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '400px', textAlign: 'center' }}>
-                      <p style={{ fontSize: '26px', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#101828', marginBottom: '32px' }}>
+                    <div style={{ padding: '32px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '300px', textAlign: 'center' }}>
+                      <p style={{ fontSize: '22px', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#101828', marginBottom: '28px' }}>
                         GETTING DRESSED!
                       </p>
                       <Spinner />
