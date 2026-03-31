@@ -548,14 +548,14 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
       <AnimatePresence>
         {fullscreenImage && (
           isMobile ? (
-            /* ── MOBILE: full-screen, natural scroll, CTA sticky at bottom ── */
+            /* ── MOBILE: true full-screen flex column, no scroll ── */
             <motion.div
-              style={{ position: 'fixed', inset: 0, zIndex: 100, backgroundColor: '#fff', overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
+              style={{ position: 'fixed', inset: 0, zIndex: 100, backgroundColor: '#fff', display: 'flex', flexDirection: 'column', height: '100dvh' }}
               initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
               transition={{ duration: 0.22 }}
             >
-              {/* Header bar — sticky */}
-              <div style={{ position: 'sticky', top: 0, zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', height: '52px', borderBottom: '1px solid #e5e5e5', backgroundColor: '#fff' }}>
+              {/* Header bar */}
+              <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', height: '52px', borderBottom: '1px solid #e5e5e5', backgroundColor: '#fff' }}>
                 <button
                   onClick={openMyLooks}
                   style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', cursor: 'pointer', padding: '0 8px 0 0' }}
@@ -576,15 +576,17 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
                 </button>
               </div>
 
-              {/* Full image — no crop, no max-height */}
-              <img
-                src={fullscreenImage}
-                alt="Your try-on result"
-                style={{ width: '100%', display: 'block' }}
-              />
+              {/* Image — fills remaining space, letterboxed, never cropped */}
+              <div style={{ flex: 1, minHeight: 0, backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <img
+                  src={fullscreenImage}
+                  alt="Your try-on result"
+                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }}
+                />
+              </div>
 
-              {/* CTA panel — sticky at bottom */}
-              <div style={{ position: 'sticky', bottom: 0, backgroundColor: '#fff', borderTop: '1px solid #e5e5e5', padding: '12px 16px 32px', fontFamily: "'Jost', sans-serif" }}>
+              {/* CTA panel — natural height, never scrolls */}
+              <div style={{ flexShrink: 0, backgroundColor: '#fff', borderTop: '1px solid #e5e5e5', padding: '12px 16px 28px', fontFamily: "'Jost', sans-serif" }}>
                 {p.sizes.length > 1 && (
                   <div style={{ marginBottom: '10px' }}>
                     <p style={{ fontSize: '12px', color: '#111', margin: '0 0 6px 0' }}>{p.sizesLabel ?? 'Size'}: <strong>{selectedSize}</strong></p>
