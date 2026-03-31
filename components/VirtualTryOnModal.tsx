@@ -21,11 +21,13 @@ interface VirtualTryOnModalProps {
   onClose: () => void;
   product: WardrobeItem | null;
   isUnlimited?: boolean;
+  customPrompt?: string;
+  skipWatermark?: boolean;
 }
 
 type ModalStep = 'upload' | 'limit-reached' | 'generating';
 
-const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false }) => {
+const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, product, isUnlimited = false, customPrompt, skipWatermark = false }) => {
   const [step, setStep] = useState<ModalStep>('upload');
   const [faceImage, setFaceImage] = useState<File | null>(null);
   const [facePreview, setFacePreview] = useState<string | null>(null);
@@ -100,9 +102,9 @@ const VirtualTryOnModal: React.FC<VirtualTryOnModalProps> = ({ isOpen, onClose, 
       const blob = await response.blob();
       const garmentFile = new File([blob], product!.name, { type: blob.type });
 
-      const tryOnResult = await generateDirectVirtualTryOn(faceImage, bodyImage, garmentFile);
-      const watermarkedImage = await addWatermark(tryOnResult);
-      saveTryOnResult(watermarkedImage, product!.id);
+      const tryOnResult = await generateDirectVirtualTryOn(faceImage, bodyImage, garmentFile, undefined, '2K', customPrompt ? { customPrompt } : undefined);
+      const finalImage = skipWatermark ? tryOnResult : await addWatermark(tryOnResult);
+      saveTryOnResult(finalImage, product!.id);
 
       if (!isUnlimited) {
         incrementTryOnUsage();
