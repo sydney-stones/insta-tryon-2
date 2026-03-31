@@ -42,7 +42,7 @@ export const CERNUCCI_LIVE_PRODUCTS: Record<string, CernucciProduct> = {
   'gold-chain': {
     wardrobeItem: {
       id: 'cernucci-live-gold-chain',
-      name: 'Iced Out Snake Chain — Gold',
+      name: 'Micro Iced Cross Necklace - 15mm - Gold',
       url: `${BASE}/goldchain/AU-MCRICRSNK-GM-1_1200x1800.webp`,
       folder: 'Cernucci',
     },
@@ -57,7 +57,7 @@ export const CERNUCCI_LIVE_PRODUCTS: Record<string, CernucciProduct> = {
       `${BASE}/goldchain/AU-MCRICRSNK-GM_1200x1800.jpg`,
     ],
     metal: 'Brass · 18k Gold Plated · Tarnish Resistant',
-    description: 'The Iced Out Snake Chain in Gold — a sleek, flexible chain with encrusted cubic zirconia stones running the full length. Maximum sparkle, Cernucci\'s signature precision finish.',
+    description: 'The Micro Iced Cross Necklace - 15mm in Gold — a sleek, flexible chain with encrusted cubic zirconia stones running the full length. Maximum sparkle, Cernucci\'s signature precision finish.',
   },
   'mens-tracksuit': {
     wardrobeItem: {
@@ -251,13 +251,48 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
 
       {/* ── Product Layout ── */}
       {isMobile ? (
-        /* ── MOBILE: single column, image between sizing and CTA ── */
+        /* ── MOBILE: single column — title → image → everything else ── */
         <div style={{ padding: '0 0 64px' }}>
-          {/* Product info top */}
-          <div style={{ padding: '0 20px 16px' }}>
-            <h1 style={{ fontSize: '16px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: '0 0 6px 0' }}>
+          {/* Product title */}
+          <div style={{ padding: '0 20px 12px' }}>
+            <h1 style={{ fontSize: '16px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111', margin: 0 }}>
               {product.name.toUpperCase()}
             </h1>
+          </div>
+
+          {/* Product image carousel — full bleed, directly below title */}
+          <div style={{ position: 'relative', backgroundColor: '#f5f5f5', width: '100%', aspectRatio: '3/4' }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={mainImageSrc}
+                src={mainImageSrc}
+                alt={product.name}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              />
+            </AnimatePresence>
+            {/* Dot indicators overlaid on image */}
+            {galleryImages.length > 1 && (
+              <div style={{ position: 'absolute', bottom: '10px', left: 0, right: 0, display: 'flex', gap: '6px', justifyContent: 'center' }}>
+                {galleryImages.map((_, i) => (
+                  <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{
+                    width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0,
+                    backgroundColor: activeGalleryIndex === i ? '#fff' : 'rgba(255,255,255,0.5)',
+                  }} />
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Stars, price, colour, sizes — below image */}
+          <div style={{ padding: '16px 20px 0' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
               {[1,2,3,4,5].map(i => (
                 <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill={i <= 4 ? '#111' : 'none'} stroke="#111" strokeWidth="1.5">
@@ -320,39 +355,8 @@ const CernucciLivePage: React.FC<CernucciLivePageProps> = ({ productSlug }) => {
             )}
           </div>
 
-          {/* Product image carousel — full bleed */}
-          <div style={{ position: 'relative', backgroundColor: '#f5f5f5', width: '100%', aspectRatio: '3/4' }}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={mainImageSrc}
-                src={mainImageSrc}
-                alt={product.name}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              />
-            </AnimatePresence>
-            {/* Dot indicators overlaid on image */}
-            {galleryImages.length > 1 && (
-              <div style={{ position: 'absolute', bottom: '10px', left: 0, right: 0, display: 'flex', gap: '6px', justifyContent: 'center' }}>
-                {galleryImages.map((_, i) => (
-                  <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{
-                    width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0,
-                    backgroundColor: activeGalleryIndex === i ? '#fff' : 'rgba(255,255,255,0.5)',
-                  }} />
-                ))}
-              </div>
-            )}
-          </div>
-
           {/* CTA section */}
-          <div style={{ padding: '16px 20px 0' }}>
+          <div style={{ padding: '0 20px 0' }}>
             <button
               onClick={() => setIsModalOpen(true)}
               style={{
