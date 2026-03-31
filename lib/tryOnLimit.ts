@@ -150,10 +150,32 @@ export const clearSavedModel = (): void => {
   localStorage.removeItem(MODEL_STORAGE_KEY);
 };
 
+const TRYON_HISTORY_KEY = 'tryOnHistory';
+
+export interface TryOnHistoryEntry {
+  tryOnImageUrl: string;
+  productId: string;
+  productName: string;
+  timestamp: number;
+}
+
+/**
+ * Get all saved try-on results across all products
+ */
+export const getAllTryOnResults = (): TryOnHistoryEntry[] => {
+  try {
+    const stored = localStorage.getItem(TRYON_HISTORY_KEY);
+    if (stored) return JSON.parse(stored) as TryOnHistoryEntry[];
+  } catch (e) {
+    console.error('Error reading try-on history:', e);
+  }
+  return [];
+};
+
 /**
  * Save the latest try-on result for a specific product
  */
-export const saveTryOnResult = (tryOnImageUrl: string, productId: string): void => {
+export const saveTryOnResult = (tryOnImageUrl: string, productId: string, productName = ''): void => {
   try {
     const data = {
       tryOnImageUrl,
@@ -162,6 +184,12 @@ export const saveTryOnResult = (tryOnImageUrl: string, productId: string): void 
       timestamp: Date.now()
     };
     localStorage.setItem(TRYON_RESULT_KEY, JSON.stringify(data));
+
+    // Also append to persistent history
+    const history = getAllTryOnResults();
+    history.unshift({ tryOnImageUrl, productId, productName, timestamp: Date.now() });
+    // Keep at most 50 entries
+    localStorage.setItem(TRYON_HISTORY_KEY, JSON.stringify(history.slice(0, 50)));
   } catch (e) {
     console.error('Error saving try-on result:', e);
   }
