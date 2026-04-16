@@ -39,6 +39,7 @@ import AlludeLivePage from './components/AlludeLivePage';
 import BrownieDemoPage from './components/BrownieDemoPage';
 import VowelsDemoPage from './components/VowelsDemoPage';
 import KhanumsDemoPage from './components/KhanumsDemoPage';
+import MrButtonDemoPage from './components/MrButtonDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -134,6 +135,7 @@ const App: React.FC = () => {
           <Route path="/vowels/cezanne-zip-up-jacket" element={<VowelsDemoPage productSlug="cezanne-zip-up-jacket" />} />
           <Route path="/vowels/overdyed-painter-pants" element={<VowelsDemoPage productSlug="overdyed-painter-pants" />} />
           <Route path="/khanums/kodil-dress-sage-green" element={<KhanumsDemoPage productSlug="kodil-dress-sage-green" />} />
+          <Route path="/mr-button/grey-shacket" element={<MrButtonDemoPage productSlug="grey-shacket" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
