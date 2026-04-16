@@ -36,6 +36,8 @@ import CernucciDemoPage from './components/CernucciDemoPage';
 import AlludeDemoPage from './components/AlludeDemoPage';
 import CernucciLivePage from './components/CernucciLivePage';
 import AlludeLivePage from './components/AlludeLivePage';
+import BrownieDemoPage from './components/BrownieDemoPage';
+import VowelsDemoPage from './components/VowelsDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -126,6 +128,10 @@ const App: React.FC = () => {
           <Route path="/cernucci/live/womens-yellow" element={<CernucciLivePage productSlug="womens-yellow" />} />
           <Route path="/allude/live/rose-top" element={<AlludeLivePage productSlug="rose-top" />} />
           <Route path="/allude/live/grau-jacket" element={<AlludeLivePage productSlug="grau-jacket" />} />
+          <Route path="/brownie/multi-ruffle-skirt" element={<BrownieDemoPage productSlug="multi-ruffle-skirt" />} />
+          <Route path="/brownie/satin-jacquard-top" element={<BrownieDemoPage productSlug="satin-jacquard-top" />} />
+          <Route path="/vowels/cezanne-zip-up-jacket" element={<VowelsDemoPage productSlug="cezanne-zip-up-jacket" />} />
+          <Route path="/vowels/overdyed-painter-pants" element={<VowelsDemoPage productSlug="overdyed-painter-pants" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
