@@ -210,10 +210,6 @@ const VowelsDemoPage: React.FC<VowelsDemoPageProps> = ({ productSlug }) => {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setAnimationActive(true), 600);
-    return () => clearTimeout(timer);
-  }, []);
 
   const updateCursorPosition = useCallback(() => {
     let targetEl: HTMLElement | null = null;
@@ -303,6 +299,7 @@ const VowelsDemoPage: React.FC<VowelsDemoPageProps> = ({ productSlug }) => {
             {/* AI TRY ON Button */}
             <button
               ref={tryOnButtonRef}
+              onClick={() => { if (!animationActive) setAnimationActive(true); }}
               className={`w-full bg-[#444833] text-white py-4 px-6 text-[12px] tracking-[0.15em] font-medium flex items-center justify-center gap-3 mb-1 transition-all shadow-[0_0_20px_rgba(68,72,51,0.4)] ${
                 animState === 'click_button' ? 'scale-95 shadow-[0_0_35px_rgba(68,72,51,0.7)]' : ''
               }`}
