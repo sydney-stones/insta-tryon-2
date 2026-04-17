@@ -28,6 +28,8 @@ interface DemoProduct {
   bodySrc: string;
   afterSrc: string;
   description: string;
+  colourLabel: string;
+  swatchColor: string;
 }
 
 export const KHANUMS_PRODUCTS: Record<string, DemoProduct> = {
@@ -47,6 +49,47 @@ export const KHANUMS_PRODUCTS: Record<string, DemoProduct> = {
     bodySrc: '/result-images/siennaneutral--new.JPG',
     afterSrc: '/result-images/khanums2-nb2-2k-tryon.png',
     description: 'The Kodil Dress in sage green. A considered silhouette in a muted, earthy tone — effortless dressing with real intention.',
+    colourLabel: 'Sage Green',
+    swatchColor: '#8B9E7A',
+  },
+  'krace-dress-champagne': {
+    id: 71,
+    name: 'Krace Dress - Champagne',
+    brand: 'KHANUMS',
+    price: '£290.00',
+    category: 'Dresses',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    gallerySrcs: [
+      '/result-images/Khanums.webp',
+      '/result-images/Khanums2 2.webp',
+      '/result-images/Khanums3 2.webp',
+      '/result-images/Khanums4.webp',
+    ],
+    faceSrc: '/result-images/siennaface-new.png',
+    bodySrc: '/result-images/siennaneutral--new.JPG',
+    afterSrc: '/result-images/Khanums-nb2-2k-tryon.png',
+    description: 'The Krace Dress in champagne. A luminous, elevated tone that moves with you — understated glamour without trying too hard.',
+    colourLabel: 'Champagne',
+    swatchColor: '#E8D5A3',
+  },
+  'kasir-dress-grey': {
+    id: 72,
+    name: 'Kasir Dress - Grey',
+    brand: 'KHANUMS',
+    price: '£290.00',
+    category: 'Dresses',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    gallerySrcs: [
+      '/result-images/Khanums5.webp',
+      '/result-images/Khanums7.webp',
+      '/result-images/Khanums8.webp',
+    ],
+    faceSrc: '/result-images/siennaface-new.png',
+    bodySrc: '/result-images/siennaneutral--new.JPG',
+    afterSrc: '/result-images/Khanums8-nb2-2k-tryon.png',
+    description: 'The Kasir Dress in grey. Clean, minimal, and considered — the kind of piece that gets worn and worn.',
+    colourLabel: 'Grey',
+    swatchColor: '#9CA3AF',
   },
 };
 
@@ -493,8 +536,8 @@ const KhanumsDemoPage: React.FC<KhanumsDemoPageProps> = ({ productSlug }) => {
                       <span className="animate-bounce" style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1E2939', animationDelay: '300ms', display: 'inline-block' }} />
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '0 8px', height: '29.83px', backgroundColor: '#F3F4F6', border: '1px solid #E5E7EB', justifyContent: 'center' }}>
-                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#8B9E7A', border: '1px solid #ccc', flexShrink: 0 }} />
-                      <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Sage Green</span>
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: product.swatchColor, border: '1px solid #ccc', flexShrink: 0 }} />
+                      <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>{product.colourLabel}</span>
                       <div style={{ width: '1px', height: '16px', backgroundColor: '#D1D5DC' }} />
                       <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {selectedSize}</span>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>

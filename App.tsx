@@ -135,6 +135,8 @@ const App: React.FC = () => {
           <Route path="/vowels/cezanne-zip-up-jacket" element={<VowelsDemoPage productSlug="cezanne-zip-up-jacket" />} />
           <Route path="/vowels/overdyed-painter-pants" element={<VowelsDemoPage productSlug="overdyed-painter-pants" />} />
           <Route path="/khanums/kodil-dress-sage-green" element={<KhanumsDemoPage productSlug="kodil-dress-sage-green" />} />
+          <Route path="/khanums/krace-dress-champagne" element={<KhanumsDemoPage productSlug="krace-dress-champagne" />} />
+          <Route path="/khanums/kasir-dress-grey" element={<KhanumsDemoPage productSlug="kasir-dress-grey" />} />
           <Route path="/mr-button/grey-shacket" element={<MrButtonDemoPage productSlug="grey-shacket" />} />
           <Route path="/mr-button/navy-polo-tshirt" element={<MrButtonDemoPage productSlug="navy-polo-tshirt" />} />
           <Route path="/mr-button/moonless-night-trouser" element={<MrButtonDemoPage productSlug="moonless-night-trouser" />} />
