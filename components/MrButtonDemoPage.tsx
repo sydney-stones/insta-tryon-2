@@ -30,6 +30,8 @@ interface DemoProduct {
   bodySrc: string;
   afterSrc: string;
   description: string;
+  colourLabel: string;
+  swatchColor: string;
 }
 
 export const MR_BUTTON_PRODUCTS: Record<string, DemoProduct> = {
@@ -51,6 +53,71 @@ export const MR_BUTTON_PRODUCTS: Record<string, DemoProduct> = {
     bodySrc: '/result-images/sydbody Background Removed.png',
     afterSrc: '/result-images/mrbutton2-nb2-2k-tryon.png',
     description: 'A clean, versatile shacket in a classic grey. Regular fit, button-through front — the kind of layering piece that works across every occasion.',
+    colourLabel: 'Grey',
+    swatchColor: '#9CA3AF',
+  },
+  'navy-polo-tshirt': {
+    id: 81,
+    name: 'Navy Color Block Slim Fit Polo Collar Flat Knit T-Shirt',
+    sku: 'TSH-NAVY-POLO-S',
+    brand: 'Mr Button',
+    price: '₹1,399',
+    originalPrice: '₹1,999',
+    category: 'Shirts',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    gallerySrcs: [
+      '/result-images/mrbutton4.webp',
+      '/result-images/mrbutton5.webp',
+      '/result-images/mrbutton6.webp',
+    ],
+    faceSrc: '/result-images/IMG_8175.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
+    afterSrc: '/result-images/mrbutton4-nb2-2k-tryon.png',
+    description: 'A slim-fit polo collar knit in a navy colour block. Clean lines, textured fabric — a step up from a plain tee without the effort.',
+    colourLabel: 'Navy',
+    swatchColor: '#1E3A5F',
+  },
+  'moonless-night-trouser': {
+    id: 82,
+    name: 'Moonless Night Trouser',
+    sku: 'TRS-MOONLESS-S',
+    brand: 'Mr Button',
+    price: '₹1,607',
+    originalPrice: '₹2,295',
+    category: 'Trousers',
+    sizes: ['28', '30', '32', '34', '36'],
+    gallerySrcs: [
+      '/result-images/mrbutton7.webp',
+      '/result-images/mrbutton8.webp',
+      '/result-images/mrbutton9.webp',
+    ],
+    faceSrc: '/result-images/IMG_8175.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
+    afterSrc: '/result-images/mrbutton7-nb2-2k-tryon.png',
+    description: 'Tailored trousers in a deep moonless night shade. Versatile enough for a long day, sharp enough for the evening.',
+    colourLabel: 'Moonless Night',
+    swatchColor: '#1A1A2E',
+  },
+  'snowbound-blazer': {
+    id: 83,
+    name: 'Snowbound Blazer',
+    sku: 'BLZ-SNOWBOUND-S',
+    brand: 'Mr Button',
+    price: '₹3,223',
+    originalPrice: '₹4,604',
+    category: 'Jackets',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    gallerySrcs: [
+      '/result-images/mrbutton10.webp',
+      '/result-images/mrbutton11.webp',
+      '/result-images/mrbutton12.webp',
+    ],
+    faceSrc: '/result-images/IMG_8175.jpeg',
+    bodySrc: '/result-images/sydbody Background Removed.png',
+    afterSrc: '/result-images/mrbutton10-nb2-2k-tryon.png',
+    description: 'A crisp snowbound blazer that does the work for you. Structured enough to be polished, relaxed enough to wear without overthinking it.',
+    colourLabel: 'Snowbound',
+    swatchColor: '#F0EDE8',
   },
 };
 
@@ -516,8 +583,8 @@ const MrButtonDemoPage: React.FC<MrButtonDemoPageProps> = ({ productSlug }) => {
                       <span className="animate-bounce" style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1E2939', animationDelay: '300ms', display: 'inline-block' }} />
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '0 8px', height: '29.83px', backgroundColor: '#F3F4F6', border: '1px solid #E5E7EB', justifyContent: 'center' }}>
-                      <div style={{ width: '12px', height: '12px', borderRadius: '2px', backgroundColor: '#9CA3AF', border: '1px solid #ccc', flexShrink: 0 }} />
-                      <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Grey</span>
+                      <div style={{ width: '12px', height: '12px', borderRadius: '2px', backgroundColor: product.swatchColor, border: '1px solid #ccc', flexShrink: 0 }} />
+                      <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>{product.colourLabel}</span>
                       <div style={{ width: '1px', height: '16px', backgroundColor: '#D1D5DC' }} />
                       <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {selectedSize}</span>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>

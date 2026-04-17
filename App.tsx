@@ -136,6 +136,9 @@ const App: React.FC = () => {
           <Route path="/vowels/overdyed-painter-pants" element={<VowelsDemoPage productSlug="overdyed-painter-pants" />} />
           <Route path="/khanums/kodil-dress-sage-green" element={<KhanumsDemoPage productSlug="kodil-dress-sage-green" />} />
           <Route path="/mr-button/grey-shacket" element={<MrButtonDemoPage productSlug="grey-shacket" />} />
+          <Route path="/mr-button/navy-polo-tshirt" element={<MrButtonDemoPage productSlug="navy-polo-tshirt" />} />
+          <Route path="/mr-button/moonless-night-trouser" element={<MrButtonDemoPage productSlug="moonless-night-trouser" />} />
+          <Route path="/mr-button/snowbound-blazer" element={<MrButtonDemoPage productSlug="snowbound-blazer" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
