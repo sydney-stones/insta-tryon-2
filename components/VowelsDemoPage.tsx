@@ -61,7 +61,7 @@ export const VOWELS_PRODUCTS: Record<string, DemoProduct> = {
       '/result-images/vowels3.jpg',
     ],
     faceSrc: '/result-images/siennaface-new.png',
-    bodySrc: '/result-images/siennaneutral--new.JPG',
+    bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/vowels1-nb2-2k-tryon.png',
     description: 'Relaxed painter pants in a rich overdyed finish. Generous cut, functional pockets, and a lived-in feel that only improves with wear.',
   },

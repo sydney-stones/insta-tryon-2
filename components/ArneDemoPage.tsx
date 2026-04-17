@@ -57,7 +57,7 @@ export const ARNE_PRODUCTS: Record<string, DemoProduct> = {
     productSrc: '/result-images/arnewomenswearproduct.png',
     productLabel: 'Product: Arne Womenswear',
     faceSrc: '/result-images/siennaface-new.png',
-    bodySrc: '/result-images/siennaneutral--new.JPG',
+    bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/arnewomenswearresult.png',
     afterLabel: 'Try-On Result',
     description: 'Elegant womenswear from Arne. Thoughtfully constructed with premium fabrics for a look that moves with you.',
