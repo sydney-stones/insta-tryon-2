@@ -1,22 +1,20 @@
 import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    const geminiApiKey = env.VITE_GEMINI_API_KEY || env.GEMINI_API_KEY;
-    return {
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(geminiApiKey),
-        'process.env.GEMINI_API_KEY': JSON.stringify(geminiApiKey),
-        'import.meta.env.GEMINI_API_KEY': JSON.stringify(geminiApiKey),
-        'import.meta.env.VITE_GEMINI_API_KEY': JSON.stringify(geminiApiKey)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
-});
+// NOTE: the previous version of this file used `define` to inject the
+// Gemini API key into the client JS bundle. That is what caused NEWKEY
+// to leak (see Leak_Vector_Forensics.md). DO NOT reintroduce a `define`
+// block for API keys, passwords, or any other secret.
+//
+// Anything the browser needs must now go through a serverless function
+// in /api/* where process.env.* stays on the server.
+
+export default defineConfig(() => ({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '.'),
+    },
+  },
+}));

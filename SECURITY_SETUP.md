@@ -1,151 +1,114 @@
 # Security Setup Guide
 
-## Overview
+> Rewritten 19 April 2026 after a `VITE_GEMINI_API_KEY` leak incident,
+> then rewritten again the same day when the Gemini integration was
+> removed entirely from the marketing site. Live try-on demos now run
+> on the Shopify demo store; this site only ships static, pre-rendered
+> try-on content. See `Leak_Vector_Forensics.md` (ops folder) for the
+> leak write-up.
 
-This application now has secure API key handling and protected admin features. Follow this guide to set up your environment securely.
+## What lives where now
 
-## Environment Variables Setup
+The marketing site no longer calls any AI provider. The only env vars
+that exist are for the admin gate and for Redis-backed analytics:
 
-### 1. Create a `.env` file
+| Secret           | Where it lives           | Who uses it                     |
+| ---------------- | ------------------------ | ------------------------------- |
+| `ADMIN_PASSWORD` | Vercel env (server-only) | `/api/admin-login.ts`           |
+| `ADMIN_SECRET`   | Vercel env (server-only) | `/api/_adminAuth.ts` (signing)  |
+| `REDIS_URL`      | Vercel env (server-only) | `/api/analytics.ts`             |
 
-Create a `.env` file in the root directory (this file is gitignored and will NOT be committed):
+No Gemini / Google AI keys are required — and none should be added
+back to this repo. If you need a live AI-powered demo, do it on the
+Shopify demo store.
 
-```bash
-# Copy the example file
-cp .env.example .env
-```
+## Required Vercel environment variables
 
-### 2. Configure Your Secrets
+In Vercel → Project → Settings → Environment Variables:
 
-Edit the `.env` file and add your actual values:
+| Name             | Example value                                                     | Notes |
+| ---------------- | ----------------------------------------------------------------- | ----- |
+| `ADMIN_PASSWORD` | strong random password                                            | No `VITE_` prefix. |
+| `ADMIN_SECRET`   | 64 hex chars from `openssl rand -hex 32`                          | Used to sign admin session tokens. Must be ≥32 chars. |
+| `REDIS_URL`      | `rediss://default:…@…upstash.io:6379`                             | From Redis Cloud / Upstash. |
+
+**Do NOT** add any `VITE_*` secrets. Anything starting with `VITE_` is
+baked into the public JS bundle and visible to every visitor.
+
+## Local development
+
+Create `.env` in the project root (gitignored):
 
 ```env
-# Gemini API Key - Get from https://aistudio.google.com/app/apikey
-VITE_GEMINI_API_KEY=your_actual_gemini_api_key_here
-
-# Admin Password - Use a strong, unique password
-VITE_ADMIN_PASSWORD=your_secure_admin_password_here
+ADMIN_PASSWORD=your_secure_admin_password_here
+ADMIN_SECRET=paste_the_output_of_openssl_rand_hex_32_here
+REDIS_URL=rediss://…
 ```
 
-**IMPORTANT SECURITY NOTES:**
-- ⚠️ NEVER commit the `.env` file to version control
-- ⚠️ NEVER share your API keys or admin password
-- ⚠️ The `.env` file is already in `.gitignore` to prevent accidental commits
-- ✅ Use a strong, unique password for admin access
-- ✅ Rotate your API keys and passwords regularly
+`vite dev` does not run the `/api/*` functions — for local dev with
+the serverless endpoints, use `vercel dev` instead:
 
-## Admin Panel Features
+```bash
+npm install -g vercel
+vercel dev
+```
 
-### Accessing the Admin Panel
+## Admin panel (`/admin`)
 
-1. Navigate to `/admin` route
-2. Enter the admin password (from `VITE_ADMIN_PASSWORD`)
-3. Access admin features:
-   - **Custom Try-On Tool**: Upload custom selfie and outfit images
-   - **Daily Limit**: Limited to 5 try-ons per day (resets at midnight)
-   - **Product Management**: Add/edit/delete outfits
-   - **Analytics**: View usage statistics
+1. Navigate to `/admin`.
+2. Enter the admin password — the browser sends it to `/api/admin-login`.
+3. On success, the server returns an HMAC-signed token (8-hour TTL)
+   which the browser stores in `sessionStorage` under `adminToken`.
+4. The token is validated client-side on page refresh (`exp` check).
+   No server endpoint currently requires the token, because the admin
+   dashboard only does client-side work (editing a `localStorage`
+   wardrobe, viewing public analytics). The signing infrastructure is
+   retained so any future admin-only API route can enforce it.
+5. Setting `sessionStorage.adminAuth = 'true'` (the old client-only
+   auth flag) no longer does anything — the page reads `adminToken`.
 
-### Custom Try-On Tool
+## Verifying there are no client-bundled keys
 
-The admin panel includes a custom try-on tool with:
-- File upload for selfie images
-- File upload for outfit images
-- Daily limit of 5 uses (tracked in localStorage)
-- Progress indicators during processing
-- Download functionality for results
+After deploying, run from a private window:
 
-## Regular User Features
+```bash
+curl -sL https://www.renderedfits.com/ \
+  | grep -oE 'assets/index-[^"]+\.js' \
+  | head -1
+# → copy that path, then:
+curl -s https://www.renderedfits.com/assets/index-XXXX.js \
+  | grep -oE 'AIza[A-Za-z0-9_-]{35}' | head
+```
 
-- **Unlimited Try-Ons**: Regular users have no daily limits (999,999/day)
-- **Product-Based Try-On**: Try on pre-loaded outfits from the catalog
-- **Model Photo Reuse**: Generated model photos are saved for the day
+Expected: zero hits. If any `AIza…` string shows up in the bundle,
+something has been reintroduced incorrectly — do not deploy.
 
-## API Key Security
+## Rotating the admin password
 
-### Best Practices
+1. Update Vercel env var `ADMIN_PASSWORD` → redeploy.
+2. Any currently-issued admin tokens remain valid until `exp` (8h). If
+   you need to immediately invalidate existing sessions as well, rotate
+   `ADMIN_SECRET` at the same time — that invalidates every token on
+   next redeploy.
 
-1. **Never expose API keys in client-side code**: While Vite environment variables starting with `VITE_` are exposed to the client, they are only visible to users who inspect the code. For production, consider:
-   - Using a backend proxy to handle API calls
-   - Implementing rate limiting on the server
-   - Using Google Cloud API key restrictions
+## What still goes in `VITE_*`
 
-2. **API Key Restrictions** (Recommended for Production):
-   - Go to [Google Cloud Console](https://console.cloud.google.com/)
-   - Navigate to APIs & Services > Credentials
-   - Select your API key
-   - Add restrictions:
-     - **Application restrictions**: HTTP referrers (websites)
-     - Add your website URL (e.g., `https://yourdomain.com/*`)
-     - **API restrictions**: Limit to Generative Language API only
+Only non-secret configuration. Examples:
 
-3. **Monitor Usage**:
-   - Check your [Google AI Studio](https://aistudio.google.com/) usage regularly
-   - Set up usage alerts if available
-   - Monitor for unusual spikes in API calls
+- Feature flags: `VITE_FEATURE_NEW_UI=1`
+- Public URLs: `VITE_PUBLIC_CDN=https://cdn.renderedfits.com`
+- Analytics IDs that are intended to be public.
 
-## Production Deployment
-
-### Before deploying to production:
-
-1. **Set Environment Variables** on your hosting platform:
-   ```
-   VITE_GEMINI_API_KEY=your_production_api_key
-   VITE_ADMIN_PASSWORD=your_production_admin_password
-   ```
-
-2. **Verify .gitignore** includes:
-   ```
-   .env
-   .env.local
-   .env.production
-   ```
-
-3. **Test the build**:
-   ```bash
-   npm run build
-   npm run preview
-   ```
-
-4. **Deploy** only the `dist` folder (never deploy source with `.env` file)
+If in doubt: assume anyone on the internet can read it. If that's a
+problem, don't use `VITE_`.
 
 ## Troubleshooting
 
-### API Key Issues
+### `/api/admin-login` returns 500 "missing ADMIN_PASSWORD"
+`ADMIN_PASSWORD` is not set in Vercel for the environment you're using.
 
-If you see "API key is not configured" warning:
-1. Check that `.env` file exists
-2. Verify `VITE_GEMINI_API_KEY` is set correctly
-3. Restart the dev server after changing `.env`
-4. Check browser console for specific errors
+### `/api/admin-login` returns 500 "ADMIN_SECRET must be set and at least 32 chars long"
+Set `ADMIN_SECRET` to the output of `openssl rand -hex 32` and redeploy.
 
-### Admin Password Issues
-
-If admin login fails:
-1. Verify `VITE_ADMIN_PASSWORD` is set in `.env`
-2. Clear browser session storage: `sessionStorage.clear()`
-3. Restart dev server
-
-## Daily Limits
-
-### Admin Panel Custom Try-On
-- **Limit**: 5 uses per day
-- **Storage**: localStorage (`customTryOnUsage` key)
-- **Reset**: Automatic at midnight (local time)
-- **Clear manually**:
-  ```javascript
-  localStorage.removeItem('customTryOnUsage')
-  ```
-
-### Regular User Try-On
-- **Limit**: Effectively unlimited (999,999/day)
-- **Storage**: localStorage (`virtualTryOnUsage` key)
-- **Model Photo**: Saved for 24 hours to avoid regeneration
-
-## Support
-
-For issues or questions:
-1. Check this guide first
-2. Verify environment variables are set correctly
-3. Check browser console for errors
-4. Review the API key restrictions in Google Cloud Console
+### Admin token expired
+Normal — 8-hour TTL. Log in again.

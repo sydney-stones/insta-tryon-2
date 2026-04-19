@@ -2,17 +2,27 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Rendered Fits - Virtual Try-On Platform
+# Rendered Fits — Marketing Site
 
-A cutting-edge virtual try-on platform showcasing high-end fashion brands including Emilia Wickstead, ERDEM, Manolo Blahnik, Really Wild, and Uniqlo.
+Marketing site for Rendered Fits, a virtual try-on platform for fashion
+brands (Emilia Wickstead, ERDEM, Manolo Blahnik, Really Wild, Uniqlo, etc.).
 
-**Live Site:** [https://renderedfits.com](https://renderedfits.com)
+**Live site:** [https://renderedfits.com](https://renderedfits.com)
 
-## 🚀 Quick Deployment
+## What this repo is (and isn't)
 
-**Having issues with a blank Vercel deployment?** See [QUICK_START.md](QUICK_START.md)
+This is the **marketing site only**. It showcases pre-rendered try-on
+examples to prospective merchants. Product pages use static imagery and
+videos — there is no live AI try-on running on this domain.
 
-**Full deployment instructions:** See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+Live, interactive try-on demos run on the separate **Shopify demo store**
+(configured via `DSAPIKEY`). If a merchant wants a live demo, their
+products get added to the Shopify store rather than being wired into
+this codebase.
+
+As of 19 April 2026 the Gemini API integration has been removed from
+this repo. See [SECURITY_SETUP.md](SECURITY_SETUP.md) for the context
+(a client-side API key leak triggered the refactor / removal).
 
 ## 💻 Run Locally
 
@@ -29,40 +39,53 @@ A cutting-edge virtual try-on platform showcasing high-end fashion brands includ
    npm install
    ```
 
-3. Create a `.env` file and add your Gemini API key:
-   ```bash
-   echo "VITE_GEMINI_API_KEY=your_api_key_here" > .env
-   ```
-   Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+3. (Optional) create a `.env` file if you need to run the admin gate
+   locally — see [SECURITY_SETUP.md](SECURITY_SETUP.md).
 
-4. Run the development server:
+4. Run the dev server:
    ```bash
    npm run dev
    ```
 
 5. Open [http://localhost:5173](http://localhost:5173)
 
+For local development with the `/api/*` serverless functions, use
+`vercel dev` instead of `npm run dev`.
+
 ## 🔐 Security
 
-- **Never commit `.env` files** - they are protected in `.gitignore`
-- **API keys are stored in Vercel environment variables** for production
-- **All connections use HTTPS** via Vercel
+- **Never commit `.env` files** — they are protected in `.gitignore`.
+- **Admin password lives in Vercel env vars**, never in the client bundle.
+- See [SECURITY_SETUP.md](SECURITY_SETUP.md) for the full setup + the
+  post-leak rotation procedure.
 
 ## 📦 Tech Stack
 
 - **Frontend:** React 19, TypeScript, Tailwind CSS
-- **Build Tool:** Vite
-- **AI:** Google Gemini 2.5 Flash (Image Generation)
+- **Build tool:** Vite
 - **Hosting:** Vercel
+- **Analytics store:** Redis Cloud (via `/api/analytics`)
 - **Domain:** renderedfits.com
 
 ## 🎨 Features
 
-- Virtual try-on with AI-powered image generation
-- Interactive wardrobe with multiple fashion brands
-- Pose variation generation
-- Responsive design
-- Product pages with pricing and shopping links
+- Pre-rendered virtual try-on showcase across ~20 fashion brands
+- Brand-specific demo pages (Cernucci, Allude, ERDEM, Mr Button, etc.)
+- Admin dashboard for editing the wardrobe + viewing analytics
+- Blog and legal pages
+
+## Key docs
+
+- [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) — full deploy instructions
+- [SECURITY_SETUP.md](SECURITY_SETUP.md) — env vars and admin auth
+- [SHOPIFY_MIGRATION_GUIDE.md](SHOPIFY_MIGRATION_GUIDE.md) — the plan for
+  routing live demos to the Shopify store
+- [SEO_OPTIMIZATION_GUIDE.md](SEO_OPTIMIZATION_GUIDE.md) — SEO setup
+- [REDIS_SETUP_COMPLETE.md](REDIS_SETUP_COMPLETE.md) — analytics backend
+- [COMPLETE_ANALYTICS_GUIDE.md](COMPLETE_ANALYTICS_GUIDE.md) — analytics setup
+- [GODADDY_DNS_SETUP.md](GODADDY_DNS_SETUP.md) / [DNS_QUICK_REFERENCE.md](DNS_QUICK_REFERENCE.md) — domain config
+- [FAVICON_GUIDE.md](FAVICON_GUIDE.md) — favicons
+- [ERDEM_PRODUCT_PAGE_FINAL.md](ERDEM_PRODUCT_PAGE_FINAL.md) — ERDEM pitch page notes
 
 ## 📝 License
 

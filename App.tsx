@@ -13,7 +13,6 @@ import DemoProductPage from './components/DemoProductPage';
 import CampbellsOfBeaulyProductPage from './components/CampbellsOfBeaulyProductPage';
 import MaleDemoPage from './components/MaleDemoPage';
 import FarlowsMenProductPage from './components/FarlowsMenProductPage';
-import VirtualTryOnModal from './components/VirtualTryOnModal';
 import AdminPage from './components/AdminPage';
 import WaitlistPage from './components/WaitlistPage';
 import BrandWaitlistPage from './components/BrandWaitlistPage';
@@ -34,8 +33,6 @@ import TbcoDemoPage from './components/TbcoDemoPage';
 import HollandHollandDemoPage from './components/HollandHollandDemoPage';
 import CernucciDemoPage from './components/CernucciDemoPage';
 import AlludeDemoPage from './components/AlludeDemoPage';
-import CernucciLivePage from './components/CernucciLivePage';
-import AlludeLivePage from './components/AlludeLivePage';
 import BrownieDemoPage from './components/BrownieDemoPage';
 import VowelsDemoPage from './components/VowelsDemoPage';
 import KhanumsDemoPage from './components/KhanumsDemoPage';
@@ -44,8 +41,6 @@ import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
 const App: React.FC = () => {
-  const [isTryOnModalOpen, setIsTryOnModalOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<WardrobeItem | null>(null);
   const [wardrobe, setWardrobe] = useState<WardrobeItem[]>(defaultWardrobe);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -64,15 +59,11 @@ const App: React.FC = () => {
     }
   }, []);
 
-  const handleTryOnClick = (product: WardrobeItem) => {
-    setSelectedProduct(product);
-    setIsTryOnModalOpen(true);
-  };
-
-  const handleCloseTryOnModal = () => {
-    setIsTryOnModalOpen(false);
-    // Don't clear selectedProduct immediately to allow for exit animation
-    setTimeout(() => setSelectedProduct(null), 300);
+  // The marketing site no longer runs a live Gemini-powered virtual try-on.
+  // Live demos run on the Shopify demo store; here we route "Try On" clicks
+  // to the brand waitlist so prospective merchants can get in touch.
+  const handleTryOnClick = (_product: WardrobeItem) => {
+    window.location.assign('/brand-waitlist');
   };
 
   const wardrobeFolders = getWardrobeFolders(wardrobe);
@@ -83,7 +74,7 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-white">
         <Routes>
           {/* Admin Route - Hidden from navigation */}
-          <Route path="/admin" element={<AdminPage products={wardrobe} />} />
+          <Route path="/admin" element={<AdminPage />} />
 
           {/* Contact Page - No header */}
           <Route path="/contact" element={<ContactPage />} />
@@ -122,14 +113,6 @@ const App: React.FC = () => {
           <Route path="/allude/white-jumper" element={<AlludeDemoPage productSlug="white-jumper" />} />
           <Route path="/allude/yellow-jumper" element={<AlludeDemoPage productSlug="yellow-jumper" />} />
           <Route path="/allude/pink-jumper" element={<AlludeDemoPage productSlug="pink-jumper" />} />
-          <Route path="/cernucci/live/gold-chain" element={<CernucciLivePage productSlug="gold-chain" />} />
-          <Route path="/cernucci/live/mens-tracksuit" element={<CernucciLivePage productSlug="mens-tracksuit" />} />
-          <Route path="/cernucci/live/pendant" element={<CernucciLivePage productSlug="pendant" />} />
-          <Route path="/cernucci/live/stud-earring" element={<CernucciLivePage productSlug="stud-earring" />} />
-          <Route path="/cernucci/live/womens-casual" element={<CernucciLivePage productSlug="womens-casual" />} />
-          <Route path="/cernucci/live/womens-yellow" element={<CernucciLivePage productSlug="womens-yellow" />} />
-          <Route path="/allude/live/rose-top" element={<AlludeLivePage productSlug="rose-top" />} />
-          <Route path="/allude/live/grau-jacket" element={<AlludeLivePage productSlug="grau-jacket" />} />
           <Route path="/brownie/multi-ruffle-skirt" element={<BrownieDemoPage productSlug="multi-ruffle-skirt" />} />
           <Route path="/brownie/satin-jacquard-top" element={<BrownieDemoPage productSlug="satin-jacquard-top" />} />
           <Route path="/vowels/cezanne-zip-up-jacket" element={<VowelsDemoPage productSlug="cezanne-zip-up-jacket" />} />
@@ -203,12 +186,6 @@ const App: React.FC = () => {
                   />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
-
-                <VirtualTryOnModal
-                  isOpen={isTryOnModalOpen}
-                  onClose={handleCloseTryOnModal}
-                  product={selectedProduct}
-                />
               </>
             }
           />
