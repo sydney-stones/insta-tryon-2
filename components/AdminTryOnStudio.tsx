@@ -184,7 +184,9 @@ interface AdminTryOnStudioProps {
 const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
   const [faceImage, setFaceImage] = useState<string | null>(null);
   const [bodyImage, setBodyImage] = useState<string | null>(null);
-  const [garmentImages, setGarmentImages] = useState<string[]>([]);
+  const [garmentImages, setGarmentImages] = useState<
+    Array<{ dataUrl: string; name: string }>
+  >([]);
   const [prompt, setPrompt] = useState(DEFAULT_PROMPT);
   const [resolution, setResolution] = useState<string>('2k');
   const [isGenerating, setIsGenerating] = useState(false);
@@ -199,7 +201,7 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
     () =>
       !!faceImage &&
       !!bodyImage &&
-      garmentImages.filter(Boolean).length > 0 &&
+      garmentImages.length > 0 &&
       prompt.trim().length > 0 &&
       !isGenerating,
     [faceImage, bodyImage, garmentImages, prompt, isGenerating]
@@ -223,17 +225,9 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
     }
   };
 
-  const handleGarmentSlot = useCallback(
-    (index: number) => (dataUrl: string | null) => {
-      setGarmentImages((prev) => {
-        const next = [...prev];
-        if (dataUrl === null) {
-          next.splice(index, 1);
-        } else {
-          next[index] = dataUrl;
-        }
-        return next;
-      });
+  const removeGarment = useCallback(
+    (index: number) => () => {
+      setGarmentImages((prev) => prev.filter((_, i) => i !== index));
     },
     []
   );
@@ -241,16 +235,16 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
   const handleMultiGarmentUpload = async (files: FileList | null) => {
     if (!files || files.length === 0) return;
     setError(null);
-    const remaining = MAX_GARMENTS - garmentImages.filter(Boolean).length;
+    const remaining = MAX_GARMENTS - garmentImages.length;
     const filesToUse = Array.from(files).slice(0, remaining);
     try {
-      const dataUrls = await Promise.all(
-        filesToUse.map((f) => fileToDownscaledDataUrl(f))
+      const entries = await Promise.all(
+        filesToUse.map(async (f) => ({
+          dataUrl: await fileToDownscaledDataUrl(f),
+          name: f.name,
+        }))
       );
-      setGarmentImages((prev) => {
-        const cleaned = prev.filter(Boolean);
-        return [...cleaned, ...dataUrls];
-      });
+      setGarmentImages((prev) => [...prev, ...entries]);
     } catch (e: any) {
       setError(e?.message || 'Could not load one or more garment images');
     } finally {
@@ -270,7 +264,7 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
         );
       }
 
-      const garmentPayload = garmentImages.filter((g) => g && g.length > 0);
+      const garmentPayload = garmentImages.map((g) => g.dataUrl);
       if (!faceImage || !bodyImage || garmentPayload.length === 0) {
         throw new Error('Face, body, and at least one garment image are required.');
       }
@@ -317,13 +311,18 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
   const downloadResult = () => {
     if (!result) return;
     const ext = result.mimeType.split('/')[1] || 'png';
+    const stems = garmentImages
+      .map((g) => g.name.replace(/\.[^/.]+$/, '').replace(/[^A-Za-z0-9_-]+/g, '-'))
+      .map((s) => s.replace(/^-+|-+$/g, ''))
+      .filter(Boolean);
+    const joined = stems.join('_').slice(0, 120) || 'tryon';
     const a = document.createElement('a');
     a.href = result.image;
-    a.download = `tryon-${Date.now()}.${ext}`;
+    a.download = `${joined}.${ext}`;
     a.click();
   };
 
-  const garmentCount = garmentImages.filter(Boolean).length;
+  const garmentCount = garmentImages.length;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -421,14 +420,34 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
               </div>
             ) : (
               <div className="grid grid-cols-2 gap-3">
-                {garmentImages.filter(Boolean).map((img, i) => (
-                  <ImageSlot
-                    key={i}
-                    label={`Garment ${i + 1}`}
-                    value={img}
-                    onChange={handleGarmentSlot(i)}
-                    required={i === 0}
-                  />
+                {garmentImages.map((g, i) => (
+                  <div
+                    key={`${g.name}-${i}`}
+                    className="border border-gray-300 rounded-lg p-3 bg-white"
+                  >
+                    <div className="flex items-center justify-between mb-2 gap-2">
+                      <span
+                        className="text-sm font-medium text-gray-900 truncate"
+                        title={g.name}
+                      >
+                        {g.name}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={removeGarment(i)}
+                        className="text-xs text-red-600 hover:text-red-700 shrink-0"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                    <div className="aspect-[3/4] rounded-md bg-gray-100 overflow-hidden flex items-center justify-center">
+                      <img
+                        src={g.dataUrl}
+                        alt={g.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
