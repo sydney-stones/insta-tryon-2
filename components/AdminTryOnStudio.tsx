@@ -18,11 +18,25 @@ const ADMIN_TOKEN_STORAGE_KEY = 'adminToken';
 const MAX_GARMENTS = 6;
 const MAX_IMAGE_EDGE_PX = 1600; // client-side downscale ceiling
 const RESOLUTIONS = [
-  { value: '1024x1024', label: 'Square · 1024×1024' },
-  { value: '1024x1536', label: 'Portrait · 1024×1536' },
-  { value: '1536x1024', label: 'Landscape · 1536×1024' },
-  { value: '2048x2048', label: 'Square (large) · 2048×2048' },
+  { value: '1k', label: '1K' },
+  { value: '2k', label: '2K' },
+  { value: '4k', label: '4K' },
 ] as const;
+
+const DEFAULT_PROMPT = `Generate a photorealistic fashion photograph of the person in the customer photos wearing the product from the product images. Where a product image shows the product being worn by a model, use that shot as the direct compositional reference — match its framing, crop, and camera distance exactly. Dress the person in every item shown across the product images, reproducing colours, textures, patterns, logos, and construction exactly. Completely replace all clothing and footwear from the customer photos with the product. Add complementary footwear if none is shown in the product images. For jewellery like earrings, necklaces, bracelets, pendants frame the shot as a close up headshot from the neckline up, showing the item being tried on as the main focus of the image.
+
+Preserve this person's face, skin tone, hair, body shape, and natural expression exactly as they appear — do not idealise, alter, or add a smile.
+
+The pose should feel natural, neutral and confident. Light grey seamless studio backdrop, soft directional studio lighting, 85mm portrait lens, 9:16 aspect ratio. Indistinguishable from a professional e-commerce shoot.`;
+
+const MALE_PRESET = {
+  face: '/result-images/sydface.jpeg',
+  body: '/result-images/sydbody--new.jpeg',
+};
+const FEMALE_PRESET = {
+  face: '/result-images/siennaface-new.png',
+  body: '/result-images/siennabody--new.JPG',
+};
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -52,14 +66,22 @@ async function fileToDownscaledDataUrl(file: File): Promise<string> {
     if (!ctx) throw new Error('Canvas 2D context unavailable');
     ctx.drawImage(img, 0, 0, w, h);
 
-    // JPEG for photographs keeps size small. PNG kept for PNG originals
-    // because they may have alpha / logo transparency we want preserved.
     const mime = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
     const quality = mime === 'image/jpeg' ? 0.92 : undefined;
     return canvas.toDataURL(mime, quality);
   } finally {
     URL.revokeObjectURL(originalUrl);
   }
+}
+
+async function urlToDownscaledDataUrl(url: string): Promise<string> {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Could not load preset image (${res.status})`);
+  const blob = await res.blob();
+  const file = new File([blob], url.split('/').pop() || 'preset', {
+    type: blob.type || 'image/jpeg',
+  });
+  return fileToDownscaledDataUrl(file);
 }
 
 function readAdminToken(): string | null {
@@ -163,23 +185,43 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
   const [faceImage, setFaceImage] = useState<string | null>(null);
   const [bodyImage, setBodyImage] = useState<string | null>(null);
   const [garmentImages, setGarmentImages] = useState<string[]>([]);
-  const [prompt, setPrompt] = useState('');
-  const [resolution, setResolution] = useState<string>('1024x1536');
+  const [prompt, setPrompt] = useState(DEFAULT_PROMPT);
+  const [resolution, setResolution] = useState<string>('2k');
   const [isGenerating, setIsGenerating] = useState(false);
   const [result, setResult] = useState<{ image: string; mimeType: string } | null>(
     null
   );
   const [error, setError] = useState<string | null>(null);
+  const [presetBusy, setPresetBusy] = useState<'male' | 'female' | null>(null);
+  const garmentFileInputRef = useRef<HTMLInputElement>(null);
 
   const canSubmit = useMemo(
     () =>
       !!faceImage &&
       !!bodyImage &&
-      garmentImages.length > 0 &&
+      garmentImages.filter(Boolean).length > 0 &&
       prompt.trim().length > 0 &&
       !isGenerating,
     [faceImage, bodyImage, garmentImages, prompt, isGenerating]
   );
+
+  const applyPreset = async (which: 'male' | 'female') => {
+    setPresetBusy(which);
+    setError(null);
+    try {
+      const preset = which === 'male' ? MALE_PRESET : FEMALE_PRESET;
+      const [face, body] = await Promise.all([
+        urlToDownscaledDataUrl(preset.face),
+        urlToDownscaledDataUrl(preset.body),
+      ]);
+      setFaceImage(face);
+      setBodyImage(body);
+    } catch (e: any) {
+      setError(e?.message || 'Could not load preset');
+    } finally {
+      setPresetBusy(null);
+    }
+  };
 
   const handleGarmentSlot = useCallback(
     (index: number) => (dataUrl: string | null) => {
@@ -196,9 +238,24 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
     []
   );
 
-  const addGarmentSlot = () => {
-    if (garmentImages.length >= MAX_GARMENTS) return;
-    setGarmentImages((prev) => [...prev, '']);
+  const handleMultiGarmentUpload = async (files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    setError(null);
+    const remaining = MAX_GARMENTS - garmentImages.filter(Boolean).length;
+    const filesToUse = Array.from(files).slice(0, remaining);
+    try {
+      const dataUrls = await Promise.all(
+        filesToUse.map((f) => fileToDownscaledDataUrl(f))
+      );
+      setGarmentImages((prev) => {
+        const cleaned = prev.filter(Boolean);
+        return [...cleaned, ...dataUrls];
+      });
+    } catch (e: any) {
+      setError(e?.message || 'Could not load one or more garment images');
+    } finally {
+      if (garmentFileInputRef.current) garmentFileInputRef.current.value = '';
+    }
   };
 
   const handleSubmit = async () => {
@@ -266,12 +323,7 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
     a.click();
   };
 
-  // Always show at least one garment slot in the UI.
-  const garmentSlots = useMemo(() => {
-    const slots = [...garmentImages];
-    if (slots.length === 0) slots.push('');
-    return slots;
-  }, [garmentImages]);
+  const garmentCount = garmentImages.filter(Boolean).length;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -299,6 +351,24 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3">
               Customer reference
             </h2>
+            <div className="flex gap-2 mb-3">
+              <button
+                type="button"
+                onClick={() => applyPreset('male')}
+                disabled={presetBusy !== null}
+                className="flex-1 py-2 px-3 text-sm font-medium border border-gray-300 rounded-md bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {presetBusy === 'male' ? 'Loading…' : 'Male'}
+              </button>
+              <button
+                type="button"
+                onClick={() => applyPreset('female')}
+                disabled={presetBusy !== null}
+                className="flex-1 py-2 px-3 text-sm font-medium border border-gray-300 rounded-md bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {presetBusy === 'female' ? 'Loading…' : 'Female'}
+              </button>
+            </div>
             <div className="grid grid-cols-2 gap-3">
               <ImageSlot
                 label="Face"
@@ -320,28 +390,48 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
           <section>
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
-                Garments ({garmentImages.filter(Boolean).length}/{MAX_GARMENTS})
+                Garments ({garmentCount}/{MAX_GARMENTS})
               </h2>
-              {garmentImages.length < MAX_GARMENTS && (
+              {garmentCount < MAX_GARMENTS && (
                 <button
-                  onClick={addGarmentSlot}
+                  type="button"
+                  onClick={() => garmentFileInputRef.current?.click()}
                   className="text-xs text-gray-900 font-medium hover:underline"
                 >
-                  + Add garment
+                  + Upload images
                 </button>
               )}
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              {garmentSlots.map((img, i) => (
-                <ImageSlot
-                  key={i}
-                  label={`Garment ${i + 1}`}
-                  value={img || null}
-                  onChange={handleGarmentSlot(i)}
-                  required={i === 0}
-                />
-              ))}
-            </div>
+            <input
+              ref={garmentFileInputRef}
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              multiple
+              className="hidden"
+              onChange={(e) => handleMultiGarmentUpload(e.target.files)}
+            />
+            {garmentCount === 0 ? (
+              <div
+                className="aspect-[3/1] rounded-md bg-gray-100 flex items-center justify-center border border-dashed border-gray-300 cursor-pointer"
+                onClick={() => garmentFileInputRef.current?.click()}
+              >
+                <span className="text-xs text-gray-500">
+                  Click to upload one or more garment images
+                </span>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-3">
+                {garmentImages.filter(Boolean).map((img, i) => (
+                  <ImageSlot
+                    key={i}
+                    label={`Garment ${i + 1}`}
+                    value={img}
+                    onChange={handleGarmentSlot(i)}
+                    required={i === 0}
+                  />
+                ))}
+              </div>
+            )}
           </section>
 
           <section>
@@ -355,34 +445,43 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
               id="tryon-prompt"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              placeholder="e.g. Full body shot, natural daylight, Parisian street background, relaxed pose, wearing the dress from garment 1 with the boots from garment 2."
-              rows={5}
+              rows={10}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 text-sm"
             />
-            <p className="text-xs text-gray-500 mt-1">
-              {prompt.length} / 4000
-            </p>
+            <div className="flex items-center justify-between mt-1">
+              <button
+                type="button"
+                onClick={() => setPrompt(DEFAULT_PROMPT)}
+                className="text-xs text-gray-600 hover:text-gray-900 hover:underline"
+              >
+                Reset to default
+              </button>
+              <p className="text-xs text-gray-500">
+                {prompt.length} / 4000
+              </p>
+            </div>
           </section>
 
           <section>
-            <label
-              htmlFor="tryon-resolution"
-              className="block text-sm font-semibold text-gray-900 uppercase tracking-wide mb-2"
-            >
+            <label className="block text-sm font-semibold text-gray-900 uppercase tracking-wide mb-2">
               Output resolution
             </label>
-            <select
-              id="tryon-resolution"
-              value={resolution}
-              onChange={(e) => setResolution(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 text-sm bg-white"
-            >
+            <div className="flex gap-2">
               {RESOLUTIONS.map((r) => (
-                <option key={r.value} value={r.value}>
+                <button
+                  key={r.value}
+                  type="button"
+                  onClick={() => setResolution(r.value)}
+                  className={`flex-1 py-2 px-3 text-sm font-medium border rounded-md transition-colors ${
+                    resolution === r.value
+                      ? 'bg-gray-900 text-white border-gray-900'
+                      : 'bg-white text-gray-900 border-gray-300 hover:bg-gray-50'
+                  }`}
+                >
                   {r.label}
-                </option>
+                </button>
               ))}
-            </select>
+            </div>
           </section>
 
           <div className="pt-2">

@@ -19,7 +19,7 @@
  *     bodyImage:       "data:image/jpeg;base64,..."   (required)
  *     garmentImages:   ["data:image/...;base64,...", ...]  (required, 1-6 items)
  *     prompt:          string                         (required, <= 4000 chars)
- *     resolution:      "1024x1024" | "1024x1536" | "1536x1024"   (optional)
+ *     resolution:      "1k" | "2k" | "4k"                        (optional)
  *   }
  *
  * Response:
@@ -46,18 +46,13 @@ import {
 } from './_adminAuth.js';
 
 // ─── Tunables ────────────────────────────────────────────────────────────────
-const DEFAULT_MODEL = 'gemini-3.1-flash-image';
+const DEFAULT_MODEL = 'gemini-3.1-flash-image-preview';
 const MAX_IMAGE_BYTES = 6 * 1024 * 1024;      // 6MB per image after base64 decode
 const MAX_GARMENTS = 6;
 const MAX_PROMPT_CHARS = 4000;
 const MAX_REQUESTS_PER_MINUTE = 20;
 const ALLOWED_MIME = /^image\/(jpeg|png|webp)$/;
-const ALLOWED_RESOLUTIONS = new Set([
-  '1024x1024',
-  '1024x1536',
-  '1536x1024',
-  '2048x2048',
-]);
+const ALLOWED_RESOLUTIONS = new Set(['1k', '2k', '4k']);
 // ────────────────────────────────────────────────────────────────────────────
 
 interface DecodedImage {
@@ -265,6 +260,7 @@ export default async function handler(
         contents: [{ parts }],
         generationConfig: {
           responseModalities: ['IMAGE'],
+          ...(resolution ? { imageConfig: { imageSize: resolution } } : {}),
         },
       }),
     });
@@ -337,20 +333,8 @@ function safeVerify(token: string) {
   }
 }
 
-function buildPrompt(userPrompt: string, resolution: string | undefined): string {
-  // We pass the extra guidance as natural-language instructions since the
-  // Flash Image model steers primarily via prompt.
-  const header = [
-    'You are generating a photorealistic virtual try-on image for a fashion e-commerce use case.',
-    'Inputs are provided in order: (1) a face reference image of the customer, (2) a full-body reference image of the customer, (3+) one or more garment product images.',
-    'Produce a single image of the SAME person (preserving identity, skin tone, body proportions, and facial features) wearing the garment(s). The garment should match the provided product images faithfully.',
-    'Keep the lighting, pose, and composition natural. Do not include text, watermarks, or logos that were not present in the input garment images.',
-  ];
-  if (resolution) {
-    header.push(
-      `Render the output at approximately ${resolution} pixels, preserving aspect ratio of the requested resolution.`
-    );
-  }
-  header.push('--- User direction follows ---', userPrompt);
-  return header.join('\n\n');
+function buildPrompt(userPrompt: string, _resolution: string | undefined): string {
+  // Resolution is handled via generationConfig.imageConfig.imageSize — no need
+  // to mention it in the prompt.
+  return userPrompt;
 }
