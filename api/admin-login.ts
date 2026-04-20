@@ -17,7 +17,7 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import { signAdminToken } from './_adminAuth';
+import { signAdminToken } from './_adminAuth.js';
 
 // Small artificial delay on failures to soften timing attacks / casual brute force.
 const FAILURE_DELAY_MS = 400;

@@ -5,7 +5,7 @@
 
 /**
  * Standalone Vowels demo pages — pre-made examples for sales calls.
- * Product page layout matches CernucciLivePage (gallery + thumbnails).
+ * Product page layout: gallery + thumbnails (desktop) / swipe carousel (mobile).
  * Animation is scripted (pre-made result), triggered by clicking AI TRY ON.
  * Cézanne Zip-Up Jacket uses Sydney images; Overdyed Painter Pants uses Sienna.
  */

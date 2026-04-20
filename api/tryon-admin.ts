@@ -43,7 +43,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import {
   verifyAdminToken,
   readAdminTokenFromHeaders,
-} from './_adminAuth';
+} from './_adminAuth.js';
 
 // ─── Tunables ────────────────────────────────────────────────────────────────
 const DEFAULT_MODEL = 'gemini-3.1-flash-image';
