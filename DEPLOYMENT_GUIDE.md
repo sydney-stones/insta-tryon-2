@@ -15,13 +15,18 @@ store.
 Set these in Vercel → Project → Settings → Environment Variables for
 Production (and Preview / Development if you use them):
 
-| Name              | Required? | Notes                                                  |
-| ----------------- | --------- | ------------------------------------------------------ |
-| `ADMIN_PASSWORD`  | Yes       | Strong random password. Gate for `/admin`.             |
-| `ADMIN_SECRET`    | Yes       | 64 hex chars (`openssl rand -hex 32`). Signs tokens.   |
-| `REDIS_URL`       | Optional  | Redis Cloud / Upstash URL for `/api/analytics`.        |
+| Name                    | Required?                  | Notes                                                        |
+| ----------------------- | -------------------------- | ------------------------------------------------------------ |
+| `ADMIN_PASSWORD`        | Yes                        | Strong random password. Gate for `/admin`.                   |
+| `ADMIN_SECRET`          | Yes                        | 64 hex chars (`openssl rand -hex 32`). Signs admin tokens.   |
+| `REDIS_URL`             | Optional                   | Redis Cloud / Upstash URL. Enables analytics persistence and per-token rate limiting on `/api/tryon-admin`. |
+| `GEMINI_ADMIN_API_KEY`  | Yes for Try-On Studio      | Dedicated Gemini key for `/api/tryon-admin`. MUST be separate from the Shopify DSAPIKEY. |
+| `GEMINI_TRYON_MODEL`    | Optional                   | Overrides the Gemini image model. Default: `gemini-3.1-flash-image`. |
 
-All three are **server-only**. Do NOT prefix with `VITE_`.
+All of these are **server-only**. Do NOT prefix with `VITE_`. Tick the
+**Sensitive** box for each one — it encrypts them at rest and excludes
+them from the April 2026 Vercel incident's affected set (non-sensitive
+env vars were the exposure surface).
 
 See [SECURITY_SETUP.md](SECURITY_SETUP.md) for why and how.
 
@@ -82,6 +87,11 @@ curl -s -X POST https://www.renderedfits.com/api/admin-login \
 
 # 4. Analytics endpoint is alive
 curl -s https://www.renderedfits.com/api/analytics | head -c 200
+
+# 5. Try-on studio endpoint rejects unauthenticated requests (expect 401)
+curl -s -X POST https://www.renderedfits.com/api/tryon-admin \
+  -H 'Content-Type: application/json' -d '{}'
+# expected: {"error":"Unauthorized"}
 ```
 
 ## Rollback
@@ -103,3 +113,14 @@ You're running `npm run dev`. Use `vercel dev` instead.
 `ADMIN_PASSWORD` or `ADMIN_SECRET` is missing in Vercel env for the
 environment you're hitting. Also check that `ADMIN_SECRET` is ≥32
 chars — shorter secrets are rejected at token-signing time.
+
+### Try-On Studio says "Server not configured: missing GEMINI_ADMIN_API_KEY"
+`GEMINI_ADMIN_API_KEY` is not set in Vercel for the environment
+you're hitting. Add it (Sensitive) and redeploy.
+
+### Try-On Studio returns "Server not configured: GEMINI_ADMIN_API_KEY rejected by upstream"
+Google is returning 401/403 on the key. Usual causes: the key has
+been deleted, is restricted to a different API / referrer, or is
+scoped to a different GCP project. Check in Google Cloud Console →
+APIs & Services → Credentials, and that Generative Language API is
+enabled on the project that owns the key.

@@ -5,7 +5,7 @@
 
 /**
  * Standalone Mr Button demo page — pre-made example for sales calls.
- * Product page layout matches CernucciLivePage (gallery + thumbnails).
+ * Product page layout: gallery + thumbnails (desktop) / swipe carousel (mobile).
  * Animation is scripted (pre-made result), triggered by clicking AI TRY ON.
  * Uses Sydney customer images.
  */
