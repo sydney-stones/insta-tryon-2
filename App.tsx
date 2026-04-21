@@ -121,6 +121,7 @@ const App: React.FC = () => {
           <Route path="/khanums/kodil-dress-sage-green" element={<KhanumsDemoPage productSlug="kodil-dress-sage-green" />} />
           <Route path="/khanums/krace-dress-champagne" element={<KhanumsDemoPage productSlug="krace-dress-champagne" />} />
           <Route path="/khanums/kasir-dress-grey" element={<KhanumsDemoPage productSlug="kasir-dress-grey" />} />
+          <Route path="/nicholas-k/flower-district-earrings" element={<NicholasKDemoPage productSlug="flower-district-earrings" />} />
           <Route path="/nicholas-k/jump-skirt" element={<NicholasKDemoPage productSlug="jump-skirt" />} />
           <Route path="/nicholas-k/trench-coat-dress" element={<NicholasKDemoPage productSlug="trench-coat-dress" />} />
           <Route path="/nicholas-k/jade-jumpsuit" element={<NicholasKDemoPage productSlug="jade-jumpsuit" />} />
