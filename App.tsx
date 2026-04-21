@@ -37,6 +37,7 @@ import BrownieDemoPage from './components/BrownieDemoPage';
 import VowelsDemoPage from './components/VowelsDemoPage';
 import KhanumsDemoPage from './components/KhanumsDemoPage';
 import MrButtonDemoPage from './components/MrButtonDemoPage';
+import NicholasKDemoPage from './components/NicholasKDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -120,6 +121,9 @@ const App: React.FC = () => {
           <Route path="/khanums/kodil-dress-sage-green" element={<KhanumsDemoPage productSlug="kodil-dress-sage-green" />} />
           <Route path="/khanums/krace-dress-champagne" element={<KhanumsDemoPage productSlug="krace-dress-champagne" />} />
           <Route path="/khanums/kasir-dress-grey" element={<KhanumsDemoPage productSlug="kasir-dress-grey" />} />
+          <Route path="/nicholas-k/jump-skirt" element={<NicholasKDemoPage productSlug="jump-skirt" />} />
+          <Route path="/nicholas-k/trench-coat-dress" element={<NicholasKDemoPage productSlug="trench-coat-dress" />} />
+          <Route path="/nicholas-k/jade-jumpsuit" element={<NicholasKDemoPage productSlug="jade-jumpsuit" />} />
           <Route path="/mr-button/grey-shacket" element={<MrButtonDemoPage productSlug="grey-shacket" />} />
           <Route path="/mr-button/navy-polo-tshirt" element={<MrButtonDemoPage productSlug="navy-polo-tshirt" />} />
           <Route path="/mr-button/moonless-night-trouser" element={<MrButtonDemoPage productSlug="moonless-night-trouser" />} />
