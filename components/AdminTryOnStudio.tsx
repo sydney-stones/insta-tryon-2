@@ -315,10 +315,10 @@ const AdminTryOnStudio: React.FC<AdminTryOnStudioProps> = ({ onBack }) => {
       .map((g) => g.name.replace(/\.[^/.]+$/, '').replace(/[^A-Za-z0-9_-]+/g, '-'))
       .map((s) => s.replace(/^-+|-+$/g, ''))
       .filter(Boolean);
-    const joined = stems.join('_').slice(0, 120) || 'tryon';
+    const joined = stems.join('_').slice(0, 110) || 'result';
     const a = document.createElement('a');
     a.href = result.image;
-    a.download = `${joined}.${ext}`;
+    a.download = `${joined}_Try-On.${ext}`;
     a.click();
   };
 

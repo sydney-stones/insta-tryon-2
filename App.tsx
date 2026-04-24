@@ -38,6 +38,10 @@ import VowelsDemoPage from './components/VowelsDemoPage';
 import KhanumsDemoPage from './components/KhanumsDemoPage';
 import MrButtonDemoPage from './components/MrButtonDemoPage';
 import NicholasKDemoPage from './components/NicholasKDemoPage';
+import NationLADemoPage from './components/NationLADemoPage';
+import PerfectWhiteTeeDemoPage from './components/PerfectWhiteTeeDemoPage';
+import SlowloveDemoPage from './components/SlowloveDemoPage';
+import DemellierDemoPage from './components/DemellierDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -129,6 +133,18 @@ const App: React.FC = () => {
           <Route path="/mr-button/navy-polo-tshirt" element={<MrButtonDemoPage productSlug="navy-polo-tshirt" />} />
           <Route path="/mr-button/moonless-night-trouser" element={<MrButtonDemoPage productSlug="moonless-night-trouser" />} />
           <Route path="/mr-button/snowbound-blazer" element={<MrButtonDemoPage productSlug="snowbound-blazer" />} />
+          <Route path="/nation-la/lincoln-knit-pant" element={<NationLADemoPage productSlug="lincoln-knit-pant" />} />
+          <Route path="/nation-la/lenon-sweatshirt" element={<NationLADemoPage productSlug="lenon-sweatshirt" />} />
+          <Route path="/nation-la/evonne-maxi-dress" element={<NationLADemoPage productSlug="evonne-maxi-dress" />} />
+          <Route path="/perfect-white-tee/hendrix" element={<PerfectWhiteTeeDemoPage productSlug="hendrix" />} />
+          <Route path="/perfect-white-tee/johnny" element={<PerfectWhiteTeeDemoPage productSlug="johnny" />} />
+          <Route path="/perfect-white-tee/ziggy" element={<PerfectWhiteTeeDemoPage productSlug="ziggy" />} />
+          <Route path="/slowlove/spaced-out-hand-knit-jumper" element={<SlowloveDemoPage productSlug="spaced-out-hand-knit-jumper" />} />
+          <Route path="/slowlove/staple-cardigan-panna-cotta" element={<SlowloveDemoPage productSlug="staple-cardigan-panna-cotta" />} />
+          <Route path="/slowlove/neon-butterfly-hand-knit-jumper" element={<SlowloveDemoPage productSlug="neon-butterfly-hand-knit-jumper" />} />
+          <Route path="/demellier/the-midi-stockholm" element={<DemellierDemoPage productSlug="the-midi-stockholm" />} />
+          <Route path="/demellier/the-siena-saddle" element={<DemellierDemoPage productSlug="the-siena-saddle" />} />
+          <Route path="/demellier/the-florence" element={<DemellierDemoPage productSlug="the-florence" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
