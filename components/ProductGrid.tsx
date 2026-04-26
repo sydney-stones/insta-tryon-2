@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { WardrobeItem, WardrobeFolder } from '../types';
 import ScrollingQuotes from './ScrollingQuotes';
 import BenefitsSection from './BenefitsSection';
+import { AsciiShader } from './AsciiShader';
 
 interface ProductGridProps {
   products: WardrobeItem[];
@@ -78,51 +79,85 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       <div className="relative overflow-hidden" style={{
         background: 'linear-gradient(91.71deg, #444833 2.65%, #151A00 98.8%)',
       }}>
+        <AsciiShader
+          className="absolute inset-0 h-full w-full"
+          density={16}
+          opacity={0.18}
+          mode="depth"
+          charSet="block"
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 80% at 30% 50%, transparent 40%, rgba(21,26,0,0.55) 100%), radial-gradient(ellipse 50% 100% at 100% 50%, rgba(21,26,0,0.7) 0%, transparent 60%)',
+          }}
+        />
 
         {/* Content wrapper — responsive, centred */}
-        <div className="relative z-10 max-w-[1600px] mx-auto flex flex-col lg:flex-row min-h-[100vh] lg:min-h-[900px]">
+        <div className="relative z-10 max-w-[1600px] mx-auto grid min-h-[100vh] lg:min-h-[900px] grid-cols-1 lg:grid-cols-[1.35fr_1fr] items-center gap-10 px-6 sm:px-10 lg:px-12 xl:px-16 pb-20 pt-28 lg:pb-24 lg:pt-32">
 
           {/* ---- LEFT: Text ---- */}
-          <div className="flex-1 flex flex-col justify-center px-6 sm:px-10 lg:px-12 xl:px-16 py-20 lg:py-0" style={{ maxWidth: 750 }}>
+          <div className="flex flex-col justify-center" style={{ maxWidth: 750 }}>
+            <p
+              className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-white/40"
+              style={{ fontFamily: '"Inter Tight", Inter, sans-serif' }}
+            >
+              Virtual Try-On Platform
+            </p>
             <h1 style={{
               fontFamily: 'Jost, sans-serif',
               fontWeight: 500,
-              lineHeight: '110%',
+              lineHeight: '106%',
               color: '#FFFFFF',
               margin: 0,
-              marginBottom: 'clamp(24px, 3vw, 48px)',
+              marginBottom: '28px',
+              letterSpacing: '-0.015em',
             }} className="text-[clamp(32px,5vw,64px)]">
               Rendered Fits is a virtual try-on application{' '}
-              <span style={{ color: 'rgba(255,255,255,0.45)' }}>that brings the dressing room online</span>
+              <span style={{ color: 'rgba(255,255,255,0.38)' }}>that brings the dressing room online.</span>
             </h1>
 
             <p style={{
               fontFamily: '"Inter Tight", Inter, sans-serif',
-              fontWeight: 500,
-              fontSize: 'clamp(16px, 1.25vw, 20px)',
-              lineHeight: '32px',
-              color: 'rgba(255,255,255,0.8)',
-              margin: '0 0 24px 0',
-            }} className="max-w-[549px]">
-              Allow your customers to virtually visualise garments on themselves before buying
+              fontWeight: 400,
+              fontSize: 'clamp(16px, 1.2vw, 17px)',
+              lineHeight: '1.72',
+              color: 'rgba(255,255,255,0.72)',
+              margin: '0 0 40px 0',
+            }} className="max-w-[520px]">
+              Allow your customers to see how an item fits them, personally, before they buy. Simple integration. Cancel anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link to="/contact" className="inline-block border border-white text-white px-8 py-3.5 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
+              <Link to="/contact" className="inline-block border border-white bg-white px-8 py-3.5 text-center text-[13px] font-medium uppercase tracking-[0.06em] text-[#444833] transition-all hover:bg-transparent hover:text-white" style={{ fontFamily: 'Jost, sans-serif', textDecoration: 'none' }}>
                 Schedule a Meeting
               </Link>
-              <Link to="/results" className="inline-block bg-white text-[#444833] px-8 py-3.5 text-sm font-semibold hover:bg-white/90 transition-all" style={{ fontFamily: '"Inter Tight", Inter, sans-serif', textDecoration: 'none' }}>
+              <Link to="/results" className="inline-block border border-white/40 bg-transparent px-8 py-3.5 text-center text-[13px] font-medium uppercase tracking-[0.06em] text-white transition-all hover:border-white" style={{ fontFamily: 'Jost, sans-serif', textDecoration: 'none' }}>
                 See How It Works
               </Link>
+            </div>
+            <div className="mt-14 flex gap-10 border-t border-white/10 pt-10">
+              <div>
+                <div className="text-[28px] font-medium leading-none tracking-[-0.02em] text-white" style={{ fontFamily: 'Jost, sans-serif' }}>20-30%</div>
+                <div className="mt-2 text-xs tracking-[0.04em] text-white/45">Return reduction</div>
+              </div>
+              <div>
+                <div className="text-[28px] font-medium leading-none tracking-[-0.02em] text-white" style={{ fontFamily: 'Jost, sans-serif' }}>3x</div>
+                <div className="mt-2 text-xs tracking-[0.04em] text-white/45">Click-through uplift</div>
+              </div>
             </div>
           </div>
 
           {/* ---- RIGHT: Hero image ---- */}
-          <div className="relative flex-1 flex items-end justify-center lg:justify-end self-end">
+          <div className="relative flex items-end justify-center self-end lg:justify-end">
             <img
-              src="/result-images/Website Design -6.png"
-              alt="Virtual try-on demo"
-              className="w-full h-auto max-h-[90vh] object-contain object-bottom"
+              src="/hero-models.png"
+              alt="Models wearing Rendered Fits"
+              className="relative z-10 h-auto w-[88%] max-w-[560px] object-contain object-bottom"
             />
+            <span className="absolute bottom-3 right-[calc(12%+12px)] z-20 text-[10px] uppercase tracking-[0.14em] text-white/25" style={{ fontFamily: '"Inter Tight", monospace' }}>
+              Rendered Fits™
+            </span>
           </div>
 
         </div>
