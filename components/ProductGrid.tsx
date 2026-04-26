@@ -135,13 +135,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           {/* ---- RIGHT: Hero image ---- */}
           <div className="relative flex items-end justify-center self-end lg:justify-end lg:-mr-14 xl:-mr-20">
             <img
-              src="/hero-models.png"
-              alt="Models wearing Rendered Fits"
+              src="/result-images/Website Design -6.png"
+              alt="Rendered Fits virtual try-on interface"
               className="relative z-10 h-auto w-full max-w-[760px] object-contain object-bottom sm:w-[92%] lg:w-[118%] xl:max-w-[860px]"
             />
-            <span className="absolute bottom-3 right-[calc(12%+12px)] z-20 text-[10px] uppercase tracking-[0.14em] text-white/25" style={{ fontFamily: '"Inter Tight", monospace' }}>
-              Rendered Fits™
-            </span>
           </div>
 
         </div>
