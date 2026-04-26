@@ -133,11 +133,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           </div>
 
           {/* ---- RIGHT: Hero image ---- */}
-          <div className="relative flex items-end justify-center self-end lg:justify-end lg:-mr-14 xl:-mr-20">
+          <div className="relative flex items-end justify-center self-end lg:justify-end">
             <img
               src="/result-images/Website Design -6.png"
               alt="Rendered Fits virtual try-on interface"
-              className="relative z-10 h-auto w-full max-w-[760px] object-contain object-bottom sm:w-[92%] lg:w-[118%] xl:max-w-[860px]"
+              className="relative z-10 h-auto w-1/2 max-w-[380px] object-contain object-bottom sm:w-[46%] lg:w-[59%] xl:max-w-[430px]"
             />
           </div>
 
