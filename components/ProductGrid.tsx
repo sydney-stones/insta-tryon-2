@@ -352,8 +352,22 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       </div>
 
       {/* ===== SECTION 7: BRANDED FOOTER / CTA ===== */}
-      <div className="bg-[#444833] py-16 sm:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden bg-[#444833] py-16 sm:py-24">
+        <AsciiShader
+          className="absolute inset-0 h-full w-full"
+          density={14}
+          opacity={0.16}
+          mode="flow"
+          charSet="brand"
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 65% 75% at 50% 45%, transparent 35%, rgba(21,26,0,0.5) 100%)',
+          }}
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 text-center">
             {/* Hanger logo */}
             <img
