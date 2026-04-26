@@ -137,7 +137,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <img
               src="/result-images/Website Design -6.png"
               alt="Rendered Fits virtual try-on interface"
-              className="relative z-10 h-auto w-[58%] max-w-[440px] object-contain object-center sm:w-[54%] lg:w-[68%] xl:max-w-[500px]"
+              className="relative z-10 h-auto w-[62%] max-w-[470px] -translate-x-4 -translate-y-5 object-contain object-center sm:w-[58%] lg:w-[74%] lg:-translate-x-8 lg:-translate-y-8 xl:max-w-[540px]"
             />
           </div>
 
