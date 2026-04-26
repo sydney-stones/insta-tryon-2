@@ -95,16 +95,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         />
 
         {/* Content wrapper — responsive, centred */}
-        <div className="relative z-10 max-w-[1600px] mx-auto grid min-h-[100vh] lg:min-h-[900px] grid-cols-1 lg:grid-cols-[1.35fr_1fr] items-center gap-10 px-6 sm:px-10 lg:px-12 xl:px-16 pb-20 pt-28 lg:pb-24 lg:pt-32">
+        <div className="relative z-10 max-w-[1600px] mx-auto grid min-h-[100vh] lg:min-h-[900px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] items-center gap-10 px-6 sm:px-10 lg:px-12 xl:px-16 pb-20 pt-28 lg:pb-24 lg:pt-32">
 
           {/* ---- LEFT: Text ---- */}
           <div className="flex flex-col justify-center" style={{ maxWidth: 750 }}>
-            <p
-              className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-white/40"
-              style={{ fontFamily: '"Inter Tight", Inter, sans-serif' }}
-            >
-              Virtual Try-On Platform
-            </p>
             <h1 style={{
               fontFamily: 'Jost, sans-serif',
               fontWeight: 500,
@@ -136,24 +130,14 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                 See How It Works
               </Link>
             </div>
-            <div className="mt-14 flex gap-10 border-t border-white/10 pt-10">
-              <div>
-                <div className="text-[28px] font-medium leading-none tracking-[-0.02em] text-white" style={{ fontFamily: 'Jost, sans-serif' }}>20-30%</div>
-                <div className="mt-2 text-xs tracking-[0.04em] text-white/45">Return reduction</div>
-              </div>
-              <div>
-                <div className="text-[28px] font-medium leading-none tracking-[-0.02em] text-white" style={{ fontFamily: 'Jost, sans-serif' }}>3x</div>
-                <div className="mt-2 text-xs tracking-[0.04em] text-white/45">Click-through uplift</div>
-              </div>
-            </div>
           </div>
 
           {/* ---- RIGHT: Hero image ---- */}
-          <div className="relative flex items-end justify-center self-end lg:justify-end">
+          <div className="relative flex items-end justify-center self-end lg:justify-end lg:-mr-14 xl:-mr-20">
             <img
               src="/hero-models.png"
               alt="Models wearing Rendered Fits"
-              className="relative z-10 h-auto w-[88%] max-w-[560px] object-contain object-bottom"
+              className="relative z-10 h-auto w-full max-w-[760px] object-contain object-bottom sm:w-[92%] lg:w-[118%] xl:max-w-[860px]"
             />
             <span className="absolute bottom-3 right-[calc(12%+12px)] z-20 text-[10px] uppercase tracking-[0.14em] text-white/25" style={{ fontFamily: '"Inter Tight", monospace' }}>
               Rendered Fits™
