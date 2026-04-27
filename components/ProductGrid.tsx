@@ -120,7 +120,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               color: 'rgba(255,255,255,0.72)',
               margin: '0 0 40px 0',
             }} className="max-w-[520px]">
-              Allow your customers to see how an item fits them, personally, before they buy. Simple integration. Cancel anytime.
+              Allow your customers to virtually visualise garments on themselves before buying
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link to="/contact" className="inline-block border border-white bg-white px-8 py-3.5 text-center text-[13px] font-medium uppercase tracking-[0.06em] text-[#444833] transition-all hover:bg-transparent hover:text-white" style={{ fontFamily: 'Jost, sans-serif', textDecoration: 'none' }}>
@@ -137,7 +137,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <img
               src="/result-images/Website Design -6.png"
               alt="Rendered Fits virtual try-on interface"
-              className="relative z-10 h-auto w-[62%] max-w-[470px] -translate-x-4 -translate-y-5 object-contain object-center sm:w-[58%] lg:w-[74%] lg:-translate-x-8 lg:-translate-y-8 xl:max-w-[540px]"
+              className="relative z-10 h-auto w-[74%] max-w-[565px] -translate-x-4 -translate-y-5 object-contain object-center sm:w-[70%] lg:w-[89%] lg:-translate-x-8 lg:-translate-y-8 xl:max-w-[650px]"
             />
           </div>
 
