@@ -95,10 +95,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         />
 
         {/* Content wrapper — responsive, centred */}
-        <div className="relative z-10 max-w-[1600px] mx-auto grid min-h-[100vh] lg:min-h-[900px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] items-center gap-10 px-6 sm:px-10 lg:px-12 xl:px-16 pb-20 pt-28 lg:pb-24 lg:pt-32">
+        <div className="relative z-10 max-w-[1600px] mx-auto grid min-h-[100svh] lg:min-h-[900px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] items-center gap-8 lg:gap-10 px-5 sm:px-10 lg:px-12 xl:px-16 pb-12 sm:pb-20 lg:pb-24 pt-24 sm:pt-28 lg:pt-32">
 
           {/* ---- LEFT: Text ---- */}
-          <div className="flex flex-col justify-center" style={{ maxWidth: 750 }}>
+          <div className="flex flex-col justify-center text-center lg:text-left" style={{ maxWidth: 750 }}>
             <h1 style={{
               fontFamily: 'Jost, sans-serif',
               fontWeight: 500,
@@ -107,7 +107,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               margin: 0,
               marginBottom: '28px',
               letterSpacing: '-0.015em',
-            }} className="text-[clamp(32px,5vw,64px)]">
+            }} className="text-[clamp(32px,12vw,64px)] sm:text-[clamp(32px,5vw,64px)] [text-wrap:balance]">
               Rendered Fits is a virtual try-on application{' '}
               <span style={{ color: 'rgba(255,255,255,0.38)' }}>that brings the dressing room online.</span>
             </h1>
@@ -119,7 +119,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               lineHeight: '1.72',
               color: 'rgba(255,255,255,0.72)',
               margin: '0 0 40px 0',
-            }} className="max-w-[520px]">
+            }} className="max-w-[520px] mx-auto lg:mx-0">
               Allow your customers to virtually visualise garments on themselves before buying
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -137,7 +137,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <img
               src="/result-images/Website Design -6.png"
               alt="Rendered Fits virtual try-on interface"
-              className="relative z-10 h-auto w-[74%] max-w-[565px] -translate-x-4 -translate-y-5 object-contain object-center sm:w-[70%] lg:w-[89%] lg:-translate-x-8 lg:-translate-y-8 xl:max-w-[650px]"
+              className="relative z-10 h-auto w-full max-w-[430px] object-contain object-center sm:w-[70%] sm:max-w-[565px] lg:w-[89%] lg:max-w-[565px] lg:-translate-x-8 lg:-translate-y-8 xl:max-w-[650px]"
             />
           </div>
 
@@ -159,7 +159,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
         /* Three copies: animation scrolls -33.333% so the loop is seamless */
         const tripled = [...pairs, ...pairs, ...pairs];
         return (
-          <div className="bg-white py-16 sm:py-20 overflow-hidden">
+          <div className="bg-white py-12 sm:py-20 overflow-hidden">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-center text-gray-900 mb-3">
                 See the Results
@@ -176,8 +176,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                       <img
                         src={pair.original}
                         alt="Original item"
-                        className="h-72 sm:h-80 w-auto object-cover rounded-xl"
-                        loading="eager"
+                        className="h-56 sm:h-80 w-auto object-cover rounded-xl"
+                        loading="lazy"
                         decoding="async"
                         style={{ display: 'block' }}
                       />
@@ -189,8 +189,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                       <img
                         src={pair.result}
                         alt="Rendered Fits result"
-                        className="h-72 sm:h-80 w-auto object-cover rounded-xl"
-                        loading="eager"
+                        className="h-56 sm:h-80 w-auto object-cover rounded-xl"
+                        loading="lazy"
                         decoding="async"
                         style={{ display: 'block' }}
                       />
@@ -210,7 +210,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
       <BenefitsSection />
 
       {/* ===== SECTION 5: PRICING ===== */}
-      <div className="bg-white py-20 sm:py-28">
+      <div className="bg-white py-16 sm:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
@@ -223,16 +223,16 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             </p>
 
             {/* Toggle */}
-            <div className="inline-flex items-center gap-3 bg-gray-100 rounded-full px-2 py-2">
+            <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gray-100 rounded-2xl sm:rounded-full px-2 py-2">
               <button
                 onClick={() => setIsAnnual(false)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${!isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`min-w-28 px-5 py-2 rounded-full text-sm font-semibold transition-all ${!isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
               >
                 Monthly
               </button>
               <button
                 onClick={() => setIsAnnual(true)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`min-w-28 px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-2 ${isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
               >
                 Annual
                 <span className="bg-[#444833] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">2 months free</span>
@@ -263,7 +263,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                     </div>
                   )}
 
-                  <div className="p-7 flex flex-col flex-1">
+                  <div className="p-6 sm:p-7 flex flex-col flex-1">
                     {/* Tier name */}
                     <p className={`text-xs font-bold uppercase tracking-widest mb-4 ${isPopular ? 'text-white/60' : 'text-gray-400'}`}>
                       {t.name}
@@ -334,7 +334,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           </div>
 
           {/* Enterprise row */}
-          <div className="mt-6 rounded-2xl border border-gray-200 bg-white shadow-sm px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-6 rounded-2xl border border-gray-200 bg-white shadow-sm px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Enterprise</p>
               <p className="text-lg font-bold text-gray-900">Need more volume or a custom integration?</p>
@@ -342,7 +342,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             </div>
             <Link
               to="/contact"
-              className="flex-shrink-0 border-2 border-[#444833] text-[#444833] px-8 py-3 rounded-xl text-sm font-semibold hover:bg-[#444833] hover:text-white transition-all"
+              className="w-full sm:w-auto flex-shrink-0 border-2 border-[#444833] text-[#444833] px-8 py-3 rounded-xl text-center text-sm font-semibold hover:bg-[#444833] hover:text-white transition-all"
             >
               Talk to us
             </Link>
@@ -373,7 +373,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             <img
               src="/result-images/whitelogonobackground.png"
               alt="Rendered Fits"
-              className="h-[160px] sm:h-[192px] md:h-[224px] lg:h-[256px] w-auto object-contain"
+              className="h-32 sm:h-[192px] md:h-[224px] lg:h-[256px] w-auto object-contain"
             />
             {/* CTA */}
             <div className="flex flex-col items-center gap-3">

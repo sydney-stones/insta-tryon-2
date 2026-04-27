@@ -111,27 +111,25 @@ const row2 = [
 /* ── Cell ── */
 
 const BenefitCell: React.FC<{ title: string; Icon: React.FC }> = ({ title, Icon }) => (
-  <div className="flex flex-col justify-between" style={{
+  <div className="flex min-h-[150px] flex-col justify-between sm:min-h-[200px]" style={{
     flex: '1 1 0%',
-    minHeight: 200,
     background: 'rgba(255,255,255,0.05)',
     border: '1px solid rgba(255,255,255,0.3)',
     marginRight: -1,
     marginBottom: -1,
   }}>
-    <div style={{ padding: 12, width: 72, height: 72, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className="scale-75 sm:scale-100" style={{ padding: 12, width: 72, height: 72, display: 'flex', alignItems: 'center', justifyContent: 'center', transformOrigin: 'top left' }}>
       <Icon />
     </div>
-    <div style={{ padding: '20px 20px 24px' }}>
+    <div className="px-4 pb-5 pt-3 sm:px-5 sm:pb-6 sm:pt-5">
       <span style={{
         fontFamily: '"Inter Tight", Inter, sans-serif',
         fontWeight: 500,
         fontSize: 'clamp(16px, 1.5vw, 24px)',
-        lineHeight: '32px',
         color: 'rgba(255,255,255,0.9)',
         whiteSpace: 'pre-line',
         display: 'block',
-      }}>
+      }} className="leading-6 sm:leading-8">
         {title}
       </span>
     </div>
@@ -160,7 +158,7 @@ const BenefitsSection: React.FC = () => (
     }} />
 
     {/* Content */}
-    <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 pt-32 sm:pt-40 lg:pt-52 pb-0">
+    <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-12 pt-20 sm:pt-40 lg:pt-52 pb-0">
 
       {/* Headline */}
       <h2 style={{
@@ -170,7 +168,7 @@ const BenefitsSection: React.FC = () => (
         color: '#FFFFFF',
         margin: 0,
         marginBottom: 'clamp(32px, 4vw, 56px)',
-      }} className="text-[clamp(36px,4.6vw,74px)]">
+      }} className="text-[clamp(34px,11vw,56px)] sm:text-[clamp(36px,4.6vw,74px)]">
         <strong>Benefits</strong>{' '}
         <span style={{ fontWeight: 400 }}>of our Virtual Try-on</span>
       </h2>
