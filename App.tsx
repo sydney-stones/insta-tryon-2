@@ -42,6 +42,7 @@ import NationLADemoPage from './components/NationLADemoPage';
 import PerfectWhiteTeeDemoPage from './components/PerfectWhiteTeeDemoPage';
 import SlowloveDemoPage from './components/SlowloveDemoPage';
 import DemellierDemoPage from './components/DemellierDemoPage';
+import DukeDexterDemoPage from './components/DukeDexterDemoPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -145,6 +146,11 @@ const App: React.FC = () => {
           <Route path="/demellier/the-midi-stockholm" element={<DemellierDemoPage productSlug="the-midi-stockholm" />} />
           <Route path="/demellier/the-siena-saddle" element={<DemellierDemoPage productSlug="the-siena-saddle" />} />
           <Route path="/demellier/the-florence" element={<DemellierDemoPage productSlug="the-florence" />} />
+          <Route path="/duke-dexter/ny-sketch-oat-marl-short" element={<DukeDexterDemoPage productSlug="ny-sketch-oat-marl-short" />} />
+          <Route path="/duke-dexter/peso-mechanic-shirt" element={<DukeDexterDemoPage productSlug="peso-mechanic-shirt" />} />
+          <Route path="/duke-dexter/dr-motocross-vintage-white-waffle-top" element={<DukeDexterDemoPage productSlug="dr-motocross-vintage-white-waffle-top" />} />
+          <Route path="/duke-dexter/ny-sketch-washed-grey-waffle-top" element={<DukeDexterDemoPage productSlug="ny-sketch-washed-grey-waffle-top" />} />
+          <Route path="/duke-dexter/plus-duke-kiss-sneaker-womens" element={<DukeDexterDemoPage productSlug="plus-duke-kiss-sneaker-womens" />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />
