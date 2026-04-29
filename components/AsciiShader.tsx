@@ -8,6 +8,8 @@ const CHAR_SETS = {
   brand: ' RENDERED FITS™',
 } as const;
 
+const BRAND_WORDMARK = ' RENDERED FITS ';
+
 type ShaderMode =
   | 'flow'
   | 'noise'
@@ -247,7 +249,12 @@ export function AsciiShader({
       for (let row = 0; row < rows; row += 1) {
         for (let col = 0; col < cols; col += 1) {
           const brightness = getBrightness(col, row);
-          const char = chars[Math.max(0, Math.min(chars.length - 1, Math.floor(brightness * (chars.length - 1))))];
+          const char =
+            charSet === 'brand'
+              ? brightness < 0.28
+                ? ' '
+                : BRAND_WORDMARK[col % BRAND_WORDMARK.length]
+              : chars[Math.max(0, Math.min(chars.length - 1, Math.floor(brightness * (chars.length - 1))))];
           if (char === ' ') continue;
 
           const light = Math.floor(brightness * 200 + 30);
