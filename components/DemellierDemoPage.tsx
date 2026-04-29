@@ -189,6 +189,8 @@ const DemellierDemoPage: React.FC<DemellierDemoPageProps> = ({ productSlug }) =>
     if (touchStartX.current - touchEndX.current > 50) setActiveGalleryIndex(p => p === product.gallerySrcs.length - 1 ? 0 : p + 1);
     if (touchEndX.current - touchStartX.current > 50) setActiveGalleryIndex(p => p === 0 ? product.gallerySrcs.length - 1 : p - 1);
   };
+  const showPreviousImage = () => setActiveGalleryIndex(p => p === 0 ? product.gallerySrcs.length - 1 : p - 1);
+  const showNextImage = () => setActiveGalleryIndex(p => p === product.gallerySrcs.length - 1 ? 0 : p + 1);
 
   const updateCursorPosition = useCallback(() => {
     let targetEl: HTMLElement | null = null;
@@ -262,7 +264,22 @@ const DemellierDemoPage: React.FC<DemellierDemoPageProps> = ({ productSlug }) =>
           <div style={{ ...galleryFrameStyle, aspectRatio: '1 / 1.03' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
             <div style={{ position: 'absolute', left: '16px', bottom: '18px', fontSize: '12px', color: '#111' }}>{activeGalleryIndex + 1}/{product.gallerySrcs.length}</div>
+            {product.gallerySrcs.length > 1 && (
+              <>
+                <button onClick={showPreviousImage} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '34px', height: '34px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.08)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', fontSize: '18px', lineHeight: 1, cursor: 'pointer' }}>‹</button>
+                <button onClick={showNextImage} style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', width: '34px', height: '34px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.08)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', fontSize: '18px', lineHeight: 1, cursor: 'pointer' }}>›</button>
+              </>
+            )}
           </div>
+          {product.gallerySrcs.length > 1 && (
+            <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', padding: '10px 20px 0' }}>
+              {product.gallerySrcs.map((src, index) => (
+                <button key={src} onClick={() => setActiveGalleryIndex(index)} style={{ width: '62px', height: '62px', flexShrink: 0, border: activeGalleryIndex === index ? '1px solid #111' : '1px solid #d8d8d8', backgroundColor: '#efeeeb', padding: 0, overflow: 'hidden' }}>
+                  <img src={src} alt={`View ${index + 1}`} style={thumbnailStyle} />
+                </button>
+              ))}
+            </div>
+          )}
           <div style={{ padding: '20px 20px 0' }}>
             <h1 style={{ fontSize: '22px', fontWeight: 400, color: '#111', margin: '0 0 12px' }}>{product.name}</h1>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', fontSize: '15px', color: '#111', marginBottom: '16px' }}><span>{product.price}</span><span style={{ color: '#8b8b8b' }}>Taxes & Duties included</span></div>
@@ -286,7 +303,22 @@ const DemellierDemoPage: React.FC<DemellierDemoPageProps> = ({ productSlug }) =>
             <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
               <div style={{ position: 'absolute', left: '28px', bottom: '22px', fontSize: '17px', color: '#111' }}>{activeGalleryIndex + 1}/{product.gallerySrcs.length}</div>
+              {product.gallerySrcs.length > 1 && (
+                <>
+                  <button onClick={showPreviousImage} style={{ position: 'absolute', left: '28px', top: '50%', transform: 'translateY(-50%)', width: '42px', height: '42px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.08)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', fontSize: '24px', lineHeight: 1, cursor: 'pointer' }}>‹</button>
+                  <button onClick={showNextImage} style={{ position: 'absolute', right: '28px', top: '50%', transform: 'translateY(-50%)', width: '42px', height: '42px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.08)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', fontSize: '24px', lineHeight: 1, cursor: 'pointer' }}>›</button>
+                </>
+              )}
             </div>
+            {product.gallerySrcs.length > 1 && (
+              <div style={{ display: 'flex', gap: '10px', padding: '0 28px 22px', overflowX: 'auto' }}>
+                {product.gallerySrcs.map((src, index) => (
+                  <button key={src} onClick={() => setActiveGalleryIndex(index)} style={{ width: '72px', height: '72px', flexShrink: 0, border: activeGalleryIndex === index ? '1px solid #111' : '1px solid #d8d8d8', backgroundColor: '#efeeeb', padding: 0, overflow: 'hidden', cursor: 'pointer' }}>
+                    <img src={src} alt={`View ${index + 1}`} style={thumbnailStyle} />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
           <div style={{ backgroundColor: '#fff', padding: '54px 56px 80px' }}>
             <div style={{ maxWidth: '610px' }}>
@@ -345,7 +377,7 @@ const DemellierDemoPage: React.FC<DemellierDemoPageProps> = ({ productSlug }) =>
                   </div>
                   <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
                     <div style={{ width: '50%', flexShrink: 0, background: 'linear-gradient(180deg, #f7f2eb 0%, #efe6dd 100%)', position: 'relative', display: isMobile ? 'none' : 'block' }}>
-                      <img src={product.gallerySrcs[0]} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', minHeight: '400px', padding: '26px 24px 34px' }} />
+                      <img src={mainImageSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', minHeight: '400px', padding: '26px 24px 34px' }} />
                       <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', alignItems: 'center', gap: '6px', padding: '0 10px', height: '29.83px', backgroundColor: 'rgba(255,255,255,0.92)', border: '1px solid #D1D5DC' }}><span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>{product.colourLabel}</span></div>
                     </div>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>

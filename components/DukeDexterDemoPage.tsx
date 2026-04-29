@@ -28,6 +28,10 @@ interface DemoProduct {
   description: string;
   colourLabel: string;
   swatchColor: string;
+  modelInfo: string;
+  collectionLabel: string;
+  benefits: string[];
+  specs: string[];
 }
 
 export const DUKEDEXTER_PRODUCTS: Record<string, DemoProduct> = {
@@ -49,6 +53,10 @@ export const DUKEDEXTER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The NY Sketch Short in Oat Marl. A relaxed, French terry short with the sketched NY graphic that defines the Duke + Dexter aesthetic — casual with a considered edge.',
     colourLabel: 'Oat Marl',
     swatchColor: '#D9CDB8',
+    modelInfo: 'Roanen is 6\'2" wearing size M',
+    collectionLabel: 'LDN II NYC',
+    benefits: ['Free shipping on all orders over £200', 'Easy returns', 'Relaxed Fit', 'Hand-Drawn Screen Print', '100% Cotton'],
+    specs: ['Fit: Relaxed fit', 'Composition: 100% Cotton', 'Weight: 420gsm brushed back fleece', 'Detail: All-over screen print, internal drawcord, raw hem finish'],
   },
   'peso-mechanic-shirt': {
     id: 131,
@@ -68,6 +76,10 @@ export const DUKEDEXTER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The Peso Mechanic Shirt. A workwear-inspired overshirt with utility pockets and a relaxed boxy fit — the kind of shirt that layers over everything.',
     colourLabel: 'Washed Ecru',
     swatchColor: '#E8E0D0',
+    modelInfo: 'Bernard is 6\'1" wearing size L',
+    collectionLabel: 'D+D x Peso',
+    benefits: ['Free shipping on all orders over £200', 'Easy returns', 'D+D x Peso', '100% Cotton', 'Chainstitch Logos'],
+    specs: ['Fit: Relaxed', 'Composition: 100% Cotton', 'Detail: Chainstitch detail', 'Packaging: Made from recycled materials'],
   },
   'dr-motocross-vintage-white-waffle-top': {
     id: 132,
@@ -86,6 +98,10 @@ export const DUKEDEXTER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The DR Motocross Waffle Top in Vintage White. A textured waffle-knit long sleeve with motocross-inspired graphic detail — relaxed, tactile, and worth reaching for.',
     colourLabel: 'Vintage White',
     swatchColor: '#F0EDE6',
+    modelInfo: 'Relaxed fit long sleeve',
+    collectionLabel: 'Duke Racing',
+    benefits: ['Free shipping on all orders over £200', 'Easy returns', 'Relaxed Fit', 'Textured Waffle Knit', 'Motocross Graphic'],
+    specs: ['Fit: Relaxed', 'Composition: Cotton waffle jersey', 'Detail: Motocross-inspired graphic', 'Packaging: Made from recycled materials'],
   },
   'ny-sketch-washed-grey-waffle-top': {
     id: 133,
@@ -103,6 +119,10 @@ export const DUKEDEXTER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The NY Sketch Waffle Top in Washed Grey. A lived-in, washed-down long sleeve with the signature New York sketch graphic — exactly the piece you grab on the way out.',
     colourLabel: 'Washed Grey',
     swatchColor: '#9E9E9E',
+    modelInfo: 'Relaxed fit long sleeve',
+    collectionLabel: 'LDN II NYC',
+    benefits: ['Free shipping on all orders over £200', 'Easy returns', 'Relaxed Fit', 'Hand-Drawn Graphic', 'Waffle Jersey'],
+    specs: ['Fit: Relaxed', 'Composition: Cotton waffle jersey', 'Detail: Washed finish with NY sketch graphic', 'Packaging: Made from recycled materials'],
   },
   'plus-duke-kiss-sneaker-womens': {
     id: 134,
@@ -123,6 +143,10 @@ export const DUKEDEXTER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The Plus Duke Kiss Sneaker in Women\'s. A low-profile court sneaker with premium leather upper and the Duke + Dexter \'Kiss\' branding — clean, minimal, and built to last.',
     colourLabel: 'White',
     swatchColor: '#F5F5F5',
+    modelInfo: 'Women\'s fit',
+    collectionLabel: 'PLUS+',
+    benefits: ['Free shipping on all orders over £200', 'Easy returns', 'Premium Leather Upper', 'Low-Profile Court Sole', 'Duke + Dexter Kiss Branding'],
+    specs: ['Fit: Women\'s sneaker', 'Upper: Leather', 'Detail: Kiss branding', 'Packaging: Made from recycled materials'],
   },
 };
 
@@ -214,6 +238,8 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
     if (touchStartX.current - touchEndX.current > 50) setActiveGalleryIndex(p => p === product.gallerySrcs.length - 1 ? 0 : p + 1);
     if (touchEndX.current - touchStartX.current > 50) setActiveGalleryIndex(p => p === 0 ? product.gallerySrcs.length - 1 : p - 1);
   };
+  const showPreviousImage = () => setActiveGalleryIndex(p => p === 0 ? product.gallerySrcs.length - 1 : p - 1);
+  const showNextImage = () => setActiveGalleryIndex(p => p === product.gallerySrcs.length - 1 ? 0 : p + 1);
 
   const updateCursorPosition = useCallback(() => {
     let targetEl: HTMLElement | null = null;
@@ -230,7 +256,6 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
 
   const isClicking = ['click_button','click_face','click_photo_library','click_body','click_photo_library_2'].includes(animState);
   const mainImageSrc = product.gallerySrcs[activeGalleryIndex];
-  const tryOnBtnStyle: React.CSSProperties = { width: '100%', padding: '16px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#1a1a1a', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px', boxShadow: '0 0 20px rgba(0,0,0,0.35)' };
   const galleryFrameStyle: React.CSSProperties = {
     position: 'relative',
     background: 'linear-gradient(180deg, #f7f4ee 0%, #efe9df 100%)',
@@ -254,73 +279,99 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
     display: 'block',
     padding: '6px',
   };
+  const pageSidePadding = isMobile ? '18px' : '32px';
+  const pointsValue = product.price.replace('£', '');
 
   return (
     <div className="min-h-screen bg-white overflow-auto">
       <AnimatedCursor x={cursorPos.x} y={cursorPos.y} visible={isCursorVisible(animState)} clicking={isClicking} />
-      <header style={{ borderBottom: '1px solid #e5e5e5', position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 40 }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
-          <nav style={{ display: 'flex', gap: '24px', fontSize: '11px', letterSpacing: '0.15em', fontWeight: 500 }}>
-            {['NEW IN','TOPS','BOTTOMS','FOOTWEAR'].map(n => <span key={n} style={{ color: '#aaa' }}>{n}</span>)}
+      <header style={{ borderBottom: '1px solid #e5e5e5', backgroundColor: '#fff', zIndex: 40 }}>
+        <div style={{ padding: `0 ${pageSidePadding}`, display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', height: isMobile ? '56px' : '64px' }}>
+          <nav style={{ display: 'flex', gap: isMobile ? '16px' : '30px', fontSize: isMobile ? '12px' : '13px', fontWeight: 500, textTransform: 'uppercase', color: '#111' }}>
+            {['New In','Clothing','Footwear'].map(n => <span key={n}>{n}</span>)}
           </nav>
-          <span style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', fontSize: '18px', fontWeight: 400, letterSpacing: '0.12em', color: '#111' }}>DUKE + DEXTER</span>
-          <div />
+          <span style={{ fontSize: isMobile ? '16px' : '20px', fontWeight: 700, letterSpacing: '0.08em', color: '#111', whiteSpace: 'nowrap' }}>DUKE + DEXTER</span>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: isMobile ? '12px' : '20px', fontSize: '13px', color: '#111' }}>
+            {!isMobile && <span>PLUS+</span>}
+            <span>Search</span>
+            <span>Bag 0</span>
+          </div>
         </div>
       </header>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '12px 24px' }}>
-        <nav style={{ display: 'flex', gap: '6px', alignItems: 'center', fontSize: '11px', color: '#999' }}>
-          <span>Clothing</span><span>/</span><span>{product.category}</span><span>/</span><span style={{ color: '#111' }}>{product.name}</span>
-        </nav>
-      </div>
 
       {isMobile ? (
         <div style={{ padding: '0 0 64px' }}>
-          <div style={{ padding: '0 20px 12px' }}><h1 style={{ fontSize: '14px', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', margin: 0 }}>{product.name}</h1></div>
-          <div style={{ ...galleryFrameStyle, aspectRatio: '1 / 1.12' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+          <div style={{ ...galleryFrameStyle, aspectRatio: '1 / 1.08' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
-            {product.gallerySrcs.length > 1 && <div style={{ position: 'absolute', bottom: '10px', left: 0, right: 0, display: 'flex', gap: '6px', justifyContent: 'center' }}>{product.gallerySrcs.map((_, i) => <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{ width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0, backgroundColor: activeGalleryIndex === i ? '#fff' : 'rgba(255,255,255,0.5)' }} />)}</div>}
+            <div style={{ position: 'absolute', left: '16px', bottom: '16px', fontSize: '12px', color: '#111' }}>{activeGalleryIndex + 1}/{product.gallerySrcs.length}</div>
+            {product.gallerySrcs.length > 1 && (
+              <>
+                <button onClick={showPreviousImage} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '34px', height: '34px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.12)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', cursor: 'pointer' }}>{'<'}</button>
+                <button onClick={showNextImage} style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', width: '34px', height: '34px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.12)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', cursor: 'pointer' }}>{'>'}</button>
+              </>
+            )}
           </div>
-          <div style={{ padding: '16px 20px 0' }}>
-            <div style={{ fontSize: '15px', fontWeight: 400, color: '#111', marginBottom: '16px' }}>{product.price}</div>
-            <div style={{ marginBottom: '16px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}><p style={{ fontSize: '13px', color: '#111', margin: 0 }}>Size: <strong>{selectedSize}</strong></p><span style={{ fontSize: '11px', color: '#666', textDecoration: 'underline' }}>Size Guide</span></div>
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>{product.sizes.map(s => <button key={s} onClick={() => setSelectedSize(s)} style={{ padding: '7px 12px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', border: selectedSize === s ? '2px solid #111' : '1px solid #ccc', backgroundColor: selectedSize === s ? '#111' : '#fff', color: selectedSize === s ? '#fff' : '#111' }}>{s}</button>)}</div>
+          {product.gallerySrcs.length > 1 && (
+            <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', padding: '10px 18px 0' }}>
+              {product.gallerySrcs.map((src, index) => <button key={src} onClick={() => setActiveGalleryIndex(index)} style={{ width: '62px', height: '62px', flexShrink: 0, border: activeGalleryIndex === index ? '2px solid #111' : '1px solid #d7d2c8', backgroundColor: '#f7f4ee', padding: 0, overflow: 'hidden' }}><img src={src} alt={`View ${index + 1}`} style={thumbnailStyle} /></button>)}
             </div>
-            <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={tryOnBtnStyle}>
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-              AI TRY ON<span style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.4)', padding: '1px 8px', letterSpacing: '0.1em' }}>New</span>
-            </button>
-            <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', margin: '0 0 12px 0' }}>Upload your photo and see yourself in this item</p>
-            <button style={{ width: '100%', padding: '16px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', backgroundColor: '#fff', border: '1px solid #111', cursor: 'default', marginBottom: '20px' }}>ADD TO BAG</button>
-            <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '16px' }}><p style={{ fontSize: '13px', color: '#444', lineHeight: '1.7', margin: 0 }}>{product.description}</p></div>
+          )}
+          <div style={{ padding: '22px 18px 0' }}>
+            <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#111', margin: '0 0 8px' }}>{product.name}</h1>
+            <div style={{ fontSize: '16px', color: '#111', marginBottom: '8px' }}>{product.price}</div>
+            <div style={{ fontSize: '12px', color: '#6b6b6b', marginBottom: '6px' }}>Earn {pointsValue} points when you join PLUS+</div>
+            <div style={{ fontSize: '12px', color: '#111', marginBottom: '18px' }}>{product.collectionLabel}</div>
+            <div style={{ marginBottom: '16px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}><p style={{ fontSize: '13px', color: '#111', margin: 0, fontWeight: 600 }}>Size: {selectedSize}</p><span style={{ fontSize: '12px', color: '#111', textDecoration: 'underline' }}>Size Guide</span></div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: '6px' }}>{product.sizes.map(s => <button key={s} onClick={() => setSelectedSize(s)} style={{ padding: '11px 8px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', border: selectedSize === s ? '2px solid #111' : '1px solid #cfcfcf', backgroundColor: '#fff', color: '#111' }}>{s}</button>)}</div>
+            </div>
+            <div style={{ fontSize: '12px', color: '#555', marginBottom: '18px' }}>{product.modelInfo}</div>
+            <button style={{ width: '100%', padding: '15px', fontSize: '13px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#111', border: 'none', marginBottom: '8px' }}>Add to Cart</button>
+            <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={{ width: '100%', padding: '15px', fontSize: '13px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#111', backgroundColor: '#fff', border: '1px solid #111', marginBottom: '18px' }}>AI Try On</button>
+            <div style={{ display: 'grid', gap: '10px', fontSize: '13px', color: '#111', marginBottom: '22px' }}>{product.benefits.map(item => <div key={item}>{item}</div>)}</div>
+            <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '18px', display: 'grid', gap: '18px' }}>
+              <section><h2 style={{ fontSize: '12px', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.04em' }}>DESCRIPTION</h2><p style={{ fontSize: '13px', color: '#444', lineHeight: '1.6', margin: 0 }}>{product.description}</p></section>
+              <section><h2 style={{ fontSize: '12px', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.04em' }}>SPECIFICATIONS</h2><div style={{ display: 'grid', gap: '6px', fontSize: '13px', color: '#444' }}>{product.specs.map(item => <div key={item}>{item}</div>)}</div></section>
+            </div>
           </div>
         </div>
       ) : (
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px 64px', display: 'grid', gridTemplateColumns: '1fr 460px', gap: '48px', alignItems: 'start' }}>
-          <div style={{ display: 'flex', gap: '12px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(620px, 1.08fr) minmax(420px, 0.74fr)', alignItems: 'stretch' }}>
+          <div style={{ ...galleryFrameStyle, minHeight: 'calc(100vh - 64px)', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
+              <div style={{ position: 'absolute', left: '32px', bottom: '26px', fontSize: '13px', color: '#111' }}>{activeGalleryIndex + 1} / {product.gallerySrcs.length}</div>
+              {product.gallerySrcs.length > 1 && (
+                <>
+                  <button onClick={showPreviousImage} style={{ position: 'absolute', left: '32px', top: '50%', transform: 'translateY(-50%)', width: '42px', height: '42px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.12)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', cursor: 'pointer' }}>{'<'}</button>
+                  <button onClick={showNextImage} style={{ position: 'absolute', right: '32px', top: '50%', transform: 'translateY(-50%)', width: '42px', height: '42px', borderRadius: '999px', border: '1px solid rgba(0,0,0,0.12)', backgroundColor: 'rgba(255,255,255,0.82)', color: '#111', cursor: 'pointer' }}>{'>'}</button>
+                </>
+              )}
+            </div>
             {product.gallerySrcs.length > 1 && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '80px', flexShrink: 0 }}>
-                {product.gallerySrcs.map((src, i) => <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{ width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer', outline: activeGalleryIndex === i ? '2px solid #111' : '1px solid #d9d2c8', outlineOffset: '-1px', overflow: 'hidden', background: 'linear-gradient(180deg, #f8f5ef 0%, #eee6d8 100%)', flexShrink: 0 }}><img src={src} alt={`View ${i + 1}`} style={thumbnailStyle} /></button>)}
+              <div style={{ display: 'flex', gap: '10px', padding: '0 32px 28px', overflowX: 'auto' }}>
+                {product.gallerySrcs.map((src, index) => <button key={src} onClick={() => setActiveGalleryIndex(index)} style={{ width: '76px', height: '76px', flexShrink: 0, border: activeGalleryIndex === index ? '2px solid #111' : '1px solid #d7d2c8', backgroundColor: '#f7f4ee', padding: 0, overflow: 'hidden', cursor: 'pointer' }}><img src={src} alt={`View ${index + 1}`} style={thumbnailStyle} /></button>)}
               </div>
             )}
-            <div style={{ ...galleryFrameStyle, flex: 1, aspectRatio: '1 / 1.05' }}>
-              <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
-            </div>
           </div>
-          <div style={{ paddingTop: '8px' }}>
-            <h1 style={{ fontSize: '14px', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', margin: '0 0 16px 0' }}>{product.name}</h1>
-            <div style={{ fontSize: '15px', fontWeight: 400, color: '#111', marginBottom: '20px' }}>{product.price}</div>
-            <div style={{ marginBottom: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}><p style={{ fontSize: '13px', color: '#111', margin: 0 }}>Size: <strong>{selectedSize}</strong></p><span style={{ fontSize: '12px', color: '#666', textDecoration: 'underline', cursor: 'default' }}>Size Guide</span></div>
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>{product.sizes.map(s => <button key={s} onClick={() => setSelectedSize(s)} style={{ padding: '8px 14px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', border: selectedSize === s ? '2px solid #111' : '1px solid #ccc', backgroundColor: selectedSize === s ? '#111' : '#fff', color: selectedSize === s ? '#fff' : '#111' }}>{s}</button>)}</div>
+          <div style={{ backgroundColor: '#fff', padding: '48px 54px 72px' }}>
+            <h1 style={{ fontSize: '30px', fontWeight: 700, color: '#111', margin: '0 0 12px' }}>{product.name}</h1>
+            <div style={{ fontSize: '17px', color: '#111', marginBottom: '10px' }}>{product.price}</div>
+            <div style={{ fontSize: '12px', color: '#6b6b6b', marginBottom: '6px' }}>Earn {pointsValue} points when you join PLUS+</div>
+            <div style={{ fontSize: '12px', color: '#111', marginBottom: '28px' }}>{product.collectionLabel}</div>
+            <div style={{ marginBottom: '18px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}><p style={{ fontSize: '13px', color: '#111', margin: 0, fontWeight: 700 }}>Size: {selectedSize}</p><span style={{ fontSize: '12px', color: '#111', textDecoration: 'underline', cursor: 'default' }}>Size Guide</span></div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '6px' }}>{product.sizes.map(s => <button key={s} onClick={() => setSelectedSize(s)} style={{ padding: '12px 8px', fontSize: '13px', fontWeight: 700, cursor: 'pointer', border: selectedSize === s ? '2px solid #111' : '1px solid #cfcfcf', backgroundColor: '#fff', color: '#111' }}>{s}</button>)}</div>
             </div>
-            <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={tryOnBtnStyle}>
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-              AI TRY ON<span style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.4)', padding: '1px 8px', letterSpacing: '0.1em' }}>New</span>
-            </button>
-            <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', margin: '0 0 12px 0' }}>Upload your photo and see yourself in this item</p>
-            <button style={{ width: '100%', padding: '16px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', backgroundColor: '#fff', border: '1px solid #111', cursor: 'default', marginBottom: '20px' }}>ADD TO BAG</button>
-            <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '16px' }}><p style={{ fontSize: '13px', color: '#444', lineHeight: '1.7', margin: 0 }}>{product.description}</p></div>
+            <div style={{ fontSize: '12px', color: '#555', marginBottom: '24px' }}>{product.modelInfo}</div>
+            <button style={{ width: '100%', padding: '16px', fontSize: '13px', fontWeight: 800, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#111', border: 'none', marginBottom: '8px' }}>Add to Cart</button>
+            <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={{ width: '100%', padding: '15px 16px', fontSize: '13px', fontWeight: 800, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#111', backgroundColor: '#fff', border: '1px solid #111', marginBottom: '24px' }}>AI Try On</button>
+            <div style={{ display: 'grid', gap: '12px', fontSize: '13px', color: '#111', marginBottom: '30px' }}>{product.benefits.map(item => <div key={item}>{item}</div>)}</div>
+            <div style={{ borderTop: '1px solid #e5e5e5', display: 'grid' }}>
+              <section style={{ padding: '22px 0', borderBottom: '1px solid #e5e5e5' }}><h2 style={{ fontSize: '12px', fontWeight: 800, margin: '0 0 12px', letterSpacing: '0.04em' }}>DESCRIPTION</h2><p style={{ fontSize: '13px', color: '#444', lineHeight: '1.6', margin: 0 }}>{product.description}</p></section>
+              <section style={{ padding: '22px 0', borderBottom: '1px solid #e5e5e5' }}><h2 style={{ fontSize: '12px', fontWeight: 800, margin: '0 0 12px', letterSpacing: '0.04em' }}>SPECIFICATIONS</h2><div style={{ display: 'grid', gap: '7px', fontSize: '13px', color: '#444' }}>{product.specs.map(item => <div key={item}>{item}</div>)}</div></section>
+              <section style={{ padding: '22px 0' }}><h2 style={{ fontSize: '12px', fontWeight: 800, margin: '0 0 12px', letterSpacing: '0.04em' }}>SHIPPING & RETURNS</h2><p style={{ fontSize: '13px', color: '#444', lineHeight: '1.6', margin: 0 }}>Free UK shipping on eligible orders. Full price orders can be returned or exchanged within 21 days.</p></section>
+            </div>
           </div>
         </div>
       )}
@@ -337,7 +388,7 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
                   </div>
                   <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
                     <div style={{ width: '50%', flexShrink: 0, background: 'linear-gradient(180deg, #f7f4ee 0%, #efe9df 100%)', position: 'relative', display: isMobile ? 'none' : 'block' }}>
-                      <img src={product.gallerySrcs[0]} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', minHeight: '400px', padding: '20px 20px 28px' }} />
+                      <img src={mainImageSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', minHeight: '400px', padding: '20px 20px 28px' }} />
                       <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', alignItems: 'center', gap: '6px', padding: '0 10px', height: '29.83px', backgroundColor: 'rgba(255,255,255,0.92)', border: '1px solid #D1D5DC' }}><span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {selectedSize}</span><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg></div>
                     </div>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
