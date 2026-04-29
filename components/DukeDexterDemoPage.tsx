@@ -231,6 +231,29 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
   const isClicking = ['click_button','click_face','click_photo_library','click_body','click_photo_library_2'].includes(animState);
   const mainImageSrc = product.gallerySrcs[activeGalleryIndex];
   const tryOnBtnStyle: React.CSSProperties = { width: '100%', padding: '16px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#1a1a1a', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px', boxShadow: '0 0 20px rgba(0,0,0,0.35)' };
+  const galleryFrameStyle: React.CSSProperties = {
+    position: 'relative',
+    background: 'linear-gradient(180deg, #f7f4ee 0%, #efe9df 100%)',
+    width: '100%',
+    overflow: 'hidden',
+    boxShadow: 'inset 0 0 0 1px rgba(17, 17, 17, 0.06)',
+  };
+  const galleryImageStyle: React.CSSProperties = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    objectPosition: 'center center',
+    display: 'block',
+    padding: isMobile ? '18px 16px 26px' : '24px 24px 32px',
+  };
+  const thumbnailStyle: React.CSSProperties = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    objectPosition: 'center center',
+    display: 'block',
+    padding: '6px',
+  };
 
   return (
     <div className="min-h-screen bg-white overflow-auto">
@@ -253,8 +276,8 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
       {isMobile ? (
         <div style={{ padding: '0 0 64px' }}>
           <div style={{ padding: '0 20px 12px' }}><h1 style={{ fontSize: '14px', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', margin: 0 }}>{product.name}</h1></div>
-          <div style={{ position: 'relative', backgroundColor: '#f5f5f5', width: '100%', aspectRatio: '3/4' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-            <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
+          <div style={{ ...galleryFrameStyle, aspectRatio: '1 / 1.12' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+            <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
             {product.gallerySrcs.length > 1 && <div style={{ position: 'absolute', bottom: '10px', left: 0, right: 0, display: 'flex', gap: '6px', justifyContent: 'center' }}>{product.gallerySrcs.map((_, i) => <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{ width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0, backgroundColor: activeGalleryIndex === i ? '#fff' : 'rgba(255,255,255,0.5)' }} />)}</div>}
           </div>
           <div style={{ padding: '16px 20px 0' }}>
@@ -277,11 +300,11 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
           <div style={{ display: 'flex', gap: '12px' }}>
             {product.gallerySrcs.length > 1 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '80px', flexShrink: 0 }}>
-                {product.gallerySrcs.map((src, i) => <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{ width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer', outline: activeGalleryIndex === i ? '2px solid #111' : '1px solid #e5e5e5', outlineOffset: '-1px', overflow: 'hidden', backgroundColor: '#f5f5f5', flexShrink: 0 }}><img src={src} alt={`View ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></button>)}
+                {product.gallerySrcs.map((src, i) => <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{ width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer', outline: activeGalleryIndex === i ? '2px solid #111' : '1px solid #d9d2c8', outlineOffset: '-1px', overflow: 'hidden', background: 'linear-gradient(180deg, #f8f5ef 0%, #eee6d8 100%)', flexShrink: 0 }}><img src={src} alt={`View ${i + 1}`} style={thumbnailStyle} /></button>)}
               </div>
             )}
-            <div style={{ flex: 1, backgroundColor: '#f5f5f5', overflow: 'hidden', aspectRatio: '2/3' }}>
-              <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
+            <div style={{ ...galleryFrameStyle, flex: 1, aspectRatio: '1 / 1.05' }}>
+              <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
             </div>
           </div>
           <div style={{ paddingTop: '8px' }}>
@@ -313,8 +336,8 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
                     <div style={{ display: 'flex', alignItems: 'center' }}><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2px 8px', backgroundColor: '#1E2939', height: '20px', marginRight: '16px' }}><span style={{ fontSize: '12px', fontWeight: 500, color: '#F9FAFB', whiteSpace: 'nowrap' }}>10 credits left</span></div><div style={{ width: '48px', height: '48px', borderLeft: '1px solid #D1D5DC' }} /></div>
                   </div>
                   <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
-                    <div style={{ width: '50%', flexShrink: 0, backgroundColor: '#F9FAFB', position: 'relative', display: isMobile ? 'none' : 'block' }}>
-                      <img src={product.gallerySrcs[0]} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '400px' }} />
+                    <div style={{ width: '50%', flexShrink: 0, background: 'linear-gradient(180deg, #f7f4ee 0%, #efe9df 100%)', position: 'relative', display: isMobile ? 'none' : 'block' }}>
+                      <img src={product.gallerySrcs[0]} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', minHeight: '400px', padding: '20px 20px 28px' }} />
                       <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', alignItems: 'center', gap: '6px', padding: '0 10px', height: '29.83px', backgroundColor: 'rgba(255,255,255,0.92)', border: '1px solid #D1D5DC' }}><span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {selectedSize}</span><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg></div>
                     </div>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
