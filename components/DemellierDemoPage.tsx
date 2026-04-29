@@ -28,6 +28,8 @@ interface DemoProduct {
   description: string;
   colourLabel: string;
   swatchColor: string;
+  breadcrumbLabel: string;
+  colourName: string;
 }
 
 export const DEMELLIER_PRODUCTS: Record<string, DemoProduct> = {
@@ -50,6 +52,8 @@ export const DEMELLIER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The Midi Stockholm. A structured, considered bag with Demellier\'s clean lines and understated hardware — the kind of piece that elevates every outfit without competing with it.',
     colourLabel: 'Tan',
     swatchColor: '#B8956A',
+    breadcrumbLabel: 'The Stockholm Collection',
+    colourName: 'Mocha Suede & Mocha Smooth',
   },
   'the-siena-saddle': {
     id: 121,
@@ -70,6 +74,8 @@ export const DEMELLIER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The Siena Saddle. A relaxed, curved silhouette in a soft leather with adjustable strap — worn cross-body or over the shoulder, it moves with you.',
     colourLabel: 'Cognac',
     swatchColor: '#9B5E2A',
+    breadcrumbLabel: 'The Siena Collection',
+    colourName: 'Cognac Small Grain',
   },
   'the-florence': {
     id: 122,
@@ -90,6 +96,8 @@ export const DEMELLIER_PRODUCTS: Record<string, DemoProduct> = {
     description: 'The Florence. A signature Demellier top-handle with refined proportions — polished enough for the office, structured enough to anchor a full look.',
     colourLabel: 'Black',
     swatchColor: '#1a1a1a',
+    breadcrumbLabel: 'The Florence Collection',
+    colourName: 'Black Smooth',
   },
 };
 
@@ -200,10 +208,9 @@ const DemellierDemoPage: React.FC<DemellierDemoPageProps> = ({ productSlug }) =>
   const tryOnBtnStyle: React.CSSProperties = { width: '100%', padding: '16px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#fff', backgroundColor: '#1a1a1a', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px', boxShadow: '0 0 20px rgba(0,0,0,0.35)' };
   const galleryFrameStyle: React.CSSProperties = {
     position: 'relative',
-    background: 'linear-gradient(180deg, #f7f2eb 0%, #efe6dd 100%)',
+    backgroundColor: '#efeeeb',
     width: '100%',
     overflow: 'hidden',
-    boxShadow: 'inset 0 0 0 1px rgba(120, 102, 84, 0.08)',
   };
   const galleryImageStyle: React.CSSProperties = {
     width: '100%',
@@ -211,7 +218,7 @@ const DemellierDemoPage: React.FC<DemellierDemoPageProps> = ({ productSlug }) =>
     objectFit: 'contain',
     objectPosition: 'center center',
     display: 'block',
-    padding: isMobile ? '22px 20px 30px' : '36px 34px 44px',
+    padding: isMobile ? '18px 14px 24px' : '24px 26px 30px',
   };
   const thumbnailStyle: React.CSSProperties = {
     width: '100%',
@@ -219,67 +226,109 @@ const DemellierDemoPage: React.FC<DemellierDemoPageProps> = ({ productSlug }) =>
     objectFit: 'contain',
     objectPosition: 'center center',
     display: 'block',
-    padding: '8px',
+    padding: '6px',
   };
+  const pageSidePadding = isMobile ? '20px' : '28px';
+  const swatchColors = ['#1f1c18', '#34251f', '#5b5242', '#9f6e48', '#b7aa99', '#8a816d', '#46362b'];
+  const infoRows = ['Free Shipping & Returns', 'Ethically & Sustainably Made', 'Lifetime Repairs Service', 'A Bag, A Life'];
+  const klarnaInstallment = `£${(Number(product.price.replace('£', '')) / 3).toFixed(2)}`;
 
   return (
     <div className="min-h-screen bg-white overflow-auto">
       <AnimatedCursor x={cursorPos.x} y={cursorPos.y} visible={isCursorVisible(animState)} clicking={isClicking} />
-      <header style={{ borderBottom: '1px solid #e5e5e5', position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 40 }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
-          <nav style={{ display: 'flex', gap: '24px', fontSize: '11px', letterSpacing: '0.15em', fontWeight: 500 }}>
-            {['NEW IN','BAGS','ACCESSORIES','GIFTING'].map(n => <span key={n} style={{ color: '#aaa' }}>{n}</span>)}
+      <header style={{ borderBottom: '1px solid #f0f0f0', backgroundColor: '#fff', zIndex: 40 }}>
+        <div style={{ padding: `0 ${pageSidePadding}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: isMobile ? '56px' : '64px', position: 'relative' }}>
+          <nav style={{ display: 'flex', gap: isMobile ? '18px' : '34px', fontSize: isMobile ? '13px' : '17px', fontWeight: 400, color: '#1f1f1f' }}>
+            {['New Arrivals','Bags','About'].map(n => <span key={n}>{n}</span>)}
           </nav>
-          <span style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', fontSize: '18px', fontWeight: 300, letterSpacing: '0.12em', color: '#111' }}>DEMELLIER LONDON</span>
-          <div />
+          <span style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', fontSize: isMobile ? '14px' : '18px', fontWeight: 600, letterSpacing: '0.22em', color: '#111', textAlign: 'center', lineHeight: 1 }}>
+            DEMELLIER
+            <span style={{ display: 'block', fontSize: isMobile ? '7px' : '8px', letterSpacing: '0.38em', fontWeight: 500, marginTop: '4px' }}>LONDON</span>
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '20px', fontSize: isMobile ? '13px' : '17px', color: '#1f1f1f' }}>
+            {!isMobile && <><span>EN ▾</span><span>United Kingdom (GBP) ▾</span></>}
+            <span>⌕</span>
+            <span>◠</span>
+            <span>👜 0</span>
+          </div>
         </div>
       </header>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '12px 24px' }}>
-        <nav style={{ display: 'flex', gap: '6px', alignItems: 'center', fontSize: '11px', color: '#999' }}>
-          <span>Bags</span><span>/</span><span>{product.category}</span><span>/</span><span style={{ color: '#111' }}>{product.name}</span>
-        </nav>
-      </div>
 
       {isMobile ? (
         <div style={{ padding: '0 0 64px' }}>
-          <div style={{ padding: '0 20px 12px' }}><h1 style={{ fontSize: '14px', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', margin: 0 }}>{product.name}</h1></div>
-          <div style={{ ...galleryFrameStyle, aspectRatio: '1 / 1.08' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-            <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
-            {product.gallerySrcs.length > 1 && <div style={{ position: 'absolute', bottom: '10px', left: 0, right: 0, display: 'flex', gap: '6px', justifyContent: 'center' }}>{product.gallerySrcs.map((_, i) => <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{ width: '6px', height: '6px', borderRadius: '50%', border: 'none', cursor: 'pointer', padding: 0, backgroundColor: activeGalleryIndex === i ? '#fff' : 'rgba(255,255,255,0.5)' }} />)}</div>}
+          <div style={{ padding: '14px 20px 10px', fontSize: '11px', color: '#8b8b8b' }}>
+            <span>Top Handle Bags</span><span style={{ padding: '0 6px' }}>/</span><span>Brown Bags</span><span style={{ padding: '0 6px' }}>/</span><span>{product.breadcrumbLabel}</span>
           </div>
-          <div style={{ padding: '16px 20px 0' }}>
-            <div style={{ fontSize: '15px', fontWeight: 400, color: '#111', marginBottom: '20px' }}>{product.price}</div>
-            <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={tryOnBtnStyle}>
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-              AI TRY ON<span style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.4)', padding: '1px 8px', letterSpacing: '0.1em' }}>New</span>
-            </button>
-            <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', margin: '0 0 12px 0' }}>Upload your photo and see yourself with this bag</p>
-            <button style={{ width: '100%', padding: '16px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', backgroundColor: '#fff', border: '1px solid #111', cursor: 'default', marginBottom: '20px' }}>ADD TO BAG</button>
-            <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '16px' }}><p style={{ fontSize: '13px', color: '#444', lineHeight: '1.7', margin: 0 }}>{product.description}</p></div>
+          <div style={{ ...galleryFrameStyle, aspectRatio: '1 / 1.03' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+            <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
+            <div style={{ position: 'absolute', left: '16px', bottom: '18px', fontSize: '12px', color: '#111' }}>{activeGalleryIndex + 1}/{product.gallerySrcs.length}</div>
+          </div>
+          <div style={{ padding: '20px 20px 0' }}>
+            <h1 style={{ fontSize: '22px', fontWeight: 400, color: '#111', margin: '0 0 12px' }}>{product.name}</h1>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', fontSize: '15px', color: '#111', marginBottom: '16px' }}><span>{product.price}</span><span style={{ color: '#8b8b8b' }}>Taxes & Duties included</span></div>
+            <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, margin: '0 0 18px' }}>{product.description}</p>
+            <div style={{ fontSize: '13px', marginBottom: '10px' }}><span style={{ color: '#222' }}>Materials:</span> <span style={{ color: '#6b6b6b' }}>All</span> <span style={{ marginLeft: '10px', color: '#6b6b6b' }}>Suede</span> <span style={{ marginLeft: '10px', color: '#6b6b6b' }}>Grain</span></div>
+            <div style={{ fontSize: '13px', color: '#222', marginBottom: '10px' }}>Colour: {product.colourName}</div>
+            <div style={{ display: 'flex', gap: '8px', marginBottom: '18px' }}>{swatchColors.map((color, index) => <button key={color + index} style={{ width: '22px', height: '22px', borderRadius: '50%', border: index === 3 ? '1px solid #111' : '1px solid #cfcfcf', backgroundColor: color, padding: 0 }} />)}</div>
+            <div style={{ fontSize: '13px', color: '#222', marginBottom: '18px' }}>Family: Stockholm ▾</div>
+            <div style={{ textAlign: 'center', color: '#8b8b8b', fontSize: '12px', margin: '0 0 14px' }}>Taxes and duties included in the price</div>
+            <button style={{ width: '100%', padding: '15px', fontSize: '14px', fontWeight: 400, color: '#fff', backgroundColor: '#000', border: 'none', marginBottom: '10px' }}>Add to cart</button>
+            <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={{ width: '100%', padding: '15px', fontSize: '14px', fontWeight: 500, color: '#fff', backgroundColor: '#5a5a5a', border: 'none', marginBottom: '12px' }}>AI TRY ON</button>
+            <div style={{ borderTop: '1px solid #efefef', paddingTop: '16px', display: 'grid', gap: '10px', color: '#222', fontSize: '13px' }}>{infoRows.map(row => <div key={row}>{row}</div>)}</div>
           </div>
         </div>
       ) : (
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px 64px', display: 'grid', gridTemplateColumns: '1fr 460px', gap: '48px', alignItems: 'start' }}>
-          <div style={{ display: 'flex', gap: '12px' }}>
-            {product.gallerySrcs.length > 1 && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '80px', flexShrink: 0 }}>
-                {product.gallerySrcs.map((src, i) => <button key={i} onClick={() => setActiveGalleryIndex(i)} style={{ width: '80px', height: '100px', padding: 0, border: 'none', cursor: 'pointer', outline: activeGalleryIndex === i ? '1px solid #111' : '1px solid #ddd3c6', outlineOffset: '-1px', overflow: 'hidden', background: 'linear-gradient(180deg, #f8f3ec 0%, #f1e7dd 100%)', flexShrink: 0 }}><img src={src} alt={`View ${i + 1}`} style={thumbnailStyle} /></button>)}
-              </div>
-            )}
-            <div style={{ ...galleryFrameStyle, flex: 1, aspectRatio: '1 / 1.06' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(620px, 1.04fr) minmax(420px, 0.8fr)', alignItems: 'stretch' }}>
+          <div style={{ ...galleryFrameStyle, minHeight: 'calc(100vh - 65px)', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ padding: '28px 28px 0', fontSize: '13px', color: '#797979' }}>
+              <span>Top Handle Bags</span><span style={{ padding: '0 10px' }}>/</span><span>Brown Bags</span><span style={{ padding: '0 10px' }}>/</span><span>{product.breadcrumbLabel}</span>
+            </div>
+            <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <AnimatePresence mode="wait"><motion.img key={mainImageSrc} src={mainImageSrc} alt={product.name} style={galleryImageStyle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} /></AnimatePresence>
+              <div style={{ position: 'absolute', left: '28px', bottom: '22px', fontSize: '17px', color: '#111' }}>{activeGalleryIndex + 1}/{product.gallerySrcs.length}</div>
             </div>
           </div>
-          <div style={{ paddingTop: '8px' }}>
-            <h1 style={{ fontSize: '14px', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', margin: '0 0 16px 0' }}>{product.name}</h1>
-            <div style={{ fontSize: '15px', fontWeight: 400, color: '#111', marginBottom: '28px' }}>{product.price}</div>
-            <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={tryOnBtnStyle}>
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-              AI TRY ON<span style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.4)', padding: '1px 8px', letterSpacing: '0.1em' }}>New</span>
-            </button>
-            <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', margin: '0 0 12px 0' }}>Upload your photo and see yourself with this bag</p>
-            <button style={{ width: '100%', padding: '16px', fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#111', backgroundColor: '#fff', border: '1px solid #111', cursor: 'default', marginBottom: '20px' }}>ADD TO BAG</button>
-            <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '16px' }}><p style={{ fontSize: '13px', color: '#444', lineHeight: '1.7', margin: 0 }}>{product.description}</p></div>
+          <div style={{ backgroundColor: '#fff', padding: '54px 56px 80px' }}>
+            <div style={{ maxWidth: '610px' }}>
+              <h1 style={{ fontSize: '21px', fontWeight: 400, color: '#111', margin: '0 0 14px' }}>{product.name}</h1>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginBottom: '26px', fontSize: '16px' }}>
+                <span style={{ color: '#111' }}>{product.price}</span>
+                <span style={{ color: '#8a8a8a' }}>Taxes & Duties included</span>
+              </div>
+              <p style={{ fontSize: '16px', color: '#7d7d7d', lineHeight: 1.2, margin: '0 0 26px', maxWidth: '600px' }}>{product.description} <span style={{ color: '#111' }}>Read more</span></p>
+
+              <div style={{ display: 'flex', gap: '14px', alignItems: 'center', fontSize: '13px', marginBottom: '22px' }}>
+                <span style={{ color: '#222' }}>Materials:</span>
+                <span style={{ color: '#333', textDecoration: 'underline' }}>All</span>
+                <span style={{ color: '#333' }}>Suede</span>
+                <span style={{ color: '#333' }}>Grain</span>
+              </div>
+
+              <div style={{ fontSize: '13px', color: '#222', marginBottom: '14px' }}>Colour: {product.colourName}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px' }}>
+                {swatchColors.map((color, index) => (
+                  <button key={color + index} style={{ width: '28px', height: '28px', borderRadius: '50%', border: index === 3 ? '1px solid #8e8e8e' : '1px solid #d3d3d3', backgroundColor: color, padding: 0, boxShadow: index === 3 ? '0 0 0 2px #efefef inset' : undefined }} />
+                ))}
+                <span style={{ marginLeft: '8px', color: '#555' }}>-</span>
+              </div>
+
+              <div style={{ fontSize: '13px', color: '#222', marginBottom: '32px' }}>Family: Stockholm ▾</div>
+
+              <div style={{ textAlign: 'center', color: '#8b8b8b', fontSize: '12px', marginBottom: '16px' }}>
+                <div>Express Delivery, arrives by Mon 4th May</div>
+                <div>Free returns within 28 days</div>
+              </div>
+              <div style={{ textAlign: 'center', color: '#111', fontSize: '14px', marginBottom: '12px' }}>Taxes and duties included in the price</div>
+
+              <button style={{ width: '100%', padding: '16px', fontSize: '15px', fontWeight: 400, color: '#fff', backgroundColor: '#000', border: 'none', marginBottom: '10px' }}>Add to cart</button>
+              <button ref={tryOnButtonRef} onClick={() => { if (!animationActive) setAnimationActive(true); }} style={{ width: '100%', padding: '15px 16px', fontSize: '14px', fontWeight: 600, color: '#fff', backgroundColor: '#5c5c5c', border: '1px solid #7a7a7a', marginBottom: '6px' }}>AI TRY ON</button>
+              <div style={{ width: '100%', border: '1px solid #e2e2e2', padding: '8px 12px', textAlign: 'center', fontSize: '12px', color: '#444', marginBottom: '28px' }}>3 payments of <strong>{klarnaInstallment}</strong> at 0% interest with <span style={{ fontWeight: 500 }}>Klarna</span> <span style={{ textDecoration: 'underline' }}>Learn more</span></div>
+
+              <div style={{ display: 'grid', gap: '10px', color: '#222', fontSize: '13px' }}>
+                <div>Size</div>
+                {infoRows.map(row => <div key={row}>{row}</div>)}
+              </div>
+            </div>
           </div>
         </div>
       )}
