@@ -8,6 +8,7 @@ import { WardrobeItem } from '../types';
 import OutfitForm from './OutfitForm';
 import AnalyticsDashboard from './AnalyticsDashboard';
 import AdminTryOnStudio from './AdminTryOnStudio';
+import AdminDemoDirectory from './AdminDemoDirectory';
 
 interface AdminDashboardProps {
   onLogout: () => void;
@@ -16,6 +17,7 @@ interface AdminDashboardProps {
 type AdminView =
   | 'dashboard'
   | 'analytics'
+  | 'demo-directory'
   | 'form'
   | 'code-viewer'
   | 'tryon-studio';
@@ -147,6 +149,15 @@ ${outfit.outfitItems.map(item => `      {
 
   if (currentView === 'tryon-studio') {
     return <AdminTryOnStudio onBack={() => setCurrentView('dashboard')} />;
+  }
+
+  if (currentView === 'demo-directory') {
+    return (
+      <AdminDemoDirectory
+        onBack={() => setCurrentView('dashboard')}
+        onLogout={onLogout}
+      />
+    );
   }
 
   if (currentView === 'analytics') {
@@ -309,6 +320,15 @@ ${outfit.outfitItems.map(item => `      {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 Try-On Studio
+              </button>
+              <button
+                onClick={() => setCurrentView('demo-directory')}
+                className="px-4 py-2 bg-gray-900 text-white rounded-md font-medium hover:bg-gray-800 transition-colors flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                Demo Directory
               </button>
               <button
                 onClick={handleExportJSON}
