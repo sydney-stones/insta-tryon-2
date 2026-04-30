@@ -387,8 +387,10 @@ const DukeDexterDemoPage: React.FC<DukeDexterDemoPageProps> = ({ productSlug }) 
                     <div style={{ display: 'flex', alignItems: 'center' }}><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2px 8px', backgroundColor: '#1E2939', height: '20px', marginRight: '16px' }}><span style={{ fontSize: '12px', fontWeight: 500, color: '#F9FAFB', whiteSpace: 'nowrap' }}>10 credits left</span></div><div style={{ width: '48px', height: '48px', borderLeft: '1px solid #D1D5DC' }} /></div>
                   </div>
                   <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
-                    <div style={{ width: '50%', flexShrink: 0, background: 'linear-gradient(180deg, #f7f4ee 0%, #efe9df 100%)', position: 'relative', display: isMobile ? 'none' : 'block' }}>
-                      <img src={mainImageSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', minHeight: '400px', padding: '20px 20px 28px' }} />
+                    <div style={{ width: '50%', flexShrink: 0, background: 'linear-gradient(180deg, #f7f4ee 0%, #efe9df 100%)', position: 'relative', display: isMobile ? 'none' : 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px', padding: '24px' }}>
+                      <div style={{ width: 'min(82%, 260px)', aspectRatio: '3 / 4', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                        <img src={mainImageSrc} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', display: 'block' }} />
+                      </div>
                       <div style={{ position: 'absolute', bottom: '12px', left: '12px', display: 'flex', alignItems: 'center', gap: '6px', padding: '0 10px', height: '29.83px', backgroundColor: 'rgba(255,255,255,0.92)', border: '1px solid #D1D5DC' }}><span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {selectedSize}</span><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg></div>
                     </div>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
