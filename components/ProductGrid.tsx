@@ -16,7 +16,14 @@ interface ProductGridProps {
   searchQuery?: string;
 }
 
-const TIERS = [
+const TIERS_USD = [
+  { name: 'Starter',      monthly: 329,  annual: 3290,  tryonsMonthly: 1000,  tryonsAnnual: 12000  },
+  { name: 'Growth',       monthly: 659,  annual: 6590,  tryonsMonthly: 2000,  tryonsAnnual: 24000  },
+  { name: 'Scale',        monthly: 990,  annual: 9900,  tryonsMonthly: 3500,  tryonsAnnual: 42000  },
+  { name: 'Professional', monthly: 1650, annual: 16500, tryonsMonthly: 6000,  tryonsAnnual: 72000  },
+];
+
+const TIERS_GBP = [
   { name: 'Starter',      monthly: 249,  annual: 2490,  tryonsMonthly: 1000,  tryonsAnnual: 12000  },
   { name: 'Growth',       monthly: 449,  annual: 4490,  tryonsMonthly: 2000,  tryonsAnnual: 24000  },
   { name: 'Scale',        monthly: 749,  annual: 7490,  tryonsMonthly: 3500,  tryonsAnnual: 42000  },
@@ -25,6 +32,7 @@ const TIERS = [
 
 const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
   const [isAnnual, setIsAnnual] = useState<boolean>(false);
+  const [currency, setCurrency] = useState<'USD' | 'GBP'>('USD');
 
   useEffect(() => {
     const injectSchema = (id: string, json: object) => {
@@ -123,12 +131,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               Allow your customers to virtually visualise garments on themselves before buying
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link to="/contact" className="inline-block border border-white bg-white px-8 py-3.5 text-center text-[13px] font-medium uppercase tracking-[0.06em] text-[#444833] transition-all hover:bg-transparent hover:text-white" style={{ fontFamily: 'Jost, sans-serif', textDecoration: 'none' }}>
+              <a href="https://apps.shopify.com/rendered-fits-virtual-try-on" target="_blank" rel="noopener noreferrer" className="inline-block border border-white bg-white px-8 py-3.5 text-center text-[13px] font-medium uppercase tracking-[0.06em] text-[#444833] transition-all hover:bg-transparent hover:text-white" style={{ fontFamily: 'Jost, sans-serif', textDecoration: 'none' }}>
+                Install on your store
+              </a>
+              <a href="https://calendly.com/mail-renderedfits/15-minute-meeting" target="_blank" rel="noopener noreferrer" className="inline-block border border-white/40 bg-transparent px-8 py-3.5 text-center text-[13px] font-medium uppercase tracking-[0.06em] text-white transition-all hover:border-white" style={{ fontFamily: 'Jost, sans-serif', textDecoration: 'none' }}>
                 Schedule a Meeting
-              </Link>
-              <Link to="/results" className="inline-block border border-white/40 bg-transparent px-8 py-3.5 text-center text-[13px] font-medium uppercase tracking-[0.06em] text-white transition-all hover:border-white" style={{ fontFamily: 'Jost, sans-serif', textDecoration: 'none' }}>
-                See How It Works
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -222,8 +230,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
               Simple integration. Cancel anytime.
             </p>
 
-            {/* Toggle */}
-            <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gray-100 rounded-2xl sm:rounded-full px-2 py-2">
+            {/* Billing toggle */}
+            <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gray-100 rounded-2xl sm:rounded-full px-2 py-2 mb-3">
               <button
                 onClick={() => setIsAnnual(false)}
                 className={`min-w-28 px-5 py-2 rounded-full text-sm font-semibold transition-all ${!isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
@@ -235,14 +243,31 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                 className={`min-w-28 px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-2 ${isAnnual ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
               >
                 Annual
-                <span className="bg-[#444833] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">2 months free</span>
+                <span className="bg-[#444833] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">save 17%</span>
+              </button>
+            </div>
+
+            {/* Currency toggle */}
+            <div className="inline-flex items-center gap-1 bg-gray-100 rounded-full px-1.5 py-1.5">
+              <button
+                onClick={() => setCurrency('USD')}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${currency === 'USD' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                $ USD
+              </button>
+              <button
+                onClick={() => setCurrency('GBP')}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${currency === 'GBP' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                £ GBP
               </button>
             </div>
           </div>
 
           {/* Pricing Table */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {TIERS.map((t, i) => {
+            {(currency === 'USD' ? TIERS_USD : TIERS_GBP).map((t, i) => {
+              const sym = currency === 'USD' ? '$' : '£';
               const displayPrice = isAnnual ? Math.round(t.annual / 12) : t.monthly;
               const displayTryons = isAnnual ? t.tryonsAnnual : t.tryonsMonthly;
               const isPopular = i === 1; // Growth = most popular
@@ -272,17 +297,17 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
                     {/* Price */}
                     <div className="mb-2 flex items-end gap-1">
                       <span className={`text-4xl font-black leading-none ${isPopular ? 'text-white' : 'text-gray-900'}`}>
-                        £{displayPrice.toLocaleString()}
+                        {sym}{displayPrice.toLocaleString()}
                       </span>
                       <span className={`text-sm pb-1 ${isPopular ? 'text-white/50' : 'text-gray-400'}`}>/mo</span>
                     </div>
                     {isAnnual ? (
                       <p className={`text-xs mb-6 ${isPopular ? 'text-white/50' : 'text-gray-400'}`}>
-                        £{t.annual.toLocaleString()} billed annually
+                        {sym}{t.annual.toLocaleString()} billed annually
                       </p>
                     ) : (
                       <p className={`text-xs mb-6 ${isPopular ? 'text-white/50' : 'text-gray-400'}`}>
-                        or £{Math.round(t.annual / 12).toLocaleString()}/mo billed annually
+                        or {sym}{t.annual.toLocaleString()}/year — save 17%
                       </p>
                     )}
 
@@ -378,12 +403,14 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
             {/* CTA */}
             <div className="flex flex-col items-center gap-3">
               <p className="text-white/70 text-xs sm:text-sm">Contact Us: <a href="mailto:mail@renderedfits.com" className="text-white hover:underline">mail@renderedfits.com</a></p>
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/mail-renderedfits/15-minute-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block border border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-[#444833] transition-all"
               >
                 Schedule a Meeting
-              </Link>
+              </a>
             </div>
           </div>
         </div>
