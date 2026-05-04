@@ -536,9 +536,6 @@ const KhanumsDemoPage: React.FC<KhanumsDemoPageProps> = ({ productSlug }) => {
                       <span className="animate-bounce" style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1E2939', animationDelay: '300ms', display: 'inline-block' }} />
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '0 8px', height: '29.83px', backgroundColor: '#F3F4F6', border: '1px solid #E5E7EB', justifyContent: 'center' }}>
-                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: product.swatchColor, border: '1px solid #ccc', flexShrink: 0 }} />
-                      <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>{product.colourLabel}</span>
-                      <div style={{ width: '1px', height: '16px', backgroundColor: '#D1D5DC' }} />
                       <span style={{ fontSize: '11px', fontWeight: 500, color: '#101828', fontFamily: "'Jost', sans-serif" }}>Size: {selectedSize}</span>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6A7282" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>

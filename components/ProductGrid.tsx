@@ -359,17 +359,17 @@ const ProductGrid: React.FC<ProductGridProps> = ({ }) => {
           </div>
 
           {/* Enterprise row */}
-          <div className="mt-6 rounded-2xl border border-gray-200 bg-white shadow-sm px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-6 rounded-2xl bg-[#444833] px-5 sm:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Enterprise</p>
-              <p className="text-lg font-bold text-gray-900">Need more volume or a custom integration?</p>
-              <p className="text-sm text-gray-500 mt-1">Custom try-on limits and dedicated support.</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-2">Enterprise</p>
+              <p className="text-xl font-bold text-white">Custom volume. Custom pricing.</p>
+              <p className="text-sm text-white/70 mt-2 max-w-md">For large brands that need higher try-on limits, bespoke integrations, or white-glove onboarding — we'll build a plan around you.</p>
             </div>
             <Link
               to="/contact"
-              className="w-full sm:w-auto flex-shrink-0 border-2 border-[#444833] text-[#444833] px-8 py-3 rounded-xl text-center text-sm font-semibold hover:bg-[#444833] hover:text-white transition-all"
+              className="w-full sm:w-auto flex-shrink-0 bg-white text-[#444833] px-10 py-3.5 rounded-xl text-center text-sm font-bold hover:bg-gray-100 transition-all whitespace-nowrap"
             >
-              Talk to us
+              Get in touch
             </Link>
           </div>
 
