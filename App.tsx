@@ -43,6 +43,7 @@ import PerfectWhiteTeeDemoPage from './components/PerfectWhiteTeeDemoPage';
 import SlowloveDemoPage from './components/SlowloveDemoPage';
 import DemellierDemoPage from './components/DemellierDemoPage';
 import DukeDexterDemoPage from './components/DukeDexterDemoPage';
+import TierCalculatorPage from './components/TierCalculatorPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
 
@@ -81,6 +82,9 @@ const App: React.FC = () => {
         <Routes>
           {/* Admin Route - Hidden from navigation */}
           <Route path="/admin" element={<AdminPage />} />
+
+          {/* Tier calculator */}
+          <Route path="/tier-calculator" element={<TierCalculatorPage />} />
 
           {/* Contact Page - No header */}
           <Route path="/contact" element={<ContactPage />} />
