@@ -663,7 +663,7 @@ const MockProductPage: React.FC<MockProductPageProps> = ({ product, onClose }) =
                     transition={{ duration: 0.25 }}
                   >
                     <motion.img
-                      src={isMobile ? '/result-images/phoneupload.PNG' : '/result-images/desktopupload.png'}
+                      src={isMobile ? '/result-images/phoneupload.PNG' : '/result-images/finderupload.png'}
                       alt="Upload dialog"
                       className="max-w-[85%] sm:max-w-[60%] max-h-[70%] object-contain rounded-xl shadow-2xl"
                       initial={{ opacity: 0, y: 30 }}

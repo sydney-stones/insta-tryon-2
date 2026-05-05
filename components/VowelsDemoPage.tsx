@@ -567,7 +567,7 @@ const VowelsDemoPage: React.FC<VowelsDemoPageProps> = ({ productSlug }) => {
               <AnimatePresence>
                 {isUploadModalVisible(animState) && (
                   <motion.div ref={overlayContainerRef} className="absolute inset-0 z-[70] flex items-end sm:items-center justify-center bg-black/40" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
-                    <motion.img src={isMobile ? '/result-images/phoneupload.PNG' : '/result-images/desktopupload.png'} alt="Upload dialog" className="max-w-[85%] sm:max-w-[60%] max-h-[70%] object-contain rounded-xl shadow-2xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 30 }} transition={{ duration: 0.2 }} />
+                    <motion.img src={isMobile ? '/result-images/phoneupload.PNG' : '/result-images/finderupload.png'} alt="Upload dialog" className="max-w-[85%] sm:max-w-[60%] max-h-[70%] object-contain rounded-xl shadow-2xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 30 }} transition={{ duration: 0.2 }} />
                   </motion.div>
                 )}
               </AnimatePresence>
