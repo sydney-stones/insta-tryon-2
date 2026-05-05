@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { AsciiShader } from './AsciiShader';
 
@@ -10,76 +10,79 @@ const TIERS = [
   { name: 'Enterprise',   monthly: null, maxTryons: Infinity },
 ];
 
-const SHOPIFY_APP_URL = 'https://apps.shopify.com/rendered-fits-virtual-try-on';
-const BOOK_A_CALL_URL = 'https://calendly.com/mail-renderedfits/15-minute-meeting';
+// Visitor slider: log-scale steps so it feels natural across 1k–500k
+const VISITOR_STEPS = [
+  1000, 2000, 3000, 5000, 7500, 10000, 15000, 20000, 30000, 50000,
+  75000, 100000, 150000, 200000, 300000, 500000,
+];
 
-function getTier(tryonsPerMonth: number) {
-  return TIERS.find(t => tryonsPerMonth <= t.maxTryons) ?? TIERS[TIERS.length - 1];
+// AOV slider: £25 steps from £25 to £1000
+const AOV_MIN = 25;
+const AOV_MAX = 1000;
+const AOV_STEP = 25;
+
+const SHOPIFY_APP_URL = 'https://apps.shopify.com/rendered-fits-virtual-try-on';
+const CALENDLY_URL = 'https://calendly.com/mail-renderedfits/15-minute-meeting';
+
+function getTier(tryons: number) {
+  return TIERS.find(t => tryons <= t.maxTryons) ?? TIERS[TIERS.length - 1];
+}
+
+function fmtVisitors(v: number) {
+  if (v >= 1000000) return `${(v / 1000000).toFixed(1)}M`;
+  if (v >= 1000) return `${(v / 1000).toFixed(0)}k`;
+  return v.toString();
+}
+
+function fmtGbp(n: number) {
+  return '£' + Math.round(n).toLocaleString('en-GB');
 }
 
 export default function TierCalculatorPage() {
-  const [visitors, setVisitors] = useState('');
-  const [aov, setAov] = useState('');
-  const [result, setResult] = useState<{
-    tryons: number;
-    tier: typeof TIERS[0];
-    conversionUplift: number;
-    returnsSaving: number;
-    aovUplift: number;
-    totalBenefit: number;
-    annualCost: number;
-  } | null>(null);
-  const [error, setError] = useState('');
+  const [visitorIdx, setVisitorIdx] = React.useState(8); // default ~30k
+  const [aov, setAov] = React.useState(150);
+  const [isAnnual, setIsAnnual] = React.useState(false);
 
-  function calculate() {
-    const v = parseFloat(visitors.replace(/,/g, ''));
-    const a = aov.trim() === '' ? 150 : parseFloat(aov.replace(/,/g, ''));
+  const visitors = VISITOR_STEPS[visitorIdx];
 
-    if (isNaN(v) || v <= 0) {
-      setError('Please enter your monthly unique visitors to continue.');
-      setResult(null);
-      return;
-    }
-    if (isNaN(a) || a <= 0) {
-      setError('Please enter a valid average order value.');
-      setResult(null);
-      return;
-    }
-
-    setError('');
-
-    const tryons = Math.round(v * 0.07);
+  const result = useMemo(() => {
+    const tryons = Math.round(visitors * 0.07);
     const tier = getTier(tryons);
 
-    // ROI calculations
-    // Conversion uplift: try-on users × 20% uplift × AOV × 12
-    const conversionUplift = tryons * 0.20 * a * 12;
+    // Conversion uplift: try-on users × 15% uplift × AOV × 12
+    const conversionUplift = tryons * 0.15 * aov * 12;
 
-    // Returns saving: 20% reduction on 2% return rate on try-on converting orders × AOV × 12
-    // try-on converting orders per month = tryons × ~15% conversion (industry midpoint)
-    const tryonConvertingOrders = tryons * 0.15;
-    const returnsSaving = tryonConvertingOrders * 0.02 * 0.20 * a * 12;
+    // Try-on converting orders (use ~10% conversion from try-on to purchase)
+    const tryonConvertingOrders = tryons * 0.10;
+
+    // Returns saving: 20% reduction on 2% baseline return rate × AOV × 12
+    const returnsSaving = tryonConvertingOrders * 0.02 * 0.20 * aov * 12;
 
     // AOV uplift: try-on converting orders × 10% AOV increase × 12
-    const aovUplift = tryonConvertingOrders * (a * 0.10) * 12;
+    const aovUplift = tryonConvertingOrders * (aov * 0.10) * 12;
 
     const totalBenefit = conversionUplift + returnsSaving + aovUplift;
-    const annualCost = tier.monthly !== null ? tier.monthly * 12 : 0;
 
-    setResult({ tryons, tier, conversionUplift, returnsSaving, aovUplift, totalBenefit, annualCost });
-  }
+    // Annual cost: 10 months price (2 months free) when annual, else monthly × 12
+    const annualCost = tier.monthly !== null
+      ? (isAnnual ? tier.monthly * 10 : tier.monthly * 12)
+      : 0;
+    const monthlyCost = tier.monthly ?? null;
 
-  const fmt = (n: number) =>
-    '£' + Math.round(n).toLocaleString('en-GB');
+    return { tryons, tier, conversionUplift, returnsSaving, aovUplift, totalBenefit, annualCost, monthlyCost };
+  }, [visitors, aov, isAnnual]);
 
-  const isEnterprise = result?.tier.name === 'Enterprise';
+  const isEnterprise = result.tier.name === 'Enterprise';
+
+  // Progress percentage for tier indicator bar
+  const tierIndex = TIERS.findIndex(t => t.name === result.tier.name);
 
   return (
     <div className="min-h-screen bg-white">
 
-      {/* Hero header */}
+      {/* Hero */}
       <div
-        className="relative overflow-hidden py-16 sm:py-24"
+        className="relative overflow-hidden py-14 sm:py-20"
         style={{ background: 'linear-gradient(91.71deg, #444833 2.65%, #151A00 98.8%)' }}
       >
         <AsciiShader
@@ -100,232 +103,322 @@ export default function TierCalculatorPage() {
           <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-4">
             Tier Recommendation
           </p>
-          <h1 className="text-3xl sm:text-5xl font-serif italic text-white mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-serif italic text-white mb-3 leading-tight">
             Which plan is right for you?
           </h1>
-          <p className="text-white/60 text-base sm:text-lg max-w-md mx-auto">
-            Enter your site stats and we'll estimate your ideal tier and expected return on investment.
+          <p className="text-white/60 text-base max-w-md mx-auto">
+            Adjust the sliders — your recommended tier and ROI update live.
           </p>
         </div>
       </div>
 
-      {/* Calculator */}
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-6">
 
-        {/* Inputs */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8 mb-8">
-          <h2 className="text-lg font-bold text-gray-900 mb-6">Your store details</h2>
+        {/* Sliders card */}
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8">
+          <h2 className="text-base font-bold text-gray-900 mb-7">Your store details</h2>
 
-          <div className="space-y-5">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                Monthly unique website visitors
-                <span className="ml-1.5 text-xs font-normal text-gray-400">(required)</span>
-              </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  value={visitors}
-                  onChange={e => setVisitors(e.target.value)}
-                  onKeyDown={e => e.key === 'Enter' && calculate()}
-                  placeholder="e.g. 25,000"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#444833]/30 focus:border-[#444833] transition-all"
-                />
-              </div>
+          {/* Visitor slider */}
+          <div className="mb-8">
+            <div className="flex justify-between items-baseline mb-3">
+              <label className="text-sm font-semibold text-gray-700">Monthly unique visitors</label>
+              <span className="text-2xl font-black text-[#444833]">{fmtVisitors(visitors)}</span>
             </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                Average order value (£)
-                <span className="ml-1.5 text-xs font-normal text-gray-400">(defaults to £150 if left blank)</span>
-              </label>
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm font-medium">£</span>
-                <input
-                  type="text"
-                  inputMode="decimal"
-                  value={aov}
-                  onChange={e => setAov(e.target.value)}
-                  onKeyDown={e => e.key === 'Enter' && calculate()}
-                  placeholder="150"
-                  className="w-full border border-gray-200 rounded-xl pl-8 pr-4 py-3 text-gray-900 text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#444833]/30 focus:border-[#444833] transition-all"
-                />
-              </div>
+            <input
+              type="range"
+              min={0}
+              max={VISITOR_STEPS.length - 1}
+              step={1}
+              value={visitorIdx}
+              onChange={e => setVisitorIdx(Number(e.target.value))}
+              className="w-full h-2 rounded-full appearance-none cursor-pointer"
+              style={{
+                background: `linear-gradient(to right, #444833 ${(visitorIdx / (VISITOR_STEPS.length - 1)) * 100}%, #e5e7eb ${(visitorIdx / (VISITOR_STEPS.length - 1)) * 100}%)`,
+              }}
+            />
+            <div className="flex justify-between mt-1.5 text-xs text-gray-400">
+              <span>1k</span>
+              <span>500k</span>
             </div>
           </div>
 
-          {error && (
-            <p className="mt-4 text-sm text-red-500">{error}</p>
-          )}
-
-          <button
-            onClick={calculate}
-            className="mt-6 w-full bg-[#444833] text-white py-3.5 rounded-xl text-sm font-bold hover:bg-[#3a3d2b] transition-all"
-          >
-            Calculate my tier
-          </button>
+          {/* AOV slider */}
+          <div>
+            <div className="flex justify-between items-baseline mb-3">
+              <label className="text-sm font-semibold text-gray-700">Average order value</label>
+              <span className="text-2xl font-black text-[#444833]">£{aov}</span>
+            </div>
+            <input
+              type="range"
+              min={AOV_MIN}
+              max={AOV_MAX}
+              step={AOV_STEP}
+              value={aov}
+              onChange={e => setAov(Number(e.target.value))}
+              className="w-full h-2 rounded-full appearance-none cursor-pointer"
+              style={{
+                background: `linear-gradient(to right, #444833 ${((aov - AOV_MIN) / (AOV_MAX - AOV_MIN)) * 100}%, #e5e7eb ${((aov - AOV_MIN) / (AOV_MAX - AOV_MIN)) * 100}%)`,
+              }}
+            />
+            <div className="flex justify-between mt-1.5 text-xs text-gray-400">
+              <span>£25</span>
+              <span>£1,000</span>
+            </div>
+          </div>
         </div>
 
-        {/* Results */}
-        {result && (
-          <div className="space-y-5 animate-in fade-in slide-in-from-bottom-4 duration-300">
+        {/* Recommended tier card */}
+        <div className="rounded-2xl bg-[#444833] p-6 sm:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-4">
+            Recommended tier
+          </p>
 
-            {/* Recommended tier */}
-            <div
-              className={`rounded-2xl p-6 sm:p-8 ${isEnterprise ? 'bg-[#444833] text-white' : 'bg-[#444833] text-white'}`}
+          {/* Tier name + price */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
+            <div>
+              <p className="text-4xl sm:text-5xl font-black text-white leading-none mb-2">
+                {result.tier.name}
+              </p>
+              {isEnterprise ? (
+                <p className="text-white/60 text-sm">Custom pricing — let's talk</p>
+              ) : (
+                <div className="flex items-center gap-2 flex-wrap">
+                  <p className="text-white/80 text-sm">
+                    £{result.monthlyCost!.toLocaleString()}/mo
+                  </p>
+                  {isAnnual && (
+                    <span className="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                      2 months free
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+            <div className="text-left sm:text-right shrink-0">
+              <p className="text-3xl font-black text-white">{result.tryons.toLocaleString()}</p>
+              <p className="text-white/50 text-xs">est. try-ons / month</p>
+            </div>
+          </div>
+
+          {/* Tier progress dots */}
+          <div className="flex items-center gap-1.5 mb-6">
+            {TIERS.map((t, i) => (
+              <div
+                key={t.name}
+                className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${
+                  i <= tierIndex ? 'bg-white' : 'bg-white/20'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Billing toggle */}
+          {!isEnterprise && (
+            <div className="inline-flex items-center gap-1 bg-black/20 rounded-full px-1.5 py-1.5 mb-5">
+              <button
+                onClick={() => setIsAnnual(false)}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${!isAnnual ? 'bg-white text-[#444833]' : 'text-white/60 hover:text-white'}`}
+              >
+                Monthly
+              </button>
+              <button
+                onClick={() => setIsAnnual(true)}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${isAnnual ? 'bg-white text-[#444833]' : 'text-white/60 hover:text-white'}`}
+              >
+                Annual
+                <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none ${isAnnual ? 'bg-[#444833] text-white' : 'bg-white/20 text-white'}`}>
+                  2 months free
+                </span>
+              </button>
+            </div>
+          )}
+
+          {/* Annual cost summary */}
+          {!isEnterprise && (
+            <p className="text-white/60 text-sm mb-5">
+              {isAnnual
+                ? `£${result.annualCost.toLocaleString()} billed annually`
+                : `£${result.annualCost.toLocaleString()} billed monthly`}
+            </p>
+          )}
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            {isEnterprise ? (
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center bg-white text-[#444833] py-3 rounded-xl text-sm font-bold hover:bg-gray-100 transition-all"
+              >
+                Talk to the team
+              </a>
+            ) : (
+              <a
+                href={SHOPIFY_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center bg-white text-[#444833] py-3 rounded-xl text-sm font-bold hover:bg-gray-100 transition-all"
+              >
+                Install on Shopify
+              </a>
+            )}
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/10 transition-all"
             >
-              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-3">
-                Recommended tier
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-                <div>
-                  <p className="text-3xl sm:text-4xl font-black text-white mb-1">{result.tier.name}</p>
-                  {isEnterprise ? (
-                    <p className="text-white/70 text-sm">Custom pricing — let's talk</p>
-                  ) : (
-                    <p className="text-white/70 text-sm">
-                      £{result.tier.monthly!.toLocaleString()}/month
-                    </p>
-                  )}
-                </div>
-                <div className="text-left sm:text-right">
-                  <p className="text-2xl font-black text-white">{result.tryons.toLocaleString()}</p>
-                  <p className="text-white/60 text-xs">estimated try-ons/month</p>
-                </div>
-              </div>
+              Schedule a demo
+            </a>
+          </div>
+        </div>
 
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                {isEnterprise ? (
-                  <a
-                    href={BOOK_A_CALL_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center bg-white text-[#444833] py-3 rounded-xl text-sm font-bold hover:bg-gray-100 transition-all"
-                  >
-                    Book a call
-                  </a>
-                ) : (
-                  <a
-                    href={SHOPIFY_APP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center bg-white text-[#444833] py-3 rounded-xl text-sm font-bold hover:bg-gray-100 transition-all"
-                  >
-                    Install on Shopify
-                  </a>
-                )}
-                <Link
-                  to="/contact"
-                  className="flex-1 text-center border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/10 transition-all"
+        {/* ROI card */}
+        <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-6 sm:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">
+            Estimated annual ROI
+          </p>
+
+          <div className="space-y-4">
+            <div className="flex justify-between items-center gap-4">
+              <p className="text-sm text-gray-600">Conversion uplift</p>
+              <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmtGbp(result.conversionUplift)}</p>
+            </div>
+            <div className="border-t border-gray-100" />
+            <div className="flex justify-between items-center gap-4">
+              <p className="text-sm text-gray-600">Returns saving</p>
+              <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmtGbp(result.returnsSaving)}</p>
+            </div>
+            <div className="border-t border-gray-100" />
+            <div className="flex justify-between items-center gap-4">
+              <p className="text-sm text-gray-600">AOV uplift</p>
+              <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmtGbp(result.aovUplift)}</p>
+            </div>
+            <div className="border-t border-gray-200 pt-4 space-y-2">
+              <div className="flex justify-between items-center gap-4">
+                <p className="text-sm font-semibold text-gray-900">Total estimated annual benefit</p>
+                <p className="text-sm font-black text-[#444833] tabular-nums shrink-0">{fmtGbp(result.totalBenefit)}</p>
+              </div>
+              {!isEnterprise && result.annualCost > 0 && (
+                <div className="flex justify-between items-center gap-4">
+                  <p className="text-sm text-gray-400">Annual subscription</p>
+                  <p className="text-sm font-semibold text-gray-400 tabular-nums shrink-0">−{fmtGbp(result.annualCost)}</p>
+                </div>
+              )}
+              {!isEnterprise && result.annualCost > 0 && (
+                <div className="flex justify-between items-center gap-4 bg-gray-50 rounded-xl px-4 py-3 mt-1">
+                  <p className="text-sm font-bold text-gray-900">Net annual return</p>
+                  <p className="text-base font-black text-[#444833] tabular-nums shrink-0">
+                    {fmtGbp(result.totalBenefit - result.annualCost)}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <p className="mt-6 text-xs text-gray-400 leading-relaxed border-t border-gray-100 pt-5">
+            These projections are based on documented industry benchmarks from earlier-generation virtual try-on tools. Rendered Fits is expected to outperform them.
+          </p>
+        </div>
+
+        {/* All tiers reference */}
+        <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">All tiers</p>
+          <div className="space-y-2.5">
+            {TIERS.map(t => {
+              const isActive = result.tier.name === t.name;
+              return (
+                <div
+                  key={t.name}
+                  className={`flex items-center justify-between rounded-xl px-4 py-3 transition-all duration-200 ${
+                    isActive
+                      ? 'bg-[#444833] text-white shadow-md'
+                      : 'bg-white border border-gray-200 text-gray-700'
+                  }`}
                 >
-                  Schedule a demo
-                </Link>
-              </div>
-            </div>
-
-            {/* ROI breakdown */}
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-6 sm:p-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">
-                Estimated annual ROI
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex justify-between items-start gap-4">
-                  <p className="text-sm text-gray-600">Conversion uplift</p>
-                  <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmt(result.conversionUplift)}</p>
-                </div>
-                <div className="border-t border-gray-100" />
-                <div className="flex justify-between items-start gap-4">
-                  <p className="text-sm text-gray-600">Returns saving</p>
-                  <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmt(result.returnsSaving)}</p>
-                </div>
-                <div className="border-t border-gray-100" />
-                <div className="flex justify-between items-start gap-4">
-                  <p className="text-sm text-gray-600">AOV uplift</p>
-                  <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmt(result.aovUplift)}</p>
-                </div>
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="flex justify-between items-start gap-4">
-                    <p className="text-sm font-semibold text-gray-900">Total estimated annual benefit</p>
-                    <p className="text-sm font-black text-[#444833] tabular-nums shrink-0">{fmt(result.totalBenefit)}</p>
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    {isActive && (
+                      <svg className="w-3.5 h-3.5 text-white/70 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    )}
+                    <span className={`text-sm font-semibold truncate ${isActive ? 'text-white' : 'text-gray-800'}`}>
+                      {t.name}
+                    </span>
+                    <span className={`text-xs hidden sm:block shrink-0 ${isActive ? 'text-white/50' : 'text-gray-400'}`}>
+                      {t.maxTryons === Infinity ? '6,001+' : `≤ ${t.maxTryons.toLocaleString()}`} try-ons/mo
+                    </span>
                   </div>
-                  {!isEnterprise && result.annualCost > 0 && (
-                    <div className="flex justify-between items-start gap-4 mt-2">
-                      <p className="text-sm text-gray-500">Annual subscription cost</p>
-                      <p className="text-sm font-semibold text-gray-500 tabular-nums shrink-0">−{fmt(result.annualCost)}</p>
-                    </div>
-                  )}
-                  {!isEnterprise && result.annualCost > 0 && (
-                    <div className="flex justify-between items-start gap-4 mt-3 bg-gray-50 rounded-xl px-4 py-3">
-                      <p className="text-sm font-bold text-gray-900">Net annual return</p>
-                      <p className="text-base font-black text-[#444833] tabular-nums shrink-0">{fmt(result.totalBenefit - result.annualCost)}</p>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <p className="mt-6 text-xs text-gray-400 leading-relaxed border-t border-gray-100 pt-5">
-                These projections are based on documented industry benchmarks from earlier-generation virtual try-on tools. Rendered Fits is expected to outperform them.
-              </p>
-            </div>
-
-            {/* All tiers reference */}
-            <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:p-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">All tiers</p>
-              <div className="space-y-3">
-                {TIERS.map(t => (
-                  <div
-                    key={t.name}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 transition-all ${
-                      result.tier.name === t.name
-                        ? 'bg-[#444833] text-white'
-                        : 'bg-white border border-gray-200 text-gray-700'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      {result.tier.name === t.name && (
-                        <svg className="w-4 h-4 text-white/70 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      )}
-                      <span className={`text-sm font-semibold ${result.tier.name === t.name ? 'text-white' : ''}`}>{t.name}</span>
-                    </div>
-                    <div className="flex items-center gap-4 sm:gap-6">
-                      <span className={`text-xs hidden sm:block ${result.tier.name === t.name ? 'text-white/60' : 'text-gray-400'}`}>
-                        {t.maxTryons === Infinity ? '6,001+' : `up to ${t.maxTryons.toLocaleString()}`} try-ons/mo
-                      </span>
-                      <span className={`text-sm font-bold tabular-nums ${result.tier.name === t.name ? 'text-white' : 'text-gray-900'}`}>
-                        {t.monthly !== null ? `£${t.monthly.toLocaleString()}/mo` : 'Custom'}
-                      </span>
+                  <div className="flex items-center gap-3 shrink-0 ml-3">
+                    <span className={`text-sm font-bold tabular-nums ${isActive ? 'text-white' : 'text-gray-900'}`}>
+                      {t.monthly !== null ? `£${t.monthly.toLocaleString()}/mo` : 'Custom'}
+                    </span>
+                    {t.name === 'Enterprise' ? (
+                      <a
+                        href={CALENDLY_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-all whitespace-nowrap ${
+                          isActive
+                            ? 'bg-white text-[#444833] hover:bg-gray-100'
+                            : 'border border-gray-200 text-gray-600 hover:border-[#444833] hover:text-[#444833]'
+                        }`}
+                      >
+                        Contact us
+                      </a>
+                    ) : (
                       <a
                         href={SHOPIFY_APP_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-all whitespace-nowrap ${
-                          result.tier.name === t.name
+                          isActive
                             ? 'bg-white text-[#444833] hover:bg-gray-100'
                             : 'border border-gray-200 text-gray-600 hover:border-[#444833] hover:text-[#444833]'
                         }`}
                       >
                         Install
                       </a>
-                    </div>
+                    )}
                   </div>
-                ))}
-              </div>
-            </div>
-
+                </div>
+              );
+            })}
           </div>
-        )}
+        </div>
 
         {/* Back link */}
-        <div className="mt-10 text-center">
+        <div className="text-center pt-2 pb-6">
           <Link to="/" className="text-sm text-gray-400 hover:text-gray-600 transition-colors">
             ← Back to pricing
           </Link>
         </div>
+
       </div>
+
+      {/* Slider thumb styling */}
+      <style>{`
+        input[type='range']::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: #444833;
+          border: 3px solid white;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+          cursor: pointer;
+        }
+        input[type='range']::-moz-range-thumb {
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: #444833;
+          border: 3px solid white;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+          cursor: pointer;
+        }
+      `}</style>
     </div>
   );
 }
