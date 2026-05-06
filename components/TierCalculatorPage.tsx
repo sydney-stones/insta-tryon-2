@@ -10,13 +10,18 @@ const TIERS = [
   { name: 'Enterprise',   monthly: null, maxTryons: Infinity },
 ];
 
-// Visitor slider: log-scale steps so it feels natural across 1k–500k
+// Visitor slider: log-scale steps across 1k–500k
 const VISITOR_STEPS = [
   1000, 2000, 3000, 5000, 7500, 10000, 15000, 20000, 30000, 50000,
   75000, 100000, 150000, 200000, 300000, 500000,
 ];
 
-// AOV slider: £25 steps from £25 to £1000
+// Orders slider: log-scale steps across 10–10000/mo
+const ORDER_STEPS = [
+  10, 20, 30, 50, 75, 100, 150, 200, 300, 500,
+  750, 1000, 1500, 2000, 3000, 5000, 7500, 10000,
+];
+
 const AOV_MIN = 25;
 const AOV_MAX = 1000;
 const AOV_STEP = 25;
@@ -24,58 +29,164 @@ const AOV_STEP = 25;
 const SHOPIFY_APP_URL = 'https://apps.shopify.com/rendered-fits-virtual-try-on';
 const CALENDLY_URL = 'https://calendly.com/mail-renderedfits/15-minute-meeting';
 
+type Mode = 'visitors' | 'orders' | 'both';
+
 function getTier(tryons: number) {
   return TIERS.find(t => tryons <= t.maxTryons) ?? TIERS[TIERS.length - 1];
 }
 
+function tryonsFromVisitors(v: number) { return v * 0.07; }
+function tryonsFromOrders(o: number)   { return o * (0.07 / 0.015); } // = orders × 4.667
+
 function fmtVisitors(v: number) {
-  if (v >= 1000000) return `${(v / 1000000).toFixed(1)}M`;
+  if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M`;
   if (v >= 1000) return `${(v / 1000).toFixed(0)}k`;
   return v.toString();
+}
+
+function fmtOrders(o: number) {
+  if (o >= 1000) return `${(o / 1000).toFixed(1)}k`;
+  return o.toLocaleString('en-GB');
 }
 
 function fmtGbp(n: number) {
   return '£' + Math.round(n).toLocaleString('en-GB');
 }
 
-export default function TierCalculatorPage() {
-  const [visitorIdx, setVisitorIdx] = React.useState(8); // default ~30k
-  const [aov, setAov] = React.useState(150);
-  const [isAnnual, setIsAnnual] = React.useState(false);
+function SliderTrack({
+  value, min, max, step, onChange, label, displayValue, rangeMin, rangeMax,
+}: {
+  value: number; min: number; max: number; step: number;
+  onChange: (v: number) => void;
+  label: string; displayValue: React.ReactNode;
+  rangeMin: string; rangeMax: string;
+}) {
+  const pct = ((value - min) / (max - min)) * 100;
+  return (
+    <div>
+      <div className="flex justify-between items-baseline mb-3">
+        <label className="text-sm font-semibold text-gray-700">{label}</label>
+        <span className="text-2xl font-black text-[#444833]">{displayValue}</span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={e => onChange(Number(e.target.value))}
+        className="w-full h-2 rounded-full appearance-none cursor-pointer"
+        style={{
+          background: `linear-gradient(to right, #444833 ${pct}%, #e5e7eb ${pct}%)`,
+        }}
+      />
+      <div className="flex justify-between mt-1.5 text-xs text-gray-400">
+        <span>{rangeMin}</span>
+        <span>{rangeMax}</span>
+      </div>
+    </div>
+  );
+}
 
-  const visitors = VISITOR_STEPS[visitorIdx];
+function StepSliderTrack({
+  idx, steps, onChange, label, displayValue,
+}: {
+  idx: number; steps: number[];
+  onChange: (i: number) => void;
+  label: string; displayValue: React.ReactNode;
+}) {
+  const pct = (idx / (steps.length - 1)) * 100;
+  return (
+    <div>
+      <div className="flex justify-between items-baseline mb-3">
+        <label className="text-sm font-semibold text-gray-700">{label}</label>
+        <span className="text-2xl font-black text-[#444833]">{displayValue}</span>
+      </div>
+      <input
+        type="range"
+        min={0}
+        max={steps.length - 1}
+        step={1}
+        value={idx}
+        onChange={e => onChange(Number(e.target.value))}
+        className="w-full h-2 rounded-full appearance-none cursor-pointer"
+        style={{
+          background: `linear-gradient(to right, #444833 ${pct}%, #e5e7eb ${pct}%)`,
+        }}
+      />
+      <div className="flex justify-between mt-1.5 text-xs text-gray-400">
+        <span>{fmtVisitors(steps[0])}</span>
+        <span>{fmtVisitors(steps[steps.length - 1])}</span>
+      </div>
+    </div>
+  );
+}
+
+export default function TierCalculatorPage() {
+  const [mode, setMode] = React.useState<Mode>('visitors');
+  const [visitorIdx, setVisitorIdx] = React.useState(8);  // ~30k
+  const [orderIdx, setOrderIdx]     = React.useState(9);  // ~500
+  const [aov, setAov]               = React.useState(150);
+  const [isAnnual, setIsAnnual]     = React.useState(false);
 
   const result = useMemo(() => {
-    const tryons = Math.round(visitors * 0.07);
+    const v = VISITOR_STEPS[visitorIdx];
+    const o = ORDER_STEPS[orderIdx];
+
+    let tryons: number;
+    if (mode === 'visitors') {
+      tryons = tryonsFromVisitors(v);
+    } else if (mode === 'orders') {
+      tryons = tryonsFromOrders(o);
+    } else {
+      tryons = (tryonsFromVisitors(v) + tryonsFromOrders(o)) / 2;
+    }
+    tryons = Math.round(tryons);
+
     const tier = getTier(tryons);
 
     // Conversion uplift: try-on users × 15% uplift × AOV × 12
     const conversionUplift = tryons * 0.15 * aov * 12;
 
-    // Try-on converting orders (use ~10% conversion from try-on to purchase)
+    // Try-on converting orders: ~10% of try-on users purchase
     const tryonConvertingOrders = tryons * 0.10;
 
-    // Returns saving: 20% reduction on 2% baseline return rate × AOV × 12
+    // Returns saving: 20% reduction on 2% baseline return rate
     const returnsSaving = tryonConvertingOrders * 0.02 * 0.20 * aov * 12;
 
-    // AOV uplift: try-on converting orders × 10% AOV increase × 12
-    const aovUplift = tryonConvertingOrders * (aov * 0.10) * 12;
+    // AOV uplift: 10% AOV increase on converting orders
+    const aovUplift = tryonConvertingOrders * aov * 0.10 * 12;
 
     const totalBenefit = conversionUplift + returnsSaving + aovUplift;
 
-    // Annual cost: 10 months price (2 months free) when annual, else monthly × 12
+    // Annual: 10 months (2 months free); monthly: × 12
     const annualCost = tier.monthly !== null
       ? (isAnnual ? tier.monthly * 10 : tier.monthly * 12)
       : 0;
-    const monthlyCost = tier.monthly ?? null;
 
-    return { tryons, tier, conversionUplift, returnsSaving, aovUplift, totalBenefit, annualCost, monthlyCost };
-  }, [visitors, aov, isAnnual]);
+    return {
+      tryons, tier,
+      conversionUplift, returnsSaving, aovUplift,
+      totalBenefit, annualCost,
+      monthlyCost: tier.monthly,
+    };
+  }, [mode, visitorIdx, orderIdx, aov, isAnnual]);
 
   const isEnterprise = result.tier.name === 'Enterprise';
-
-  // Progress percentage for tier indicator bar
   const tierIndex = TIERS.findIndex(t => t.name === result.tier.name);
+
+  const modeTab = (m: Mode, label: string) => (
+    <button
+      onClick={() => setMode(m)}
+      className={`flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all ${
+        mode === m
+          ? 'bg-[#444833] text-white shadow-sm'
+          : 'text-gray-500 hover:text-gray-700'
+      }`}
+    >
+      {label}
+    </button>
+  );
 
   return (
     <div className="min-h-screen bg-white">
@@ -114,56 +225,76 @@ export default function TierCalculatorPage() {
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-6">
 
-        {/* Sliders card */}
+        {/* Inputs card */}
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8">
-          <h2 className="text-base font-bold text-gray-900 mb-7">Your store details</h2>
-
-          {/* Visitor slider */}
-          <div className="mb-8">
-            <div className="flex justify-between items-baseline mb-3">
-              <label className="text-sm font-semibold text-gray-700">Monthly unique visitors</label>
-              <span className="text-2xl font-black text-[#444833]">{fmtVisitors(visitors)}</span>
-            </div>
-            <input
-              type="range"
-              min={0}
-              max={VISITOR_STEPS.length - 1}
-              step={1}
-              value={visitorIdx}
-              onChange={e => setVisitorIdx(Number(e.target.value))}
-              className="w-full h-2 rounded-full appearance-none cursor-pointer"
-              style={{
-                background: `linear-gradient(to right, #444833 ${(visitorIdx / (VISITOR_STEPS.length - 1)) * 100}%, #e5e7eb ${(visitorIdx / (VISITOR_STEPS.length - 1)) * 100}%)`,
-              }}
-            />
-            <div className="flex justify-between mt-1.5 text-xs text-gray-400">
-              <span>1k</span>
-              <span>500k</span>
-            </div>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-base font-bold text-gray-900">Your store details</h2>
           </div>
 
-          {/* AOV slider */}
-          <div>
-            <div className="flex justify-between items-baseline mb-3">
-              <label className="text-sm font-semibold text-gray-700">Average order value</label>
-              <span className="text-2xl font-black text-[#444833]">£{aov}</span>
-            </div>
-            <input
-              type="range"
+          {/* Mode toggle */}
+          <div className="flex items-center gap-1 bg-gray-100 rounded-xl p-1 mb-7">
+            {modeTab('visitors', 'I know my visitors')}
+            {modeTab('orders',   'I know my orders')}
+            {modeTab('both',     'I know both')}
+          </div>
+
+          <div className="space-y-8">
+            {/* Visitor slider */}
+            {(mode === 'visitors' || mode === 'both') && (
+              <StepSliderTrack
+                idx={visitorIdx}
+                steps={VISITOR_STEPS}
+                onChange={setVisitorIdx}
+                label="Monthly unique visitors"
+                displayValue={fmtVisitors(VISITOR_STEPS[visitorIdx])}
+              />
+            )}
+
+            {/* Orders slider */}
+            {(mode === 'orders' || mode === 'both') && (
+              <div>
+                <div className="flex justify-between items-baseline mb-3">
+                  <label className="text-sm font-semibold text-gray-700">Monthly orders</label>
+                  <span className="text-2xl font-black text-[#444833]">{fmtOrders(ORDER_STEPS[orderIdx])}</span>
+                </div>
+                <input
+                  type="range"
+                  min={0}
+                  max={ORDER_STEPS.length - 1}
+                  step={1}
+                  value={orderIdx}
+                  onChange={e => setOrderIdx(Number(e.target.value))}
+                  className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                  style={{
+                    background: `linear-gradient(to right, #444833 ${(orderIdx / (ORDER_STEPS.length - 1)) * 100}%, #e5e7eb ${(orderIdx / (ORDER_STEPS.length - 1)) * 100}%)`,
+                  }}
+                />
+                <div className="flex justify-between mt-1.5 text-xs text-gray-400">
+                  <span>10</span>
+                  <span>10k</span>
+                </div>
+              </div>
+            )}
+
+            {/* "Both" blended note */}
+            {mode === 'both' && (
+              <p className="text-xs text-gray-400 -mt-3">
+                Using the average of both estimates.
+              </p>
+            )}
+
+            {/* AOV slider — always shown */}
+            <SliderTrack
+              value={aov}
               min={AOV_MIN}
               max={AOV_MAX}
               step={AOV_STEP}
-              value={aov}
-              onChange={e => setAov(Number(e.target.value))}
-              className="w-full h-2 rounded-full appearance-none cursor-pointer"
-              style={{
-                background: `linear-gradient(to right, #444833 ${((aov - AOV_MIN) / (AOV_MAX - AOV_MIN)) * 100}%, #e5e7eb ${((aov - AOV_MIN) / (AOV_MAX - AOV_MIN)) * 100}%)`,
-              }}
+              onChange={setAov}
+              label="Average order value"
+              displayValue={`£${aov}`}
+              rangeMin="£25"
+              rangeMax="£1,000"
             />
-            <div className="flex justify-between mt-1.5 text-xs text-gray-400">
-              <span>£25</span>
-              <span>£1,000</span>
-            </div>
           </div>
         </div>
 
@@ -173,7 +304,6 @@ export default function TierCalculatorPage() {
             Recommended tier
           </p>
 
-          {/* Tier name + price */}
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
             <div>
               <p className="text-4xl sm:text-5xl font-black text-white leading-none mb-2">
@@ -200,7 +330,7 @@ export default function TierCalculatorPage() {
             </div>
           </div>
 
-          {/* Tier progress dots */}
+          {/* Tier progress bar */}
           <div className="flex items-center gap-1.5 mb-6">
             {TIERS.map((t, i) => (
               <div
@@ -214,7 +344,7 @@ export default function TierCalculatorPage() {
 
           {/* Billing toggle */}
           {!isEnterprise && (
-            <div className="inline-flex items-center gap-1 bg-black/20 rounded-full px-1.5 py-1.5 mb-5">
+            <div className="inline-flex items-center gap-1 bg-black/20 rounded-full px-1.5 py-1.5 mb-4">
               <button
                 onClick={() => setIsAnnual(false)}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${!isAnnual ? 'bg-white text-[#444833]' : 'text-white/60 hover:text-white'}`}
@@ -233,7 +363,6 @@ export default function TierCalculatorPage() {
             </div>
           )}
 
-          {/* Annual cost summary */}
           {!isEnterprise && (
             <p className="text-white/60 text-sm mb-5">
               {isAnnual
@@ -242,7 +371,6 @@ export default function TierCalculatorPage() {
             </p>
           )}
 
-          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3">
             {isEnterprise ? (
               <a
