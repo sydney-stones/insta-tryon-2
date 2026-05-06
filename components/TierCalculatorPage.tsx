@@ -49,9 +49,6 @@ function fmtOrders(o: number) {
   return o.toLocaleString('en-GB');
 }
 
-function fmtGbp(n: number) {
-  return '£' + Math.round(n).toLocaleString('en-GB');
-}
 
 function SliderTrack({
   value, min, max, step, onChange, label, displayValue, rangeMin, rangeMax,
@@ -145,31 +142,12 @@ export default function TierCalculatorPage() {
 
     const tier = getTier(tryons);
 
-    // Conversion uplift: try-on users × 15% uplift × AOV × 12
-    const conversionUplift = tryons * 0.15 * aov * 12;
-
-    // Try-on converting orders: ~10% of try-on users purchase
-    const tryonConvertingOrders = tryons * 0.10;
-
-    // Returns saving: 20% reduction on 2% baseline return rate
-    const returnsSaving = tryonConvertingOrders * 0.02 * 0.20 * aov * 12;
-
-    // AOV uplift: 10% AOV increase on converting orders
-    const aovUplift = tryonConvertingOrders * aov * 0.10 * 12;
-
-    const totalBenefit = conversionUplift + returnsSaving + aovUplift;
-
     // Annual: 10 months (2 months free); monthly: × 12
     const annualCost = tier.monthly !== null
       ? (isAnnual ? tier.monthly * 10 : tier.monthly * 12)
       : 0;
 
-    return {
-      tryons, tier,
-      conversionUplift, returnsSaving, aovUplift,
-      totalBenefit, annualCost,
-      monthlyCost: tier.monthly,
-    };
+    return { tryons, tier, annualCost, monthlyCost: tier.monthly };
   }, [mode, visitorIdx, orderIdx, aov, isAnnual]);
 
   const isEnterprise = result.tier.name === 'Enterprise';
@@ -218,7 +196,7 @@ export default function TierCalculatorPage() {
             Which plan is right for you?
           </h1>
           <p className="text-white/60 text-base max-w-md mx-auto">
-            Adjust the sliders — your recommended tier and ROI update live.
+            Adjust the sliders to find which tier suits your shop.
           </p>
         </div>
       </div>
@@ -400,54 +378,6 @@ export default function TierCalculatorPage() {
               Schedule a demo
             </a>
           </div>
-        </div>
-
-        {/* ROI card */}
-        <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-6 sm:p-8">
-          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">
-            Estimated annual ROI
-          </p>
-
-          <div className="space-y-4">
-            <div className="flex justify-between items-center gap-4">
-              <p className="text-sm text-gray-600">Conversion uplift</p>
-              <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmtGbp(result.conversionUplift)}</p>
-            </div>
-            <div className="border-t border-gray-100" />
-            <div className="flex justify-between items-center gap-4">
-              <p className="text-sm text-gray-600">Returns saving</p>
-              <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmtGbp(result.returnsSaving)}</p>
-            </div>
-            <div className="border-t border-gray-100" />
-            <div className="flex justify-between items-center gap-4">
-              <p className="text-sm text-gray-600">AOV uplift</p>
-              <p className="text-sm font-bold text-gray-900 tabular-nums shrink-0">{fmtGbp(result.aovUplift)}</p>
-            </div>
-            <div className="border-t border-gray-200 pt-4 space-y-2">
-              <div className="flex justify-between items-center gap-4">
-                <p className="text-sm font-semibold text-gray-900">Total estimated annual benefit</p>
-                <p className="text-sm font-black text-[#444833] tabular-nums shrink-0">{fmtGbp(result.totalBenefit)}</p>
-              </div>
-              {!isEnterprise && result.annualCost > 0 && (
-                <div className="flex justify-between items-center gap-4">
-                  <p className="text-sm text-gray-400">Annual subscription</p>
-                  <p className="text-sm font-semibold text-gray-400 tabular-nums shrink-0">−{fmtGbp(result.annualCost)}</p>
-                </div>
-              )}
-              {!isEnterprise && result.annualCost > 0 && (
-                <div className="flex justify-between items-center gap-4 bg-gray-50 rounded-xl px-4 py-3 mt-1">
-                  <p className="text-sm font-bold text-gray-900">Net annual return</p>
-                  <p className="text-base font-black text-[#444833] tabular-nums shrink-0">
-                    {fmtGbp(result.totalBenefit - result.annualCost)}
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <p className="mt-6 text-xs text-gray-400 leading-relaxed border-t border-gray-100 pt-5">
-            These projections are based on documented industry benchmarks from earlier-generation virtual try-on tools. Rendered Fits is expected to outperform them.
-          </p>
         </div>
 
         {/* All tiers reference */}
