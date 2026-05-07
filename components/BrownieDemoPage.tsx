@@ -65,6 +65,40 @@ export const BROWNIE_PRODUCTS: Record<string, DemoProduct> = {
     afterSrc: '/result-images/brownie3-nb2-2k-tryon.png',
     description: 'A refined satin jacquard top with subtle texture and a flattering cut. A versatile piece that transitions effortlessly from day to evening.',
   },
+  'red-chain-bracelet': {
+    id: 52,
+    name: 'Red Chain Bracelet',
+    brand: 'brownie',
+    price: '€29,90',
+    category: 'Accessories',
+    sizes: ['One Size'],
+    gallerySrcs: [
+      '/result-images/brownie2/bracelet/S26-0784-040-300_ROJO_02_B.webp',
+      '/result-images/brownie2/bracelet/S26-0784-040-300-ROJO_1580_13ee9719-a978-48d1-8618-0fe900cedba3.webp',
+      '/result-images/brownie2/bracelet/S26-0784-040-300-ROJO_1590_fb21e473-d66e-47aa-b57e-551611d157e8.webp',
+    ],
+    faceSrc: '/result-images/siennaface-new.png',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '/result-images/brownie2/bracelet/S26-0784-040-300_ROJO_02_B_S26-0784-040-300-ROJO_1580_13ee9719-a978-48d1-8618-0fe900cedba3_S26-0784-040-300-RO_Try-On.jpeg',
+    description: 'A bold red chain bracelet that adds a flash of colour to any look. Lightweight and easy to stack.',
+  },
+  'red-chain-necklace': {
+    id: 53,
+    name: 'Red Chain Necklace',
+    brand: 'brownie',
+    price: '€34,90',
+    category: 'Accessories',
+    sizes: ['One Size'],
+    gallerySrcs: [
+      '/result-images/brownie2/necklace/S26-0784-042-300_ROJO_02_B.webp',
+      '/result-images/brownie2/necklace/S26-0784-042-300_1.webp',
+      '/result-images/brownie2/necklace/S26-0784-042-300_2.webp',
+    ],
+    faceSrc: '/result-images/siennaface-new.png',
+    bodySrc: '/result-images/siennabody--new.JPG',
+    afterSrc: '/result-images/brownie2/necklace/S26-0784-042-300_1_S26-0784-042-300_2_S26-0784-042-300_ROJO_02_B_Try-On.jpeg',
+    description: "A statement red chain necklace that pairs effortlessly with brownie's signature tops and coordinates with the matching bracelet.",
+  },
 };
 
 // ─── Animation State Machine ─────────────────────────────────────────────────

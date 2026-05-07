@@ -22,9 +22,6 @@ const ORDER_STEPS = [
   750, 1000, 1500, 2000, 3000, 5000, 7500, 10000,
 ];
 
-const AOV_MIN = 25;
-const AOV_MAX = 1000;
-const AOV_STEP = 25;
 
 const SHOPIFY_APP_URL = 'https://apps.shopify.com/rendered-fits-virtual-try-on';
 const CALENDLY_URL = 'https://calendly.com/mail-renderedfits/15-minute-meeting';
@@ -50,40 +47,6 @@ function fmtOrders(o: number) {
 }
 
 
-function SliderTrack({
-  value, min, max, step, onChange, label, displayValue, rangeMin, rangeMax,
-}: {
-  value: number; min: number; max: number; step: number;
-  onChange: (v: number) => void;
-  label: string; displayValue: React.ReactNode;
-  rangeMin: string; rangeMax: string;
-}) {
-  const pct = ((value - min) / (max - min)) * 100;
-  return (
-    <div>
-      <div className="flex justify-between items-baseline mb-3">
-        <label className="text-sm font-semibold text-gray-700">{label}</label>
-        <span className="text-2xl font-black text-[#444833]">{displayValue}</span>
-      </div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={e => onChange(Number(e.target.value))}
-        className="w-full h-2 rounded-full appearance-none cursor-pointer"
-        style={{
-          background: `linear-gradient(to right, #444833 ${pct}%, #e5e7eb ${pct}%)`,
-        }}
-      />
-      <div className="flex justify-between mt-1.5 text-xs text-gray-400">
-        <span>{rangeMin}</span>
-        <span>{rangeMax}</span>
-      </div>
-    </div>
-  );
-}
 
 function StepSliderTrack({
   idx, steps, onChange, label, displayValue,
@@ -123,7 +86,6 @@ export default function TierCalculatorPage() {
   const [mode, setMode] = React.useState<Mode>('visitors');
   const [visitorIdx, setVisitorIdx] = React.useState(8);  // ~30k
   const [orderIdx, setOrderIdx]     = React.useState(9);  // ~500
-  const [aov, setAov]               = React.useState(150);
   const [isAnnual, setIsAnnual]     = React.useState(false);
 
   const result = useMemo(() => {
@@ -148,7 +110,7 @@ export default function TierCalculatorPage() {
       : 0;
 
     return { tryons, tier, annualCost, monthlyCost: tier.monthly };
-  }, [mode, visitorIdx, orderIdx, aov, isAnnual]);
+  }, [mode, visitorIdx, orderIdx, isAnnual]);
 
   const isEnterprise = result.tier.name === 'Enterprise';
   const tierIndex = TIERS.findIndex(t => t.name === result.tier.name);
@@ -261,18 +223,6 @@ export default function TierCalculatorPage() {
               </p>
             )}
 
-            {/* AOV slider — always shown */}
-            <SliderTrack
-              value={aov}
-              min={AOV_MIN}
-              max={AOV_MAX}
-              step={AOV_STEP}
-              onChange={setAov}
-              label="Average order value"
-              displayValue={`£${aov}`}
-              rangeMin="£25"
-              rangeMax="£1,000"
-            />
           </div>
         </div>
 
