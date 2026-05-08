@@ -108,6 +108,8 @@ const DEMO_GROUPS: DemoBrandGroup[] = [
     demos: [
       { name: 'Multi Ruffle Skirt', path: '/brownie/multi-ruffle-skirt', type: 'Skirt' },
       { name: 'Satin Jacquard Top', path: '/brownie/satin-jacquard-top', type: 'Top' },
+      { name: 'Red Chain Bracelet', path: '/brownie/red-chain-bracelet', type: 'Accessory' },
+      { name: 'Red Chain Necklace', path: '/brownie/red-chain-necklace', type: 'Accessory' },
     ],
   },
   {
