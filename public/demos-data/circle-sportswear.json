@@ -1,0 +1,28 @@
+{
+  "slug": "circle-sportswear",
+  "brandName": "Circle Sportswear",
+  "brandDomain": "circlesportswear.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Pack T-shirt Agility CAF 2.0 & Get Shorty 2.0 Onyx Black",
+      "handle": "pack-t-shirt-agility-caf-2-0-short-running-get-shorty-15-cm-2-0",
+      "price": "£125.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0271/4114/4649/files/Pack_2026_T-shirt_Agility_CAF_2.0_onyx_black_Short_Running_Get_Shorty_15_cm_2.0_onyx_black_1.png?v=1776962903",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0271/4114/4649/files/Pack_2026_T-shirt_Agility_CAF_2.0_onyx_black_Short_Running_Get_Shorty_15_cm_2.0_onyx_black_1.png?v=1776962903",
+        "https://cdn.shopify.com/s/files/1/0271/4114/4649/files/Pack_2026_T-shirt_Agility_CAF_2.0_onyx_black_Short_Running_Get_Shorty_15_cm_2.0_onyx_black_4_ac175d1c-aabd-4621-88e1-11a02a40606e.jpg?v=1776861271",
+        "https://cdn.shopify.com/s/files/1/0271/4114/4649/files/Pack_2026_T-shirt_Agility_CAF_2.0_onyx_black_Short_Running_Get_Shorty_15_cm_2.0_onyx_black_3_3562032a-f07f-4a63-be2e-2785ce0a7cea.jpg?v=1776861270"
+      ],
+      "tryOnImage": "/demos-images/circle-sportswear/pack-t-shirt-agility-caf-2-0-short-running-get-shorty-15-cm-2-0.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

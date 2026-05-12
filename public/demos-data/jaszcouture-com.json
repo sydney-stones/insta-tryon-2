@@ -1,0 +1,28 @@
+{
+  "slug": "jaszcouture-com",
+  "brandName": "jaszcouture.com",
+  "brandDomain": "jaszcouture.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "1818",
+      "handle": "1818",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0820/9232/7189/files/Jasz_1818_back_ce1c5565-a445-4753-b96c-ca583fcd0772.png?v=1776959783",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0820/9232/7189/files/Jasz_1818_back_ce1c5565-a445-4753-b96c-ca583fcd0772.png?v=1776959783",
+        "https://cdn.shopify.com/s/files/1/0820/9232/7189/files/JaszCouture69dfdd788b7ed869dfdd788b98b.4499961669dfdd788b98b_421fe16d-b081-4fbe-a202-24127b339c52.png?v=1777309290",
+        "https://cdn.shopify.com/s/files/1/0820/9232/7189/files/JaszCouture69dfdd78a93b2569dfdd78a954e.8119582069dfdd78a954e_32200766-fe87-43d4-8877-7dfbfe0fe106.png?v=1777309291"
+      ],
+      "tryOnImage": "/demos-images/jaszcouture-com/1818.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

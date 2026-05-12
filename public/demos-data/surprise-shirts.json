@@ -1,0 +1,26 @@
+{
+  "slug": "surprise-shirts",
+  "brandName": "Surprise Shirts",
+  "brandDomain": "surpriseshirts.co.uk",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ludogorets Razgrad 2017/2018 Third Shirt",
+      "handle": "ludogorets-razgrad-2017-2018-third-shirt",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0509/5564/9221/files/LudogoretsRazgrad2017_2018ThirdShirt_7ba4fd73-63c8-4aa3-a675-22f01380b40a.jpg?v=1778580955",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0509/5564/9221/files/LudogoretsRazgrad2017_2018ThirdShirt_7ba4fd73-63c8-4aa3-a675-22f01380b40a.jpg?v=1778580955"
+      ],
+      "tryOnImage": "/demos-images/surprise-shirts/ludogorets-razgrad-2017-2018-third-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

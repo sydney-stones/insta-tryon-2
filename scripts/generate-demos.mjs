@@ -173,7 +173,9 @@ const HERO_TYPES = ['coat', 'jacket', 'outerwear', 'dress', 'blazer', 'suit', 's
                     'jumper', 'sweater', 'knit', 'cardigan', 'top', 'trouser', 'pant', 'skirt',
                     'necklace', 'earring', 'bracelet', 'pendant', 'ring'];
 const SKIP_TYPES = ['shoe', 'sneaker', 'boot', 'bag', 'belt', 'hat', 'cap', 'sock', 'swim',
-                    'bikini', 'underwear', 'lingerie', 'sunglass', 'wallet', 'fragrance', 'candle'];
+                    'bikini', 'underwear', 'lingerie', 'sunglass', 'wallet', 'fragrance', 'candle',
+                    'gift card', 'gift-card', 'setup fee', 'art fee', 'tape', 'sticker', 'patch',
+                    'bundle', 'panty', 'panties', 'bra', 'thong'];
 
 function productScore(p) {
   const blob = `${p.product_type || ''} ${p.title || ''} ${(p.tags || []).join(' ')}`.toLowerCase();

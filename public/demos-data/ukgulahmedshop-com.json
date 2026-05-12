@@ -1,0 +1,28 @@
+{
+  "slug": "ukgulahmedshop-com",
+  "brandName": "ukgulahmedshop.com",
+  "brandDomain": "gulahmedshop.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "3 Piece Unstitched Printed Lawn Suit",
+      "handle": "3-piece-unstitched-printed-lawn-suit-clp-52102",
+      "price": "£3290.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0706/3253/8159/files/CLP-52102.jpg?v=1775717671",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0706/3253/8159/files/CLP-52102.jpg?v=1775717671",
+        "https://cdn.shopify.com/s/files/1/0706/3253/8159/files/printed-lawn-dupatta-shirt-dyed-trouser-gulahmed-clp-52102-close.jpg?v=1775717671",
+        "https://cdn.shopify.com/s/files/1/0706/3253/8159/files/printed-lawn-dupatta-shirt-dyed-trouser-gulahmed-clp-52102-half.jpg?v=1775717671"
+      ],
+      "tryOnImage": "/demos-images/ukgulahmedshop-com/3-piece-unstitched-printed-lawn-suit-clp-52102.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

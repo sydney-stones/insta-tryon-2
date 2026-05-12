@@ -1,0 +1,28 @@
+{
+  "slug": "nicholas-james",
+  "brandName": "nicholas james",
+  "brandDomain": "nicholasjames.shop",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "5-Pocket Pant",
+      "handle": "5-pocket-pant",
+      "price": "£118.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0722/8935/4018/files/Nicholas-James-Apparel-3641.jpg?v=1745773528",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0722/8935/4018/files/Nicholas-James-Apparel-3641.jpg?v=1745773528",
+        "https://cdn.shopify.com/s/files/1/0722/8935/4018/files/Nicholas-James-Apparel-4328.jpg?v=1777404841",
+        "https://cdn.shopify.com/s/files/1/0722/8935/4018/files/Nicholas-James-Apparel-4117.jpg?v=1745260924"
+      ],
+      "tryOnImage": "/demos-images/nicholas-james/5-pocket-pant.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

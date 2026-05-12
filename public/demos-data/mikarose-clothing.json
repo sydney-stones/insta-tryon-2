@@ -1,0 +1,28 @@
+{
+  "slug": "mikarose-clothing",
+  "brandName": "Mikarose Clothing",
+  "brandDomain": "mikarose.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "THE EDEN IN SUNSET SANGRIA",
+      "handle": "mds202021-the-eden-in-sunset-sangria",
+      "price": "£67.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0561/2240/9113/files/2D1A1195.jpg?v=1772475936",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0561/2240/9113/files/2D1A1195.jpg?v=1772475936",
+        "https://cdn.shopify.com/s/files/1/0561/2240/9113/files/2D1A1196.jpg?v=1759167317",
+        "https://cdn.shopify.com/s/files/1/0561/2240/9113/files/2D1A1197.jpg?v=1759167317"
+      ],
+      "tryOnImage": "/demos-images/mikarose-clothing/mds202021-the-eden-in-sunset-sangria.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

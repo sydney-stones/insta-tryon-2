@@ -1,0 +1,28 @@
+{
+  "slug": "lilly-lime",
+  "brandName": "Lilly & Lime",
+  "brandDomain": "lillyandlime.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Artisan Rainforest Halter Tri One Piece",
+      "handle": "artisan-rainforest-halter-tri-one-piece",
+      "price": "£189.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1984/7097/files/Artisan-Rainforest-Halter-Tri-One-Piece-Lilly-_-Lime-US-103984560.jpg?v=1719121097",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1984/7097/files/Artisan-Rainforest-Halter-Tri-One-Piece-Lilly-_-Lime-US-103984560.jpg?v=1719121097",
+        "https://cdn.shopify.com/s/files/1/1984/7097/files/Artisan-Rainforest-Halter-Tri-One-Piece-Lilly-_-Lime-US-103984659.jpg?v=1719121103",
+        "https://cdn.shopify.com/s/files/1/1984/7097/files/Artisan-Rainforest-Halter-Tri-One-Piece-Lilly-_-Lime-US-103984741.jpg?v=1719121110"
+      ],
+      "tryOnImage": "/demos-images/lilly-lime/artisan-rainforest-halter-tri-one-piece.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "grinmore",
+  "brandName": "GRINMORE",
+  "brandDomain": "grinmorestore.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Tonkatsu Fine Wind Clear Morning Tee",
+      "handle": "tonkatsu-fine-wind-clear-morning-tee",
+      "price": "£53.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0550/9205/2159/files/Grinmore-ASSC-Tonkatsu-Fine-Wind-Clear-Morning-Tee-ASSCSS26INJSS04-Black.png?v=1776185651",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0550/9205/2159/files/Grinmore-ASSC-Tonkatsu-Fine-Wind-Clear-Morning-Tee-ASSCSS26INJSS04-Black.png?v=1776185651",
+        "https://cdn.shopify.com/s/files/1/0550/9205/2159/files/Grinmore-ASSC-Tonkatsu-Fine-Wind-Clear-Morning-Tee-ASSCSS26INJSS04-Black-Back.png?v=1776185651"
+      ],
+      "tryOnImage": "/demos-images/grinmore/tonkatsu-fine-wind-clear-morning-tee.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

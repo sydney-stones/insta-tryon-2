@@ -1,0 +1,28 @@
+{
+  "slug": "white-co",
+  "brandName": "White & Co.",
+  "brandDomain": "whiteandco.store",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Interval Long Sleeve - Coffee/Light Blue",
+      "handle": "interval-long-sleeve-coffee-light-blue",
+      "price": "£48.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0935/0236/files/foxwood-interval-long-sleeve-coffee-light-blue_6.jpg?v=1777912197",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0935/0236/files/foxwood-interval-long-sleeve-coffee-light-blue_6.jpg?v=1777912197",
+        "https://cdn.shopify.com/s/files/1/0935/0236/files/foxwood-interval-long-sleeve-coffee-light-blue_1.jpg?v=1777912197",
+        "https://cdn.shopify.com/s/files/1/0935/0236/files/foxwood-interval-long-sleeve-coffee-light-blue_7.jpg?v=1777912197"
+      ],
+      "tryOnImage": "/demos-images/white-co/interval-long-sleeve-coffee-light-blue.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

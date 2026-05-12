@@ -1,0 +1,28 @@
+{
+  "slug": "proviz-sports",
+  "brandName": "Proviz Sports",
+  "brandDomain": "provizsports.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women’s Reflective Active Jacket",
+      "handle": "womens-reflective-active-jacket",
+      "price": "£44.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0740/3225/1191/files/Women_sJacketFrontCoralLR.jpg?v=1743445144",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0740/3225/1191/files/Women_sJacketFrontCoralLR.jpg?v=1743445144",
+        "https://cdn.shopify.com/s/files/1/0740/3225/1191/files/Women_sJacketBackCoralLR.jpg?v=1743445144",
+        "https://cdn.shopify.com/s/files/1/0740/3225/1191/files/Women_sJacketFrontTealLR.jpg?v=1743445144"
+      ],
+      "tryOnImage": "/demos-images/proviz-sports/womens-reflective-active-jacket.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ava-lane-boutique",
+  "brandName": "Ava Lane Boutique",
+  "brandDomain": "avalaneboutique.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Hear The Bells Women's Wide Leg Yoga Pants",
+      "handle": "butter-bell-yoga-pants",
+      "price": "£9.97",
+      "productImage": "https://cdn.shopify.com/s/files/1/0792/4570/5532/files/60930-2-Edit.jpg?v=1762439952",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0792/4570/5532/files/60930-2-Edit.jpg?v=1762439952",
+        "https://cdn.shopify.com/s/files/1/0792/4570/5532/files/60930-7-Edit.jpg?v=1720811450",
+        "https://cdn.shopify.com/s/files/1/0792/4570/5532/files/60930-5-Edit.jpg?v=1720811450"
+      ],
+      "tryOnImage": "/demos-images/ava-lane-boutique/butter-bell-yoga-pants.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "rails",
+  "brandName": "Rails",
+  "brandDomain": "rails.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "GIRLFRIEND T-SHIRT - CLOVER",
+      "handle": "girlfriend-tee-t-shirt-clover",
+      "price": "£98.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0167/1180/files/GIRLFRIEND-TEE-CLOVER_1_840D-331E-5496.jpg?v=1778567827",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0167/1180/files/GIRLFRIEND-TEE-CLOVER_1_840D-331E-5496.jpg?v=1778567827",
+        "https://cdn.shopify.com/s/files/1/0167/1180/files/GIRLFRIEND-TEE-CLOVER_2_840D-331E-5496.jpg?v=1778567825",
+        "https://cdn.shopify.com/s/files/1/0167/1180/files/GIRLFRIEND-TEE-CLOVER_3_840D-331E-5496.jpg?v=1778567826"
+      ],
+      "tryOnImage": "/demos-images/rails/girlfriend-tee-t-shirt-clover.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

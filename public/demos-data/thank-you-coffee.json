@@ -1,0 +1,28 @@
+{
+  "slug": "thank-you-coffee",
+  "brandName": "Thank You Coffee",
+  "brandDomain": "thankyoucoffee.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "TYC Friends T-Shirt",
+      "handle": "tyc-friends-t-shirt",
+      "price": "£36.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0895/4557/2626/files/shirt-front.png?v=1747860569",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0895/4557/2626/files/shirt-front.png?v=1747860569",
+        "https://cdn.shopify.com/s/files/1/0895/4557/2626/files/shirt-back.png?v=1747860569",
+        "https://cdn.shopify.com/s/files/1/0895/4557/2626/files/IMG_1283.jpg?v=1747860768"
+      ],
+      "tryOnImage": "/demos-images/thank-you-coffee/tyc-friends-t-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

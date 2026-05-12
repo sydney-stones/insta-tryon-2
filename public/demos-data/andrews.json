@@ -1,0 +1,28 @@
+{
+  "slug": "andrews",
+  "brandName": "Andrews",
+  "brandDomain": "andrewsco.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cameron Pull On Pant Navy",
+      "handle": "cameron-pull-on-pant-navy",
+      "price": "£320.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0590/1661/files/cambio_cameron_pant_black_1.jpg?v=1752774999",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0590/1661/files/cambio_cameron_pant_black_1.jpg?v=1752774999",
+        "https://cdn.shopify.com/s/files/1/0590/1661/files/cambio_cameron_pant_black_2.jpg?v=1752774999",
+        "https://cdn.shopify.com/s/files/1/0590/1661/files/cambio_cameron_pant_black_3.jpg?v=1752774999"
+      ],
+      "tryOnImage": "/demos-images/andrews/cameron-pull-on-pant-navy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

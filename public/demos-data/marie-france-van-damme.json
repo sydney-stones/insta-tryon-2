@@ -1,0 +1,28 @@
+{
+  "slug": "marie-france-van-damme",
+  "brandName": "Marie France Van Damme",
+  "brandDomain": "mariefrancevandamme.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Silk Satin Mao Collar Dress",
+      "handle": "silk-satin-mao-collar-dress-1",
+      "price": "£980.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0883/4284/files/COL10_MF4726-02_FANFLR_SilkSatinMaoCollarDress_D-DRESS_P1.jpg?v=1776312551",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0883/4284/files/COL10_MF4726-02_FANFLR_SilkSatinMaoCollarDress_D-DRESS_P1.jpg?v=1776312551",
+        "https://cdn.shopify.com/s/files/1/0883/4284/files/COL10_MF4726-02_FANFLR_SilkSatinMaoCollarDress_P2.jpg?v=1776312551",
+        "https://cdn.shopify.com/s/files/1/0883/4284/files/FantasyFlower_8e95b8a6-7bb6-439a-b0b2-a77cad555f65.jpg?v=1776312551"
+      ],
+      "tryOnImage": "/demos-images/marie-france-van-damme/silk-satin-mao-collar-dress-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

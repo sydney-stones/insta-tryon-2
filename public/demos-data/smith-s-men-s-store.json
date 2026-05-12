@@ -1,0 +1,26 @@
+{
+  "slug": "smith-s-men-s-store",
+  "brandName": "Smith's Men's Store",
+  "brandDomain": "smithsmensstore.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Digital Gift Card",
+      "handle": "digital-gift-card",
+      "price": "£50.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0646/0060/4803/files/your-themes-d13220bbfe2144a49f.jpg?v=1751319240",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0646/0060/4803/files/your-themes-d13220bbfe2144a49f.jpg?v=1751319240"
+      ],
+      "tryOnImage": "/demos-images/smith-s-men-s-store/digital-gift-card.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

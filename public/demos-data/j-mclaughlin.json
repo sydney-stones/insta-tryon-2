@@ -18,10 +18,10 @@
       ],
       "tryOnImage": "/demos-images/j-mclaughlin/newport-linen-shorts-anchor-blue-white.jpg",
       "modelGender": "men",
-      "modelName": "sasha",
+      "modelName": "otto",
       "customerImages": {
-        "face": "/demo-models/sasha/face.png",
-        "body": "/demo-models/sasha/body.png"
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
       }
     }
   ]

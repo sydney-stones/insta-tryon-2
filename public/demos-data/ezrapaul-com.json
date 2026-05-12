@@ -1,0 +1,28 @@
+{
+  "slug": "ezrapaul-com",
+  "brandName": "ezrapaul.com",
+  "brandDomain": "ezrapaul.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Taupe Glen Plaid Suit",
+      "handle": "taupe-glen-plaid-suit",
+      "price": "£1895.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1360/8937/products/GREY-BROWN-PLAID-FRONT.jpg?v=1468019599",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1360/8937/products/GREY-BROWN-PLAID-FRONT.jpg?v=1468019599",
+        "https://cdn.shopify.com/s/files/1/1360/8937/products/GREY-BROWN-PLAID-FRONT-3-PIECE.jpg?v=1468019599",
+        "https://cdn.shopify.com/s/files/1/1360/8937/products/GREY-BROWN-PLAID-BACK.jpg?v=1468019599"
+      ],
+      "tryOnImage": "/demos-images/ezrapaul-com/taupe-glen-plaid-suit.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

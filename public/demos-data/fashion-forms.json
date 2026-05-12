@@ -1,0 +1,28 @@
+{
+  "slug": "fashion-forms",
+  "brandName": "Fashion Forms®",
+  "brandDomain": "fashionforms.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Double Sided Tape N' Shape Dress Tape",
+      "handle": "double-sided-tape-n-shape-dress-tape",
+      "price": "£18.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0528/2568/6208/files/Tape_2.png?v=1738874509",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0528/2568/6208/files/Tape_2.png?v=1738874509",
+        "https://cdn.shopify.com/s/files/1/0528/2568/6208/files/Tape_3.png?v=1738874509",
+        "https://cdn.shopify.com/s/files/1/0528/2568/6208/files/Tape_1.png?v=1738874509"
+      ],
+      "tryOnImage": "/demos-images/fashion-forms/double-sided-tape-n-shape-dress-tape.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

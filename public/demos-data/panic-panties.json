@@ -1,0 +1,28 @@
+{
+  "slug": "panic-panties",
+  "brandName": "Panic Panties",
+  "brandDomain": "panicpanties.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Bachelorette Bundle - 10 mix & match panties",
+      "handle": "the-bachelorette-bundle-10-panties-goodies",
+      "price": "£110.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0615/1828/2972/files/PanicPanties-10-PackBacheloretteBundle.png?v=1703477132",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0615/1828/2972/files/PanicPanties-10-PackBacheloretteBundle.png?v=1703477132",
+        "https://cdn.shopify.com/s/files/1/0615/1828/2972/files/5_1dcca71e-d3da-4752-93d5-6f01d0b55bd4.png?v=1750099290",
+        "https://cdn.shopify.com/s/files/1/0615/1828/2972/files/8copy.png?v=1750099290"
+      ],
+      "tryOnImage": "/demos-images/panic-panties/the-bachelorette-bundle-10-panties-goodies.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

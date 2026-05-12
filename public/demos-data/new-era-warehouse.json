@@ -17,10 +17,10 @@
       ],
       "tryOnImage": "/demos-images/new-era-warehouse/buffalo-bills-2026-inaugural-season-stadium-t-shirt.jpg",
       "modelGender": "men",
-      "modelName": "lukas",
+      "modelName": "otto",
       "customerImages": {
-        "face": "/demo-models/lukas/face.png",
-        "body": "/demo-models/lukas/body.png"
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
       }
     }
   ]

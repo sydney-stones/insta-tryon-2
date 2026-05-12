@@ -1,0 +1,28 @@
+{
+  "slug": "www-elizabethjamesthelabel-com",
+  "brandName": "www.elizabethjamesthelabel.com",
+  "brandDomain": "elizabethjamesthelabel.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Short Sleeve Pajama Set in Blue Floral",
+      "handle": "short-sleeve-pajama-set-in-blue-floral",
+      "price": "£95.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0104/7897/7105/files/EJF_2861.jpg?v=1775487715",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0104/7897/7105/files/EJF_2861.jpg?v=1775487715",
+        "https://cdn.shopify.com/s/files/1/0104/7897/7105/files/EJF_2873.jpg?v=1775487715",
+        "https://cdn.shopify.com/s/files/1/0104/7897/7105/files/EJF_2878.jpg?v=1775487715"
+      ],
+      "tryOnImage": "/demos-images/www-elizabethjamesthelabel-com/short-sleeve-pajama-set-in-blue-floral.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "passenger",
+  "brandName": "Passenger",
+  "brandDomain": "passenger-clothing.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Stack Pocket T-Shirt - White",
+      "handle": "stack-pocket-t-shirt-white",
+      "price": "£27.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0203/9296/files/EWG9B6VOJLeqKkNiavePjTYFwcZsRvmrBe6rcjGjXB4.jpg?v=1777654240",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0203/9296/files/EWG9B6VOJLeqKkNiavePjTYFwcZsRvmrBe6rcjGjXB4.jpg?v=1777654240",
+        "https://cdn.shopify.com/s/files/1/0203/9296/files/UUdZ5yU9OcdBTRbHLQxscJmou0UZAojN8STcxloc_nE.jpg?v=1777654242",
+        "https://cdn.shopify.com/s/files/1/0203/9296/files/d4CcCkpQSLIDJLznFJZiuMwHuTXX5V7X_oJyXqNojas.jpg?v=1777654241"
+      ],
+      "tryOnImage": "/demos-images/passenger/stack-pocket-t-shirt-white.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "state-and-liberty-clothing-company",
+  "brandName": "State and Liberty Clothing Company",
+  "brandDomain": "stateandliberty.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "\"The Howard\" Solid Navy",
+      "handle": "the-howard-solid-navy",
+      "price": "£105.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0692/4255/files/state-liberty-athletic-fit-dress-shirt-howard-1_a5f886d4-d5c3-4858-b8fa-da82aa0c7d30.jpg?v=1778149849",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0692/4255/files/state-liberty-athletic-fit-dress-shirt-howard-1_a5f886d4-d5c3-4858-b8fa-da82aa0c7d30.jpg?v=1778149849",
+        "https://cdn.shopify.com/s/files/1/0692/4255/files/state-liberty-athletic-fit-dress-shirt-howard-4_4c4476ad-f13b-4e98-8c22-8ced258eb184.jpg?v=1778149849",
+        "https://cdn.shopify.com/s/files/1/0692/4255/files/state-liberty-athletic-fit-dress-shirt-howard-6_26367b73-5d88-4bb2-a313-6713f6357ef2.jpg?v=1778149849"
+      ],
+      "tryOnImage": "/demos-images/state-and-liberty-clothing-company/the-howard-solid-navy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

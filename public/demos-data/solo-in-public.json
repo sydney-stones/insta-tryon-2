@@ -1,0 +1,28 @@
+{
+  "slug": "solo-in-public",
+  "brandName": "Solo in Public™",
+  "brandDomain": "soloinpublic.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Baby Suri Alpaca Sweater",
+      "handle": "baby-suri-alpaca-sweater",
+      "price": "£290.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0884/4876/2185/files/290626_Solo_in_Public_LTD-03-12055_49ae8731-984b-4f80-8b9f-186b94227382.jpg?v=1774266513",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0884/4876/2185/files/290626_Solo_in_Public_LTD-03-12055_49ae8731-984b-4f80-8b9f-186b94227382.jpg?v=1774266513",
+        "https://cdn.shopify.com/s/files/1/0884/4876/2185/files/290626_Solo_in_Public_LTD-01-18859_608efd52-8eb8-4d43-99c3-f4d6451fa651.jpg?v=1774266513",
+        "https://cdn.shopify.com/s/files/1/0884/4876/2185/files/290626_Solo_in_Public_LTD-01-18858_a9c7114f-537f-490c-a131-0fdb7407e72f.jpg?v=1774266513"
+      ],
+      "tryOnImage": "/demos-images/solo-in-public/baby-suri-alpaca-sweater.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

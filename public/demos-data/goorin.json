@@ -1,0 +1,28 @@
+{
+  "slug": "goorin",
+  "brandName": "Goorin",
+  "brandDomain": "goorin.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Middle of No Where",
+      "handle": "middle-of-no-where",
+      "price": "£48.79",
+      "productImage": "https://cdn.shopify.com/s/files/1/2532/9670/files/101-3337-VOI01-F01.jpg?v=1777673383",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2532/9670/files/101-3337-VOI01-F01.jpg?v=1777673383",
+        "https://cdn.shopify.com/s/files/1/2532/9670/files/101-3337-VOI01-D01.jpg?v=1777673398",
+        "https://cdn.shopify.com/s/files/1/2532/9670/files/101-3337-VOI01-D03.jpg?v=1777673398"
+      ],
+      "tryOnImage": "/demos-images/goorin/middle-of-no-where.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

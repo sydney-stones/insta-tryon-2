@@ -1,0 +1,28 @@
+{
+  "slug": "2tall-com",
+  "brandName": "2tall.com",
+  "brandDomain": "2tall.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "2t Tall Will Linen Blend Pull On Trouser (neutral)",
+      "handle": "2t-tall-will-linen-blend-pull-on-trouser-neutral",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0618/4045/7924/files/Set_202t_20Will_20Linen_20Blend_20Neutral_20Trousers_2001.jpg?v=1770337991",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0618/4045/7924/files/Set_202t_20Will_20Linen_20Blend_20Neutral_20Trousers_2001.jpg?v=1770337991",
+        "https://cdn.shopify.com/s/files/1/0618/4045/7924/files/Set_202t_20Will_20Linen_20Blend_20Neutral_20Trousers_20detail_2002.jpg?v=1770337991",
+        "https://cdn.shopify.com/s/files/1/0618/4045/7924/files/Set_202t_20Will_20Linen_20Blend_20Neutral_20Trousers_20detail_2001.jpg?v=1770337991"
+      ],
+      "tryOnImage": "/demos-images/2tall-com/2t-tall-will-linen-blend-pull-on-trouser-neutral.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

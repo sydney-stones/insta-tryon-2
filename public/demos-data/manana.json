@@ -1,0 +1,28 @@
+{
+  "slug": "manana",
+  "brandName": "Mañana",
+  "brandDomain": "manana.co",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "UV Travel Hoodie - Tan",
+      "handle": "the-manana-sunshirt-tan",
+      "price": "£77.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0533/1215/9920/files/Sunshirt_Tan_Front_38499534-9931-41d5-b724-0774252d5460.png?v=1772177770",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0533/1215/9920/files/Sunshirt_Tan_Front_38499534-9931-41d5-b724-0774252d5460.png?v=1772177770",
+        "https://cdn.shopify.com/s/files/1/0533/1215/9920/files/DSCF4207.jpg?v=1772177770",
+        "https://cdn.shopify.com/s/files/1/0533/1215/9920/files/Sunshirt_Tan_Hood.png?v=1772177770"
+      ],
+      "tryOnImage": "/demos-images/manana/the-manana-sunshirt-tan.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

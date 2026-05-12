@@ -1,0 +1,28 @@
+{
+  "slug": "horse-pilot",
+  "brandName": "Horse Pilot",
+  "brandDomain": "horsepilot.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Full Grip Riding Pants Set",
+      "handle": "coffret-full-grip-pantalons-equitation-femme",
+      "price": "£349.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0944/4851/7463/files/XPRF126_WHITE_3_8630612b-7e94-49aa-a340-3a144650a48d.jpg?v=1770641273",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0944/4851/7463/files/XPRF126_WHITE_3_8630612b-7e94-49aa-a340-3a144650a48d.jpg?v=1770641273",
+        "https://cdn.shopify.com/s/files/1/0944/4851/7463/files/XPRF126_WHITE_1_68069b96-3416-4868-8e83-b8b9347c9d23.jpg?v=1770641273",
+        "https://cdn.shopify.com/s/files/1/0944/4851/7463/files/XPRF126_WHITE_6_582746f0-cf67-4f70-81a0-ffb687c01530.jpg?v=1770641273"
+      ],
+      "tryOnImage": "/demos-images/horse-pilot/coffret-full-grip-pantalons-equitation-femme.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

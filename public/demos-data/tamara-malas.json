@@ -1,0 +1,28 @@
+{
+  "slug": "tamara-malas",
+  "brandName": "Tamara Malas",
+  "brandDomain": "tamaramalas.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Corset Tulle Top",
+      "handle": "ipng-design-shawl-blouse-pink-paper-dolls",
+      "price": "£177.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0067/9641/0939/files/91193B2D-F0CB-43FD-9073-D6446435C94D_197eb7b4-d45b-4fdb-8306-ed93bec510f3.png?v=1765250422",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0067/9641/0939/files/91193B2D-F0CB-43FD-9073-D6446435C94D_197eb7b4-d45b-4fdb-8306-ed93bec510f3.png?v=1765250422",
+        "https://cdn.shopify.com/s/files/1/0067/9641/0939/files/bb4d5f9179de955958bcc398361e5a1c7b47ee9ab80af931a984d30b38097cdd.jpg?v=1765250422",
+        "https://cdn.shopify.com/s/files/1/0067/9641/0939/files/1274fcccc9497495916202ef5ee0faa771d2536edb97964d95ff80aa9ddb762e.jpg?v=1765250422"
+      ],
+      "tryOnImage": "/demos-images/tamara-malas/ipng-design-shawl-blouse-pink-paper-dolls.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

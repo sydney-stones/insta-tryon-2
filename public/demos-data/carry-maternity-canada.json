@@ -1,0 +1,28 @@
+{
+  "slug": "carry-maternity-canada",
+  "brandName": "Carry Maternity Canada",
+  "brandDomain": "carrymaternity.ca",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Arles Nursing Shirt",
+      "handle": "arles-nursing-shirt-blue-white",
+      "price": "£119.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0255/7358/9071/files/ArlesNursingShirt11.jpg?v=1775139672",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0255/7358/9071/files/ArlesNursingShirt11.jpg?v=1775139672",
+        "https://cdn.shopify.com/s/files/1/0255/7358/9071/files/ArlesNursingShirt10.jpg?v=1775139672",
+        "https://cdn.shopify.com/s/files/1/0255/7358/9071/files/ArlesNursingShirt9.jpg?v=1775139672"
+      ],
+      "tryOnImage": "/demos-images/carry-maternity-canada/arles-nursing-shirt-blue-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "undefeated",
+  "brandName": "Undefeated",
+  "brandDomain": "undefeated.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "UACTP X NIKE NRG PRIMARY SS TOP - BLACK",
+      "handle": "uactp-x-nike-nrg-primary-ss-top-black",
+      "price": "£56.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0282/5850/files/apparel_tops_m_nrg-uactp-primary-ss-top_IQ7356.color_black.view_1.jpg?v=1778179581",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0282/5850/files/apparel_tops_m_nrg-uactp-primary-ss-top_IQ7356.color_black.view_1.jpg?v=1778179581",
+        "https://cdn.shopify.com/s/files/1/0282/5850/files/apparel_tops_m_nrg-uactp-primary-ss-top_IQ7356.color_black.view_2.jpg?v=1778179580",
+        "https://cdn.shopify.com/s/files/1/0282/5850/files/apparel_tops_m_nrg-uactp-primary-ss-top_IQ7356.color_black.view_3.jpg?v=1778179580"
+      ],
+      "tryOnImage": "/demos-images/undefeated/uactp-x-nike-nrg-primary-ss-top-black.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

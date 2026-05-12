@@ -1,0 +1,28 @@
+{
+  "slug": "urban-touch",
+  "brandName": "Urban Touch",
+  "brandDomain": "urbantouch.co.uk",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cable Knit Loungewear Set",
+      "handle": "cable-knit-loungewear-set",
+      "price": "£29.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0603/1989/1684/files/UTYLA0093Green001.jpg?v=1700406735",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0603/1989/1684/files/UTYLA0093Green001.jpg?v=1700406735",
+        "https://cdn.shopify.com/s/files/1/0603/1989/1684/files/UTYLA0093Green002.jpg?v=1700406735",
+        "https://cdn.shopify.com/s/files/1/0603/1989/1684/files/UTYLA0093Green003.jpg?v=1700406738"
+      ],
+      "tryOnImage": "/demos-images/urban-touch/cable-knit-loungewear-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

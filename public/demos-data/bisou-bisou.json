@@ -1,0 +1,28 @@
+{
+  "slug": "bisou-bisou",
+  "brandName": "Bisou Bisou",
+  "brandDomain": "bisoubisou.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "The Kim Bodysuit",
+      "handle": "the-kim-bodysuit-black",
+      "price": "£168.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2171/9965/products/MB-SL710171_BLK_FRONT.jpg?v=1537217241",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2171/9965/products/MB-SL710171_BLK_FRONT.jpg?v=1537217241",
+        "https://cdn.shopify.com/s/files/1/2171/9965/products/MB-SL710171_BLK_SIDE.jpg?v=1537217241",
+        "https://cdn.shopify.com/s/files/1/2171/9965/products/the_kim_bodysuit_4f4fb94f-713f-42ee-8173-852751c315e8.jpg?v=1537217241"
+      ],
+      "tryOnImage": "/demos-images/bisou-bisou/the-kim-bodysuit-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

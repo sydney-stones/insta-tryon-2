@@ -1,0 +1,28 @@
+{
+  "slug": "benetton-official",
+  "brandName": "Benetton Official",
+  "brandDomain": "benetton.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pantaloni con coulisse",
+      "handle": "pantaloni-con-coulisse-nero-4o42df0bp_100",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0953/6729/9416/files/WF7YhefeTSee2IXn3n0nPw.jpg?v=1778598053",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0953/6729/9416/files/WF7YhefeTSee2IXn3n0nPw.jpg?v=1778598053",
+        "https://cdn.shopify.com/s/files/1/0953/6729/9416/files/YgISMnN6QMWCEjJzeiDFkQ.jpg?v=1778598053",
+        "https://cdn.shopify.com/s/files/1/0953/6729/9416/files/sMEca1OpQ32BHGtTqcN9jA.jpg?v=1778598053"
+      ],
+      "tryOnImage": "/demos-images/benetton-official/pantaloni-con-coulisse-nero-4o42df0bp_100.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

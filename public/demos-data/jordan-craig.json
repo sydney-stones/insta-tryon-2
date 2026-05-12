@@ -1,0 +1,28 @@
+{
+  "slug": "jordan-craig",
+  "brandName": "Jordan Craig",
+  "brandDomain": "jordancraig.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Kids Premium Fashion 5 Pack - Party Set",
+      "handle": "kids-premium-fashion-5-pack-party-set",
+      "price": "£145.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1150/4428/files/KIDS-PREMIUM-FASHION-5-PACK---PARTY-SET.jpg?v=1778169435",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1150/4428/files/KIDS-PREMIUM-FASHION-5-PACK---PARTY-SET.jpg?v=1778169435",
+        "https://cdn.shopify.com/s/files/1/1150/4428/files/9210AK_LIGHTPINK_F.jpg?v=1778183840",
+        "https://cdn.shopify.com/s/files/1/1150/4428/files/9210AK_LIGHTPINK_B.jpg?v=1778183917"
+      ],
+      "tryOnImage": "/demos-images/jordan-craig/kids-premium-fashion-5-pack-party-set.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

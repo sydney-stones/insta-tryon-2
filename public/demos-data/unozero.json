@@ -1,0 +1,28 @@
+{
+  "slug": "unozero",
+  "brandName": "UNOZERO",
+  "brandDomain": "unozero.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Black Prestigio Jersey",
+      "handle": "serio-performance-jersey-black",
+      "price": "£46.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0044/0886/8962/files/z1.png?v=1758744082",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0044/0886/8962/files/z1.png?v=1758744082",
+        "https://cdn.shopify.com/s/files/1/0044/0886/8962/files/Place_the_shirt_onto_a_female_soccer_player_and_use_a_dark_background.png?v=1758834374",
+        "https://cdn.shopify.com/s/files/1/0044/0886/8962/files/placeholder-4.jpg?v=1758834374"
+      ],
+      "tryOnImage": "/demos-images/unozero/serio-performance-jersey-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

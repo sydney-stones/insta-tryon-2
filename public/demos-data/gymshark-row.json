@@ -1,0 +1,28 @@
+{
+  "slug": "gymshark-row",
+  "brandName": "Gymshark ROW",
+  "brandDomain": "gymshark.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Gymshark Light Hold Leggings - Super-Set Pink",
+      "handle": "gymshark-light-hold-leggings-super-set-pink",
+      "price": "£38.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0156/6146/files/images-EverydaySeamlessLegging2_0GSSuper_SetPinkB5C6K_KDFW_0003.jpg?v=1776343274",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-EverydaySeamlessLegging2_0GSSuper_SetPinkB5C6K_KDFW_0003.jpg?v=1776343274",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-EverydaySeamlessLegging2_0GSSuper_SetPinkB5C6K_KDFW_0004.jpg?v=1776343274",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-EverydaySeamlessLegging2_0GSSuper_SetPinkB5C6K_KDFW_0005.jpg?v=1776343274"
+      ],
+      "tryOnImage": "/demos-images/gymshark-row/gymshark-light-hold-leggings-super-set-pink.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

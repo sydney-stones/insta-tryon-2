@@ -1,0 +1,28 @@
+{
+  "slug": "performance-running-outfitters",
+  "brandName": "Performance Running Outfitters",
+  "brandDomain": "performancerunning.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "WOMEN'S PRO DRI-FIT CROPPED TANK - MAGENTA/WHITE",
+      "handle": "womens-pro-dri-fit-cropped-tank-magenta-white",
+      "price": "£42.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0552/8115/6290/files/c16a793fAURORA_FZ3615-503_PHSYM001-2000.png?v=1777990092",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0552/8115/6290/files/c16a793fAURORA_FZ3615-503_PHSYM001-2000.png?v=1777990092",
+        "https://cdn.shopify.com/s/files/1/0552/8115/6290/files/1430c903AURORA_FZ3615-503_PHSYM002-2000.png?v=1777990092",
+        "https://cdn.shopify.com/s/files/1/0552/8115/6290/files/cf10f55fAURORA_FZ3615-503_PHSFM001-2000.png?v=1777990092"
+      ],
+      "tryOnImage": "/demos-images/performance-running-outfitters/womens-pro-dri-fit-cropped-tank-magenta-white.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

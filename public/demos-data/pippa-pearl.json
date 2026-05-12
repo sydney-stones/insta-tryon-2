@@ -1,0 +1,28 @@
+{
+  "slug": "pippa-pearl",
+  "brandName": "Pippa & Pearl",
+  "brandDomain": "pippaandpearl.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sierra Glitter Sequin Pearl Corset Mini Dress - Sage Green",
+      "handle": "sierra-glitter-sequin-pearl-corset-mini-dress-sage-green",
+      "price": "£138.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1210/8596/files/beaded_glitter_corset_top_draped_skirt_mini_prom_dress1.jpg?v=1778206961",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1210/8596/files/beaded_glitter_corset_top_draped_skirt_mini_prom_dress1.jpg?v=1778206961",
+        "https://cdn.shopify.com/s/files/1/1210/8596/files/beaded_glitter_corset_top_draped_skirt_mini_prom_dress2.jpg?v=1778206961",
+        "https://cdn.shopify.com/s/files/1/1210/8596/files/beaded_glitter_corset_top_draped_skirt_mini_prom_dress3.jpg?v=1778206961"
+      ],
+      "tryOnImage": "/demos-images/pippa-pearl/sierra-glitter-sequin-pearl-corset-mini-dress-sage-green.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
