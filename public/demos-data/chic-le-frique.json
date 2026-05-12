@@ -1,0 +1,28 @@
+{
+  "slug": "chic-le-frique",
+  "brandName": "CHIC LE FRIQUE",
+  "brandDomain": "chiclefrique.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "ODETTE CORSET MIDI DRESS - MOCHA TAUPE / IVORY POLKA",
+      "handle": "olessia-corset-midi-dress-mocha-taupe-ivory-polka",
+      "price": "£799.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0002/8783/4131/files/olessia-corset-midi-dress-mocha-taupe-ivory-polka-01.jpg?v=1778575113",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0002/8783/4131/files/olessia-corset-midi-dress-mocha-taupe-ivory-polka-01.jpg?v=1778575113",
+        "https://cdn.shopify.com/s/files/1/0002/8783/4131/files/olessia-corset-midi-dress-mocha-taupe-ivory-polka-02.jpg?v=1778575113",
+        "https://cdn.shopify.com/s/files/1/0002/8783/4131/files/olessia-corset-midi-dress-mocha-taupe-ivory-polka-03.jpg?v=1778575113"
+      ],
+      "tryOnImage": "/demos-images/chic-le-frique/olessia-corset-midi-dress-mocha-taupe-ivory-polka.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

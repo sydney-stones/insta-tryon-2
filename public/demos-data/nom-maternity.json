@@ -1,0 +1,28 @@
+{
+  "slug": "nom-maternity",
+  "brandName": "NOM Maternity",
+  "brandDomain": "nommaternity.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Imogen Knit Overalls",
+      "handle": "imogen-knit-overalls",
+      "price": "£108.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1260/6557/files/NOM_part_re-edit-011.jpg?v=1739286119",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1260/6557/files/NOM_part_re-edit-011.jpg?v=1739286119",
+        "https://cdn.shopify.com/s/files/1/1260/6557/files/Imogen_side.jpg?v=1741054452",
+        "https://cdn.shopify.com/s/files/1/1260/6557/files/Imogen_back.jpg?v=1741054464"
+      ],
+      "tryOnImage": "/demos-images/nom-maternity/imogen-knit-overalls.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

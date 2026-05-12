@@ -1,0 +1,28 @@
+{
+  "slug": "moreschi",
+  "brandName": "Moreschi",
+  "brandDomain": "moreschi.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "SIBERIA NAPPA",
+      "handle": "siberia",
+      "price": "£204.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0943/9651/4630/files/SIBERIANERO1.jpg?v=1768843912",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0943/9651/4630/files/SIBERIANERO1.jpg?v=1768843912",
+        "https://cdn.shopify.com/s/files/1/0943/9651/4630/files/SIBERIANERO2.jpg?v=1768843912",
+        "https://cdn.shopify.com/s/files/1/0943/9651/4630/files/SIBERIANERO3.jpg?v=1768843913"
+      ],
+      "tryOnImage": "/demos-images/moreschi/siberia.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

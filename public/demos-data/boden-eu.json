@@ -1,0 +1,28 @@
+{
+  "slug": "boden-eu",
+  "brandName": "Boden EU",
+  "brandDomain": "boden.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Longline Linen Shirt-Multi, Tropical Village",
+      "handle": "women-longline-linen-shirt-multi-tropical-village-t1996mpi",
+      "price": "£99.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0631/2126/0753/files/26whsm_t1996_mpi_m01_2c8e8b8b-4ed1-4d4c-af28-622d9c3307b7.jpg?v=1778584988",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0631/2126/0753/files/26whsm_t1996_mpi_m01_2c8e8b8b-4ed1-4d4c-af28-622d9c3307b7.jpg?v=1778584988",
+        "https://cdn.shopify.com/s/files/1/0631/2126/0753/files/26whsm_t1996_mpi_m02_f638f824-a5f4-44d2-8355-f5b928f92ae6.jpg?v=1778584990",
+        "https://cdn.shopify.com/s/files/1/0631/2126/0753/files/26whsm_t1996_mpi_m03_68ecf61d-0010-4d0b-89d0-9db96b4ab290.jpg?v=1778584991"
+      ],
+      "tryOnImage": "/demos-images/boden-eu/women-longline-linen-shirt-multi-tropical-village-t1996mpi.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

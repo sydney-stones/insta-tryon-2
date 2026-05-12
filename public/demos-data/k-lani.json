@@ -1,0 +1,28 @@
+{
+  "slug": "k-lani",
+  "brandName": "K'lani",
+  "brandDomain": "wearklani.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Bloom Necklace Set",
+      "handle": "bloom-necklace-set",
+      "price": "£29.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0578/9741/8942/files/ChatGPT_Image_May_5_2026_02_11_29_PM.png?v=1778015423",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0578/9741/8942/files/ChatGPT_Image_May_5_2026_02_11_29_PM.png?v=1778015423",
+        "https://cdn.shopify.com/s/files/1/0578/9741/8942/files/bloom.jpg?v=1768248436",
+        "https://cdn.shopify.com/s/files/1/0578/9741/8942/files/DSC_4389.jpg?v=1778531348"
+      ],
+      "tryOnImage": "/demos-images/k-lani/bloom-necklace-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

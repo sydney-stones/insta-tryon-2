@@ -1,0 +1,28 @@
+{
+  "slug": "sanne-alexandra",
+  "brandName": "Sanne Alexandra",
+  "brandDomain": "sannealexandra.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Linen Resort Shirt - Light Blue",
+      "handle": "linen-resort-shirt-light-blue",
+      "price": "£895.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0146/4562/4886/files/5_16d5a763-1cc0-434b-a5d0-2eb5a1cb0bf2.jpg?v=1778161497",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0146/4562/4886/files/5_16d5a763-1cc0-434b-a5d0-2eb5a1cb0bf2.jpg?v=1778161497",
+        "https://cdn.shopify.com/s/files/1/0146/4562/4886/files/4_77eba224-2129-46ca-8969-e345a4fb4d29.jpg?v=1778161497",
+        "https://cdn.shopify.com/s/files/1/0146/4562/4886/files/2_3e960084-15f3-4305-b04f-3924c1ce1c6d.jpg?v=1778239035"
+      ],
+      "tryOnImage": "/demos-images/sanne-alexandra/linen-resort-shirt-light-blue.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

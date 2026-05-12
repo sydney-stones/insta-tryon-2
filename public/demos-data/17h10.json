@@ -1,0 +1,28 @@
+{
+  "slug": "17h10",
+  "brandName": "17h10",
+  "brandDomain": "17h10.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Short Rome - Noir",
+      "handle": "short-tailleur-femme-rome-noir",
+      "price": "£144.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0014/5276/9352/files/tenue-travail-ete-femme-gilet-noir-short-noir-elegant-forte-chaleur_4430a5b7-a168-4982-b9f4-4969bd3a6fc2.webp?v=1771239781",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0014/5276/9352/files/tenue-travail-ete-femme-gilet-noir-short-noir-elegant-forte-chaleur_4430a5b7-a168-4982-b9f4-4969bd3a6fc2.webp?v=1771239781",
+        "https://cdn.shopify.com/s/files/1/0014/5276/9352/files/ensemble-chic-femme-gilet-noir-sans-manches-short-noir-style-tailleur_490f1c20-2438-4fe1-a0cd-c0d3a37d3c3c.webp?v=1771239781",
+        "https://cdn.shopify.com/s/files/1/0014/5276/9352/files/ensemble-tailleur-ete-femme-gilet-noir-short-noir-chic-structure_44231f90-2ddf-4a1f-bb11-05eb46c27878.webp?v=1771239789"
+      ],
+      "tryOnImage": "/demos-images/17h10/short-tailleur-femme-rome-noir.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

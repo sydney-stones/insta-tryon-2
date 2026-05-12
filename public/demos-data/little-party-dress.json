@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/0122/5112/files/Joelz-Black-Cardi_LPD_0017-1-CROP-WEBP.webp?v=1777850502"
       ],
       "tryOnImage": "/demos-images/little-party-dress/joelz-black-cardi.jpg",
-      "modelGender": "men",
-      "modelName": "otto",
+      "modelGender": "women",
+      "modelName": "sasha",
       "customerImages": {
-        "face": "/demo-models/otto/face.png",
-        "body": "/demo-models/otto/body.png"
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
       }
     }
   ]

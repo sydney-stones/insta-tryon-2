@@ -1,0 +1,28 @@
+{
+  "slug": "feather-noise",
+  "brandName": "Feather & Noise",
+  "brandDomain": "featherandnoise.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Millie Tank - Cream",
+      "handle": "millie-tank-cream",
+      "price": "£43.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0939/1744/6446/files/2025-11-12_F_N13015.jpg?v=1778566721",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0939/1744/6446/files/2025-11-12_F_N13015.jpg?v=1778566721",
+        "https://cdn.shopify.com/s/files/1/0939/1744/6446/files/2025-11-12_F_N13003.jpg?v=1778566703",
+        "https://cdn.shopify.com/s/files/1/0939/1744/6446/files/2025-11-12_F_N13017.jpg?v=1778566704"
+      ],
+      "tryOnImage": "/demos-images/feather-noise/millie-tank-cream.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

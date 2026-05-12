@@ -1,0 +1,28 @@
+{
+  "slug": "drvr",
+  "brandName": "DRVR",
+  "brandDomain": "drvrgolf.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "LA STRONG - Flat - Old English",
+      "handle": "la-strong-flat-old-english",
+      "price": "£60.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0622/4245/5737/files/OLDENGFLATBLK.jpg?v=1737166973",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0622/4245/5737/files/OLDENGFLATBLK.jpg?v=1737166973",
+        "https://cdn.shopify.com/s/files/1/0622/4245/5737/files/BLKSNAPBACK_ALLBLKHATS_4787712c-c864-41ca-a68a-8294927bbeca.jpg?v=1737166973",
+        "https://cdn.shopify.com/s/files/1/0622/4245/5737/files/OLDENGFLATWHT_55793319-144d-4285-adeb-bfffd5fa7d5e.jpg?v=1737166973"
+      ],
+      "tryOnImage": "/demos-images/drvr/la-strong-flat-old-english.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

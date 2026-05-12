@@ -1,0 +1,28 @@
+{
+  "slug": "crepprotect-product",
+  "brandName": "CrepProtect Product",
+  "brandDomain": "crepprotect.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "DEO Bundle | Vanquish & Fresh Linen | EAN",
+      "handle": "crep-protect-footwear-deoderiser-bundle-ean",
+      "price": "£24.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0631/6644/7787/files/CPEX_Product_Deo_150ml_WhiteBackgroundImages_IMG7_f406e350-6956-49dd-a871-c0c71ec7cfea.webp?v=1774311272",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0631/6644/7787/files/CPEX_Product_Deo_150ml_WhiteBackgroundImages_IMG7_f406e350-6956-49dd-a871-c0c71ec7cfea.webp?v=1774311272",
+        "https://cdn.shopify.com/s/files/1/0631/6644/7787/files/4_1_52d6c082-3521-4161-b472-268abf9ff22f.webp?v=1774311272",
+        "https://cdn.shopify.com/s/files/1/0631/6644/7787/files/DEO_WEBSITE_USP_2_07eff9d2-546a-4458-bc23-b80b36396463.webp?v=1774311272"
+      ],
+      "tryOnImage": "/demos-images/crepprotect-product/crep-protect-footwear-deoderiser-bundle-ean.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

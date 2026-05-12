@@ -1,0 +1,28 @@
+{
+  "slug": "scarlett-poppies",
+  "brandName": "Scarlett Poppies",
+  "brandDomain": "scarlettpoppies.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "VIDHI DRESS",
+      "handle": "vidhi-dress",
+      "price": "£595.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0342/6231/9244/files/Vidhi_Dress.png?v=1775537058",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0342/6231/9244/files/Vidhi_Dress.png?v=1775537058",
+        "https://cdn.shopify.com/s/files/1/0342/6231/9244/files/CW1227.jpg?v=1775537058",
+        "https://cdn.shopify.com/s/files/1/0342/6231/9244/files/CW1233.jpg?v=1775537058"
+      ],
+      "tryOnImage": "/demos-images/scarlett-poppies/vidhi-dress.jpg",
+      "modelGender": "women",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

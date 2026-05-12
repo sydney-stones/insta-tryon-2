@@ -1,0 +1,28 @@
+{
+  "slug": "dear-frankie",
+  "brandName": "DEAR FRANKIE",
+  "brandDomain": "dearfrankie.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lucia Maxi Skirt | Cherry",
+      "handle": "lucia-maxi-skirt-cherry",
+      "price": "£11.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0596/6328/6457/files/DF8_130326ab-4b3c-4806-8edf-9776b73e4d2b.jpg?v=1747133205",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0596/6328/6457/files/DF8_130326ab-4b3c-4806-8edf-9776b73e4d2b.jpg?v=1747133205",
+        "https://cdn.shopify.com/s/files/1/0596/6328/6457/files/DSC_3382.jpg?v=1747133205",
+        "https://cdn.shopify.com/s/files/1/0596/6328/6457/files/DSC_3425_33463781-15bd-4a60-ad33-e9758b5c1b3a.jpg?v=1747133205"
+      ],
+      "tryOnImage": "/demos-images/dear-frankie/lucia-maxi-skirt-cherry.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

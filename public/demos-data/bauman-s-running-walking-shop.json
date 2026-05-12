@@ -1,0 +1,28 @@
+{
+  "slug": "bauman-s-running-walking-shop",
+  "brandName": "Bauman's Running & Walking Shop",
+  "brandDomain": "werunthistown.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "New Balance Women's Brighton Jersey - List Design - RFB 5K IPA Race Team",
+      "handle": "new-balance-womens-brighton-jersey-list-design-rfb-5k-ipa-race-team",
+      "price": "£35.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2275/1533/files/RFB-WomensBrightonJersey-Friends-Red-Front.png?v=1774461018",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2275/1533/files/RFB-WomensBrightonJersey-Friends-Red-Front.png?v=1774461018",
+        "https://cdn.shopify.com/s/files/1/2275/1533/files/RFB-WomensBrightonJersey-friends-Red-Back.png?v=1774461018",
+        "https://cdn.shopify.com/s/files/1/2275/1533/files/RFB-WomensBrightonJersey-Friends-Orange-Front.png?v=1774461018"
+      ],
+      "tryOnImage": "/demos-images/bauman-s-running-walking-shop/new-balance-womens-brighton-jersey-list-design-rfb-5k-ipa-race-team.jpg",
+      "modelGender": "women",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

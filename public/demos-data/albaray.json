@@ -1,0 +1,28 @@
+{
+  "slug": "albaray",
+  "brandName": "Albaray",
+  "brandDomain": "albaray.co.uk",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Re-Loved Velvet Sequin Asymmetric Off Shoulder Dress - Size 10",
+      "handle": "re-loved-velvet-sequin-asymmetric-off-shoulder-dress-size-10",
+      "price": "£30.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0528/6828/4602/files/5056487371015_5_dfcea670-59fb-4b69-ae27-b63df0518ba3.jpg?v=1777472389",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0528/6828/4602/files/5056487371015_5_dfcea670-59fb-4b69-ae27-b63df0518ba3.jpg?v=1777472389",
+        "https://cdn.shopify.com/s/files/1/0528/6828/4602/files/5056487371015_1_c924649e-0fcc-434f-a802-44f4ccab2766.jpg?v=1777472389",
+        "https://cdn.shopify.com/s/files/1/0528/6828/4602/files/5056487371015_2_dc0e82c7-ac97-40e8-aa4e-a19215acb0a4.jpg?v=1777472389"
+      ],
+      "tryOnImage": "/demos-images/albaray/re-loved-velvet-sequin-asymmetric-off-shoulder-dress-size-10.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

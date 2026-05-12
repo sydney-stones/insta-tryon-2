@@ -1,0 +1,28 @@
+{
+  "slug": "salty-printing",
+  "brandName": "Salty® Printing",
+  "brandDomain": "saltyprinting.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "EMBROIDERED WOMEN PERFORMANCE POLO",
+      "handle": "embroidered-women-performance-polo",
+      "price": "£35.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0644/7619/files/LST640-10.png?v=1768178658",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0644/7619/files/LST640-10.png?v=1768178658",
+        "https://cdn.shopify.com/s/files/1/0644/7619/files/LST640-01.png?v=1768178658",
+        "https://cdn.shopify.com/s/files/1/0644/7619/files/LST640-03.png?v=1768178658"
+      ],
+      "tryOnImage": "/demos-images/salty-printing/embroidered-women-performance-polo.jpg",
+      "modelGender": "women",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

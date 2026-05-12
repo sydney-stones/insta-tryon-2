@@ -1,0 +1,28 @@
+{
+  "slug": "monod-sports",
+  "brandName": "Monod Sports",
+  "brandDomain": "monodsports.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Men's Take a Stand Responsibili-Tee",
+      "handle": "mens-take-a-stand-responsibili-tee",
+      "price": "£55.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0654/3881/0355/files/37591_RBSG_ALTFRONT.jpg?v=1778435254",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0654/3881/0355/files/37591_RBSG_ALTFRONT.jpg?v=1778435254",
+        "https://cdn.shopify.com/s/files/1/0654/3881/0355/files/37591_RBSG_HC1.jpg?v=1778435256",
+        "https://cdn.shopify.com/s/files/1/0654/3881/0355/files/37591_RBSG_HC2.jpg?v=1778435259"
+      ],
+      "tryOnImage": "/demos-images/monod-sports/mens-take-a-stand-responsibili-tee.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

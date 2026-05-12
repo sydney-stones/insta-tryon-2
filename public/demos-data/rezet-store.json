@@ -1,0 +1,28 @@
+{
+  "slug": "rezet-store",
+  "brandName": "Rezet Store",
+  "brandDomain": "rezetstore.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Brandon Pant",
+      "handle": "carhartt-wip-brandon-pant-blue-rinsed-i035893-0102",
+      "price": "£900.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0851/7500/9569/files/15901211001219_1.png?v=1778243945",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0851/7500/9569/files/15901211001219_1.png?v=1778243945",
+        "https://cdn.shopify.com/s/files/1/0851/7500/9569/files/model_15901211001219_1.png?v=1778243942",
+        "https://cdn.shopify.com/s/files/1/0851/7500/9569/files/model_15901211001219_2.png?v=1778243942"
+      ],
+      "tryOnImage": "/demos-images/rezet-store/carhartt-wip-brandon-pant-blue-rinsed-i035893-0102.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

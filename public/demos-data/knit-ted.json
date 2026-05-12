@@ -1,0 +1,28 @@
+{
+  "slug": "knit-ted",
+  "brandName": "Knit-ted",
+  "brandDomain": "knit-ted.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cara Blouse | Night Blue",
+      "handle": "cara-blouse-night-blue",
+      "price": "£70.77",
+      "productImage": "https://cdn.shopify.com/s/files/1/0443/3942/9541/files/252P192_412__1000_b3658737-18f2-4933-a190-b81798cc6474.jpg?v=1767625598",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0443/3942/9541/files/252P192_412__1000_b3658737-18f2-4933-a190-b81798cc6474.jpg?v=1767625598",
+        "https://cdn.shopify.com/s/files/1/0443/3942/9541/files/252P192_412_901.jpg?v=1767625601",
+        "https://cdn.shopify.com/s/files/1/0443/3942/9541/files/252P192_412_900.jpg?v=1767625604"
+      ],
+      "tryOnImage": "/demos-images/knit-ted/cara-blouse-night-blue.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

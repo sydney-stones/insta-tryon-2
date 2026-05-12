@@ -1,0 +1,28 @@
+{
+  "slug": "ballerette-us",
+  "brandName": "BallereTTe US",
+  "brandDomain": "ballerette.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ballerine a punta bicolor bianco e nero",
+      "handle": "ballerine-nere-e-bianche-a-punta-in-pelle-e-camoscio-valadier-029-003-225",
+      "price": "£205.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0859/0586/7071/files/VALADIER029-003-225.jpg?v=1774863951",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0859/0586/7071/files/VALADIER029-003-225.jpg?v=1774863951",
+        "https://cdn.shopify.com/s/files/1/0859/0586/7071/files/VALADIER029-003-225_1.jpg?v=1774863951",
+        "https://cdn.shopify.com/s/files/1/0859/0586/7071/files/VALADIER029-003-225_2.jpg?v=1774863951"
+      ],
+      "tryOnImage": "/demos-images/ballerette-us/ballerine-nere-e-bianche-a-punta-in-pelle-e-camoscio-valadier-029-003-225.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

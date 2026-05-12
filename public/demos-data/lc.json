@@ -1,0 +1,28 @@
+{
+  "slug": "lc",
+  "brandName": "LC",
+  "brandDomain": "lcofficial.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Cami Top & Legging Full Length Set Tawny Rust",
+      "handle": "womens-cami-top-legging-full-length-set-tawny-rust",
+      "price": "£459.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0265/5171/3841/files/lc-women-s-cami-top-legging-full-length-set-tawny-rust-1236661367.jpg?v=1777984391",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0265/5171/3841/files/lc-women-s-cami-top-legging-full-length-set-tawny-rust-1236661367.jpg?v=1777984391",
+        "https://cdn.shopify.com/s/files/1/0265/5171/3841/files/lc-women-s-cami-top-legging-full-length-set-tawny-rust-1236661369.jpg?v=1777984332",
+        "https://cdn.shopify.com/s/files/1/0265/5171/3841/files/lc-women-s-cami-top-legging-full-length-set-tawny-rust-1236661368.jpg?v=1777984269"
+      ],
+      "tryOnImage": "/demos-images/lc/womens-cami-top-legging-full-length-set-tawny-rust.jpg",
+      "modelGender": "women",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

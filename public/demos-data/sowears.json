@@ -1,0 +1,28 @@
+{
+  "slug": "sowears",
+  "brandName": "Sowears",
+  "brandDomain": "sowears.net",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Mini Cupidee Vichy Bow Lounge Co Ord Set",
+      "handle": "mini-cupidee-vichy-bow-lounge-co-ord-set",
+      "price": "£3450.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0615/1418/6960/files/Untitleddesign_79_80d66fd6-3040-44e9-83f0-f38f941d6aa4.jpg?v=1777974468",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0615/1418/6960/files/Untitleddesign_79_80d66fd6-3040-44e9-83f0-f38f941d6aa4.jpg?v=1777974468",
+        "https://cdn.shopify.com/s/files/1/0615/1418/6960/files/Untitleddesign_78_fb9fa4e3-1b8f-4f9e-908d-c5318cd1d1e9.jpg?v=1777974468",
+        "https://cdn.shopify.com/s/files/1/0615/1418/6960/files/Untitleddesign_66_8cdaeccd-c6a0-4a49-9b38-f8a596acc4ad.jpg?v=1777974468"
+      ],
+      "tryOnImage": "/demos-images/sowears/mini-cupidee-vichy-bow-lounge-co-ord-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

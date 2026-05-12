@@ -1,0 +1,28 @@
+{
+  "slug": "rampley-and-co",
+  "brandName": "Rampley and Co",
+  "brandDomain": "rampleyandco.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Pink Superfine Merino Wool Jacket",
+      "handle": "pink-superfine-merino-wool-jacket",
+      "price": "£1445.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0378/3681/files/Pink_Jacket_Image_1.jpg?v=1775726493",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0378/3681/files/Pink_Jacket_Image_1.jpg?v=1775726493",
+        "https://cdn.shopify.com/s/files/1/0378/3681/files/Pink_Jacket_Image_5.jpg?v=1775822374",
+        "https://cdn.shopify.com/s/files/1/0378/3681/files/Pink_Jacket_Image_2.jpg?v=1775822374"
+      ],
+      "tryOnImage": "/demos-images/rampley-and-co/pink-superfine-merino-wool-jacket.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

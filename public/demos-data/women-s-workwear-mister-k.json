@@ -1,0 +1,28 @@
+{
+  "slug": "women-s-workwear-mister-k",
+  "brandName": "Women's Workwear– Mister k.",
+  "brandDomain": "misterk.fr",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Harrison",
+      "handle": "la-chemise-manches-courtes-harrison-bourrette-ecrue",
+      "price": "£145.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0122/8704/9790/files/BANNER_BONSMIX_230519_FREDDIE_TIPASA.jpg?v=1684476791",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0122/8704/9790/files/BANNER_BONSMIX_230519_FREDDIE_TIPASA.jpg?v=1684476791",
+        "https://cdn.shopify.com/s/files/1/0122/8704/9790/files/FICHE_PRODUIT_FREDDIE_ECRU_ZOOM_POCHE.jpg?v=1686397810",
+        "https://cdn.shopify.com/s/files/1/0122/8704/9790/files/FP_SITE_PE26_HARISSON_BOURRETTE_0005_PHOTO_HD_PE26_ETE_PRODUIT_CHEMISE_HARRISON_ECRUE_FA6A7844.jpg?v=1777902445"
+      ],
+      "tryOnImage": "/demos-images/women-s-workwear-mister-k/la-chemise-manches-courtes-harrison-bourrette-ecrue.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "capelli-sport",
+  "brandName": "Capelli Sport",
+  "brandDomain": "capellisport.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "ADULT BASE LAYER GAME DAY LONG SLEEVE TOP",
+      "handle": "adult-base-layer-game-day-long-sleeve-top",
+      "price": "£35.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0516/8994/7309/files/AGA-11610BLACKWHITE.jpg?v=1767791762",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0516/8994/7309/files/AGA-11610BLACKWHITE.jpg?v=1767791762",
+        "https://cdn.shopify.com/s/files/1/0516/8994/7309/files/AGA-11610BLACKWHITEBK.jpg?v=1767791762",
+        "https://cdn.shopify.com/s/files/1/0516/8994/7309/files/AGA-11610WHITEBLACK.jpg?v=1767791762"
+      ],
+      "tryOnImage": "/demos-images/capelli-sport/adult-base-layer-game-day-long-sleeve-top.jpg",
+      "modelGender": "women",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

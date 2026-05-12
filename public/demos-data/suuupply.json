@@ -1,0 +1,28 @@
+{
+  "slug": "suuupply",
+  "brandName": "suuupply",
+  "brandDomain": "suuupply.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "OG Detroit Jacket - Blue / Black rinsed",
+      "handle": "og-detroit-jacket-blue-black-rinsed",
+      "price": "£220.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0513/7779/9365/files/OGDetroitJacket-Blue_Blackrinsed3.jpg?v=1777904023",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0513/7779/9365/files/OGDetroitJacket-Blue_Blackrinsed3.jpg?v=1777904023",
+        "https://cdn.shopify.com/s/files/1/0513/7779/9365/files/OGDetroitJacket-Blue_Blackrinsed1.jpg?v=1777904023",
+        "https://cdn.shopify.com/s/files/1/0513/7779/9365/files/OGDetroitJacket-Blue_Blackrinsed2.jpg?v=1777904023"
+      ],
+      "tryOnImage": "/demos-images/suuupply/og-detroit-jacket-blue-black-rinsed.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "laura",
+  "brandName": "Laura",
+  "brandDomain": "laura.ca",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Mesh Jacket, Top & Pants Set",
+      "handle": "mesh-jacket-top-pants-set-black-pattern-regular-128280-090",
+      "price": "£278.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0703/9572/4093/files/84a5ccac1baa15a25bca11840ea39a3b18cd4785_128280_090_F1.jpg?v=1778513607",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0703/9572/4093/files/84a5ccac1baa15a25bca11840ea39a3b18cd4785_128280_090_F1.jpg?v=1778513607",
+        "https://cdn.shopify.com/s/files/1/0703/9572/4093/files/5ce2e3713058189c4b345370dad53a0ccaff92e9_128280_090_S1.jpg?v=1778513608",
+        "https://cdn.shopify.com/s/files/1/0703/9572/4093/files/7f9bb83d0642928c2bcd7afcd0215b6eeb618da3_128280_090_B1.jpg?v=1778513607"
+      ],
+      "tryOnImage": "/demos-images/laura/mesh-jacket-top-pants-set-black-pattern-regular-128280-090.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

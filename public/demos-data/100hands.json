@@ -1,0 +1,28 @@
+{
+  "slug": "100hands",
+  "brandName": "100HANDS",
+  "brandDomain": "100hands.nl",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Fine Off-White Cord",
+      "handle": "the-fine-off-white-cord",
+      "price": "£345.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0468/4326/5182/files/creame_cord_1.png?v=1766561173",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0468/4326/5182/files/creame_cord_1.png?v=1766561173",
+        "https://cdn.shopify.com/s/files/1/0468/4326/5182/files/creame_cord_2.png?v=1766561192",
+        "https://cdn.shopify.com/s/files/1/0468/4326/5182/files/3Y3A0872a.png?v=1766572570"
+      ],
+      "tryOnImage": "/demos-images/100hands/the-fine-off-white-cord.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

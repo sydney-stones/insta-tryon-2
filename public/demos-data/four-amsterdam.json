@@ -1,0 +1,28 @@
+{
+  "slug": "four-amsterdam",
+  "brandName": "FOUR Amsterdam",
+  "brandDomain": "fouramsterdam.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Maor The Meander Mix Bracelet",
+      "handle": "maor-the-meander-mix-bracelet-umeandermix1-slr-6-xx-silver",
+      "price": "£979.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0646/5205/0667/files/MAORmeanderbracelet.webp?v=1778156966",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0646/5205/0667/files/MAORmeanderbracelet.webp?v=1778156966",
+        "https://cdn.shopify.com/s/files/1/0646/5205/0667/files/MAORmeanderbracelet2.webp?v=1778156966",
+        "https://cdn.shopify.com/s/files/1/0646/5205/0667/files/MAORmeanderbracelet3.webp?v=1778156965"
+      ],
+      "tryOnImage": "/demos-images/four-amsterdam/maor-the-meander-mix-bracelet-umeandermix1-slr-6-xx-silver.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

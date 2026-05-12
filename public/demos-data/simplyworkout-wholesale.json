@@ -1,0 +1,28 @@
+{
+  "slug": "simplyworkout-wholesale",
+  "brandName": "simplyWORKOUT Wholesale",
+  "brandDomain": "simplyworkout.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Barney Piped Tank",
+      "handle": "varley-barney-piped-tank",
+      "price": "£69.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0828/4275/files/varley-barney-piped-tank-white-apple-cinnamon_1.jpg?v=1777997104",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0828/4275/files/varley-barney-piped-tank-white-apple-cinnamon_1.jpg?v=1777997104",
+        "https://cdn.shopify.com/s/files/1/0828/4275/files/varley-barney-piped-tank-white-apple-cinnamon_2.jpg?v=1777997120",
+        "https://cdn.shopify.com/s/files/1/0828/4275/files/varley-barney-piped-tank-white-apple-cinnamon_3.jpg?v=1777997135"
+      ],
+      "tryOnImage": "/demos-images/simplyworkout-wholesale/varley-barney-piped-tank.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

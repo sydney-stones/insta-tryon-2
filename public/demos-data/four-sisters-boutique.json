@@ -1,0 +1,28 @@
+{
+  "slug": "four-sisters-boutique",
+  "brandName": "Four Sisters Boutique",
+  "brandDomain": "foursistersboutique.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Staple Piece Tank Top",
+      "handle": "staple-piece-tank-top",
+      "price": "£34.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0818/4963/files/353ad787-6cc5-461c-a918-8549a92c09ea.jpg?v=1778178520",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0818/4963/files/353ad787-6cc5-461c-a918-8549a92c09ea.jpg?v=1778178520",
+        "https://cdn.shopify.com/s/files/1/0818/4963/files/f18b3973-bcf8-4915-a3f2-d1d7e5d91a71.jpg?v=1778175244",
+        "https://cdn.shopify.com/s/files/1/0818/4963/files/d960b677-84af-489a-bb22-1ca8c624a7cf.jpg?v=1778178521"
+      ],
+      "tryOnImage": "/demos-images/four-sisters-boutique/staple-piece-tank-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "bison-union",
+  "brandName": "Bison Union",
+  "brandDomain": "bisonunion.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sheridan WYO TMAC Tshirt",
+      "handle": "sheridan-wyo-tmac-tshirt",
+      "price": "£23.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1131/1432/files/DEDE0860-2118-408C-945A-CB73629EB5EA.jpg?v=1777501174",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1131/1432/files/DEDE0860-2118-408C-945A-CB73629EB5EA.jpg?v=1777501174",
+        "https://cdn.shopify.com/s/files/1/1131/1432/files/161D5B23-EDBC-426A-AE31-7CF3BD157565.jpg?v=1777595726",
+        "https://cdn.shopify.com/s/files/1/1131/1432/files/A2501DF6-7C16-4CF6-BE7C-C32B475801EF.png?v=1777501174"
+      ],
+      "tryOnImage": "/demos-images/bison-union/sheridan-wyo-tmac-tshirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

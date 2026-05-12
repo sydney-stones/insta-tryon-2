@@ -1,0 +1,28 @@
+{
+  "slug": "fashiontiger",
+  "brandName": "Fashiontiger",
+  "brandDomain": "fashiontiger.nl",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Soft wave top - wit",
+      "handle": "soft-wave-top-wit",
+      "price": "£39.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0466/4469/1107/files/Soft_wave_top_-_wit_-_Fashiontiger_1.png?v=1777041215",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0466/4469/1107/files/Soft_wave_top_-_wit_-_Fashiontiger_1.png?v=1777041215",
+        "https://cdn.shopify.com/s/files/1/0466/4469/1107/files/Soft_wave_top_-_wit_-_Fashiontiger_2.png?v=1777041224",
+        "https://cdn.shopify.com/s/files/1/0466/4469/1107/files/Soft_wave_top_-_wit_-_Fashiontiger_3.png?v=1777041241"
+      ],
+      "tryOnImage": "/demos-images/fashiontiger/soft-wave-top-wit.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

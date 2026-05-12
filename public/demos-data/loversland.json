@@ -1,0 +1,28 @@
+{
+  "slug": "loversland",
+  "brandName": "LoversLand",
+  "brandDomain": "loversland.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Florala Maxi Dress",
+      "handle": "florala-maxi-dress",
+      "price": "£187.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1007/2302/files/Second_Female_Dresses_Florala_Maxi_Dress_Summer_Sand_01.jpg?v=1778263175",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1007/2302/files/Second_Female_Dresses_Florala_Maxi_Dress_Summer_Sand_01.jpg?v=1778263175",
+        "https://cdn.shopify.com/s/files/1/1007/2302/files/Second_Female_Dresses_Florala_Maxi_Dress_Summer_Sand_02.jpg?v=1778263176",
+        "https://cdn.shopify.com/s/files/1/1007/2302/files/Second_Female_Dresses_Florala_Maxi_Dress_Summer_Sand_03.jpg?v=1778263175"
+      ],
+      "tryOnImage": "/demos-images/loversland/florala-maxi-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/0069/4190/0851/files/pos0077_375x_1b5d9b0c-2d8c-4d11-9380-b914426f886a.webp?v=1778557990"
       ],
       "tryOnImage": "/demos-images/purpose-boutique/tomato-ziggy-crewneck-sweatshirt-t94.jpg",
-      "modelGender": "men",
-      "modelName": "otto",
+      "modelGender": "women",
+      "modelName": "sasha",
       "customerImages": {
-        "face": "/demo-models/otto/face.png",
-        "body": "/demo-models/otto/body.png"
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
       }
     }
   ]

@@ -1,0 +1,28 @@
+{
+  "slug": "cultnaked",
+  "brandName": "CULTNAKED",
+  "brandDomain": "cultnaked.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Nerd jeans in Blue",
+      "handle": "nerd-jeans-in-blue",
+      "price": "£280.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0199/8936/4790/files/cultnakedss263979h_f3093725-5b87-4b9f-a52b-c49b1471e67d.jpg?v=1776801822",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0199/8936/4790/files/cultnakedss263979h_f3093725-5b87-4b9f-a52b-c49b1471e67d.jpg?v=1776801822",
+        "https://cdn.shopify.com/s/files/1/0199/8936/4790/files/17_6e0da5d7-dea9-4839-8ecc-d5e18e8c4031.jpg?v=1776801822",
+        "https://cdn.shopify.com/s/files/1/0199/8936/4790/files/cultnakedss264001h_b9d7fbce-af6b-493a-9d89-af90f2089880.jpg?v=1776801822"
+      ],
+      "tryOnImage": "/demos-images/cultnaked/nerd-jeans-in-blue.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

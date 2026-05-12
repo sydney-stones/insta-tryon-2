@@ -1,0 +1,28 @@
+{
+  "slug": "hanley-co",
+  "brandName": "Hanley & Co.",
+  "brandDomain": "hanley.ie",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Belstaff Sideline Jacket",
+      "handle": "belstaff-sideline-jacket",
+      "price": "£187.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0838/6582/9666/files/SIDELINE_JACKET_Dark_Navy_1_1210x726_22ba7f60-351c-4179-9ac5-67311fd3467e.jpg?v=1757511249",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0838/6582/9666/files/SIDELINE_JACKET_Dark_Navy_1_1210x726_22ba7f60-351c-4179-9ac5-67311fd3467e.jpg?v=1757511249",
+        "https://cdn.shopify.com/s/files/1/0838/6582/9666/files/SIDELINE_JACKET_Dark_Navy_6_1210x726_ed255a5d-b25f-47c6-a899-3af378d7e2f4.jpg?v=1757511249",
+        "https://cdn.shopify.com/s/files/1/0838/6582/9666/files/SIDELINE_JACKET_Dark_Navy_3_1210x726_83b3ce90-f76a-470d-8fcb-ec42d55ba9fb.jpg?v=1757511250"
+      ],
+      "tryOnImage": "/demos-images/hanley-co/belstaff-sideline-jacket.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

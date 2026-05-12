@@ -1,0 +1,28 @@
+{
+  "slug": "ohsevendays",
+  "brandName": "OhSevenDays",
+  "brandDomain": "ohsevendays.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Tahlia Dress - blue",
+      "handle": "tahlia-dress",
+      "price": "£308.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1870/2121/files/4453.jpg?v=1758624620",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1870/2121/files/4453.jpg?v=1758624620",
+        "https://cdn.shopify.com/s/files/1/1870/2121/files/4452.jpg?v=1758624620",
+        "https://cdn.shopify.com/s/files/1/1870/2121/files/OhSevenDays_16.010053_1_1.jpg?v=1758624620"
+      ],
+      "tryOnImage": "/demos-images/ohsevendays/tahlia-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

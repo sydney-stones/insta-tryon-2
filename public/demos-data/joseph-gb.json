@@ -1,0 +1,28 @@
+{
+  "slug": "joseph-gb",
+  "brandName": "JOSEPH GB",
+  "brandDomain": "joseph-fashion.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cashair V Neck Jumper",
+      "handle": "cashair-v-neck-jumper-blue-jf0089121403",
+      "price": "£177.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0731/8070/9076/files/jf0089121403-cashair-v-neck-jumper-blue-Joseph-1.jpg?v=1738682366",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0731/8070/9076/files/jf0089121403-cashair-v-neck-jumper-blue-Joseph-1.jpg?v=1738682366",
+        "https://cdn.shopify.com/s/files/1/0731/8070/9076/files/jf0089121403-cashair-v-neck-jumper-blue-Joseph-28764.jpg?v=1738692394",
+        "https://cdn.shopify.com/s/files/1/0731/8070/9076/files/jf0089121403-cashair-v-neck-jumper-blue-Joseph-28765.jpg?v=1738692399"
+      ],
+      "tryOnImage": "/demos-images/joseph-gb/cashair-v-neck-jumper-blue-jf0089121403.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

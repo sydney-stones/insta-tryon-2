@@ -1,0 +1,28 @@
+{
+  "slug": "tailored-athlete-usa",
+  "brandName": "TAILORED ATHLETE - USA",
+  "brandDomain": "tailoredathlete.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Knit Look T-Shirt in Dark Khaki",
+      "handle": "knit-look-t-shirt-in-dark-khaki",
+      "price": "£50.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0126/8731/0907/files/TSH00357_9.jpg?v=1777552821",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0126/8731/0907/files/TSH00357_9.jpg?v=1777552821",
+        "https://cdn.shopify.com/s/files/1/0126/8731/0907/files/TSH00357_6.jpg?v=1777552822",
+        "https://cdn.shopify.com/s/files/1/0126/8731/0907/files/TSH00357_2.jpg?v=1777552821"
+      ],
+      "tryOnImage": "/demos-images/tailored-athlete-usa/knit-look-t-shirt-in-dark-khaki.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

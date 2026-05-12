@@ -1,0 +1,28 @@
+{
+  "slug": "indyvogue",
+  "brandName": "IndyVogue",
+  "brandDomain": "indyvogue.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Jamdani Saree in Deep Green Color with Allover Jamdani Self Weaving Work",
+      "handle": "jamdani-saree-in-deep-green-color-with-allover-jamdani-self-weaving-work",
+      "price": "£88.84",
+      "productImage": "https://cdn.shopify.com/s/files/1/1469/7362/files/jamdani-saree-in-deep-green-color-with-allover-jamdani-self-weaving-work.jpg?v=1778576873",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1469/7362/files/jamdani-saree-in-deep-green-color-with-allover-jamdani-self-weaving-work.jpg?v=1778576873",
+        "https://cdn.shopify.com/s/files/1/1469/7362/files/jamdani-saree-in-deep-green-color-with-allover-jamdani-self-weaving-work-2.jpg?v=1778576875",
+        "https://cdn.shopify.com/s/files/1/1469/7362/files/jamdani-saree-in-deep-green-color-with-allover-jamdani-self-weaving-work-3.jpg?v=1778576876"
+      ],
+      "tryOnImage": "/demos-images/indyvogue/jamdani-saree-in-deep-green-color-with-allover-jamdani-self-weaving-work.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
