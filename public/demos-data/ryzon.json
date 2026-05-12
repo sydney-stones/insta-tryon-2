@@ -1,0 +1,28 @@
+{
+  "slug": "ryzon",
+  "brandName": "RYZON",
+  "brandDomain": "ryzon.co.uk",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Signature Cycling Jersey Women",
+      "handle": "signature-cycling-jersey-women",
+      "price": "£165.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1115/0812/files/7128_Signature_Cycling_Jersey_Women_AW_cutout4_png.png?v=1772548114",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1115/0812/files/7128_Signature_Cycling_Jersey_Women_AW_cutout4_png.png?v=1772548114",
+        "https://cdn.shopify.com/s/files/1/1115/0812/files/7128_Signature_Cycling_Jersey_Women_AW_cutout10_png.png?v=1772548124",
+        "https://cdn.shopify.com/s/files/1/1115/0812/files/Mira_7128COTE_427.jpg?v=1777037149"
+      ],
+      "tryOnImage": "/demos-images/ryzon/signature-cycling-jersey-women.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

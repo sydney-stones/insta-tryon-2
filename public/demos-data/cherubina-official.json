@@ -1,0 +1,28 @@
+{
+  "slug": "cherubina-official",
+  "brandName": "Cherubina Official",
+  "brandDomain": "cherubina.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Conjunto de top y falda estampado gris Connie-Winnie",
+      "handle": "conjunto-de-top-y-falda-estampado-gris-connie-winnie",
+      "price": "£220.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0622/5245/0042/files/WINNIE_CONNIE-1.jpg?v=1778014971",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0622/5245/0042/files/WINNIE_CONNIE-1.jpg?v=1778014971",
+        "https://cdn.shopify.com/s/files/1/0622/5245/0042/files/WINNIE_CONNIE-2.jpg?v=1778014971",
+        "https://cdn.shopify.com/s/files/1/0622/5245/0042/files/WINNIE_CONNIE-3.jpg?v=1778014972"
+      ],
+      "tryOnImage": "/demos-images/cherubina-official/conjunto-de-top-y-falda-estampado-gris-connie-winnie.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "foren",
+  "brandName": "FOREN",
+  "brandDomain": "theforenshop.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "RENE LACE CROP TOP",
+      "handle": "rene-lace-crop-top-1",
+      "price": "£138.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0868/4984/7583/files/WHITE-RENE-SET4_0aad67b3-1489-487a-90be-fb6e943e5220.png?v=1756247997",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0868/4984/7583/files/WHITE-RENE-SET4_0aad67b3-1489-487a-90be-fb6e943e5220.png?v=1756247997",
+        "https://cdn.shopify.com/s/files/1/0868/4984/7583/files/WHITE-RENE-SET_74a7ada6-e84d-48cf-93d9-25f427f886a6.png?v=1756247997",
+        "https://cdn.shopify.com/s/files/1/0868/4984/7583/files/WHITE-RENE-SET2_5cfc0904-9849-4255-9ab2-bfdc36e21c3e.png?v=1756247997"
+      ],
+      "tryOnImage": "/demos-images/foren/rene-lace-crop-top-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

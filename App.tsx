@@ -43,6 +43,7 @@ import PerfectWhiteTeeDemoPage from './components/PerfectWhiteTeeDemoPage';
 import SlowloveDemoPage from './components/SlowloveDemoPage';
 import DemellierDemoPage from './components/DemellierDemoPage';
 import DukeDexterDemoPage from './components/DukeDexterDemoPage';
+import AutoDemoPage from './components/AutoDemoPage';
 import TierCalculatorPage from './components/TierCalculatorPage';
 import { defaultWardrobe, getWardrobeFolders } from './wardrobe';
 import { WardrobeItem } from './types';
@@ -157,6 +158,9 @@ const App: React.FC = () => {
           <Route path="/duke-dexter/dr-motocross-vintage-white-waffle-top" element={<DukeDexterDemoPage productSlug="dr-motocross-vintage-white-waffle-top" />} />
           <Route path="/duke-dexter/ny-sketch-washed-grey-waffle-top" element={<DukeDexterDemoPage productSlug="ny-sketch-washed-grey-waffle-top" />} />
           <Route path="/duke-dexter/plus-duke-kiss-sneaker-womens" element={<DukeDexterDemoPage productSlug="plus-duke-kiss-sneaker-womens" />} />
+
+          {/* Auto-generated personalised demos (one route per brand slug, JSON-driven) */}
+          <Route path="/demos/:slug" element={<AutoDemoPage />} />
 
           {/* 404 catch-all for known top-level paths with no sub-routes */}
           <Route path="/blog/*" element={<NotFoundPage />} />

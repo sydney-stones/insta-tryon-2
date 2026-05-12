@@ -1,0 +1,28 @@
+{
+  "slug": "sworn-to-us",
+  "brandName": "Sworn To Us",
+  "brandDomain": "sworntous.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Script Angel Quarter-Zip // Oyster Grey",
+      "handle": "script-angel-quarter-zip-oyster-grey",
+      "price": "£90.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0950/1738/files/QGREY-QUARTER-3.jpg?v=1775859673",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0950/1738/files/QGREY-QUARTER-3.jpg?v=1775859673",
+        "https://cdn.shopify.com/s/files/1/0950/1738/files/QGREY-QUARTER-2.jpg?v=1775859673",
+        "https://cdn.shopify.com/s/files/1/0950/1738/files/QGREY-QUARTER-4.jpg?v=1775859670"
+      ],
+      "tryOnImage": "/demos-images/sworn-to-us/script-angel-quarter-zip-oyster-grey.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

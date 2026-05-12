@@ -1,0 +1,28 @@
+{
+  "slug": "mwl-bride",
+  "brandName": "MWL Bride",
+  "brandDomain": "mwlbride.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "DUKE // READY TO WEAR",
+      "handle": "duke-ready-to-wear",
+      "price": "£2231.17",
+      "productImage": "https://cdn.shopify.com/s/files/1/0870/9727/8771/files/MWL_BRIDE_DUKE_WEDDING_DRESS_10.jpg?v=1775099142",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0870/9727/8771/files/MWL_BRIDE_DUKE_WEDDING_DRESS_10.jpg?v=1775099142",
+        "https://cdn.shopify.com/s/files/1/0870/9727/8771/files/MWL_BRIDE_DUKE_WEDDING_DRESS_14.jpg?v=1775099142",
+        "https://cdn.shopify.com/s/files/1/0870/9727/8771/files/MWL_BRIDE_DUKE_WEDDING_DRESS_6.jpg?v=1775099142"
+      ],
+      "tryOnImage": "/demos-images/mwl-bride/duke-ready-to-wear.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

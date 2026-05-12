@@ -1,0 +1,28 @@
+{
+  "slug": "fan-girl-clothing",
+  "brandName": "Fan Girl Clothing",
+  "brandDomain": "fangirlclothing.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Hockey Heritage Embroidered Oversized Crew Neck",
+      "handle": "hockey-heritage-embroidered-crew",
+      "price": "£52.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0065/6769/0305/files/Hockey_Heritage_Embroidered_Oversized_Crew_Neck.png?v=1774467569",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0065/6769/0305/files/Hockey_Heritage_Embroidered_Oversized_Crew_Neck.png?v=1774467569",
+        "https://cdn.shopify.com/s/files/1/0065/6769/0305/files/Hockey_Heritage_Embroidered_Oversized_Crew.png?v=1774467590",
+        "https://cdn.shopify.com/s/files/1/0065/6769/0305/files/IvoryCollar_3_7b1d95bd-7fd9-43bf-906b-670255d436db.jpg?v=1774458911"
+      ],
+      "tryOnImage": "/demos-images/fan-girl-clothing/hockey-heritage-embroidered-crew.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

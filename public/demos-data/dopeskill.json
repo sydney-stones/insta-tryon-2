@@ -1,0 +1,28 @@
+{
+  "slug": "dopeskill",
+  "brandName": "DOPESKILL",
+  "brandDomain": "dopeskillbrand.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "World’s Best Dad 3s DopeSkill T-Shirt Real Ones Angel Graphic",
+      "handle": "world-s-best-dad-3s-dopeskill-t-shirt-real-ones-angel-graphic",
+      "price": "£27.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0442/3689/8463/files/21._d6e1913e-fa9d-4f11-9463-6c39cb48b2a2.jpg?v=1778573356",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0442/3689/8463/files/21._d6e1913e-fa9d-4f11-9463-6c39cb48b2a2.jpg?v=1778573356",
+        "https://cdn.shopify.com/s/files/1/0442/3689/8463/files/21_8d4b515f-f3ba-4899-b99c-bb9d03243675.jpg?v=1778573355",
+        "https://cdn.shopify.com/s/files/1/0442/3689/8463/files/21...._dcdc9284-731e-477d-b0b8-9c9821e74973.jpg?v=1778573355"
+      ],
+      "tryOnImage": "/demos-images/dopeskill/world-s-best-dad-3s-dopeskill-t-shirt-real-ones-angel-graphic.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

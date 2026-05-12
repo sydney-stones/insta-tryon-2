@@ -1,0 +1,28 @@
+{
+  "slug": "bella-bridesmaids",
+  "brandName": "Bella Bridesmaids",
+  "brandDomain": "bellabridesmaids.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Jovani Strapless Jumpsuit with Rosette Waist 48209",
+      "handle": "jovani-strapless-jumpsuit-with-rosette-waist-48209",
+      "price": "£573.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0115/1578/9369/files/48209_black-5.jpg?v=1775675405",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0115/1578/9369/files/48209_black-5.jpg?v=1775675405",
+        "https://cdn.shopify.com/s/files/1/0115/1578/9369/files/48207_48209_2.jpg?v=1775675408",
+        "https://cdn.shopify.com/s/files/1/0115/1578/9369/files/48209_BLACK_3-1.jpg?v=1775675412"
+      ],
+      "tryOnImage": "/demos-images/bella-bridesmaids/jovani-strapless-jumpsuit-with-rosette-waist-48209.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

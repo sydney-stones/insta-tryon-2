@@ -3,7 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+
+interface AutoDemo {
+  slug: string;
+  brandName: string;
+  brandDomain: string;
+  generatedOn: string;
+  genderClassification: string;
+  classificationConfidence: string;
+  modelName: string;
+  productTitle: string;
+  contactFirstName: string;
+  contactEmail: string;
+  senderEmail: string;
+  status: string;
+  demoUrl: string;
+}
+
+interface AutoDemoIndex {
+  generatedAt: string;
+  count: number;
+  demos: AutoDemo[];
+}
 
 interface DemoLink {
   name: string;
@@ -211,10 +233,52 @@ interface AdminDemoDirectoryProps {
   onLogout: () => void;
 }
 
+const APPROVAL_STORAGE_KEY = 'rfAutoDemoApprovals';
+
 const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogout }) => {
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | DemoBrandGroup['status']>('all');
+  const [autoIndex, setAutoIndex] = useState<AutoDemoIndex | null>(null);
+  const [approvals, setApprovals] = useState<Record<string, 'approved' | 'rejected'>>(() => {
+    if (typeof window === 'undefined') return {};
+    try { return JSON.parse(localStorage.getItem(APPROVAL_STORAGE_KEY) || '{}'); } catch { return {}; }
+  });
+  const [autoFilter, setAutoFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('all');
   const origin = typeof window !== 'undefined' ? window.location.origin : '';
+
+  useEffect(() => {
+    fetch('/demos-data/index.json')
+      .then(r => r.ok ? r.json() : null)
+      .then((data: AutoDemoIndex | null) => setAutoIndex(data))
+      .catch(() => setAutoIndex(null));
+  }, []);
+
+  const updateApproval = (slug: string, state: 'approved' | 'rejected' | 'pending') => {
+    setApprovals(prev => {
+      const next = { ...prev };
+      if (state === 'pending') delete next[slug]; else next[slug] = state;
+      localStorage.setItem(APPROVAL_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+  };
+
+  const autoDemos = autoIndex?.demos || [];
+  const normalizedQuery = query.trim().toLowerCase();
+  const filteredAutoDemos = useMemo(() => {
+    return autoDemos.filter(d => {
+      const state = approvals[d.slug] || 'pending';
+      if (autoFilter === 'pending' && state !== 'pending') return false;
+      if (autoFilter === 'approved' && state !== 'approved') return false;
+      if (autoFilter === 'rejected' && state !== 'rejected') return false;
+      if (!normalizedQuery) return true;
+      return [d.brandName, d.brandDomain, d.contactFirstName, d.contactEmail, d.senderEmail, d.productTitle, d.slug]
+        .some(f => f?.toLowerCase().includes(normalizedQuery));
+    });
+  }, [autoDemos, approvals, autoFilter, normalizedQuery]);
+
+  const approvedCount = autoDemos.filter(d => approvals[d.slug] === 'approved').length;
+  const rejectedCount = autoDemos.filter(d => approvals[d.slug] === 'rejected').length;
+  const pendingCount = autoDemos.length - approvedCount - rejectedCount;
 
   const filteredGroups = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -296,6 +360,101 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
           </div>
         </div>
       </div>
+
+      {/* Auto-generated personalised demos — at the top */}
+      {autoDemos.length > 0 && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
+            <div>
+              <h2 className="text-xl font-bold text-gray-900">Auto-generated personalised demos</h2>
+              <p className="text-sm text-gray-600 mt-1">
+                {autoDemos.length} demos · {pendingCount} pending · {approvedCount} approved · {rejectedCount} rejected
+                {autoIndex && <span className="ml-2 text-xs text-gray-400">index updated {new Date(autoIndex.generatedAt).toLocaleString()}</span>}
+              </p>
+            </div>
+            <div className="flex gap-2 overflow-x-auto pb-1">
+              {(['all','pending','approved','rejected'] as const).map((s) => (
+                <button key={s} onClick={() => setAutoFilter(s)}
+                  className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${autoFilter === s ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}>
+                  {s === 'all' ? 'All' : s.charAt(0).toUpperCase() + s.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 text-sm">
+                <thead className="bg-gray-50 text-xs uppercase tracking-wider text-gray-600">
+                  <tr>
+                    <th className="px-4 py-3 text-left">Brand</th>
+                    <th className="px-4 py-3 text-left">Product</th>
+                    <th className="px-4 py-3 text-left">Contact</th>
+                    <th className="px-4 py-3 text-left">Sender</th>
+                    <th className="px-4 py-3 text-left">Model</th>
+                    <th className="px-4 py-3 text-left">Date</th>
+                    <th className="px-4 py-3 text-left">Status</th>
+                    <th className="px-4 py-3 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {filteredAutoDemos.length === 0 ? (
+                    <tr><td colSpan={8} className="px-4 py-8 text-center text-gray-500">No demos match the filter.</td></tr>
+                  ) : filteredAutoDemos.map((d) => {
+                    const state = approvals[d.slug] || 'pending';
+                    const stateStyle =
+                      state === 'approved' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
+                      state === 'rejected' ? 'bg-red-100 text-red-700 border-red-200' :
+                      'bg-amber-50 text-amber-700 border-amber-200';
+                    return (
+                      <tr key={d.slug} className="hover:bg-gray-50">
+                        <td className="px-4 py-3">
+                          <div className="font-medium text-gray-900">{d.brandName}</div>
+                          <div className="text-xs text-gray-500 truncate max-w-[180px]">{d.brandDomain}</div>
+                        </td>
+                        <td className="px-4 py-3 max-w-[220px]">
+                          <div className="truncate text-gray-800">{d.productTitle}</div>
+                          <div className="text-xs text-gray-500">{d.genderClassification} · {d.classificationConfidence}</div>
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="text-gray-800">{d.contactFirstName || '—'}</div>
+                          <div className="text-xs text-gray-500 truncate max-w-[180px]">{d.contactEmail}</div>
+                        </td>
+                        <td className="px-4 py-3 text-xs text-gray-700">{d.senderEmail || '—'}</td>
+                        <td className="px-4 py-3 text-xs text-gray-700">{d.modelName || '—'}</td>
+                        <td className="px-4 py-3 text-xs text-gray-500 whitespace-nowrap">{d.generatedOn}</td>
+                        <td className="px-4 py-3">
+                          <span className={`inline-block px-2 py-0.5 text-xs font-medium border rounded-full ${stateStyle}`}>{state}</span>
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="flex gap-1.5 justify-end">
+                            <a href={d.demoUrl} target="_blank" rel="noopener noreferrer"
+                               className="px-2.5 py-1 text-xs text-white bg-gray-900 rounded hover:bg-gray-800">View</a>
+                            <button onClick={() => copyLink(d.demoUrl)}
+                               className="px-2.5 py-1 text-xs text-gray-700 border border-gray-300 rounded hover:bg-gray-50">Copy</button>
+                            {state !== 'approved' && (
+                              <button onClick={() => updateApproval(d.slug, 'approved')}
+                                className="px-2.5 py-1 text-xs text-white bg-emerald-600 rounded hover:bg-emerald-700">Approve</button>
+                            )}
+                            {state !== 'rejected' && (
+                              <button onClick={() => updateApproval(d.slug, 'rejected')}
+                                className="px-2.5 py-1 text-xs text-red-700 border border-red-300 rounded hover:bg-red-50">Reject</button>
+                            )}
+                            {state !== 'pending' && (
+                              <button onClick={() => updateApproval(d.slug, 'pending')}
+                                className="px-2.5 py-1 text-xs text-gray-600 hover:text-gray-900">Reset</button>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {filteredGroups.length === 0 ? (

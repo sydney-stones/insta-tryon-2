@@ -1,0 +1,28 @@
+{
+  "slug": "estilo-boutique",
+  "brandName": "Estilo Boutique",
+  "brandDomain": "estiloboutique.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Theory Standard Pant in Good Linen in Silver Cloud",
+      "handle": "theory-standard-pant-in-good-linen-in-silver-cloud",
+      "price": "£184.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0360/9353/files/TH_Q0373204_UQA_F0.avif?v=1778548351",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0360/9353/files/TH_Q0373204_UQA_F0.avif?v=1778548351",
+        "https://cdn.shopify.com/s/files/1/0360/9353/files/TH_Q0373204_UQA_L0.avif?v=1778548351",
+        "https://cdn.shopify.com/s/files/1/0360/9353/files/TH_Q0373204_UQA_D0.avif?v=1778548351"
+      ],
+      "tryOnImage": "/demos-images/estilo-boutique/theory-standard-pant-in-good-linen-in-silver-cloud.jpg",
+      "modelGender": "women",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

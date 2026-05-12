@@ -1,0 +1,28 @@
+{
+  "slug": "castleson-nl",
+  "brandName": "Castleson.nl",
+  "brandDomain": "castleson.nl",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "2-delig Herenpak - Cavani Malibu Charcoal",
+      "handle": "2-delig-herenpak-cavani-malibu-charcoal",
+      "price": "£294.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0706/4371/2278/files/60c6e8e0-4bbb-4ceb-9f20-db236498b007_03a34f5f-4cc5-4e13-8ea9-6d52945cecd4.webp?v=1771423687",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0706/4371/2278/files/60c6e8e0-4bbb-4ceb-9f20-db236498b007_03a34f5f-4cc5-4e13-8ea9-6d52945cecd4.webp?v=1771423687",
+        "https://cdn.shopify.com/s/files/1/0706/4371/2278/files/a48d1386-ff6c-4408-a322-7b36c199c9b5_542ca507-7f85-4372-a6a4-0a68d51da428.webp?v=1771423687",
+        "https://cdn.shopify.com/s/files/1/0706/4371/2278/files/b719cc86-eba5-4f58-a33d-fa256a76b6fa_11a025b8-56d5-4c7e-9ec2-8b84aab2a258.webp?v=1771423687"
+      ],
+      "tryOnImage": "/demos-images/castleson-nl/2-delig-herenpak-cavani-malibu-charcoal.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

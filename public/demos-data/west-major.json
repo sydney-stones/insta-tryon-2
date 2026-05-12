@@ -1,0 +1,28 @@
+{
+  "slug": "west-major",
+  "brandName": "West Major",
+  "brandDomain": "westmajor.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Desert Chore Coat",
+      "handle": "desert-chore-coat-cobalt-indigo",
+      "price": "£184.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2079/9539/files/DSC02368.jpg?v=1774019251",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2079/9539/files/DSC02368.jpg?v=1774019251",
+        "https://cdn.shopify.com/s/files/1/2079/9539/files/DSC02390new.jpg?v=1774019251",
+        "https://cdn.shopify.com/s/files/1/2079/9539/files/DSC02431-2_1_new.jpg?v=1774019251"
+      ],
+      "tryOnImage": "/demos-images/west-major/desert-chore-coat-cobalt-indigo.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

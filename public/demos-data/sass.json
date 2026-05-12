@@ -1,0 +1,28 @@
+{
+  "slug": "sass",
+  "brandName": "Sass",
+  "brandDomain": "sassclothing.com.au",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Jude Leather Look Bomber",
+      "handle": "jude-leather-look-bomber",
+      "price": "£129.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0287/8596/7179/files/Lenialistudios_20250924_Sass15717.jpg?v=1777860621",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0287/8596/7179/files/Lenialistudios_20250924_Sass15717.jpg?v=1777860621",
+        "https://cdn.shopify.com/s/files/1/0287/8596/7179/files/20621JWSS-BUR_1.jpg?v=1776987622",
+        "https://cdn.shopify.com/s/files/1/0287/8596/7179/files/20621JWSS-BUR_2.jpg?v=1776987622"
+      ],
+      "tryOnImage": "/demos-images/sass/jude-leather-look-bomber.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

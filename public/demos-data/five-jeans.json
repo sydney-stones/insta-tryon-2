@@ -1,0 +1,28 @@
+{
+  "slug": "five-jeans",
+  "brandName": "Five Jeans",
+  "brandDomain": "five-jeans.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "TEE SHIRT LOVE TIE & DYE",
+      "handle": "tse2144",
+      "price": "£23.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0066/5452/5491/files/TSHIRT-TSE2144-KAKI-SHORT-FELICIE-NAVY-1484.jpg?v=1747404278",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0066/5452/5491/files/TSHIRT-TSE2144-KAKI-SHORT-FELICIE-NAVY-1484.jpg?v=1747404278",
+        "https://cdn.shopify.com/s/files/1/0066/5452/5491/files/TSHIRT-TSE2144-NOIR-JUPE-JAYA-NOIR-1291.jpg?v=1747404278",
+        "https://cdn.shopify.com/s/files/1/0066/5452/5491/files/VESTE-BRENDA-KAKI-TSHIRT-TSE2144-NOIR-3481.jpg?v=1771431604"
+      ],
+      "tryOnImage": "/demos-images/five-jeans/tse2144.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

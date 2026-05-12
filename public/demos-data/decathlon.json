@@ -1,0 +1,28 @@
+{
+  "slug": "decathlon",
+  "brandName": "Decathlon",
+  "brandDomain": "decathlon.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "SIMOND Women's Travel 500 Merino Wool T-Shirt",
+      "handle": "simond-women-s-travel-500-merino-wool-t-shirt-golden-olive-green-8977842",
+      "price": "£49.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/1330/6287/files/default_243338bc-279b-4a9b-aac4-e92d236cb71d.jpg?v=1775497335",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1330/6287/files/default_243338bc-279b-4a9b-aac4-e92d236cb71d.jpg?v=1775497335",
+        "https://cdn.shopify.com/s/files/1/1330/6287/files/default_383ab39f-8bf2-4a9a-9183-19deae33548b.jpg?v=1775497336",
+        "https://cdn.shopify.com/s/files/1/1330/6287/files/default_e9231ed1-3fdf-4616-afa9-91e9ae781c3a.jpg?v=1775497335"
+      ],
+      "tryOnImage": "/demos-images/decathlon/simond-women-s-travel-500-merino-wool-t-shirt-golden-olive-green-8977842.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "the-blueberry-hill",
+  "brandName": "The Blueberry Hill",
+  "brandDomain": "theblueberryhill.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Blueberry Blanket Lovey Set, Bee",
+      "handle": "blueberry-blanket-lovey-set-bee",
+      "price": "£65.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1080/9012/files/blueberry_blanket_bee_lovey_5574720d-a1a7-4394-9f97-2c32edc2f36f.jpg?v=1771622061",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1080/9012/files/blueberry_blanket_bee_lovey_5574720d-a1a7-4394-9f97-2c32edc2f36f.jpg?v=1771622061",
+        "https://cdn.shopify.com/s/files/1/1080/9012/files/cotton_bee_cardigan_blueberry_blanket_lovey_a28d25b8-1903-4ba7-973d-800108229462.jpg?v=1777314048",
+        "https://cdn.shopify.com/s/files/1/1080/9012/files/henry_bear_bee_lovey_blueberry_blanket_c8247df9-7bb8-42a2-9e27-23704a920a9c.jpg?v=1777314048"
+      ],
+      "tryOnImage": "/demos-images/the-blueberry-hill/blueberry-blanket-lovey-set-bee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

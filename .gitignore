@@ -30,3 +30,11 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Demo generator — local-only artifacts (contain lead PII)
+.env.local~
+scripts/output.csv
+scripts/skipped.csv
+scripts/emails.csv
+scripts/.demo-gen-state.json
+scripts/batch*.log
