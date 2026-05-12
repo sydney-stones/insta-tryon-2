@@ -1,0 +1,28 @@
+{
+  "slug": "lanvin",
+  "brandName": "LANVIN",
+  "brandDomain": "lanvin.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "LONG VISCOSE DRESS WITH MESH DETAIL",
+      "handle": "long-viscose-dress-with-mesh-detail-rw-dr9059-5606-e2610",
+      "price": "£10800.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0702/0684/9265/files/RW-DR9059-5606-E2610_1_d56336a5-d04b-4aa9-862e-11d89e38a0d5.jpg?v=1777384541",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0702/0684/9265/files/RW-DR9059-5606-E2610_1_d56336a5-d04b-4aa9-862e-11d89e38a0d5.jpg?v=1777384541",
+        "https://cdn.shopify.com/s/files/1/0702/0684/9265/files/RW-DR9059-5606-E2610_2_d6daf819-1f4d-41f9-988f-2036f680b73c.jpg?v=1777384541",
+        "https://cdn.shopify.com/s/files/1/0702/0684/9265/files/RW-DR9059-5606-E2610_3_150b7cdf-9f59-4db9-9817-b94a3a1d3589.jpg?v=1777384541"
+      ],
+      "tryOnImage": "/demos-images/lanvin/long-viscose-dress-with-mesh-detail-rw-dr9059-5606-e2610.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

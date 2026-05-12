@@ -1,0 +1,28 @@
+{
+  "slug": "elv-denim",
+  "brandName": "ELV Denim",
+  "brandDomain": "elvdenim.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Delphie Corset Stripe Cotton Poplin",
+      "handle": "delphie-corset-stripe-cotton-poplin",
+      "price": "£250.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0279/3780/0291/files/delphie-corset-stripe-cotton-poplin-6135217.jpg?v=1765395512",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0279/3780/0291/files/delphie-corset-stripe-cotton-poplin-6135217.jpg?v=1765395512",
+        "https://cdn.shopify.com/s/files/1/0279/3780/0291/files/delphie-corset-stripe-cotton-poplin-9644562.jpg?v=1765395511",
+        "https://cdn.shopify.com/s/files/1/0279/3780/0291/files/delphie-corset-stripe-cotton-poplin-5245900.png?v=1765395513"
+      ],
+      "tryOnImage": "/demos-images/elv-denim/delphie-corset-stripe-cotton-poplin.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

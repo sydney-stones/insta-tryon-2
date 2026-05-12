@@ -1,0 +1,28 @@
+{
+  "slug": "couture-usa",
+  "brandName": "Couture USA",
+  "brandDomain": "coutureusa.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Love Ring Set - Size 4.5",
+      "handle": "love-three-ring",
+      "price": "£4000.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0005/9536/1853/files/Cartier-Ring-290346.png?v=1738867891",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0005/9536/1853/files/Cartier-Ring-290346.png?v=1738867891",
+        "https://cdn.shopify.com/s/files/1/0005/9536/1853/files/Cartier-Ring-290346-3.png?v=1738867891",
+        "https://cdn.shopify.com/s/files/1/0005/9536/1853/files/Cartier-Ring-290346-2.png?v=1738867891"
+      ],
+      "tryOnImage": "/demos-images/couture-usa/love-three-ring.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

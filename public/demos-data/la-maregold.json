@@ -1,0 +1,28 @@
+{
+  "slug": "la-maregold",
+  "brandName": "La Maregold",
+  "brandDomain": "lamaregold.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Lily Blouse",
+      "handle": "the-lily-blouse-white-daisy-eyelet",
+      "price": "£147.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0814/5761/1041/files/20250930_LaMaregold_R25_ECOMM_AnnaBlouse_White33509_7f55157a-41d4-4e85-b848-f44f101f0742.jpg?v=1761842326",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0814/5761/1041/files/20250930_LaMaregold_R25_ECOMM_AnnaBlouse_White33509_7f55157a-41d4-4e85-b848-f44f101f0742.jpg?v=1761842326",
+        "https://cdn.shopify.com/s/files/1/0814/5761/1041/files/DSC_1351.jpg?v=1763011106",
+        "https://cdn.shopify.com/s/files/1/0814/5761/1041/files/DSC_1508_1.jpg?v=1763011106"
+      ],
+      "tryOnImage": "/demos-images/la-maregold/the-lily-blouse-white-daisy-eyelet.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

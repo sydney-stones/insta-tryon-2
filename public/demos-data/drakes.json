@@ -1,0 +1,28 @@
+{
+  "slug": "drakes",
+  "brandName": "Drakes",
+  "brandDomain": "drakes.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Navy Cotton Drawstring Trousers",
+      "handle": "navy-cotton-drawstring-trousers",
+      "price": "£295.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0640/6121/0837/files/DR2A6H26202-02250-1.jpg?v=1777046493",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0640/6121/0837/files/DR2A6H26202-02250-1.jpg?v=1777046493",
+        "https://cdn.shopify.com/s/files/1/0640/6121/0837/files/DR2A6H26202-02250-2.jpg?v=1777046500",
+        "https://cdn.shopify.com/s/files/1/0640/6121/0837/files/DR2A6H26202-02250-3.jpg?v=1777046505"
+      ],
+      "tryOnImage": "/demos-images/drakes/navy-cotton-drawstring-trousers.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

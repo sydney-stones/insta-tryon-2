@@ -1,0 +1,28 @@
+{
+  "slug": "plyr",
+  "brandName": "PLYR",
+  "brandDomain": "plyrathletics.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Women's PLYR Scramble - July 17",
+      "handle": "womens-plyr-scramble-july-17",
+      "price": "£640.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0058/4905/5332/files/2026_Ladies_Greenbryre_Scramble_Slides.jpg?v=1775764871",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0058/4905/5332/files/2026_Ladies_Greenbryre_Scramble_Slides.jpg?v=1775764871",
+        "https://cdn.shopify.com/s/files/1/0058/4905/5332/files/2026_Ladies_Greenbryre_Scramble_Slides2.jpg?v=1775764872",
+        "https://cdn.shopify.com/s/files/1/0058/4905/5332/files/2026_Ladies_Greenbryre_Scramble_Slides3.jpg?v=1775764872"
+      ],
+      "tryOnImage": "/demos-images/plyr/womens-plyr-scramble-july-17.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

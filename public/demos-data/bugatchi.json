@@ -1,0 +1,28 @@
+{
+  "slug": "bugatchi",
+  "brandName": "BUGATCHI",
+  "brandDomain": "bugatchi.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Devon Solid OoohCotton Shirt",
+      "handle": "devon-solid-ooohcotton-shirt-white-3",
+      "price": "£210.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0021/9063/9187/files/ISF9501K80_WHITE_1.jpg?v=1778014836",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0021/9063/9187/files/ISF9501K80_WHITE_1.jpg?v=1778014836",
+        "https://cdn.shopify.com/s/files/1/0021/9063/9187/files/ISF9501K80_WHITE_2.jpg?v=1778014839",
+        "https://cdn.shopify.com/s/files/1/0021/9063/9187/files/ISF9501K80_WHITE_3.jpg?v=1778014842"
+      ],
+      "tryOnImage": "/demos-images/bugatchi/devon-solid-ooohcotton-shirt-white-3.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

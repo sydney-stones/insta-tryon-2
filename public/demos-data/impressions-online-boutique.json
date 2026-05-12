@@ -1,0 +1,28 @@
+{
+  "slug": "impressions-online-boutique",
+  "brandName": "Impressions Online Boutique",
+  "brandDomain": "shopimpressions.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Metro Ease High Waist Loop Trim Shorts",
+      "handle": "metro-ease-high-waist-loop-trim-shorts",
+      "price": "£44.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0152/4007/files/2604272616000-2026050712513300-da711a87metro-ease-high-waist-loop-trim-shorts.jpg?v=1778542290",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0152/4007/files/2604272616000-2026050712513300-da711a87metro-ease-high-waist-loop-trim-shorts.jpg?v=1778542290",
+        "https://cdn.shopify.com/s/files/1/0152/4007/files/2604272616000-2026050712513300-af73e6e9metro-ease-high-waist-loop-trim-shorts.jpg?v=1778542289",
+        "https://cdn.shopify.com/s/files/1/0152/4007/files/2604272616000-2026050712513300-de0938fcmetro-ease-high-waist-loop-trim-shorts.jpg?v=1778542290"
+      ],
+      "tryOnImage": "/demos-images/impressions-online-boutique/metro-ease-high-waist-loop-trim-shorts.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "sweetheart-bridal",
+  "brandName": "Sweetheart Bridal",
+  "brandDomain": "sweetheartbridal.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "MOD346",
+      "handle": "mod346",
+      "price": "£1749.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1799/3427/files/MOD346-ivory-sand-a.jpg?v=1767986681",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1799/3427/files/MOD346-ivory-sand-a.jpg?v=1767986681",
+        "https://cdn.shopify.com/s/files/1/1799/3427/files/MOD346-ivory-sand-b.jpg?v=1767986681",
+        "https://cdn.shopify.com/s/files/1/1799/3427/files/MOD346-ivory-sand-c.jpg?v=1767986681"
+      ],
+      "tryOnImage": "/demos-images/sweetheart-bridal/mod346.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

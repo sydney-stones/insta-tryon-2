@@ -1,0 +1,28 @@
+{
+  "slug": "mudgear",
+  "brandName": "MudGear",
+  "brandDomain": "mudgear.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Compression Calf Sleeves (Black/Orange)",
+      "handle": "mudgear-compression-calf-sleeves",
+      "price": "£19.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0365/3889/products/O_Calf.png?v=1614523932",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0365/3889/products/O_Calf.png?v=1614523932",
+        "https://cdn.shopify.com/s/files/1/0365/3889/products/O_calf2.png?v=1614523932",
+        "https://cdn.shopify.com/s/files/1/0365/3889/products/amazon-calf-sleeves-size.jpg?v=1614523932"
+      ],
+      "tryOnImage": "/demos-images/mudgear/mudgear-compression-calf-sleeves.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

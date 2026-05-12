@@ -1,0 +1,28 @@
+{
+  "slug": "marlies-grace",
+  "brandName": "Marlies Grace",
+  "brandDomain": "marliesgrace.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sofia Set",
+      "handle": "sophia-set",
+      "price": "£500.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0580/2301/8553/files/98_mealiesGrace_1.jpg?v=1771256039",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0580/2301/8553/files/98_mealiesGrace_1.jpg?v=1771256039",
+        "https://cdn.shopify.com/s/files/1/0580/2301/8553/files/98_mealiesGrace_3.jpg?v=1771256042",
+        "https://cdn.shopify.com/s/files/1/0580/2301/8553/files/2_Marliesgrace__full___1.jpg?v=1771256129"
+      ],
+      "tryOnImage": "/demos-images/marlies-grace/sophia-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

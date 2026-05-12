@@ -1,0 +1,27 @@
+{
+  "slug": "dga-tees",
+  "brandName": "DGA Tees",
+  "brandDomain": "dgatees.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "MEN'S Pullover Hoodie - King of Cali",
+      "handle": "mens-pullover-hoodie-king-of-cali",
+      "price": "£23.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0348/6898/5989/products/MH-kingofcali-lg.png?v=1645224912",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0348/6898/5989/products/MH-kingofcali-lg.png?v=1645224912",
+        "https://cdn.shopify.com/s/files/1/0348/6898/5989/products/MF-fronthoodie-md_c4c07a69-b314-44c0-b552-7b27235aaa31.png?v=1645224918"
+      ],
+      "tryOnImage": "/demos-images/dga-tees/mens-pullover-hoodie-king-of-cali.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

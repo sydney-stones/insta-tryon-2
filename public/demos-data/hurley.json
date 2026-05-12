@@ -1,0 +1,28 @@
+{
+  "slug": "hurley",
+  "brandName": "Hurley",
+  "brandDomain": "hurley.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Avalon Romper",
+      "handle": "avalon-romper-tfr01210m-multi",
+      "price": "£60.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0277/3680/1419/files/TFR01210M_T995_01_5741c3eb-f0dd-4760-b55d-54b96d7b0a50.png?v=1778261535",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0277/3680/1419/files/TFR01210M_T995_01_5741c3eb-f0dd-4760-b55d-54b96d7b0a50.png?v=1778261535",
+        "https://cdn.shopify.com/s/files/1/0277/3680/1419/files/TFR01210M_T995_03_da35cecd-451f-4805-af15-719acf218e76.png?v=1778261535",
+        "https://cdn.shopify.com/s/files/1/0277/3680/1419/files/TFR01210M_T995_02_88927fce-2138-4f7f-a0a6-fb1101160721.png?v=1778261534"
+      ],
+      "tryOnImage": "/demos-images/hurley/avalon-romper-tfr01210m-multi.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

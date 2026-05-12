@@ -1,0 +1,28 @@
+{
+  "slug": "with-jean",
+  "brandName": "With Jéan",
+  "brandDomain": "withjean.com.au",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Amber Top | Charcoal",
+      "handle": "amber-top-charcoal",
+      "price": "£169.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1921/8357/files/amber-top-charcoal-with-jean-01.jpg?v=1774252349",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1921/8357/files/amber-top-charcoal-with-jean-01.jpg?v=1774252349",
+        "https://cdn.shopify.com/s/files/1/1921/8357/files/amber-top-charcoal-with-jean-02.jpg?v=1774252356",
+        "https://cdn.shopify.com/s/files/1/1921/8357/files/amber-top-charcoal-with-jean-03.jpg?v=1774252363"
+      ],
+      "tryOnImage": "/demos-images/with-jean/amber-top-charcoal.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

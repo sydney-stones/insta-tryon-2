@@ -1,0 +1,28 @@
+{
+  "slug": "k-la-boutique",
+  "brandName": "K|LA Boutique",
+  "brandDomain": "shopkla.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "KAYLEE FLORAL CAMI TOP",
+      "handle": "2600-385lty-floral-ruched-cami-top",
+      "price": "£68.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1158/3382/files/2600-385LTY.jpg?v=1778525391",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1158/3382/files/2600-385LTY.jpg?v=1778525391",
+        "https://cdn.shopify.com/s/files/1/1158/3382/files/2600-385LTY3.jpg?v=1778525399",
+        "https://cdn.shopify.com/s/files/1/1158/3382/files/2600-385LTY2.jpg?v=1778525407"
+      ],
+      "tryOnImage": "/demos-images/k-la-boutique/2600-385lty-floral-ruched-cami-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

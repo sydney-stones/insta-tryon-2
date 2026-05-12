@@ -1,0 +1,28 @@
+{
+  "slug": "kink-bmx",
+  "brandName": "Kink BMX",
+  "brandDomain": "kinkbmx.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Yards Zip Up",
+      "handle": "yards-zip-up",
+      "price": "£79.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0027/8645/9757/files/hoodie_yards_k0528l.jpg?v=1770867957",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0027/8645/9757/files/hoodie_yards_k0528l.jpg?v=1770867957",
+        "https://cdn.shopify.com/s/files/1/0027/8645/9757/files/hoodie_yards_k0528l_detail.jpg?v=1770867975",
+        "https://cdn.shopify.com/s/files/1/0027/8645/9757/files/hoodie_yards_k0529l.jpg?v=1770867975"
+      ],
+      "tryOnImage": "/demos-images/kink-bmx/yards-zip-up.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

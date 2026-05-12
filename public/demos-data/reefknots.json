@@ -1,0 +1,28 @@
+{
+  "slug": "reefknots",
+  "brandName": "ReefKnots",
+  "brandDomain": "reefknots.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "White (Navy Contrast) Organic Cotton Polo Shirt",
+      "handle": "white-navy-contrast-organic-cotton-polo-shirt",
+      "price": "£59.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0778/8842/2169/files/White-Polo-Shirt-Organic-Cotton-1.jpg?v=1777287065",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0778/8842/2169/files/White-Polo-Shirt-Organic-Cotton-1.jpg?v=1777287065",
+        "https://cdn.shopify.com/s/files/1/0778/8842/2169/files/White-Polo-Shirt-Organic-Cotton-2.jpg?v=1777287065",
+        "https://cdn.shopify.com/s/files/1/0778/8842/2169/files/White-Polo-Shirt-Organic-Cotton-3.jpg?v=1777287065"
+      ],
+      "tryOnImage": "/demos-images/reefknots/white-navy-contrast-organic-cotton-polo-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

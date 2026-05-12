@@ -1,0 +1,28 @@
+{
+  "slug": "chicaboo",
+  "brandName": "Chicaboo",
+  "brandDomain": "shopchicaboo.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Katherine Dress - Russet Floral",
+      "handle": "katherine-dress-russet-floral",
+      "price": "£48.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0539/8793/4407/files/katherine-dress-russet-floral-1429543.png?v=1757018565",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0539/8793/4407/files/katherine-dress-russet-floral-1429543.png?v=1757018565",
+        "https://cdn.shopify.com/s/files/1/0539/8793/4407/files/katherine-dress-russet-floral-1020556.jpg?v=1757018564",
+        "https://cdn.shopify.com/s/files/1/0539/8793/4407/files/katherine-dress-russet-floral-5224632.jpg?v=1757018565"
+      ],
+      "tryOnImage": "/demos-images/chicaboo/katherine-dress-russet-floral.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

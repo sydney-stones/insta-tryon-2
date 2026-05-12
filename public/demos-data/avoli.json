@@ -18,10 +18,10 @@
       ],
       "tryOnImage": "/demos-images/avoli/winter-2024-grey-crew-t-shirt.jpg",
       "modelGender": "unisex",
-      "modelName": "sasha",
+      "modelName": "ebba",
       "customerImages": {
-        "face": "/demo-models/sasha/face.png",
-        "body": "/demo-models/sasha/body.png"
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
       }
     }
   ]

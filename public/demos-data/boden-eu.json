@@ -18,10 +18,10 @@
       ],
       "tryOnImage": "/demos-images/boden-eu/women-longline-linen-shirt-multi-tropical-village-t1996mpi.jpg",
       "modelGender": "unisex",
-      "modelName": "sasha",
+      "modelName": "ebba",
       "customerImages": {
-        "face": "/demo-models/sasha/face.png",
-        "body": "/demo-models/sasha/body.png"
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
       }
     }
   ]

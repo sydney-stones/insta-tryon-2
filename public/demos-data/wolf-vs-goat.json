@@ -1,0 +1,28 @@
+{
+  "slug": "wolf-vs-goat",
+  "brandName": "Wolf vs Goat",
+  "brandDomain": "wolfvsgoat.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lorenzo Trousers Nocciola",
+      "handle": "lorenzo-trousers-nocciola",
+      "price": "£453.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0097/4612/files/pantalone_beige.jpg?v=1777375333",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0097/4612/files/pantalone_beige.jpg?v=1777375333",
+        "https://cdn.shopify.com/s/files/1/0097/4612/files/pantalone_beige_back.jpg?v=1777375333",
+        "https://cdn.shopify.com/s/files/1/0097/4612/files/pantalonebeige1_81e31df7-5995-4506-a7bc-cc91de99b80c.jpg?v=1777375186"
+      ],
+      "tryOnImage": "/demos-images/wolf-vs-goat/lorenzo-trousers-nocciola.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

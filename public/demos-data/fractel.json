@@ -1,0 +1,28 @@
+{
+  "slug": "fractel",
+  "brandName": "FRACTEL",
+  "brandDomain": "wearefractel.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's S-ECHO POINT Running Shirt",
+      "handle": "s-w-echo-point-tee",
+      "price": "£95.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0009/7645/3685/files/W-TEE-ECHOPOINT-FRONT.png?v=1776748576",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0009/7645/3685/files/W-TEE-ECHOPOINT-FRONT.png?v=1776748576",
+        "https://cdn.shopify.com/s/files/1/0009/7645/3685/files/AWP-112.jpg?v=1777954564",
+        "https://cdn.shopify.com/s/files/1/0009/7645/3685/files/W-TEE-ECHOPOINT-ZOOM.png?v=1776748576"
+      ],
+      "tryOnImage": "/demos-images/fractel/s-w-echo-point-tee.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

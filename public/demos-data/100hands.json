@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/0468/4326/5182/files/3Y3A0872a.png?v=1766572570"
       ],
       "tryOnImage": "/demos-images/100hands/the-fine-off-white-cord.jpg",
-      "modelGender": "unisex",
-      "modelName": "sasha",
+      "modelGender": "men",
+      "modelName": "otto",
       "customerImages": {
-        "face": "/demo-models/sasha/face.png",
-        "body": "/demo-models/sasha/body.png"
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
       }
     }
   ]

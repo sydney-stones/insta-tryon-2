@@ -1,0 +1,28 @@
+{
+  "slug": "comme-si",
+  "brandName": "Comme Si",
+  "brandDomain": "commesi.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Cashmere Knit Accessories Set",
+      "handle": "the-cashmere-knit-accessories-set",
+      "price": "£468.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0051/2688/1393/files/knitaccessoriesset_grey_FL.jpg?v=1761752553",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0051/2688/1393/files/knitaccessoriesset_grey_FL.jpg?v=1761752553",
+        "https://cdn.shopify.com/s/files/1/0051/2688/1393/files/short-glove-grey_D1.jpg?v=1762453680",
+        "https://cdn.shopify.com/s/files/1/0051/2688/1393/files/short-glove-grey_FL.jpg?v=1762453590"
+      ],
+      "tryOnImage": "/demos-images/comme-si/the-cashmere-knit-accessories-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

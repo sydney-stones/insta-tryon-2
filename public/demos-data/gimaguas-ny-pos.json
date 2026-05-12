@@ -1,0 +1,28 @@
+{
+  "slug": "gimaguas-ny-pos",
+  "brandName": "Gimaguas NY POS",
+  "brandDomain": "gimaguas.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cala Skirt",
+      "handle": "cala-skirt-fuchsia",
+      "price": "£79.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0616/2225/5787/files/NEW-_0002_cala-skirt_dark-pink_silueta.jpg?v=1774023367",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0616/2225/5787/files/NEW-_0002_cala-skirt_dark-pink_silueta.jpg?v=1774023367",
+        "https://cdn.shopify.com/s/files/1/0616/2225/5787/files/cala-skirt_dark-pink_01.jpg?v=1774023367",
+        "https://cdn.shopify.com/s/files/1/0616/2225/5787/files/cala-skirt_dark-pink_03.jpg?v=1774023367"
+      ],
+      "tryOnImage": "/demos-images/gimaguas-ny-pos/cala-skirt-fuchsia.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

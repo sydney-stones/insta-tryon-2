@@ -1,0 +1,28 @@
+{
+  "slug": "tvstoreonline",
+  "brandName": "TVStoreOnline",
+  "brandDomain": "tvstoreonline.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Sheriff Woody Cowboy Adult Halloween Cosplay Costume Set (Shirt, Vest, and Badge)",
+      "handle": "sheriff-woody-cowboy-adult-halloween-costume-set-shirt-vest-and-badge",
+      "price": "£46.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0439/3104/1951/files/SheriffWoodyCowboyAdultHalloweenCostumeSet_SheriffWoodyCostumeSet_240510_105.jpg?v=1776276470",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0439/3104/1951/files/SheriffWoodyCowboyAdultHalloweenCostumeSet_SheriffWoodyCostumeSet_240510_105.jpg?v=1776276470",
+        "https://cdn.shopify.com/s/files/1/0439/3104/1951/files/SheriffWoodyCowboyAdultHalloweenCostumeSet_SheriffWoodyCostumeSet_240510_115.jpg?v=1776276470",
+        "https://cdn.shopify.com/s/files/1/0439/3104/1951/files/SheriffWoodyCowboyAdultHalloweenCostumeSet_SheriffWoodyCostumeSet_240510_117.jpg?v=1776276470"
+      ],
+      "tryOnImage": "/demos-images/tvstoreonline/sheriff-woody-cowboy-adult-halloween-costume-set-shirt-vest-and-badge.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

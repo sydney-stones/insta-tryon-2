@@ -1,0 +1,28 @@
+{
+  "slug": "fizik",
+  "brandName": "Fizik",
+  "brandDomain": "fizik.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "KASSIS",
+      "handle": "helmets-kassis-grey-mint-green-fhe1000047051",
+      "price": "£200.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0894/7918/4726/files/FHE0000047051_1_fizik-kassis-grey-mint-green-helmet_7effa0fa-77b5-4911-ae58-fbc23342ca5c.jpg?v=1777963560",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0894/7918/4726/files/FHE0000047051_1_fizik-kassis-grey-mint-green-helmet_7effa0fa-77b5-4911-ae58-fbc23342ca5c.jpg?v=1777963560",
+        "https://cdn.shopify.com/s/files/1/0894/7918/4726/files/FHE0000047051_2_fizik-kassis-grey-mint-green-helmet_6a1e4760-ff78-4a97-918d-688980b3579a.jpg?v=1777963560",
+        "https://cdn.shopify.com/s/files/1/0894/7918/4726/files/FHE0000047051_3_fizik-kassis-grey-mint-green-helmet_7ff05e48-0459-4a9a-a46b-fd2209334ffc.jpg?v=1777963560"
+      ],
+      "tryOnImage": "/demos-images/fizik/helmets-kassis-grey-mint-green-fhe1000047051.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

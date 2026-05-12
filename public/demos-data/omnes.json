@@ -1,0 +1,28 @@
+{
+  "slug": "omnes",
+  "brandName": "OMNES",
+  "brandDomain": "omnes.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Bridie Dress in Sunset Blur Print",
+      "handle": "bridie-dress-in-sunset-blur-print-cam",
+      "price": "£99.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0053/8198/0234/files/Bridie-Dress-Sunset-Blur-Print-9081570689248_009.jpg?v=1775822933",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0053/8198/0234/files/Bridie-Dress-Sunset-Blur-Print-9081570689248_009.jpg?v=1775822933",
+        "https://cdn.shopify.com/s/files/1/0053/8198/0234/files/Bridie-Dress-Sunset-Blur-Print-9081570689248_176.jpg?v=1775822944",
+        "https://cdn.shopify.com/s/files/1/0053/8198/0234/files/Bridie-Dress-Sunset-Blur-Print-9081570689248_016.jpg?v=1775822944"
+      ],
+      "tryOnImage": "/demos-images/omnes/bridie-dress-in-sunset-blur-print-cam.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

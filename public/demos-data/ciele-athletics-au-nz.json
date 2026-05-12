@@ -1,0 +1,28 @@
+{
+  "slug": "ciele-athletics-au-nz",
+  "brandName": "ciele athletics AU/NZ",
+  "brandDomain": "cieleathletics.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "RDCRPSinglet 2",
+      "handle": "w-rdcrpsinglet2-lakeroad-day",
+      "price": "£125.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0683/8678/3506/files/W-1-TT-0259-BE003_W-RDCRPSinglet-2-LakeroadDay_D1_2026_FRNTL.jpg?v=1777045680",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0683/8678/3506/files/W-1-TT-0259-BE003_W-RDCRPSinglet-2-LakeroadDay_D1_2026_FRNTL.jpg?v=1777045680",
+        "https://cdn.shopify.com/s/files/1/0683/8678/3506/files/W-1-TT-0259-BE003_W-RDCRPSinglet-2-LakeroadDay_D1_2026_STUD1.jpg?v=1777045680",
+        "https://cdn.shopify.com/s/files/1/0683/8678/3506/files/W-1-TT-0259-BE003_W-RDCRPSinglet-2-LakeroadDay_D1_2026_STUD2.jpg?v=1777045680"
+      ],
+      "tryOnImage": "/demos-images/ciele-athletics-au-nz/w-rdcrpsinglet2-lakeroad-day.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

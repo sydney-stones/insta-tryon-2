@@ -1,0 +1,28 @@
+{
+  "slug": "the-jacket-maker",
+  "brandName": "The Jacket Maker",
+  "brandDomain": "thejacketmaker.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Custom Maryam Tahir Leather Jacket",
+      "handle": "custom-maryam-tahir-leather-jacket",
+      "price": "£349.28",
+      "productImage": "https://cdn.shopify.com/s/files/1/0774/2062/6207/files/1000563862.jpg?v=1778492466",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0774/2062/6207/files/1000563862.jpg?v=1778492466",
+        "https://cdn.shopify.com/s/files/1/0774/2062/6207/files/69f9ef12633961777987346.jpg?v=1778492526",
+        "https://cdn.shopify.com/s/files/1/0774/2062/6207/files/69f9ef12925cc1777987346.jpg?v=1778492526"
+      ],
+      "tryOnImage": "/demos-images/the-jacket-maker/custom-maryam-tahir-leather-jacket.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

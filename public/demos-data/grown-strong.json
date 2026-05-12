@@ -1,0 +1,28 @@
+{
+  "slug": "grown-strong",
+  "brandName": "Grown Strong",
+  "brandDomain": "grownstrong.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Retro Shirt",
+      "handle": "the-retro-shirt",
+      "price": "£8.90",
+      "productImage": "https://cdn.shopify.com/s/files/1/0436/2675/8299/products/GrownStrong1_26cc4426-130b-4636-984a-400f2ac3ba68.jpg?v=1625792238",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0436/2675/8299/products/GrownStrong1_26cc4426-130b-4636-984a-400f2ac3ba68.jpg?v=1625792238",
+        "https://cdn.shopify.com/s/files/1/0436/2675/8299/products/GrownStrong2_c34354d5-cd90-4183-9c17-cc81a42e9dba.jpg?v=1625792238",
+        "https://cdn.shopify.com/s/files/1/0436/2675/8299/products/GrownStrong3_7f935a81-540f-4345-95d3-891c6b54d4ba.jpg?v=1625792238"
+      ],
+      "tryOnImage": "/demos-images/grown-strong/the-retro-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

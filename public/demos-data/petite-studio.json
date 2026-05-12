@@ -1,0 +1,28 @@
+{
+  "slug": "petite-studio",
+  "brandName": "Petite Studio",
+  "brandDomain": "petitestudionyc.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Edna Cotton Embroidered Skirt - White",
+      "handle": "edna-cotton-embroidered-skirt-white",
+      "price": "£145.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1094/6908/files/X3033-1--Edna-Cotton-Embroidered-Skirt---White-4.jpg?v=1776492032",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1094/6908/files/X3033-1--Edna-Cotton-Embroidered-Skirt---White-4.jpg?v=1776492032",
+        "https://cdn.shopify.com/s/files/1/1094/6908/files/X3033-1--Edna-Cotton-Embroidered-Skirt---White-2.jpg?v=1776492032",
+        "https://cdn.shopify.com/s/files/1/1094/6908/files/X3033-1--Edna-Cotton-Embroidered-Skirt---White-1.jpg?v=1776492032"
+      ],
+      "tryOnImage": "/demos-images/petite-studio/edna-cotton-embroidered-skirt-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

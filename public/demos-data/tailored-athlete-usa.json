@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/0126/8731/0907/files/TSH00357_2.jpg?v=1777552821"
       ],
       "tryOnImage": "/demos-images/tailored-athlete-usa/knit-look-t-shirt-in-dark-khaki.jpg",
-      "modelGender": "unisex",
-      "modelName": "ebba",
+      "modelGender": "men",
+      "modelName": "lukas",
       "customerImages": {
-        "face": "/demo-models/ebba/face.png",
-        "body": "/demo-models/ebba/body.png"
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
       }
     }
   ]

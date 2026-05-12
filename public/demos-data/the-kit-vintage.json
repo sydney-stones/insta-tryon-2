@@ -1,0 +1,28 @@
+{
+  "slug": "the-kit-vintage",
+  "brandName": "The Kit Vintage",
+  "brandDomain": "thekitvintage.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Givenchy Matte Gold Necklace With Colored Cabochon Stone",
+      "handle": "givenchy-matte-gold-w-cabachon-stone-necklace",
+      "price": "£447.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0615/2103/5500/files/Givenchy_Matte_Gold_With_Colored_Cabochon_Stone_Necklace.jpg?v=1774485111",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0615/2103/5500/files/Givenchy_Matte_Gold_With_Colored_Cabochon_Stone_Necklace.jpg?v=1774485111",
+        "https://cdn.shopify.com/s/files/1/0615/2103/5500/files/Givenchy_Matte_Gold_With_Cabochon_Stone_Necklace.jpg?v=1774485130",
+        "https://cdn.shopify.com/s/files/1/0615/2103/5500/files/Givenchy_Matte_Gold_Stone_Necklace.jpg?v=1774485147"
+      ],
+      "tryOnImage": "/demos-images/the-kit-vintage/givenchy-matte-gold-w-cabachon-stone-necklace.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

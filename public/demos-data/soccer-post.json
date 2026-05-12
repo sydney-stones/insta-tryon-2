@@ -1,0 +1,27 @@
+{
+  "slug": "soccer-post",
+  "brandName": "Soccer Post",
+  "brandDomain": "soccerpost.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Nike Women's Dri-FIT Park First Layer Jersey - White",
+      "handle": "nike-dri-fit-park-womens-first-layer-long-sleeve-jersey-white-cool-grey-av2610-100",
+      "price": "£31.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0570/1609/0802/files/AV2610-100-VPSRH001.png?v=1740754917",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0570/1609/0802/files/AV2610-100-VPSRH001.png?v=1740754917",
+        "https://cdn.shopify.com/s/files/1/0570/1609/0802/files/AV2610-100-VPSUH000.png?v=1740754917"
+      ],
+      "tryOnImage": "/demos-images/soccer-post/nike-dri-fit-park-womens-first-layer-long-sleeve-jersey-white-cool-grey-av2610-100.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

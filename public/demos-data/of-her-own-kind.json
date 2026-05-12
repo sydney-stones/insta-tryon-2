@@ -1,0 +1,28 @@
+{
+  "slug": "of-her-own-kind",
+  "brandName": "Of Her Own Kind",
+  "brandDomain": "ofherownkind.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Mirabelle Dress in Rose Linen",
+      "handle": "mirabelle-dress-in-rose-linen",
+      "price": "£388.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1483/6186/files/RoseMirabelle.jpg?v=1745694430",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1483/6186/files/RoseMirabelle.jpg?v=1745694430",
+        "https://cdn.shopify.com/s/files/1/1483/6186/files/DSCF4377_2025-04-24T20_11_43.931.jpg?v=1745694430",
+        "https://cdn.shopify.com/s/files/1/1483/6186/files/RoseMirabelle_flowers.jpg?v=1745694430"
+      ],
+      "tryOnImage": "/demos-images/of-her-own-kind/mirabelle-dress-in-rose-linen.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

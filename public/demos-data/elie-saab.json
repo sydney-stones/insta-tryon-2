@@ -1,0 +1,28 @@
+{
+  "slug": "elie-saab",
+  "brandName": "ELIE SAAB",
+  "brandDomain": "eliesaab.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Bead Embroidered Corset Dress",
+      "handle": "bead-embroidered-midi-dress_multicolor_d1225ns26be071",
+      "price": "£9480.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0605/8872/0370/files/D1225NS26BE071_MULTICOLOR_1.jpg?v=1778156212",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0605/8872/0370/files/D1225NS26BE071_MULTICOLOR_1.jpg?v=1778156212",
+        "https://cdn.shopify.com/s/files/1/0605/8872/0370/files/D1225NS26BE071_MULTICOLOR_2.jpg?v=1778156225",
+        "https://cdn.shopify.com/s/files/1/0605/8872/0370/files/D1225NS26BE071_MULTICOLOR_3.jpg?v=1778156242"
+      ],
+      "tryOnImage": "/demos-images/elie-saab/bead-embroidered-midi-dress_multicolor_d1225ns26be071.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

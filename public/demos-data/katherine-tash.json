@@ -1,0 +1,28 @@
+{
+  "slug": "katherine-tash",
+  "brandName": "Katherine Tash",
+  "brandDomain": "katherinetash.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sage Bodysuit",
+      "handle": "sage-bodysuit",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0599/8916/4225/files/1775156924174-0.webp?v=1775366602",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0599/8916/4225/files/1775156924174-0.webp?v=1775366602",
+        "https://cdn.shopify.com/s/files/1/0599/8916/4225/files/1775156927891-1.webp?v=1775366602",
+        "https://cdn.shopify.com/s/files/1/0599/8916/4225/files/1775156931412-2.webp?v=1775366602"
+      ],
+      "tryOnImage": "/demos-images/katherine-tash/sage-bodysuit.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

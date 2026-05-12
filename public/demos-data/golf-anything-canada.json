@@ -1,0 +1,28 @@
+{
+  "slug": "golf-anything-canada",
+  "brandName": "Golf Anything Canada",
+  "brandDomain": "golfanything.ca",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "G/FORE WOMEN'S OFFSET GRADIENT STRIP TECH SLEEVELESS POLO - ONYX",
+      "handle": "g-fore-womens-offset-gradient-strip-tech-sleeveless-polo-onyx",
+      "price": "£69.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0839/1603/files/G4LF23K876_ONYX.jpg?v=1762487538",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0839/1603/files/G4LF23K876_ONYX.jpg?v=1762487538",
+        "https://cdn.shopify.com/s/files/1/0839/1603/files/G4LF23K876_ONYX_5.jpg?v=1700685614",
+        "https://cdn.shopify.com/s/files/1/0839/1603/files/G4LF23K876_ONYX_4.jpg?v=1700685614"
+      ],
+      "tryOnImage": "/demos-images/golf-anything-canada/g-fore-womens-offset-gradient-strip-tech-sleeveless-polo-onyx.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

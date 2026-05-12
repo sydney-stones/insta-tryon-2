@@ -1,0 +1,28 @@
+{
+  "slug": "famme",
+  "brandName": "Famme",
+  "brandDomain": "famme.no",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Rain Anorak",
+      "handle": "rain-anorak",
+      "price": "£1499.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0076/6033/9297/files/rain-anorak-3.jpg?v=1774944038",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0076/6033/9297/files/rain-anorak-3.jpg?v=1774944038",
+        "https://cdn.shopify.com/s/files/1/0076/6033/9297/files/rain-anorak-2.jpg?v=1774944038",
+        "https://cdn.shopify.com/s/files/1/0076/6033/9297/files/rain-anorak-4.jpg?v=1774944038"
+      ],
+      "tryOnImage": "/demos-images/famme/rain-anorak.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

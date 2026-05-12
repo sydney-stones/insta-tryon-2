@@ -1,0 +1,28 @@
+{
+  "slug": "apero-label",
+  "brandName": "Apero Label",
+  "brandDomain": "aperolabel.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Winnie Ribbed Midi Skirt - Beige Marle",
+      "handle": "winnie-ribbed-midi-skirt-beige-marle",
+      "price": "£59.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2712/4572/files/Apero_11.12.25_Alexe35730.jpg?v=1777422296",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2712/4572/files/Apero_11.12.25_Alexe35730.jpg?v=1777422296",
+        "https://cdn.shopify.com/s/files/1/2712/4572/files/Apero_11.12.25_Alexe35713.jpg?v=1777422301",
+        "https://cdn.shopify.com/s/files/1/2712/4572/files/Apero_11.12.25_Alexe35716.jpg?v=1777422296"
+      ],
+      "tryOnImage": "/demos-images/apero-label/winnie-ribbed-midi-skirt-beige-marle.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "we-are-sundays",
+  "brandName": "We Are Sundays",
+  "brandDomain": "wearesundays.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "LOTUS SHIRT",
+      "handle": "sundays-lotus-shirt-26-19-279",
+      "price": "£172.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0353/7105/7211/files/Floral-Embroidery-Lotus-Shirt5.jpg?v=1776273990",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0353/7105/7211/files/Floral-Embroidery-Lotus-Shirt5.jpg?v=1776273990",
+        "https://cdn.shopify.com/s/files/1/0353/7105/7211/files/Floral-Embroidery-Lotus-Shirt4.jpg?v=1776273990",
+        "https://cdn.shopify.com/s/files/1/0353/7105/7211/files/Floral-Embroidery-Lotus-Shirt1.jpg?v=1770739380"
+      ],
+      "tryOnImage": "/demos-images/we-are-sundays/sundays-lotus-shirt-26-19-279.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

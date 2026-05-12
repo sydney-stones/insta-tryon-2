@@ -1,0 +1,28 @@
+{
+  "slug": "crewroom",
+  "brandName": "Crewroom",
+  "brandDomain": "crewroom.co.uk",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "The North West Sweatpant (Women's)",
+      "handle": "the-north-west-sweatpant-womens-double-black",
+      "price": "£20.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0764W-B-The-North-West-Sweat-Pant-Womens-Double-Black-1.jpg?v=1753274055",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0764W-B-The-North-West-Sweat-Pant-Womens-Double-Black-1.jpg?v=1753274055",
+        "https://cdn.shopify.com/s/files/1/2596/2954/files/Sweatpant_1.jpg?v=1756301374",
+        "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0764W-B-The-North-West-Sweat-Pant-Womens-Double-Black-4.jpg?v=1756283124"
+      ],
+      "tryOnImage": "/demos-images/crewroom/the-north-west-sweatpant-womens-double-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

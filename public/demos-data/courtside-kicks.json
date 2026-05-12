@@ -1,0 +1,26 @@
+{
+  "slug": "courtside-kicks",
+  "brandName": "Courtside Kicks",
+  "brandDomain": "courtsidekicks.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Needles Pink/Black Track Pants",
+      "handle": "needles-pink-black-track-pants",
+      "price": "£120.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0526/8219/5127/files/1041123_01_jpg.jpg?v=1778261224",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0526/8219/5127/files/1041123_01_jpg.jpg?v=1778261224"
+      ],
+      "tryOnImage": "/demos-images/courtside-kicks/needles-pink-black-track-pants.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

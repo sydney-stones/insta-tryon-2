@@ -1,0 +1,28 @@
+{
+  "slug": "shyu",
+  "brandName": "SHYU",
+  "brandDomain": "shyusocks.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Women's SHYU x BLACK SHEEP Fly Singlet - '26",
+      "handle": "womens-shyu-x-black-sheep-fly-singlet-26",
+      "price": "£65.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0638/8570/5442/files/21.png?v=1771818074",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0638/8570/5442/files/21.png?v=1771818074",
+        "https://cdn.shopify.com/s/files/1/0638/8570/5442/files/1_b32d7918-1ce4-473a-95ae-fa82a45eb87d.png?v=1771818074",
+        "https://cdn.shopify.com/s/files/1/0638/8570/5442/files/2_c33a7b5d-aeb0-45be-8801-265d75636a20.png?v=1771818189"
+      ],
+      "tryOnImage": "/demos-images/shyu/womens-shyu-x-black-sheep-fly-singlet-26.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
