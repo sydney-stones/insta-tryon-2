@@ -1,0 +1,28 @@
+{
+  "slug": "j-mclaughlin",
+  "brandName": "J.McLaughlin",
+  "brandDomain": "jmclaughlin.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Newport Linen Shorts in Anchor",
+      "handle": "newport-linen-shorts-anchor-blue-white",
+      "price": "£150.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0739/8984/9407/files/May26_Mens_14_4145.jpg?v=1777310043",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0739/8984/9407/files/May26_Mens_14_4145.jpg?v=1777310043",
+        "https://cdn.shopify.com/s/files/1/0739/8984/9407/files/newport_0234811102_anchor_blue_white_016.jpg?v=1777310053",
+        "https://cdn.shopify.com/s/files/1/0739/8984/9407/files/newport_0234811102_anchor_blue_white_023.jpg?v=1777310051"
+      ],
+      "tryOnImage": "/demos-images/j-mclaughlin/newport-linen-shorts-anchor-blue-white.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

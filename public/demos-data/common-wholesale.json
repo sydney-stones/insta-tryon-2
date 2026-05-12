@@ -1,0 +1,28 @@
+{
+  "slug": "common-wholesale",
+  "brandName": "Common Wholesale",
+  "brandDomain": "commonhype.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Godspeed Sunken Liberty Sleeveless Tshirt White",
+      "handle": "godspeed-sunken-liberty-sleeveless-tshirt-white",
+      "price": "£113.14",
+      "productImage": "https://cdn.shopify.com/s/files/1/0366/7253/6715/files/00032488228B327D_L.jpg?v=1777919821",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0366/7253/6715/files/00032488228B327D_L.jpg?v=1777919821",
+        "https://cdn.shopify.com/s/files/1/0366/7253/6715/files/0003248822925F09_L.jpg?v=1777919821",
+        "https://cdn.shopify.com/s/files/1/0366/7253/6715/files/000324882309D046_L.jpg?v=1777919821"
+      ],
+      "tryOnImage": "/demos-images/common-wholesale/godspeed-sunken-liberty-sleeveless-tshirt-white.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

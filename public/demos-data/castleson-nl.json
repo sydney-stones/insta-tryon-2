@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/0706/4371/2278/files/b719cc86-eba5-4f58-a33d-fa256a76b6fa_11a025b8-56d5-4c7e-9ec2-8b84aab2a258.webp?v=1771423687"
       ],
       "tryOnImage": "/demos-images/castleson-nl/2-delig-herenpak-cavani-malibu-charcoal.jpg",
-      "modelGender": "unisex",
-      "modelName": "sasha",
+      "modelGender": "men",
+      "modelName": "otto",
       "customerImages": {
-        "face": "/demo-models/sasha/face.png",
-        "body": "/demo-models/sasha/body.png"
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
       }
     }
   ]

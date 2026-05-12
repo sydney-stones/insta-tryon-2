@@ -1,0 +1,28 @@
+{
+  "slug": "marie-oliver",
+  "brandName": "Marie Oliver",
+  "brandDomain": "marieoliver.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "TOBIE DRESS",
+      "handle": "tobie-dress-navy",
+      "price": "£224.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0738/2659/files/Marie-Oliver-Tobie-Dress-Naval-01-S.jpg?v=1761661701",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0738/2659/files/Marie-Oliver-Tobie-Dress-Naval-01-S.jpg?v=1761661701",
+        "https://cdn.shopify.com/s/files/1/0738/2659/files/Marie-Oliver-Tobie-Dress-Naval-03-S.jpg?v=1761661701",
+        "https://cdn.shopify.com/s/files/1/0738/2659/files/Marie-Oliver-Tobie-Dress-Naval-02-S.jpg?v=1761661701"
+      ],
+      "tryOnImage": "/demos-images/marie-oliver/tobie-dress-navy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

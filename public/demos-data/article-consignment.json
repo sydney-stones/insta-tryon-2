@@ -1,0 +1,28 @@
+{
+  "slug": "article-consignment",
+  "brandName": "Article Consignment",
+  "brandDomain": "shoparticleconsignment.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Estate 925 Sterling Clear Beaded 16.5\" Crystal Necklace & Earring Set",
+      "handle": "estate-925-sterling-clear-beaded-16-5-crystal-necklace-earring-set",
+      "price": "£60.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0014/0541/9580/files/bda67d914b3d33455fafd688d0823bb2.jpg?v=1778344554",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0014/0541/9580/files/bda67d914b3d33455fafd688d0823bb2.jpg?v=1778344554",
+        "https://cdn.shopify.com/s/files/1/0014/0541/9580/files/a14a2d036c72808692c71b33874a0d10.jpg?v=1778344554",
+        "https://cdn.shopify.com/s/files/1/0014/0541/9580/files/36b157a90f23fe0c3ca9c5425ad1bc76.jpg?v=1778344554"
+      ],
+      "tryOnImage": "/demos-images/article-consignment/estate-925-sterling-clear-beaded-16-5-crystal-necklace-earring-set.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

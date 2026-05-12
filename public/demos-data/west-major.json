@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/2079/9539/files/DSC02431-2_1_new.jpg?v=1774019251"
       ],
       "tryOnImage": "/demos-images/west-major/desert-chore-coat-cobalt-indigo.jpg",
-      "modelGender": "unisex",
-      "modelName": "sasha",
+      "modelGender": "men",
+      "modelName": "otto",
       "customerImages": {
-        "face": "/demo-models/sasha/face.png",
-        "body": "/demo-models/sasha/body.png"
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
       }
     }
   ]

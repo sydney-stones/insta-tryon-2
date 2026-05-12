@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/0607/4630/1695/files/mens-extra-long-tall-heavyweight-midnight-blue-t-shirt-v4-3.jpg?v=1772295075"
       ],
       "tryOnImage": "/demos-images/just-tall/plain-tall-mens-heavyweight-t-shirt-midnight-blue.jpg",
-      "modelGender": "unisex",
-      "modelName": "ebba",
+      "modelGender": "men",
+      "modelName": "lukas",
       "customerImages": {
-        "face": "/demo-models/ebba/face.png",
-        "body": "/demo-models/ebba/body.png"
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
       }
     }
   ]

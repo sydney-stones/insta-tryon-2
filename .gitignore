@@ -38,3 +38,4 @@ scripts/skipped.csv
 scripts/emails.csv
 scripts/.demo-gen-state.json
 scripts/batch*.log
+scripts/overrides.json

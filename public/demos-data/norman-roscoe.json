@@ -1,0 +1,28 @@
+{
+  "slug": "norman-roscoe",
+  "brandName": "Norman Roscoe",
+  "brandDomain": "normanroscoe.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Texas Prison Rodeo Muscle Crop T-Shirt",
+      "handle": "texas-prison-rodeo-muscle-crop",
+      "price": "£23.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0576/0440/7451/files/DSCF8339.jpg?v=1776280357",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0576/0440/7451/files/DSCF8339.jpg?v=1776280357",
+        "https://cdn.shopify.com/s/files/1/0576/0440/7451/files/DSCF8341.jpg?v=1776280678",
+        "https://cdn.shopify.com/s/files/1/0576/0440/7451/files/DSCF8340.jpg?v=1776280678"
+      ],
+      "tryOnImage": "/demos-images/norman-roscoe/texas-prison-rodeo-muscle-crop.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

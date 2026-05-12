@@ -1,0 +1,28 @@
+{
+  "slug": "david-s-bridal",
+  "brandName": "David's Bridal",
+  "brandDomain": "davidsbridal.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Embroidered HUBBY Sweatshirt & Joggers Set",
+      "handle": "embroidered-hubby-sweatshirt-joggers-set",
+      "price": "£96.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0664/9004/0413/files/e5438091-42f5-4228-8929-5f74e7384479_91b3b5e1-7b75-422b-9f4a-1af3951e525b.png?v=1778501730",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0664/9004/0413/files/e5438091-42f5-4228-8929-5f74e7384479_91b3b5e1-7b75-422b-9f4a-1af3951e525b.png?v=1778501730",
+        "https://cdn.shopify.com/s/files/1/0664/9004/0413/files/f31e31e9-5fc1-4fbe-ad1f-937d39fc079b_cdbf25eb-c519-4240-aa22-c7679052bb1b.png?v=1778501732",
+        "https://cdn.shopify.com/s/files/1/0664/9004/0413/files/950dab74-230a-46b7-b5b7-de5322abe1cb_c71bf38f-04b4-4f03-b376-68d585dcb8e8.png?v=1778501730"
+      ],
+      "tryOnImage": "/demos-images/david-s-bridal/embroidered-hubby-sweatshirt-joggers-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

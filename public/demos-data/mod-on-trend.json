@@ -1,0 +1,27 @@
+{
+  "slug": "mod-on-trend",
+  "brandName": "MOD ON TREND",
+  "brandDomain": "modontrend.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "USA Flag Mock Neck Striped Knit Set Top",
+      "handle": "usa-flag-mock-neck-striped-knit-set-top",
+      "price": "£83.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0530/5637/2916/files/IMG_9783.jpg?v=1778529857",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0530/5637/2916/files/IMG_9783.jpg?v=1778529857",
+        "https://cdn.shopify.com/s/files/1/0530/5637/2916/files/980d8c68IMG_9787.jpg?v=1778096133"
+      ],
+      "tryOnImage": "/demos-images/mod-on-trend/usa-flag-mock-neck-striped-knit-set-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

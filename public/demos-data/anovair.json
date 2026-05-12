@@ -17,11 +17,11 @@
         "https://cdn.shopify.com/s/files/1/0507/8948/2693/files/Breton_Striped_Shirt_-_Black_3.jpg?v=1776769901"
       ],
       "tryOnImage": "/demos-images/anovair/breton-striped-shirt-black.jpg",
-      "modelGender": "unisex",
-      "modelName": "ebba",
+      "modelGender": "men",
+      "modelName": "lukas",
       "customerImages": {
-        "face": "/demo-models/ebba/face.png",
-        "body": "/demo-models/ebba/body.png"
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
       }
     }
   ]

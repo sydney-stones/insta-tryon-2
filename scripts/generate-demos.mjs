@@ -25,11 +25,21 @@ const API_KEY = process.env.GEMINI_ADMIN_API_KEY;
 const OUTPUT_CSV = path.join(ROOT, 'scripts', 'output.csv');
 const SKIPPED_CSV = path.join(ROOT, 'scripts', 'skipped.csv');
 const EMAILS_CSV = path.join(ROOT, 'scripts', 'emails.csv');
+const OVERRIDES_FILE = path.join(ROOT, 'scripts', 'overrides.json');
 const EMAIL_SENDERS = [
   'mail@renderedfits.com',
   'mail@getrenderedfits.com',
   'mail@tryrenderedfits.com',
 ];
+
+let OVERRIDES = { remove: [], redo: {} };
+function loadOverrides() {
+  if (fs.existsSync(OVERRIDES_FILE)) {
+    OVERRIDES = JSON.parse(fs.readFileSync(OVERRIDES_FILE, 'utf8'));
+    OVERRIDES.remove = OVERRIDES.remove || [];
+    OVERRIDES.redo = OVERRIDES.redo || {};
+  }
+}
 const STATE_FILE = path.join(ROOT, 'scripts', '.demo-gen-state.json');
 const MANIFEST_DIR = path.join(ROOT, 'public', 'demos-data');
 const IMAGES_DIR = path.join(ROOT, 'public', 'demos-images');
@@ -208,9 +218,10 @@ function fileToBase64(p) {
 }
 
 // ─── Step 5: Gemini try-on generation ─────────────────────────────────────────
+// NOTE: only 1 product image — multi-image inputs confuse the model.
 async function geminiTryOn(productImageUrls, model) {
   const productImages = [];
-  for (const u of productImageUrls.slice(0, 3)) {
+  for (const u of productImageUrls.slice(0, 1)) {
     const img = await fetchImageBase64(u);
     if (img) productImages.push(img);
   }
@@ -281,11 +292,23 @@ async function processBrand(lead) {
   const picks = selectProducts(inv.products, cls.gender);
   if (picks.length < 1) return { status: 'skipped', reason: 'no suitable products', slug, gender: cls.gender };
 
+  // Per-brand overrides (forceGender, forceModel)
+  const ov = OVERRIDES.redo[slug] || {};
+  const forcedGender = ov.forceGender;
+  const forcedModelName = ov.forceModel;
+
   const tryOns = [];
   for (const p of picks) {
     const imgUrls = (p.images || []).map(im => im.src).filter(Boolean).slice(0, 3);
     if (imgUrls.length === 0) continue;
-    const model = pickModel(p._gender, slug);
+    const effectiveGender = forcedGender || p._gender;
+    let model = pickModel(effectiveGender, slug);
+    if (forcedModelName) {
+      const pool = [...MODELS.women, ...MODELS.men];
+      const found = pool.find(m => m.name === forcedModelName);
+      if (found) model = found;
+    }
+    p._gender = effectiveGender; // ensure manifest records the resolved gender
     const tStart = Date.now();
     let gen = await geminiTryOn(imgUrls, model);
     if (!gen.ok) {
@@ -414,13 +437,12 @@ Sienna`;
   return { t1Subject, t1Body, t2Subject, t2Body, t3Subject, t3Body };
 }
 
-function appendEmail(lead, demoUrl, senderIndex) {
+function appendEmail(lead, demoUrl, sender) {
   const header = 'sender_email,contact_first_name,contact_email,brand_name,demo_url,' +
                  'touch_1_send_day,touch_1_subject,touch_1_body,' +
                  'touch_2_send_day,touch_2_subject,touch_2_body,' +
                  'touch_3_send_day,touch_3_subject,touch_3_body\n';
   if (!fs.existsSync(EMAILS_CSV)) fs.writeFileSync(EMAILS_CSV, header);
-  const sender = EMAIL_SENDERS[senderIndex % EMAIL_SENDERS.length];
   const e = buildEmails(lead, demoUrl);
   fs.appendFileSync(EMAILS_CSV, [
     csvEscape(sender), csvEscape(lead.firstName), csvEscape(lead.email),
@@ -439,10 +461,80 @@ function appendSkipped(lead, reason) {
 
 // ─── State (resume support) ───────────────────────────────────────────────────
 function loadState() {
-  if (!fs.existsSync(STATE_FILE)) return { processedDomains: [], completedCount: 0 };
+  if (!fs.existsSync(STATE_FILE)) return { processedDomains: [], completedCount: 0, senderBySlug: {}, blockedSlugs: [] };
   const s = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'));
   if (typeof s.completedCount !== 'number') s.completedCount = 0;
+  if (!s.senderBySlug) s.senderBySlug = {};
+  if (!s.blockedSlugs) s.blockedSlugs = [];
   return s;
+}
+
+// Strip CSV rows whose demo_url slug is in `purgeSlugs`
+function filterCSV(csvPath, slugColField, purgeSlugs) {
+  if (!fs.existsSync(csvPath)) return;
+  const rows = parseCSV(fs.readFileSync(csvPath, 'utf8'));
+  if (rows.length < 2) return;
+  const h = rows[0];
+  const idx = h.findIndex(c => c === slugColField);
+  if (idx < 0) return;
+  const keep = [h];
+  for (let i = 1; i < rows.length; i++) {
+    const r = rows[i]; if (!r || r.length < 2) continue;
+    const m = (r[idx] || '').match(/\/demos\/([^/]+)$/);
+    if (m && purgeSlugs.has(m[1])) continue;
+    keep.push(r);
+  }
+  fs.writeFileSync(csvPath, keep.map(r => r.map(csvEscape).join(',')).join('\n') + '\n');
+}
+
+// Apply overrides at start of run: delete manifests/images, scrub CSVs, requeue redos
+function applyOverrides(state) {
+  const removes = new Set(OVERRIDES.remove);
+  const redos = new Set(Object.keys(OVERRIDES.redo));
+  const purge = new Set([...removes, ...redos]);
+  if (purge.size === 0) return;
+
+  // slug → domain map (from current output.csv before scrubbing)
+  const slugToDomain = new Map();
+  if (fs.existsSync(OUTPUT_CSV)) {
+    const rows = parseCSV(fs.readFileSync(OUTPUT_CSV, 'utf8'));
+    const h = rows[0];
+    const ixUrl = h.findIndex(c => c === 'demo_url');
+    const ixDom = h.findIndex(c => c === 'brand_domain');
+    for (let i = 1; i < rows.length; i++) {
+      const r = rows[i]; if (!r || r.length < 2) continue;
+      const m = (r[ixUrl] || '').match(/\/demos\/([^/]+)$/);
+      if (m) slugToDomain.set(m[1], r[ixDom]);
+    }
+  }
+
+  // Delete manifests + image dirs
+  for (const slug of purge) {
+    const mf = path.join(MANIFEST_DIR, `${slug}.json`);
+    if (fs.existsSync(mf)) fs.unlinkSync(mf);
+    const id = path.join(IMAGES_DIR, slug);
+    if (fs.existsSync(id)) fs.rmSync(id, { recursive: true, force: true });
+  }
+
+  // Scrub CSVs
+  filterCSV(OUTPUT_CSV, 'demo_url', purge);
+  filterCSV(EMAILS_CSV, 'demo_url', purge);
+
+  // For redos: requeue (drop from processedDomains)
+  // For removes: add to blockedSlugs (and KEEP domain in processedDomains so it's skipped silently)
+  const domainsToRequeue = new Set();
+  for (const slug of redos) {
+    const dom = slugToDomain.get(slug);
+    if (dom) domainsToRequeue.add(dom);
+  }
+  state.processedDomains = state.processedDomains.filter(d => !domainsToRequeue.has(d));
+  state.blockedSlugs = Array.from(new Set([...state.blockedSlugs, ...removes]));
+
+  // Drop sender assignments for redos so they can re-stick if needed; remove sender for blocks
+  for (const slug of purge) delete state.senderBySlug[slug];
+
+  saveState(state);
+  console.log(`Overrides applied: ${removes.size} removes, ${redos.size} redos. Requeued ${domainsToRequeue.size} domains.\n`);
 }
 function saveState(s) { fs.writeFileSync(STATE_FILE, JSON.stringify(s, null, 2)); }
 
@@ -477,14 +569,43 @@ function extractLeads() {
   return leads;
 }
 
+// All contacts grouped by domain (one entry per row in CSV; NOT deduped).
+function extractAllContactsByDomain() {
+  const text = fs.readFileSync(CSV_PATH, 'utf8');
+  const rows = parseCSV(text);
+  const header = rows[0];
+  const idx = (name) => header.findIndex(h => h.trim().toLowerCase() === name.toLowerCase());
+  const iFirst = idx('First Name'), iCompany = idx('Company Name'), iEmail = idx('Email'),
+        iSite = idx('Website'), iIndustry = idx('Industry');
+  const byDomain = new Map();
+  for (let r = 1; r < rows.length; r++) {
+    const row = rows[r]; if (!row || row.length < 2) continue;
+    const domain = normaliseDomain(row[iSite]);
+    if (!domain) continue;
+    const industry = ((row[iIndustry] || '') + '').toLowerCase();
+    if (EXCLUDE_INDUSTRIES.some(k => industry.includes(k))) continue;
+    const brandName = (row[iCompany] || '').trim();
+    const firstName = (row[iFirst] || '').trim();
+    const email = (row[iEmail] || '').trim();
+    if (!email) continue;
+    if (!byDomain.has(domain)) byDomain.set(domain, []);
+    byDomain.get(domain).push({ brandName, domain, firstName, email });
+  }
+  return byDomain;
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
+  loadOverrides();
   const leads = extractLeads();
-  console.log(`Loaded ${leads.length} unique brand-domain leads.`);
+  const allContactsByDomain = extractAllContactsByDomain();
+  console.log(`Loaded ${leads.length} unique brand-domain leads (${[...allContactsByDomain.values()].reduce((a,b)=>a+b.length,0)} total individual contacts).`);
 
   const state = loadState();
+  applyOverrides(state);
   const done = new Set(state.processedDomains);
-  let todo = leads.filter(l => !done.has(l.domain));
+  const blockedSlugs = new Set(state.blockedSlugs);
+  let todo = leads.filter(l => !done.has(l.domain) && !blockedSlugs.has(slugify(l.brandName)));
   if (MAX_BRANDS !== Infinity) todo = todo.slice(0, MAX_BRANDS);
   console.log(`${done.size} already processed; ${todo.length} to process this run (batch size ${BATCH_SIZE}).\n`);
 
@@ -503,9 +624,11 @@ async function main() {
         if (res.status === 'skipped') { appendSkipped(lead, res.reason); skipped++; }
         else if (res.status === 'complete') {
           appendOutput(lead, res);
-          const demoUrl = `https://renderedfits.com/demos/${res.slug}`;
-          appendEmail(lead, demoUrl, state.completedCount);
-          state.completedCount++;
+          // Allocate sticky sender for this slug if not yet assigned
+          if (!state.senderBySlug[res.slug]) {
+            state.senderBySlug[res.slug] = EMAIL_SENDERS[state.completedCount % EMAIL_SENDERS.length];
+            state.completedCount++;
+          }
           complete++;
         }
         else { appendOutput(lead, res); incomplete++; }
@@ -536,10 +659,56 @@ async function main() {
 
   rl.close();
 
+  // Rebuild emails.csv deterministically from manifests + all contacts
+  rebuildEmailsCsv(allContactsByDomain, state);
+  saveState(state);
+
   // Rebuild admin index from current manifests + CSV data
   writeAdminIndex();
 
   console.log(`\nOutputs: ${OUTPUT_CSV}\n        ${SKIPPED_CSV}\n        ${EMAILS_CSV}\n        ${path.join(MANIFEST_DIR, 'index.json')}`);
+}
+
+function rebuildEmailsCsv(allContactsByDomain, state) {
+  const header = 'sender_email,contact_first_name,contact_email,brand_name,demo_url,' +
+                 'touch_1_send_day,touch_1_subject,touch_1_body,' +
+                 'touch_2_send_day,touch_2_subject,touch_2_body,' +
+                 'touch_3_send_day,touch_3_subject,touch_3_body';
+  const out = [header];
+
+  // Iterate manifests deterministically (alphabetical by slug for stable output)
+  const files = fs.readdirSync(MANIFEST_DIR).filter(f => f.endsWith('.json') && f !== 'index.json').sort();
+  let totalEmails = 0;
+  const senderCounts = {};
+  for (const f of files) {
+    const data = JSON.parse(fs.readFileSync(path.join(MANIFEST_DIR, f), 'utf8'));
+    const slug = data.slug;
+    const domain = data.brandDomain;
+    const brandName = data.brandName;
+    const demoUrl = `https://renderedfits.com/demos/${slug}`;
+    // Assign sticky sender if not yet
+    if (!state.senderBySlug[slug]) {
+      state.senderBySlug[slug] = EMAIL_SENDERS[state.completedCount % EMAIL_SENDERS.length];
+      state.completedCount++;
+    }
+    const sender = state.senderBySlug[slug];
+    senderCounts[sender] = senderCounts[sender] || 0;
+    const contacts = allContactsByDomain.get(domain) || [];
+    for (const c of contacts) {
+      const e = buildEmails({ ...c, brandName }, demoUrl);
+      out.push([
+        sender, c.firstName, c.email, brandName, demoUrl,
+        '0',  e.t1Subject, e.t1Body,
+        '3',  e.t2Subject, e.t2Body,
+        '10', e.t3Subject, e.t3Body,
+      ].map(csvEscape).join(','));
+      senderCounts[sender]++;
+      totalEmails++;
+    }
+  }
+  fs.writeFileSync(EMAILS_CSV, out.join('\n') + '\n');
+  console.log(`\nemails.csv rebuilt: ${totalEmails} rows across ${files.length} demos.`);
+  console.log(`Sender split:`, senderCounts);
 }
 
 function writeAdminIndex() {

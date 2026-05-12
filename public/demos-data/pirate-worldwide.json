@@ -1,0 +1,28 @@
+{
+  "slug": "pirate-worldwide",
+  "brandName": "Pirate Worldwide",
+  "brandDomain": "pirateworldwide.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pirate Denim Pant (Indigo)",
+      "handle": "pirate-denim-pant-indigo",
+      "price": "£91.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0573/2178/3427/files/FrontJeanWeb.png?v=1778254551",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0573/2178/3427/files/FrontJeanWeb.png?v=1778254551",
+        "https://cdn.shopify.com/s/files/1/0573/2178/3427/files/AV9A1346.jpg?v=1778254587",
+        "https://cdn.shopify.com/s/files/1/0573/2178/3427/files/AV9A1347.jpg?v=1778254587"
+      ],
+      "tryOnImage": "/demos-images/pirate-worldwide/pirate-denim-pant-indigo.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

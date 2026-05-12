@@ -1,0 +1,28 @@
+{
+  "slug": "cocopina",
+  "brandName": "Cocopiña",
+  "brandDomain": "cocopina.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Maria Mini Dress",
+      "handle": "maria-mini-dress",
+      "price": "£105.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0636/6101/5273/files/cocopina-DRSMI2508-Maria-3x4-Bali-_0008_308A7631.jpg?v=1773091389",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0636/6101/5273/files/cocopina-DRSMI2508-Maria-3x4-Bali-_0008_308A7631.jpg?v=1773091389",
+        "https://cdn.shopify.com/s/files/1/0636/6101/5273/files/cocopina-DRSMI2508-Maria-3x4-Bali-back.jpg?v=1773091669",
+        "https://cdn.shopify.com/s/files/1/0636/6101/5273/files/cocopina-DRSMI2508-Maria-3x4-Bali-_0005_0K1A3426.jpg?v=1773092810"
+      ],
+      "tryOnImage": "/demos-images/cocopina/maria-mini-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

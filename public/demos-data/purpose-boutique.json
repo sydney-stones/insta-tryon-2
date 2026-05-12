@@ -1,0 +1,28 @@
+{
+  "slug": "purpose-boutique",
+  "brandName": "Purpose Boutique",
+  "brandDomain": "purposeboutique.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Tomato Ziggy Crewneck Sweatshirt",
+      "handle": "tomato-ziggy-crewneck-sweatshirt-t94",
+      "price": "£139.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0069/4190/0851/files/pos0074_375x_02e106c0-4b2c-4a1e-a206-2eeb410d9f29.webp?v=1778557990",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0069/4190/0851/files/pos0074_375x_02e106c0-4b2c-4a1e-a206-2eeb410d9f29.webp?v=1778557990",
+        "https://cdn.shopify.com/s/files/1/0069/4190/0851/files/pos0079_375x_dc58cdd4-eb43-42d0-a2f8-819981f7449d.webp?v=1778557990",
+        "https://cdn.shopify.com/s/files/1/0069/4190/0851/files/pos0077_375x_1b5d9b0c-2d8c-4d11-9380-b914426f886a.webp?v=1778557990"
+      ],
+      "tryOnImage": "/demos-images/purpose-boutique/tomato-ziggy-crewneck-sweatshirt-t94.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

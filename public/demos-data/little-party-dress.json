@@ -1,0 +1,28 @@
+{
+  "slug": "little-party-dress",
+  "brandName": "Little Party Dress",
+  "brandDomain": "littlepartydress.com.au",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Joelz Black Cardi",
+      "handle": "joelz-black-cardi",
+      "price": "£44.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0122/5112/files/Joelz-Black-Cardi_LPD_0036-1-CROP-WEBP.webp?v=1777850502",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0122/5112/files/Joelz-Black-Cardi_LPD_0036-1-CROP-WEBP.webp?v=1777850502",
+        "https://cdn.shopify.com/s/files/1/0122/5112/files/Joelz-Black-Cardi_LPD_0015-1-CROP-WEBP.webp?v=1777850502",
+        "https://cdn.shopify.com/s/files/1/0122/5112/files/Joelz-Black-Cardi_LPD_0017-1-CROP-WEBP.webp?v=1777850502"
+      ],
+      "tryOnImage": "/demos-images/little-party-dress/joelz-black-cardi.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}
