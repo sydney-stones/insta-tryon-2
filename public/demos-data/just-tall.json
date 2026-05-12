@@ -1,0 +1,28 @@
+{
+  "slug": "just-tall",
+  "brandName": "Just Tall",
+  "brandDomain": "justtall.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Organic Tall Slim Heavyweight T-shirt (Midnight Blue)",
+      "handle": "plain-tall-mens-heavyweight-t-shirt-midnight-blue",
+      "price": "£25.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0607/4630/1695/files/mens-extra-long-tall-heavyweight-midnight-blue-t-shirt-v4-1.jpg?v=1772295074",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0607/4630/1695/files/mens-extra-long-tall-heavyweight-midnight-blue-t-shirt-v4-1.jpg?v=1772295074",
+        "https://cdn.shopify.com/s/files/1/0607/4630/1695/files/mens-extra-long-tall-heavyweight-midnight-blue-t-shirt-v4-2.jpg?v=1772295074",
+        "https://cdn.shopify.com/s/files/1/0607/4630/1695/files/mens-extra-long-tall-heavyweight-midnight-blue-t-shirt-v4-3.jpg?v=1772295075"
+      ],
+      "tryOnImage": "/demos-images/just-tall/plain-tall-mens-heavyweight-t-shirt-midnight-blue.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

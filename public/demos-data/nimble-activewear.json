@@ -1,0 +1,28 @@
+{
+  "slug": "nimble-activewear",
+  "brandName": "Nimble Activewear",
+  "brandDomain": "nimbleactivewear.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Reversible Half Time Vest II",
+      "handle": "reversible-half-time-vest-ii-cloud",
+      "price": "£209.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0321/2617/files/fredrika_2.jpg?v=1777599021",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0321/2617/files/fredrika_2.jpg?v=1777599021",
+        "https://cdn.shopify.com/s/files/1/0321/2617/files/4_5b1d0f8c-832e-42ff-9d4d-c7fd0a51a7a7.jpg?v=1776912155",
+        "https://cdn.shopify.com/s/files/1/0321/2617/files/3_c4dea3c8-a4a3-4537-a76a-b22860a3afa9.jpg?v=1776912155"
+      ],
+      "tryOnImage": "/demos-images/nimble-activewear/reversible-half-time-vest-ii-cloud.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

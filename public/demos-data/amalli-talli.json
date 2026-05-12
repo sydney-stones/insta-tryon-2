@@ -1,0 +1,28 @@
+{
+  "slug": "amalli-talli",
+  "brandName": "Amalli Talli",
+  "brandDomain": "amallitalli.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Andie Tall Wide Leg Side Stripe Pant",
+      "handle": "andie-tall-wide-leg-side-stripe-pant",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0067/2310/8924/files/AmalliTalli_r1_04H_0754.jpg?v=1776729850",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0067/2310/8924/files/AmalliTalli_r1_04H_0754.jpg?v=1776729850",
+        "https://cdn.shopify.com/s/files/1/0067/2310/8924/files/AmalliTalli_r1_04H_0776.jpg?v=1776729849",
+        "https://cdn.shopify.com/s/files/1/0067/2310/8924/files/AmalliTalli_r1_04H_0787.jpg?v=1776729849"
+      ],
+      "tryOnImage": "/demos-images/amalli-talli/andie-tall-wide-leg-side-stripe-pant.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

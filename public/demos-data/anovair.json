@@ -1,0 +1,28 @@
+{
+  "slug": "anovair",
+  "brandName": "Anovair",
+  "brandDomain": "anovair.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Breton Striped Shirt | Black",
+      "handle": "breton-striped-shirt-black",
+      "price": "£67.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0507/8948/2693/files/BretonStripedShirt-Black1.jpg?v=1772096648",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0507/8948/2693/files/BretonStripedShirt-Black1.jpg?v=1772096648",
+        "https://cdn.shopify.com/s/files/1/0507/8948/2693/files/Breton_Striped_Shirt_-_Black_2.jpg?v=1776769899",
+        "https://cdn.shopify.com/s/files/1/0507/8948/2693/files/Breton_Striped_Shirt_-_Black_3.jpg?v=1776769901"
+      ],
+      "tryOnImage": "/demos-images/anovair/breton-striped-shirt-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

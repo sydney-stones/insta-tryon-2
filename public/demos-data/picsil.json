@@ -1,0 +1,28 @@
+{
+  "slug": "picsil",
+  "brandName": "PICSIL",
+  "brandDomain": "picsilsport.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pantalón Hombre Performance SS26",
+      "handle": "pantalon-hombre-performance-ss26",
+      "price": "£39.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0609/6882/9140/files/MOONLES_DELANTERO_ce7c86b8-e870-40db-8285-c4c2e40f2e63.webp?v=1773148259",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0609/6882/9140/files/MOONLES_DELANTERO_ce7c86b8-e870-40db-8285-c4c2e40f2e63.webp?v=1773148259",
+        "https://cdn.shopify.com/s/files/1/0609/6882/9140/files/MOONLES_DETALLE_DELANTERO_dc64d22f-234b-4ad2-9527-11720036bc7f.webp?v=1773148259",
+        "https://cdn.shopify.com/s/files/1/0609/6882/9140/files/MOONLES_3_4_116c061b-7ccd-4c05-ab43-9ffe1b6cb305.webp?v=1773148259"
+      ],
+      "tryOnImage": "/demos-images/picsil/pantalon-hombre-performance-ss26.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

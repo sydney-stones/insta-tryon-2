@@ -1,0 +1,28 @@
+{
+  "slug": "avoli",
+  "brandName": "Avoli",
+  "brandDomain": "avoli.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Grey Crew Fleece Shirt",
+      "handle": "winter-2024-grey-crew-t-shirt",
+      "price": "£60.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0760/0403/2785/files/Winter2024GreyCrewT-shirt_2.jpg?v=1752793132",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0760/0403/2785/files/Winter2024GreyCrewT-shirt_2.jpg?v=1752793132",
+        "https://cdn.shopify.com/s/files/1/0760/0403/2785/files/Winter2024GreyCrewT-shirt.jpg?v=1752793153",
+        "https://cdn.shopify.com/s/files/1/0760/0403/2785/files/Winter2024GreyCrewT-shirt_3.jpg?v=1752793188"
+      ],
+      "tryOnImage": "/demos-images/avoli/winter-2024-grey-crew-t-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

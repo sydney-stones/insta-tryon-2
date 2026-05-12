@@ -1,0 +1,28 @@
+{
+  "slug": "adrift-clothing",
+  "brandName": "Adrift Clothing",
+  "brandDomain": "adrift.us",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Tabitha Embroidered Chambray Dress in Mid Wash",
+      "handle": "tabitha-embroidered-chambray-dress-in-mid-wash",
+      "price": "£279.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0187/0274/files/TabithaEmbroideredChambrayDrerss-MidWash-3.jpg?v=1778553121",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0187/0274/files/TabithaEmbroideredChambrayDrerss-MidWash-3.jpg?v=1778553121",
+        "https://cdn.shopify.com/s/files/1/0187/0274/files/TabithaEmbroideredChambrayDrerss-MidWash-4.jpg?v=1778553121",
+        "https://cdn.shopify.com/s/files/1/0187/0274/files/TabithaEmbroideredChambrayDrerss-MidWash-1.jpg?v=1778553121"
+      ],
+      "tryOnImage": "/demos-images/adrift-clothing/tabitha-embroidered-chambray-dress-in-mid-wash.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

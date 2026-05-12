@@ -1,0 +1,28 @@
+{
+  "slug": "josie-s-boutique",
+  "brandName": "Josie's Boutique",
+  "brandDomain": "josiesboutique.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sunset Muse Ruffle Midi Dress",
+      "handle": "sunset-muse-ruffle-midi-dress",
+      "price": "£49.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1658/9749/files/FD11110-P1719-ID4A4522.jpg?v=1777567709",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1658/9749/files/FD11110-P1719-ID4A4522.jpg?v=1777567709",
+        "https://cdn.shopify.com/s/files/1/1658/9749/files/FD11110-P1719-ID4A4528.jpg?v=1777567709",
+        "https://cdn.shopify.com/s/files/1/1658/9749/files/FD11110-P1719-ID4A4537.jpg?v=1777567709"
+      ],
+      "tryOnImage": "/demos-images/josie-s-boutique/sunset-muse-ruffle-midi-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "mr-derk",
+  "brandName": "Mr.Derk",
+  "brandDomain": "mrderk.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Charcoal Herby-Blayr Wool Suit",
+      "handle": "joop-charcoal-herby-blayr-wool-suit",
+      "price": "£632.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0397/8821/files/IMG_5573.jpg?v=1778104456",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0397/8821/files/IMG_5573.jpg?v=1778104456",
+        "https://cdn.shopify.com/s/files/1/0397/8821/files/IMG_5580.jpg?v=1778104458",
+        "https://cdn.shopify.com/s/files/1/0397/8821/files/IMG_5577.jpg?v=1778104457"
+      ],
+      "tryOnImage": "/demos-images/mr-derk/joop-charcoal-herby-blayr-wool-suit.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

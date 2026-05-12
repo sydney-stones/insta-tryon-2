@@ -1,0 +1,28 @@
+{
+  "slug": "katharinalouu",
+  "brandName": "katharinalouu",
+  "brandDomain": "katharinalou.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Twiggy Mini",
+      "handle": "the-twiggy-mini-pink",
+      "price": "£115.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0623/3705/7018/files/Screenshot_2024-11-27_at_11.58.10_AM.png?v=1745470687",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0623/3705/7018/files/Screenshot_2024-11-27_at_11.58.10_AM.png?v=1745470687",
+        "https://cdn.shopify.com/s/files/1/0623/3705/7018/files/Katharina-Lou-12-June-2024_0002.jpg?v=1741147013",
+        "https://cdn.shopify.com/s/files/1/0623/3705/7018/files/Katharina-Lou-12-June-2024_0003.jpg?v=1741147013"
+      ],
+      "tryOnImage": "/demos-images/katharinalouu/the-twiggy-mini-pink.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

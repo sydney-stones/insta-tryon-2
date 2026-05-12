@@ -1,0 +1,28 @@
+{
+  "slug": "azeeza",
+  "brandName": "Azeeza",
+  "brandDomain": "azeezaofficial.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Dany Chiffon Midi Dress",
+      "handle": "dany-chiffon-midi-dress",
+      "price": "£896.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0076/9471/2917/files/Untitled-729.jpg?v=1776199324",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0076/9471/2917/files/Untitled-729.jpg?v=1776199324",
+        "https://cdn.shopify.com/s/files/1/0076/9471/2917/files/Untitled-738.jpg?v=1776199324",
+        "https://cdn.shopify.com/s/files/1/0076/9471/2917/files/Untitled-726.jpg?v=1776199324"
+      ],
+      "tryOnImage": "/demos-images/azeeza/dany-chiffon-midi-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

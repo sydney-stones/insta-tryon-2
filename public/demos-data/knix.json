@@ -1,0 +1,28 @@
+{
+  "slug": "knix",
+  "brandName": "Knix",
+  "brandDomain": "knix.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Modal Rib Pant",
+      "handle": "modal-rib-pant",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0668/8591/0570/files/FKA377_ModalRibPant_Black51x.webp?v=1778523838",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0668/8591/0570/files/FKA377_ModalRibPant_Black51x.webp?v=1778523838",
+        "https://cdn.shopify.com/s/files/1/0668/8591/0570/files/FKA377_ModalRibPant_Black021x.webp?v=1778523838",
+        "https://cdn.shopify.com/s/files/1/0668/8591/0570/files/FKA377_ModalRibPant_Black031x.webp?v=1778523838"
+      ],
+      "tryOnImage": "/demos-images/knix/modal-rib-pant.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

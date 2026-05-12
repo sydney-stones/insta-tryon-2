@@ -1,0 +1,28 @@
+{
+  "slug": "liberty-in-love",
+  "brandName": "Liberty in Love",
+  "brandDomain": "libertyinlove.co.uk",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Luce pear-cut crystal earrings and necklace set (gold)",
+      "handle": "luce-pear-cut-crystal-earrings-and-necklace-set-gold",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0083/2497/2599/files/26-1012_LIL_LUCE_SET.jpg?v=1775749306",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0083/2497/2599/files/26-1012_LIL_LUCE_SET.jpg?v=1775749306",
+        "https://cdn.shopify.com/s/files/1/0083/2497/2599/files/Luce_pear-cut_crystal_drop_earrings_gold_Luce_pear-cut_crystal_pendant_necklace_gold_056f7315-2fbd-4d76-9823-3e6d0e9e2a28.jpg?v=1775749306",
+        "https://cdn.shopify.com/s/files/1/0083/2497/2599/files/Luce_pear-cut_crystal_drop_earrings_gold.jpg?v=1775749306"
+      ],
+      "tryOnImage": "/demos-images/liberty-in-love/luce-pear-cut-crystal-earrings-and-necklace-set-gold.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

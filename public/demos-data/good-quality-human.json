@@ -1,0 +1,27 @@
+{
+  "slug": "good-quality-human",
+  "brandName": "Good Quality Human",
+  "brandDomain": "goodqualityhuman.com",
+  "generatedOn": "2026-05-12",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "DREAM BIG BROWN CAMO TEE",
+      "handle": "good-quality-human-camo-tee-los-angeles",
+      "price": "£69.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0537/1858/1422/files/dream-big-brown-camo-tee-1208650.jpg?v=1769782088",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0537/1858/1422/files/dream-big-brown-camo-tee-1208650.jpg?v=1769782088",
+        "https://cdn.shopify.com/s/files/1/0537/1858/1422/files/dream-big-brown-camo-tee-9059814.jpg?v=1769782088"
+      ],
+      "tryOnImage": "/demos-images/good-quality-human/good-quality-human-camo-tee-los-angeles.jpg",
+      "modelGender": "unisex",
+      "modelName": "sasha",
+      "customerImages": {
+        "face": "/demo-models/sasha/face.png",
+        "body": "/demo-models/sasha/body.png"
+      }
+    }
+  ]
+}
