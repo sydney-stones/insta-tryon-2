@@ -43,6 +43,7 @@ function loadOverrides() {
 const STATE_FILE = path.join(ROOT, 'scripts', '.demo-gen-state.json');
 const MANIFEST_DIR = path.join(ROOT, 'public', 'demos-data');
 const IMAGES_DIR = path.join(ROOT, 'public', 'demos-images');
+const APPROVALS_FILE = path.join(MANIFEST_DIR, 'approvals.json');
 
 const MODELS = {
   women: [
@@ -217,10 +218,9 @@ function fileToBase64(p) {
 }
 
 // ─── Step 5: Gemini try-on generation ─────────────────────────────────────────
-// NOTE: only 1 product image — multi-image inputs confuse the model.
 async function geminiTryOn(productImageUrls, model) {
   const productImages = [];
-  for (const u of productImageUrls.slice(0, 1)) {
+  for (const u of productImageUrls.slice(0, 3)) {
     const img = await fetchImageBase64(u);
     if (img) productImages.push(img);
   }
@@ -516,6 +516,13 @@ function applyOverrides(state) {
     if (fs.existsSync(mf)) fs.unlinkSync(mf);
     const id = path.join(IMAGES_DIR, slug);
     if (fs.existsSync(id)) fs.rmSync(id, { recursive: true, force: true });
+  }
+
+  // Remove purged slugs from approvals.json (redos need re-review; removes are gone)
+  if (fs.existsSync(APPROVALS_FILE)) {
+    const approvals = JSON.parse(fs.readFileSync(APPROVALS_FILE, 'utf8'));
+    for (const slug of purge) delete approvals[slug];
+    fs.writeFileSync(APPROVALS_FILE, JSON.stringify(approvals, null, 2));
   }
 
   // Scrub CSVs

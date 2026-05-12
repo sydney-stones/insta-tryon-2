@@ -251,10 +251,14 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
   }, []);
 
   useEffect(() => {
-    fetch('/api/approvals')
-      .then(r => r.ok ? r.json() : {})
-      .then((data: Record<string, 'approved' | 'rejected'>) => setApprovals(data))
-      .catch(() => {});
+    // Load static approvals.json first (permanent, committed to git)
+    // then merge any KV updates on top (cross-device real-time sync)
+    Promise.all([
+      fetch('/demos-data/approvals.json').then(r => r.ok ? r.json() : {}).catch(() => ({})),
+      fetch('/api/approvals').then(r => r.ok ? r.json() : {}).catch(() => ({})),
+    ]).then(([staticApprovals, kvApprovals]) => {
+      setApprovals({ ...staticApprovals, ...kvApprovals });
+    });
   }, []);
 
   const updateApproval = (slug: string, state: 'approved' | 'rejected' | 'pending') => {
