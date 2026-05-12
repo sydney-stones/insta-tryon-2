@@ -233,16 +233,13 @@ interface AdminDemoDirectoryProps {
   onLogout: () => void;
 }
 
-const APPROVAL_STORAGE_KEY = 'rfAutoDemoApprovals';
+const ADMIN_TOKEN_KEY = 'adminToken';
 
 const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogout }) => {
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | DemoBrandGroup['status']>('all');
   const [autoIndex, setAutoIndex] = useState<AutoDemoIndex | null>(null);
-  const [approvals, setApprovals] = useState<Record<string, 'approved' | 'rejected'>>(() => {
-    if (typeof window === 'undefined') return {};
-    try { return JSON.parse(localStorage.getItem(APPROVAL_STORAGE_KEY) || '{}'); } catch { return {}; }
-  });
+  const [approvals, setApprovals] = useState<Record<string, 'approved' | 'rejected'>>({});
   const [autoFilter, setAutoFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('all');
   const origin = typeof window !== 'undefined' ? window.location.origin : '';
 
@@ -253,13 +250,25 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
       .catch(() => setAutoIndex(null));
   }, []);
 
+  useEffect(() => {
+    fetch('/api/approvals')
+      .then(r => r.ok ? r.json() : {})
+      .then((data: Record<string, 'approved' | 'rejected'>) => setApprovals(data))
+      .catch(() => {});
+  }, []);
+
   const updateApproval = (slug: string, state: 'approved' | 'rejected' | 'pending') => {
     setApprovals(prev => {
       const next = { ...prev };
       if (state === 'pending') delete next[slug]; else next[slug] = state;
-      localStorage.setItem(APPROVAL_STORAGE_KEY, JSON.stringify(next));
       return next;
     });
+    const token = typeof window !== 'undefined' ? sessionStorage.getItem(ADMIN_TOKEN_KEY) : null;
+    fetch('/api/approvals', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...(token ? { 'x-admin-token': token } : {}) },
+      body: JSON.stringify({ slug, state }),
+    }).catch(() => {});
   };
 
   const autoDemos = autoIndex?.demos || [];

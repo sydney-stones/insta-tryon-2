@@ -46,8 +46,7 @@ const IMAGES_DIR = path.join(ROOT, 'public', 'demos-images');
 
 const MODELS = {
   women: [
-    { name: 'ebba',  face: path.join(ROOT, 'public/demo-models/ebba/face.png'),  body: path.join(ROOT, 'public/demo-models/ebba/body.png')  },
-    { name: 'sasha', face: path.join(ROOT, 'public/demo-models/sasha/face.png'), body: path.join(ROOT, 'public/demo-models/sasha/body.png') },
+    { name: 'ebba', face: path.join(ROOT, 'public/demo-models/ebba/face.png'), body: path.join(ROOT, 'public/demo-models/ebba/body.png') },
   ],
   men: [
     { name: 'lukas', face: path.join(ROOT, 'public/demo-models/lukas/face.png'), body: path.join(ROOT, 'public/demo-models/lukas/body.png') },
@@ -292,13 +291,16 @@ async function processBrand(lead) {
   const picks = selectProducts(inv.products, cls.gender);
   if (picks.length < 1) return { status: 'skipped', reason: 'no suitable products', slug, gender: cls.gender };
 
-  // Per-brand overrides (forceGender, forceModel)
+  // Per-brand overrides (forceGender, forceModel, skipProductHandle)
   const ov = OVERRIDES.redo[slug] || {};
+  const skipHandle = ov.skipProductHandle;
+  const filteredPicks = skipHandle ? picks.filter(p => p.handle !== skipHandle) : picks;
+  if (filteredPicks.length < 1) return { status: 'skipped', reason: 'no products after skipProductHandle filter', slug, gender: cls.gender };
   const forcedGender = ov.forceGender;
   const forcedModelName = ov.forceModel;
 
   const tryOns = [];
-  for (const p of picks) {
+  for (const p of filteredPicks) {
     const imgUrls = (p.images || []).map(im => im.src).filter(Boolean).slice(0, 3);
     if (imgUrls.length === 0) continue;
     const effectiveGender = forcedGender || p._gender;
