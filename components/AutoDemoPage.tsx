@@ -109,10 +109,13 @@ const SparkleIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 // ─── Rendered Fits widget (matched to FRAME_HEIGHT, larger model thumbs) ──────
 
-const RFWidget: React.FC<{ tryOn: TryOn; highlightSubmit?: boolean; heightPx?: number }> = ({ tryOn, highlightSubmit = false, heightPx = FRAME_HEIGHT }) => {
+const RFWidget: React.FC<{ tryOn: TryOn; highlightSubmit?: boolean; heightPx?: number }> = ({ tryOn, highlightSubmit = false, heightPx }) => {
   const arimo = { fontFamily: 'Arimo, sans-serif' } as React.CSSProperties;
+  // If heightPx is provided, use fixed height; otherwise size to content (mobile-friendly).
+  const style: React.CSSProperties = { maxWidth: 400 };
+  if (heightPx) style.height = heightPx;
   return (
-    <div className="w-full bg-white border border-neutral-200 shadow-sm overflow-hidden flex flex-col" style={{ maxWidth: 400, height: heightPx }}>
+    <div className="w-full bg-white border border-neutral-200 shadow-sm overflow-hidden flex flex-col mx-auto" style={style}>
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 shrink-0">
         <div className="flex items-center gap-1.5 text-sm text-neutral-700" style={arimo}>
@@ -206,21 +209,32 @@ const GettingDressedFrame: React.FC = () => {
   );
 };
 
-// ─── Customer photo with hover-zoom popover ───────────────────────────────────
+// ─── Customer photo with tap/hover-zoom popover ───────────────────────────────
 
-const CustomerPhoto: React.FC<{ src: string; label: string }> = ({ src, label }) => (
-  <div className="relative group">
-    <div className="w-20 h-28 bg-white border border-neutral-200 overflow-hidden cursor-zoom-in">
-      <img src={src} alt={label} className="w-full h-full object-cover" />
+const CustomerPhoto: React.FC<{ src: string; label: string }> = ({ src, label }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(v => !v)}
+        onBlur={() => setOpen(false)}
+        className="w-20 h-28 bg-white border border-neutral-200 overflow-hidden cursor-zoom-in block"
+        aria-label={`Enlarge ${label}`}
+      >
+        <img src={src} alt={label} className="w-full h-full object-cover" />
+      </button>
+      {open && (
+        <div className="absolute z-50 left-1/2 -translate-x-1/2 top-full mt-2 w-56 shadow-2xl">
+          <div className="bg-white border border-neutral-200 overflow-hidden">
+            <img src={src} alt="" className="w-full h-auto object-cover" />
+            <div className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 text-center py-2 bg-neutral-50" style={{ fontFamily: 'Arimo, sans-serif' }}>{label}</div>
+          </div>
+        </div>
+      )}
     </div>
-    <div className="absolute z-50 left-1/2 -translate-x-1/2 top-full mt-2 w-56 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 shadow-2xl">
-      <div className="bg-white border border-neutral-200 overflow-hidden">
-        <img src={src} alt="" className="w-full h-auto object-cover" />
-        <div className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 text-center py-2 bg-neutral-50" style={{ fontFamily: 'Arimo, sans-serif' }}>{label}</div>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 // ─── Workflow modal ───────────────────────────────────────────────────────────
 
@@ -246,38 +260,35 @@ const WorkflowModal: React.FC<{ tryOn: TryOn; brandName: string; onClose: () => 
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8"
+      className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-2 sm:p-8"
       onClick={onClose}
     >
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
         transition={{ duration: 0.25 }}
-        className="relative w-full max-w-5xl bg-white shadow-2xl overflow-hidden"
+        className={`relative w-full max-w-5xl bg-white shadow-2xl overflow-hidden flex flex-col sm:block h-[96vh] max-h-[96vh] sm:max-h-[92vh] ${
+          showResult ? 'sm:h-[min(92vh,760px)]' : 'sm:h-auto sm:aspect-[16/10]'
+        }`}
         onClick={e => e.stopPropagation()}
-        style={{
-          height: showResult ? 'min(92vh, 760px)' : undefined,
-          aspectRatio: showResult ? undefined : '16/10',
-          maxHeight: '92vh',
-        }}
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-[60] w-8 h-8 flex items-center justify-center bg-white/90 hover:bg-white text-neutral-700 text-lg leading-none"
+          className="absolute top-3 right-3 z-[60] w-9 h-9 flex items-center justify-center bg-white/95 hover:bg-white text-neutral-700 text-xl leading-none shadow-md"
           aria-label="Close demo"
         >×</button>
 
-        {/* Mock PDP */}
-        <div className="absolute inset-0 grid grid-cols-2 bg-white">
-          <div className="relative bg-neutral-50 flex items-center justify-center p-6">
-            <img src={tryOn.productImage} alt="" className="w-full h-full object-contain" />
+        {/* Mock PDP — stacked on mobile, side-by-side on desktop */}
+        <div className="sm:absolute sm:inset-0 grid grid-cols-1 sm:grid-cols-2 bg-white flex-1 sm:flex-none overflow-y-auto sm:overflow-hidden">
+          <div className="relative bg-neutral-50 flex items-center justify-center p-4 sm:p-6 min-h-[40vh] sm:min-h-0">
+            <img src={tryOn.productImage} alt="" className="w-full h-full max-h-[40vh] sm:max-h-none object-contain" />
           </div>
-          <div className="p-8 sm:p-10 flex flex-col justify-center">
+          <div className="p-6 sm:p-10 flex flex-col justify-center">
             <div className="text-[10px] tracking-[0.25em] uppercase text-neutral-500 mb-2" style={arimo}>{brandName}</div>
-            <h2 className="text-2xl sm:text-3xl leading-tight mb-3" style={{ ...arimo, fontWeight: 600 }}>{tryOn.title}</h2>
-            <div className="text-lg text-neutral-800 mb-6" style={arimo}>{tryOn.price || '£89.00'}</div>
-            <div className="flex gap-2 mb-6">
+            <h2 className="text-xl sm:text-3xl leading-tight mb-3" style={{ ...arimo, fontWeight: 600 }}>{tryOn.title}</h2>
+            <div className="text-base sm:text-lg text-neutral-800 mb-4 sm:mb-6" style={arimo}>{tryOn.price || '£89.00'}</div>
+            <div className="flex gap-2 mb-4 sm:mb-6">
               {['XS','S','M','L'].map(sz => (
-                <div key={sz} className={`w-10 h-10 flex items-center justify-center border text-xs ${sz==='M'?'border-neutral-900':'border-neutral-300 text-neutral-500'}`} style={arimo}>{sz}</div>
+                <div key={sz} className={`w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center border text-xs ${sz==='M'?'border-neutral-900':'border-neutral-300 text-neutral-500'}`} style={arimo}>{sz}</div>
               ))}
             </div>
             <button className="w-full py-3 bg-neutral-900 text-white text-xs tracking-[0.2em] uppercase mb-3" style={arimo}>
@@ -299,18 +310,19 @@ const WorkflowModal: React.FC<{ tryOn: TryOn; brandName: string; onClose: () => 
           </div>
         </div>
 
-        {/* Widget overlay */}
+        {/* Widget overlay — scrollable on mobile so submit button is reachable */}
         <AnimatePresence>
           {widgetVisible && (
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/40 flex items-center justify-center p-6"
+              className="absolute inset-0 bg-black/40 flex items-start sm:items-center justify-center p-3 sm:p-6 overflow-y-auto"
             >
               <motion.div
                 initial={{ y: 16, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.35 }}
+                className="my-auto w-full max-w-[400px]"
               >
-                <RFWidget tryOn={tryOn} highlightSubmit={state === 'click_submit'} heightPx={520} />
+                <RFWidget tryOn={tryOn} highlightSubmit={state === 'click_submit'} />
               </motion.div>
             </motion.div>
           )}
@@ -325,15 +337,14 @@ const WorkflowModal: React.FC<{ tryOn: TryOn; brandName: string; onClose: () => 
           )}
         </AnimatePresence>
 
-        {/* Result */}
+        {/* Result — stacks on mobile, side-by-side on desktop */}
         <AnimatePresence>
           {showResult && (
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-              className="absolute inset-0 bg-white flex"
+              className="absolute inset-0 bg-white flex flex-col sm:flex-row overflow-y-auto sm:overflow-hidden"
             >
-              {/* Image side — flex-grows to fill, image scales without crop */}
-              <div className="flex-1 bg-neutral-50 flex items-center justify-center p-4 min-w-0 min-h-0 overflow-hidden">
+              <div className="flex-shrink-0 sm:flex-1 bg-neutral-50 flex items-center justify-center p-4 min-w-0 min-h-[40vh] sm:min-h-0 overflow-hidden">
                 <img
                   src={tryOn.tryOnImage}
                   alt=""
@@ -341,32 +352,31 @@ const WorkflowModal: React.FC<{ tryOn: TryOn; brandName: string; onClose: () => 
                   style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }}
                 />
               </div>
-              {/* Text side — fixed width, always fully visible */}
-              <div className="w-[340px] shrink-0 p-6 flex flex-col h-full overflow-y-auto">
+              <div className="w-full sm:w-[340px] sm:shrink-0 p-5 sm:p-6 flex flex-col sm:h-full sm:overflow-y-auto">
                 <div className="text-[10px] tracking-[0.25em] uppercase mb-2 shrink-0" style={{ color: ACCENT, ...arimo }}>Your try-on</div>
-                <h3 className="text-xl leading-tight mb-3 shrink-0" style={{ ...arimo, fontWeight: 600 }}>{tryOn.title}</h3>
+                <h3 className="text-lg sm:text-xl leading-tight mb-3 shrink-0" style={{ ...arimo, fontWeight: 600 }}>{tryOn.title}</h3>
                 <p className="text-[13px] text-neutral-700 leading-relaxed mb-5 shrink-0" style={arimo}>
                   Allow customers to see themselves wearing your products before they purchase, within 10–20s.
                   Never redirected off your site. Simple install and setup.
                 </p>
                 <div className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-2 shrink-0" style={arimo}>
-                  Customer photos — hover to enlarge
+                  Customer photos — tap to enlarge
                 </div>
                 <div className="flex gap-3 mb-5 shrink-0">
                   <CustomerPhoto src={mv(tryOn.customerImages.face)} label="Face photo" />
                   <CustomerPhoto src={mv(tryOn.customerImages.body)} label="Body photo" />
                 </div>
-                <div className="flex flex-col gap-2 mt-auto pt-3 shrink-0">
+                <div className="flex flex-col gap-2 sm:mt-auto pt-3 shrink-0">
                   <a
                     href={SHOPIFY_APP_STORE_URL} target="_blank" rel="noopener noreferrer"
-                    className="block w-full text-center px-4 py-2.5 text-white text-[10px] tracking-[0.2em] uppercase transition-opacity hover:opacity-90"
+                    className="block w-full text-center px-4 py-3 text-white text-[11px] tracking-[0.2em] uppercase transition-opacity hover:opacity-90"
                     style={{ backgroundColor: ACCENT, ...arimo }}
                   >
-                    Install on your store
+                    Install on Shopify
                   </a>
                   <a
                     href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
-                    className="block w-full text-center px-4 py-2.5 border text-[10px] tracking-[0.2em] uppercase"
+                    className="block w-full text-center px-4 py-3 border text-[11px] tracking-[0.2em] uppercase"
                     style={{ borderColor: ACCENT, color: ACCENT, ...arimo }}
                   >
                     Book a 15-minute call
@@ -384,7 +394,9 @@ const WorkflowModal: React.FC<{ tryOn: TryOn; brandName: string; onClose: () => 
           )}
         </AnimatePresence>
 
-        <Cursor x={`${cursorPos.x}%`} y={`${cursorPos.y}%`} visible={cursorVisible} clicking={cursorClicking} />
+        <div className="hidden sm:block">
+          <Cursor x={`${cursorPos.x}%`} y={`${cursorPos.y}%`} visible={cursorVisible} clicking={cursorClicking} />
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -415,6 +427,24 @@ const AutoDemoPage: React.FC = () => {
   const [notFound, setNotFound] = useState(false);
   const [activeDemo, setActiveDemo] = useState<TryOn | null>(null);
   const [hoverProduct, setHoverProduct] = useState(false);
+  const [showTryOn, setShowTryOn] = useState(false); // tap-toggle for touch devices
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia('(hover: none)');
+    setIsTouch(mql.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsTouch(e.matches);
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
+
+  // On touch devices, auto-cycle through product/try-on every 3s so users see
+  // both without needing to know to tap.
+  useEffect(() => {
+    if (!isTouch || activeDemo) return;
+    const interval = setInterval(() => setShowTryOn(v => !v), 3000);
+    return () => clearInterval(interval);
+  }, [isTouch, activeDemo]);
 
   useEffect(() => {
     if (!slug) { setNotFound(true); setLoading(false); return; }
@@ -474,33 +504,49 @@ const AutoDemoPage: React.FC = () => {
           </div>
         </motion.header>
 
-        {/* Demo: product (left) + RF widget (right) — height-matched */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start justify-center mb-6">
+        {/* Demo: product (left) + RF widget (right) — height-matched on desktop, stacked on mobile.
+            On touch devices the product image auto-cycles between Product / Try-on result;
+            on desktop, hover preview is preserved. Tapping the card opens the full modal. */}
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-center lg:items-start justify-center mb-6">
           <motion.div
             initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative bg-neutral-100 overflow-hidden cursor-pointer w-full max-w-[480px]"
-            style={{ height: FRAME_HEIGHT }}
-            onClick={() => setActiveDemo(t)}
-            onMouseEnter={() => setHoverProduct(true)}
-            onMouseLeave={() => setHoverProduct(false)}
+            className="relative bg-neutral-100 overflow-hidden cursor-pointer w-full max-w-[480px] aspect-[3/4] sm:aspect-auto"
+            style={{ height: isTouch ? undefined : FRAME_HEIGHT }}
+            onClick={() => {
+              if (isTouch) setShowTryOn(v => !v);
+              else setActiveDemo(t);
+            }}
+            onMouseEnter={() => !isTouch && setHoverProduct(true)}
+            onMouseLeave={() => !isTouch && setHoverProduct(false)}
           >
-            <img src={t.productImage} alt="" className={`absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 ${hoverProduct ? 'opacity-0' : 'opacity-100'}`} />
-            <img src={t.tryOnImage} alt="" className={`absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 ${hoverProduct ? 'opacity-100' : 'opacity-0'}`} />
-            <div className="absolute top-3 left-3 px-2.5 py-1 bg-white/95 text-[10px] tracking-[0.2em] uppercase text-neutral-700" style={arimo}>
-              {hoverProduct ? 'Try-on result' : 'Product'}
-            </div>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 transition-opacity duration-300" style={{ opacity: hoverProduct ? 1 : 0.85 }}>
-              <div className="px-5 py-2.5 text-white text-[10px] tracking-[0.25em] uppercase flex items-center gap-2 shadow-lg" style={{ ...arimo, backgroundColor: ACCENT }}>
-                <SparkleIcon /> See full demo
-              </div>
-            </div>
+            {(() => {
+              const showResult = isTouch ? showTryOn : hoverProduct;
+              return (
+                <>
+                  <img src={t.productImage} alt="" className={`absolute inset-0 w-full h-full object-contain p-4 sm:p-6 transition-opacity duration-500 ${showResult ? 'opacity-0' : 'opacity-100'}`} />
+                  <img src={t.tryOnImage} alt="" className={`absolute inset-0 w-full h-full object-contain p-4 sm:p-6 transition-opacity duration-500 ${showResult ? 'opacity-100' : 'opacity-0'}`} />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 bg-white/95 text-[10px] tracking-[0.2em] uppercase text-neutral-700" style={arimo}>
+                    {showResult ? 'Try-on result' : 'Product'}
+                  </div>
+                </>
+              );
+            })()}
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); setActiveDemo(t); }}
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2.5 text-white text-[10px] tracking-[0.25em] uppercase flex items-center gap-2 shadow-lg"
+              style={{ ...arimo, backgroundColor: ACCENT }}
+            >
+              <SparkleIcon /> See full demo
+            </button>
           </motion.div>
 
+          {/* Right-side widget — hidden on mobile (the modal flow shows it) */}
           <motion.div
             initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="cursor-pointer"
+            className="cursor-pointer hidden lg:block"
             onClick={() => setActiveDemo(t)}
           >
             <RFWidget tryOn={t} heightPx={FRAME_HEIGHT} />
@@ -510,8 +556,10 @@ const AutoDemoPage: React.FC = () => {
           </motion.div>
         </div>
 
-        <p className="text-center text-sm text-neutral-500 mb-16 sm:mb-20" style={arimo}>
-          Hover the product to peek the result. Tap either side to see the full customer workflow.
+        <p className="text-center text-sm text-neutral-500 mb-12 sm:mb-20 px-4" style={arimo}>
+          {isTouch
+            ? 'Tap the image to flip between product and try-on. Tap "See full demo" for the workflow.'
+            : 'Hover the product to peek the result. Tap either side to see the full customer workflow.'}
         </p>
 
         <motion.div
@@ -531,13 +579,40 @@ const AutoDemoPage: React.FC = () => {
           <StatCard value="↑↑" label="Higher AOV & LTV" sub="Try-on encourages bigger baskets and brings customers back more often." delay={0.2} />
         </div>
 
-        <div className="text-center mb-20">
-          <a href={HOME_URL} target="_blank" rel="noopener noreferrer"
-             className="inline-flex items-center gap-2 text-sm tracking-wider uppercase underline-offset-4 hover:underline"
-             style={{ ...arimo, color: ACCENT }}>
-            Learn more →
-          </a>
-        </div>
+        {/* Bottom CTA block — primary so mobile users don't have to scroll back up */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5 }}
+          className="mb-16 sm:mb-20"
+        >
+          <div className="text-center mb-6">
+            <h3 className="text-2xl sm:text-3xl tracking-tight mb-2" style={{ ...arimo, fontWeight: 600 }}>
+              Ready to bring this to {manifest.brandName}?
+            </h3>
+            <p className="text-sm sm:text-base text-neutral-600" style={arimo}>
+              Install on Shopify in minutes, or book a quick call to chat through it.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto sm:max-w-none">
+            <a href={SHOPIFY_APP_STORE_URL} target="_blank" rel="noopener noreferrer"
+               className="inline-flex items-center justify-center px-7 py-3.5 text-white text-sm tracking-wider uppercase transition-opacity hover:opacity-90"
+               style={{ ...arimo, backgroundColor: ACCENT }}>
+              Install on Shopify
+            </a>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
+               className="inline-flex items-center justify-center px-7 py-3.5 border text-sm tracking-wider uppercase transition-colors"
+               style={{ ...arimo, borderColor: ACCENT, color: ACCENT }}>
+              Book a 15-minute call
+            </a>
+          </div>
+          <div className="text-center mt-6">
+            <a href={HOME_URL} target="_blank" rel="noopener noreferrer"
+               className="inline-flex items-center gap-2 text-xs tracking-wider uppercase underline-offset-4 hover:underline"
+               style={{ ...arimo, color: ACCENT }}>
+              Learn more →
+            </a>
+          </div>
+        </motion.div>
 
         <footer className="pt-8 border-t border-neutral-200 text-center text-xs text-neutral-500 leading-relaxed" style={arimo}>
           Generated for {manifest.brandName} on {manifest.generatedOn}.
