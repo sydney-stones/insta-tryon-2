@@ -1,0 +1,28 @@
+{
+  "slug": "gymnation",
+  "brandName": "Gymnation",
+  "brandDomain": "gymnationwear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Ribbed Crop Short Sleeve",
+      "handle": "ribbed-crop-short-sleeve",
+      "price": "£46.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0431/4375/7988/files/Gymnation-Women-Ribbed-Crop-Short-Sleeve-PowderPink-W84-Watermark.jpg?v=1774864240",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0431/4375/7988/files/Gymnation-Women-Ribbed-Crop-Short-Sleeve-PowderPink-W84-Watermark.jpg?v=1774864240",
+        "https://cdn.shopify.com/s/files/1/0431/4375/7988/files/Gymnation-Women-Ribbed-Crop-Short-Sleeve-PowderPink-W84-2.jpg?v=1773759129",
+        "https://cdn.shopify.com/s/files/1/0431/4375/7988/files/Gymnation-Women-Ribbed-Crop-Short-Sleeve-PowderPink-W84-3.jpg?v=1773759124"
+      ],
+      "tryOnImage": "/demos-images/gymnation/ribbed-crop-short-sleeve.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

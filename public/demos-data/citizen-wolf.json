@@ -1,0 +1,28 @@
+{
+  "slug": "citizen-wolf",
+  "brandName": "Citizen Wolf",
+  "brandDomain": "citizenwolf.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Zero Waste Merino Jumper",
+      "handle": "brood-zero-waste-merino-jumper-womens",
+      "price": "£180.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1066/1832/files/F-LE-BROOD-MER-NAVY_01_FRONT.jpg?v=1777612895",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1066/1832/files/F-LE-BROOD-MER-NAVY_01_FRONT.jpg?v=1777612895",
+        "https://cdn.shopify.com/s/files/1/1066/1832/files/F-LE-BROOD-MER-NAVY_02_FABRIC.jpg?v=1777612894",
+        "https://cdn.shopify.com/s/files/1/1066/1832/files/F-LE-BROOD-MER-NAVY_03_BACK.jpg?v=1777612894"
+      ],
+      "tryOnImage": "/demos-images/citizen-wolf/brood-zero-waste-merino-jumper-womens.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

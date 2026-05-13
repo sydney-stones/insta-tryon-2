@@ -1,0 +1,28 @@
+{
+  "slug": "distinctively-hers",
+  "brandName": "Distinctively Hers",
+  "brandDomain": "distinctivelyhers.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Gabriella Gold Set of 2 Huggie Earrings",
+      "handle": "gabriella-gold-set-of-2-huggie-earrings",
+      "price": "£85.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0391/5581/files/kendra-scott-jewelry-earrings-gabriella-gold-set-of-2-huggie-earrings-gabriella-gold-set-of-2-huggie-earrings-1238104766.jpg?v=1778616554",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0391/5581/files/kendra-scott-jewelry-earrings-gabriella-gold-set-of-2-huggie-earrings-gabriella-gold-set-of-2-huggie-earrings-1238104766.jpg?v=1778616554",
+        "https://cdn.shopify.com/s/files/1/0391/5581/files/kendra-scott-jewelry-earrings-gabriella-gold-set-of-2-huggie-earrings-gabriella-gold-set-of-2-huggie-earrings-1238104768.jpg?v=1778616520",
+        "https://cdn.shopify.com/s/files/1/0391/5581/files/kendra-scott-jewelry-earrings-gabriella-gold-set-of-2-huggie-earrings-gabriella-gold-set-of-2-huggie-earrings-1238104767.jpg?v=1778616493"
+      ],
+      "tryOnImage": "/demos-images/distinctively-hers/gabriella-gold-set-of-2-huggie-earrings.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

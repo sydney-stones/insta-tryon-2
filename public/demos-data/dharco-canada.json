@@ -1,0 +1,28 @@
+{
+  "slug": "dharco-canada",
+  "brandName": "DHaRCO CANADA",
+  "brandDomain": "dharco.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Womens Short Sleeve Jersey | Matina",
+      "handle": "womens-ss-jersey-matina",
+      "price": "£39.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/1527/9443/files/0001_DHaRCO_20_WOMENS_20MTB_20JERSEYS_MATINA_203.jpg?v=1744681897",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1527/9443/files/0001_DHaRCO_20_WOMENS_20MTB_20JERSEYS_MATINA_203.jpg?v=1744681897",
+        "https://cdn.shopify.com/s/files/1/1527/9443/files/0002_DHaRCO_20_WOMENS_20MTB_20JERSEYS_MATINA2.jpg?v=1744819158",
+        "https://cdn.shopify.com/s/files/1/1527/9443/files/0004_DHaRCO_WOMENSMTBJERSEYS_MATINA1.jpg?v=1744819158"
+      ],
+      "tryOnImage": "/demos-images/dharco-canada/womens-ss-jersey-matina.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

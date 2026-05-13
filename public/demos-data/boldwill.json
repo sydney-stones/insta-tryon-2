@@ -1,0 +1,28 @@
+{
+  "slug": "boldwill",
+  "brandName": "Boldwill",
+  "brandDomain": "boldwill.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "[PF39.Wood] T-Shirt",
+      "handle": "pf39-wood-t-shirt-mr",
+      "price": "£57.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2265/1137/files/PF39-MR-packshot-HQ6.jpg?v=1775053846",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2265/1137/files/PF39-MR-packshot-HQ6.jpg?v=1775053846",
+        "https://cdn.shopify.com/s/files/1/2265/1137/files/PF39-MR-header-front-2.jpg?v=1775542780",
+        "https://cdn.shopify.com/s/files/1/2265/1137/files/PF39-MR-header-back_93fb5d7b-227c-4076-8ef0-2b3c55a35916.jpg?v=1775542780"
+      ],
+      "tryOnImage": "/demos-images/boldwill/pf39-wood-t-shirt-mr.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "the-brubaker",
+  "brandName": "The Brubaker",
+  "brandDomain": "thebrubaker.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Bermuda Lino Azul Marino",
+      "handle": "the-bermuda-lino-azul-marino",
+      "price": "£61.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1514/1888/files/THEBRUBAKER1582web.jpg?v=1771851596",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1514/1888/files/THEBRUBAKER1582web.jpg?v=1771851596",
+        "https://cdn.shopify.com/s/files/1/1514/1888/files/THEBRUBAKER1590web.jpg?v=1771851586",
+        "https://cdn.shopify.com/s/files/1/1514/1888/files/THEBRUBAKER1589web.jpg?v=1771851572"
+      ],
+      "tryOnImage": "/demos-images/the-brubaker/the-bermuda-lino-azul-marino.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

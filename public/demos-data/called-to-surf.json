@@ -1,0 +1,28 @@
+{
+  "slug": "called-to-surf",
+  "brandName": "Called to Surf",
+  "brandDomain": "calledtosurf.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "The Nora Dress",
+      "handle": "the-nora-modest-dress",
+      "price": "£75.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/3000/9920/files/The_Nora_Dress_in_cream_and_brown_polka_dot_for_women_and_teen_girls..jpg?v=1778093064",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/3000/9920/files/The_Nora_Dress_in_cream_and_brown_polka_dot_for_women_and_teen_girls..jpg?v=1778093064",
+        "https://cdn.shopify.com/s/files/1/3000/9920/files/Closeviewofateengirlwearingacreamandbrownpolkadotdresswithsidepockets_spacedoutsmockedrowsonthebodice..jpg?v=1778093095",
+        "https://cdn.shopify.com/s/files/1/3000/9920/files/Teengirlwearingacreamandbrownpolkadotmididresswithmultiplesmockedrowsonthebodiceandaroundneckline..jpg?v=1778093119"
+      ],
+      "tryOnImage": "/demos-images/called-to-surf/the-nora-modest-dress.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

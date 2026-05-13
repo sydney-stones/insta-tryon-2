@@ -2,21 +2,21 @@
   "slug": "crewroom",
   "brandName": "Crewroom",
   "brandDomain": "crewroom.co.uk",
-  "generatedOn": "2026-05-12",
+  "generatedOn": "2026-05-13",
   "genderClassification": "both",
   "classificationConfidence": "high",
   "tryOns": [
     {
-      "title": "The North West Sweatpant (Women's)",
-      "handle": "the-north-west-sweatpant-womens-double-black",
-      "price": "£20.00",
-      "productImage": "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0764W-B-The-North-West-Sweat-Pant-Womens-Double-Black-1.jpg?v=1753274055",
+      "title": "Women's UV Lightweight T-Shirt",
+      "handle": "womens-uv-lightweight-t-shirt-white",
+      "price": "£39.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0766W-W-Womens-UV-Lightweight-T-Shirt-White-1.jpg?v=1751540681",
       "productImages": [
-        "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0764W-B-The-North-West-Sweat-Pant-Womens-Double-Black-1.jpg?v=1753274055",
-        "https://cdn.shopify.com/s/files/1/2596/2954/files/Sweatpant_1.jpg?v=1756301374",
-        "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0764W-B-The-North-West-Sweat-Pant-Womens-Double-Black-4.jpg?v=1756283124"
+        "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0766W-W-Womens-UV-Lightweight-T-Shirt-White-1.jpg?v=1751540681",
+        "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0766W-W-UV-lightweight-t-shirt-womens-white.jpg?v=1755665636",
+        "https://cdn.shopify.com/s/files/1/2596/2954/files/CR0766W-W-Womens-UV-Lightweight-T-Shirt-White-3.jpg?v=1755597929"
       ],
-      "tryOnImage": "/demos-images/crewroom/the-north-west-sweatpant-womens-double-black.jpg",
+      "tryOnImage": "/demos-images/crewroom/womens-uv-lightweight-t-shirt-white.jpg",
       "modelGender": "women",
       "modelName": "ebba",
       "customerImages": {

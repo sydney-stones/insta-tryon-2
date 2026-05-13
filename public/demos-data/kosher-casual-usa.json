@@ -1,0 +1,28 @@
+{
+  "slug": "kosher-casual-usa",
+  "brandName": "Kosher Casual USA",
+  "brandDomain": "koshercasual.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Abstract Style Tunic & Skirt Set",
+      "handle": "abstract-style-tunic-skirt-set",
+      "price": "£79.80",
+      "productImage": "https://cdn.shopify.com/s/files/1/0658/3808/8331/files/1241_BLACK_WHITE_GOLD_BRUSHED__and_1937_skirt_front.png?v=1747224053",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0658/3808/8331/files/1241_BLACK_WHITE_GOLD_BRUSHED__and_1937_skirt_front.png?v=1747224053",
+        "https://cdn.shopify.com/s/files/1/0658/3808/8331/files/Black_White_Gold_Brushed.png?v=1747224053",
+        "https://cdn.shopify.com/s/files/1/0658/3808/8331/files/1241_BLACK_WHITE_GOLD_BRUSHED_front.jpg?v=1747224053"
+      ],
+      "tryOnImage": "/demos-images/kosher-casual-usa/abstract-style-tunic-skirt-set.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

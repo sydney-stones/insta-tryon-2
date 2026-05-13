@@ -1,0 +1,28 @@
+{
+  "slug": "craft-sportswear-na",
+  "brandName": "Craft Sportswear NA",
+  "brandDomain": "craftsports.us",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Race Rebel Running Singlet - Rivs Rebel",
+      "handle": "womens-race-rebel-running-singlet-rivs-rebel",
+      "price": "£48.74",
+      "productImage": "https://cdn.shopify.com/s/files/1/0022/9530/0155/files/1910036-999000_7f2239fd-558e-4867-9a65-4985f3d032a7.jpg?v=1754424460",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0022/9530/0155/files/1910036-999000_7f2239fd-558e-4867-9a65-4985f3d032a7.jpg?v=1754424460",
+        "https://cdn.shopify.com/s/files/1/0022/9530/0155/files/1910036-999000-Skull_f352c77c-37d5-47a2-b1eb-9068a3574bf7.jpg?v=1754422372",
+        "https://cdn.shopify.com/s/files/1/0022/9530/0155/files/1910036-999000-Rage_2cfef000-36a1-43f2-a86a-6fc1bb3a5433.jpg?v=1754422310"
+      ],
+      "tryOnImage": "/demos-images/craft-sportswear-na/womens-race-rebel-running-singlet-rivs-rebel.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

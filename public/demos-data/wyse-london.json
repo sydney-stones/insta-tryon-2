@@ -1,0 +1,28 @@
+{
+  "slug": "wyse-london",
+  "brandName": "WYSE London",
+  "brandDomain": "wyselondon.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Kelly Dress - Black",
+      "handle": "kelly-dress-black",
+      "price": "£195.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0803/0613/files/KellyDress-Black_002.jpg?v=1777370065",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0803/0613/files/KellyDress-Black_002.jpg?v=1777370065",
+        "https://cdn.shopify.com/s/files/1/0803/0613/files/KellyDress-Black_072.jpg?v=1777370064",
+        "https://cdn.shopify.com/s/files/1/0803/0613/files/KellyDress-Black_134.jpg?v=1777370064"
+      ],
+      "tryOnImage": "/demos-images/wyse-london/kelly-dress-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "story-spark",
+  "brandName": "STORY SPARK",
+  "brandDomain": "storyspark.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Platform Corgi Womens Deep Crewneck T-shirt",
+      "handle": "platform-corgi-womens-deep-crewneck-t-shirt",
+      "price": "£34.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0861/2258/files/platform-corgi-womens-grey-relaxed-crew-graphic-tshirt-1.jpg?v=1763012791",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0861/2258/files/platform-corgi-womens-grey-relaxed-crew-graphic-tshirt-1.jpg?v=1763012791",
+        "https://cdn.shopify.com/s/files/1/0861/2258/files/platform-corgi-womens-grey-relaxed-crew-graphic-tshirt-3.jpg?v=1763012791",
+        "https://cdn.shopify.com/s/files/1/0861/2258/files/platform-corgi-womens-grey-relaxed-crew-graphic-tshirt-2.jpg?v=1763012791"
+      ],
+      "tryOnImage": "/demos-images/story-spark/platform-corgi-womens-deep-crewneck-t-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "bloch-australia",
+  "brandName": "Bloch Australia",
+  "brandDomain": "bloch.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "U55679G - Long Tomboy",
+      "handle": "u55679g-long-tomboy-black",
+      "price": "£64.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0100/8117/3585/files/0122_Bloch_GenNow7_U55679G_BLK-803.jpg?v=1754444143",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0100/8117/3585/files/0122_Bloch_GenNow7_U55679G_BLK-803.jpg?v=1754444143",
+        "https://cdn.shopify.com/s/files/1/0100/8117/3585/files/0126_Bloch_GenNow7_U55679G_BLK-793.jpg?v=1755041228",
+        "https://cdn.shopify.com/s/files/1/0100/8117/3585/files/0123_Bloch_GenNow7_U55679G_BLK-799copy.jpg?v=1755041228"
+      ],
+      "tryOnImage": "/demos-images/bloch-australia/u55679g-long-tomboy-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

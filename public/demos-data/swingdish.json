@@ -1,0 +1,28 @@
+{
+  "slug": "swingdish",
+  "brandName": "SwingDish",
+  "brandDomain": "swingdish.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Heat Black Dress - FINAL SALE",
+      "handle": "heat-black-dress",
+      "price": "£30.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0260/4338/3882/products/heat-black-dress-529127.jpg?v=1627294396",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0260/4338/3882/products/heat-black-dress-529127.jpg?v=1627294396",
+        "https://cdn.shopify.com/s/files/1/0260/4338/3882/products/heat-black-dress-624294.jpg?v=1627294396",
+        "https://cdn.shopify.com/s/files/1/0260/4338/3882/products/heat-black-dress-227968.jpg?v=1627294396"
+      ],
+      "tryOnImage": "/demos-images/swingdish/heat-black-dress.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

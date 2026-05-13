@@ -1,0 +1,27 @@
+{
+  "slug": "fruition-hat-company",
+  "brandName": "Fruition Hat Company",
+  "brandDomain": "fruitionhatcompany.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "BYBT Today Crewneck",
+      "handle": "bybt-today-crewneck",
+      "price": "£77.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0331/2589/2155/files/376AA232-52CD-41DB-9367-23E1C6715EE6.png?v=1763593846",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0331/2589/2155/files/376AA232-52CD-41DB-9367-23E1C6715EE6.png?v=1763593846",
+        "https://cdn.shopify.com/s/files/1/0331/2589/2155/files/DA7CB6BE-2CDA-4C34-98EB-8652E9A8BF93_1.png?v=1763593846"
+      ],
+      "tryOnImage": "/demos-images/fruition-hat-company/bybt-today-crewneck.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "casalina",
+  "brandName": "CASALINA",
+  "brandDomain": "shopcasalina.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Seraphine Dress",
+      "handle": "seraphine-dress",
+      "price": "£358.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0700/6797/8544/files/SeraphineMidiDressWhite_jpg.webp?v=1778615577",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0700/6797/8544/files/SeraphineMidiDressWhite_jpg.webp?v=1778615577",
+        "https://cdn.shopify.com/s/files/1/0700/6797/8544/files/8cc0Cpwp.jpg?v=1778602000",
+        "https://cdn.shopify.com/s/files/1/0700/6797/8544/files/ser_png.webp?v=1778602083"
+      ],
+      "tryOnImage": "/demos-images/casalina/seraphine-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

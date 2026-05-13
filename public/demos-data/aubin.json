@@ -1,0 +1,28 @@
+{
+  "slug": "aubin",
+  "brandName": "Aubin",
+  "brandDomain": "aubinandwills.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Berkeley Slub T-Shirt",
+      "handle": "berkeley-slub-tee-azure-stripe",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0652/5249/1519/files/berkley_stripe_azure_253.jpg?v=1777637437",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0652/5249/1519/files/berkley_stripe_azure_253.jpg?v=1777637437",
+        "https://cdn.shopify.com/s/files/1/0652/5249/1519/files/berkley_stripe_azure_251.jpg?v=1777637436",
+        "https://cdn.shopify.com/s/files/1/0652/5249/1519/files/berkley_stripe_azure_258.jpg?v=1777637436"
+      ],
+      "tryOnImage": "/demos-images/aubin/berkeley-slub-tee-azure-stripe.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

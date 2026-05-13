@@ -1,0 +1,28 @@
+{
+  "slug": "solefly",
+  "brandName": "SoleFly",
+  "brandDomain": "solefly.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Jordan XIV Brooklyn T-Shirt",
+      "handle": "jordan-xiv-brooklyn-t-shirt",
+      "price": "£31.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0670/7323/files/AURORA_IO0010-010_PHSFM001-2000.jpg?v=1778644168",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0670/7323/files/AURORA_IO0010-010_PHSFM001-2000.jpg?v=1778644168",
+        "https://cdn.shopify.com/s/files/1/0670/7323/files/AURORA_IO0010-010_PHSBM001-2000.jpg?v=1778644167",
+        "https://cdn.shopify.com/s/files/1/0670/7323/files/AURORA_IO0010-010_PHSYM001-2000.jpg?v=1778644168"
+      ],
+      "tryOnImage": "/demos-images/solefly/jordan-xiv-brooklyn-t-shirt.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

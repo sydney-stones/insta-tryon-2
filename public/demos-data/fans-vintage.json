@@ -1,0 +1,28 @@
+{
+  "slug": "fans-vintage",
+  "brandName": "Fans Vintage",
+  "brandDomain": "fansvintage.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Vintage TCU Black Hawaiian Shirt",
+      "handle": "vintage-tcu-black-hawaiian-shirt",
+      "price": "£65.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0641/6167/7525/files/BA069CD5-62D5-4105-878F-D757E653E475.jpg?v=1777834466",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0641/6167/7525/files/BA069CD5-62D5-4105-878F-D757E653E475.jpg?v=1777834466",
+        "https://cdn.shopify.com/s/files/1/0641/6167/7525/files/C1CE5958-82EC-46F1-999C-D440615FA8F7.jpg?v=1777834465",
+        "https://cdn.shopify.com/s/files/1/0641/6167/7525/files/85089DAB-65FB-4566-932C-79A764C8D43F.jpg?v=1777834466"
+      ],
+      "tryOnImage": "/demos-images/fans-vintage/vintage-tcu-black-hawaiian-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

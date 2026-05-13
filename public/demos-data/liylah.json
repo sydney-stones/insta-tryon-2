@@ -1,0 +1,28 @@
+{
+  "slug": "liylah",
+  "brandName": "Liylah",
+  "brandDomain": "liylah.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Mint Showstopper",
+      "handle": "mint-showstopper",
+      "price": "£980.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2656/4344/files/6011copy.jpg?v=1776185696",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2656/4344/files/6011copy.jpg?v=1776185696",
+        "https://cdn.shopify.com/s/files/1/2656/4344/files/6020copy.jpg?v=1775062802",
+        "https://cdn.shopify.com/s/files/1/2656/4344/files/6023.jpg?v=1775062802"
+      ],
+      "tryOnImage": "/demos-images/liylah/mint-showstopper.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

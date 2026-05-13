@@ -1,0 +1,28 @@
+{
+  "slug": "bystenholt-dk",
+  "brandName": "ByStenholt.dk",
+  "brandDomain": "bystenholt.dk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Maebe Top + Aia Nederdel Sæt - Creme",
+      "handle": "maebe-top-aia-nederdel-saet-creme",
+      "price": "£599.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0433/6916/9061/files/IMG_59962.heic?v=1776626009",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0433/6916/9061/files/IMG_59962.heic?v=1776626009",
+        "https://cdn.shopify.com/s/files/1/0433/6916/9061/files/IMG_6002.heic?v=1776626009",
+        "https://cdn.shopify.com/s/files/1/0433/6916/9061/files/maebe-top-creme-4828789.png?v=1776901812"
+      ],
+      "tryOnImage": "/demos-images/bystenholt-dk/maebe-top-aia-nederdel-saet-creme.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

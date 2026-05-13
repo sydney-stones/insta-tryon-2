@@ -1,0 +1,28 @@
+{
+  "slug": "mrs-g",
+  "brandName": "Mrs. G",
+  "brandDomain": "shopmrsg.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ivory knit happens skirt set",
+      "handle": "ivory-knit-happens-skirt-set",
+      "price": "£387.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0699/0158/2593/files/Esse_204.webp?v=1778505761",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0699/0158/2593/files/Esse_204.webp?v=1778505761",
+        "https://cdn.shopify.com/s/files/1/0699/0158/2593/files/Esse_4.webp?v=1778505761",
+        "https://cdn.shopify.com/s/files/1/0699/0158/2593/files/Esse_8.webp?v=1778505761"
+      ],
+      "tryOnImage": "/demos-images/mrs-g/ivory-knit-happens-skirt-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

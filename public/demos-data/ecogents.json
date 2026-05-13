@@ -1,0 +1,28 @@
+{
+  "slug": "ecogents",
+  "brandName": "EcoGents",
+  "brandDomain": "ecogents.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Boss Hugo Boss Performance broek / pantalon. Grijs gemêleerd motief. Maat 46 / S. stretch.",
+      "handle": "boss-hugo-boss-performance-broek-pantalon-grijs-gemeleerd-motief-maat-46-s-stretch",
+      "price": "£39.50",
+      "productImage": "https://cdn.shopify.com/s/files/1/0346/6598/8233/files/PXL_20260424_143147952-removebg-preview.png?v=1778348272",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0346/6598/8233/files/PXL_20260424_143147952-removebg-preview.png?v=1778348272",
+        "https://cdn.shopify.com/s/files/1/0346/6598/8233/files/PXL_20260424_143153003.jpg?v=1778348274",
+        "https://cdn.shopify.com/s/files/1/0346/6598/8233/files/PXL_20260424_143156611.jpg?v=1778348274"
+      ],
+      "tryOnImage": "/demos-images/ecogents/boss-hugo-boss-performance-broek-pantalon-grijs-gemeleerd-motief-maat-46-s-stretch.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

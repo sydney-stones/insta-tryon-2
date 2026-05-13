@@ -1,0 +1,28 @@
+{
+  "slug": "phixclothing-com",
+  "brandName": "PhixClothing.com",
+  "brandDomain": "phixclothing.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Off-White Pure Linen Dagger Collar Shirt",
+      "handle": "cream-pure-linen-dagger-collar-shirt",
+      "price": "£130.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1294/4871/files/L1001599.jpg?v=1777567354",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1294/4871/files/L1001599.jpg?v=1777567354",
+        "https://cdn.shopify.com/s/files/1/1294/4871/files/L1001594.jpg?v=1777567354",
+        "https://cdn.shopify.com/s/files/1/1294/4871/files/L1001596.jpg?v=1777567354"
+      ],
+      "tryOnImage": "/demos-images/phixclothing-com/cream-pure-linen-dagger-collar-shirt.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

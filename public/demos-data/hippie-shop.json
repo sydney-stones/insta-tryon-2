@@ -1,0 +1,27 @@
+{
+  "slug": "hippie-shop",
+  "brandName": "Hippie Shop",
+  "brandDomain": "hippieshop.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Peace Sign Boho Beaded Earrings",
+      "handle": "peace-sign-boho-beaded-earrings",
+      "price": "£12.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0031/4281/1717/products/12940.jpg?v=1740885922",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0031/4281/1717/products/12940.jpg?v=1740885922",
+        "https://cdn.shopify.com/s/files/1/0031/4281/1717/products/12940_5e8bc547-2db4-4cf1-8ed6-e5964e6fada5.jpg?v=1740885927"
+      ],
+      "tryOnImage": "/demos-images/hippie-shop/peace-sign-boho-beaded-earrings.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "love-cherish",
+  "brandName": "Love Cherish",
+  "brandDomain": "lovecherish.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Clara Blouse (Cream/Mustard)",
+      "handle": "clara-blouse-cream-mustard",
+      "price": "£33.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0231/1707/files/chemisier-imprime-pois-a-col-volante-esprit-feminin-chic_moutarde_69c52f36acf09.jpg?v=1778511997",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0231/1707/files/chemisier-imprime-pois-a-col-volante-esprit-feminin-chic_moutarde_69c52f36acf09.jpg?v=1778511997",
+        "https://cdn.shopify.com/s/files/1/0231/1707/files/chemisier-imprime-pois-a-col-volante-esprit-feminin-chic_moutarde_69c52f318b068_6015e447-fb7b-4596-b58a-ef398bd6d59b.jpg?v=1778511996",
+        "https://cdn.shopify.com/s/files/1/0231/1707/files/chemisier-imprime-pois-a-col-volante-esprit-feminin-chic_moutarde_69c52f3eb5a44_d15cdbe8-897d-457a-b464-cb729e1b3454.jpg?v=1778511997"
+      ],
+      "tryOnImage": "/demos-images/love-cherish/clara-blouse-cream-mustard.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "lisen-dk",
+  "brandName": "Lisen.dk",
+  "brandDomain": "lisen.dk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Blake Night Blazer | Ecru | Blazer fra Mos Mosh",
+      "handle": "blake-night-blazer-112579-ecru-mos-mosh",
+      "price": "£1399.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0799/6089/products/112579lBlakeNightBlazerlEcru.jpg?v=1677178049",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0799/6089/products/112579lBlakeNightBlazerlEcru.jpg?v=1677178049",
+        "https://cdn.shopify.com/s/files/1/0799/6089/files/5_db70d74b-e722-43f2-bf98-da8c28248330.jpg?v=1684306813",
+        "https://cdn.shopify.com/s/files/1/0799/6089/products/112579lBlakeNightBlazerlEcru_2.jpg?v=1684306813"
+      ],
+      "tryOnImage": "/demos-images/lisen-dk/blake-night-blazer-112579-ecru-mos-mosh.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

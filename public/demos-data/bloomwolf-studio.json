@@ -1,0 +1,26 @@
+{
+  "slug": "bloomwolf-studio",
+  "brandName": "Bloomwolf Studio",
+  "brandDomain": "bloomwolfstudio.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Yellow Teacher Greeting Card",
+      "handle": "yellow-teacher",
+      "price": "£5.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0053/1549/4003/files/yellowteacher_5f4ad9ef-dbc2-45a3-8979-588e32157a4b.jpg?v=1748980943",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0053/1549/4003/files/yellowteacher_5f4ad9ef-dbc2-45a3-8979-588e32157a4b.jpg?v=1748980943"
+      ],
+      "tryOnImage": "/demos-images/bloomwolf-studio/yellow-teacher.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

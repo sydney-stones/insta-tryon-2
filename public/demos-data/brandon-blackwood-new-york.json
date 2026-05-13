@@ -1,0 +1,28 @@
+{
+  "slug": "brandon-blackwood-new-york",
+  "brandName": "Brandon Blackwood New York",
+  "brandDomain": "brandonblackwood.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Slim Trunk",
+      "handle": "slim-trunk-silver-stainless-steel",
+      "price": "£275.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0508/2431/5047/files/BrandonBlackwood_slimtrunk-silver-0Z6A9963_a37041fc-c551-42d5-9209-0e0e21076ecf.jpg?v=1714758530",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0508/2431/5047/files/BrandonBlackwood_slimtrunk-silver-0Z6A9963_a37041fc-c551-42d5-9209-0e0e21076ecf.jpg?v=1714758530",
+        "https://cdn.shopify.com/s/files/1/0508/2431/5047/files/BrandonBlackwood_slimtrunk-silver-0Z6A9972_3349eb60-b37a-4b3d-85ea-01238999a13b.jpg?v=1714758541",
+        "https://cdn.shopify.com/s/files/1/0508/2431/5047/files/BrandonBlackwood_slimtrunk-silver-0Z6A9967_ac464b96-ad23-4eff-b500-29db8df94960.jpg?v=1714758541"
+      ],
+      "tryOnImage": "/demos-images/brandon-blackwood-new-york/slim-trunk-silver-stainless-steel.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

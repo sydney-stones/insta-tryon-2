@@ -1,0 +1,28 @@
+{
+  "slug": "minka-dink-london",
+  "brandName": "Minka Dink London",
+  "brandDomain": "minkadinklondon.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Elodie Blouse - White",
+      "handle": "elodie-blouse-white",
+      "price": "£68.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0534/0784/2488/files/23C813E5-41FA-4912-A0FF-6E7D5BEFC8CD.jpg?v=1777041508",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0534/0784/2488/files/23C813E5-41FA-4912-A0FF-6E7D5BEFC8CD.jpg?v=1777041508",
+        "https://cdn.shopify.com/s/files/1/0534/0784/2488/files/FB5A28A1-AFB8-43B7-8772-19D41BE52D4C.jpg?v=1777041509",
+        "https://cdn.shopify.com/s/files/1/0534/0784/2488/files/0B9A5D87-56D2-4B41-9EC2-E33E23248D6A.jpg?v=1777041509"
+      ],
+      "tryOnImage": "/demos-images/minka-dink-london/elodie-blouse-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "be-queen-clothing",
+  "brandName": "Be Queen. Clothing",
+  "brandDomain": "bequeenclothing.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cozy Ribbed Corduroy Set - Black",
+      "handle": "cozy-ribbed-corduroy-set-black",
+      "price": "£59.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0604/6656/1229/files/black_set_2_f61c6f41-3ef4-4047-9c43-27667a092d96.jpg?v=1767983957",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0604/6656/1229/files/black_set_2_f61c6f41-3ef4-4047-9c43-27667a092d96.jpg?v=1767983957",
+        "https://cdn.shopify.com/s/files/1/0604/6656/1229/files/black_set_4_3b694525-2da2-4b60-bbdd-1d8d2ff5a18e.jpg?v=1767983957",
+        "https://cdn.shopify.com/s/files/1/0604/6656/1229/files/Black_set_5_749952e8-b313-41b6-8027-82b405e32e9a.jpg?v=1767983957"
+      ],
+      "tryOnImage": "/demos-images/be-queen-clothing/cozy-ribbed-corduroy-set-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

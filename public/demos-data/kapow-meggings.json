@@ -1,0 +1,28 @@
+{
+  "slug": "kapow-meggings",
+  "brandName": "Kapow Meggings",
+  "brandDomain": "kapowmeggings.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Palermo Faux Leather Meggings",
+      "handle": "palermo-faux-leather-meggings",
+      "price": "£86.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1461/5790/files/PalermoFauxLeather-1_e18fb979-c1fb-4e80-8c9b-e0fb1079bdac.jpg?v=1773616405",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1461/5790/files/PalermoFauxLeather-1_e18fb979-c1fb-4e80-8c9b-e0fb1079bdac.jpg?v=1773616405",
+        "https://cdn.shopify.com/s/files/1/1461/5790/files/PalermoFauxLeather-2_b7f61aaa-fd29-4157-8433-49f19071cc99.jpg?v=1773616405",
+        "https://cdn.shopify.com/s/files/1/1461/5790/files/PalermoFauxLeather-3_1d0e93ed-ec54-4c9d-b1d1-f16ee9bbadf5.jpg?v=1773616405"
+      ],
+      "tryOnImage": "/demos-images/kapow-meggings/palermo-faux-leather-meggings.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

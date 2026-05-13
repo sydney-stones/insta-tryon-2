@@ -1,0 +1,28 @@
+{
+  "slug": "le-silla",
+  "brandName": "Le Silla",
+  "brandDomain": "lesilla.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "BELEN SANDAL 100 mm",
+      "handle": "belen-sandal-100-mm-golden-pink-4311d090bxppmra908",
+      "price": "£676.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0968/3297/9274/files/4311d090bxppmra908_sandalo_belen_mera_oro_rosa_1.jpg?v=1778573064",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0968/3297/9274/files/4311d090bxppmra908_sandalo_belen_mera_oro_rosa_1.jpg?v=1778573064",
+        "https://cdn.shopify.com/s/files/1/0968/3297/9274/files/4311d090bxppmra908_sandalo_belen_mera_oro_rosa_5.jpg?v=1778573064",
+        "https://cdn.shopify.com/s/files/1/0968/3297/9274/files/4311d090bxppmra908_sandalo_belen_mera_oro_rosa_2.jpg?v=1778573064"
+      ],
+      "tryOnImage": "/demos-images/le-silla/belen-sandal-100-mm-golden-pink-4311d090bxppmra908.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

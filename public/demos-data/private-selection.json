@@ -1,0 +1,28 @@
+{
+  "slug": "private-selection",
+  "brandName": "Private Selection",
+  "brandDomain": "prvtselection.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Godspeed Pit Stop: Tokyo Black Wash",
+      "handle": "godspeed-pit-stop-tokyo-black-wash",
+      "price": "£145.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0105/0912/3631/files/bzc8qwogicon1xhj2cs8.jpg?v=1778015028",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0105/0912/3631/files/bzc8qwogicon1xhj2cs8.jpg?v=1778015028",
+        "https://cdn.shopify.com/s/files/1/0105/0912/3631/files/bfgakl6av6sps5oqn99e_b9beb709-c624-4cc9-825d-513873a34467.jpg?v=1778015032",
+        "https://cdn.shopify.com/s/files/1/0105/0912/3631/files/pqs0pmmqe1nmpszpxaaj_7790abdf-7947-462f-9462-25269fa7bbb9.jpg?v=1778015035"
+      ],
+      "tryOnImage": "/demos-images/private-selection/godspeed-pit-stop-tokyo-black-wash.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "black-clover",
+  "brandName": "Black Clover",
+  "brandDomain": "blackcloverusa.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Cross Q Zip",
+      "handle": "cross-q-zip-white",
+      "price": "£99.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1207/7562/files/2025_CrossQ-ZipWhite_01.jpg?v=1756405595",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1207/7562/files/2025_CrossQ-ZipWhite_01.jpg?v=1756405595",
+        "https://cdn.shopify.com/s/files/1/1207/7562/files/2025_CrossQ-ZipWhite_02.jpg?v=1756405595",
+        "https://cdn.shopify.com/s/files/1/1207/7562/files/2025_CrossQ-ZipWhite_03.jpg?v=1756405595"
+      ],
+      "tryOnImage": "/demos-images/black-clover/cross-q-zip-white.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

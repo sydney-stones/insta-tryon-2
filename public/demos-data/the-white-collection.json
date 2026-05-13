@@ -1,0 +1,28 @@
+{
+  "slug": "the-white-collection",
+  "brandName": "The White Collection",
+  "brandDomain": "thewhitecollection.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lola Knight - Bowie Crystal - Huggie Cubic Zirconia Crystal Charm Earrings - 18ct Gold",
+      "handle": "lola-knight-bowie-crystal-huggie-cubic-zirconia-crystal-charm-earrings-18ct-gold",
+      "price": "£87.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1859/1435/files/1_e2a8ef26-81f5-468c-bba5-362418092097.png?v=1778658265",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1859/1435/files/1_e2a8ef26-81f5-468c-bba5-362418092097.png?v=1778658265",
+        "https://cdn.shopify.com/s/files/1/1859/1435/files/2_b8019352-a830-44bf-a41e-e41731f8008f.png?v=1778658266",
+        "https://cdn.shopify.com/s/files/1/1859/1435/files/3_20140db4-c856-4f4f-9388-9c0dbd8f5860.png?v=1778658266"
+      ],
+      "tryOnImage": "/demos-images/the-white-collection/lola-knight-bowie-crystal-huggie-cubic-zirconia-crystal-charm-earrings-18ct-gold.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

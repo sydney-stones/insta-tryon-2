@@ -1,0 +1,28 @@
+{
+  "slug": "lunya",
+  "brandName": "Lunya",
+  "brandDomain": "lunya.co",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Slumberknit™ Shawl Collar Button Down Pant Set",
+      "handle": "womens-slumberknit-shawl-collar-button-down-pant-set-calliope-wine-royal-lagoon",
+      "price": "£181.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0267/0987/files/LOOK_26_SLUMBERKNIT_SHAWL_COLLAR_BUTTON_DOWN_PANT_SET_CALLIOPE_WINE_ROYAL_LAGOON_2976.jpg?v=1760652159",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0267/0987/files/LOOK_26_SLUMBERKNIT_SHAWL_COLLAR_BUTTON_DOWN_PANT_SET_CALLIOPE_WINE_ROYAL_LAGOON_2976.jpg?v=1760652159",
+        "https://cdn.shopify.com/s/files/1/0267/0987/files/LOOK_26_SLUMBERKNIT_SHAWL_COLLAR_BUTTON_DOWN_PANT_SET_CALLIOPE_WINE_ROYAL_LAGOON_3010.jpg?v=1760652159",
+        "https://cdn.shopify.com/s/files/1/0267/0987/files/LOOK_26_SLUMBERKNIT_SHAWL_COLLAR_BUTTON_DOWN_PANT_SET_CALLIOPE_WINE_ROYAL_LAGOON_3032.jpg?v=1760652159"
+      ],
+      "tryOnImage": "/demos-images/lunya/womens-slumberknit-shawl-collar-button-down-pant-set-calliope-wine-royal-lagoon.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

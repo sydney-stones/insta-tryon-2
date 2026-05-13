@@ -1,0 +1,28 @@
+{
+  "slug": "san-marko-ny",
+  "brandName": "San Marko NY",
+  "brandDomain": "sanmarko.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "MAC Lenny Bermuda Tan Shorts",
+      "handle": "mac-lenny-bermuda-tan-shorts",
+      "price": "£145.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0071/2527/0579/products/51No6mW9pNL._AC_UY741.jpg?v=1646864095",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0071/2527/0579/products/51No6mW9pNL._AC_UY741.jpg?v=1646864095",
+        "https://cdn.shopify.com/s/files/1/0071/2527/0579/products/61j_wGtsFlL._AC_UY741.jpg?v=1646864095",
+        "https://cdn.shopify.com/s/files/1/0071/2527/0579/products/61TAiDpLT5L._AC_UY741.jpg?v=1646864095"
+      ],
+      "tryOnImage": "/demos-images/san-marko-ny/mac-lenny-bermuda-tan-shorts.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

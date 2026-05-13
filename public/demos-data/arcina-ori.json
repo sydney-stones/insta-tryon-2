@@ -1,0 +1,28 @@
+{
+  "slug": "arcina-ori",
+  "brandName": "ARCINA ORI",
+  "brandDomain": "arcinaori.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "OPHELIA DRESS IVORY",
+      "handle": "ophelia-dress-ivory",
+      "price": "£394.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0004/8863/6475/files/Shot_8_1.jpg?v=1777594677",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0004/8863/6475/files/Shot_8_1.jpg?v=1777594677",
+        "https://cdn.shopify.com/s/files/1/0004/8863/6475/files/Shot_10_1.jpg?v=1777594677",
+        "https://cdn.shopify.com/s/files/1/0004/8863/6475/files/Shot_2_1.jpg?v=1777594677"
+      ],
+      "tryOnImage": "/demos-images/arcina-ori/ophelia-dress-ivory.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "running-bear",
+  "brandName": "Running Bear",
+  "brandDomain": "runningbear.co.uk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Ronhill Womens Core Twin Short",
+      "handle": "ronhill-womens-core-twin-short",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0847/6252/6024/files/RonhillTwinShorts.png?v=1778510076",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0847/6252/6024/files/RonhillTwinShorts.png?v=1778510076",
+        "https://cdn.shopify.com/s/files/1/0847/6252/6024/files/RonhillTwinShorts1.png?v=1778510076",
+        "https://cdn.shopify.com/s/files/1/0847/6252/6024/files/RonhillTwinShorts2.png?v=1778510076"
+      ],
+      "tryOnImage": "/demos-images/running-bear/ronhill-womens-core-twin-short.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

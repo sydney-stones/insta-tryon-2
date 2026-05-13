@@ -1,0 +1,28 @@
+{
+  "slug": "one-teaspoon",
+  "brandName": "One Teaspoon",
+  "brandDomain": "oneteaspoon.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Roadhouse Wide Leg Drawstring Denim Jeans - Salty Dog",
+      "handle": "salty-dog-roadhouse-wide-leg-drawstring-jeans-25684-1",
+      "price": "£178.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0784/9597/3668/files/25684_SALTYDOG_1.jpg?v=1776694777",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0784/9597/3668/files/25684_SALTYDOG_1.jpg?v=1776694777",
+        "https://cdn.shopify.com/s/files/1/0784/9597/3668/files/25684_SALTYDOG_7.jpg?v=1776694825",
+        "https://cdn.shopify.com/s/files/1/0784/9597/3668/files/25684_SALTYDOG_2.jpg?v=1776694825"
+      ],
+      "tryOnImage": "/demos-images/one-teaspoon/salty-dog-roadhouse-wide-leg-drawstring-jeans-25684-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

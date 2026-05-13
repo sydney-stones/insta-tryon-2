@@ -1,0 +1,28 @@
+{
+  "slug": "tweedmaker",
+  "brandName": "Tweedmaker",
+  "brandDomain": "tweedmaker.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Prince Of Wales Grey Herringbone Tweed - Clearance Stock",
+      "handle": "prince-of-wales-grey-herringbone-tweed-clearance-stock",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1736/2051/files/TWEEDMAKER10851.webp?v=1742270613",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1736/2051/files/TWEEDMAKER10851.webp?v=1742270613",
+        "https://cdn.shopify.com/s/files/1/1736/2051/files/TWEEDMAKER10931.webp?v=1742270613",
+        "https://cdn.shopify.com/s/files/1/1736/2051/files/PrinceofWales.webp?v=1742270613"
+      ],
+      "tryOnImage": "/demos-images/tweedmaker/prince-of-wales-grey-herringbone-tweed-clearance-stock.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

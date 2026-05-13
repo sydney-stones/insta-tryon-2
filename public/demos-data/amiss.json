@@ -1,0 +1,28 @@
+{
+  "slug": "amiss",
+  "brandName": "Amiss",
+  "brandDomain": "amiss.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Wet look tee",
+      "handle": "wet-look-tee",
+      "price": "£220.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0549/5655/6388/files/SABIJEAN1_035.webp?v=1722863128",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0549/5655/6388/files/SABIJEAN1_035.webp?v=1722863128",
+        "https://cdn.shopify.com/s/files/1/0549/5655/6388/files/Amiss_B4_05.jpg?v=1766025760",
+        "https://cdn.shopify.com/s/files/1/0549/5655/6388/files/DSC09652-2.webp?v=1766025760"
+      ],
+      "tryOnImage": "/demos-images/amiss/wet-look-tee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

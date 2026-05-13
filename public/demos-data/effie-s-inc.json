@@ -1,0 +1,28 @@
+{
+  "slug": "effie-s-inc",
+  "brandName": "Effie's Inc",
+  "brandDomain": "shopeffies.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "GS TEXTURED OVAL W STONE EARRINGS",
+      "handle": "gs-textured-oval-w-stone-earrings",
+      "price": "£15.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0640/6773/1507/files/EP58148_4edc1504-088c-5065-a1ec-cbc80d2aea24.jpg?v=1778646126",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0640/6773/1507/files/EP58148_4edc1504-088c-5065-a1ec-cbc80d2aea24.jpg?v=1778646126",
+        "https://cdn.shopify.com/s/files/1/0640/6773/1507/files/EP58148_5EFUCHSIA-GOLD_2d65aff4-55ac-5dcd-a3ea-695491e31c4d.jpg?v=1778646126",
+        "https://cdn.shopify.com/s/files/1/0640/6773/1507/files/EP58148_5ELIME-GOLD_e8303cc1-812c-5a8d-ad3d-8893b92c6e08.jpg?v=1778646126"
+      ],
+      "tryOnImage": "/demos-images/effie-s-inc/gs-textured-oval-w-stone-earrings.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

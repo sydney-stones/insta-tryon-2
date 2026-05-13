@@ -1,0 +1,28 @@
+{
+  "slug": "onboard-sportswear",
+  "brandName": "Onboard Sportswear",
+  "brandDomain": "onboardsportswear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "VNEA Junior Jersey 2026",
+      "handle": "junior-vnea-jersey-2026",
+      "price": "£36.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0403/0955/5363/files/VNEA-JNR-Front.png?v=1778072382",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0403/0955/5363/files/VNEA-JNR-Front.png?v=1778072382",
+        "https://cdn.shopify.com/s/files/1/0403/0955/5363/files/VNEA-JNR-Back.png?v=1778072382",
+        "https://cdn.shopify.com/s/files/1/0403/0955/5363/files/VNEA-JNR-LS.png?v=1778072382"
+      ],
+      "tryOnImage": "/demos-images/onboard-sportswear/junior-vnea-jersey-2026.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

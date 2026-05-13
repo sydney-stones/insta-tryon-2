@@ -1,0 +1,28 @@
+{
+  "slug": "under-5-10",
+  "brandName": "Under 5'10",
+  "brandDomain": "under510.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Commuter Pants Ultimate Gray",
+      "handle": "commuter-pants-ultimate-gray",
+      "price": "£62.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2618/3610/files/commuter-pants-for-short-men-from-under510-gray-2.jpg?v=1778267433",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2618/3610/files/commuter-pants-for-short-men-from-under510-gray-2.jpg?v=1778267433",
+        "https://cdn.shopify.com/s/files/1/2618/3610/files/commuter-pants-for-short-men-from-under510-gray-3.jpg?v=1778267433",
+        "https://cdn.shopify.com/s/files/1/2618/3610/files/commuter-pants-for-short-men-from-under510-gray-4.jpg?v=1778267433"
+      ],
+      "tryOnImage": "/demos-images/under-5-10/commuter-pants-ultimate-gray.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

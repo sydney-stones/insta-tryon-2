@@ -1,0 +1,28 @@
+{
+  "slug": "illvzn",
+  "brandName": "ILLVZN",
+  "brandDomain": "illvzn.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Coach Jacket",
+      "handle": "coach-jacket",
+      "price": "£10.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0044/1945/3026/files/Untitleddesign_1.png?v=1771594322",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0044/1945/3026/files/Untitleddesign_1.png?v=1771594322",
+        "https://cdn.shopify.com/s/files/1/0044/1945/3026/files/ECOMM_15of67__jpg.png?v=1771594322",
+        "https://cdn.shopify.com/s/files/1/0044/1945/3026/files/ECOMMFINALTOAMEND_-24.jpg?v=1771594322"
+      ],
+      "tryOnImage": "/demos-images/illvzn/coach-jacket.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

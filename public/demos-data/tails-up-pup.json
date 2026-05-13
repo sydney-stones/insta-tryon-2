@@ -1,0 +1,28 @@
+{
+  "slug": "tails-up-pup",
+  "brandName": "Tails Up, Pup",
+  "brandDomain": "tailsuppup.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Embroidered Dog Line Art T-Shirt",
+      "handle": "embroidered-dog-line-art-t-shirt",
+      "price": "£32.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0576/9275/0014/files/IMG_8495.jpg?v=1776366927",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0576/9275/0014/files/IMG_8495.jpg?v=1776366927",
+        "https://cdn.shopify.com/s/files/1/0576/9275/0014/files/IMG_8494.jpg?v=1776366927",
+        "https://cdn.shopify.com/s/files/1/0576/9275/0014/files/Screenshot2026-04-16at3.05.04PM.png?v=1776366927"
+      ],
+      "tryOnImage": "/demos-images/tails-up-pup/embroidered-dog-line-art-t-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

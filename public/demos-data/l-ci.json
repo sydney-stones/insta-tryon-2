@@ -1,0 +1,28 @@
+{
+  "slug": "l-ci",
+  "brandName": "LØCI",
+  "brandDomain": "lociwear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "LØCI x Ron Dorff T-Shirt Good Girl",
+      "handle": "womens-loci-x-ron-dorff-t-shirt-good-girl",
+      "price": "£52.50",
+      "productImage": "https://cdn.shopify.com/s/files/1/0416/7663/6312/files/loci-x-ron-dorff-t-shirt-good-girl-555408.webp?v=1777909226",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0416/7663/6312/files/loci-x-ron-dorff-t-shirt-good-girl-555408.webp?v=1777909226",
+        "https://cdn.shopify.com/s/files/1/0416/7663/6312/files/loci-x-ron-dorff-t-shirt-good-girl-407993.webp?v=1777909229",
+        "https://cdn.shopify.com/s/files/1/0416/7663/6312/files/loci-x-ron-dorff-t-shirt-good-girl-568861.webp?v=1777909234"
+      ],
+      "tryOnImage": "/demos-images/l-ci/womens-loci-x-ron-dorff-t-shirt-good-girl.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

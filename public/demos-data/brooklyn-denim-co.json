@@ -1,0 +1,28 @@
+{
+  "slug": "brooklyn-denim-co",
+  "brandName": "Brooklyn Denim Co.",
+  "brandDomain": "brooklyndenimco.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Brooklyn Denim Co. Slim Chino Jeans - 11oz Raw Selvedge Denim",
+      "handle": "bdc-mens-slim-denim-chino",
+      "price": "£255.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0699/7383/products/478a641dfcd6acf7e359f08ab9f9beb8_57c96494-6634-449e-b599-633c19987e44.png?v=1662758829",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0699/7383/products/478a641dfcd6acf7e359f08ab9f9beb8_57c96494-6634-449e-b599-633c19987e44.png?v=1662758829",
+        "https://cdn.shopify.com/s/files/1/0699/7383/products/DSC_0048_1.jpg?v=1637246261",
+        "https://cdn.shopify.com/s/files/1/0699/7383/products/DSC_0348.jpg?v=1637246323"
+      ],
+      "tryOnImage": "/demos-images/brooklyn-denim-co/bdc-mens-slim-denim-chino.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

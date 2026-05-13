@@ -1,0 +1,28 @@
+{
+  "slug": "pactimo",
+  "brandName": "Pactimo",
+  "brandDomain": "pactimo.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Flyte Jersey",
+      "handle": "womens-sage-green-flyte-cycling-jersey",
+      "price": "£84.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1296/7005/files/W.FlyteJerseyMountainTwilight-W.FlyteBibShortSage-2.jpg?v=1776710635",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1296/7005/files/W.FlyteJerseyMountainTwilight-W.FlyteBibShortSage-2.jpg?v=1776710635",
+        "https://cdn.shopify.com/s/files/1/1296/7005/files/W.FlyteJerseyMountainTwilight-W.FlyteBibShortSage-10.jpg?v=1776710675",
+        "https://cdn.shopify.com/s/files/1/1296/7005/files/W.FlyteJerseyMountainTwilight-W.FlyteBibShortSage-20.jpg?v=1776710675"
+      ],
+      "tryOnImage": "/demos-images/pactimo/womens-sage-green-flyte-cycling-jersey.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

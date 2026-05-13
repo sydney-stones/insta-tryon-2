@@ -1,0 +1,28 @@
+{
+  "slug": "daphne",
+  "brandName": "DAPHNE",
+  "brandDomain": "daphnethelabel.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Overnight Shirt - Sun Stripe",
+      "handle": "the-overnight-shirt-sun-stripe",
+      "price": "£87.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0579/3097/3269/files/Daphne_Overnight_Shirt_Sun_Stripe_Flat_01.jpg?v=1778180899",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0579/3097/3269/files/Daphne_Overnight_Shirt_Sun_Stripe_Flat_01.jpg?v=1778180899",
+        "https://cdn.shopify.com/s/files/1/0579/3097/3269/files/Daphne_Overnight_Shirt_Sun_Stripe_Front_03.jpg?v=1778180903",
+        "https://cdn.shopify.com/s/files/1/0579/3097/3269/files/Daphne_Overnight_Shirt_Sun_Stripe_Detail_02.jpg?v=1778180899"
+      ],
+      "tryOnImage": "/demos-images/daphne/the-overnight-shirt-sun-stripe.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

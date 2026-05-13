@@ -1,0 +1,28 @@
+{
+  "slug": "mainstream-boutique-home-office",
+  "brandName": "Mainstream Boutique Home Office",
+  "brandDomain": "mainstreamboutique.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ribbed Short Sleeve Top & Pants Set",
+      "handle": "ribbed-short-sleeve-top-pants-set-1",
+      "price": "£59.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0048/8711/7953/files/CTCP-3480A3_ZENANA_ASH-MOCHA-1_86a87ff5-cb82-4dc6-81eb-b57b7c990cde.jpg?v=1778275926",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0048/8711/7953/files/CTCP-3480A3_ZENANA_ASH-MOCHA-1_86a87ff5-cb82-4dc6-81eb-b57b7c990cde.jpg?v=1778275926",
+        "https://cdn.shopify.com/s/files/1/0048/8711/7953/files/CTCP-3480A3_ZENANA_BLACK_0db180e9-5cfd-4202-9250-121b1f2180e7.jpg?v=1778275926",
+        "https://cdn.shopify.com/s/files/1/0048/8711/7953/files/CTCP-3480A3_ZENANA_ASH-MOCHA-3_f6105626-1aa9-4c6c-8796-65d0cf577953.jpg?v=1778275926"
+      ],
+      "tryOnImage": "/demos-images/mainstream-boutique-home-office/ribbed-short-sleeve-top-pants-set-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

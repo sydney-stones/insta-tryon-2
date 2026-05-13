@@ -1,0 +1,28 @@
+{
+  "slug": "original-favorites",
+  "brandName": "Original Favorites",
+  "brandDomain": "originalfavorites.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Woodland Camo Heavyweight Organic Tee",
+      "handle": "camo-heavyweight-organic-tee",
+      "price": "£60.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2072/5133/files/HWTEE-CAMO-Front_Shopify.jpg?v=1778277506",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2072/5133/files/HWTEE-CAMO-Front_Shopify.jpg?v=1778277506",
+        "https://cdn.shopify.com/s/files/1/2072/5133/files/HWTEE-CAMO-Back_Shopify.jpg?v=1778277506",
+        "https://cdn.shopify.com/s/files/1/2072/5133/files/HWTEE_Camo_Detail1_Shopify.jpg?v=1778278028"
+      ],
+      "tryOnImage": "/demos-images/original-favorites/camo-heavyweight-organic-tee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

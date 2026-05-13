@@ -1,0 +1,28 @@
+{
+  "slug": "swirlboutique",
+  "brandName": "swirlboutique",
+  "brandDomain": "swirlboutique.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "LSPACE - ASH TANK SARDINE",
+      "handle": "ash-tank-sardine",
+      "price": "£70.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2161/6101/files/6e7d3d40-d8c2-4088-9fb9-ec871b1487c5ASHTP24_C072_S_4.jpg?v=1778611980",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2161/6101/files/6e7d3d40-d8c2-4088-9fb9-ec871b1487c5ASHTP24_C072_S_4.jpg?v=1778611980",
+        "https://cdn.shopify.com/s/files/1/2161/6101/files/7e11fbca-a569-47ba-8574-f77b5c5e5d9bASHTP24_C072_S_1.jpg?v=1778611991",
+        "https://cdn.shopify.com/s/files/1/2161/6101/files/a7d1bfb7-127b-4eb5-b44c-739a4e5110e5ASHTP24_C072_S_2.jpg?v=1778280147"
+      ],
+      "tryOnImage": "/demos-images/swirlboutique/ash-tank-sardine.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

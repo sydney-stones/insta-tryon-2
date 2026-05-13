@@ -1,0 +1,27 @@
+{
+  "slug": "jojo-lo-pickleball",
+  "brandName": "jojo+lo pickleball",
+  "brandDomain": "jojoandlo.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Prism Pickle Crop Hoodie Women's Black Tri-Blend Fleece Fabric",
+      "handle": "prism-pickle-crop-hoodie-womens-black-tri-blend-fleece-fabric",
+      "price": "£60.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0590/9574/4673/files/Prism-Pickle-Pickleball-Cropped-Hoodie-Black-Model.jpg?v=1768932781",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0590/9574/4673/files/Prism-Pickle-Pickleball-Cropped-Hoodie-Black-Model.jpg?v=1768932781",
+        "https://cdn.shopify.com/s/files/1/0590/9574/4673/files/Prism-Pickle-Pickleball-Cropped-Hoodie-Black.jpg?v=1768933274"
+      ],
+      "tryOnImage": "/demos-images/jojo-lo-pickleball/prism-pickle-crop-hoodie-womens-black-tri-blend-fleece-fabric.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

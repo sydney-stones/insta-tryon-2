@@ -1,0 +1,28 @@
+{
+  "slug": "inherit-co",
+  "brandName": "Inherit Co.",
+  "brandDomain": "inheritco.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Everly Medium Wash Midi Denim Skirt",
+      "handle": "everly-medium-wash-midi-denim-skirt",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1568/0039/files/FutureEverly_2.jpg?v=1777179133",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1568/0039/files/FutureEverly_2.jpg?v=1777179133",
+        "https://cdn.shopify.com/s/files/1/1568/0039/files/FutureEverly_1.jpg?v=1777179133",
+        "https://cdn.shopify.com/s/files/1/1568/0039/files/FutureEverly_7.jpg?v=1777179133"
+      ],
+      "tryOnImage": "/demos-images/inherit-co/everly-medium-wash-midi-denim-skirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

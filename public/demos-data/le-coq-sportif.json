@@ -1,0 +1,28 @@
+{
+  "slug": "le-coq-sportif",
+  "brandName": "Le Coq Sportif",
+  "brandDomain": "lecoqsportif.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "2521176-WH Short N°1 M black | Short Homme",
+      "handle": "short-homme-2521176",
+      "price": "£32.50",
+      "productImage": "https://cdn.shopify.com/s/files/1/0739/7425/1826/files/2521176_1.jpg?v=1756772256",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0739/7425/1826/files/2521176_1.jpg?v=1756772256",
+        "https://cdn.shopify.com/s/files/1/0739/7425/1826/files/2521176_2.jpg?v=1756772260",
+        "https://cdn.shopify.com/s/files/1/0739/7425/1826/files/2521176_3.jpg?v=1756772263"
+      ],
+      "tryOnImage": "/demos-images/le-coq-sportif/short-homme-2521176.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

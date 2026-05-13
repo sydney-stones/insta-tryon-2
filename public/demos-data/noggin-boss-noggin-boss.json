@@ -1,0 +1,28 @@
+{
+  "slug": "noggin-boss-noggin-boss",
+  "brandName": "NOGGIN Boss– Noggin Boss",
+  "brandDomain": "nogginboss.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Wrestlemania 42 Noggin",
+      "handle": "wrestlemania-42-noggin",
+      "price": "£105.59",
+      "productImage": "https://cdn.shopify.com/s/files/1/0373/4021/7475/files/WWE-DARK-B-FRONT.png?v=1776101100",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0373/4021/7475/files/WWE-DARK-B-FRONT.png?v=1776101100",
+        "https://cdn.shopify.com/s/files/1/0373/4021/7475/files/WM42_BLACK_BACKING_LEFT_SIDE_BLACK_NEW.jpg?v=1776182170",
+        "https://cdn.shopify.com/s/files/1/0373/4021/7475/files/WWE-DARK-R-FRONT.png?v=1776182170"
+      ],
+      "tryOnImage": "/demos-images/noggin-boss-noggin-boss/wrestlemania-42-noggin.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

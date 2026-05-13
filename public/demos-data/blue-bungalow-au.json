@@ -1,0 +1,28 @@
+{
+  "slug": "blue-bungalow-au",
+  "brandName": "Blue Bungalow AU",
+  "brandDomain": "bluebungalow.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Selena Sage 3/4 Sleeve Top",
+      "handle": "selena-sage-3-4-sleeve-top",
+      "price": "£59.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0114/6168/9401/files/SelenaSage34SleeveTop_5.jpg?v=1766456015",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0114/6168/9401/files/SelenaSage34SleeveTop_5.jpg?v=1766456015",
+        "https://cdn.shopify.com/s/files/1/0114/6168/9401/files/SelenaSage34SleeveTopBerettaWhiteLaceLinenBlendPants_1.jpg?v=1766456015",
+        "https://cdn.shopify.com/s/files/1/0114/6168/9401/files/SelenaSage34SleeveTop_4.jpg?v=1766456015"
+      ],
+      "tryOnImage": "/demos-images/blue-bungalow-au/selena-sage-3-4-sleeve-top.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

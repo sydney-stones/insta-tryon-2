@@ -1,0 +1,28 @@
+{
+  "slug": "j-pritchard",
+  "brandName": "J. Pritchard",
+  "brandDomain": "jpritchard.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Hamptons Dress",
+      "handle": "hamptons-dress",
+      "price": "£128.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0688/8951/0210/files/DSC_0000-36.jpg?v=1762302989",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0688/8951/0210/files/DSC_0000-36.jpg?v=1762302989",
+        "https://cdn.shopify.com/s/files/1/0688/8951/0210/files/DSC_0000-44.jpg?v=1762303005",
+        "https://cdn.shopify.com/s/files/1/0688/8951/0210/files/DSC_7724.jpg?v=1762303021"
+      ],
+      "tryOnImage": "/demos-images/j-pritchard/hamptons-dress.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

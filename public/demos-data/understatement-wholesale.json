@@ -1,0 +1,28 @@
+{
+  "slug": "understatement-wholesale",
+  "brandName": "Understatement Wholesale",
+  "brandDomain": "shopunderstatement.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "It’s a Girl",
+      "handle": "it-s-a-girl",
+      "price": "£18.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0496/9427/7797/files/5_1_bcf440d8-97bf-4b0f-bcc0-acb3605f6413.jpg?v=1776861344",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0496/9427/7797/files/5_1_bcf440d8-97bf-4b0f-bcc0-acb3605f6413.jpg?v=1776861344",
+        "https://cdn.shopify.com/s/files/1/0496/9427/7797/files/its_a_girl_nail_polish.jpg?v=1777278489",
+        "https://cdn.shopify.com/s/files/1/0496/9427/7797/files/1_1_fec7f7a3-8b8a-4fa4-967b-b02267a1ff40.jpg?v=1776860852"
+      ],
+      "tryOnImage": "/demos-images/understatement-wholesale/it-s-a-girl.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

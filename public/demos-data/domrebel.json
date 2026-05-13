@@ -1,0 +1,28 @@
+{
+  "slug": "domrebel",
+  "brandName": "DOMREBEL",
+  "brandDomain": "domrebel.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "BULLY - SB BLAZER BLACK",
+      "handle": "bully-sb-blazer-black",
+      "price": "£453.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1934/9185/files/DomRebel6850773ce2d3a76850773ce3156.276319746850773ce3156.jpg?v=1766528898",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1934/9185/files/DomRebel6850773ce2d3a76850773ce3156.276319746850773ce3156.jpg?v=1766528898",
+        "https://cdn.shopify.com/s/files/1/1934/9185/files/DomRebel6850773d1461d66850773d15578.341447826850773d15578.jpg?v=1766528898",
+        "https://cdn.shopify.com/s/files/1/1934/9185/files/DomRebel693873024ce223693873024cf47.77859108693873024cf47.jpg?v=1773085691"
+      ],
+      "tryOnImage": "/demos-images/domrebel/bully-sb-blazer-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

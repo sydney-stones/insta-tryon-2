@@ -1,0 +1,28 @@
+{
+  "slug": "lekha",
+  "brandName": "lekha",
+  "brandDomain": "shoplekha.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Tamboo Top",
+      "handle": "tamboo-top-1",
+      "price": "£98.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0115/0055/2251/files/Lekha-Tamboo-Top-White-01.png?v=1764781907",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0115/0055/2251/files/Lekha-Tamboo-Top-White-01.png?v=1764781907",
+        "https://cdn.shopify.com/s/files/1/0115/0055/2251/products/LEKHA_summer_2020_ecom-55.jpg?v=1764781907",
+        "https://cdn.shopify.com/s/files/1/0115/0055/2251/files/Lekha-Tamboo-Top-White-02.png?v=1764781907"
+      ],
+      "tryOnImage": "/demos-images/lekha/tamboo-top-1.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

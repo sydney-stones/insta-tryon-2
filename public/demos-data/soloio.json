@@ -1,0 +1,28 @@
+{
+  "slug": "soloio",
+  "brandName": "soloio",
+  "brandDomain": "soloio.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's dress linen martina white",
+      "handle": "womens-dress-linen-martina-white-1",
+      "price": "£340.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0726/1316/7423/files/34.jpg?v=1772202794",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0726/1316/7423/files/34.jpg?v=1772202794",
+        "https://cdn.shopify.com/s/files/1/0726/1316/7423/files/35.jpg?v=1772202794",
+        "https://cdn.shopify.com/s/files/1/0726/1316/7423/files/36.jpg?v=1772202794"
+      ],
+      "tryOnImage": "/demos-images/soloio/womens-dress-linen-martina-white-1.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

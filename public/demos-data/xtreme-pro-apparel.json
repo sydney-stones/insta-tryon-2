@@ -1,0 +1,26 @@
+{
+  "slug": "xtreme-pro-apparel",
+  "brandName": "Xtreme Pro Apparel",
+  "brandDomain": "xpagear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Uniform Builder 01 Sweatpants. (x 1)",
+      "handle": "custom-307f72f4-e402-497e-b131-65402968ac34-0",
+      "price": "£75.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0548/6375/7354/files/23326b58f670d94c1ece59d850e1365e.png?v=1776712694",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0548/6375/7354/files/23326b58f670d94c1ece59d850e1365e.png?v=1776712694"
+      ],
+      "tryOnImage": "/demos-images/xtreme-pro-apparel/custom-307f72f4-e402-497e-b131-65402968ac34-0.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

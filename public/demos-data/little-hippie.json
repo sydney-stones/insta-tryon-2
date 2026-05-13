@@ -1,0 +1,28 @@
+{
+  "slug": "little-hippie",
+  "brandName": "Little Hippie",
+  "brandDomain": "littlehippie.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Rose Quartz Tulip Flower Bypass Ring",
+      "handle": "rose-quartz-tulip-flower-bypass-ring-in-925-sterling-silver",
+      "price": "£18.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1504/4522/files/e42672036518dd7da3d44218ea5d301a9663e9d4b6a0c0da785152510f3d4dc2.webp?v=1778572332",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1504/4522/files/e42672036518dd7da3d44218ea5d301a9663e9d4b6a0c0da785152510f3d4dc2.webp?v=1778572332",
+        "https://cdn.shopify.com/s/files/1/1504/4522/files/161a7b314deecb1ef5e7f5f675aeceadfdf607ecb8e7a5123d9fa73b5a0fe5b9.webp?v=1778572331",
+        "https://cdn.shopify.com/s/files/1/1504/4522/files/178e5f9d2487daad6770d6f96a693b16b784e60250530a68a5ca377edc8dfa8e.webp?v=1778572332"
+      ],
+      "tryOnImage": "/demos-images/little-hippie/rose-quartz-tulip-flower-bypass-ring-in-925-sterling-silver.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "dimano",
+  "brandName": "DIMANO",
+  "brandDomain": "dimano-clothing.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Light Beige Smart Pants",
+      "handle": "light-beige-smart-pants-1",
+      "price": "£135.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0727/6308/1042/files/light-beige-smart-pants-1656068.png?v=1771931183",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0727/6308/1042/files/light-beige-smart-pants-1656068.png?v=1771931183",
+        "https://cdn.shopify.com/s/files/1/0727/6308/1042/files/light-beige-smart-pants-277929.jpg?v=1771849485",
+        "https://cdn.shopify.com/s/files/1/0727/6308/1042/files/light-beige-smart-pants-899208.jpg?v=1771849476"
+      ],
+      "tryOnImage": "/demos-images/dimano/light-beige-smart-pants-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

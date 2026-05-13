@@ -1,0 +1,28 @@
+{
+  "slug": "themoire",
+  "brandName": "THEMOIRÈ",
+  "brandDomain": "the-moire.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "ATHENA POCHETTE VEGAN FABRIC BUTTER CREAM",
+      "handle": "athena-pochette-vegan-fabric-butter-cream-261wtmap0oovf0110a",
+      "price": "£280.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0673/6530/6657/files/TMCOAFN81_01_d3be46f9-677e-4d94-af08-f883b8a69313.jpg?v=1774284444",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0673/6530/6657/files/TMCOAFN81_01_d3be46f9-677e-4d94-af08-f883b8a69313.jpg?v=1774284444",
+        "https://cdn.shopify.com/s/files/1/0673/6530/6657/files/TMCOAFN81_02_a7f2f00c-b89a-456c-b752-35487ccdef8d.jpg?v=1774284444",
+        "https://cdn.shopify.com/s/files/1/0673/6530/6657/files/TMCOAFN81_03_4ccbfad8-6865-4a17-847e-0c515cb5891f.jpg?v=1774284444"
+      ],
+      "tryOnImage": "/demos-images/themoire/athena-pochette-vegan-fabric-butter-cream-261wtmap0oovf0110a.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

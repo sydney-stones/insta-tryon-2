@@ -175,7 +175,9 @@ const HERO_TYPES = ['coat', 'jacket', 'outerwear', 'dress', 'blazer', 'suit', 's
 const SKIP_TYPES = ['shoe', 'sneaker', 'boot', 'bag', 'belt', 'hat', 'cap', 'sock', 'swim',
                     'bikini', 'underwear', 'lingerie', 'sunglass', 'wallet', 'fragrance', 'candle',
                     'gift card', 'gift-card', 'setup fee', 'art fee', 'tape', 'sticker', 'patch',
-                    'bundle', 'panty', 'panties', 'bra', 'thong'];
+                    'panty', 'panties', 'bra', 'thong', 'g-string', 'g string',
+                    'greeting card', 'backpack', 'rucksack', 'sandal', 'flip flop',
+                    'hair', 'wig', 'extension', 'fabric', 'yarn', 'thread'];
 
 function productScore(p) {
   const blob = `${p.product_type || ''} ${p.title || ''} ${(p.tags || []).join(' ')}`.toLowerCase();

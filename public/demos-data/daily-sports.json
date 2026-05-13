@@ -1,0 +1,28 @@
+{
+  "slug": "daily-sports",
+  "brandName": "Daily Sports",
+  "brandDomain": "dailysports.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sheermotion Long-Sleeved Top Water Circle",
+      "handle": "sheermotion-ls-half-zip-water-circle",
+      "price": "£850.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0945/9154/9781/files/1000806-075_1.jpg?v=1777970059",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0945/9154/9781/files/1000806-075_1.jpg?v=1777970059",
+        "https://cdn.shopify.com/s/files/1/0945/9154/9781/files/1000806-075_2.jpg?v=1777970059",
+        "https://cdn.shopify.com/s/files/1/0945/9154/9781/files/1000806-075_3.jpg?v=1777970058"
+      ],
+      "tryOnImage": "/demos-images/daily-sports/sheermotion-ls-half-zip-water-circle.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

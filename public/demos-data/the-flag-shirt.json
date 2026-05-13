@@ -1,0 +1,28 @@
+{
+  "slug": "the-flag-shirt",
+  "brandName": "The Flag Shirt",
+  "brandDomain": "theflagshirt.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Made in USA We The People Vertical Flag Short Sleeve T-Shirt",
+      "handle": "made-in-usa-we-the-people-vertical-flag-short-sleeve-t-shirt",
+      "price": "£29.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/2523/4438/files/MUSASST-WTPVFLAG-NAV_1000X1000_front_362c3a1e-e2cd-49ad-afac-1abe4dc12572.jpg?v=1712085062",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2523/4438/files/MUSASST-WTPVFLAG-NAV_1000X1000_front_362c3a1e-e2cd-49ad-afac-1abe4dc12572.jpg?v=1712085062",
+        "https://cdn.shopify.com/s/files/1/2523/4438/files/MUSASST-WTPVFLAG-NAV_1000X1000_side_05226ec1-da3b-4e65-838d-16e3ab1b083a.jpg?v=1712085064",
+        "https://cdn.shopify.com/s/files/1/2523/4438/files/MUSASST-WTPVFLAG-NAV_1000x1000_back.jpg?v=1712085067"
+      ],
+      "tryOnImage": "/demos-images/the-flag-shirt/made-in-usa-we-the-people-vertical-flag-short-sleeve-t-shirt.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "poupette-st-barth",
+  "brandName": "Poupette St Barth",
+  "brandDomain": "poupettestbarth.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Long Dress Suzanne - Blue Palm Beach",
+      "handle": "long-dress-suzanne-blue-palm-beach",
+      "price": "£326.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0752/1983/files/Firefly-58.png?v=1778579279",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0752/1983/files/Firefly-58.png?v=1778579279",
+        "https://cdn.shopify.com/s/files/1/0752/1983/files/Firefly-60.png?v=1778579294",
+        "https://cdn.shopify.com/s/files/1/0752/1983/files/Firefly-61.png?v=1778579313"
+      ],
+      "tryOnImage": "/demos-images/poupette-st-barth/long-dress-suzanne-blue-palm-beach.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "lace-laboratory",
+  "brandName": "Lace Laboratory",
+  "brandDomain": "lacelaboratory.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "G String - Candy Pink",
+      "handle": "g-string-light-pink",
+      "price": "£260.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1550/5315/files/GeneratedwithKive.ai-kive-image_4.png?v=1777374981",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1550/5315/files/GeneratedwithKive.ai-kive-image_4.png?v=1777374981",
+        "https://cdn.shopify.com/s/files/1/1550/5315/files/G-String-OnModel-CandyPink.jpg?v=1777374978",
+        "https://cdn.shopify.com/s/files/1/1550/5315/files/G-String-OnModel-CandyPink1.jpg?v=1777374980"
+      ],
+      "tryOnImage": "/demos-images/lace-laboratory/g-string-light-pink.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

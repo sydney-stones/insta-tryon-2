@@ -1,0 +1,28 @@
+{
+  "slug": "meeko",
+  "brandName": "MEEKO",
+  "brandDomain": "meeko.store",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "WOODPACKER - HERITAGE - BACKPACK MODULABLE, TECHNIQUE ET DURABLE",
+      "handle": "woodpacker-heritage-backpack-modulable-technique-et-durable",
+      "price": "£149.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render1_1_2.png?v=1777969699",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render1_1_2.png?v=1777969699",
+        "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render4.png?v=1777918254",
+        "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render6.png?v=1777918254"
+      ],
+      "tryOnImage": "/demos-images/meeko/woodpacker-heritage-backpack-modulable-technique-et-durable.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

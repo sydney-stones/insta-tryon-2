@@ -1,0 +1,28 @@
+{
+  "slug": "021-originals",
+  "brandName": "021 Originals",
+  "brandDomain": "021originals.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "OUTSET FLANNEL - TURQUOISE",
+      "handle": "outset-flannel-turquoise",
+      "price": "£34.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0483/8296/7962/files/021Originals-4copy_9cfddd49-bacc-4099-90e4-6240dc76b71f.jpg?v=1773265003",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0483/8296/7962/files/021Originals-4copy_9cfddd49-bacc-4099-90e4-6240dc76b71f.jpg?v=1773265003",
+        "https://cdn.shopify.com/s/files/1/0483/8296/7962/files/Turquoise_F.png?v=1773266950",
+        "https://cdn.shopify.com/s/files/1/0483/8296/7962/files/copy_-_copy_-_copy_-_copy_-_copy_-_copy_-_copy_-_copy_-_copy_-_copy_-_copy_-black-friday---flashing-50----hoodie--1-instagram1080.png?v=1773285316"
+      ],
+      "tryOnImage": "/demos-images/021-originals/outset-flannel-turquoise.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

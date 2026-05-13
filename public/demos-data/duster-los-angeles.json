@@ -1,0 +1,28 @@
+{
+  "slug": "duster-los-angeles",
+  "brandName": "Duster Los Angeles",
+  "brandDomain": "shopduster.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Runaround",
+      "handle": "the-runaround-1",
+      "price": "£285.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0759/8705/9007/files/Style1_0371.jpg?v=1733446262",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0759/8705/9007/files/Style1_0371.jpg?v=1733446262",
+        "https://cdn.shopify.com/s/files/1/0759/8705/9007/files/Style1_0368.jpg?v=1733446259",
+        "https://cdn.shopify.com/s/files/1/0759/8705/9007/files/Style1_0384.jpg?v=1733446264"
+      ],
+      "tryOnImage": "/demos-images/duster-los-angeles/the-runaround-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "scanlan-theodore-au",
+  "brandName": "Scanlan Theodore AU",
+  "brandDomain": "scanlantheodore.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "SILK MERINO KNIT SHIRT",
+      "handle": "silk-merino-knit-shirt-pine",
+      "price": "£186.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1899/4143/files/C6262533-SILK-MERINO-KNIT-SHIRT-PINE-SCANLANTHEODORE-0.jpg?v=1778117466",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1899/4143/files/C6262533-SILK-MERINO-KNIT-SHIRT-PINE-SCANLANTHEODORE-0.jpg?v=1778117466",
+        "https://cdn.shopify.com/s/files/1/1899/4143/files/C6262533-SILK-MERINO-KNIT-SHIRT-PINE-SCANLANTHEODORE-1.jpg?v=1778117466",
+        "https://cdn.shopify.com/s/files/1/1899/4143/files/C6262533-SILK-MERINO-KNIT-SHIRT-PINE-SCANLANTHEODORE-2.jpg?v=1778117467"
+      ],
+      "tryOnImage": "/demos-images/scanlan-theodore-au/silk-merino-knit-shirt-pine.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

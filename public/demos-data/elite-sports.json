@@ -1,0 +1,28 @@
+{
+  "slug": "elite-sports",
+  "brandName": "Elite Sports",
+  "brandDomain": "elitesports.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Standard Black Long Sleeve No-Gi Womens BJJ Rash Guard",
+      "handle": "womens-standard-black-long-sleeve-brazilian-jiu-jitsu-bjj-rash-guard",
+      "price": "£15.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0030/3742/9849/files/womens-standard-black-long-sleeve-brazilian-jiu-jitsu-bjj-rash-guard_1.jpg?v=1749152068",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0030/3742/9849/files/womens-standard-black-long-sleeve-brazilian-jiu-jitsu-bjj-rash-guard_1.jpg?v=1749152068",
+        "https://cdn.shopify.com/s/files/1/0030/3742/9849/files/womens-standard-black-long-sleeve-brazilian-jiu-jitsu-bjj-rash-guard_3.jpg?v=1768326682",
+        "https://cdn.shopify.com/s/files/1/0030/3742/9849/files/womens-standard-black-long-sleeve-brazilian-jiu-jitsu-bjj-rash-guard-size-chart-1.jpg?v=1775652804"
+      ],
+      "tryOnImage": "/demos-images/elite-sports/womens-standard-black-long-sleeve-brazilian-jiu-jitsu-bjj-rash-guard.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

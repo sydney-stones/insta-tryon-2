@@ -1,0 +1,28 @@
+{
+  "slug": "bobhead",
+  "brandName": "BOBHEAD",
+  "brandDomain": "bobhead.co.uk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "BOBHEAD Skull Necklace Pendant",
+      "handle": "bobhead-skull-necklace-pendant",
+      "price": "£29.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0571/9926/3817/files/48069542-A564-47B7-A45C-1B12515A21BC.jpg?v=1765894661",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0571/9926/3817/files/48069542-A564-47B7-A45C-1B12515A21BC.jpg?v=1765894661",
+        "https://cdn.shopify.com/s/files/1/0571/9926/3817/files/435E6910-514F-4E0F-8302-766A86551852.jpg?v=1765894661",
+        "https://cdn.shopify.com/s/files/1/0571/9926/3817/files/IMG_9158.jpg?v=1765894661"
+      ],
+      "tryOnImage": "/demos-images/bobhead/bobhead-skull-necklace-pendant.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

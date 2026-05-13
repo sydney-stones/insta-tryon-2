@@ -1,0 +1,28 @@
+{
+  "slug": "simon-s-sportswear",
+  "brandName": "Simon's Sportswear",
+  "brandDomain": "simonsportswear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Birkenstock Unisex Arizona Essentials Slide-On Sandal",
+      "handle": "birkenstock-unisex-arizona-essentials-slide-on-sandal",
+      "price": "£49.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0076/8792/9923/files/bk-arizonaeva-alm-01.jpg?v=1775585357",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0076/8792/9923/files/bk-arizonaeva-alm-01.jpg?v=1775585357",
+        "https://cdn.shopify.com/s/files/1/0076/8792/9923/files/bk-arizonaeva-acr-01.jpg?v=1775585357",
+        "https://cdn.shopify.com/s/files/1/0076/8792/9923/files/bk-arizonaeva-blk-01.jpg?v=1775585357"
+      ],
+      "tryOnImage": "/demos-images/simon-s-sportswear/birkenstock-unisex-arizona-essentials-slide-on-sandal.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

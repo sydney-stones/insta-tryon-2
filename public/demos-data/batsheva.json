@@ -1,0 +1,28 @@
+{
+  "slug": "batsheva",
+  "brandName": "BATSHEVA",
+  "brandDomain": "batsheva.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Snap Smock Dress in Bordeaux Paisley",
+      "handle": "smock-dress-in-bordeaux-paisley",
+      "price": "£225.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0049/5629/1118/files/B45EDD04-1A37-4301-B853-5B78FA0D99EF.jpg?v=1778529664",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0049/5629/1118/files/B45EDD04-1A37-4301-B853-5B78FA0D99EF.jpg?v=1778529664",
+        "https://cdn.shopify.com/s/files/1/0049/5629/1118/files/BA3D4782-C96F-4D44-BFC4-F5F01682BD02.jpg?v=1778529664",
+        "https://cdn.shopify.com/s/files/1/0049/5629/1118/files/BB1BDA59-5BA0-4435-990A-71C7715C4830.jpg?v=1778529664"
+      ],
+      "tryOnImage": "/demos-images/batsheva/smock-dress-in-bordeaux-paisley.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
