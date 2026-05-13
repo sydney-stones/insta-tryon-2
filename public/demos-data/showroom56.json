@@ -1,0 +1,27 @@
+{
+  "slug": "showroom56",
+  "brandName": "Showroom56",
+  "brandDomain": "showroom56.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Frankie Corset Top",
+      "handle": "frankie-corset-top",
+      "price": "£73.60",
+      "productImage": "https://cdn.shopify.com/s/files/1/0360/0888/6405/files/A4C79BF0-CD53-406C-933A-0A4CC54077DE.jpg?v=1772478032",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0360/0888/6405/files/A4C79BF0-CD53-406C-933A-0A4CC54077DE.jpg?v=1772478032",
+        "https://cdn.shopify.com/s/files/1/0360/0888/6405/files/018D6223-2B32-4DA7-BFFA-0B8898D3A61B.jpg?v=1772478032"
+      ],
+      "tryOnImage": "/demos-images/showroom56/frankie-corset-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

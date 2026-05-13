@@ -1,0 +1,28 @@
+{
+  "slug": "raleigh-denim",
+  "brandName": "Raleigh Denim",
+  "brandDomain": "raleighdenim.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Denim Jacket | Lookout Wash",
+      "handle": "denim-jacket-lookout-wash",
+      "price": "£465.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2006/8681/files/Raleigh-Denim-April-2026-FINALS-356.jpg?v=1776179436",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2006/8681/files/Raleigh-Denim-April-2026-FINALS-356.jpg?v=1776179436",
+        "https://cdn.shopify.com/s/files/1/2006/8681/files/Raleigh-Denim-April-2026-FINALS-333.jpg?v=1776179436",
+        "https://cdn.shopify.com/s/files/1/2006/8681/files/Raleigh-Denim-April-2026-FINALS-336.jpg?v=1776179436"
+      ],
+      "tryOnImage": "/demos-images/raleigh-denim/denim-jacket-lookout-wash.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

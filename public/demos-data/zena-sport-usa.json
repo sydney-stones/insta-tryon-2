@@ -1,0 +1,28 @@
+{
+  "slug": "zena-sport-usa",
+  "brandName": "Zena Sport USA",
+  "brandDomain": "zenasport.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Active Long Sleeve Top",
+      "handle": "active-long-sleeve-shirt",
+      "price": "£49.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0575/8369/7963/files/Zena_Sport_-_L_Sleeve_T-Shirt_Base_Layer_-_Side.png?v=1777613585",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0575/8369/7963/files/Zena_Sport_-_L_Sleeve_T-Shirt_Base_Layer_-_Side.png?v=1777613585",
+        "https://cdn.shopify.com/s/files/1/0575/8369/7963/files/Zena_Sport_-_L_Sleeve_T-Shirt_Base_Layer_-_Back.png?v=1777613585",
+        "https://cdn.shopify.com/s/files/1/0575/8369/7963/files/Zena_Sport_-_L_Sleeve_T-Shirt_Base_Layer_-_Side_2.png?v=1777613586"
+      ],
+      "tryOnImage": "/demos-images/zena-sport-usa/active-long-sleeve-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

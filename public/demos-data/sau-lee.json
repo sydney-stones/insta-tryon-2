@@ -1,0 +1,28 @@
+{
+  "slug": "sau-lee",
+  "brandName": "SAU LEE",
+  "brandDomain": "sau-lee.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Avery Tweed Top",
+      "handle": "avery-top-green-multi",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0500/4001/files/Avery_Pant_Green_Multi_1_f2e96f11-44fc-4c5b-ba55-88dc72c7ae9a.jpg?v=1754038583",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0500/4001/files/Avery_Pant_Green_Multi_1_f2e96f11-44fc-4c5b-ba55-88dc72c7ae9a.jpg?v=1754038583",
+        "https://cdn.shopify.com/s/files/1/0500/4001/files/SL_AUG2011.jpg?v=1754038586",
+        "https://cdn.shopify.com/s/files/1/0500/4001/files/Avery_Pant_Green_Multi_1_0d5ea2c8-51ae-4e0c-85cd-7f528d13fb94.jpg?v=1754038587"
+      ],
+      "tryOnImage": "/demos-images/sau-lee/avery-top-green-multi.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

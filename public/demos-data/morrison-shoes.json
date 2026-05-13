@@ -1,0 +1,28 @@
+{
+  "slug": "morrison-shoes",
+  "brandName": "Morrison Shoes",
+  "brandDomain": "morrisonshoes.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "SKY BLUE LOOSE SWEAT",
+      "handle": "sky-blue-loose-sweat",
+      "price": "£65.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0659/6182/0427/files/2025_12_03MORRISON0010.jpg?v=1768841593",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0659/6182/0427/files/2025_12_03MORRISON0010.jpg?v=1768841593",
+        "https://cdn.shopify.com/s/files/1/0659/6182/0427/files/2025_12_03MORRISON00131.jpg?v=1768841593",
+        "https://cdn.shopify.com/s/files/1/0659/6182/0427/files/2025_12_03MORRISON0011.jpg?v=1768841576"
+      ],
+      "tryOnImage": "/demos-images/morrison-shoes/sky-blue-loose-sweat.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "maha-amsterdam-b-v",
+  "brandName": "Maha Amsterdam B.V.",
+  "brandDomain": "maha-amsterdam.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Nomarhythm Textile Bandana Embroidery Denim Pants Indigo",
+      "handle": "nomarhythm-bandana-embroidery-denim-pants-indigo",
+      "price": "£450.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0587/3785/2623/files/Nomarhythm-Textile-Bandana-Embroidery-Denim-Pants-Indigo-2.jpg?v=1778147031",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0587/3785/2623/files/Nomarhythm-Textile-Bandana-Embroidery-Denim-Pants-Indigo-2.jpg?v=1778147031",
+        "https://cdn.shopify.com/s/files/1/0587/3785/2623/files/Nomarhythm-Textile-Bandana-Embroidery-Denim-Pants-Indigo-4.jpg?v=1778510025",
+        "https://cdn.shopify.com/s/files/1/0587/3785/2623/files/Nomarhythm-Textile-Bandana-Embroidery-Denim-Pants-Indigo-1.jpg?v=1778147027"
+      ],
+      "tryOnImage": "/demos-images/maha-amsterdam-b-v/nomarhythm-bandana-embroidery-denim-pants-indigo.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

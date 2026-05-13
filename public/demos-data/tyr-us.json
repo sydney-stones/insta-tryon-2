@@ -1,0 +1,28 @@
+{
+  "slug": "tyr-us",
+  "brandName": "TYR US",
+  "brandDomain": "tyr.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Power Mesh Tank",
+      "handle": "womens-power-mesh-shirt",
+      "price": "£69.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0682/4191/6062/files/T39110-001_main01.jpg?v=1775578750",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0682/4191/6062/files/T39110-001_main01.jpg?v=1775578750",
+        "https://cdn.shopify.com/s/files/1/0682/4191/6062/files/T39110-001_main02.jpg?v=1775578751",
+        "https://cdn.shopify.com/s/files/1/0682/4191/6062/files/T39110-001_alt08.jpg?v=1775578750"
+      ],
+      "tryOnImage": "/demos-images/tyr-us/womens-power-mesh-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

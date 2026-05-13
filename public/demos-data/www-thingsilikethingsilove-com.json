@@ -1,0 +1,28 @@
+{
+  "slug": "www-thingsilikethingsilove-com",
+  "brandName": "www.thingsilikethingsilove.com",
+  "brandDomain": "thingsilikethingsilove.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "TILTIL Jillie Crochet Gilet Black",
+      "handle": "tiltil-jillie-crochet-gilet-black",
+      "price": "£34.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0100/0662/6367/files/tiltil-jillie-crochet-gilet-black-things-i-like-things-i-love-5567505.jpg?v=1778601686",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0100/0662/6367/files/tiltil-jillie-crochet-gilet-black-things-i-like-things-i-love-5567505.jpg?v=1778601686",
+        "https://cdn.shopify.com/s/files/1/0100/0662/6367/files/tiltil-jillie-crochet-gilet-black-things-i-like-things-i-love-7180048.jpg?v=1778601685",
+        "https://cdn.shopify.com/s/files/1/0100/0662/6367/files/tiltil-jillie-crochet-gilet-black-things-i-like-things-i-love-2712887.jpg?v=1778601686"
+      ],
+      "tryOnImage": "/demos-images/www-thingsilikethingsilove-com/tiltil-jillie-crochet-gilet-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

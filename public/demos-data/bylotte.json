@@ -1,0 +1,28 @@
+{
+  "slug": "bylotte",
+  "brandName": "BYLOTTE",
+  "brandDomain": "bylotte.nl",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "RAE - Blouse - Nikki - Check Blue / Teal",
+      "handle": "rae-blouse-nikki-check-blue-teal",
+      "price": "£195.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0801/4223/7983/files/Naamloos-1_4cb5539c-5ac0-4608-8fc8-e578b9e507dd.png?v=1778683635",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0801/4223/7983/files/Naamloos-1_4cb5539c-5ac0-4608-8fc8-e578b9e507dd.png?v=1778683635",
+        "https://cdn.shopify.com/s/files/1/0801/4223/7983/files/Naamloos-2_93c5d462-f994-4d10-9f98-9b64113f4fa1.png?v=1778683637",
+        "https://cdn.shopify.com/s/files/1/0801/4223/7983/files/Naamloos-1_abc7a2b8-28c2-433b-b450-962ad0f9a76e.png?v=1778681616"
+      ],
+      "tryOnImage": "/demos-images/bylotte/rae-blouse-nikki-check-blue-teal.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

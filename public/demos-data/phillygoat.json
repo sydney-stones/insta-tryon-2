@@ -1,0 +1,28 @@
+{
+  "slug": "phillygoat",
+  "brandName": "Phillygoat",
+  "brandDomain": "phillygoat.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "\"The EmBA Logo\" 3/4 Sleeve Raglan Shirt",
+      "handle": "the-emba-logo-3-4-sleeve-raglan-shirt",
+      "price": "£26.28",
+      "productImage": "https://cdn.shopify.com/s/files/1/0409/0878/3784/files/philadelphia-76ers-joel-embiid-nba-logo-raglan-shirt-red-white-phillygoat.png?v=1777487694",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0409/0878/3784/files/philadelphia-76ers-joel-embiid-nba-logo-raglan-shirt-red-white-phillygoat.png?v=1777487694",
+        "https://cdn.shopify.com/s/files/1/0409/0878/3784/files/philadelphia-76ers-joel-embiid-nba-logo-raglan-shirt-blue-white-phillygoat.png?v=1777487695",
+        "https://cdn.shopify.com/s/files/1/0409/0878/3784/files/unisex-34-sleeve-raglan-shirt-white-red-front-69f24ddaa0bce.jpg?v=1777487332"
+      ],
+      "tryOnImage": "/demos-images/phillygoat/the-emba-logo-3-4-sleeve-raglan-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

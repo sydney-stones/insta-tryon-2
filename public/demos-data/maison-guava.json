@@ -1,0 +1,26 @@
+{
+  "slug": "maison-guava",
+  "brandName": "Maison Guava",
+  "brandDomain": "maisonguava.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Longsleeve DJ Reversible | Hellstar",
+      "handle": "longsleeve-dj-reversible-hellstar-offwhite",
+      "price": "£350.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0686/3713/1016/files/a643ea7a4f9e5084364ff0cc8b33d7cd_489e3f01-8741-40b6-ace9-08cae4012c8a.png?v=1769690481",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0686/3713/1016/files/a643ea7a4f9e5084364ff0cc8b33d7cd_489e3f01-8741-40b6-ace9-08cae4012c8a.png?v=1769690481"
+      ],
+      "tryOnImage": "/demos-images/maison-guava/longsleeve-dj-reversible-hellstar-offwhite.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

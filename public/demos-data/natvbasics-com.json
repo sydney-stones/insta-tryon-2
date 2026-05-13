@@ -1,0 +1,28 @@
+{
+  "slug": "natvbasics-com",
+  "brandName": "natvbasics.com",
+  "brandDomain": "natvbasics.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Mothers Day - Buy Crop get the G FREE!",
+      "handle": "mothers-day-buy-crop-get-the-g-free",
+      "price": "£29.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0250/0014/9071/files/TAS9063-2.jpg?v=1777841099",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0250/0014/9071/files/TAS9063-2.jpg?v=1777841099",
+        "https://cdn.shopify.com/s/files/1/0250/0014/9071/files/IMG_5362.jpg?v=1777841015",
+        "https://cdn.shopify.com/s/files/1/0250/0014/9071/files/IMG_5374.jpg?v=1777841015"
+      ],
+      "tryOnImage": "/demos-images/natvbasics-com/mothers-day-buy-crop-get-the-g-free.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

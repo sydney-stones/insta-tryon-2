@@ -1,0 +1,28 @@
+{
+  "slug": "unbonmaillot-com",
+  "brandName": "Unbonmaillot.com",
+  "brandDomain": "unbonmaillot.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "La box clubs Espagnols 🇪🇸",
+      "handle": "la-box-clubs-espagnols",
+      "price": "£54.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0574/5167/5828/files/ES_-_DRAPEAU.png?v=1775821520",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0574/5167/5828/files/ES_-_DRAPEAU.png?v=1775821520",
+        "https://cdn.shopify.com/s/files/1/0574/5167/5828/files/etapes-infographie.gif?v=1776274418",
+        "https://cdn.shopify.com/s/files/1/0574/5167/5828/files/image_3_box_mystere_uk.webp?v=1775821779"
+      ],
+      "tryOnImage": "/demos-images/unbonmaillot-com/la-box-clubs-espagnols.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

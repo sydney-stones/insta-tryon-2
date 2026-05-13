@@ -1,0 +1,28 @@
+{
+  "slug": "carine-s-bridal",
+  "brandName": "Carine's Bridal",
+  "brandDomain": "carinesbridal.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Dolce",
+      "handle": "dolce",
+      "price": "£1705.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0269/4430/7281/files/dolcefront_1.jpg?v=1746554733",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0269/4430/7281/files/dolcefront_1.jpg?v=1746554733",
+        "https://cdn.shopify.com/s/files/1/0269/4430/7281/files/dolceback.jpg?v=1746554739",
+        "https://cdn.shopify.com/s/files/1/0269/4430/7281/files/Screen_Shot_2025-05-06_at_3.02.53_PM.png?v=1746558204"
+      ],
+      "tryOnImage": "/demos-images/carine-s-bridal/dolce.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

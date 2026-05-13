@@ -1,0 +1,28 @@
+{
+  "slug": "basic-apparel",
+  "brandName": "Basic Apparel",
+  "brandDomain": "basicapparel.dk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Cody Pants - Light Wash",
+      "handle": "cody-pants-bukser-light-wash",
+      "price": "£799.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0788/7793/files/Cody_Pants-Bukser-BA436-04-189_Light_Wash.jpg?v=1775820956",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0788/7793/files/Cody_Pants-Bukser-BA436-04-189_Light_Wash.jpg?v=1775820956",
+        "https://cdn.shopify.com/s/files/1/0788/7793/files/Cody_Pants-Bukser-BA436-04-189_Light_Wash-1.jpg?v=1775820956",
+        "https://cdn.shopify.com/s/files/1/0788/7793/files/Cody_Pants-Bukser-BA436-04-189_Light_Wash-2.jpg?v=1775820956"
+      ],
+      "tryOnImage": "/demos-images/basic-apparel/cody-pants-bukser-light-wash.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

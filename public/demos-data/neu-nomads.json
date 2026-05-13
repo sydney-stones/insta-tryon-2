@@ -1,0 +1,28 @@
+{
+  "slug": "neu-nomads",
+  "brandName": "Neu Nomads",
+  "brandDomain": "neunomads.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Bias Camisole | Camisole | TENCEL™",
+      "handle": "bias-camisole-fw23",
+      "price": "£81.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2789/6748/files/Bias-Camisole-Tops-Neu-Nomads.jpg?v=1706211307",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2789/6748/files/Bias-Camisole-Tops-Neu-Nomads.jpg?v=1706211307",
+        "https://cdn.shopify.com/s/files/1/2789/6748/files/Bias-Camisole-Tops-Neu-Nomads-2.jpg?v=1763062183",
+        "https://cdn.shopify.com/s/files/1/2789/6748/files/Bias-Camisole-Tops-Neu-Nomads-3.jpg?v=1706211321"
+      ],
+      "tryOnImage": "/demos-images/neu-nomads/bias-camisole-fw23.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "shop-faye-s",
+  "brandName": "Shop FAYE's",
+  "brandDomain": "fayes123.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Short Sleeve Shirred Button Front Woven Dress in Tan Floral Multi",
+      "handle": "short-sleeve-shirred-button-front-woven-dress-in-tan-floral-multi",
+      "price": "£129.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0268/9112/4787/files/ShirredDress-1.jpg?v=1778617340",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0268/9112/4787/files/ShirredDress-1.jpg?v=1778617340",
+        "https://cdn.shopify.com/s/files/1/0268/9112/4787/files/ShirredDress-2.jpg?v=1778617340",
+        "https://cdn.shopify.com/s/files/1/0268/9112/4787/files/ShirredDress-3.jpg?v=1778617340"
+      ],
+      "tryOnImage": "/demos-images/shop-faye-s/short-sleeve-shirred-button-front-woven-dress-in-tan-floral-multi.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

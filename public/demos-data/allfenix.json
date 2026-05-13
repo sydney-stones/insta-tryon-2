@@ -1,0 +1,28 @@
+{
+  "slug": "allfenix",
+  "brandName": "ALLFENIX",
+  "brandDomain": "allfenix.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Wide Leg Knit Pant",
+      "handle": "wide-leg-knit-pant-copy",
+      "price": "£56.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0982/3148/files/durcjgkkehyublelzhsj.webp?v=1778637626",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0982/3148/files/durcjgkkehyublelzhsj.webp?v=1778637626",
+        "https://cdn.shopify.com/s/files/1/0982/3148/files/ebmzjj9uuxofgvj2co2y.webp?v=1778634422",
+        "https://cdn.shopify.com/s/files/1/0982/3148/files/Untitled-28.webp?v=1778637850"
+      ],
+      "tryOnImage": "/demos-images/allfenix/wide-leg-knit-pant-copy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

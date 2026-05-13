@@ -1,0 +1,28 @@
+{
+  "slug": "vintagesummerswimwear-com",
+  "brandName": "VintageSummerSwimwear.com",
+  "brandDomain": "vintagesummerswimwear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Mens Embroidered Endless Summer Volley",
+      "handle": "mens-embroidered-endless-summer-volley-blue",
+      "price": "£34.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0283/7109/1504/files/E30947_01.jpg?v=1768422868",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0283/7109/1504/files/E30947_01.jpg?v=1768422868",
+        "https://cdn.shopify.com/s/files/1/0283/7109/1504/files/E30947_02.jpg?v=1768422868",
+        "https://cdn.shopify.com/s/files/1/0283/7109/1504/files/E30947_03.jpg?v=1768422869"
+      ],
+      "tryOnImage": "/demos-images/vintagesummerswimwear-com/mens-embroidered-endless-summer-volley-blue.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

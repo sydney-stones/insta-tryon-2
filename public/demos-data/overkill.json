@@ -1,0 +1,28 @@
+{
+  "slug": "overkill",
+  "brandName": "OVERKILL",
+  "brandDomain": "overkillshop.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Blouson",
+      "handle": "lacoste-blouson-bh6978-00-ikh-noir-croissant-farine",
+      "price": "£143.70",
+      "productImage": "https://cdn.shopify.com/s/files/1/0631/5514/2847/files/BH6978-00IKH_1.jpg?v=1713974169",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0631/5514/2847/files/BH6978-00IKH_1.jpg?v=1713974169",
+        "https://cdn.shopify.com/s/files/1/0631/5514/2847/files/BH6978-00IKH_2_08ed294e-1aa8-49c5-aaa0-1127dd0a6f90.jpg?v=1714053227",
+        "https://cdn.shopify.com/s/files/1/0631/5514/2847/files/BH6978-00IKH_3.jpg?v=1714063708"
+      ],
+      "tryOnImage": "/demos-images/overkill/lacoste-blouson-bh6978-00-ikh-noir-croissant-farine.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

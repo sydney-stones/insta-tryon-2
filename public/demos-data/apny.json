@@ -1,0 +1,28 @@
+{
+  "slug": "apny",
+  "brandName": "APNY",
+  "brandDomain": "apnyapparel.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Open Knit Polo",
+      "handle": "open-knit-polo",
+      "price": "£89.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0614/7447/2112/files/imgFetch-2026-04-03T163738.934.jpg?v=1775214505",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0614/7447/2112/files/imgFetch-2026-04-03T163738.934.jpg?v=1775214505",
+        "https://cdn.shopify.com/s/files/1/0614/7447/2112/files/imgFetch-2026-04-03T163743.748.jpg?v=1776333429",
+        "https://cdn.shopify.com/s/files/1/0614/7447/2112/files/imgFetch-2026-04-03T163750.162.jpg?v=1776333429"
+      ],
+      "tryOnImage": "/demos-images/apny/open-knit-polo.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

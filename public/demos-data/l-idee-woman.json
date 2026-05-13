@@ -1,0 +1,28 @@
+{
+  "slug": "l-idee-woman",
+  "brandName": "L'IDÉE | WOMAN",
+  "brandDomain": "lideewoman.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Deesse Gown - Hibiscus Midnight",
+      "handle": "deesse-gown-hibiscus-midnight",
+      "price": "£446.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0243/3984/1105/files/A58A6552.jpg?v=1768459141",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0243/3984/1105/files/A58A6552.jpg?v=1768459141",
+        "https://cdn.shopify.com/s/files/1/0243/3984/1105/files/A58A6571.jpg?v=1768459141",
+        "https://cdn.shopify.com/s/files/1/0243/3984/1105/files/A58A6656.jpg?v=1768459141"
+      ],
+      "tryOnImage": "/demos-images/l-idee-woman/deesse-gown-hibiscus-midnight.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

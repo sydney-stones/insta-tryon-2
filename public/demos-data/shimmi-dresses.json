@@ -1,0 +1,28 @@
+{
+  "slug": "shimmi-dresses",
+  "brandName": "Shimmi Dresses",
+  "brandDomain": "shimmidresses.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Blue Corset Gown With Long Sleeves",
+      "handle": "blue-corset-gown-with-long-sleeves",
+      "price": "£100.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0283/2302/0931/files/52_42bf0a68-7506-4012-9bb9-ab812ceb546c.png?v=1744796811",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0283/2302/0931/files/52_42bf0a68-7506-4012-9bb9-ab812ceb546c.png?v=1744796811",
+        "https://cdn.shopify.com/s/files/1/0283/2302/0931/files/57_db9350d5-c009-492f-bb15-d145cd762a99.png?v=1744796827",
+        "https://cdn.shopify.com/s/files/1/0283/2302/0931/files/53_64d356b5-0c8a-4566-bf3b-36bf562dfde1.png?v=1744796827"
+      ],
+      "tryOnImage": "/demos-images/shimmi-dresses/blue-corset-gown-with-long-sleeves.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

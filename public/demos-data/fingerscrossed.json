@@ -1,0 +1,28 @@
+{
+  "slug": "fingerscrossed",
+  "brandName": "FINGERSCROSSED",
+  "brandDomain": "fingerscrossed.design",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "ROAD CROP TOP BUNDLE WOMEN",
+      "handle": "road-crop-top-bundle-women",
+      "price": "£287.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1688/7473/files/CROPTOP_SAND_W_2_3b253e22-3743-42b3-8833-a99a9e5b896a.jpg?v=1776778434",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1688/7473/files/CROPTOP_SAND_W_2_3b253e22-3743-42b3-8833-a99a9e5b896a.jpg?v=1776778434",
+        "https://cdn.shopify.com/s/files/1/1688/7473/files/CROPTOP_AC_W_2_c34791d4-97e7-406c-ad28-bf1b1cc4a123.jpg?v=1776778434",
+        "https://cdn.shopify.com/s/files/1/1688/7473/files/CROPTOP_BUTTER_W_2_a05f19da-a453-44c5-96b9-6a1d4919a736.jpg?v=1776778434"
+      ],
+      "tryOnImage": "/demos-images/fingerscrossed/road-crop-top-bundle-women.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

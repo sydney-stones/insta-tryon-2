@@ -1,0 +1,28 @@
+{
+  "slug": "neoclassics",
+  "brandName": "NEOCLASSICS",
+  "brandDomain": "neoclassics.org",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Journey Unisex Hooded Sweatshirt",
+      "handle": "journey-unisex-hooded-sweatshirt",
+      "price": "£46.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0887/6430/files/1880_3journeyhoodie111.jpg?v=1766043007",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0887/6430/files/1880_3journeyhoodie111.jpg?v=1766043007",
+        "https://cdn.shopify.com/s/files/1/0887/6430/files/journeyhoodie_FRONT.jpg?v=1766013368",
+        "https://cdn.shopify.com/s/files/1/0887/6430/files/journeyhoodie_back.jpg?v=1766013368"
+      ],
+      "tryOnImage": "/demos-images/neoclassics/journey-unisex-hooded-sweatshirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

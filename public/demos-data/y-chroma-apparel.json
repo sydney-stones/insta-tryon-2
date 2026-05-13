@@ -1,0 +1,28 @@
+{
+  "slug": "y-chroma-apparel",
+  "brandName": "Y.Chroma Apparel",
+  "brandDomain": "ychroma.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Becker 5-Pocket Pant",
+      "handle": "becker-5-pocket-pant",
+      "price": "£399.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0620/1648/7614/files/ycm-ss5-004077_c7a1687b-77d6-49f9-a62e-b0a4382bc3a6.jpg?v=1767719015",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0620/1648/7614/files/ycm-ss5-004077_c7a1687b-77d6-49f9-a62e-b0a4382bc3a6.jpg?v=1767719015",
+        "https://cdn.shopify.com/s/files/1/0620/1648/7614/files/ycm-ss5-004079_3a9ba8b3-243e-4e9e-a3ec-1f62e95ef848.jpg?v=1767719015",
+        "https://cdn.shopify.com/s/files/1/0620/1648/7614/files/ycm-ss5-004110_7ba5cbbd-91e0-4ebe-a6fc-90b4d7a711a9.jpg?v=1773680413"
+      ],
+      "tryOnImage": "/demos-images/y-chroma-apparel/becker-5-pocket-pant.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "mac-jeans",
+  "brandName": "MAC Jeans",
+  "brandDomain": "mac-jeans.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Overjacket",
+      "handle": "overjacket-0202-00-0906-h701",
+      "price": "£129.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0952/2721/6221/files/KOL_30_0202-00-0906_H701_07.jpg?v=1773707836",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0952/2721/6221/files/KOL_30_0202-00-0906_H701_07.jpg?v=1773707836",
+        "https://cdn.shopify.com/s/files/1/0952/2721/6221/files/KOL_30_0202-00-0906_H701_08.png?v=1773707838",
+        "https://cdn.shopify.com/s/files/1/0952/2721/6221/files/KOL_30_0202-00-0906_H701_09.png?v=1773707838"
+      ],
+      "tryOnImage": "/demos-images/mac-jeans/overjacket-0202-00-0906-h701.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

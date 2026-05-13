@@ -1,0 +1,28 @@
+{
+  "slug": "all-for-mimi",
+  "brandName": "All For Mimi",
+  "brandDomain": "allformimi.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sand Faux Suede Harper Jacket",
+      "handle": "sand-faux-suede-harper-jacket",
+      "price": "£87.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0785/7884/3933/files/1_751e84d1-529d-4788-bdd9-68b92481babc.jpg?v=1777523610",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0785/7884/3933/files/1_751e84d1-529d-4788-bdd9-68b92481babc.jpg?v=1777523610",
+        "https://cdn.shopify.com/s/files/1/0785/7884/3933/files/2_dbc0823e-4ea3-4640-b4c7-08fc4e629520.jpg?v=1777523609",
+        "https://cdn.shopify.com/s/files/1/0785/7884/3933/files/3_5e60eda2-a724-494b-a353-48b6b6f35290.jpg?v=1777523609"
+      ],
+      "tryOnImage": "/demos-images/all-for-mimi/sand-faux-suede-harper-jacket.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

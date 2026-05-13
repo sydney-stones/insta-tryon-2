@@ -1,0 +1,28 @@
+{
+  "slug": "post-office-by-shannon-passero",
+  "brandName": "Post Office by Shannon Passero",
+  "brandDomain": "shannonpassero.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Flower Cardigan",
+      "handle": "flower-cardigan",
+      "price": "£112.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2181/4855/files/5826_1.jpg?v=1778618456",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2181/4855/files/5826_1.jpg?v=1778618456",
+        "https://cdn.shopify.com/s/files/1/2181/4855/files/5826_2.jpg?v=1778618422",
+        "https://cdn.shopify.com/s/files/1/2181/4855/files/5826_1_345d482a-9766-478d-bc49-a33b9abd37c6.jpg?v=1778618435"
+      ],
+      "tryOnImage": "/demos-images/post-office-by-shannon-passero/flower-cardigan.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

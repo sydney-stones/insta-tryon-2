@@ -1,0 +1,28 @@
+{
+  "slug": "eternal-bridal",
+  "brandName": "Eternal Bridal",
+  "brandDomain": "eternalbridal.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sienna - New",
+      "handle": "sienna-new-1",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0086/6762/7577/files/SaltAtelier_LeLeeStudioFineryAndFlair_Editorial_71.jpg?v=1766109700",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0086/6762/7577/files/SaltAtelier_LeLeeStudioFineryAndFlair_Editorial_71.jpg?v=1766109700",
+        "https://cdn.shopify.com/s/files/1/0086/6762/7577/files/SaltAtelier_LeLeeStudioFineryAndFlair_Editorial_72.jpg?v=1766109701",
+        "https://cdn.shopify.com/s/files/1/0086/6762/7577/files/SaltAtelier_LeLeeStudioFineryAndFlair_Editorial_73.jpg?v=1766109701"
+      ],
+      "tryOnImage": "/demos-images/eternal-bridal/sienna-new-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

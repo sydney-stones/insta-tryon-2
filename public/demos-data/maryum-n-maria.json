@@ -1,0 +1,28 @@
+{
+  "slug": "maryum-n-maria",
+  "brandName": "Maryum N Maria",
+  "brandDomain": "maryumnmaria.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "MILAGROS - MSS6320",
+      "handle": "milagros-mss6320",
+      "price": "£89.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0609/3475/0449/files/MSS-6320_2.jpg?v=1778666047",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0609/3475/0449/files/MSS-6320_2.jpg?v=1778666047",
+        "https://cdn.shopify.com/s/files/1/0609/3475/0449/files/MSS-6320_1.jpg?v=1778666047",
+        "https://cdn.shopify.com/s/files/1/0609/3475/0449/files/MSS-6320_5.jpg?v=1778666047"
+      ],
+      "tryOnImage": "/demos-images/maryum-n-maria/milagros-mss6320.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

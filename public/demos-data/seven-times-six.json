@@ -1,0 +1,28 @@
+{
+  "slug": "seven-times-six",
+  "brandName": "Seven Times Six",
+  "brandDomain": "seventimessix.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Disney Women's Lilo & Stitch Ohana Soft Touch Cotton Pajama Pants",
+      "handle": "disney-womens-lilo-stitch-ohana-soft-touch-cotton-pajama-pants",
+      "price": "£19.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0355/1625/files/mf20456pt-3_20square.jpg?v=1777934451",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0355/1625/files/mf20456pt-3_20square.jpg?v=1777934451",
+        "https://cdn.shopify.com/s/files/1/0355/1625/files/MF20456PT-3.jpg?v=1777934451",
+        "https://cdn.shopify.com/s/files/1/0355/1625/files/MF20461PT-5.jpg?v=1777934451"
+      ],
+      "tryOnImage": "/demos-images/seven-times-six/disney-womens-lilo-stitch-ohana-soft-touch-cotton-pajama-pants.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

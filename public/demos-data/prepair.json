@@ -1,0 +1,28 @@
+{
+  "slug": "prepair",
+  "brandName": "PREPAIR",
+  "brandDomain": "prepair.dk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Bree Jacket / 2934 - Rosa",
+      "handle": "2934-bree-jacket-jacket-rosa",
+      "price": "£799.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2261/3493/files/Bree_Jacket-Jacket-2934-Rosa.jpg?v=1776763327",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2261/3493/files/Bree_Jacket-Jacket-2934-Rosa.jpg?v=1776763327",
+        "https://cdn.shopify.com/s/files/1/2261/3493/files/Bree_Jacket-Jacket-2934-Rosa-1_a9458b2e-9113-4b26-b647-cbb13de8ed64.jpg?v=1777274528",
+        "https://cdn.shopify.com/s/files/1/2261/3493/files/Bree_Jacket-Jacket-2934-Rosa-1.jpg?v=1776763327"
+      ],
+      "tryOnImage": "/demos-images/prepair/2934-bree-jacket-jacket-rosa.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

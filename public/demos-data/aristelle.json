@@ -1,0 +1,28 @@
+{
+  "slug": "aristelle",
+  "brandName": "Aristelle",
+  "brandDomain": "aristelle.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Eberjey Nautico Relaxed PJ Pant Set",
+      "handle": "eberjey-nautico-relaxed-pj-pant-set",
+      "price": "£134.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0445/0145/files/7042C39E-3E07-4FDC-8340-68F71DB8F0B8.jpg?v=1773781991",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0445/0145/files/7042C39E-3E07-4FDC-8340-68F71DB8F0B8.jpg?v=1773781991",
+        "https://cdn.shopify.com/s/files/1/0445/0145/files/7607C5C9-5CDC-4340-8250-2F17B25A3A47.webp?v=1773782017",
+        "https://cdn.shopify.com/s/files/1/0445/0145/files/CEDC2C22-865C-4467-8E4F-08FDFC971A3E.jpg?v=1773782053"
+      ],
+      "tryOnImage": "/demos-images/aristelle/eberjey-nautico-relaxed-pj-pant-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

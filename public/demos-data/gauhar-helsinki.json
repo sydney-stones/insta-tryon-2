@@ -1,0 +1,28 @@
+{
+  "slug": "gauhar-helsinki",
+  "brandName": "GAUHAR HELSINKI",
+  "brandDomain": "gauharhelsinki.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "CIGARETTE PANTS NAVY",
+      "handle": "cigarette-pants-navy",
+      "price": "£141.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0634/0709/6062/files/CIGARETTE_PANTS_NAVY_abe4a324-b70e-455a-a545-f95490229dc6.jpg?v=1767080882",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0634/0709/6062/files/CIGARETTE_PANTS_NAVY_abe4a324-b70e-455a-a545-f95490229dc6.jpg?v=1767080882",
+        "https://cdn.shopify.com/s/files/1/0634/0709/6062/files/CIGARETTE_PANTS_NAVY_af193078-071b-4831-a7d1-a183b853efd9.jpg?v=1767080884",
+        "https://cdn.shopify.com/s/files/1/0634/0709/6062/files/CIGARETTE_PANTS_NAVY_654ebedc-6e7c-4e1a-9e40-d6a1bb741229.jpg?v=1767080886"
+      ],
+      "tryOnImage": "/demos-images/gauhar-helsinki/cigarette-pants-navy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

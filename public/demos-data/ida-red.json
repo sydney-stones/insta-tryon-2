@@ -1,0 +1,28 @@
+{
+  "slug": "ida-red",
+  "brandName": "Ida Red",
+  "brandDomain": "idaredgeneralstore.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Oklahoma City Basketball Thunder Sunset Tshirt",
+      "handle": "oklahoma-city-basketball-thunder-sunset-tshirt",
+      "price": "£37.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0602/8201/1722/files/2b40069c74a0e4c71426741d07fa0994f62c2052558b8a41a09fa5b797d043aa.webp?v=1778609989",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0602/8201/1722/files/2b40069c74a0e4c71426741d07fa0994f62c2052558b8a41a09fa5b797d043aa.webp?v=1778609989",
+        "https://cdn.shopify.com/s/files/1/0602/8201/1722/files/ce1ff50bcf3a8a0f321b08a24a97100476df7664e60419232a745ef9f17f0c33.webp?v=1778609904",
+        "https://cdn.shopify.com/s/files/1/0602/8201/1722/files/11b99d0edd4d3b6d647ba0f3edebf2e270900ec15cce4be108bd8dd0e226aba7.webp?v=1778609903"
+      ],
+      "tryOnImage": "/demos-images/ida-red/oklahoma-city-basketball-thunder-sunset-tshirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
