@@ -180,9 +180,9 @@ const DEMO_GROUPS: DemoBrandGroup[] = [
     status: 'prospect',
     note: 'US womenswear demos.',
     demos: [
-      { name: 'Lincoln Knit Pant', path: '/nation-la/lincoln-knit-pant', type: 'Pant' },
       { name: 'Lenon Sweatshirt', path: '/nation-la/lenon-sweatshirt', type: 'Sweatshirt' },
-      { name: 'Evonne Maxi Dress', path: '/nation-la/evonne-maxi-dress', type: 'Dress' },
+      { name: 'Becka Tank', path: '/nation-la/becka-tank', type: 'Top' },
+      { name: 'Jenna Crochet Short', path: '/nation-la/jenna-crochet-short', type: 'Short' },
     ],
   },
   {

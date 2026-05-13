@@ -1,0 +1,28 @@
+{
+  "slug": "cloute-spain",
+  "brandName": "Clouté Spain",
+  "brandDomain": "cloute.es",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Top Brisa",
+      "handle": "top-brisa",
+      "price": "£31.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0054/0540/9315/files/DSC02669.jpg?v=1776692116",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0054/0540/9315/files/DSC02669.jpg?v=1776692116",
+        "https://cdn.shopify.com/s/files/1/0054/0540/9315/files/DSC02691.jpg?v=1776692116",
+        "https://cdn.shopify.com/s/files/1/0054/0540/9315/files/DSC02657.jpg?v=1776692116"
+      ],
+      "tryOnImage": "/demos-images/cloute-spain/top-brisa.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

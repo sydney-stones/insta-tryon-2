@@ -1,0 +1,28 @@
+{
+  "slug": "nukus",
+  "brandName": "NUKUS",
+  "brandDomain": "nukus.nl",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sammie Shirt Backprint | Off White",
+      "handle": "sammie-shirt-backprint-off-white",
+      "price": "£79.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0581/2070/0113/files/Sammie_shirt_backprint_offwhite_1.jpg?v=1777541536",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0581/2070/0113/files/Sammie_shirt_backprint_offwhite_1.jpg?v=1777541536",
+        "https://cdn.shopify.com/s/files/1/0581/2070/0113/files/Sammie_shirt_backprint_offwhite_3.jpg?v=1777541538",
+        "https://cdn.shopify.com/s/files/1/0581/2070/0113/files/Sammie_shirt_backprint_offwhite_2.jpg?v=1777541540"
+      ],
+      "tryOnImage": "/demos-images/nukus/sammie-shirt-backprint-off-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

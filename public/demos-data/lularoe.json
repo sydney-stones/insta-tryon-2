@@ -1,0 +1,28 @@
+{
+  "slug": "lularoe",
+  "brandName": "LuLaRoe",
+  "brandDomain": "lularoe.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Reset Crew Neck Pullover",
+      "handle": "reset-crew-neck-pullover-1",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0689/5792/9777/files/LLRAssets_1_4486bea7-ad41-4326-8de8-fd9d377caa1f.png?v=1771957200",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0689/5792/9777/files/LLRAssets_1_4486bea7-ad41-4326-8de8-fd9d377caa1f.png?v=1771957200",
+        "https://cdn.shopify.com/s/files/1/0689/5792/9777/files/LLRAssets_2_5276f064-fbc3-4994-91a4-71d97c2634fb.png?v=1771957200",
+        "https://cdn.shopify.com/s/files/1/0689/5792/9777/files/LLRAssets_3_169594fc-8967-405c-a4ca-bdf47280ad9c.png?v=1771957200"
+      ],
+      "tryOnImage": "/demos-images/lularoe/reset-crew-neck-pullover-1.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "leo-lin-official-website",
+  "brandName": "LEO LIN® Official Website",
+  "brandDomain": "leolinofficial.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "McGrath LEO LIN x McGrath Foundation Summer Set",
+      "handle": "leo-lin-mcgrath-foundation-summer-set",
+      "price": "£199.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0316/2220/1477/files/LLMG24001_LeoLinxMcGrath_Set_1f05cc8f-2581-4474-9a2d-ca47aebd3564.jpg?v=1754367160",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0316/2220/1477/files/LLMG24001_LeoLinxMcGrath_Set_1f05cc8f-2581-4474-9a2d-ca47aebd3564.jpg?v=1754367160",
+        "https://cdn.shopify.com/s/files/1/0316/2220/1477/files/LLMG24001_LeoLinxMcGrath_Shorts_1.jpg?v=1754367160",
+        "https://cdn.shopify.com/s/files/1/0316/2220/1477/files/LLMG24001_LeoLinxMcGrath_Top_4.jpg?v=1754367160"
+      ],
+      "tryOnImage": "/demos-images/leo-lin-official-website/leo-lin-mcgrath-foundation-summer-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

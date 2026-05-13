@@ -1,0 +1,27 @@
+{
+  "slug": "joshua-gold-custom-clothier",
+  "brandName": "Joshua Gold Custom Clothier",
+  "brandDomain": "joshua-gold.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Suit hanger",
+      "handle": "suit-hanger",
+      "price": "£22.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0742/9790/1359/files/SARWG_002.png?v=1686324148",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0742/9790/1359/files/SARWG_002.png?v=1686324148",
+        "https://cdn.shopify.com/s/files/1/0742/9790/1359/files/SAR1WGshoulderview_002.jpg?v=1686324502"
+      ],
+      "tryOnImage": "/demos-images/joshua-gold-custom-clothier/suit-hanger.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

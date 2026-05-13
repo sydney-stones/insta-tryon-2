@@ -1,0 +1,28 @@
+{
+  "slug": "sole-classics",
+  "brandName": "Sole Classics",
+  "brandDomain": "soleclassics.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Womens Oversized Satin Coaches Jacket 'Black'",
+      "handle": "womens-oversized-satin-coaches-jacket-black",
+      "price": "£95.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0409/9765/files/AURORA_IF0561-010_PHSYM001-2000.jpg?v=1776185252",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0409/9765/files/AURORA_IF0561-010_PHSYM001-2000.jpg?v=1776185252",
+        "https://cdn.shopify.com/s/files/1/0409/9765/files/AURORA_IF0561-010_PHSYM004-2000.jpg?v=1776185252",
+        "https://cdn.shopify.com/s/files/1/0409/9765/files/AURORA_IF0561-010_PHSBM001-2000.jpg?v=1776185252"
+      ],
+      "tryOnImage": "/demos-images/sole-classics/womens-oversized-satin-coaches-jacket-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

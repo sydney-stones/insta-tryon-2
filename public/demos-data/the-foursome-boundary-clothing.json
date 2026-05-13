@@ -1,0 +1,28 @@
+{
+  "slug": "the-foursome-boundary-clothing",
+  "brandName": "The Foursome & Boundary Clothing",
+  "brandDomain": "thefoursome.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "prAna Womens Koen Pant",
+      "handle": "prana-womens-koen-pant",
+      "price": "£95.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0816/3426/3317/files/koen_gravel.jpg?v=1728492362",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0816/3426/3317/files/koen_gravel.jpg?v=1728492362",
+        "https://cdn.shopify.com/s/files/1/0816/3426/3317/files/koen_grapeleaf.jpg?v=1728492362",
+        "https://cdn.shopify.com/s/files/1/0816/3426/3317/files/koen_sandbar.jpg?v=1728492362"
+      ],
+      "tryOnImage": "/demos-images/the-foursome-boundary-clothing/prana-womens-koen-pant.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

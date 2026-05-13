@@ -1,0 +1,28 @@
+{
+  "slug": "maximus-xl",
+  "brandName": "Maximus XL",
+  "brandDomain": "maximusxl.ca",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Camisole unie",
+      "handle": "s26ch92364",
+      "price": "£30.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0621/8186/7742/files/S26CH92364-black-01.jpg?v=1778521186",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0621/8186/7742/files/S26CH92364-black-01.jpg?v=1778521186",
+        "https://cdn.shopify.com/s/files/1/0621/8186/7742/files/S26CH92364-beige-01.jpg?v=1778521186",
+        "https://cdn.shopify.com/s/files/1/0621/8186/7742/files/S26CH92364-navy-01.jpg?v=1778521186"
+      ],
+      "tryOnImage": "/demos-images/maximus-xl/s26ch92364.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

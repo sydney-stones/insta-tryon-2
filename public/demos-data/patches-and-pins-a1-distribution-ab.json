@@ -1,0 +1,27 @@
+{
+  "slug": "patches-and-pins-a1-distribution-ab",
+  "brandName": "Patches and Pins | A1 Distribution AB",
+  "brandDomain": "patchesandpins.se",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Brixton Charging Buffalo C Np Mp Snapback",
+      "handle": "brixton-charging-buffalo-c-np-mp-snapback",
+      "price": "£38.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0549/3610/9244/files/11696BLACKBrixtonChargingBuffaloCNpMpSnapback1.jpg?v=1722237915",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0549/3610/9244/files/11696BLACKBrixtonChargingBuffaloCNpMpSnapback1.jpg?v=1722237915",
+        "https://cdn.shopify.com/s/files/1/0549/3610/9244/files/11696BLACKBrixtonChargingBuffaloCNpMpSnapback2.jpg?v=1722237914"
+      ],
+      "tryOnImage": "/demos-images/patches-and-pins-a1-distribution-ab/brixton-charging-buffalo-c-np-mp-snapback.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
