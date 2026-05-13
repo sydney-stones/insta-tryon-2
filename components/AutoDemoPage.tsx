@@ -13,6 +13,8 @@ const CALENDLY_URL = 'https://calendly.com/mail-renderedfits/15-minute-meeting';
 const HOME_URL = 'https://www.renderedfits.com/';
 
 const ACCENT = '#444833';
+const MODEL_IMG_V = 2; // bump when model face/body images are updated
+const mv = (src: string) => `${src}?v=${MODEL_IMG_V}`;
 const FRAME_HEIGHT = 640; // px — both left product frame and right widget share this height
 
 interface TryOn {
@@ -134,7 +136,7 @@ const RFWidget: React.FC<{ tryOn: TryOn; highlightSubmit?: boolean; heightPx?: n
         <div className="text-xs text-neutral-800 mb-2" style={arimo}>Face photo</div>
         <div className="bg-neutral-100 mb-4 flex items-center gap-3 p-3 overflow-hidden">
           <div className="w-24 h-28 bg-white overflow-hidden shrink-0">
-            <img src={tryOn.customerImages.face} alt="customer face" className="w-full h-full object-cover" />
+            <img src={mv(tryOn.customerImages.face)} alt="customer face" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="text-xs font-medium text-neutral-800" style={arimo}>Uploaded</div>
@@ -145,7 +147,7 @@ const RFWidget: React.FC<{ tryOn: TryOn; highlightSubmit?: boolean; heightPx?: n
         <div className="text-xs text-neutral-800 mb-2" style={arimo}>Full body photo</div>
         <div className="bg-neutral-100 mb-4 flex items-center gap-3 p-3 overflow-hidden">
           <div className="w-24 h-28 bg-white overflow-hidden shrink-0">
-            <img src={tryOn.customerImages.body} alt="customer body" className="w-full h-full object-cover" />
+            <img src={mv(tryOn.customerImages.body)} alt="customer body" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="text-xs font-medium text-neutral-800" style={arimo}>Uploaded</div>
@@ -351,8 +353,8 @@ const WorkflowModal: React.FC<{ tryOn: TryOn; brandName: string; onClose: () => 
                   Customer photos — hover to enlarge
                 </div>
                 <div className="flex gap-3 mb-5 shrink-0">
-                  <CustomerPhoto src={tryOn.customerImages.face} label="Face photo" />
-                  <CustomerPhoto src={tryOn.customerImages.body} label="Body photo" />
+                  <CustomerPhoto src={mv(tryOn.customerImages.face)} label="Face photo" />
+                  <CustomerPhoto src={mv(tryOn.customerImages.body)} label="Body photo" />
                 </div>
                 <div className="flex flex-col gap-2 mt-auto pt-3 shrink-0">
                   <a
