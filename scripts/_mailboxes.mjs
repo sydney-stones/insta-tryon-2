@@ -28,7 +28,8 @@ export const GWS_SMTP = {
 };
 
 export const DISPLAY_NAME = 'Sydney Stones';
-export const REPLY_TO_MAILDOSO = 'renderedfits@maildoso.email';
+// All replies land in Sydney's Gmail directly — no Maildoso forwarding required.
+export const REPLY_TO_MAILDOSO = 'mail@renderedfits.com';
 
 const MAILDOSO_DOMAINS = [
   'renderedfits.app',
