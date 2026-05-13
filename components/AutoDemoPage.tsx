@@ -13,7 +13,7 @@ const CALENDLY_URL = 'https://calendly.com/mail-renderedfits/15-minute-meeting';
 const HOME_URL = 'https://www.renderedfits.com/';
 
 const ACCENT = '#444833';
-const MODEL_IMG_V = 2; // bump when model face/body images are updated
+const MODEL_IMG_V = 3; // bump when model face/body images are updated
 const mv = (src: string) => `${src}?v=${MODEL_IMG_V}`;
 const FRAME_HEIGHT = 640; // px — both left product frame and right widget share this height
 
