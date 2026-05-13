@@ -1,0 +1,28 @@
+{
+  "slug": "xero-shoes",
+  "brandName": "Xero Shoes",
+  "brandDomain": "xeroshoes.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Phoenix - Leather (Clearance)",
+      "handle": "phoenix-leather-clearance",
+      "price": "£87.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0714/9492/6514/files/PHX-LLPS_Phoenix-Leather_Pink-Sand_Right-Side_2139_WEB_5555ee50-105a-460e-9d02-3107ac4ffc7a.jpg?v=1778552045",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0714/9492/6514/files/PHX-LLPS_Phoenix-Leather_Pink-Sand_Right-Side_2139_WEB_5555ee50-105a-460e-9d02-3107ac4ffc7a.jpg?v=1778552045",
+        "https://cdn.shopify.com/s/files/1/0714/9492/6514/files/PHX-LBRN_Phoenix-Brown-Leather_SideR_0042_87d09ed9-4bd9-4272-aa59-386e896b7376.jpg?v=1771607815",
+        "https://cdn.shopify.com/s/files/1/0714/9492/6514/files/09b027a4-925c-4ab4-9bd4-20a50093e66c_2873dad3-d747-4d84-bcd5-050575f5961c.jpg?v=1771607815"
+      ],
+      "tryOnImage": "/demos-images/xero-shoes/phoenix-leather-clearance.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

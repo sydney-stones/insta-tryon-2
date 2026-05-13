@@ -1,0 +1,28 @@
+{
+  "slug": "sandy-s-boutique",
+  "brandName": "Sandy's Boutique",
+  "brandDomain": "sandysboutique.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "MILANO SKIRT - MONDAY STRIPE",
+      "handle": "milano-skirt-monday-stripe",
+      "price": "£375.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0767/3430/0455/files/Screenshot2026-05-09173545.png?v=1778362592",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0767/3430/0455/files/Screenshot2026-05-09173545.png?v=1778362592",
+        "https://cdn.shopify.com/s/files/1/0767/3430/0455/files/Screenshot2026-05-09173550.png?v=1778362593",
+        "https://cdn.shopify.com/s/files/1/0767/3430/0455/files/Screenshot2026-05-09173556.png?v=1778362592"
+      ],
+      "tryOnImage": "/demos-images/sandy-s-boutique/milano-skirt-monday-stripe.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

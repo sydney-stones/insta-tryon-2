@@ -1,0 +1,28 @@
+{
+  "slug": "fuego-inc",
+  "brandName": "Fuego, Inc.",
+  "brandDomain": "fuegodance.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Kids T-shirt (Organic Cotton)",
+      "handle": "kids-t-shirt-organic-cotton",
+      "price": "£12.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0136/0438/8964/files/kids-t-shirt-organic-cotton-1231365089.jpg?v=1775530568",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0136/0438/8964/files/kids-t-shirt-organic-cotton-1231365089.jpg?v=1775530568",
+        "https://cdn.shopify.com/s/files/1/0136/0438/8964/files/kids-t-shirt-organic-cotton-1231365090.jpg?v=1775530508",
+        "https://cdn.shopify.com/s/files/1/0136/0438/8964/files/kids-t-shirt-organic-cotton-1231365091.jpg?v=1775530449"
+      ],
+      "tryOnImage": "/demos-images/fuego-inc/kids-t-shirt-organic-cotton.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

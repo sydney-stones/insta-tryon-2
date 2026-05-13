@@ -1,0 +1,28 @@
+{
+  "slug": "vaucluse-studios",
+  "brandName": "VAUCLUSE STUDIOS",
+  "brandDomain": "vauclusestudios.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Henley Shirt - White",
+      "handle": "henley-shirt-black-copy",
+      "price": "£99.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0506/5500/2773/files/white_henley_front.jpg?v=1777944908",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0506/5500/2773/files/white_henley_front.jpg?v=1777944908",
+        "https://cdn.shopify.com/s/files/1/0506/5500/2773/files/e7345ce2-f9c7-42ec-b94d-b0d5fd9ee892_png.jpg?v=1777944968",
+        "https://cdn.shopify.com/s/files/1/0506/5500/2773/files/2b125747-0c80-48f2-abd0-6bce2fa2d2a8_png.jpg?v=1777944968"
+      ],
+      "tryOnImage": "/demos-images/vaucluse-studios/henley-shirt-black-copy.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

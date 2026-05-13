@@ -1,0 +1,28 @@
+{
+  "slug": "dress-to-rio-de-janeiro",
+  "brandName": "Dress To - Rio de Janeiro",
+  "brandDomain": "dressto.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Blue Lírios Top and Midi Skirt Cotton Set",
+      "handle": "tricoline-print-lirios-set-lirios-print",
+      "price": "£203.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0726/8083/3243/files/01.34.2822_2364_1_1.png?v=1763991332",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0726/8083/3243/files/01.34.2822_2364_1_1.png?v=1763991332",
+        "https://cdn.shopify.com/s/files/1/0726/8083/3243/files/01.34.2822_2364_2_2.png?v=1763991331",
+        "https://cdn.shopify.com/s/files/1/0726/8083/3243/files/01.34.2822_2364_3_3.png?v=1763991331"
+      ],
+      "tryOnImage": "/demos-images/dress-to-rio-de-janeiro/tricoline-print-lirios-set-lirios-print.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

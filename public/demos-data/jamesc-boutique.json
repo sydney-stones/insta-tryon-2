@@ -1,0 +1,28 @@
+{
+  "slug": "jamesc-boutique",
+  "brandName": "JamesC Boutique",
+  "brandDomain": "jamescboutique.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Rosemary Beach Lace Pant Set in Green",
+      "handle": "rosemary-beach-lace-pant-set-in-green",
+      "price": "£74.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2356/2917/files/25466053_807b4ea8-9369-4ff6-a12f-ae058d37d2db.jpg?v=1776350796",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2356/2917/files/25466053_807b4ea8-9369-4ff6-a12f-ae058d37d2db.jpg?v=1776350796",
+        "https://cdn.shopify.com/s/files/1/2356/2917/files/25466053_3bd563c9-1ddb-46b7-820a-35e8df239a9f.jpg?v=1776350801",
+        "https://cdn.shopify.com/s/files/1/2356/2917/files/25466053_13f8161b-2ffe-4aa0-b6ab-bad4267af505.jpg?v=1776350805"
+      ],
+      "tryOnImage": "/demos-images/jamesc-boutique/rosemary-beach-lace-pant-set-in-green.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

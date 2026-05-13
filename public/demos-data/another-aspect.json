@@ -1,0 +1,28 @@
+{
+  "slug": "another-aspect",
+  "brandName": "ANOTHER ASPECT",
+  "brandDomain": "anotheraspect.org",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "ANOTHER Denim Shorts 1.0, Brown",
+      "handle": "another-denim-shorts-1-0-brown",
+      "price": "£185.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0268/8758/5844/files/Another_Denim_Shorts_1.0_Brown_1.jpg?v=1778492045",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0268/8758/5844/files/Another_Denim_Shorts_1.0_Brown_1.jpg?v=1778492045",
+        "https://cdn.shopify.com/s/files/1/0268/8758/5844/files/Another_Denim_Shorts_1.0_Brown_2.jpg?v=1778492045",
+        "https://cdn.shopify.com/s/files/1/0268/8758/5844/files/Another_Denim_Shorts_1.0_Brown_3.jpg?v=1778492046"
+      ],
+      "tryOnImage": "/demos-images/another-aspect/another-denim-shorts-1-0-brown.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

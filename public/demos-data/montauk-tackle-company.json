@@ -1,0 +1,28 @@
+{
+  "slug": "montauk-tackle-company",
+  "brandName": "Montauk Tackle Company",
+  "brandDomain": "montauktackle.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Polo Shirt",
+      "handle": "womens-polo-shirt",
+      "price": "£87.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1801/3831/files/whitewomenspolo2.jpg?v=1701539588",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1801/3831/files/whitewomenspolo2.jpg?v=1701539588",
+        "https://cdn.shopify.com/s/files/1/1801/3831/files/Navywomenspolo.jpg?v=1701539594",
+        "https://cdn.shopify.com/s/files/1/1801/3831/files/ScreenShot2025-08-24at9.55.22AM.png?v=1756043962"
+      ],
+      "tryOnImage": "/demos-images/montauk-tackle-company/womens-polo-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

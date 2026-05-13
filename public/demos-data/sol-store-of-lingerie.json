@@ -1,0 +1,28 @@
+{
+  "slug": "sol-store-of-lingerie",
+  "brandName": "SOL Store of Lingerie",
+  "brandDomain": "solgirl.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pearl Shells Pink Short Sleeved Cropped Pajama Set",
+      "handle": "kate-spade-pearl-shells-short-sleeved-cropped-pajama-set-pink",
+      "price": "£88.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0698/6655/3655/files/1_27637f89-2e86-48af-a245-3a40c8bda6ea.jpg?v=1776699292",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0698/6655/3655/files/1_27637f89-2e86-48af-a245-3a40c8bda6ea.jpg?v=1776699292",
+        "https://cdn.shopify.com/s/files/1/0698/6655/3655/files/2_9d98725c-227c-476f-b2b7-f305793077fa.jpg?v=1776699293",
+        "https://cdn.shopify.com/s/files/1/0698/6655/3655/files/3_cd193df7-aab1-4695-9173-34ceb5e2e09c.jpg?v=1776699293"
+      ],
+      "tryOnImage": "/demos-images/sol-store-of-lingerie/kate-spade-pearl-shells-short-sleeved-cropped-pajama-set-pink.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

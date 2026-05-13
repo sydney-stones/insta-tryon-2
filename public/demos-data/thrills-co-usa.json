@@ -1,0 +1,28 @@
+{
+  "slug": "thrills-co-usa",
+  "brandName": "Thrills Co USA",
+  "brandDomain": "thrills.co",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Astra V Neck Tank - Clay Smoke",
+      "handle": "astra-v-neck-tank-clay-smoke",
+      "price": "£70.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0248/2318/files/WTW26-107C_1.jpg?v=1766379435",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0248/2318/files/WTW26-107C_1.jpg?v=1766379435",
+        "https://cdn.shopify.com/s/files/1/0248/2318/files/WTW26-107C_8.jpg?v=1766380303",
+        "https://cdn.shopify.com/s/files/1/0248/2318/files/WTW26-107C_2.jpg?v=1766379606"
+      ],
+      "tryOnImage": "/demos-images/thrills-co-usa/astra-v-neck-tank-clay-smoke.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

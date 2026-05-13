@@ -1,0 +1,28 @@
+{
+  "slug": "caron-callahan",
+  "brandName": "CARON CALLAHAN",
+  "brandDomain": "caroncallahan.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "RITA SKIRT | BLUE FLOATING FLORAL LINEN",
+      "handle": "rita-skirt-blue-floating-floral-linen",
+      "price": "£125.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1186/1514/files/BreePoloCornflower_RitaSkirtinBlueFloatingFloralSejalinBreePoloCornflower_RitaSkirtinBlueFloatingFloralCC_PREFALL24_SS_24_031324_138149.jpg?v=1710445954",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1186/1514/files/BreePoloCornflower_RitaSkirtinBlueFloatingFloralSejalinBreePoloCornflower_RitaSkirtinBlueFloatingFloralCC_PREFALL24_SS_24_031324_138149.jpg?v=1710445954",
+        "https://cdn.shopify.com/s/files/1/1186/1514/files/BreePoloCornflower_RitaSkirtinBlueFloatingFloralSejalinBreePoloCornflower_RitaSkirtinBlueFloatingFloralCC_PREFALL24_SS_24_031324_138160.jpg?v=1710446005",
+        "https://cdn.shopify.com/s/files/1/1186/1514/files/BreePoloCornflower_RitaSkirtinBlueFloatingFloralSejalinBreePoloCornflower_RitaSkirtinBlueFloatingFloralCC_PREFALL24_SS_24_031324_138166.jpg?v=1710446005"
+      ],
+      "tryOnImage": "/demos-images/caron-callahan/rita-skirt-blue-floating-floral-linen.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

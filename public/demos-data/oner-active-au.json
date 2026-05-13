@@ -1,0 +1,28 @@
+{
+  "slug": "oner-active-au",
+  "brandName": "Oner Active - AU",
+  "brandDomain": "oneractive.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "AirMove™ Wide Leg Trousers | Warm Sand",
+      "handle": "airmove-wide-leg-trousers-warm-sand",
+      "price": "£56.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0429/6120/7445/files/OFF_GRID_AIRMOVE_TROUSERS_WARMSAND_260424_PDP_1440x1800_01.jpg?v=1778150631",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0429/6120/7445/files/OFF_GRID_AIRMOVE_TROUSERS_WARMSAND_260424_PDP_1440x1800_01.jpg?v=1778150631",
+        "https://cdn.shopify.com/s/files/1/0429/6120/7445/files/OFF_GRID_AIRMOVE_TROUSERS_WARMSAND_260424_PDP_1440x1800_02.jpg?v=1778150631",
+        "https://cdn.shopify.com/s/files/1/0429/6120/7445/files/OFF_GRID_AIRMOVE_TROUSERS_WARMSAND_260424_PDP_1440x1800_06.jpg?v=1778150631"
+      ],
+      "tryOnImage": "/demos-images/oner-active-au/airmove-wide-leg-trousers-warm-sand.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "tropicfeel",
+  "brandName": "Tropicfeel",
+  "brandDomain": "tropicfeel.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Water bottle",
+      "handle": "water-bottle",
+      "price": "£21.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1703/6727/products/Accessories-travel-essentials-Water-Bottle-Black-1.jpg?v=1668607554",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1703/6727/products/Accessories-travel-essentials-Water-Bottle-Black-1.jpg?v=1668607554",
+        "https://cdn.shopify.com/s/files/1/1703/6727/products/1-1-tropicfeel-ecommerce-bottle.jpg?v=1668607554",
+        "https://cdn.shopify.com/s/files/1/1703/6727/products/1-1-tropicfeel-lifestyle-bottle-2.jpg?v=1668607554"
+      ],
+      "tryOnImage": "/demos-images/tropicfeel/water-bottle.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

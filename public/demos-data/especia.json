@@ -1,0 +1,28 @@
+{
+  "slug": "especia",
+  "brandName": "Especia",
+  "brandDomain": "especia.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Isquia crop top",
+      "handle": "isquia-crop-top",
+      "price": "£170.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0282/8776/2535/files/CT_ISQUIA_2.jpg?v=1777564630",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0282/8776/2535/files/CT_ISQUIA_2.jpg?v=1777564630",
+        "https://cdn.shopify.com/s/files/1/0282/8776/2535/files/CT_ISQUIA.jpg?v=1777564630",
+        "https://cdn.shopify.com/s/files/1/0282/8776/2535/files/CT_ISQUIA_01.jpg?v=1777564612"
+      ],
+      "tryOnImage": "/demos-images/especia/isquia-crop-top.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "the-revive-club",
+  "brandName": "The Revive Club",
+  "brandDomain": "thereviveclub.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Breakwater Pant in Rinsed Indigo Hemp Denim",
+      "handle": "the-breakwater-pant-in-rinsed-indigo-hemp-denim",
+      "price": "£148.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1255/1633/files/imgi_68_Q226_the-breakwater-pant-in-rinsed-indigo-hemp-denim_pdp_01.jpg?v=1778660141",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1255/1633/files/imgi_68_Q226_the-breakwater-pant-in-rinsed-indigo-hemp-denim_pdp_01.jpg?v=1778660141",
+        "https://cdn.shopify.com/s/files/1/1255/1633/files/imgi_70_Q226_the-breakwater-pant-in-rinsed-indigo-hemp-denim_pdp_03.jpg?v=1778660140",
+        "https://cdn.shopify.com/s/files/1/1255/1633/files/imgi_69_Q226_the-breakwater-pant-in-rinsed-indigo-hemp-denim_pdp_02.jpg?v=1778660140"
+      ],
+      "tryOnImage": "/demos-images/the-revive-club/the-breakwater-pant-in-rinsed-indigo-hemp-denim.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "what-lo-wants",
+  "brandName": "What Lo Wants",
+  "brandDomain": "whatlowants.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Body Lo-Go Baby Racer Tank in White Ink",
+      "handle": "body-lo-go-baby-racer-tank-in-white-ink",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0472/3713/6545/files/17960872797135378195_2048.jpg?v=1756502628",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0472/3713/6545/files/17960872797135378195_2048.jpg?v=1756502628",
+        "https://cdn.shopify.com/s/files/1/0472/3713/6545/files/13603310122657198091_2048.jpg?v=1756502628",
+        "https://cdn.shopify.com/s/files/1/0472/3713/6545/files/4596310140043849504_2048.jpg?v=1756502628"
+      ],
+      "tryOnImage": "/demos-images/what-lo-wants/body-lo-go-baby-racer-tank-in-white-ink.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ellery-com",
+  "brandName": "Ellery.com",
+  "brandDomain": "ellery.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "ALPHABET SINGLE EARRING",
+      "handle": "alphabet-earring",
+      "price": "£130.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2532/6984/products/ScreenShot2022-09-30at3.25.07pm.png?v=1665482207",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2532/6984/products/ScreenShot2022-09-30at3.25.07pm.png?v=1665482207",
+        "https://cdn.shopify.com/s/files/1/2532/6984/products/ScreenShot2022-09-30at3.25.57pm.png?v=1665482207",
+        "https://cdn.shopify.com/s/files/1/2532/6984/products/ScreenShot2022-09-30at3.24.42pm.png?v=1665482207"
+      ],
+      "tryOnImage": "/demos-images/ellery-com/alphabet-earring.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

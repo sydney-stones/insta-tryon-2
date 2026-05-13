@@ -1,0 +1,28 @@
+{
+  "slug": "jeans-and-a-cute-top-shop",
+  "brandName": "Jeans and a Cute Top Shop",
+  "brandDomain": "jeansandacutetop.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "SHIMMER TANK TOP",
+      "handle": "shimmer-tank-top",
+      "price": "£59.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0736/9670/6866/files/IMG_1495.jpg?v=1778297951",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0736/9670/6866/files/IMG_1495.jpg?v=1778297951",
+        "https://cdn.shopify.com/s/files/1/0736/9670/6866/files/IMG_1496.jpg?v=1778297951",
+        "https://cdn.shopify.com/s/files/1/0736/9670/6866/files/IMG_1497.jpg?v=1778297951"
+      ],
+      "tryOnImage": "/demos-images/jeans-and-a-cute-top-shop/shimmer-tank-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

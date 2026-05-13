@@ -1,0 +1,26 @@
+{
+  "slug": "bellalete",
+  "brandName": "bellalete",
+  "brandDomain": "bellalete.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "PYL Fundamental Jersey #1 Style #12: Bellalete Navy + Star Pattern",
+      "handle": "fundamental-jersey-1-style-12-bellalete-navy-star-pattern",
+      "price": "£30.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0294/9065/files/PYL2026All-Stars_TeamPackagesWEBImages-01.jpg?v=1778609429",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0294/9065/files/PYL2026All-Stars_TeamPackagesWEBImages-01.jpg?v=1778609429"
+      ],
+      "tryOnImage": "/demos-images/bellalete/fundamental-jersey-1-style-12-bellalete-navy-star-pattern.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

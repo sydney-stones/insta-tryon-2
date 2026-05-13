@@ -1,0 +1,28 @@
+{
+  "slug": "bandit-running",
+  "brandName": "Bandit Running",
+  "brandDomain": "banditrunning.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Women's MacroSoft™ Quarter Zip - Black",
+      "handle": "macrosoft-womens-1-4-zip-pullover-black",
+      "price": "£138.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0519/5038/7350/files/12_90775570-7ef8-43c0-bd19-0a52e8652cbc.jpg?v=1768250699",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0519/5038/7350/files/12_90775570-7ef8-43c0-bd19-0a52e8652cbc.jpg?v=1768250699",
+        "https://cdn.shopify.com/s/files/1/0519/5038/7350/files/5_6_Collection_Hover_9f8970d4-6927-44d8-8d91-d1cd24d3fb85.png?v=1768250699",
+        "https://cdn.shopify.com/s/files/1/0519/5038/7350/files/2_1_PDP_Hero_77cb468a-1f31-4437-9b70-2dfc45f9cdae.png?v=1768250699"
+      ],
+      "tryOnImage": "/demos-images/bandit-running/macrosoft-womens-1-4-zip-pullover-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

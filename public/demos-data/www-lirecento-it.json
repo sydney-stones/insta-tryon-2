@@ -1,0 +1,28 @@
+{
+  "slug": "www-lirecento-it",
+  "brandName": "www.lirecento.it",
+  "brandDomain": "lirecento.it",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pantalone chino in popeline di cotone leggero blu china slim fit",
+      "handle": "pantalone-chino-in-popeline-di-cotone-leggero-blu-china-slim-fit",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2355/8517/products/AndreaBluette_01.jpg?v=1748619422",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2355/8517/products/AndreaBluette_01.jpg?v=1748619422",
+        "https://cdn.shopify.com/s/files/1/2355/8517/products/AndreaBluette_05.jpg?v=1748619424",
+        "https://cdn.shopify.com/s/files/1/2355/8517/products/AndreaBluette_02.jpg?v=1748619424"
+      ],
+      "tryOnImage": "/demos-images/www-lirecento-it/pantalone-chino-in-popeline-di-cotone-leggero-blu-china-slim-fit.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

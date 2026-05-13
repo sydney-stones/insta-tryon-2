@@ -1,0 +1,28 @@
+{
+  "slug": "singhvis",
+  "brandName": "Singhvis",
+  "brandDomain": "singhvis.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Island Flora Bathrobe",
+      "handle": "island-flora-bathrobe",
+      "price": "£160.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0009/3631/2868/files/IslandFloraBathrobe1.jpg?v=1754551361",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0009/3631/2868/files/IslandFloraBathrobe1.jpg?v=1754551361",
+        "https://cdn.shopify.com/s/files/1/0009/3631/2868/files/IslandFloraBathrobe2.jpg?v=1754551359",
+        "https://cdn.shopify.com/s/files/1/0009/3631/2868/files/IslandFloraBathrobe3.jpg?v=1754551359"
+      ],
+      "tryOnImage": "/demos-images/singhvis/island-flora-bathrobe.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

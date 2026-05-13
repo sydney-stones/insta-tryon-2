@@ -1,0 +1,28 @@
+{
+  "slug": "bernerkuhl-com",
+  "brandName": "BERNERKUHL.COM",
+  "brandDomain": "bernerkuhl.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Field Jacket Polyseta 008 Charcoal",
+      "handle": "field-jacket-polyseta-008-charcoal",
+      "price": "£545.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0414/3395/6501/files/250608_BERNER_KUHL_ECOM_19_0308.jpg?v=1772111990",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0414/3395/6501/files/250608_BERNER_KUHL_ECOM_19_0308.jpg?v=1772111990",
+        "https://cdn.shopify.com/s/files/1/0414/3395/6501/files/250608_BERNER_KUHL_ECOM_19_0310.jpg?v=1772111990",
+        "https://cdn.shopify.com/s/files/1/0414/3395/6501/files/250608_BERNER_KUHL_ECOM_19_0318.jpg?v=1772111990"
+      ],
+      "tryOnImage": "/demos-images/bernerkuhl-com/field-jacket-polyseta-008-charcoal.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "progress-jiu-jitsu-uk",
+  "brandName": "Progress Jiu Jitsu UK",
+  "brandDomain": "progressjj.co.uk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Camber Tee",
+      "handle": "camber-tee",
+      "price": "£28.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1243/8208/files/T3_c0a65015-2225-4919-8d28-09fd520ce3d6.jpg?v=1776952608",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1243/8208/files/T3_c0a65015-2225-4919-8d28-09fd520ce3d6.jpg?v=1776952608",
+        "https://cdn.shopify.com/s/files/1/1243/8208/files/T4_07114d18-84bf-4f82-928a-821ec3d4ff78.jpg?v=1776952609",
+        "https://cdn.shopify.com/s/files/1/1243/8208/files/T1_9fab0565-d79f-41e2-8115-0850d53eabce.jpg?v=1776952608"
+      ],
+      "tryOnImage": "/demos-images/progress-jiu-jitsu-uk/camber-tee.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

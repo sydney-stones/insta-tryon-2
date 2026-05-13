@@ -1,0 +1,28 @@
+{
+  "slug": "th-th",
+  "brandName": "TH&TH",
+  "brandDomain": "thandth.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Athena Bridesmaid Dress In Forest Green Chiffon",
+      "handle": "athena-bridesmaid-dress-in-forest-green-chiffon",
+      "price": "£139.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0680/9006/9297/files/ForestGreenAthenaDressinDustyBlueChiffon5_1.jpg?v=1778069009",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0680/9006/9297/files/ForestGreenAthenaDressinDustyBlueChiffon5_1.jpg?v=1778069009",
+        "https://cdn.shopify.com/s/files/1/0680/9006/9297/files/ForestGreenAthenaDressinDustyBlueChiffon1.jpg?v=1778069009",
+        "https://cdn.shopify.com/s/files/1/0680/9006/9297/files/ForestGreenAthenaDressinDustyBlueChiffon4.jpg?v=1778069010"
+      ],
+      "tryOnImage": "/demos-images/th-th/athena-bridesmaid-dress-in-forest-green-chiffon.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

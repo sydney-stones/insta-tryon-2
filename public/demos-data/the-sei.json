@@ -1,0 +1,28 @@
+{
+  "slug": "the-sei",
+  "brandName": "The Sei",
+  "brandDomain": "the-sei.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Curve Hem Corset",
+      "handle": "curve-hem-corset-1",
+      "price": "£478.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0519/2004/4197/files/1LANDINGPHOTOTS2214MULTIFRONT.jpg?v=1777507457",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0519/2004/4197/files/1LANDINGPHOTOTS2214MULTIFRONT.jpg?v=1777507457",
+        "https://cdn.shopify.com/s/files/1/0519/2004/4197/files/2INSIDEPHOTOTS2214MULTIFRONT.jpg?v=1777507457",
+        "https://cdn.shopify.com/s/files/1/0519/2004/4197/files/3INSIDEPHOTOTS2214MULTIRIGHT.jpg?v=1777507457"
+      ],
+      "tryOnImage": "/demos-images/the-sei/curve-hem-corset-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

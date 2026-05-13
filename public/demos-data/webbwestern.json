@@ -1,0 +1,27 @@
+{
+  "slug": "webbwestern",
+  "brandName": "webbwestern",
+  "brandDomain": "webbwestern.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Duck Club Shirt",
+      "handle": "duck-club-shirt",
+      "price": "£27.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0600/4329/6919/files/TShirtMockupBack2.jpg?v=1749229234",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0600/4329/6919/files/TShirtMockupBack2.jpg?v=1749229234",
+        "https://cdn.shopify.com/s/files/1/0600/4329/6919/files/TShirtMockupFront2.jpg?v=1749229237"
+      ],
+      "tryOnImage": "/demos-images/webbwestern/duck-club-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

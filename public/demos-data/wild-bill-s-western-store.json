@@ -1,0 +1,28 @@
+{
+  "slug": "wild-bill-s-western-store",
+  "brandName": "Wild Bill's Western Store",
+  "brandDomain": "wildbillswestern.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Wild Bills Western Store Raccoon Graphic Tee",
+      "handle": "wb-raccoon-t-shirt",
+      "price": "£26.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0609/0889/6493/files/p0o4wkfmiyixs72rbuu3.jpg?v=1777326518",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0609/0889/6493/files/p0o4wkfmiyixs72rbuu3.jpg?v=1777326518",
+        "https://cdn.shopify.com/s/files/1/0609/0889/6493/files/0517683a-2904-4fe2-a4cf-5b75083f50fd.jpg?v=1777326518",
+        "https://cdn.shopify.com/s/files/1/0609/0889/6493/files/WBRaccoon2.jpg?v=1776891182"
+      ],
+      "tryOnImage": "/demos-images/wild-bill-s-western-store/wb-raccoon-t-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

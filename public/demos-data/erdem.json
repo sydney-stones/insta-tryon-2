@@ -1,0 +1,28 @@
+{
+  "slug": "erdem",
+  "brandName": "ERDEM",
+  "brandDomain": "erdem.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Embellished Textured Satin Trench Coat",
+      "handle": "embellished-textured-satin-trench-coat-ss26_c26_50923017",
+      "price": "£5995.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0561/2856/9483/files/SS26_C26_50923017.jpg?v=1775058191",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0561/2856/9483/files/SS26_C26_50923017.jpg?v=1775058191",
+        "https://cdn.shopify.com/s/files/1/0561/2856/9483/files/SS26_C26_50923017_1.jpg?v=1776069266",
+        "https://cdn.shopify.com/s/files/1/0561/2856/9483/files/ERDEMSpringSummer2026-Look8.jpg?v=1776069266"
+      ],
+      "tryOnImage": "/demos-images/erdem/embellished-textured-satin-trench-coat-ss26_c26_50923017.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

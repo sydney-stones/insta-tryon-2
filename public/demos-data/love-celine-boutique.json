@@ -1,0 +1,28 @@
+{
+  "slug": "love-celine-boutique",
+  "brandName": "Love, Celine Boutique",
+  "brandDomain": "shoploveceline.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sabrina Sunset Stripe Smocked Midi Dress",
+      "handle": "sabrina-sunset-stripe-smocked-midi-dress",
+      "price": "£118.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0550/6649/3181/files/11_5135a164-8bf2-4091-bf7a-ca103c7579be.png?v=1777661187",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0550/6649/3181/files/11_5135a164-8bf2-4091-bf7a-ca103c7579be.png?v=1777661187",
+        "https://cdn.shopify.com/s/files/1/0550/6649/3181/files/10_36e47c2e-32bb-470a-8d36-ea20e5a02977.png?v=1777661187",
+        "https://cdn.shopify.com/s/files/1/0550/6649/3181/files/12_3078c336-f1b4-49f7-94ec-da5a005a874a.png?v=1777661187"
+      ],
+      "tryOnImage": "/demos-images/love-celine-boutique/sabrina-sunset-stripe-smocked-midi-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "tail-activewear",
+  "brandName": "TAIL Activewear",
+  "brandDomain": "tailactivewear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Ellis Skirt - Hot Coral - FINAL SALE",
+      "handle": "ellis-skirt-hot-coral",
+      "price": "£6.50",
+      "productImage": "https://cdn.shopify.com/s/files/1/0010/1869/1631/files/PX6300-3229_ECOM-1602.jpg?v=1776799948",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0010/1869/1631/files/PX6300-3229_ECOM-1602.jpg?v=1776799948",
+        "https://cdn.shopify.com/s/files/1/0010/1869/1631/files/PX6300-3229_ECOM-1593.jpg?v=1776799957",
+        "https://cdn.shopify.com/s/files/1/0010/1869/1631/files/PX6300-3229_ECOM-1595.jpg?v=1776799966"
+      ],
+      "tryOnImage": "/demos-images/tail-activewear/ellis-skirt-hot-coral.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

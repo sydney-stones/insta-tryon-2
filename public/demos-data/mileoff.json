@@ -1,0 +1,28 @@
+{
+  "slug": "mileoff",
+  "brandName": "mileoff",
+  "brandDomain": "mileoff.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cropped Run Tee in Lilac",
+      "handle": "cropped-run-tee-in-lilac",
+      "price": "£39.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0784/5481/7035/files/cropped_lilac_tee.jpg?v=1751534922",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0784/5481/7035/files/cropped_lilac_tee.jpg?v=1751534922",
+        "https://cdn.shopify.com/s/files/1/0784/5481/7035/files/cropped_lilac_tee_side_close.jpg?v=1751534934",
+        "https://cdn.shopify.com/s/files/1/0784/5481/7035/files/cropped_lilac_tee_back.jpg?v=1751534946"
+      ],
+      "tryOnImage": "/demos-images/mileoff/cropped-run-tee-in-lilac.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

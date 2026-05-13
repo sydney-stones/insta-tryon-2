@@ -1,0 +1,28 @@
+{
+  "slug": "froo",
+  "brandName": "Froo",
+  "brandDomain": "froostyle.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "JADE SKIRT",
+      "handle": "jade-skirt-1",
+      "price": "£84.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0018/5951/8577/files/Froostyle697a4063e6f421697a4063e7318.81330267697a4063e7318.jpg?v=1772116434",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0018/5951/8577/files/Froostyle697a4063e6f421697a4063e7318.81330267697a4063e7318.jpg?v=1772116434",
+        "https://cdn.shopify.com/s/files/1/0018/5951/8577/files/kEepZ6og.jpg?v=1772116434",
+        "https://cdn.shopify.com/s/files/1/0018/5951/8577/files/DSC07676.jpg?v=1772116434"
+      ],
+      "tryOnImage": "/demos-images/froo/jade-skirt-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

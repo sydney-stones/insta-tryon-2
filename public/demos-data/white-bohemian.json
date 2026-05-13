@@ -1,0 +1,28 @@
+{
+  "slug": "white-bohemian",
+  "brandName": "White Bohemian",
+  "brandDomain": "whitebohemian.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Paula Corset Short",
+      "handle": "alemais-paula-corset-short",
+      "price": "£350.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0933/3970/files/ALEMAISPAULACORSETSHORTwww.whitebohemian.com.au.jpg?v=1778124776",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0933/3970/files/ALEMAISPAULACORSETSHORTwww.whitebohemian.com.au.jpg?v=1778124776",
+        "https://cdn.shopify.com/s/files/1/0933/3970/files/ALEMAISPAULACORSETSHORTwww.whitebohemian.com.au_3.jpg?v=1778124776",
+        "https://cdn.shopify.com/s/files/1/0933/3970/files/ALEMAISPAULACORSETSHORTwww.whitebohemian.com.au_4.jpg?v=1778124776"
+      ],
+      "tryOnImage": "/demos-images/white-bohemian/alemais-paula-corset-short.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

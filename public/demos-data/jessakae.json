@@ -1,0 +1,28 @@
+{
+  "slug": "jessakae",
+  "brandName": "JessaKae",
+  "brandDomain": "jessakae.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Butterfly Corset | Purple",
+      "handle": "butterfly-corset-purple",
+      "price": "£78.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1902/3491/files/ButterflyCorset-Purple-Regency-2026-13.jpg?v=1776442119",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1902/3491/files/ButterflyCorset-Purple-Regency-2026-13.jpg?v=1776442119",
+        "https://cdn.shopify.com/s/files/1/1902/3491/files/butterfly_corset_purple.jpg?v=1776442119",
+        "https://cdn.shopify.com/s/files/1/1902/3491/files/ButterflyCorset-Purple-Regency-2026-32.jpg?v=1776442119"
+      ],
+      "tryOnImage": "/demos-images/jessakae/butterfly-corset-purple.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

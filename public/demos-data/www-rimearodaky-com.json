@@ -1,0 +1,28 @@
+{
+  "slug": "www-rimearodaky-com",
+  "brandName": "www.rimearodaky.com",
+  "brandDomain": "rimearodaky.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sand pants",
+      "handle": "sand-pants",
+      "price": "£434.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0941/6369/8001/files/Rime_Arodaky_Civil_Resort_024_Greg_Finck_HD-129_26cfac94-e1b1-45e4-8756-197bca0c344a.jpg?v=1750688937",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0941/6369/8001/files/Rime_Arodaky_Civil_Resort_024_Greg_Finck_HD-129_26cfac94-e1b1-45e4-8756-197bca0c344a.jpg?v=1750688937",
+        "https://cdn.shopify.com/s/files/1/0941/6369/8001/files/Rime_Arodaky_Civil_Resort_024_Greg_Finck_HD-130_5e9a3f85-996c-4516-a1ad-44873163fdac.jpg?v=1750688937",
+        "https://cdn.shopify.com/s/files/1/0941/6369/8001/files/Rime_Arodaky_Civil_Resort_024_Greg_Finck_HD-136_c47aceac-dcfd-4811-8712-cb48cfdbb361.jpg?v=1750688936"
+      ],
+      "tryOnImage": "/demos-images/www-rimearodaky-com/sand-pants.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

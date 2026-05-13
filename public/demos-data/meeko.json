@@ -7,16 +7,16 @@
   "classificationConfidence": "low",
   "tryOns": [
     {
-      "title": "WOODPACKER - HERITAGE - BACKPACK MODULABLE, TECHNIQUE ET DURABLE",
-      "handle": "woodpacker-heritage-backpack-modulable-technique-et-durable",
-      "price": "£149.00",
-      "productImage": "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render1_1_2.png?v=1777969699",
+      "title": "KIBOKO - BEIGE",
+      "handle": "kiboko-beige",
+      "price": "£99.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0270/2380/2411/products/CopiedeMEEKOPROFIL02.jpg?v=1759238423",
       "productImages": [
-        "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render1_1_2.png?v=1777969699",
-        "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render4.png?v=1777918254",
-        "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/meeko-H-render6.png?v=1777918254"
+        "https://cdn.shopify.com/s/files/1/0270/2380/2411/products/CopiedeMEEKOPROFIL02.jpg?v=1759238423",
+        "https://cdn.shopify.com/s/files/1/0270/2380/2411/files/KIBOBE_Matieres.png?v=1759238423",
+        "https://cdn.shopify.com/s/files/1/0270/2380/2411/products/CopiedeMEEKOFACE09.jpg?v=1759238423"
       ],
-      "tryOnImage": "/demos-images/meeko/woodpacker-heritage-backpack-modulable-technique-et-durable.jpg",
+      "tryOnImage": "/demos-images/meeko/kiboko-beige.jpg",
       "modelGender": "unisex",
       "modelName": "ebba",
       "customerImages": {

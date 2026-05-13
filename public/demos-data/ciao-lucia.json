@@ -1,0 +1,28 @@
+{
+  "slug": "ciao-lucia",
+  "brandName": "Ciao Lucia",
+  "brandDomain": "ciaolucia.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Josette Ivory Cotton Knit Pullover",
+      "handle": "70017140ivr-cotton-knits-ivory",
+      "price": "£298.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1615/1221/files/C41-75368-2-0029.jpg?v=1777322313",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1615/1221/files/C41-75368-2-0029.jpg?v=1777322313",
+        "https://cdn.shopify.com/s/files/1/1615/1221/files/DSC_4872.jpg?v=1777322336",
+        "https://cdn.shopify.com/s/files/1/1615/1221/files/C41-75368-2-0030.jpg?v=1777322351"
+      ],
+      "tryOnImage": "/demos-images/ciao-lucia/70017140ivr-cotton-knits-ivory.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "terrorthreads",
+  "brandName": "TerrorThreads",
+  "brandDomain": "terrorthreads.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Return Of The Living Dead Graveyard Glow T-Shirt",
+      "handle": "return-of-the-living-dead-graveyard-glow-t-shirt",
+      "price": "£27.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1153/5542/files/Graveyard-Glow-POD-Shirt.jpg?v=1745878915",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1153/5542/files/Graveyard-Glow-POD-Shirt.jpg?v=1745878915",
+        "https://cdn.shopify.com/s/files/1/1153/5542/files/Graveyard-Glow-T-Shirt_6509e564-1c51-459c-b392-d185b52aed45.jpg?v=1745878928"
+      ],
+      "tryOnImage": "/demos-images/terrorthreads/return-of-the-living-dead-graveyard-glow-t-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

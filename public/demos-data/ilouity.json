@@ -1,0 +1,28 @@
+{
+  "slug": "ilouity",
+  "brandName": "Ilouity",
+  "brandDomain": "ilouity.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "03 Wide Raw Hem - Army Green",
+      "handle": "03-wide-raw-hem-army-green",
+      "price": "£165.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0515/6621/5363/files/01_Ilouity_SS26_053.jpg?v=1776712941",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0515/6621/5363/files/01_Ilouity_SS26_053.jpg?v=1776712941",
+        "https://cdn.shopify.com/s/files/1/0515/6621/5363/files/01_Ilouity_SS26_019_9e12e0e7-68e7-48e9-9d1f-8ba81d70f821.jpg?v=1776712941",
+        "https://cdn.shopify.com/s/files/1/0515/6621/5363/files/01_Ilouity_SS26_078.jpg?v=1776712941"
+      ],
+      "tryOnImage": "/demos-images/ilouity/03-wide-raw-hem-army-green.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

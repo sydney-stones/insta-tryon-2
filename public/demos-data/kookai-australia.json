@@ -1,0 +1,28 @@
+{
+  "slug": "kookai-australia",
+  "brandName": "KOOKAÏ Australia",
+  "brandDomain": "kookai.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Dallas Corset Top",
+      "handle": "dallas-corset-top-almond-milk",
+      "price": "£35.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0422/4481/files/dallas_almond_milk_1944.jpg?v=1749701232",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0422/4481/files/dallas_almond_milk_1944.jpg?v=1749701232",
+        "https://cdn.shopify.com/s/files/1/0422/4481/files/dallasalmondmilk_1914.jpg?v=1749789090",
+        "https://cdn.shopify.com/s/files/1/0422/4481/files/dallasalmondmilk_1972.jpg?v=1749789090"
+      ],
+      "tryOnImage": "/demos-images/kookai-australia/dallas-corset-top-almond-milk.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

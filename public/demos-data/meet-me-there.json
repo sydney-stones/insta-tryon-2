@@ -1,0 +1,27 @@
+{
+  "slug": "meet-me-there",
+  "brandName": "Meet Me There ®",
+  "brandDomain": "meet-me-there.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "\"Maddie\" set yellow",
+      "handle": "maddie-set-yellow-copy",
+      "price": "£4.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0502/6195/0633/files/IMG-6183.jpg?v=1726842500",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0502/6195/0633/files/IMG-6183.jpg?v=1726842500",
+        "https://cdn.shopify.com/s/files/1/0502/6195/0633/files/IMG-6182.jpg?v=1726842500"
+      ],
+      "tryOnImage": "/demos-images/meet-me-there/maddie-set-yellow-copy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

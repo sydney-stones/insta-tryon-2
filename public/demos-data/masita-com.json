@@ -1,0 +1,28 @@
+{
+  "slug": "masita-com",
+  "brandName": "masita.com",
+  "brandDomain": "masita.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Forza Training Jacket Women • 517 - Lightweight, Feminine Fit -Masita",
+      "handle": "trainings-jack-forza-ladies",
+      "price": "£39.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0905/1956/8724/files/517-1555_13e5d9dc-cead-415c-8b13-48f7b2acc651.png?v=1741767925",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0905/1956/8724/files/517-1555_13e5d9dc-cead-415c-8b13-48f7b2acc651.png?v=1741767925",
+        "https://cdn.shopify.com/s/files/1/0905/1956/8724/files/517-2322_779cf12f-fa32-4ef2-ab66-d92f97fdccb0.png?v=1741767925",
+        "https://cdn.shopify.com/s/files/1/0905/1956/8724/files/517-1510_cb1bcb8e-0e79-4bff-8bdd-2590bd685fb7.png?v=1741767925"
+      ],
+      "tryOnImage": "/demos-images/masita-com/trainings-jack-forza-ladies.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

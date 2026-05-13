@@ -1,0 +1,28 @@
+{
+  "slug": "mirth-vintage",
+  "brandName": "Mirth Vintage",
+  "brandDomain": "mirth.co",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Donna Karan Satin Slip Dress",
+      "handle": "donna-karan-satin-slip-dress",
+      "price": "£140.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2267/4789/products/000101440005.jpg?v=1570808266",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2267/4789/products/000101440005.jpg?v=1570808266",
+        "https://cdn.shopify.com/s/files/1/2267/4789/products/000101440006_f33e2b83-b65e-4dc1-97d7-ddc3ab6d0f91.jpg?v=1570808271",
+        "https://cdn.shopify.com/s/files/1/2267/4789/products/000101440004.jpg?v=1570808277"
+      ],
+      "tryOnImage": "/demos-images/mirth-vintage/donna-karan-satin-slip-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

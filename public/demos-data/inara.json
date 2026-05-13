@@ -1,0 +1,28 @@
+{
+  "slug": "inara",
+  "brandName": "inara",
+  "brandDomain": "inaraloungewear.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Molokai Sunset Women's Cotton Kimono",
+      "handle": "molokai-sunset-womens-cotton-kimono",
+      "price": "£59.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0668/7542/5081/files/MolokaiSunsetKimonoProduct_3.webp?v=1772552333",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0668/7542/5081/files/MolokaiSunsetKimonoProduct_3.webp?v=1772552333",
+        "https://cdn.shopify.com/s/files/1/0668/7542/5081/files/MolokaiSunsetKimonoandScarf_9.webp?v=1772630990",
+        "https://cdn.shopify.com/s/files/1/0668/7542/5081/files/MolokaiSunsetKimonoProduct_6.webp?v=1772630990"
+      ],
+      "tryOnImage": "/demos-images/inara/molokai-sunset-womens-cotton-kimono.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

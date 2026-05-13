@@ -1,0 +1,28 @@
+{
+  "slug": "fait-par-foutch",
+  "brandName": "Fait Par Foutch",
+  "brandDomain": "faitparfoutch.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "KATE SKIRT - CHOCOLATE",
+      "handle": "kate-skirt-chocolate",
+      "price": "£163.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0535/0673/6305/files/FPF_REV_LOOK9_17.jpg?v=1774383225",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0535/0673/6305/files/FPF_REV_LOOK9_17.jpg?v=1774383225",
+        "https://cdn.shopify.com/s/files/1/0535/0673/6305/files/LG_FPF_Digital-36.jpg?v=1774383565",
+        "https://cdn.shopify.com/s/files/1/0535/0673/6305/files/FPF_REV_LOOK10_1.jpg?v=1774383565"
+      ],
+      "tryOnImage": "/demos-images/fait-par-foutch/kate-skirt-chocolate.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

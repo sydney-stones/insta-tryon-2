@@ -1,0 +1,28 @@
+{
+  "slug": "true-classic",
+  "brandName": "True Classic",
+  "brandDomain": "trueclassictees.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Dark Heather Amethyst Short Sleeve Tall Polo",
+      "handle": "dark-heather-amethyst-short-sleeve-tall-polo",
+      "price": "£39.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0220/4008/4552/files/TCT_4505_Short-Sleeve-Classic-Polo-Tall_DHAMETHYST_Large_Ecomm_2025_JUN_2_onny1w.jpg?v=1777491485",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0220/4008/4552/files/TCT_4505_Short-Sleeve-Classic-Polo-Tall_DHAMETHYST_Large_Ecomm_2025_JUN_2_onny1w.jpg?v=1777491485",
+        "https://cdn.shopify.com/s/files/1/0220/4008/4552/files/4505_DHAMETHYST_1_waghah.jpg?v=1777491485",
+        "https://cdn.shopify.com/s/files/1/0220/4008/4552/files/TCT_4505_Short-Sleeve-Classic-Polo-Tall_DHAMETHYST_Large_Ecomm_2025_JUN_1_r3nwzv.jpg?v=1777491485"
+      ],
+      "tryOnImage": "/demos-images/true-classic/dark-heather-amethyst-short-sleeve-tall-polo.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

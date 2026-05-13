@@ -1,0 +1,28 @@
+{
+  "slug": "nic-zoe",
+  "brandName": "NIC+ZOE",
+  "brandDomain": "nicandzoe.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Varley Aura Knit Top",
+      "handle": "varley-aura-knit-top",
+      "price": "£128.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0701/6952/6430/files/VAR03208_GRI_PRODUCT_05.jpg?v=1777300235",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0701/6952/6430/files/VAR03208_GRI_PRODUCT_05.jpg?v=1777300235",
+        "https://cdn.shopify.com/s/files/1/0701/6952/6430/files/VAR03208_GRI_PRODUCT_02.jpg?v=1777300189",
+        "https://cdn.shopify.com/s/files/1/0701/6952/6430/files/VAR03208_GRI_PRODUCT_03.jpg?v=1777300203"
+      ],
+      "tryOnImage": "/demos-images/nic-zoe/varley-aura-knit-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

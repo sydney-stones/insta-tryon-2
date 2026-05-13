@@ -1,0 +1,28 @@
+{
+  "slug": "harris-tapper",
+  "brandName": "Harris Tapper",
+  "brandDomain": "harristapper.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lucille Top in Silk Georgette",
+      "handle": "lucille-top",
+      "price": "£289.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0952/7125/6137/files/HarrisTapper-April2025-020_c69df9a9-0d81-4cde-bfaf-642de276f401.jpg?v=1755165336",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0952/7125/6137/files/HarrisTapper-April2025-020_c69df9a9-0d81-4cde-bfaf-642de276f401.jpg?v=1755165336",
+        "https://cdn.shopify.com/s/files/1/0952/7125/6137/files/HT_AW25_ECOM_AdamTrouser_LucilleTop_12610_29dcc05e-390c-4dc1-9d01-0badf26328b0.jpg?v=1755165336",
+        "https://cdn.shopify.com/s/files/1/0952/7125/6137/files/HT_AW25_ECOM_AdamTrouser_LucilleTop_12603_343f84c3-aca7-426a-8ad1-d68bc301440d.jpg?v=1755165336"
+      ],
+      "tryOnImage": "/demos-images/harris-tapper/lucille-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

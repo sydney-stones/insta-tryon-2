@@ -1,0 +1,28 @@
+{
+  "slug": "amanda-uprichard",
+  "brandName": "Amanda Uprichard",
+  "brandDomain": "amandauprichard.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Conchita Dress",
+      "handle": "conchita-dress-1",
+      "price": "£238.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0201/3874/files/SL22441_Conchita_Dress_Moss_A.jpg?v=1763580454",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0201/3874/files/SL22441_Conchita_Dress_Moss_A.jpg?v=1763580454",
+        "https://cdn.shopify.com/s/files/1/0201/3874/files/SL22441_Conchita_Dress_Moss_B.jpg?v=1763580454",
+        "https://cdn.shopify.com/s/files/1/0201/3874/files/SL22441_Conchita_Dress_Moss_C.jpg?v=1763580453"
+      ],
+      "tryOnImage": "/demos-images/amanda-uprichard/conchita-dress-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

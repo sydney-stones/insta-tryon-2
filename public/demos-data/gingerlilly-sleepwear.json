@@ -1,0 +1,28 @@
+{
+  "slug": "gingerlilly-sleepwear",
+  "brandName": "Gingerlilly Sleepwear",
+  "brandDomain": "gingerlilly.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Jillian Olive Spot Short Set",
+      "handle": "jillian-olive-spot-short-set",
+      "price": "£88.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0669/9391/4109/files/jillian-olive-spot-short-set-gingerlilly-sleepwear-20274.jpg?v=1752244909",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0669/9391/4109/files/jillian-olive-spot-short-set-gingerlilly-sleepwear-20274.jpg?v=1752244909",
+        "https://cdn.shopify.com/s/files/1/0669/9391/4109/files/jillian-olive-spot-short-set-gingerlilly-sleepwear-27561.jpg?v=1752244909",
+        "https://cdn.shopify.com/s/files/1/0669/9391/4109/files/jillian-olive-spot-short-set-gingerlilly-sleepwear-24819.jpg?v=1752244909"
+      ],
+      "tryOnImage": "/demos-images/gingerlilly-sleepwear/jillian-olive-spot-short-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

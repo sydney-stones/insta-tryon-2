@@ -1,0 +1,28 @@
+{
+  "slug": "santo-studio",
+  "brandName": "Santo Studio",
+  "brandDomain": "santostudio.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pachino Sweater",
+      "handle": "pachino-sweater-desert",
+      "price": "£117.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0590/9466/3246/files/Santostudio68cb3aba56d03368cb3aba56efa.0062053668cb3aba56efa.jpg?v=1773776600",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0590/9466/3246/files/Santostudio68cb3aba56d03368cb3aba56efa.0062053668cb3aba56efa.jpg?v=1773776600",
+        "https://cdn.shopify.com/s/files/1/0590/9466/3246/files/Santostudio68cb3aba661bd068cb3aba6632a.7006217568cb3aba6632a.jpg?v=1773776600",
+        "https://cdn.shopify.com/s/files/1/0590/9466/3246/files/Santostudio68cb3aba7a103868cb3aba7a37f.4732419968cb3aba7a37f.jpg?v=1773776600"
+      ],
+      "tryOnImage": "/demos-images/santo-studio/pachino-sweater-desert.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

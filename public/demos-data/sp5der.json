@@ -1,0 +1,28 @@
+{
+  "slug": "sp5der",
+  "brandName": "SP5DER",
+  "brandDomain": "kingspider.co",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "BELUGA ZIP UP",
+      "handle": "pink-beluga-zip-up",
+      "price": "£200.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0153/0219/7334/files/BELUGA-ZIP-UP-PINK-F.jpg?v=1777318939",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0153/0219/7334/files/BELUGA-ZIP-UP-PINK-F.jpg?v=1777318939",
+        "https://cdn.shopify.com/s/files/1/0153/0219/7334/files/BELUGA-ZIP-UP-PINK-B.jpg?v=1777318939",
+        "https://cdn.shopify.com/s/files/1/0153/0219/7334/files/BELUGA-ZIP-UP-PINK-D.jpg?v=1777318939"
+      ],
+      "tryOnImage": "/demos-images/sp5der/pink-beluga-zip-up.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

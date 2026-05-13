@@ -1,0 +1,28 @@
+{
+  "slug": "svp-sports",
+  "brandName": "SVP Sports",
+  "brandDomain": "svpsports.ca",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "adidas - Women's 3-Stripes Print Leggings (Plus Size) (IB8795)",
+      "handle": "adidas-womens-3-stripes-print-leggings-plus-size-ib8795",
+      "price": "£19.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/1880/7069/files/adidas---Women_s-3-Stripes-Print-Leggings-_Plus-Size_-_IB8795_-01.jpg?v=1732727447",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1880/7069/files/adidas---Women_s-3-Stripes-Print-Leggings-_Plus-Size_-_IB8795_-01.jpg?v=1732727447",
+        "https://cdn.shopify.com/s/files/1/1880/7069/files/adidas---Women_s-3-Stripes-Print-Leggings-_Plus-Size_-_IB8795_-02.jpg?v=1732727446",
+        "https://cdn.shopify.com/s/files/1/1880/7069/files/adidas---Women_s-3-Stripes-Print-Leggings-_Plus-Size_-_IB8795_-03.jpg?v=1732727446"
+      ],
+      "tryOnImage": "/demos-images/svp-sports/adidas-womens-3-stripes-print-leggings-plus-size-ib8795.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

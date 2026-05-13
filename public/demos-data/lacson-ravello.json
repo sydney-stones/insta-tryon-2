@@ -1,0 +1,28 @@
+{
+  "slug": "lacson-ravello",
+  "brandName": "Lacson Ravello",
+  "brandDomain": "lacsonravello.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Heart & Stripe Tee - Final Sale",
+      "handle": "heart-stripe-tee",
+      "price": "£15.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0570/5197/1723/products/LR1023_HeartStripesEmbT-shirt_SS21_1_30234bfb-8680-47fc-8242-b4931b099d72.jpg?v=1731459773",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0570/5197/1723/products/LR1023_HeartStripesEmbT-shirt_SS21_1_30234bfb-8680-47fc-8242-b4931b099d72.jpg?v=1731459773",
+        "https://cdn.shopify.com/s/files/1/0570/5197/1723/products/LR1023_HeartStripesEmbT-shirt_SS21_2.jpg?v=1663180934",
+        "https://cdn.shopify.com/s/files/1/0570/5197/1723/products/LR1023_Organic-Tee_HeartsStripesEmbTee2_SS21.jpg?v=1663180934"
+      ],
+      "tryOnImage": "/demos-images/lacson-ravello/heart-stripe-tee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

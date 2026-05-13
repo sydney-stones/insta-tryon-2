@@ -1,0 +1,28 @@
+{
+  "slug": "masscob",
+  "brandName": "MASSCOB",
+  "brandDomain": "masscob.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Tijuca Sweater",
+      "handle": "tijucass26-sweater",
+      "price": "£297.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0324/1401/files/957-1_f5136213-4aae-4a31-8040-0ef84912cdfb.jpg?v=1771415777",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0324/1401/files/957-1_f5136213-4aae-4a31-8040-0ef84912cdfb.jpg?v=1771415777",
+        "https://cdn.shopify.com/s/files/1/0324/1401/files/957-2.jpg?v=1771415777",
+        "https://cdn.shopify.com/s/files/1/0324/1401/files/957-3f_f46bb1db-3e00-43b9-9d23-e592cd0b950c.jpg?v=1771415777"
+      ],
+      "tryOnImage": "/demos-images/masscob/tijucass26-sweater.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

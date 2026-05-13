@@ -1,0 +1,28 @@
+{
+  "slug": "mulligal",
+  "brandName": "Mulligal",
+  "brandDomain": "mulligal.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Adidas ClimaProof Purple Full Zip Windbreaker Jacket Size M",
+      "handle": "adidas-climaproof-purple-full-zip-windbreaker-jacket-size-m",
+      "price": "£15.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0597/1542/0325/files/1776562883-10.jpeg?v=1776562886",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0597/1542/0325/files/1776562883-10.jpeg?v=1776562886",
+        "https://cdn.shopify.com/s/files/1/0597/1542/0325/files/1776562883-20.jpeg?v=1776562887",
+        "https://cdn.shopify.com/s/files/1/0597/1542/0325/files/1776562883-30.jpeg?v=1776562889"
+      ],
+      "tryOnImage": "/demos-images/mulligal/adidas-climaproof-purple-full-zip-windbreaker-jacket-size-m.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

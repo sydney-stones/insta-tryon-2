@@ -1,0 +1,28 @@
+{
+  "slug": "coco-lola",
+  "brandName": "Coco & Lola",
+  "brandDomain": "cocoandlola.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Arley Eloise Maxi Dress in Cream",
+      "handle": "arley-eloise-maxi-dress-in-cream",
+      "price": "£299.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0035/4671/0061/files/1_d72a57df-bf9a-45fc-8119-27742db35bff.png?v=1777089265",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0035/4671/0061/files/1_d72a57df-bf9a-45fc-8119-27742db35bff.png?v=1777089265",
+        "https://cdn.shopify.com/s/files/1/0035/4671/0061/files/11_b65b12fe-bc57-4c2a-bde8-6d649fe625f0.png?v=1777089265",
+        "https://cdn.shopify.com/s/files/1/0035/4671/0061/files/9_8cee6827-e8ec-421f-868e-6bbd2c906b3b.png?v=1777089265"
+      ],
+      "tryOnImage": "/demos-images/coco-lola/arley-eloise-maxi-dress-in-cream.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

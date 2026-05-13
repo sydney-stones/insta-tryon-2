@@ -1,0 +1,28 @@
+{
+  "slug": "simone-perele-uk",
+  "brandName": "Simone Pérèle UK",
+  "brandDomain": "simone-perele.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Short sleeves t-shirt - White",
+      "handle": "short-sleeves-t-shirt-white-romane",
+      "price": "£50.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0908/7431/5048/files/1_1HE901_011_5copie.jpg?v=1776075896",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0908/7431/5048/files/1_1HE901_011_5copie.jpg?v=1776075896",
+        "https://cdn.shopify.com/s/files/1/0908/7431/5048/files/1_1HE901_011_2copie.jpg?v=1776075896",
+        "https://cdn.shopify.com/s/files/1/0908/7431/5048/files/1_1HE901_011_1copie.jpg?v=1776075896"
+      ],
+      "tryOnImage": "/demos-images/simone-perele-uk/short-sleeves-t-shirt-white-romane.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

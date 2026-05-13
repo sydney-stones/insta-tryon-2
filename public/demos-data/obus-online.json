@@ -1,0 +1,28 @@
+{
+  "slug": "obus-online",
+  "brandName": "Obus Online",
+  "brandDomain": "obus.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Equinox Necklace",
+      "handle": "equinox-necklace",
+      "price": "£44.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0343/3193/files/equinox-necklace-5404052.jpg?v=1777590728",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0343/3193/files/equinox-necklace-5404052.jpg?v=1777590728",
+        "https://cdn.shopify.com/s/files/1/0343/3193/files/equinox-necklace-1842333.jpg?v=1777590728",
+        "https://cdn.shopify.com/s/files/1/0343/3193/files/becoming-necklace-6203511.jpg?v=1777590613"
+      ],
+      "tryOnImage": "/demos-images/obus-online/equinox-necklace.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

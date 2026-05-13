@@ -1,0 +1,28 @@
+{
+  "slug": "attaquer",
+  "brandName": "Attaquer",
+  "brandDomain": "attaquercycling.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Womens Race EXOsuit White",
+      "handle": "womens-race-exosuit-white",
+      "price": "£335.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0899/0718/files/Womens-Race-EXOsuit-White-Bib-Shorts-Attaquer_00bca0da.webp?v=1776650009",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0899/0718/files/Womens-Race-EXOsuit-White-Bib-Shorts-Attaquer_00bca0da.webp?v=1776650009",
+        "https://cdn.shopify.com/s/files/1/0899/0718/files/Womens-Race-EXOsuit-White-Bib-Shorts-Attaquer-2_68b95f26.webp?v=1776650291",
+        "https://cdn.shopify.com/s/files/1/0899/0718/files/Womens-Race-EXOsuit-White-Bib-Shorts-Attaquer-3_476e2513.webp?v=1776737907"
+      ],
+      "tryOnImage": "/demos-images/attaquer/womens-race-exosuit-white.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "rowie-the-label",
+  "brandName": "ROWIE The Label",
+  "brandDomain": "rowiethelabel.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Marina Silk Mini Skirt",
+      "handle": "marina-silk-mini-skirt-cacao-spot",
+      "price": "£178.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0097/4254/9077/files/HERO-rowie-may-capsule-silk-2026-lowres13.jpg?v=1778146678",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0097/4254/9077/files/HERO-rowie-may-capsule-silk-2026-lowres13.jpg?v=1778146678",
+        "https://cdn.shopify.com/s/files/1/0097/4254/9077/files/marina-silk-mini-skirt-cacao-spot-Ghost-ROWIE.jpg?v=1778146677",
+        "https://cdn.shopify.com/s/files/1/0097/4254/9077/files/rowie-Marina-Silk-Mini-Skirt-Cacao-Spot-front-full.jpg?v=1778146677"
+      ],
+      "tryOnImage": "/demos-images/rowie-the-label/marina-silk-mini-skirt-cacao-spot.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "amaya-amsterdam",
+  "brandName": "AMAYA AMSTERDAM",
+  "brandDomain": "amaya-amsterdam.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Kiekie Sweater | Pink",
+      "handle": "kiekie-sweater-pink",
+      "price": "£79.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0578/2300/2818/files/4S3A0108_1_6cd463e1-5d36-4703-863e-36556f0ece36.jpg?v=1777369048",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0578/2300/2818/files/4S3A0108_1_6cd463e1-5d36-4703-863e-36556f0ece36.jpg?v=1777369048",
+        "https://cdn.shopify.com/s/files/1/0578/2300/2818/files/4S3A0108_2.jpg?v=1777369050",
+        "https://cdn.shopify.com/s/files/1/0578/2300/2818/files/4S3A0108_3.jpg?v=1777369053"
+      ],
+      "tryOnImage": "/demos-images/amaya-amsterdam/kiekie-sweater-pink.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

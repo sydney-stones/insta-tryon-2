@@ -1,0 +1,28 @@
+{
+  "slug": "gas-monkey-garage",
+  "brandName": "Gas Monkey Garage",
+  "brandDomain": "gasmonkeygarage.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "GMG Chaos Inside Hoodie",
+      "handle": "gmg-chaos-inside-hoodie",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/3099/2682/files/GMGChaosInsideHoodieBackBone_fc018959-bc0c-4c64-b6b6-7aa3a3cfbb96.png?v=1762278464",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/3099/2682/files/GMGChaosInsideHoodieBackBone_fc018959-bc0c-4c64-b6b6-7aa3a3cfbb96.png?v=1762278464",
+        "https://cdn.shopify.com/s/files/1/3099/2682/files/GMGChaosInsideHoodieFrontBone_416263f7-117e-479e-a91d-e4eb9a856134.png?v=1762278464",
+        "https://cdn.shopify.com/s/files/1/3099/2682/files/GMGChaosInsideHoodieBack.png?v=1762278464"
+      ],
+      "tryOnImage": "/demos-images/gas-monkey-garage/gmg-chaos-inside-hoodie.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}
