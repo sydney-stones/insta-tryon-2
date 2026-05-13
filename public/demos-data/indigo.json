@@ -1,0 +1,28 @@
+{
+  "slug": "indigo",
+  "brandName": "Indigo",
+  "brandDomain": "shopindigo.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "ASTR Delia Top",
+      "handle": "astr-delia-top-act19350",
+      "price": "£118.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0082/6051/7924/files/ACT19350_WHITE_3_800x1220_6338e1c9-7d1c-4a65-aae9-d643e7208480.webp?v=1778272021",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0082/6051/7924/files/ACT19350_WHITE_3_800x1220_6338e1c9-7d1c-4a65-aae9-d643e7208480.webp?v=1778272021",
+        "https://cdn.shopify.com/s/files/1/0082/6051/7924/files/ACT19350_WHITE_5_800x1220_f5b2d5a4-707b-4239-80f5-7e8d4ac54775.webp?v=1778272021",
+        "https://cdn.shopify.com/s/files/1/0082/6051/7924/files/ACT19350_PINK_4_800x1220_618f055b-b22c-4e7c-be97-bf0f3cac20c8.webp?v=1778272021"
+      ],
+      "tryOnImage": "/demos-images/indigo/astr-delia-top-act19350.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

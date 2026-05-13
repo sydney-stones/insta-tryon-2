@@ -1,0 +1,28 @@
+{
+  "slug": "bite-studios-nordic-environmental-design-official-boutique",
+  "brandName": "BITE Studios®: Nordic Environmental Design | Official Boutique",
+  "brandDomain": "bitestudios.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Vivace Long Skirt",
+      "handle": "vivace_long_skirt_black",
+      "price": "£720.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0082/5471/8070/files/1151677-0999_VIVACE-LONG-ORGANIC-SILK_LACE-SKIRT.jpg?v=1756065431",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0082/5471/8070/files/1151677-0999_VIVACE-LONG-ORGANIC-SILK_LACE-SKIRT.jpg?v=1756065431",
+        "https://cdn.shopify.com/s/files/1/0082/5471/8070/files/39.2.AW25-1151677-0999_013.jpg?v=1756065610",
+        "https://cdn.shopify.com/s/files/1/0082/5471/8070/files/39.2.AW25-1151677-0999_025.jpg?v=1756065609"
+      ],
+      "tryOnImage": "/demos-images/bite-studios-nordic-environmental-design-official-boutique/vivace_long_skirt_black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

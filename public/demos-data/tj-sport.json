@@ -1,0 +1,28 @@
+{
+  "slug": "tj-sport",
+  "brandName": "TJ Sport",
+  "brandDomain": "tjsportusa.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Racerback-Lime Green",
+      "handle": "racerback-lime-green",
+      "price": "£80.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0513/9716/5215/files/racerback-lime-green-tj-sport-555404.jpg?v=1771375734",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0513/9716/5215/files/racerback-lime-green-tj-sport-555404.jpg?v=1771375734",
+        "https://cdn.shopify.com/s/files/1/0513/9716/5215/files/racerback-lime-green-tj-sport-943480.jpg?v=1771375730",
+        "https://cdn.shopify.com/s/files/1/0513/9716/5215/files/racerback-lime-green-tj-sport-xs-897516.jpg?v=1771375717"
+      ],
+      "tryOnImage": "/demos-images/tj-sport/racerback-lime-green.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

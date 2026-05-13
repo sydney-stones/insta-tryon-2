@@ -1,0 +1,27 @@
+{
+  "slug": "stella-cove",
+  "brandName": "Stella Cove",
+  "brandDomain": "stellacove.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Pink Pineapple Necklace",
+      "handle": "cloudcharm-necklace-copy",
+      "price": "£19.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1183/4636/files/pink_pineapple_beach_accessories_for_girls.jpg?v=1771433156",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1183/4636/files/pink_pineapple_beach_accessories_for_girls.jpg?v=1771433156",
+        "https://cdn.shopify.com/s/files/1/1183/4636/files/pink_beach_accessories_for_girl.jpg?v=1771433132"
+      ],
+      "tryOnImage": "/demos-images/stella-cove/cloudcharm-necklace-copy.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

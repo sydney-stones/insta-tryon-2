@@ -1,0 +1,28 @@
+{
+  "slug": "wiskii",
+  "brandName": "WISKII",
+  "brandDomain": "wiskiiactive.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Riviera Knit Pleated Skirt",
+      "handle": "riviera-knit-pleated-skirt-blanc",
+      "price": "£79.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0268/3695/9406/files/wiskii-skirts-blanc-s-riviera-knit-pleated-skirt-52397649821943.jpg?v=1770293235",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0268/3695/9406/files/wiskii-skirts-blanc-s-riviera-knit-pleated-skirt-52397649821943.jpg?v=1770293235",
+        "https://cdn.shopify.com/s/files/1/0268/3695/9406/files/wiskii-skirts-blanc-s-riviera-knit-pleated-skirt-52394323706103.jpg?v=1770294886",
+        "https://cdn.shopify.com/s/files/1/0268/3695/9406/files/wiskii-skirts-blanc-s-riviera-knit-pleated-skirt-52394324164855.jpg?v=1770293232"
+      ],
+      "tryOnImage": "/demos-images/wiskii/riviera-knit-pleated-skirt-blanc.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

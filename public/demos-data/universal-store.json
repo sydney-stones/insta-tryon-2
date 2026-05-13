@@ -1,0 +1,28 @@
+{
+  "slug": "universal-store",
+  "brandName": "Universal Store",
+  "brandDomain": "universalstore.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Token Fringed Scarf Purple",
+      "handle": "token-fringed-scarf-purple",
+      "price": "£14.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0728/3900/4463/files/417251_US_000.jpg?v=1778651148",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0728/3900/4463/files/417251_US_000.jpg?v=1778651148",
+        "https://cdn.shopify.com/s/files/1/0728/3900/4463/files/417251_US_001.jpg?v=1778651148",
+        "https://cdn.shopify.com/s/files/1/0728/3900/4463/files/417251_US_007.jpg?v=1778651148"
+      ],
+      "tryOnImage": "/demos-images/universal-store/token-fringed-scarf-purple.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

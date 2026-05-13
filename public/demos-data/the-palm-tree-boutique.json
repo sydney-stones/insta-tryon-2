@@ -1,0 +1,28 @@
+{
+  "slug": "the-palm-tree-boutique",
+  "brandName": "The Palm Tree Boutique",
+  "brandDomain": "thepalmtreeboutique.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "RUFFLED GINGHAM SMOCKED SKORT SET- ROSIE RED",
+      "handle": "gingham-top-skort-set-black-copy",
+      "price": "£78.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0285/6372/files/AO4A4598_e78c13e7-5532-4a1c-924f-81a5d7e544a3.jpg?v=1778183148",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0285/6372/files/AO4A4598_e78c13e7-5532-4a1c-924f-81a5d7e544a3.jpg?v=1778183148",
+        "https://cdn.shopify.com/s/files/1/0285/6372/files/AO4A4658_50962612-d63c-49fb-9c27-e828e67c6c62.jpg?v=1778183124",
+        "https://cdn.shopify.com/s/files/1/0285/6372/files/AO4A4660_0d7846ee-35a1-4497-800b-595eeae2e499.jpg?v=1778183124"
+      ],
+      "tryOnImage": "/demos-images/the-palm-tree-boutique/gingham-top-skort-set-black-copy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

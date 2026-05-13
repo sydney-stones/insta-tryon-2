@@ -1,0 +1,28 @@
+{
+  "slug": "pinkham-millinery",
+  "brandName": "Pinkham Millinery",
+  "brandDomain": "pinkhammillinery.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Tall fedora topper",
+      "handle": "tall-fedora-topper-in-flat-felt",
+      "price": "£995.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0512/0206/4584/files/camel-tall-fedora-topper-flat-felt-front.jpg?v=1750568712",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0512/0206/4584/files/camel-tall-fedora-topper-flat-felt-front.jpg?v=1750568712",
+        "https://cdn.shopify.com/s/files/1/0512/0206/4584/files/camel-tall-fedora-topper-flat-felt-front-right.jpg?v=1750568712",
+        "https://cdn.shopify.com/s/files/1/0512/0206/4584/files/camel-tall-fedora-topper-flat-felt-right.jpg?v=1750568712"
+      ],
+      "tryOnImage": "/demos-images/pinkham-millinery/tall-fedora-topper-in-flat-felt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

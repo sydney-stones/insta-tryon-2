@@ -1,0 +1,28 @@
+{
+  "slug": "pearls-plaid",
+  "brandName": "Pearls & Plaid",
+  "brandDomain": "shoppearlsandplaid.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Flamingo T-Shirt Dress",
+      "handle": "flamingo-t-shirt-dress",
+      "price": "£70.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0634/1821/files/IMG_5072.jpg?v=1746732868",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0634/1821/files/IMG_5072.jpg?v=1746732868",
+        "https://cdn.shopify.com/s/files/1/0634/1821/files/IMG_5074_89d1d269-1b60-4e43-bc1b-775131480967.jpg?v=1746732868",
+        "https://cdn.shopify.com/s/files/1/0634/1821/files/IMG_5075_69dbc62e-7be2-40d7-8554-79da7cd76dc9.jpg?v=1746732868"
+      ],
+      "tryOnImage": "/demos-images/pearls-plaid/flamingo-t-shirt-dress.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

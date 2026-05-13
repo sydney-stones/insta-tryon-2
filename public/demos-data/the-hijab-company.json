@@ -1,0 +1,28 @@
+{
+  "slug": "the-hijab-company",
+  "brandName": "The Hijab Company",
+  "brandDomain": "thehijabcompany.pk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Hijab Bands - Set of 12",
+      "handle": "hijab-bands",
+      "price": "£11.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0832/5408/3870/products/Collection.png?v=1700908161",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0832/5408/3870/products/Collection.png?v=1700908161",
+        "https://cdn.shopify.com/s/files/1/0832/5408/3870/products/HijabTubes_0000_DSC03957.jpg?v=1700908161",
+        "https://cdn.shopify.com/s/files/1/0832/5408/3870/products/HijabTubes_0001_DSC03982.jpg?v=1700908161"
+      ],
+      "tryOnImage": "/demos-images/the-hijab-company/hijab-bands.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

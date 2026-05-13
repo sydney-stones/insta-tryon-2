@@ -1,0 +1,28 @@
+{
+  "slug": "mimetik",
+  "brandName": "Mimetik",
+  "brandDomain": "mimetikbcn.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": " Lace Wedding Dress Set – Frida Bohemian",
+      "handle": "vestido-de-novia-de-encaje-en-piezas-frida-bohemian",
+      "price": "£845.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0654/6577/8429/products/p_5_3_9_4_5394-Vestido-de-novia-de-encaje-en-piezas-Frida-Bohemian.jpg?v=1754044811",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0654/6577/8429/products/p_5_3_9_4_5394-Vestido-de-novia-de-encaje-en-piezas-Frida-Bohemian.jpg?v=1754044811",
+        "https://cdn.shopify.com/s/files/1/0654/6577/8429/products/p_5_3_9_9_5399-Vestido-de-novia-de-encaje-en-piezas-Frida-Bohemian.jpg?v=1754044811",
+        "https://cdn.shopify.com/s/files/1/0654/6577/8429/products/p_5_3_9_6_5396-Vestido-de-novia-de-encaje-en-piezas-Frida-Bohemian.jpg?v=1754044811"
+      ],
+      "tryOnImage": "/demos-images/mimetik/vestido-de-novia-de-encaje-en-piezas-frida-bohemian.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

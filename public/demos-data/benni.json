@@ -1,0 +1,28 @@
+{
+  "slug": "benni",
+  "brandName": "BENNI.",
+  "brandDomain": "benni.com.au",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Silas Mini Dress",
+      "handle": "silas-mini-dress",
+      "price": "£137.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0745/4831/4392/files/BEN726-SilasMinidress-Plum-01_b13c92bf-0f90-4b4b-a778-f748c7a4c87f.jpg?v=1776653417",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0745/4831/4392/files/BEN726-SilasMinidress-Plum-01_b13c92bf-0f90-4b4b-a778-f748c7a4c87f.jpg?v=1776653417",
+        "https://cdn.shopify.com/s/files/1/0745/4831/4392/files/BEN726-SilasMinidress-Plum-29_9b3fdec6-3e2b-43ee-a50e-77f33d8573a8.jpg?v=1776653547",
+        "https://cdn.shopify.com/s/files/1/0745/4831/4392/files/BEN726-SilasMinidress-Plum-14_e3f69bd8-22ff-4411-b0a1-8d82729d6e38.jpg?v=1776653547"
+      ],
+      "tryOnImage": "/demos-images/benni/silas-mini-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

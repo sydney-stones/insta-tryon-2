@@ -7,16 +7,16 @@
   "classificationConfidence": "low",
   "tryOns": [
     {
-      "title": "Tijuca Sweater",
-      "handle": "tijucass26-sweater",
-      "price": "£297.00",
-      "productImage": "https://cdn.shopify.com/s/files/1/0324/1401/files/957-1_f5136213-4aae-4a31-8040-0ef84912cdfb.jpg?v=1771415777",
+      "title": "Valley Skirt",
+      "handle": "valley-skirt",
+      "price": "£335.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0324/1401/files/601_1.1_020f6d5f-021b-4889-8a7e-7ca65ffb30ef.jpg?v=1771418192",
       "productImages": [
-        "https://cdn.shopify.com/s/files/1/0324/1401/files/957-1_f5136213-4aae-4a31-8040-0ef84912cdfb.jpg?v=1771415777",
-        "https://cdn.shopify.com/s/files/1/0324/1401/files/957-2.jpg?v=1771415777",
-        "https://cdn.shopify.com/s/files/1/0324/1401/files/957-3f_f46bb1db-3e00-43b9-9d23-e592cd0b950c.jpg?v=1771415777"
+        "https://cdn.shopify.com/s/files/1/0324/1401/files/601_1.1_020f6d5f-021b-4889-8a7e-7ca65ffb30ef.jpg?v=1771418192",
+        "https://cdn.shopify.com/s/files/1/0324/1401/files/601_2_7871f8ea-da3f-476e-b4c5-9704371901e5.jpg?v=1771418192",
+        "https://cdn.shopify.com/s/files/1/0324/1401/files/601_3.1_a8ae7ac8-2603-4130-b48b-4848e1912028.jpg?v=1771418194"
       ],
-      "tryOnImage": "/demos-images/masscob/tijucass26-sweater.jpg",
+      "tryOnImage": "/demos-images/masscob/valley-skirt.jpg",
       "modelGender": "unisex",
       "modelName": "ebba",
       "customerImages": {

@@ -1,0 +1,28 @@
+{
+  "slug": "2xu",
+  "brandName": "2XU",
+  "brandDomain": "2xu.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Form Soft Touch 1/2 Zip Long Sleeve",
+      "handle": "form-soft-touch-12-zip-long-sleeve-wr7360a-blackblack",
+      "price": "£23.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0518/4087/6699/files/WR7360a-BLK-BLK_01_sqi23v.jpg?v=1777948259",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0518/4087/6699/files/WR7360a-BLK-BLK_01_sqi23v.jpg?v=1777948259",
+        "https://cdn.shopify.com/s/files/1/0518/4087/6699/files/WR7360a-BLK-BLK_02_d5tyly.jpg?v=1777948262",
+        "https://cdn.shopify.com/s/files/1/0518/4087/6699/files/WR7360a-BLK-BLK_03_xwsjeh.jpg?v=1777948263"
+      ],
+      "tryOnImage": "/demos-images/2xu/form-soft-touch-12-zip-long-sleeve-wr7360a-blackblack.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

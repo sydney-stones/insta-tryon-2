@@ -1,0 +1,27 @@
+{
+  "slug": "make-vancouver",
+  "brandName": "MAKE Vancouver",
+  "brandDomain": "makevancouver.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lost and Faune Maple Key Earrings - Gold",
+      "handle": "lost-and-faune-maple-key-earrings-gold",
+      "price": "£21.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0193/2192/products/LostandFauneMapleKeyEarrings.png?v=1675210115",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0193/2192/products/LostandFauneMapleKeyEarrings.png?v=1675210115",
+        "https://cdn.shopify.com/s/files/1/0193/2192/products/LostandFauneMapleKeyEarrings2.png?v=1675210115"
+      ],
+      "tryOnImage": "/demos-images/make-vancouver/lost-and-faune-maple-key-earrings-gold.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

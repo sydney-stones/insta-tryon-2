@@ -1,0 +1,28 @@
+{
+  "slug": "suit-shop-tailors-made",
+  "brandName": "Suit Shop, Tailors, Made",
+  "brandDomain": "editsuits.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Stone Field Jacket",
+      "handle": "ivory-field-jacket",
+      "price": "£419.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0610/0543/0961/files/EmptyName1601_HighRes9x16.jpg?v=1775683319",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0610/0543/0961/files/EmptyName1601_HighRes9x16.jpg?v=1775683319",
+        "https://cdn.shopify.com/s/files/1/0610/0543/0961/files/EmptyName1632_HighRes9x16.jpg?v=1775683286",
+        "https://cdn.shopify.com/s/files/1/0610/0543/0961/files/EmptyName1622_HighRes9x16.jpg?v=1775683301"
+      ],
+      "tryOnImage": "/demos-images/suit-shop-tailors-made/ivory-field-jacket.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

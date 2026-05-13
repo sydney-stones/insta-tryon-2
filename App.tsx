@@ -141,9 +141,9 @@ const App: React.FC = () => {
           <Route path="/mr-button/navy-polo-tshirt" element={<MrButtonDemoPage productSlug="navy-polo-tshirt" />} />
           <Route path="/mr-button/moonless-night-trouser" element={<MrButtonDemoPage productSlug="moonless-night-trouser" />} />
           <Route path="/mr-button/snowbound-blazer" element={<MrButtonDemoPage productSlug="snowbound-blazer" />} />
-          <Route path="/nation-la/lincoln-knit-pant" element={<NationLADemoPage productSlug="lincoln-knit-pant" />} />
           <Route path="/nation-la/lenon-sweatshirt" element={<NationLADemoPage productSlug="lenon-sweatshirt" />} />
-          <Route path="/nation-la/evonne-maxi-dress" element={<NationLADemoPage productSlug="evonne-maxi-dress" />} />
+          <Route path="/nation-la/becka-tank" element={<NationLADemoPage productSlug="becka-tank" />} />
+          <Route path="/nation-la/jenna-crochet-short" element={<NationLADemoPage productSlug="jenna-crochet-short" />} />
           <Route path="/perfect-white-tee/hendrix" element={<PerfectWhiteTeeDemoPage productSlug="hendrix" />} />
           <Route path="/perfect-white-tee/johnny" element={<PerfectWhiteTeeDemoPage productSlug="johnny" />} />
           <Route path="/perfect-white-tee/ziggy" element={<PerfectWhiteTeeDemoPage productSlug="ziggy" />} />

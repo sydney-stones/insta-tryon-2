@@ -27,36 +27,17 @@ interface DemoProduct {
   faceSrc: string;
   bodySrc: string;
   afterSrc: string;
+  finderSrc: string;
   description: string;
   colourLabel: string;
   swatchColor: string;
 }
 
 export const NATIONLA_PRODUCTS: Record<string, DemoProduct> = {
-  'lincoln-knit-pant': {
-    id: 90,
-    name: 'Lincoln Knit Pant',
-    brand: 'NATION LTD',
-    price: '$212',
-    category: 'Trousers',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    gallerySrcs: [
-      '/result-images/NationLA/Lincoln Knit Pant/LINCOLN_PANT_4228DOFT_IND_1.webp',
-      '/result-images/NationLA/Lincoln Knit Pant/LINCOLN_PANT_4228DOFT_IND_3_0a161538-f176-4a66-92c6-31c697a3e22a.webp',
-      '/result-images/NationLA/Lincoln Knit Pant/LINCOLN_PANT_4228DOFT_IND_BILLIE_SWEATSHIRT_3216DOFT_IND_H.webp',
-      '/result-images/NationLA/Lincoln Knit Pant/LINCOLN_PANT_4228DOFT_IND_BILLIE_SWEATSHIRT_3216DOFT_IND_SYDNI_S1.webp',
-    ],
-    faceSrc: '/result-images/siennaface-new.png',
-    bodySrc: '/result-images/siennabody--new.JPG',
-    afterSrc: '/result-images/NationLA/Lincoln Knit Pant/LINCOLN_PANT_4228DOFT_IND_1_LINCOLN_PANT_4228DOFT_IND_3_0a161538-f176-4a66-92c6-31c697a3e22a_LINCOLN_PANT_4228DOFT_IND_B.jpeg',
-    description: 'The Lincoln Knit Pant. Relaxed through the hip and thigh with a tapered leg — the kind of knit pant that goes with everything and earns its place in every rotation.',
-    colourLabel: 'Indigo',
-    swatchColor: '#3B4A6B',
-  },
   'lenon-sweatshirt': {
     id: 91,
     name: 'Lenon Sweatshirt',
-    brand: 'NATION LTD',
+    brand: 'NATION LA',
     price: '$127',
     category: 'Tops',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -70,29 +51,50 @@ export const NATIONLA_PRODUCTS: Record<string, DemoProduct> = {
     faceSrc: '/result-images/siennaface-new.png',
     bodySrc: '/result-images/siennabody--new.JPG',
     afterSrc: '/result-images/NationLA/Lenon Sweatshirt/LENON_CREWNECK_SWEATSHIRT_2326D0FTH_HGR_LAUREN_S2_LENON_CREWNECK_SWEATSHIRT_2326D0FTH_HGR_LAUREN_S3_LENON_CREWNECK_SWEAT.jpeg',
-    description: 'The Lenon Sweatshirt. A crewneck done right — relaxed but not sloppy, with Nation\'s signature soft-wash finish that only gets better over time.',
+    finderSrc: '/result-images/finderupload.png',
+    description: "The Lenon Sweatshirt. A crewneck done right — relaxed but not sloppy, with Nation's signature soft-wash finish that only gets better over time.",
     colourLabel: 'Heather Grey',
     swatchColor: '#B0B0B0',
   },
-  'evonne-maxi-dress': {
+  'becka-tank': {
     id: 92,
-    name: 'Evonne Maxi Dress',
-    brand: 'NATION LTD',
-    price: '$180',
-    category: 'Dresses',
+    name: 'Becka Tank',
+    brand: 'NATION LA',
+    price: '$88',
+    category: 'Tops',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     gallerySrcs: [
-      '/result-images/NationLA/Evonne Maxi Dress/EVONNE_DRESS_5493NPS_OLV_HAYLEY_S1.webp',
-      '/result-images/NationLA/Evonne Maxi Dress/EVONNE_DRESS_5493NPS_OLV_NATALIA_1.webp',
-      '/result-images/NationLA/Evonne Maxi Dress/EVONNE_DRESS_5493NPS_OLV_NATALIA_H2.webp',
-      '/result-images/NationLA/Evonne Maxi Dress/EVONNE_DRESS_5493NPS_OLV_NATALIA_H3.webp',
+      '/result-images/nationla2/beckatank/BECKA_TANK_11437JJR_SNSH_1.jpg.webp',
+      '/result-images/nationla2/beckatank/BECKA_TANK_11437JJR_SNSH_3.jpg.webp',
+      '/result-images/nationla2/beckatank/BECKATANK_11437JJR_SNSH_H2.jpg.webp',
     ],
-    faceSrc: '/result-images/siennaface-new.png',
-    bodySrc: '/result-images/siennabody--new.JPG',
-    afterSrc: '/result-images/NationLA/Evonne Maxi Dress/EVONNE_DRESS_5493NPS_OLV_HAYLEY_S1_EVONNE_DRESS_5493NPS_OLV_NATALIA_1_EVONNE_DRESS_5493NPS_OLV_NATALIA_H2_EVONNE_DRESS_5.jpeg',
-    description: 'The Evonne Maxi Dress in olive. A flowing silhouette with effortless California ease — the dress you reach for when you want to look put-together without trying.',
-    colourLabel: 'Olive',
-    swatchColor: '#6B7A44',
+    faceSrc: '/result-images/ebbaface.png',
+    bodySrc: '/result-images/ebbabody.png',
+    afterSrc: '/result-images/nationla2/beckatank/BECKA_TANK_11437JJR_SNSH_1-jpg_BECKA_TANK_11437JJR_SNSH_3-jpg_BECKATANK_11437JJR_SNSH_H-jpg_BECKATANK_11437JJR_Try-On-2.jpeg',
+    finderSrc: '/result-images/petitemodelfinderui.png',
+    description: "The Becka Tank. A clean, minimal tank with Nation's signature soft fabrication — the kind of piece that holds its own solo or layers effortlessly under everything.",
+    colourLabel: 'Sunshine',
+    swatchColor: '#F5C842',
+  },
+  'jenna-crochet-short': {
+    id: 93,
+    name: 'Jenna Crochet Short',
+    brand: 'NATION LA',
+    price: '$138',
+    category: 'Shorts',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    gallerySrcs: [
+      '/result-images/nationla2/JENNA_CROCHET/JENNA_CROCHET_SHORT_91436MSC_SSCR_LUCY_CROCHET_HALTER_91435MSC_SSCR_H.jpg.webp',
+      '/result-images/nationla2/JENNA_CROCHET/JENNA_CROCHET_SHORT_91436MSC_SSCR_LUCY_CROCHET_HALTER_91435MSC_SSCR_H2.jpg.webp',
+      '/result-images/nationla2/JENNA_CROCHET/LUCY_CROCHET_HALTER_91435MSC_SSCR_H2_1.jpg.webp',
+    ],
+    faceSrc: '/result-images/sashaface.png',
+    bodySrc: '/result-images/sashabody.png',
+    afterSrc: '/result-images/nationla2/JENNA_CROCHET/JENNA_CROCHET_SHORT_91436MSC_SSCR_LUCY_CROCHET_HALTER_91435MSC_SSCR_H2-jpg_JENNA_CROCHET_SHORT_91436MSC_SSCR_L_Try-On.jpeg',
+    finderSrc: '/result-images/plusmodelfinderui.png',
+    description: "The Jenna Crochet Short. A textured crochet short that pairs perfectly with the matching Lucy halter — relaxed and easy with a handcrafted feel.",
+    colourLabel: 'Sea Salt Cream',
+    swatchColor: '#E8E0D0',
   },
 };
 
@@ -271,7 +273,7 @@ const NationLADemoPage: React.FC<NationLADemoPageProps> = ({ productSlug }) => {
             ))}
           </nav>
           <span style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', fontSize: '20px', fontWeight: 300, letterSpacing: '0.08em', color: '#111' }}>
-            NATION LTD
+            NATION LA
           </span>
           <div />
         </div>
@@ -547,7 +549,7 @@ const NationLADemoPage: React.FC<NationLADemoPageProps> = ({ productSlug }) => {
               <AnimatePresence>
                 {isUploadModalVisible(animState) && (
                   <motion.div ref={overlayContainerRef} className="absolute inset-0 z-[70] flex items-end sm:items-center justify-center bg-black/40" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
-                    <motion.img src={isMobile ? '/result-images/phoneupload.PNG' : '/result-images/finderupload.png'} alt="Upload dialog" className="max-w-[85%] sm:max-w-[60%] max-h-[70%] object-contain rounded-xl shadow-2xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 30 }} transition={{ duration: 0.2 }} />
+                    <motion.img src={isMobile ? '/result-images/phoneupload.PNG' : product.finderSrc} alt="Upload dialog" className="max-w-[85%] sm:max-w-[60%] max-h-[70%] object-contain rounded-xl shadow-2xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 30 }} transition={{ duration: 0.2 }} />
                   </motion.div>
                 )}
               </AnimatePresence>

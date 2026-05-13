@@ -1,0 +1,28 @@
+{
+  "slug": "stiksen",
+  "brandName": "Stiksen",
+  "brandDomain": "stiksen.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "107 Ventile Orange",
+      "handle": "107-ventile-orange",
+      "price": "£79.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1927/6149/files/107VentileOrange1.jpg?v=1776946300",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1927/6149/files/107VentileOrange1.jpg?v=1776946300",
+        "https://cdn.shopify.com/s/files/1/1927/6149/files/107VentileOrange7M.jpg?v=1776425195",
+        "https://cdn.shopify.com/s/files/1/1927/6149/files/107VentileOrange2.jpg?v=1776946300"
+      ],
+      "tryOnImage": "/demos-images/stiksen/107-ventile-orange.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

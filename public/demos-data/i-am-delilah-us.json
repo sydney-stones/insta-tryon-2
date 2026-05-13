@@ -1,0 +1,28 @@
+{
+  "slug": "i-am-delilah-us",
+  "brandName": "I AM DELILAH US",
+  "brandDomain": "iamdelilah.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Yasmin Midi Skirt | Plum",
+      "handle": "yasmin-midi-skirt-plum",
+      "price": "£129.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0664/2666/7110/files/DSC_8588_9e3e39d5-1f02-4f05-89e5-54d2550dcf00.jpg?v=1777467568",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0664/2666/7110/files/DSC_8588_9e3e39d5-1f02-4f05-89e5-54d2550dcf00.jpg?v=1777467568",
+        "https://cdn.shopify.com/s/files/1/0664/2666/7110/files/167.png?v=1777498778",
+        "https://cdn.shopify.com/s/files/1/0664/2666/7110/files/DSC_8573.jpg?v=1777466250"
+      ],
+      "tryOnImage": "/demos-images/i-am-delilah-us/yasmin-midi-skirt-plum.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

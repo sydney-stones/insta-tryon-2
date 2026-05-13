@@ -1,0 +1,28 @@
+{
+  "slug": "culture-athletics",
+  "brandName": "Culture Athletics",
+  "brandDomain": "cultureathletics.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Womens Airolite Tank 2.0",
+      "handle": "womens-airolite-tank-2-0",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0256/6550/3254/files/Hoka_-_Womens_Airolite_Tank_2.0_-_Black_-_Culture_Athletics.jpg?v=1778548088",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0256/6550/3254/files/Hoka_-_Womens_Airolite_Tank_2.0_-_Black_-_Culture_Athletics.jpg?v=1778548088",
+        "https://cdn.shopify.com/s/files/1/0256/6550/3254/files/Untitleddesign_2_c305e93d-1888-40f2-9881-804e2a496e84.jpg?v=1778548111",
+        "https://cdn.shopify.com/s/files/1/0256/6550/3254/files/Untitleddesign_3_3054393c-fdee-425b-ba73-d7292242b4f4.jpg?v=1778548223"
+      ],
+      "tryOnImage": "/demos-images/culture-athletics/womens-airolite-tank-2-0.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "cry-baby",
+  "brandName": "Cry Baby",
+  "brandDomain": "crybaby.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Dolly Coat",
+      "handle": "brown-fur-collar-coat",
+      "price": "£190.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2474/0586/files/DSCF0558_copy.webp?v=1770834402",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2474/0586/files/DSCF0558_copy.webp?v=1770834402",
+        "https://cdn.shopify.com/s/files/1/2474/0586/files/dolly.jpg?v=1770834396",
+        "https://cdn.shopify.com/s/files/1/2474/0586/files/coat.jpg?v=1770834396"
+      ],
+      "tryOnImage": "/demos-images/cry-baby/brown-fur-collar-coat.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

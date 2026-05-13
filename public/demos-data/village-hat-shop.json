@@ -1,0 +1,28 @@
+{
+  "slug": "village-hat-shop",
+  "brandName": "Village Hat Shop",
+  "brandDomain": "villagehatshop.com",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Metallic Poly Turban",
+      "handle": "metallic-poly-turban",
+      "price": "£14.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0074/3732/0263/files/yVhaNi9755AKZGPZW9dljhK8pCf5Hcd0-24.jpg?v=1725221236",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0074/3732/0263/files/yVhaNi9755AKZGPZW9dljhK8pCf5Hcd0-24.jpg?v=1725221236",
+        "https://cdn.shopify.com/s/files/1/0074/3732/0263/files/s5M2RNfUf2RllPCDZx2OjBaydh9K0Pok-24.jpg?v=1725221236",
+        "https://cdn.shopify.com/s/files/1/0074/3732/0263/files/QF1JQKZpmAUkAbwk7XfHSuQi9J4PRGMz-24.jpg?v=1725221236"
+      ],
+      "tryOnImage": "/demos-images/village-hat-shop/metallic-poly-turban.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

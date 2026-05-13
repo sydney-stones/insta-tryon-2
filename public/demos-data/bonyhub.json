@@ -1,0 +1,28 @@
+{
+  "slug": "bonyhub",
+  "brandName": "BONYHUB",
+  "brandDomain": "bonyhub.co.uk",
+  "generatedOn": "2026-05-13",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Jaipur Cotton Anarkali Salwar Suit Women",
+      "handle": "jaipur-cotton-anarkali-salwar-suit-women",
+      "price": "£43.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/1152/8518/files/Screenshot2026-05-10at17.20.39.png?v=1778430116",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1152/8518/files/Screenshot2026-05-10at17.20.39.png?v=1778430116",
+        "https://cdn.shopify.com/s/files/1/1152/8518/files/Screenshot2026-05-10at17.19.29.png?v=1778430115",
+        "https://cdn.shopify.com/s/files/1/1152/8518/files/Screenshot2026-05-10at17.19.35.png?v=1778430116"
+      ],
+      "tryOnImage": "/demos-images/bonyhub/jaipur-cotton-anarkali-salwar-suit-women.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
