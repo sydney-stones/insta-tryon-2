@@ -300,10 +300,11 @@ async function processBrand(lead) {
   if (filteredPicks.length < 1) return { status: 'skipped', reason: 'no products after skipProductHandle filter', slug, gender: cls.gender };
   const forcedGender = ov.forceGender;
   const forcedModelName = ov.forceModel;
+  const maxProductImages = ov.maxProductImages || 3;
 
   const tryOns = [];
   for (const p of filteredPicks) {
-    const imgUrls = (p.images || []).map(im => im.src).filter(Boolean).slice(0, 3);
+    const imgUrls = (p.images || []).map(im => im.src).filter(Boolean).slice(0, maxProductImages);
     if (imgUrls.length === 0) continue;
     const effectiveGender = forcedGender || p._gender;
     let model = pickModel(effectiveGender, slug);
