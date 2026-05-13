@@ -39,3 +39,10 @@ scripts/emails.csv
 scripts/.demo-gen-state.json
 scripts/batch*.log
 scripts/overrides.json
+
+# Send pipeline state
+scripts/send-state.db
+scripts/send-state.db-wal
+scripts/send-state.db-shm
+scripts/outbox.csv
+scripts/send-config.json
