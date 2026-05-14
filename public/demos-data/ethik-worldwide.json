@@ -1,0 +1,28 @@
+{
+  "slug": "ethik-worldwide",
+  "brandName": "Ethik Worldwide",
+  "brandDomain": "ethikworldwide.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Campus Rugby | Caramel",
+      "handle": "campus-rugby-caramel",
+      "price": "£52.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0096/5272/files/Campus-Rugby-1a_0bf85820-d5ca-4126-8b18-340aa3307c4d.jpg?v=1776448748",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0096/5272/files/Campus-Rugby-1a_0bf85820-d5ca-4126-8b18-340aa3307c4d.jpg?v=1776448748",
+        "https://cdn.shopify.com/s/files/1/0096/5272/files/Campus-Rugby-1b_84c58b31-d550-46e2-802b-8081bb209fa0.jpg?v=1776448748",
+        "https://cdn.shopify.com/s/files/1/0096/5272/files/Winx-Clay-3_1.jpg?v=1776448748"
+      ],
+      "tryOnImage": "/demos-images/ethik-worldwide/campus-rugby-caramel.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

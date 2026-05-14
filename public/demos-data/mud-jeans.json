@@ -1,0 +1,28 @@
+{
+  "slug": "mud-jeans",
+  "brandName": "MUD Jeans",
+  "brandDomain": "mudjeans.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Brooke High Barrel - Rustic Blue",
+      "handle": "brooke-high-barrel-rustic-blue",
+      "price": "£149.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0432/6427/8679/files/women-sustainable-jeans-brooke-high-barrel-rustic-blue-full-body-front-winter.jpg?v=1747398158",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0432/6427/8679/files/women-sustainable-jeans-brooke-high-barrel-rustic-blue-full-body-front-winter.jpg?v=1747398158",
+        "https://cdn.shopify.com/s/files/1/0432/6427/8679/files/women-sustainable-jeans-brooke-high-barrel-rustic-blue-full-body-side-winter.jpg?v=1747398158",
+        "https://cdn.shopify.com/s/files/1/0432/6427/8679/files/women-sustainable-jeans-brooke-high-barrel-rustic-blue-full-body-back-winter.jpg?v=1747398158"
+      ],
+      "tryOnImage": "/demos-images/mud-jeans/brooke-high-barrel-rustic-blue.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

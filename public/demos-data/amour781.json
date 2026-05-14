@@ -1,0 +1,28 @@
+{
+  "slug": "amour781",
+  "brandName": "AMOUR781",
+  "brandDomain": "amour781.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "LILYANA DRESS",
+      "handle": "lilyana-dress",
+      "price": "£189.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0602/2594/5809/files/DSC06068.jpg?v=1762538505",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0602/2594/5809/files/DSC06068.jpg?v=1762538505",
+        "https://cdn.shopify.com/s/files/1/0602/2594/5809/files/DSC06077.jpg?v=1743022147",
+        "https://cdn.shopify.com/s/files/1/0602/2594/5809/files/BL_NK-LILYANA-DRESS-1.jpg?v=1743022147"
+      ],
+      "tryOnImage": "/demos-images/amour781/lilyana-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "sidi-sport-srl",
+  "brandName": "Sidi Sport Srl",
+  "brandDomain": "sidi.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "JACKET SUPERIOR",
+      "handle": "jacket-superior",
+      "price": "£139.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0644/7221/9842/files/00MPJKTSUPERIOR_GREEN_FRONT.png?v=1725972301",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0644/7221/9842/files/00MPJKTSUPERIOR_GREEN_FRONT.png?v=1725972301"
+      ],
+      "tryOnImage": "/demos-images/sidi-sport-srl/jacket-superior.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "casablanca-paris-official-site",
+  "brandName": "Casablanca Paris Official Site",
+  "brandDomain": "casablancaparis.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Casa Shell Wave Silk Dress",
+      "handle": "ws22-dr-038-silk-satin-casa-shell-wave",
+      "price": "£755.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0076/1341/5506/files/WS22-DR-038_02_750df152-71d7-4532-93e6-9346d302e361.webp?v=1725295363",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0076/1341/5506/files/WS22-DR-038_02_750df152-71d7-4532-93e6-9346d302e361.webp?v=1725295363",
+        "https://cdn.shopify.com/s/files/1/0076/1341/5506/files/WS22-DR-038_A_053f1de2-0ffc-4279-b936-75a4c49d7274.webp?v=1725295363",
+        "https://cdn.shopify.com/s/files/1/0076/1341/5506/files/WS22-DR-038_B_e654e991-037f-462a-a01c-a90c4b8ad377.webp?v=1725295363"
+      ],
+      "tryOnImage": "/demos-images/casablanca-paris-official-site/ws22-dr-038-silk-satin-casa-shell-wave.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

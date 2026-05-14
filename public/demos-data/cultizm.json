@@ -1,0 +1,28 @@
+{
+  "slug": "cultizm",
+  "brandName": "CULTIZM",
+  "brandDomain": "cultizm.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Puebco Felted Blanket Poncho Navy Blue",
+      "handle": "puebco-felted-blanket-poncho-navy-blue",
+      "price": "£37.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0962/3833/8388/files/Screenshot2026-05-05at10-16-00FELTEDBLANKETPONCHO_PUEBCOEUROPE.jpg?v=1777974188",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0962/3833/8388/files/Screenshot2026-05-05at10-16-00FELTEDBLANKETPONCHO_PUEBCOEUROPE.jpg?v=1777974188",
+        "https://cdn.shopify.com/s/files/1/0962/3833/8388/files/Screenshot2026-05-05at10-15-56FELTEDBLANKETPONCHO_PUEBCOEUROPE.jpg?v=1777974189",
+        "https://cdn.shopify.com/s/files/1/0962/3833/8388/files/Screenshot2026-05-05at10-16-07FELTEDBLANKETPONCHO_PUEBCOEUROPE.jpg?v=1777974188"
+      ],
+      "tryOnImage": "/demos-images/cultizm/puebco-felted-blanket-poncho-navy-blue.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

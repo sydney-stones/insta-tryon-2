@@ -1,0 +1,28 @@
+{
+  "slug": "women-s-best-ie",
+  "brandName": "Women's Best - IE",
+  "brandDomain": "womensbest.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Motion Seamless Leggings | Heather Rose",
+      "handle": "motion-seamless-leggings-heather-rose",
+      "price": "£19.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0744/0203/files/01_Motion_Ecomm_1782_HeatherRose_ee814e3e-1667-4c3f-841d-7d4fc04c4194.jpg?v=1711360444",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0744/0203/files/01_Motion_Ecomm_1782_HeatherRose_ee814e3e-1667-4c3f-841d-7d4fc04c4194.jpg?v=1711360444",
+        "https://cdn.shopify.com/s/files/1/0744/0203/files/02_Motion_Campaign_2289_HeatherRose_2c74878a-e310-4b42-b349-b22b6089b33b.jpg?v=1711360444",
+        "https://cdn.shopify.com/s/files/1/0744/0203/files/03_Motion_Ecomm_1868_HeatherRose_0281503b-fd74-45be-be6e-efa0ed553f59.jpg?v=1711360444"
+      ],
+      "tryOnImage": "/demos-images/women-s-best-ie/motion-seamless-leggings-heather-rose.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

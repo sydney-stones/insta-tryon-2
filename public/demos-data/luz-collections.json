@@ -1,0 +1,28 @@
+{
+  "slug": "luz-collections",
+  "brandName": "Luz Collections",
+  "brandDomain": "luzcollections.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pantalon MEL - Bleu marine",
+      "handle": "pantalon-mel-bleu-marine",
+      "price": "£95.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0886/0051/0758/files/ShootingLuzxMelanie__AmelieLabarthe_retouche2_HD-6.jpg?v=1774008073",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0886/0051/0758/files/ShootingLuzxMelanie__AmelieLabarthe_retouche2_HD-6.jpg?v=1774008073",
+        "https://cdn.shopify.com/s/files/1/0886/0051/0758/files/FA6A0228.jpg?v=1774008073",
+        "https://cdn.shopify.com/s/files/1/0886/0051/0758/files/FA6A0207.jpg?v=1774008073"
+      ],
+      "tryOnImage": "/demos-images/luz-collections/pantalon-mel-bleu-marine.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "maggy-london",
+  "brandName": "Maggy London",
+  "brandDomain": "maggylondon.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Fern",
+      "handle": "fern-y10025",
+      "price": "£134.26",
+      "productImage": "https://cdn.shopify.com/s/files/1/0276/5828/9263/files/Y10025M-ANTIQUE-WHITE-EDITORIAL-1.jpg?v=1778543172",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0276/5828/9263/files/Y10025M-ANTIQUE-WHITE-EDITORIAL-1.jpg?v=1778543172",
+        "https://cdn.shopify.com/s/files/1/0276/5828/9263/files/Y10025M-METEORITE-OG-2.jpg?v=1778543169",
+        "https://cdn.shopify.com/s/files/1/0276/5828/9263/files/Y10025M-METEORITE-OG-3.jpg?v=1778543169"
+      ],
+      "tryOnImage": "/demos-images/maggy-london/fern-y10025.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

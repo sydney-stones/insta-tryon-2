@@ -1,0 +1,28 @@
+{
+  "slug": "straede",
+  "brandName": "straede",
+  "brandDomain": "straede.cc",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Spring Pro Bundle Women",
+      "handle": "spring-pro-bundle-women",
+      "price": "£319.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0530/0073/2839/files/Spring_Pro_Bundle_Damen.jpg?v=1770394003",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0530/0073/2839/files/Spring_Pro_Bundle_Damen.jpg?v=1770394003",
+        "https://cdn.shopify.com/s/files/1/0530/0073/2839/files/spring-pro-bundle-women_b0028516-4a9d-4b57-b8a5-5980f34686c7.jpg?v=1776777236",
+        "https://cdn.shopify.com/s/files/1/0530/0073/2839/files/spring-pro-bundle-inhalt-damen.jpg?v=1776777236"
+      ],
+      "tryOnImage": "/demos-images/straede/spring-pro-bundle-women.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

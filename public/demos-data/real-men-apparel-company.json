@@ -1,0 +1,28 @@
+{
+  "slug": "real-men-apparel-company",
+  "brandName": "Real Men Apparel Company",
+  "brandDomain": "rmac.store",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Modal 7in Boxer Briefs No Fly 3pk Lavender/Aqua/Bright Blue",
+      "handle": "modal-7in-boxer-briefs-no-fly-3pk-lavender-aqua-bright-blue",
+      "price": "£39.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0592/1502/0200/files/1.1_524f69b8-7164-4970-a281-9abc7de88817.jpg?v=1778733392",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0592/1502/0200/files/1.1_524f69b8-7164-4970-a281-9abc7de88817.jpg?v=1778733392",
+        "https://cdn.shopify.com/s/files/1/0592/1502/0200/files/2_aea317cf-e9e1-4f17-baac-2b1361ab8058.jpg?v=1778619882",
+        "https://cdn.shopify.com/s/files/1/0592/1502/0200/files/3_ef428682-df6e-4c03-8797-503791bce92f.jpg?v=1778619882"
+      ],
+      "tryOnImage": "/demos-images/real-men-apparel-company/modal-7in-boxer-briefs-no-fly-3pk-lavender-aqua-bright-blue.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

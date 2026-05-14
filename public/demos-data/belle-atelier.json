@@ -1,0 +1,27 @@
+{
+  "slug": "belle-atelier",
+  "brandName": "Belle Atelier",
+  "brandDomain": "bellebridalatelier.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Esme Chiffon Skirt",
+      "handle": "esme-chiffon-skirt-nyc",
+      "price": "£2162.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0710/8067/3513/files/CasperCorset_EsmeTulle_ChiffonSkirtcopy.jpg?v=1769369241",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0710/8067/3513/files/CasperCorset_EsmeTulle_ChiffonSkirtcopy.jpg?v=1769369241",
+        "https://cdn.shopify.com/s/files/1/0710/8067/3513/files/CasperCorset_ChiffonSkirtcopy.jpg?v=1769369241"
+      ],
+      "tryOnImage": "/demos-images/belle-atelier/esme-chiffon-skirt-nyc.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

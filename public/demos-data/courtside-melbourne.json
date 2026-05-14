@@ -1,0 +1,28 @@
+{
+  "slug": "courtside-melbourne",
+  "brandName": "CourtSide Melbourne",
+  "brandDomain": "courtsidemelbourne.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "NIKE SABRINA 3 'WNBA 30TH'",
+      "handle": "nike-sabrina-3-nrg",
+      "price": "£199.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0696/6958/4996/files/media_5a8e60f5-8a5b-4588-b6dd-b34508db3fb9.jpg?v=1778216921",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0696/6958/4996/files/media_5a8e60f5-8a5b-4588-b6dd-b34508db3fb9.jpg?v=1778216921",
+        "https://cdn.shopify.com/s/files/1/0696/6958/4996/files/media_f7a585b8-06a4-4721-8403-64ab86678287.jpg?v=1778216921",
+        "https://cdn.shopify.com/s/files/1/0696/6958/4996/files/media_319bf25f-9669-464e-821a-58417d9e41f5.jpg?v=1778216921"
+      ],
+      "tryOnImage": "/demos-images/courtside-melbourne/nike-sabrina-3-nrg.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

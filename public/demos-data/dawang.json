@@ -1,0 +1,28 @@
+{
+  "slug": "dawang",
+  "brandName": "DAWANG",
+  "brandDomain": "dawangnewyork.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Bu Sleeveless Top Baby Pink x DAWANG²",
+      "handle": "bu-sleeveless-top-baby-pink-x-dawang",
+      "price": "£67.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0553/4695/4389/files/IMG_1054.jpg?v=1777583274",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0553/4695/4389/files/IMG_1054.jpg?v=1777583274",
+        "https://cdn.shopify.com/s/files/1/0553/4695/4389/files/IMG_1064.jpg?v=1777584535",
+        "https://cdn.shopify.com/s/files/1/0553/4695/4389/files/FW24DaWangRunway-_matts0l-82.jpg?v=1732310527"
+      ],
+      "tryOnImage": "/demos-images/dawang/bu-sleeveless-top-baby-pink-x-dawang.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

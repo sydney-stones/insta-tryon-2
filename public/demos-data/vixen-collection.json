@@ -1,0 +1,28 @@
+{
+  "slug": "vixen-collection",
+  "brandName": "Vixen Collection",
+  "brandDomain": "vixencollection.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Salty Prep Polo Top",
+      "handle": "t5711",
+      "price": "£81.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0375/5877/9948/files/SaltyPrepPoloTop_VixenCollection.com_e703fcd7-36d8-4444-b2a3-ef767a43319e.png?v=1778708294",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0375/5877/9948/files/SaltyPrepPoloTop_VixenCollection.com_e703fcd7-36d8-4444-b2a3-ef767a43319e.png?v=1778708294",
+        "https://cdn.shopify.com/s/files/1/0375/5877/9948/files/SaltyPrepPoloTop_VixenCollection.com_ad3009fa-d1a0-4830-8dfe-ef1039c02b60.png?v=1778708294",
+        "https://cdn.shopify.com/s/files/1/0375/5877/9948/files/SaltyPrepPoloTop_VixenCollection.com_4affc3d4-9245-453b-9e42-9fad47ec8391.png?v=1778708294"
+      ],
+      "tryOnImage": "/demos-images/vixen-collection/t5711.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

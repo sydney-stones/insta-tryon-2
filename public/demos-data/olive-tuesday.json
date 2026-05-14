@@ -1,0 +1,28 @@
+{
+  "slug": "olive-tuesday",
+  "brandName": "Olive & Tuesday",
+  "brandDomain": "oliveandtuesday.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "The Crew Powder Blue",
+      "handle": "the-crew-powder-blue",
+      "price": "£73.70",
+      "productImage": "https://cdn.shopify.com/s/files/1/0410/1285/4947/files/OliveandTuesday3.29.26PhotographyWebSize-241.jpg?v=1774892897",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0410/1285/4947/files/OliveandTuesday3.29.26PhotographyWebSize-241.jpg?v=1774892897",
+        "https://cdn.shopify.com/s/files/1/0410/1285/4947/files/OliveandTuesday3.29.26PhotographyWebSize-245.jpg?v=1774892931",
+        "https://cdn.shopify.com/s/files/1/0410/1285/4947/files/OliveandTuesday3.29.26PhotographyWebSize-234_8041979a-394b-4897-ac65-b8b4bc588975.jpg?v=1774892946"
+      ],
+      "tryOnImage": "/demos-images/olive-tuesday/the-crew-powder-blue.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

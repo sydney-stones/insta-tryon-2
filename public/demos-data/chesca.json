@@ -1,0 +1,28 @@
+{
+  "slug": "chesca",
+  "brandName": "Chesca",
+  "brandDomain": "chescadirect.co.uk",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Blonde Satin Trim Chiffon Trouser",
+      "handle": "blonde-satin-trim-chiffon-trouser",
+      "price": "£55.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0653/9731/products/24W0EC02_alt_600x800_8ba572ec-5d37-45a2-8e00-d08a4b677871.jpg?v=1626960715",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0653/9731/products/24W0EC02_alt_600x800_8ba572ec-5d37-45a2-8e00-d08a4b677871.jpg?v=1626960715",
+        "https://cdn.shopify.com/s/files/1/0653/9731/products/24W0EC02_alt3_600x800_d272d619-a293-4079-b60a-64e845311936.jpg?v=1626960493",
+        "https://cdn.shopify.com/s/files/1/0653/9731/products/24W0EC02_alt4_600x800_38edb3a9-d69e-4e36-ac94-0bd59dac14e3.jpg?v=1626960492"
+      ],
+      "tryOnImage": "/demos-images/chesca/blonde-satin-trim-chiffon-trouser.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

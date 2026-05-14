@@ -1,0 +1,28 @@
+{
+  "slug": "moea",
+  "brandName": "MoEa",
+  "brandDomain": "moea.io",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "WWF x MoEa - GEN1 Tiger",
+      "handle": "wwf-gen1-tiger",
+      "price": "£111.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0581/9236/3717/files/FullTigerAdult.jpg?v=1758631704",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0581/9236/3717/files/FullTigerAdult.jpg?v=1758631704",
+        "https://cdn.shopify.com/s/files/1/0581/9236/3717/files/FullTigerAdult5_d25f4559-8c21-4008-81f7-bd1a3597c454.jpg?v=1758631785",
+        "https://cdn.shopify.com/s/files/1/0581/9236/3717/files/FullTiger_Adult6.jpg?v=1760021209"
+      ],
+      "tryOnImage": "/demos-images/moea/wwf-gen1-tiger.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

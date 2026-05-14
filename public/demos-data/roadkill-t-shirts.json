@@ -1,0 +1,28 @@
+{
+  "slug": "roadkill-t-shirts",
+  "brandName": "Roadkill T-Shirts",
+  "brandDomain": "roadkilltshirts.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "We The People Independance T-Shirt",
+      "handle": "we-the-people-independance-t-shirt",
+      "price": "£15.03",
+      "productImage": "https://cdn.shopify.com/s/files/1/0471/8592/0158/files/PS_0133_250_FREEDOM_MRT_NAVY.jpg?v=1778539710",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0471/8592/0158/files/PS_0133_250_FREEDOM_MRT_NAVY.jpg?v=1778539710",
+        "https://cdn.shopify.com/s/files/1/0471/8592/0158/files/PS_0133_250_FREEDOM-WCT-NAVY_e0b797ef-be91-403c-b3e6-8df3a8824961.jpg?v=1778539727",
+        "https://cdn.shopify.com/s/files/1/0471/8592/0158/files/PS_0133_250_FREEDOM-NAVY-MLS_690e4f1e-e0ac-4225-8e3f-6432065770ff.jpg?v=1778539751"
+      ],
+      "tryOnImage": "/demos-images/roadkill-t-shirts/we-the-people-independance-t-shirt.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

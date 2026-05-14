@@ -1,0 +1,28 @@
+{
+  "slug": "sydney-lane",
+  "brandName": "Sydney Lane",
+  "brandDomain": "sydneylane.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "TILLY FLORAL SLIP DRESS",
+      "handle": "tilly-floral-slip-dress-white",
+      "price": "£140.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0869/8884/9459/files/TILLY-FLORAL-SLIP-DRESS_9.webp?v=1765204594",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0869/8884/9459/files/TILLY-FLORAL-SLIP-DRESS_9.webp?v=1765204594",
+        "https://cdn.shopify.com/s/files/1/0869/8884/9459/files/TILLY-FLORAL-SLIP-DRESS_11.webp?v=1765204640",
+        "https://cdn.shopify.com/s/files/1/0869/8884/9459/files/TILLY-FLORAL-SLIP-DRESS_10.webp?v=1724526757"
+      ],
+      "tryOnImage": "/demos-images/sydney-lane/tilly-floral-slip-dress-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

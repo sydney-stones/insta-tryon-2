@@ -1,0 +1,28 @@
+{
+  "slug": "northwest-riders",
+  "brandName": "Northwest Riders",
+  "brandDomain": "northwestriders.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Family Bike T-shirt",
+      "handle": "family-bike-t-shirt",
+      "price": "£22.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0268/0675/files/mockup_tee_BikeFamily_White07.jpg?v=1728671936",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0268/0675/files/mockup_tee_BikeFamily_White07.jpg?v=1728671936",
+        "https://cdn.shopify.com/s/files/1/0268/0675/files/mens-fitted-t-shirt-heather-grey-front-67096e04cf7bb.jpg?v=1728671249",
+        "https://cdn.shopify.com/s/files/1/0268/0675/files/mens-fitted-t-shirt-white-front-67096e04cd227.jpg?v=1728671247"
+      ],
+      "tryOnImage": "/demos-images/northwest-riders/family-bike-t-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

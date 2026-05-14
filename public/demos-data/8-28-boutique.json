@@ -1,0 +1,28 @@
+{
+  "slug": "8-28-boutique",
+  "brandName": "8.28 Boutique",
+  "brandDomain": "828boutique.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Livro Ingrid Dress in Palm Court",
+      "handle": "livro-ingrid-dress-in-palm-court",
+      "price": "£198.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2833/7416/files/828Session2_171of501.jpg?v=1778603381",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2833/7416/files/828Session2_171of501.jpg?v=1778603381",
+        "https://cdn.shopify.com/s/files/1/2833/7416/files/828Session2_172of501.jpg?v=1778603381",
+        "https://cdn.shopify.com/s/files/1/2833/7416/files/828Session2_173of501.jpg?v=1778603381"
+      ],
+      "tryOnImage": "/demos-images/8-28-boutique/livro-ingrid-dress-in-palm-court.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

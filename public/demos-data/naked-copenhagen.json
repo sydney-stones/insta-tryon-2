@@ -1,0 +1,28 @@
+{
+  "slug": "naked-copenhagen",
+  "brandName": "Naked Copenhagen",
+  "brandDomain": "nakedcph.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Nike x Patta Track Pants",
+      "handle": "nike-qs-tz-nike-x-patta-track-pants-particle-grey-sapphire-hj0737-073",
+      "price": "£84.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0657/3408/2827/files/HJ0737-073.jpg?v=1749809907",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0657/3408/2827/files/HJ0737-073.jpg?v=1749809907",
+        "https://cdn.shopify.com/s/files/1/0657/3408/2827/files/HJ0737-073_4.jpg?v=1749809907",
+        "https://cdn.shopify.com/s/files/1/0657/3408/2827/files/HJ0737-073_3.jpg?v=1749809907"
+      ],
+      "tryOnImage": "/demos-images/naked-copenhagen/nike-qs-tz-nike-x-patta-track-pants-particle-grey-sapphire-hj0737-073.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

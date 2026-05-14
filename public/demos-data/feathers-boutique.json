@@ -1,0 +1,28 @@
+{
+  "slug": "feathers-boutique",
+  "brandName": "Feathers Boutique",
+  "brandDomain": "feathers.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "AVERY SHIRT",
+      "handle": "avery-shirt",
+      "price": "£148.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0034/6013/7060/files/2026_01_15-FEATHERS40500.jpg?v=1776681475",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0034/6013/7060/files/2026_01_15-FEATHERS40500.jpg?v=1776681475",
+        "https://cdn.shopify.com/s/files/1/0034/6013/7060/files/2026_01_15-FEATHERS40505.jpg?v=1776681475",
+        "https://cdn.shopify.com/s/files/1/0034/6013/7060/files/2026_01_15-FEATHERS40487.jpg?v=1776681475"
+      ],
+      "tryOnImage": "/demos-images/feathers-boutique/avery-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

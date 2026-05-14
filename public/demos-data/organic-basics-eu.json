@@ -1,0 +1,28 @@
+{
+  "slug": "organic-basics-eu",
+  "brandName": "Organic Basics EU",
+  "brandDomain": "organicbasics.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "True Boxy Crop Tee",
+      "handle": "womens-true-boxy-crop-tee-black",
+      "price": "£21.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0636/2284/0540/files/bpu2srrjaij84wkfeb2w.jpg?v=1723870427",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0636/2284/0540/files/bpu2srrjaij84wkfeb2w.jpg?v=1723870427",
+        "https://cdn.shopify.com/s/files/1/0636/2284/0540/files/xnmyozz3jmgsb769jpoh.jpg?v=1723870428",
+        "https://cdn.shopify.com/s/files/1/0636/2284/0540/files/ptj4mtvfjlttgyvsrddr.jpg?v=1723870428"
+      ],
+      "tryOnImage": "/demos-images/organic-basics-eu/womens-true-boxy-crop-tee-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

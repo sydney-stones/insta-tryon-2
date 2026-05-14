@@ -1,0 +1,28 @@
+{
+  "slug": "elliatt",
+  "brandName": "Elliatt",
+  "brandDomain": "elliatt.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "CURAAE Isolda Jacket in Grey",
+      "handle": "curaae-isolda-jacket-in-grey",
+      "price": "£235.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1995/6887/files/C1092539F_GREY_1.jpg?v=1773977415",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1995/6887/files/C1092539F_GREY_1.jpg?v=1773977415",
+        "https://cdn.shopify.com/s/files/1/1995/6887/files/C1092539F_GREY_2.jpg?v=1773977416",
+        "https://cdn.shopify.com/s/files/1/1995/6887/files/C1092539F_GREY_3.jpg?v=1773977415"
+      ],
+      "tryOnImage": "/demos-images/elliatt/curaae-isolda-jacket-in-grey.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

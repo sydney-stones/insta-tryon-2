@@ -1,0 +1,28 @@
+{
+  "slug": "rowing-blazers",
+  "brandName": "Rowing Blazers",
+  "brandDomain": "rowingblazers.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Polo Striped Mini Dress Red",
+      "handle": "womens-polo-striped-mini-dress-red",
+      "price": "£190.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1770/6343/files/WSU26D14K05RED_151.jpg?v=1778197726",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1770/6343/files/WSU26D14K05RED_151.jpg?v=1778197726",
+        "https://cdn.shopify.com/s/files/1/1770/6343/files/WSU26D14K05RED_148.jpg?v=1778197720",
+        "https://cdn.shopify.com/s/files/1/1770/6343/files/WSU26D14K05RED_152.jpg?v=1778197728"
+      ],
+      "tryOnImage": "/demos-images/rowing-blazers/womens-polo-striped-mini-dress-red.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

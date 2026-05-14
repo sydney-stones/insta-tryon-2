@@ -1,0 +1,28 @@
+{
+  "slug": "all-citizens",
+  "brandName": "All Citizens",
+  "brandDomain": "allcitizens.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Reign Polo II",
+      "handle": "reign-polo-ii",
+      "price": "£42.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0452/0337/files/all-citizens-Reign-Polo-II-1.png?v=1776069896",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0452/0337/files/all-citizens-Reign-Polo-II-1.png?v=1776069896",
+        "https://cdn.shopify.com/s/files/1/0452/0337/files/all-citizens-Reign-Polo-II-2.png?v=1776069896",
+        "https://cdn.shopify.com/s/files/1/0452/0337/files/all-citizens-Reign-Polo-II-shoulderseams.png?v=1776069896"
+      ],
+      "tryOnImage": "/demos-images/all-citizens/reign-polo-ii.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

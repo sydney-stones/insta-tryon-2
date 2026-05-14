@@ -1,0 +1,28 @@
+{
+  "slug": "the-giant-peach",
+  "brandName": "The Giant Peach",
+  "brandDomain": "thegiantpeach.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Mens True Logo Galaxy Hoodie Black",
+      "handle": "mens-true-logo-galaxy-hoodie-black",
+      "price": "£68.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0675/0549/files/true_logo_galaxy_hoodie_black.jpg?v=1763679267",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0675/0549/files/true_logo_galaxy_hoodie_black.jpg?v=1763679267",
+        "https://cdn.shopify.com/s/files/1/0675/0549/files/true_logo_galaxy_hoodie_black_back.jpg?v=1763679267",
+        "https://cdn.shopify.com/s/files/1/0675/0549/files/true_logo_galaxy_hoodie_black_close.jpg?v=1763679267"
+      ],
+      "tryOnImage": "/demos-images/the-giant-peach/mens-true-logo-galaxy-hoodie-black.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

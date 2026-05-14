@@ -1,0 +1,28 @@
+{
+  "slug": "a-little-lacey",
+  "brandName": "A Little Lacey",
+  "brandDomain": "alittlelacey.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Graceful Heart Girls Gold Earrings",
+      "handle": "graceful-heart-girls-gold-earrings",
+      "price": "£35.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0621/8910/9499/files/Graceful-heart-earrings-gold-med-17.jpg?v=1776385176",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0621/8910/9499/files/Graceful-heart-earrings-gold-med-17.jpg?v=1776385176",
+        "https://cdn.shopify.com/s/files/1/0621/8910/9499/files/Graceful-heart-earrings-gold-med-18.jpg?v=1776385176",
+        "https://cdn.shopify.com/s/files/1/0621/8910/9499/files/Graceful-heart-earrings-gold-med-7.jpg?v=1776385176"
+      ],
+      "tryOnImage": "/demos-images/a-little-lacey/graceful-heart-girls-gold-earrings.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

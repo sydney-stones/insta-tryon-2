@@ -1,0 +1,28 @@
+{
+  "slug": "wear-your-red-lips",
+  "brandName": "Wear Your Red Lips",
+  "brandDomain": "wyrl.beauty",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Sparkle & Boost Bundle | Safe yet still seen. 💄💋",
+      "handle": "sparkle-and-boost-bundle",
+      "price": "£56.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0561/9387/6147/files/BoostSparkleBundle.png?v=1777373980",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0561/9387/6147/files/BoostSparkleBundle.png?v=1777373980",
+        "https://cdn.shopify.com/s/files/1/0561/9387/6147/files/PDP_-_2.png?v=1777373981",
+        "https://cdn.shopify.com/s/files/1/0561/9387/6147/files/Capture.jpg?v=1759820477"
+      ],
+      "tryOnImage": "/demos-images/wear-your-red-lips/sparkle-and-boost-bundle.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

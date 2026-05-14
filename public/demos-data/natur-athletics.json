@@ -1,0 +1,28 @@
+{
+  "slug": "natur-athletics",
+  "brandName": "Natur Athletics",
+  "brandDomain": "naturathletics.us",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Correct Toes SPORT®",
+      "handle": "correct-toes-sport®",
+      "price": "£27.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0691/4693/5571/files/Correct-Toes-sport.jpg?v=1778520021",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0691/4693/5571/files/Correct-Toes-sport.jpg?v=1778520021",
+        "https://cdn.shopify.com/s/files/1/0691/4693/5571/files/CT-Sport-pink-single.png?v=1778520021",
+        "https://cdn.shopify.com/s/files/1/0691/4693/5571/files/CT-Sport-teal-single.png?v=1778520021"
+      ],
+      "tryOnImage": "/demos-images/natur-athletics/correct-toes-sport®.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

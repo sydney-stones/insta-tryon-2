@@ -1,0 +1,28 @@
+{
+  "slug": "pin-up-girl-clothing",
+  "brandName": "Pin Up Girl Clothing",
+  "brandDomain": "pinupgirlclothing.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Split Front Midi Skirt",
+      "handle": "split-front-midi-skirt-in-black",
+      "price": "£71.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0065/4930/7459/files/split-front-midi-skirt-in-black_4c012526-4ea0-40af-9373-f86fb6c69047.jpg?v=1772743162",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0065/4930/7459/files/split-front-midi-skirt-in-black_4c012526-4ea0-40af-9373-f86fb6c69047.jpg?v=1772743162",
+        "https://cdn.shopify.com/s/files/1/0065/4930/7459/files/split-front-midi-skirt-in-black_d455fa64-8981-41e0-813e-0113440bbe72.jpg?v=1772743163",
+        "https://cdn.shopify.com/s/files/1/0065/4930/7459/files/split-front-midi-skirt-in-black_2f07015b-b12e-4632-adb7-5bf0406945e2.jpg?v=1772743162"
+      ],
+      "tryOnImage": "/demos-images/pin-up-girl-clothing/split-front-midi-skirt-in-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

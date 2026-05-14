@@ -1,0 +1,28 @@
+{
+  "slug": "papu-design",
+  "brandName": "Papu Design",
+  "brandDomain": "papudesign.fi",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Neulepaita, vinoraita, laventeli",
+      "handle": "neulepaita-vinoraita-laventeli",
+      "price": "£129.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0249/2124/3695/files/PAPU_SS26_vol20008.png?v=1778256665",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0249/2124/3695/files/PAPU_SS26_vol20008.png?v=1778256665",
+        "https://cdn.shopify.com/s/files/1/0249/2124/3695/files/PAPU_SS26_vol20001.jpg?v=1778256489",
+        "https://cdn.shopify.com/s/files/1/0249/2124/3695/files/PAPU_SS26_vol20003.jpg?v=1778256489"
+      ],
+      "tryOnImage": "/demos-images/papu-design/neulepaita-vinoraita-laventeli.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

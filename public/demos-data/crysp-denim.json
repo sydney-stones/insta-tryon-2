@@ -1,0 +1,28 @@
+{
+  "slug": "crysp-denim",
+  "brandName": "Crysp Denim",
+  "brandDomain": "cryspdenim.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Atlantic Standard Denim (Blue Indigo)",
+      "handle": "atlantic-standard-denim-blue-indigo",
+      "price": "£75.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1020/3975/files/20260413_Crysp_SP226_Product_Shots_CRY-SP226-001_0001.jpg?v=1777043545",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1020/3975/files/20260413_Crysp_SP226_Product_Shots_CRY-SP226-001_0001.jpg?v=1777043545",
+        "https://cdn.shopify.com/s/files/1/1020/3975/files/20260413_Crysp_SP226_Product_Shots_CRY-SP226-001_0003.jpg?v=1777043545",
+        "https://cdn.shopify.com/s/files/1/1020/3975/files/20260413_Crysp_SP226_Product_Shots_CRY-SP226-001_0004.jpg?v=1777043545"
+      ],
+      "tryOnImage": "/demos-images/crysp-denim/atlantic-standard-denim-blue-indigo.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

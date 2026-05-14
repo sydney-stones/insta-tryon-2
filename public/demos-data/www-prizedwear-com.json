@@ -1,0 +1,27 @@
+{
+  "slug": "www-prizedwear-com",
+  "brandName": "www.prizedwear.com",
+  "brandDomain": "prizedwear.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "FLOOR914 RACE GIRL TEE",
+      "handle": "floor914-race-girl-tee",
+      "price": "£100.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0310/5803/4821/files/Untitleddesign-76.png?v=1778626725",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0310/5803/4821/files/Untitleddesign-76.png?v=1778626725",
+        "https://cdn.shopify.com/s/files/1/0310/5803/4821/files/Untitleddesign-77.png?v=1778626731"
+      ],
+      "tryOnImage": "/demos-images/www-prizedwear-com/floor914-race-girl-tee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

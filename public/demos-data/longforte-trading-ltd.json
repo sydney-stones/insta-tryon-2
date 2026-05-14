@@ -1,0 +1,28 @@
+{
+  "slug": "longforte-trading-ltd",
+  "brandName": "Longforte Trading Ltd",
+  "brandDomain": "longforte.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Printa Plush® Sublimation Teddy Bear Keyring with Printable T-Shirt - Dark Brown",
+      "handle": "printa-plush®-sublimation-teddy-bear-keyring-with-printable-t-shirt-dark-brown",
+      "price": "£2.75",
+      "productImage": "https://cdn.shopify.com/s/files/1/0210/4872/1472/files/IMG20260415143043.jpg?v=1776341381",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0210/4872/1472/files/IMG20260415143043.jpg?v=1776341381",
+        "https://cdn.shopify.com/s/files/1/0210/4872/1472/files/IMG20260415143101.jpg?v=1776341381",
+        "https://cdn.shopify.com/s/files/1/0210/4872/1472/files/IMG20260415143439_452a40ed-4517-4e6a-b84a-0211a9c7ef8c.jpg?v=1776341381"
+      ],
+      "tryOnImage": "/demos-images/longforte-trading-ltd/printa-plush®-sublimation-teddy-bear-keyring-with-printable-t-shirt-dark-brown.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

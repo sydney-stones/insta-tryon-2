@@ -1,0 +1,28 @@
+{
+  "slug": "alemais",
+  "brandName": "ALEMAIS",
+  "brandDomain": "alemais.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "SCUBA SHORT",
+      "handle": "scuba-short",
+      "price": "£250.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0457/2990/6847/files/alemais-sustainable-short-scuba-short-1232254541.jpg?v=1776066368",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0457/2990/6847/files/alemais-sustainable-short-scuba-short-1232254541.jpg?v=1776066368",
+        "https://cdn.shopify.com/s/files/1/0457/2990/6847/files/alemais-sustainable-short-scuba-short-1232254545.jpg?v=1776066307",
+        "https://cdn.shopify.com/s/files/1/0457/2990/6847/files/alemais-sustainable-short-scuba-short-1232254543.jpg?v=1776066249"
+      ],
+      "tryOnImage": "/demos-images/alemais/scuba-short.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

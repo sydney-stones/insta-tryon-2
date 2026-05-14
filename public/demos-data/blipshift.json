@@ -1,0 +1,28 @@
+{
+  "slug": "blipshift",
+  "brandName": "blipshift",
+  "brandDomain": "blipshift.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Go For Broke",
+      "handle": "go-for-broke-2",
+      "price": "£19.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0166/4148/files/go-for-broke-detail.jpg?v=1778012103",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0166/4148/files/go-for-broke-detail.jpg?v=1778012103",
+        "https://cdn.shopify.com/s/files/1/0166/4148/files/go-for-broke-mens-fitted-tee.jpg?v=1778012107",
+        "https://cdn.shopify.com/s/files/1/0166/4148/files/go-for-broke-mens-heavy-duty-tee.jpg?v=1778012112"
+      ],
+      "tryOnImage": "/demos-images/blipshift/go-for-broke-2.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

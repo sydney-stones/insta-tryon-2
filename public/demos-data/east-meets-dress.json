@@ -1,0 +1,28 @@
+{
+  "slug": "east-meets-dress",
+  "brandName": "East Meets Dress",
+  "brandDomain": "eastmeetsdress.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Catherine Dress | Traditional Qun Kwa",
+      "handle": "catherine-dress",
+      "price": "£263.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0055/5483/1475/products/East-Meets-Dress-Catherine-Qun-Kwa-Chinese-Wedding-Dress-4.jpg?v=1645747935",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0055/5483/1475/products/East-Meets-Dress-Catherine-Qun-Kwa-Chinese-Wedding-Dress-4.jpg?v=1645747935",
+        "https://cdn.shopify.com/s/files/1/0055/5483/1475/products/East-Meets-Dress-Catherine-Qun-Kwa-Chinese-Wedding-Dress-1.jpg?v=1645747935",
+        "https://cdn.shopify.com/s/files/1/0055/5483/1475/products/East-Meets-Dress-Catherine-Qun-Kwa-Chinese-Wedding-Dress-2.jpg?v=1645747935"
+      ],
+      "tryOnImage": "/demos-images/east-meets-dress/catherine-dress.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

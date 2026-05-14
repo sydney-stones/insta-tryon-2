@@ -1,0 +1,28 @@
+{
+  "slug": "andrew-davis-clothiers",
+  "brandName": "Andrew Davis Clothiers",
+  "brandDomain": "andrewdavisclothiers.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "IU Hoosiers Vintage Aspen Hoodie",
+      "handle": "iu-hoosiers-vintage-aspen-hoodie",
+      "price": "£248.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0650/5395/0191/files/ASPEN_HOODIE_Shepherd.jpg?v=1771449731",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0650/5395/0191/files/ASPEN_HOODIE_Shepherd.jpg?v=1771449731",
+        "https://cdn.shopify.com/s/files/1/0650/5395/0191/files/Aspenhoodiebone_web.png?v=1771449731",
+        "https://cdn.shopify.com/s/files/1/0650/5395/0191/files/Aspen_hoodie_dark_grey_web_1.png?v=1771449333"
+      ],
+      "tryOnImage": "/demos-images/andrew-davis-clothiers/iu-hoosiers-vintage-aspen-hoodie.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

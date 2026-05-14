@@ -1,0 +1,28 @@
+{
+  "slug": "kaeraz",
+  "brandName": "kaeraz",
+  "brandDomain": "kaeraz.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Stallion Fleece Sweatshirt",
+      "handle": "stallion-fleece-sweatshirt",
+      "price": "£98.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0019/7990/8148/files/stallion-fleece-sweatshirt-3230927.png?v=1773303729",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0019/7990/8148/files/stallion-fleece-sweatshirt-3230927.png?v=1773303729",
+        "https://cdn.shopify.com/s/files/1/0019/7990/8148/files/stallion-fleece-sweatshirt-7070466.png?v=1773303730",
+        "https://cdn.shopify.com/s/files/1/0019/7990/8148/files/stallion-fleece-sweatshirt-8663617.png?v=1773303732"
+      ],
+      "tryOnImage": "/demos-images/kaeraz/stallion-fleece-sweatshirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

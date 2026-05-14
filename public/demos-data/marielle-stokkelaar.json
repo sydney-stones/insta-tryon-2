@@ -1,0 +1,28 @@
+{
+  "slug": "marielle-stokkelaar",
+  "brandName": "Marielle Stokkelaar",
+  "brandDomain": "mariellestokkelaar.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Skirt Alessia Print Pink",
+      "handle": "skirt-alessia-print-pink",
+      "price": "£239.90",
+      "productImage": "https://cdn.shopify.com/s/files/1/0431/1846/1090/files/IMG_4584.jpg?v=1778272855",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0431/1846/1090/files/IMG_4584.jpg?v=1778272855",
+        "https://cdn.shopify.com/s/files/1/0431/1846/1090/files/IMG_4629.jpg?v=1778272846",
+        "https://cdn.shopify.com/s/files/1/0431/1846/1090/files/IMG_4615.jpg?v=1778272849"
+      ],
+      "tryOnImage": "/demos-images/marielle-stokkelaar/skirt-alessia-print-pink.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

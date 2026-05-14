@@ -1,0 +1,28 @@
+{
+  "slug": "running-lab",
+  "brandName": "Running Lab",
+  "brandDomain": "runninglabstore.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's High Point Short Sleeve 2.0",
+      "handle": "w-high-point-short-sleeve-2-0-stride-blue-dk-russet",
+      "price": "£60.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0897/9687/0455/files/221734_495_MF_High_Point_Short_Sleeve_2BackgroundRemovedMedium.jpg?v=1778094690",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0897/9687/0455/files/221734_495_MF_High_Point_Short_Sleeve_2BackgroundRemovedMedium.jpg?v=1778094690",
+        "https://cdn.shopify.com/s/files/1/0897/9687/0455/files/221734_495_MB_High_Point_Short_Sleeve_2BackgroundRemovedMedium.jpg?v=1778094690",
+        "https://cdn.shopify.com/s/files/1/0897/9687/0455/files/221734_495_MV_High_Point_Short_Sleeve_2BackgroundRemovedMedium.jpg?v=1778094690"
+      ],
+      "tryOnImage": "/demos-images/running-lab/w-high-point-short-sleeve-2-0-stride-blue-dk-russet.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

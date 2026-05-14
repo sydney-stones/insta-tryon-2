@@ -1,0 +1,28 @@
+{
+  "slug": "perk",
+  "brandName": "Perk",
+  "brandDomain": "perkclothing.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "No Sweat Tee",
+      "handle": "no-sweat-tee",
+      "price": "£55.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0023/2518/4621/files/black_1_e269677a-aeac-4612-bbc9-590d3f4c735d.png?v=1770741564",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0023/2518/4621/files/black_1_e269677a-aeac-4612-bbc9-590d3f4c735d.png?v=1770741564",
+        "https://cdn.shopify.com/s/files/1/0023/2518/4621/files/black_2_4dce0d24-47e0-40ef-8a26-fa6aa665fef7.png?v=1770741564",
+        "https://cdn.shopify.com/s/files/1/0023/2518/4621/files/black_3_6cae6896-6f11-442e-a464-7e71b0e17abb.png?v=1770741564"
+      ],
+      "tryOnImage": "/demos-images/perk/no-sweat-tee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

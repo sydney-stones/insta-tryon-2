@@ -1,0 +1,28 @@
+{
+  "slug": "tally-taylor",
+  "brandName": "Tally Taylor",
+  "brandDomain": "tallytaylor.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Metallic Jacket Church Dress Set - 41096",
+      "handle": "metallic-jacket-church-dress-set-41096",
+      "price": "£180.12",
+      "productImage": "https://cdn.shopify.com/s/files/1/0359/1058/2317/files/Metallic-Jacket-Church-Dress-Set-41096-Silver-Front.jpg?v=1772568333",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0359/1058/2317/files/Metallic-Jacket-Church-Dress-Set-41096-Silver-Front.jpg?v=1772568333",
+        "https://cdn.shopify.com/s/files/1/0359/1058/2317/files/Metallic-Jacket-Church-Dress-Set-41096-Silver-Side.jpg?v=1772568357",
+        "https://cdn.shopify.com/s/files/1/0359/1058/2317/files/Metallic-Jacket-Church-Dress-Set-41096-Gold-Front.jpg?v=1772568427"
+      ],
+      "tryOnImage": "/demos-images/tally-taylor/metallic-jacket-church-dress-set-41096.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

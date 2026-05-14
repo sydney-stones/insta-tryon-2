@@ -1,0 +1,28 @@
+{
+  "slug": "thebettergeneration",
+  "brandName": "TheBetterGeneration",
+  "brandDomain": "shopbetter.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "W Jordan Brooklyn Pleated Skirt",
+      "handle": "w-jordan-brooklyn-pleated-skirt",
+      "price": "£41.36",
+      "productImage": "https://cdn.shopify.com/s/files/1/0442/6206/4278/files/AURORA_IF1372-010_PHSYM001-2000.jpg?v=1778693280",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0442/6206/4278/files/AURORA_IF1372-010_PHSYM001-2000.jpg?v=1778693280",
+        "https://cdn.shopify.com/s/files/1/0442/6206/4278/files/AURORA_IF1372-010_PHSYM003-2000.jpg?v=1778693280",
+        "https://cdn.shopify.com/s/files/1/0442/6206/4278/files/AURORA_IF1372-010_PHSBM001-2000.jpg?v=1778693280"
+      ],
+      "tryOnImage": "/demos-images/thebettergeneration/w-jordan-brooklyn-pleated-skirt.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

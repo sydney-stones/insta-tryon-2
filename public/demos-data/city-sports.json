@@ -1,0 +1,27 @@
+{
+  "slug": "city-sports",
+  "brandName": "City Sports",
+  "brandDomain": "citysports.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Nike Women's Legend Long Sleeve Tee - Black",
+      "handle": "nike-legend-long-sleeve-womens-t-shirt",
+      "price": "£31.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0568/7420/5343/files/legendtee_clipped_rev_1.png?v=1773242710",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0568/7420/5343/files/legendtee_clipped_rev_1.png?v=1773242710",
+        "https://cdn.shopify.com/s/files/1/0568/7420/5343/files/DV7311-010_B_x1920_4ea3569d-220f-4977-96ce-bff2749bdaa7.png?v=1773242711"
+      ],
+      "tryOnImage": "/demos-images/city-sports/nike-legend-long-sleeve-womens-t-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

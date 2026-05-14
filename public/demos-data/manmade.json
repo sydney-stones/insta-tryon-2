@@ -1,0 +1,28 @@
+{
+  "slug": "manmade",
+  "brandName": "Manmade",
+  "brandDomain": "manmadebrand.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Sweater",
+      "handle": "the-sweater",
+      "price": "£90.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0838/9666/4377/files/pdp-crewneck-01.jpg?v=1757072971",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0838/9666/4377/files/pdp-crewneck-01.jpg?v=1757072971",
+        "https://cdn.shopify.com/s/files/1/0838/9666/4377/files/pdp-crewneck-02.jpg?v=1765387992",
+        "https://cdn.shopify.com/s/files/1/0838/9666/4377/files/pdp-crewneck-03.jpg?v=1765387992"
+      ],
+      "tryOnImage": "/demos-images/manmade/the-sweater.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

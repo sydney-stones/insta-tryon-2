@@ -1,0 +1,28 @@
+{
+  "slug": "karen-kane",
+  "brandName": "Karen Kane",
+  "brandDomain": "karenkane.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Long Sleeve Ribbed Drape Front Cardigan",
+      "handle": "long-sleeve-ribbed-drape-front-cardigan-3l56011-brown",
+      "price": "£34.25",
+      "productImage": "https://cdn.shopify.com/s/files/1/0253/4355/7737/files/562829C7-6F4F-40CA-9A0F-CBDBD6793A77.jpg?v=1756234451",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0253/4355/7737/files/562829C7-6F4F-40CA-9A0F-CBDBD6793A77.jpg?v=1756234451",
+        "https://cdn.shopify.com/s/files/1/0253/4355/7737/files/8813BBCF-E61B-4FF7-BF67-508F76E4FA32.jpg?v=1756234447",
+        "https://cdn.shopify.com/s/files/1/0253/4355/7737/files/846E10CB-C31F-48E6-928A-D35FDE93120A.jpg?v=1756234445"
+      ],
+      "tryOnImage": "/demos-images/karen-kane/long-sleeve-ribbed-drape-front-cardigan-3l56011-brown.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

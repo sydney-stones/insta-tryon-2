@@ -1,0 +1,28 @@
+{
+  "slug": "ladypolitan",
+  "brandName": "Ladypolitan ♡",
+  "brandDomain": "ladypolitan.de",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Body Marija Uni Schwarz",
+      "handle": "body-marija-uni-schwarz",
+      "price": "£36.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0581/1195/1016/files/IMG_3818.png?v=1778682513",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0581/1195/1016/files/IMG_3818.png?v=1778682513",
+        "https://cdn.shopify.com/s/files/1/0581/1195/1016/files/IMG_3831.png?v=1778682513",
+        "https://cdn.shopify.com/s/files/1/0581/1195/1016/files/IMG_3817.png?v=1778682513"
+      ],
+      "tryOnImage": "/demos-images/ladypolitan/body-marija-uni-schwarz.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

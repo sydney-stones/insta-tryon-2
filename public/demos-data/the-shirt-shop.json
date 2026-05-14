@@ -1,0 +1,28 @@
+{
+  "slug": "the-shirt-shop",
+  "brandName": "The Shirt Shop",
+  "brandDomain": "theshirtshop.biz",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Peter Millar Pine Performance Hoodie- British Grey (Script \"A\")",
+      "handle": "peter-millar-pine-performance-hoodie-british-grey",
+      "price": "£168.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0176/5770/files/PineBG.webp?v=1770229537",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0176/5770/files/PineBG.webp?v=1770229537",
+        "https://cdn.shopify.com/s/files/1/0176/5770/files/PineBG1.jpg?v=1770229537",
+        "https://cdn.shopify.com/s/files/1/0176/5770/files/PineBG2.webp?v=1770229536"
+      ],
+      "tryOnImage": "/demos-images/the-shirt-shop/peter-millar-pine-performance-hoodie-british-grey.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

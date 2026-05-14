@@ -1,0 +1,28 @@
+{
+  "slug": "sir",
+  "brandName": "SIR.",
+  "brandDomain": "sirthelabel.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Lucia Straight Jean",
+      "handle": "lucia-straight-jean-light-indigo",
+      "price": "£320.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0635/0815/files/S56-SIR226-7047_Mikkel_Scoop_Tank_Ivory-26209-Sir_The_Label-0641.jpg?v=1776308195",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0635/0815/files/S56-SIR226-7047_Mikkel_Scoop_Tank_Ivory-26209-Sir_The_Label-0641.jpg?v=1776308195",
+        "https://cdn.shopify.com/s/files/1/0635/0815/files/S56-SIR226-7047_Mikkel_Scoop_Tank_Ivory-26209-Sir_The_Label-0661.jpg?v=1776308195",
+        "https://cdn.shopify.com/s/files/1/0635/0815/files/S56-SIR226-7047_Mikkel_Scoop_Tank_Ivory-26209-Sir_The_Label-0659.jpg?v=1776308195"
+      ],
+      "tryOnImage": "/demos-images/sir/lucia-straight-jean-light-indigo.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

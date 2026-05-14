@@ -1,0 +1,26 @@
+{
+  "slug": "great-call-athletics",
+  "brandName": "Great Call Athletics",
+  "brandDomain": "greatcallathletics.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Smitty BBS-361HG Women's Flat Front Non-Expander Plate College Softball Umpire Pants Heather Grey",
+      "handle": "smitty-bbs-361hg-womens-ncaa-softball-pants-heather-grey",
+      "price": "£59.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0121/1475/5646/files/BBS-361HG.png?v=1777650545",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0121/1475/5646/files/BBS-361HG.png?v=1777650545"
+      ],
+      "tryOnImage": "/demos-images/great-call-athletics/smitty-bbs-361hg-womens-ncaa-softball-pants-heather-grey.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

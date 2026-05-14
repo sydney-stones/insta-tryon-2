@@ -1,0 +1,28 @@
+{
+  "slug": "solid-threads",
+  "brandName": "Solid Threads",
+  "brandDomain": "solidthreads.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Latin America T-Shirt",
+      "handle": "latin-america-funny-signature-graphic-tee",
+      "price": "£26.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1670/8045/files/HL6060MKLG_M3K_shirt_cd0038cc-2124-4101-b63b-9f9be1cbed66.jpg?v=1778274169",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1670/8045/files/HL6060MKLG_M3K_shirt_cd0038cc-2124-4101-b63b-9f9be1cbed66.jpg?v=1778274169",
+        "https://cdn.shopify.com/s/files/1/1670/8045/files/HL6060MKLG_M3K_model2_5dff4bb7-eaef-4bcd-befe-8929ad223288.jpg?v=1778274169",
+        "https://cdn.shopify.com/s/files/1/1670/8045/files/HL6060MKLG_M3K_fit_a9881055-f6f4-442b-acaa-182fd58d07c1.jpg?v=1778274169"
+      ],
+      "tryOnImage": "/demos-images/solid-threads/latin-america-funny-signature-graphic-tee.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

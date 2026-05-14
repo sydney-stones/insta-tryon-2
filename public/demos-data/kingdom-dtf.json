@@ -1,0 +1,27 @@
+{
+  "slug": "kingdom-dtf",
+  "brandName": "Kingdom DTF",
+  "brandDomain": "kingdomdtf.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Kit Solución de Limpieza DTF (Limpieza, Tapa Húmeda y Lavado) para Cabezales de Impresión Epson - Puerto Rico",
+      "handle": "kit-solucion-de-limpieza-puerto-rico",
+      "price": "£31.58",
+      "productImage": "https://cdn.shopify.com/s/files/1/1546/3963/files/IMG-0903.jpg?v=1740969714",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1546/3963/files/IMG-0903.jpg?v=1740969714",
+        "https://cdn.shopify.com/s/files/1/1546/3963/files/IMG-0909.jpg?v=1740970799"
+      ],
+      "tryOnImage": "/demos-images/kingdom-dtf/kit-solucion-de-limpieza-puerto-rico.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

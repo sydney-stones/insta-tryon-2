@@ -1,0 +1,28 @@
+{
+  "slug": "calico",
+  "brandName": "Calico",
+  "brandDomain": "shopcalico.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Early 2010s Rosette Drapey Mesh Tee",
+      "handle": "vintage-free-people-early-2010s-rosette-drapey-mesh-tee",
+      "price": "£29.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0589/2217/files/041926_FreePeople_Vintage-111.jpg?v=1776645991",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0589/2217/files/041926_FreePeople_Vintage-111.jpg?v=1776645991",
+        "https://cdn.shopify.com/s/files/1/0589/2217/files/041926_FreePeople_Vintage-112.jpg?v=1776645991",
+        "https://cdn.shopify.com/s/files/1/0589/2217/files/041926_FreePeople_Vintage-113.jpg?v=1776645991"
+      ],
+      "tryOnImage": "/demos-images/calico/vintage-free-people-early-2010s-rosette-drapey-mesh-tee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

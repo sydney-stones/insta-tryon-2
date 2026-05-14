@@ -1,0 +1,28 @@
+{
+  "slug": "happy-gentleman",
+  "brandName": "Happy Gentleman",
+  "brandDomain": "happygentleman.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Men’s Beige Cotton Blend Safari Jacket & White Trousers Set Smart Casual Outfit",
+      "handle": "men-s-beige-cotton-blend-safari-jacket-white-trousers-set-smart-casual-outfit",
+      "price": "£158.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0957/4259/1306/files/e11-23-casual-suit-for-men-from-happy-gentleman-beige-jacket-white-trousers_3.jpg?v=1778425483",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0957/4259/1306/files/e11-23-casual-suit-for-men-from-happy-gentleman-beige-jacket-white-trousers_3.jpg?v=1778425483",
+        "https://cdn.shopify.com/s/files/1/0957/4259/1306/files/e11-23-casual-suit-for-men-from-happy-gentleman-beige-jacket-white-trousers_4.jpg?v=1778425483",
+        "https://cdn.shopify.com/s/files/1/0957/4259/1306/files/e11-23-casual-suit-for-men-from-happy-gentleman-beige-jacket-white-trousers_2.jpg?v=1778425512"
+      ],
+      "tryOnImage": "/demos-images/happy-gentleman/men-s-beige-cotton-blend-safari-jacket-white-trousers-set-smart-casual-outfit.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "noellafashion-dk",
+  "brandName": "noellafashion.dk",
+  "brandDomain": "noellafashion.dk",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "N-Muna Knit Dannia Pink Stripe",
+      "handle": "n-muna-knit-dannia-pink-stripe",
+      "price": "£349.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0404/2093/3790/files/IMG_0511.jpg?v=1778680253",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0404/2093/3790/files/IMG_0511.jpg?v=1778680253",
+        "https://cdn.shopify.com/s/files/1/0404/2093/3790/files/IMG_0515.jpg?v=1778680253",
+        "https://cdn.shopify.com/s/files/1/0404/2093/3790/files/q.jpg?v=1778680253"
+      ],
+      "tryOnImage": "/demos-images/noellafashion-dk/n-muna-knit-dannia-pink-stripe.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

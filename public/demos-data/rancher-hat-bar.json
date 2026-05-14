@@ -1,0 +1,27 @@
+{
+  "slug": "rancher-hat-bar",
+  "brandName": "Rancher Hat Bar",
+  "brandDomain": "rancherhatbar.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Heart Bandana Charm Necklace",
+      "handle": "heart-bandana-charm-necklace",
+      "price": "£46.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0637/9094/0207/files/171.png?v=1769794331",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0637/9094/0207/files/171.png?v=1769794331",
+        "https://cdn.shopify.com/s/files/1/0637/9094/0207/files/172.png?v=1769794331"
+      ],
+      "tryOnImage": "/demos-images/rancher-hat-bar/heart-bandana-charm-necklace.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

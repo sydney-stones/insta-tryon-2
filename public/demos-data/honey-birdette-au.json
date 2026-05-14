@@ -1,0 +1,28 @@
+{
+  "slug": "honey-birdette-au",
+  "brandName": "Honey Birdette AU",
+  "brandDomain": "honeybirdette.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Premium Lubricant Kit",
+      "handle": "premium-lubricant-bundle",
+      "price": "£65.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0585/9581/files/Lubricant_PremiumKit.jpg?v=1727132668",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0585/9581/files/Lubricant_PremiumKit.jpg?v=1727132668",
+        "https://cdn.shopify.com/s/files/1/0585/9581/products/Premium_Bundle2-NEW.jpg?v=1623304869",
+        "https://cdn.shopify.com/s/files/1/0585/9581/files/Antibacterial_Spray2_a985eb39-783d-4398-9220-9dec81aa11dc.jpg?v=1739403740"
+      ],
+      "tryOnImage": "/demos-images/honey-birdette-au/premium-lubricant-bundle.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

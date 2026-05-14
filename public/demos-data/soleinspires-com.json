@@ -1,0 +1,26 @@
+{
+  "slug": "soleinspires-com",
+  "brandName": "soleinspires.com",
+  "brandDomain": "soleinspires.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "LOST INTRICACY Grey/Grey Track Pants",
+      "handle": "lost-intricacy-grey-grey-track-pants",
+      "price": "£125.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0620/2048/5306/files/b682c543-84f7-4de1-bccb-1ae9f4e60830.jpg?v=1778207700",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0620/2048/5306/files/b682c543-84f7-4de1-bccb-1ae9f4e60830.jpg?v=1778207700"
+      ],
+      "tryOnImage": "/demos-images/soleinspires-com/lost-intricacy-grey-grey-track-pants.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

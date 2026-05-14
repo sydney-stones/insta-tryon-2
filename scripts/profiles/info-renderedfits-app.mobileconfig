@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key><string>com.apple.mail.managed</string>
+            <key>PayloadVersion</key><integer>1</integer>
+            <key>PayloadIdentifier</key><string>com.renderedfits.mail.info-renderedfits-app</string>
+            <key>PayloadUUID</key><string>0AFCF0FB-157A-4532-8908-DB0A29D4F7D6</string>
+            <key>PayloadDisplayName</key><string>info@renderedfits.app</string>
+            <key>EmailAccountDescription</key><string>info@renderedfits.app</string>
+            <key>EmailAccountName</key><string>Sydney Stones</string>
+            <key>EmailAccountType</key><string>EmailTypeIMAP</string>
+            <key>EmailAddress</key><string>info@renderedfits.app</string>
+            <key>IncomingMailServerAuthentication</key><string>EmailAuthPassword</string>
+            <key>IncomingMailServerHostName</key><string>imap.hyperion.maildoso.com</string>
+            <key>IncomingMailServerPortNumber</key><integer>993</integer>
+            <key>IncomingMailServerUseSSL</key><true/>
+            <key>IncomingMailServerUsername</key><string>info@renderedfits.app</string>
+            <key>IncomingPassword</key><string>6ftNz6dez6FhLb</string>
+            <key>OutgoingMailServerAuthentication</key><string>EmailAuthPassword</string>
+            <key>OutgoingMailServerHostName</key><string>smtp.maildoso.com</string>
+            <key>OutgoingMailServerPortNumber</key><integer>587</integer>
+            <key>OutgoingMailServerUseSSL</key><false/>
+            <key>OutgoingMailServerUsername</key><string>info@renderedfits.app</string>
+            <key>OutgoingPassword</key><string>6ftNz6dez6FhLb</string>
+            <key>OutgoingPasswordSameAsIncomingPassword</key><true/>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key><string>info@renderedfits.app</string>
+    <key>PayloadIdentifier</key><string>com.renderedfits.mail.bundle.info-renderedfits-app</string>
+    <key>PayloadType</key><string>Configuration</string>
+    <key>PayloadUUID</key><string>F5D4F666-FBF8-4811-86C6-E53FDF4274A6</string>
+    <key>PayloadVersion</key><integer>1</integer>
+</dict>
+</plist>

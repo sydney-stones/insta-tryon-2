@@ -1,0 +1,28 @@
+{
+  "slug": "incylence",
+  "brandName": "INCYLENCE",
+  "brandDomain": "incylence.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "INCYLENCE BUNDLE OFF-ROAD POP SET",
+      "handle": "bundle-off-road-pop-set",
+      "price": "£50.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0021/6530/9501/files/incylence-bucket-hat-trail-running-socks-high-cut-bundle-off-road-pop-set-1.jpg?v=1756820825",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0021/6530/9501/files/incylence-bucket-hat-trail-running-socks-high-cut-bundle-off-road-pop-set-1.jpg?v=1756820825",
+        "https://cdn.shopify.com/s/files/1/0021/6530/9501/files/incylence-bucket-hat-trail-running-socks-high-cut-bundle-off-road-pop-set-2.jpg?v=1756820825",
+        "https://cdn.shopify.com/s/files/1/0021/6530/9501/files/incylence-bucket-hat-trail-running-socks-high-cut-bundle-off-road-pop-set-3.jpg?v=1756820825"
+      ],
+      "tryOnImage": "/demos-images/incylence/bundle-off-road-pop-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

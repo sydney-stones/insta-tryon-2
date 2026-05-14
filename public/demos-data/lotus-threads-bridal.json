@@ -1,0 +1,28 @@
+{
+  "slug": "lotus-threads-bridal",
+  "brandName": "Lotus Threads Bridal",
+  "brandDomain": "lotusthreads.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Jessy Gown",
+      "handle": "strapless-mermaid-gown-with-slit-train",
+      "price": "£2400.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0710/7592/2134/files/strapless-mermaid-gown-with-slit-train-front-02.jpg?v=1747934492",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0710/7592/2134/files/strapless-mermaid-gown-with-slit-train-front-02.jpg?v=1747934492",
+        "https://cdn.shopify.com/s/files/1/0710/7592/2134/files/strapless-mermaid-gown-with-slit-train-front-01.jpg?v=1747934492",
+        "https://cdn.shopify.com/s/files/1/0710/7592/2134/files/strapless-mermaid-gown-with-slit-train-back.jpg?v=1747934492"
+      ],
+      "tryOnImage": "/demos-images/lotus-threads-bridal/strapless-mermaid-gown-with-slit-train.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

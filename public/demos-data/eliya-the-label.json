@@ -1,0 +1,28 @@
+{
+  "slug": "eliya-the-label",
+  "brandName": "Eliya The Label",
+  "brandDomain": "eliyathelabel.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Kate Dress | Pink",
+      "handle": "kate-dress-pink",
+      "price": "£205.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0995/4244/files/20240731_Eliya_eComm56902.jpg?v=1733705332",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0995/4244/files/20240731_Eliya_eComm56902.jpg?v=1733705332",
+        "https://cdn.shopify.com/s/files/1/0995/4244/files/12_f3d5af20-3df0-41a6-b5f9-f54c44b14c31.png?v=1733705335",
+        "https://cdn.shopify.com/s/files/1/0995/4244/files/3_6c90cbe7-4ec9-4013-9c9b-aa872a1919e5.jpg?v=1733705337"
+      ],
+      "tryOnImage": "/demos-images/eliya-the-label/kate-dress-pink.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

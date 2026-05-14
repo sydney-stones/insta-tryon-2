@@ -1,0 +1,28 @@
+{
+  "slug": "yy-nation",
+  "brandName": "YY Nation",
+  "brandDomain": "yynation.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Stratus Cactus Women White / Navy / White",
+      "handle": "stratus-cactus-women-white-navy-white",
+      "price": "£148.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0275/0303/4503/files/StratusCactusWhiteNavyWhite-SideRight-2.jpg?v=1698718269",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0275/0303/4503/files/StratusCactusWhiteNavyWhite-SideRight-2.jpg?v=1698718269",
+        "https://cdn.shopify.com/s/files/1/0275/0303/4503/files/Stratus_wht_navy_wos.jpg?v=1778217159",
+        "https://cdn.shopify.com/s/files/1/0275/0303/4503/files/cactus.jpg?v=1778210336"
+      ],
+      "tryOnImage": "/demos-images/yy-nation/stratus-cactus-women-white-navy-white.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

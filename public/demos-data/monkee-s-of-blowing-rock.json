@@ -1,0 +1,28 @@
+{
+  "slug": "monkee-s-of-blowing-rock",
+  "brandName": "Monkee's of Blowing Rock",
+  "brandDomain": "monkeesofblowingrock.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Natasha Top - Lumino",
+      "handle": "natasha-top-lumino",
+      "price": "£295.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0650/0201/2859/files/Marie-Oliver-Natasha-Lumino-Baylor-Citrine-03-S.png?v=1778703479",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0650/0201/2859/files/Marie-Oliver-Natasha-Lumino-Baylor-Citrine-03-S.png?v=1778703479",
+        "https://cdn.shopify.com/s/files/1/0650/0201/2859/files/Marie-Oliver-Natasha-Lumino-Baylor-Citrine-04-S.webp?v=1778703486",
+        "https://cdn.shopify.com/s/files/1/0650/0201/2859/files/Marie-Oliver-Lumino-S.webp?v=1778703489"
+      ],
+      "tryOnImage": "/demos-images/monkee-s-of-blowing-rock/natasha-top-lumino.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

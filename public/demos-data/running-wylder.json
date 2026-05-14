@@ -1,0 +1,28 @@
+{
+  "slug": "running-wylder",
+  "brandName": "Running Wylder",
+  "brandDomain": "runningwylder.co",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Raide Women's TrailTech Short - Dusk",
+      "handle": "raide-womens-trailtech-short-dusk",
+      "price": "£169.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0651/0182/4192/files/TrailTechShortsWomenPurple_Front_PNG-min.webp?v=1778114551",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0651/0182/4192/files/TrailTechShortsWomenPurple_Front_PNG-min.webp?v=1778114551",
+        "https://cdn.shopify.com/s/files/1/0651/0182/4192/files/TrailTechShortsWomenPurple_Back_WEB.webp?v=1778114551",
+        "https://cdn.shopify.com/s/files/1/0651/0182/4192/files/TrailTechShortsWomenPurple_Liner_WEB.webp?v=1778114551"
+      ],
+      "tryOnImage": "/demos-images/running-wylder/raide-womens-trailtech-short-dusk.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

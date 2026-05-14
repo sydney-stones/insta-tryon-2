@@ -1,0 +1,28 @@
+{
+  "slug": "threadheads",
+  "brandName": "Threadheads",
+  "brandDomain": "threadheads.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Custom Sweatshirt",
+      "handle": "custom-sweatshirt",
+      "price": "£41.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0045/7349/5389/files/Image45_fa353ce9-ad58-4ce9-a5c5-62fbbe60feac.jpg?v=1778207804",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0045/7349/5389/files/Image45_fa353ce9-ad58-4ce9-a5c5-62fbbe60feac.jpg?v=1778207804",
+        "https://cdn.shopify.com/s/files/1/0045/7349/5389/files/Image50_40a765e6-3fc0-4d4a-9515-cd83e3861578.jpg?v=1778207804",
+        "https://cdn.shopify.com/s/files/1/0045/7349/5389/files/Image51_2d4fc41d-ed3c-4eab-b130-6b57415fe06f.jpg?v=1778207804"
+      ],
+      "tryOnImage": "/demos-images/threadheads/custom-sweatshirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

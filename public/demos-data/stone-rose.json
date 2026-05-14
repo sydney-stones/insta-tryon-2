@@ -1,0 +1,28 @@
+{
+  "slug": "stone-rose",
+  "brandName": "Stone Rose",
+  "brandDomain": "stonerose.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "APEX -  Dark Grey Micro Houndstooth Shirt",
+      "handle": "apex-dark-grey-micro-houndstooth-shirt",
+      "price": "£155.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0895/4394/files/MHTLSK52-025-3-Oliver-Stucco_Wall.png?v=1765379407",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0895/4394/files/MHTLSK52-025-3-Oliver-Stucco_Wall.png?v=1765379407",
+        "https://cdn.shopify.com/s/files/1/0895/4394/files/StoneRose67ae0b0b1a5f0467ae0b0b1a841.9569509867ae0b0b1a841_8a2933a0-3350-4caf-a033-0995e1490024.jpg?v=1762277140",
+        "https://cdn.shopify.com/s/files/1/0895/4394/files/MHTLSK52-025.png?v=1762277140"
+      ],
+      "tryOnImage": "/demos-images/stone-rose/apex-dark-grey-micro-houndstooth-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

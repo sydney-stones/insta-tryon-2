@@ -1,0 +1,28 @@
+{
+  "slug": "dr-woof-apparel",
+  "brandName": "Dr Woof Apparel",
+  "brandDomain": "drwoofapparel.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Planet Friendly Men’s V-Neck Tuck Top",
+      "handle": "mens-vneck-scrub-top",
+      "price": "£30.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0573/7250/8344/files/DSC9890-web1.jpg?v=1696927895",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0573/7250/8344/files/DSC9890-web1.jpg?v=1696927895",
+        "https://cdn.shopify.com/s/files/1/0573/7250/8344/files/DSC9890-web.jpg?v=1696927895",
+        "https://cdn.shopify.com/s/files/1/0573/7250/8344/files/DSC9927-web.jpg?v=1696927895"
+      ],
+      "tryOnImage": "/demos-images/dr-woof-apparel/mens-vneck-scrub-top.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

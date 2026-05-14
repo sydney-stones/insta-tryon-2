@@ -1,0 +1,28 @@
+{
+  "slug": "volante-design",
+  "brandName": "Volante Design",
+  "brandDomain": "volantedesign.us",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Starfleet 2256 - Command Gold [Womens]",
+      "handle": "starfleet-2256-command-gold-womens",
+      "price": "£70.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2373/0077/products/DSC_4963.jpg?v=1677171455",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2373/0077/products/DSC_4963.jpg?v=1677171455",
+        "https://cdn.shopify.com/s/files/1/2373/0077/products/DSC_4971.jpg?v=1677171455",
+        "https://cdn.shopify.com/s/files/1/2373/0077/products/command_starfleet_discovery_jacket_b4082b28-e370-4d42-834b-e9242f3bfce6.jpg?v=1677171455"
+      ],
+      "tryOnImage": "/demos-images/volante-design/starfleet-2256-command-gold-womens.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

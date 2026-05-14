@@ -1,0 +1,28 @@
+{
+  "slug": "mi-golondrina",
+  "brandName": "Mi Golondrina",
+  "brandDomain": "migolondrina.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Montse Orange Wide Stripe Blouse",
+      "handle": "montse-orange-wide-stripe-blouse",
+      "price": "£295.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0241/7723/files/110_d3eeefea-4a48-4a3b-bb20-3bed528a2953.png?v=1778602374",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0241/7723/files/110_d3eeefea-4a48-4a3b-bb20-3bed528a2953.png?v=1778602374",
+        "https://cdn.shopify.com/s/files/1/0241/7723/files/111_e43ab1c5-14a3-4db3-a0f8-209f8edf8b33.png?v=1778602374",
+        "https://cdn.shopify.com/s/files/1/0241/7723/files/112_9f598ddb-ba66-4353-a415-b8b1e8cb9f3c.png?v=1778602374"
+      ],
+      "tryOnImage": "/demos-images/mi-golondrina/montse-orange-wide-stripe-blouse.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "lime-ricki",
+  "brandName": "Lime Ricki",
+  "brandDomain": "limericki.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Unlimited Exchanges + Package Protection",
+      "handle": "unlimited-exchanges-package-protection",
+      "price": "£2.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1520/6196/files/2025_LR_Logo_Black_6d0b6093ee92_e5f7058a-d5ef-456d-80fb-b0a406b22024.png?v=1763144340",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1520/6196/files/2025_LR_Logo_Black_6d0b6093ee92_e5f7058a-d5ef-456d-80fb-b0a406b22024.png?v=1763144340"
+      ],
+      "tryOnImage": "/demos-images/lime-ricki/unlimited-exchanges-package-protection.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

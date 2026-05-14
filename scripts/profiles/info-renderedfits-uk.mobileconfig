@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key><string>com.apple.mail.managed</string>
+            <key>PayloadVersion</key><integer>1</integer>
+            <key>PayloadIdentifier</key><string>com.renderedfits.mail.info-renderedfits-uk</string>
+            <key>PayloadUUID</key><string>296D42E7-75CA-4216-B10D-C46755793037</string>
+            <key>PayloadDisplayName</key><string>info@renderedfits.uk</string>
+            <key>EmailAccountDescription</key><string>info@renderedfits.uk</string>
+            <key>EmailAccountName</key><string>Sydney Stones</string>
+            <key>EmailAccountType</key><string>EmailTypeIMAP</string>
+            <key>EmailAddress</key><string>info@renderedfits.uk</string>
+            <key>IncomingMailServerAuthentication</key><string>EmailAuthPassword</string>
+            <key>IncomingMailServerHostName</key><string>imap.homer.maildoso.com</string>
+            <key>IncomingMailServerPortNumber</key><integer>993</integer>
+            <key>IncomingMailServerUseSSL</key><true/>
+            <key>IncomingMailServerUsername</key><string>info@renderedfits.uk</string>
+            <key>IncomingPassword</key><string>6ftNz6dez6FhLb</string>
+            <key>OutgoingMailServerAuthentication</key><string>EmailAuthPassword</string>
+            <key>OutgoingMailServerHostName</key><string>smtp.maildoso.com</string>
+            <key>OutgoingMailServerPortNumber</key><integer>587</integer>
+            <key>OutgoingMailServerUseSSL</key><false/>
+            <key>OutgoingMailServerUsername</key><string>info@renderedfits.uk</string>
+            <key>OutgoingPassword</key><string>6ftNz6dez6FhLb</string>
+            <key>OutgoingPasswordSameAsIncomingPassword</key><true/>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key><string>info@renderedfits.uk</string>
+    <key>PayloadIdentifier</key><string>com.renderedfits.mail.bundle.info-renderedfits-uk</string>
+    <key>PayloadType</key><string>Configuration</string>
+    <key>PayloadUUID</key><string>EE2105F4-60CA-4CFF-A0BE-697FE6F49157</string>
+    <key>PayloadVersion</key><integer>1</integer>
+</dict>
+</plist>

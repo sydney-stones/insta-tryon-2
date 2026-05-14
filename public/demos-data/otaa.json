@@ -1,0 +1,28 @@
+{
+  "slug": "otaa",
+  "brandName": "OTAA",
+  "brandDomain": "otaa.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Walters White Twill French Cuff Shirt",
+      "handle": "walters-white-twill-french-cuff-shirt",
+      "price": "£129.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0182/8937/files/Walters_White_Twill_Easy_Care_French_Cuff_Shirt_1.jpg?v=1720696697",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0182/8937/files/Walters_White_Twill_Easy_Care_French_Cuff_Shirt_1.jpg?v=1720696697",
+        "https://cdn.shopify.com/s/files/1/0182/8937/files/Walters_White_Twill_Easy_Care_French_Cuff_Shirt_12.jpg?v=1720696699",
+        "https://cdn.shopify.com/s/files/1/0182/8937/files/Walters_White_Twill_Easy_Care_French_Cuff_Shirt_7.jpg?v=1720696702"
+      ],
+      "tryOnImage": "/demos-images/otaa/walters-white-twill-french-cuff-shirt.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

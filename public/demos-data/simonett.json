@@ -1,0 +1,28 @@
+{
+  "slug": "simonett",
+  "brandName": "Simonett",
+  "brandDomain": "simonett.us",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lace Sculpt Bustier Top - White",
+      "handle": "lace-sculpt-bustier-top-white",
+      "price": "£90.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0375/2225/files/simonett-ss26-white-lace-sculpt-bustier-top-niche-designer-l1.jpg?v=1776877919",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0375/2225/files/simonett-ss26-white-lace-sculpt-bustier-top-niche-designer-l1.jpg?v=1776877919",
+        "https://cdn.shopify.com/s/files/1/0375/2225/files/simonett-ss26-white-lace-sculpt-bustier-top-niche-designer-l2.jpg?v=1776877919",
+        "https://cdn.shopify.com/s/files/1/0375/2225/files/simonett-ss26-white-lace-sculpt-bustier-top-niche-designer-l3.jpg?v=1776877919"
+      ],
+      "tryOnImage": "/demos-images/simonett/lace-sculpt-bustier-top-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

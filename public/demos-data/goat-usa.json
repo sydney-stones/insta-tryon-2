@@ -1,0 +1,28 @@
+{
+  "slug": "goat-usa",
+  "brandName": "GOAT USA",
+  "brandDomain": "goatusa.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Toddler Two Tone Bathing Suit",
+      "handle": "toddler-printed-bathing-suit",
+      "price": "£35.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2264/4629/files/two-tone-bathing-suitmens-bottomsgoat-usa-4646527.jpg?v=1778566339",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2264/4629/files/two-tone-bathing-suitmens-bottomsgoat-usa-4646527.jpg?v=1778566339",
+        "https://cdn.shopify.com/s/files/1/2264/4629/files/two-tone-bathing-suitmens-bottomsgoat-usa-2884970.jpg?v=1778566340",
+        "https://cdn.shopify.com/s/files/1/2264/4629/files/two-tone-bathing-suitmens-bottomsgoat-usa-4998056.jpg?v=1778566340"
+      ],
+      "tryOnImage": "/demos-images/goat-usa/toddler-printed-bathing-suit.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

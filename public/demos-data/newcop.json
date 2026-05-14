@@ -1,0 +1,28 @@
+{
+  "slug": "newcop",
+  "brandName": "Newcop",
+  "brandDomain": "newcop.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "ALLSAINTS Insignia Crew Neck Cotton Sweatshirt Washed Black",
+      "handle": "allsaints-insignia-crew-neck-cotton-sweatshirt-washed-black",
+      "price": "£159.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0631/5134/1738/files/crewneck-dark-grey-allsaints-01.webp?v=1778580656",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0631/5134/1738/files/crewneck-dark-grey-allsaints-01.webp?v=1778580656",
+        "https://cdn.shopify.com/s/files/1/0631/5134/1738/files/crewneck-dark-grey-allsaints-02.webp?v=1778580656",
+        "https://cdn.shopify.com/s/files/1/0631/5134/1738/files/crewneck-dark-grey-allsaints-03.webp?v=1778580655"
+      ],
+      "tryOnImage": "/demos-images/newcop/allsaints-insignia-crew-neck-cotton-sweatshirt-washed-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

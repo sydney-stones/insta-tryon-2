@@ -1,0 +1,28 @@
+{
+  "slug": "tokay-ultimate",
+  "brandName": "TOKAY Ultimate",
+  "brandDomain": "tokay-ultimate.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "T-shirt ON THE FIELDS",
+      "handle": "ultimate-lifestyle-tee-on-the-fields",
+      "price": "£35.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0850/6861/1917/files/on-the-fields-ciel-site_2cfe1d1d-c950-4492-8ed6-ff8239e2c364.png?v=1776336222",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0850/6861/1917/files/on-the-fields-ciel-site_2cfe1d1d-c950-4492-8ed6-ff8239e2c364.png?v=1776336222",
+        "https://cdn.shopify.com/s/files/1/0850/6861/1917/files/on-the-fields-front-site_883ae898-d0db-467b-9dab-ffafcde9b9c3.png?v=1776336222",
+        "https://cdn.shopify.com/s/files/1/0850/6861/1917/files/on-the-fields-back-site_85aaa164-70e9-4ad8-8af5-61b1b8453ab0.png?v=1776336222"
+      ],
+      "tryOnImage": "/demos-images/tokay-ultimate/ultimate-lifestyle-tee-on-the-fields.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

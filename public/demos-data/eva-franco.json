@@ -1,0 +1,28 @@
+{
+  "slug": "eva-franco",
+  "brandName": "Eva Franco",
+  "brandDomain": "evafranco.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Terry Maxi Dress - Groovy Garden",
+      "handle": "terry-maxi-dress-groovy-garden",
+      "price": "£278.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0014/6182/files/eva-franco-dress-terry-maxi-dress-groovy-garden-1232733887.png?v=1776429009",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0014/6182/files/eva-franco-dress-terry-maxi-dress-groovy-garden-1232733887.png?v=1776429009",
+        "https://cdn.shopify.com/s/files/1/0014/6182/files/eva-franco-dress-terry-maxi-dress-groovy-garden-1232733886.png?v=1776428948",
+        "https://cdn.shopify.com/s/files/1/0014/6182/files/eva-franco-dress-terry-maxi-dress-groovy-garden-1232733885.png?v=1776428888"
+      ],
+      "tryOnImage": "/demos-images/eva-franco/terry-maxi-dress-groovy-garden.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

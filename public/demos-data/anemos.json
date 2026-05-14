@@ -1,0 +1,28 @@
+{
+  "slug": "anemos",
+  "brandName": "Anemos",
+  "brandDomain": "anemoslosangeles.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Plunging Knot Wrap Dress In Crochet Knit",
+      "handle": "plunging-knot-wrap-dress-in-crochet-knit",
+      "price": "£445.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0013/4640/4401/files/Plunging_Knot_Wrap_Dress_In_Natural_Crochet_Knit.jpg?v=1776210075",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0013/4640/4401/files/Plunging_Knot_Wrap_Dress_In_Natural_Crochet_Knit.jpg?v=1776210075",
+        "https://cdn.shopify.com/s/files/1/0013/4640/4401/files/Plunging_Knot_Wrap_Dress_In_Natural_Crochet_Knit_on_Model.jpg?v=1776210115",
+        "https://cdn.shopify.com/s/files/1/0013/4640/4401/files/Plunging_Knot_Wrap_Dress_In_Natural_Crochet_Knit_on_Model_2.jpg?v=1776210149"
+      ],
+      "tryOnImage": "/demos-images/anemos/plunging-knot-wrap-dress-in-crochet-knit.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "stashed",
+  "brandName": "Stashed",
+  "brandDomain": "stashed-sneakers.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Nike Air Max 90 Neon",
+      "handle": "nike-air-max-90-neon",
+      "price": "£1.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0016/3246/9027/files/02550196_1.png?v=1771602506",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0016/3246/9027/files/02550196_1.png?v=1771602506",
+        "https://cdn.shopify.com/s/files/1/0016/3246/9027/files/02550196_2.png?v=1771602506",
+        "https://cdn.shopify.com/s/files/1/0016/3246/9027/files/02550196_4.png?v=1771602506"
+      ],
+      "tryOnImage": "/demos-images/stashed/nike-air-max-90-neon.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

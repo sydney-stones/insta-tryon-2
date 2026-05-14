@@ -1,0 +1,28 @@
+{
+  "slug": "d-iyanu",
+  "brandName": "D'IYANU",
+  "brandDomain": "diyanu.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Simisola Women's African Print Corset Dress (Purple Multicolor Tribal)",
+      "handle": "simisola-womens-african-print-corset-dress-purple-multicolor-tribal",
+      "price": "£93.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0684/2619/files/SimisolaWomensAfricanPrintCorsetDress_PurpleMulticolorTribal_-2.jpg?v=1776784855",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0684/2619/files/SimisolaWomensAfricanPrintCorsetDress_PurpleMulticolorTribal_-2.jpg?v=1776784855",
+        "https://cdn.shopify.com/s/files/1/0684/2619/files/SimisolaWomensAfricanPrintCorsetDress_PurpleMulticolorTribal_-8.jpg?v=1776784855",
+        "https://cdn.shopify.com/s/files/1/0684/2619/files/SimisolaWomensAfricanPrintCorsetDress_PurpleMulticolorTribal.jpg?v=1775763732"
+      ],
+      "tryOnImage": "/demos-images/d-iyanu/simisola-womens-african-print-corset-dress-purple-multicolor-tribal.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

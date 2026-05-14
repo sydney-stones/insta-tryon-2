@@ -1,0 +1,28 @@
+{
+  "slug": "dresses-boutique-b-v",
+  "brandName": "Dresses Boutique B.V.",
+  "brandDomain": "dressesboutique.nl",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Rosette flower dress",
+      "handle": "rosette-flower-dress",
+      "price": "£219.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0357/6220/8827/files/Rosetteflowerdress_WarmSun_1.jpg?v=1778590087",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0357/6220/8827/files/Rosetteflowerdress_WarmSun_1.jpg?v=1778590087",
+        "https://cdn.shopify.com/s/files/1/0357/6220/8827/files/Rosetteflowerdress_WarmSun_2.jpg?v=1778590088",
+        "https://cdn.shopify.com/s/files/1/0357/6220/8827/files/Rosetteflowerdress_WarmSun_3.jpg?v=1778590087"
+      ],
+      "tryOnImage": "/demos-images/dresses-boutique-b-v/rosette-flower-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

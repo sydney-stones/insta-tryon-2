@@ -1,0 +1,28 @@
+{
+  "slug": "rainwater-s",
+  "brandName": "Rainwater's",
+  "brandDomain": "rainwater-s.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Rainwater's Luxury Collection Super 140's Wool Slim Fit Black Peak Lapel Tuxedo",
+      "handle": "rainwaters-luxury-collection-super-140s-wool-slim-fit-black-peak-lapel-tuxedo",
+      "price": "£695.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1078/0910/files/2_1296x_be143015-e63f-478c-ba0f-cc6ce245d1f9.webp?v=1778011788",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1078/0910/files/2_1296x_be143015-e63f-478c-ba0f-cc6ce245d1f9.webp?v=1778011788",
+        "https://cdn.shopify.com/s/files/1/1078/0910/files/3_1296x_18671d5c-46fd-4e7f-b6ed-312e84ddc506.webp?v=1778011791",
+        "https://cdn.shopify.com/s/files/1/1078/0910/files/4_1296x_bb099d2b-acb9-490e-9ced-dcbad4368cb2.webp?v=1778011793"
+      ],
+      "tryOnImage": "/demos-images/rainwater-s/rainwaters-luxury-collection-super-140s-wool-slim-fit-black-peak-lapel-tuxedo.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

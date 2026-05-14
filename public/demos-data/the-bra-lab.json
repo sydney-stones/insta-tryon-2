@@ -1,0 +1,28 @@
+{
+  "slug": "the-bra-lab",
+  "brandName": "The Bra Lab",
+  "brandDomain": "thebralab.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pastel Crush Shoulder Strap Set",
+      "handle": "pastel-crush-shoulder-strap-set",
+      "price": "£13.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0673/5573/products/IMG_7222.png?v=1664900627",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0673/5573/products/IMG_7222.png?v=1664900627",
+        "https://cdn.shopify.com/s/files/1/0673/5573/products/IMG_7220.png?v=1664900627",
+        "https://cdn.shopify.com/s/files/1/0673/5573/products/DSC_00112.png?v=1664900627"
+      ],
+      "tryOnImage": "/demos-images/the-bra-lab/pastel-crush-shoulder-strap-set.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

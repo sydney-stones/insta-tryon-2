@@ -1,0 +1,28 @@
+{
+  "slug": "shop-talulah",
+  "brandName": "Shop Talulah",
+  "brandDomain": "shoptalulah.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Citrus Garden Women's Ribbed Pant Set | +Plus Available",
+      "handle": "citrus-garden-womens-ribbed-pant-set-plus-available",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0068/9294/5523/files/B9CF17CE-066A-445A-8115-B356B62A02E3.jpg?v=1772757807",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0068/9294/5523/files/B9CF17CE-066A-445A-8115-B356B62A02E3.jpg?v=1772757807",
+        "https://cdn.shopify.com/s/files/1/0068/9294/5523/files/39CD8675-D8BF-4058-88FE-57A6E7592564.jpg?v=1772757808",
+        "https://cdn.shopify.com/s/files/1/0068/9294/5523/files/4F370DA8-E159-4CCF-BA31-D6BED94D2BA3.jpg?v=1772757807"
+      ],
+      "tryOnImage": "/demos-images/shop-talulah/citrus-garden-womens-ribbed-pant-set-plus-available.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

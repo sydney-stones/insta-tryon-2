@@ -1,0 +1,28 @@
+{
+  "slug": "maids-to-measure",
+  "brandName": "Maids to Measure",
+  "brandDomain": "maidstomeasure.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ottie Satin Cowl Bridesmaid Dress - Blue Floral",
+      "handle": "ottie-satin-cowl-bridesmaid-dress-blue-floral",
+      "price": "£150.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0117/1036/5762/files/ottie-satin-cowl-bridesmaid-dress-blue-floral-6045511.jpg?v=1777591410",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0117/1036/5762/files/ottie-satin-cowl-bridesmaid-dress-blue-floral-6045511.jpg?v=1777591410",
+        "https://cdn.shopify.com/s/files/1/0117/1036/5762/files/ottie-satin-cowl-bridesmaid-dress-blue-floral-9619440.jpg?v=1777591411",
+        "https://cdn.shopify.com/s/files/1/0117/1036/5762/files/ottie-satin-cowl-bridesmaid-dress-blue-floral-4713170.jpg?v=1777591412"
+      ],
+      "tryOnImage": "/demos-images/maids-to-measure/ottie-satin-cowl-bridesmaid-dress-blue-floral.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

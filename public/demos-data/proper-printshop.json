@@ -1,0 +1,27 @@
+{
+  "slug": "proper-printshop",
+  "brandName": "Proper Printshop",
+  "brandDomain": "properprintshop.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "medium",
+  "tryOns": [
+    {
+      "title": "Women's Core Soft Shell Jacket",
+      "handle": "port-authority-ladies-core-soft-shell-jacket",
+      "price": "£56.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0686/6822/7836/files/L317.png?v=1743010071",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0686/6822/7836/files/L317.png?v=1743010071",
+        "https://cdn.shopify.com/s/files/1/0686/6822/7836/files/L317_552a36dc-8a47-43fd-9b21-1cf83963f69e.png?v=1743010088"
+      ],
+      "tryOnImage": "/demos-images/proper-printshop/port-authority-ladies-core-soft-shell-jacket.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

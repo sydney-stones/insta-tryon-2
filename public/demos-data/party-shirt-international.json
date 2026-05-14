@@ -1,0 +1,28 @@
+{
+  "slug": "party-shirt-international",
+  "brandName": "Party Shirt International",
+  "brandDomain": "partyshirtinternational.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Disco Cat: Women's Stretch Tech",
+      "handle": "disco-cat-womens-stretch-tech",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0089/2033/4415/files/NanoBanana2-putthisshirtonthemodel.png?v=1778264459",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0089/2033/4415/files/NanoBanana2-putthisshirtonthemodel.png?v=1778264459",
+        "https://cdn.shopify.com/s/files/1/0089/2033/4415/files/Nano_Banana_2_-_Transform_the_leopard_print_party_shirt_into_a_women_s_cut_short_sleeve_button-up_us.png?v=1778264477",
+        "https://cdn.shopify.com/s/files/1/0089/2033/4415/files/Disco_Cat_Collar_Shot_2c953d43-706b-4bad-a6c6-18a25a5731be.png?v=1778264491"
+      ],
+      "tryOnImage": "/demos-images/party-shirt-international/disco-cat-womens-stretch-tech.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

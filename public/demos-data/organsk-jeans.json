@@ -1,0 +1,28 @@
+{
+  "slug": "organsk-jeans",
+  "brandName": "ORGANSK® JEANS",
+  "brandDomain": "organsk.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Studio Trouser™",
+      "handle": "the-studio-trouser-organic-pink-male",
+      "price": "£200.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0615/1628/4082/files/E10.jpg?v=1763475869",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0615/1628/4082/files/E10.jpg?v=1763475869",
+        "https://cdn.shopify.com/s/files/1/0615/1628/4082/files/editedDSC_1122.jpg?v=1763475869",
+        "https://cdn.shopify.com/s/files/1/0615/1628/4082/files/editedDSC_1122_whiteeithout_56c7bcd1-5fe8-4c22-a965-75d701bb2e2a.jpg?v=1769773649"
+      ],
+      "tryOnImage": "/demos-images/organsk-jeans/the-studio-trouser-organic-pink-male.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

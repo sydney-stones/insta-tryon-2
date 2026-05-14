@@ -1,0 +1,28 @@
+{
+  "slug": "field-day-sporting-co",
+  "brandName": "Field Day Sporting Co.",
+  "brandDomain": "fielddaysportingco.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Hynds Cardigan - Shedd Heather",
+      "handle": "hynds-cardigan-shedd-heather",
+      "price": "£209.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0532/6048/4807/files/HyndsCardigan-Shedd-Front.jpg?v=1776440093",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0532/6048/4807/files/HyndsCardigan-Shedd-Front.jpg?v=1776440093",
+        "https://cdn.shopify.com/s/files/1/0532/6048/4807/files/Screenshot2026-04-17at10.37.04AM.png?v=1776440230",
+        "https://cdn.shopify.com/s/files/1/0532/6048/4807/files/DSCF7772.jpg?v=1776440263"
+      ],
+      "tryOnImage": "/demos-images/field-day-sporting-co/hynds-cardigan-shedd-heather.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

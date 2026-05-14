@@ -1,0 +1,28 @@
+{
+  "slug": "epic-fits",
+  "brandName": "EPIC FITS",
+  "brandDomain": "epicfits.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "All White Crew Neck 9-Pack",
+      "handle": "crew-neck-tshirt-white-9-pack",
+      "price": "£134.91",
+      "productImage": "https://cdn.shopify.com/s/files/1/0576/3530/7638/files/white-9-pack.jpg?v=1763586799",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0576/3530/7638/files/white-9-pack.jpg?v=1763586799",
+        "https://cdn.shopify.com/s/files/1/0576/3530/7638/files/crew-white-model-front-simon-1006-1600x2000.jpg?v=1748671054",
+        "https://cdn.shopify.com/s/files/1/0576/3530/7638/files/crew-white-model-back-simon-1021-1600x2000.jpg?v=1741909611"
+      ],
+      "tryOnImage": "/demos-images/epic-fits/crew-neck-tshirt-white-9-pack.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

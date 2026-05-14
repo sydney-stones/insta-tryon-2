@@ -1,0 +1,28 @@
+{
+  "slug": "dan-john",
+  "brandName": "Dan John",
+  "brandDomain": "danjohn.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Light blue linen blend Hawaiian shirt",
+      "handle": "camicia-misto-lino-hawaiana-celeste",
+      "price": "£39.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/1751/7213/files/181225_DJ_05_01071.jpg?v=1778591324",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1751/7213/files/181225_DJ_05_01071.jpg?v=1778591324",
+        "https://cdn.shopify.com/s/files/1/1751/7213/files/181225_DJ_05_01104.jpg?v=1778591325",
+        "https://cdn.shopify.com/s/files/1/1751/7213/files/181225_DJ_05_01087.jpg?v=1778591324"
+      ],
+      "tryOnImage": "/demos-images/dan-john/camicia-misto-lino-hawaiana-celeste.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

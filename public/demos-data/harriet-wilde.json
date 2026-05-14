@@ -1,0 +1,26 @@
+{
+  "slug": "harriet-wilde",
+  "brandName": "Harriet Wilde",
+  "brandDomain": "harrietwilde.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Item Personalization",
+      "handle": "item-personalization",
+      "price": "£0.05",
+      "productImage": "https://cdn.shopify.com/s/files/1/0149/8064/products/01_Bespoke_3xImages_Template-sole2.jpg?v=1616421335",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0149/8064/products/01_Bespoke_3xImages_Template-sole2.jpg?v=1616421335"
+      ],
+      "tryOnImage": "/demos-images/harriet-wilde/item-personalization.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

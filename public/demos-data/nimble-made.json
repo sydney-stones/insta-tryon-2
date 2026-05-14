@@ -1,0 +1,28 @@
+{
+  "slug": "nimble-made",
+  "brandName": "Nimble Made",
+  "brandDomain": "nimble-made.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Light Blue Check Windowpane Dress Shirt | The Terrace",
+      "handle": "light-blue-check-windowpane-dress-shirt",
+      "price": "£67.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0029/1887/5193/files/terrace_light-blue-windowpane-check_front2.jpg?v=1740692334",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0029/1887/5193/files/terrace_light-blue-windowpane-check_front2.jpg?v=1740692334",
+        "https://cdn.shopify.com/s/files/1/0029/1887/5193/files/terrace_light-blue-windowpane-check_angle.jpg?v=1740692334",
+        "https://cdn.shopify.com/s/files/1/0029/1887/5193/files/terrace_light-blue-windowpane-check_Fabric.jpg?v=1740692334"
+      ],
+      "tryOnImage": "/demos-images/nimble-made/light-blue-check-windowpane-dress-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

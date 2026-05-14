@@ -1,0 +1,28 @@
+{
+  "slug": "soul-revolver",
+  "brandName": "Soul Revolver",
+  "brandDomain": "soulrevolver.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Trucker - Medium",
+      "handle": "trucker-black-xxxl-sale",
+      "price": "£240.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0879/4960/7237/files/vintage-style-leather-jacket-xs-trucker-mens-leather-jacket-soul-revolver-1156371346.webp?v=1754843169",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0879/4960/7237/files/vintage-style-leather-jacket-xs-trucker-mens-leather-jacket-soul-revolver-1156371346.webp?v=1754843169",
+        "https://cdn.shopify.com/s/files/1/0879/4960/7237/files/vintage-style-leather-jacket-trucker-mens-leather-jacket-soul-revolver-1156371345.webp?v=1754843165",
+        "https://cdn.shopify.com/s/files/1/0879/4960/7237/files/vintage-style-leather-jacket-trucker-mens-leather-jacket-soul-revolver-1149963847.webp?v=1754837401"
+      ],
+      "tryOnImage": "/demos-images/soul-revolver/trucker-black-xxxl-sale.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

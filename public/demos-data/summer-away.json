@@ -1,0 +1,28 @@
+{
+  "slug": "summer-away",
+  "brandName": "Summer Away",
+  "brandDomain": "summeraway.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Edda Dress",
+      "handle": "edda-dress",
+      "price": "£91.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0655/6110/0539/files/EddaDress_Ecomm-1.jpg?v=1774175089",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0655/6110/0539/files/EddaDress_Ecomm-1.jpg?v=1774175089",
+        "https://cdn.shopify.com/s/files/1/0655/6110/0539/files/EddaDress_Ecomm-3.jpg?v=1774175097",
+        "https://cdn.shopify.com/s/files/1/0655/6110/0539/files/EddaDress_Ecomm-2.jpg?v=1774175097"
+      ],
+      "tryOnImage": "/demos-images/summer-away/edda-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

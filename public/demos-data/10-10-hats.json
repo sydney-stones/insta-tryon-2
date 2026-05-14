@@ -1,0 +1,28 @@
+{
+  "slug": "10-10-hats",
+  "brandName": "10 10 Hats",
+  "brandDomain": "1010hats.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "5 Panel With Rope",
+      "handle": "5-panel-white-with-light-blue-rope",
+      "price": "£29.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0779/5848/0172/files/ID9M2254.jpg?v=1772632882",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0779/5848/0172/files/ID9M2254.jpg?v=1772632882",
+        "https://cdn.shopify.com/s/files/1/0779/5848/0172/files/ID9M2252.jpg?v=1772632882",
+        "https://cdn.shopify.com/s/files/1/0779/5848/0172/files/ID9M2255.jpg?v=1772632882"
+      ],
+      "tryOnImage": "/demos-images/10-10-hats/5-panel-white-with-light-blue-rope.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

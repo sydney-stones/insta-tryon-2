@@ -1,0 +1,28 @@
+{
+  "slug": "kamperett",
+  "brandName": "Kamperett",
+  "brandDomain": "kamperett.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lisette Midi Slip Dress - Black",
+      "handle": "lisette-midi-slip-dress-2",
+      "price": "£676.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0106/7905/8532/files/DSC_3488.jpg?v=1731374525",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0106/7905/8532/files/DSC_3488.jpg?v=1731374525",
+        "https://cdn.shopify.com/s/files/1/0106/7905/8532/files/DSC_3510.jpg?v=1731374525",
+        "https://cdn.shopify.com/s/files/1/0106/7905/8532/files/DSC_3491.jpg?v=1731374525"
+      ],
+      "tryOnImage": "/demos-images/kamperett/lisette-midi-slip-dress-2.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "fit-first-footwear",
+  "brandName": "Fit First Footwear",
+  "brandDomain": "fitfirst.ca",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Thermoball Jacket — Twilight Galaxy",
+      "handle": "w-thermoball-jacket",
+      "price": "£269.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0671/4795/6271/files/81443-btr-1-Large.jpg?v=1773633498",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0671/4795/6271/files/81443-btr-1-Large.jpg?v=1773633498",
+        "https://cdn.shopify.com/s/files/1/0671/4795/6271/files/81443-btr-3-Large.jpg?v=1773633498",
+        "https://cdn.shopify.com/s/files/1/0671/4795/6271/files/81443-btr-5-Large.jpg?v=1773633498"
+      ],
+      "tryOnImage": "/demos-images/fit-first-footwear/w-thermoball-jacket.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

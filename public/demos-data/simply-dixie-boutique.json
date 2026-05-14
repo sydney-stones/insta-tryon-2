@@ -1,0 +1,28 @@
+{
+  "slug": "simply-dixie-boutique",
+  "brandName": "Simply Dixie Boutique",
+  "brandDomain": "simplydixie.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Zenana-Scuba Sweatshirt And Shorts Set",
+      "handle": "zenana-scuba-sweatshirt-and-shorts-set",
+      "price": "£42.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0250/2832/files/ZenanaScubaSetteal.jpg?v=1762984416",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0250/2832/files/ZenanaScubaSetteal.jpg?v=1762984416",
+        "https://cdn.shopify.com/s/files/1/0250/2832/files/ZenanaScubaSetpink.jpg?v=1762984416",
+        "https://cdn.shopify.com/s/files/1/0250/2832/files/ZenanaScubaSetteal-1.jpg?v=1752179142"
+      ],
+      "tryOnImage": "/demos-images/simply-dixie-boutique/zenana-scuba-sweatshirt-and-shorts-set.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "pistola-denim",
+  "brandName": "Pistola Denim",
+  "brandDomain": "pistoladenim.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Aeron Cardigan - Claret",
+      "handle": "aeron-v-neck-cardigan-sweater",
+      "price": "£75.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1616/7625/files/AERON_CLARET_FRONT_112a7126-d514-4f8c-971b-c77ade068e2a.jpg?v=1756334389",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1616/7625/files/AERON_CLARET_FRONT_112a7126-d514-4f8c-971b-c77ade068e2a.jpg?v=1756334389",
+        "https://cdn.shopify.com/s/files/1/1616/7625/files/AERON_CABERNET_FRONT2_21f1f9bf-09bd-4e91-bef1-3ce60195f4dd.jpg?v=1756334389",
+        "https://cdn.shopify.com/s/files/1/1616/7625/files/AERON_CABERNET_SIDEjpg_63cf072a-5cd5-40f4-a863-61569a571cb6.jpg?v=1756334389"
+      ],
+      "tryOnImage": "/demos-images/pistola-denim/aeron-v-neck-cardigan-sweater.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

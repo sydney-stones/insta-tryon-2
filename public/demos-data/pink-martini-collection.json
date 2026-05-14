@@ -1,0 +1,28 @@
+{
+  "slug": "pink-martini-collection",
+  "brandName": "Pink Martini Collection",
+  "brandDomain": "pinkmartinicollection.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Doran Dress Green",
+      "handle": "doran-dress-green",
+      "price": "£112.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2156/9473/files/Pinkmartini6895fafb527d516895fafb52a4c.451688346895fafb52a4c.jpg?v=1778522174",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2156/9473/files/Pinkmartini6895fafb527d516895fafb52a4c.451688346895fafb52a4c.jpg?v=1778522174",
+        "https://cdn.shopify.com/s/files/1/2156/9473/files/Pinkmartini6895fafb8e3c126895fafb8e639.184066516895fafb8e639.jpg?v=1778522174",
+        "https://cdn.shopify.com/s/files/1/2156/9473/files/Pinkmartini6895fafba418696895fafba43f3.211835156895fafba43f3.jpg?v=1778522174"
+      ],
+      "tryOnImage": "/demos-images/pink-martini-collection/doran-dress-green.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "jawda",
+  "brandName": "Jawda",
+  "brandDomain": "jawda.co.uk",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Grey High-Waisted Trousers",
+      "handle": "grey-high-waisted-trousers",
+      "price": "£28.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0647/8459/7215/files/gry_2.jpg?v=1763474337",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0647/8459/7215/files/gry_2.jpg?v=1763474337",
+        "https://cdn.shopify.com/s/files/1/0647/8459/7215/files/IMG_5552_3f63d8f1-3974-4ad0-93a6-66197e80b560.jpg?v=1763474337",
+        "https://cdn.shopify.com/s/files/1/0647/8459/7215/files/IMG_5554_bc951c4b-c265-46a6-893b-202dba64b17c.jpg?v=1763474337"
+      ],
+      "tryOnImage": "/demos-images/jawda/grey-high-waisted-trousers.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "pink-moon-bay",
+  "brandName": "Pink Moon Bay",
+  "brandDomain": "thepinkmoonbay.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Fringe-tastic Dress",
+      "handle": "fringe-tastic-dress",
+      "price": "£109.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0610/9125/0346/files/26_6d1f9fd0-d43f-4bbb-9ffd-cdd23f96689c.png?v=1778686707",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0610/9125/0346/files/26_6d1f9fd0-d43f-4bbb-9ffd-cdd23f96689c.png?v=1778686707",
+        "https://cdn.shopify.com/s/files/1/0610/9125/0346/files/27_7af53b1e-ed0b-4966-b538-5eb8245de043.png?v=1778686708",
+        "https://cdn.shopify.com/s/files/1/0610/9125/0346/files/28_5f2e4d14-d521-485f-a2ea-8a45782839b4.png?v=1778686707"
+      ],
+      "tryOnImage": "/demos-images/pink-moon-bay/fringe-tastic-dress.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
