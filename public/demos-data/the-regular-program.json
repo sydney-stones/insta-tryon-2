@@ -1,0 +1,28 @@
+{
+  "slug": "the-regular-program",
+  "brandName": "The Regular Program",
+  "brandDomain": "theregularprogram.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Crewneck Pullover & Slip Dress Set - Sand",
+      "handle": "the-crewneck-pullover-slip-dress-set-sand",
+      "price": "£180.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0747/4947/7137/files/03.29.26_TRP_1800.jpg?v=1775969029",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0747/4947/7137/files/03.29.26_TRP_1800.jpg?v=1775969029",
+        "https://cdn.shopify.com/s/files/1/0747/4947/7137/files/03.29.26_TRP_1835.jpg?v=1775969029",
+        "https://cdn.shopify.com/s/files/1/0747/4947/7137/files/03.29.26_TRP_1977.jpg?v=1775969029"
+      ],
+      "tryOnImage": "/demos-images/the-regular-program/the-crewneck-pullover-slip-dress-set-sand.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

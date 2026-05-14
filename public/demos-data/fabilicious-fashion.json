@@ -1,0 +1,28 @@
+{
+  "slug": "fabilicious-fashion",
+  "brandName": "Fabilicious Fashion",
+  "brandDomain": "fabiliciousfashion.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Beige Gold Chanderi Kurta With Cowl Skirt Set",
+      "handle": "beige-gold-chanderi-kurta-with-cowl-skirt-set-studio-bagechaa-in-nr-2-1353",
+      "price": "£216.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2617/0726/files/beige-gold-chanderi-kurta-with-cowl-skirt-setwomens-kurta-setstudio-bagechaa-5350775.jpg?v=1778631808",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2617/0726/files/beige-gold-chanderi-kurta-with-cowl-skirt-setwomens-kurta-setstudio-bagechaa-5350775.jpg?v=1778631808",
+        "https://cdn.shopify.com/s/files/1/2617/0726/files/beige-gold-chanderi-kurta-with-cowl-skirt-setwomens-kurta-setstudio-bagechaa-5597975.jpg?v=1778631810",
+        "https://cdn.shopify.com/s/files/1/2617/0726/files/beige-gold-chanderi-kurta-with-cowl-skirt-setwomens-kurta-setstudio-bagechaa-6535195.jpg?v=1778631810"
+      ],
+      "tryOnImage": "/demos-images/fabilicious-fashion/beige-gold-chanderi-kurta-with-cowl-skirt-set-studio-bagechaa-in-nr-2-1353.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

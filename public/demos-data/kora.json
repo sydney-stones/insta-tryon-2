@@ -1,0 +1,28 @@
+{
+  "slug": "kora",
+  "brandName": "kora",
+  "brandDomain": "koraoutdoor.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Liberty Tank - Stone",
+      "handle": "womens-liberty-tank-stone",
+      "price": "£150.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0065/1339/3731/files/241017-Kora23858-Women_sLibertyTank-Stone.jpg?v=1742342320",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0065/1339/3731/files/241017-Kora23858-Women_sLibertyTank-Stone.jpg?v=1742342320",
+        "https://cdn.shopify.com/s/files/1/0065/1339/3731/files/241017-Kora23863-Women_sLibertyTank-Stone.jpg?v=1742342320",
+        "https://cdn.shopify.com/s/files/1/0065/1339/3731/files/241017-Kora23888-Women_sLibertyTank-Stone.jpg?v=1742342313"
+      ],
+      "tryOnImage": "/demos-images/kora/womens-liberty-tank-stone.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

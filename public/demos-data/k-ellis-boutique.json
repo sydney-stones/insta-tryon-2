@@ -1,0 +1,28 @@
+{
+  "slug": "k-ellis-boutique",
+  "brandName": "K. Ellis Boutique",
+  "brandDomain": "kellisboutique.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lizzy Knit Short Set - White",
+      "handle": "lizzy-knit-short-set-white",
+      "price": "£71.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2160/5687/files/IMG_0843.jpg?v=1777321942",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2160/5687/files/IMG_0843.jpg?v=1777321942",
+        "https://cdn.shopify.com/s/files/1/2160/5687/files/IMG_0862_2.jpg?v=1777321942",
+        "https://cdn.shopify.com/s/files/1/2160/5687/files/entro_fashion_bottom_p30088_031026_0038.jpg?v=1776450521"
+      ],
+      "tryOnImage": "/demos-images/k-ellis-boutique/lizzy-knit-short-set-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

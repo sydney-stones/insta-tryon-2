@@ -1,0 +1,28 @@
+{
+  "slug": "mademoiselle-marcelle",
+  "brandName": "Mademoiselle Marcelle",
+  "brandDomain": "mademoisellemarcelle.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Top Orlane",
+      "handle": "top-orlane",
+      "price": "£32.90",
+      "productImage": "https://cdn.shopify.com/s/files/1/0677/2847/4401/files/IMG_1061_a7b39486-58f9-4abe-a83a-67c872d64095.jpg?v=1778066034",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0677/2847/4401/files/IMG_1061_a7b39486-58f9-4abe-a83a-67c872d64095.jpg?v=1778066034",
+        "https://cdn.shopify.com/s/files/1/0677/2847/4401/files/IMG_1062_b51d24af-ab6c-46fa-bd87-8858097c3bb6.jpg?v=1778066035",
+        "https://cdn.shopify.com/s/files/1/0677/2847/4401/files/IMG_1059_62f5d2ac-ad27-42c6-b465-c1c7fb7af805.jpg?v=1778066034"
+      ],
+      "tryOnImage": "/demos-images/mademoiselle-marcelle/top-orlane.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "holistic-skateshop",
+  "brandName": "Holistic Skateshop",
+  "brandDomain": "holisticskateshop.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Anti Hero Homers Tee - Navy",
+      "handle": "anti-hero-homers-tee-navy",
+      "price": "£34.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0606/3201/files/anti-hero-anti-hero-homers-tee-navy-t-shirt-1238132021.jpg?v=1778629152",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0606/3201/files/anti-hero-anti-hero-homers-tee-navy-t-shirt-1238132021.jpg?v=1778629152",
+        "https://cdn.shopify.com/s/files/1/0606/3201/files/anti-hero-anti-hero-homers-tee-navy-t-shirt-1238132022.jpg?v=1778629122"
+      ],
+      "tryOnImage": "/demos-images/holistic-skateshop/anti-hero-homers-tee-navy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

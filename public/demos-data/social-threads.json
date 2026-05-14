@@ -1,0 +1,28 @@
+{
+  "slug": "social-threads",
+  "brandName": "Social Threads",
+  "brandDomain": "shopsocialthreads.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Seraphine Row Pintuck Detail Short Sleeve Top",
+      "handle": "seraphine-row-pintuck-detail-short-sleeve-blouse",
+      "price": "£79.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0989/0042/files/ST_10082515392.jpg?v=1760100725",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0989/0042/files/ST_10082515392.jpg?v=1760100725",
+        "https://cdn.shopify.com/s/files/1/0989/0042/files/ST_10082515381.jpg?v=1760100725",
+        "https://cdn.shopify.com/s/files/1/0989/0042/files/ST_10082515393.jpg?v=1760100725"
+      ],
+      "tryOnImage": "/demos-images/social-threads/seraphine-row-pintuck-detail-short-sleeve-blouse.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "bij-keesje",
+  "brandName": "Bij Keesje",
+  "brandDomain": "bij-keesje.nl",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lynn satinlook dress yellow",
+      "handle": "lynn-satinlook-dress-yellow",
+      "price": "£47.50",
+      "productImage": "https://cdn.shopify.com/s/files/1/0733/0699/7000/files/lynn-satinlook-dress-yellow-bij-keesje-6963139.jpg?v=1775122954",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0733/0699/7000/files/lynn-satinlook-dress-yellow-bij-keesje-6963139.jpg?v=1775122954",
+        "https://cdn.shopify.com/s/files/1/0733/0699/7000/files/lynn-satinlook-dress-yellow-bij-keesje-3887312.jpg?v=1775122955",
+        "https://cdn.shopify.com/s/files/1/0733/0699/7000/files/lynn-satinlook-dress-yellow-bij-keesje-2982247.jpg?v=1775122955"
+      ],
+      "tryOnImage": "/demos-images/bij-keesje/lynn-satinlook-dress-yellow.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

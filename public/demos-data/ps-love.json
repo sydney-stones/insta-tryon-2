@@ -1,0 +1,28 @@
+{
+  "slug": "ps-love",
+  "brandName": "PS Love",
+  "brandDomain": "pslove.it",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "PANTALONE ADAM SEQUOIA",
+      "handle": "pantalone-adam-sequoia-a11abr0320cotonesam",
+      "price": "£39.90",
+      "productImage": "https://cdn.shopify.com/s/files/1/0199/8730/0406/files/ITM_550_A11ABR0320_COTONE_SAM_SAL001.jpg?v=1778591414",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0199/8730/0406/files/ITM_550_A11ABR0320_COTONE_SAM_SAL001.jpg?v=1778591414",
+        "https://cdn.shopify.com/s/files/1/0199/8730/0406/files/ITM_550_A11ABR0320_COTONE_SAM_SAL002.jpg?v=1778591415",
+        "https://cdn.shopify.com/s/files/1/0199/8730/0406/files/ITM_550_A11ABR0320_COTONE_SAM_SAL003.jpg?v=1778591416"
+      ],
+      "tryOnImage": "/demos-images/ps-love/pantalone-adam-sequoia-a11abr0320cotonesam.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

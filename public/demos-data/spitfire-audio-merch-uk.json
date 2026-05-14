@@ -1,0 +1,26 @@
+{
+  "slug": "spitfire-audio-merch-uk",
+  "brandName": "Spitfire Audio Merch UK",
+  "brandDomain": "spitfireaudio.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Spitfire Starter Scoring Trio",
+      "handle": "spitfire-starter-scoring-trio",
+      "price": "£139.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0949/6294/2290/files/smc0899_square.png?v=1771848790",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0949/6294/2290/files/smc0899_square.png?v=1771848790"
+      ],
+      "tryOnImage": "/demos-images/spitfire-audio-merch-uk/spitfire-starter-scoring-trio.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

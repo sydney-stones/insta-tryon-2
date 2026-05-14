@@ -1,0 +1,28 @@
+{
+  "slug": "becay",
+  "brandName": "Becay",
+  "brandDomain": "becay.store",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ilia Light Gray T-Shirt",
+      "handle": "ilia-light-gray-t-shirt",
+      "price": "£25.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0474/7785/0274/files/2024_06_14BECAY0827.jpg?v=1718920598",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0474/7785/0274/files/2024_06_14BECAY0827.jpg?v=1718920598",
+        "https://cdn.shopify.com/s/files/1/0474/7785/0274/files/2024_06_14BECAY0828.jpg?v=1718920600",
+        "https://cdn.shopify.com/s/files/1/0474/7785/0274/files/1_d75de6e9-4ad6-4d35-bbb7-20a945d386ee.jpg?v=1720694983"
+      ],
+      "tryOnImage": "/demos-images/becay/ilia-light-gray-t-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

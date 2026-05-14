@@ -1,0 +1,28 @@
+{
+  "slug": "susamusa",
+  "brandName": "Susamusa",
+  "brandDomain": "susamusa.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ren Top",
+      "handle": "ren-top",
+      "price": "£130.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0291/1243/4748/files/260327_SUSAMUSA_Ren_Top_1.jpg?v=1775835250",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0291/1243/4748/files/260327_SUSAMUSA_Ren_Top_1.jpg?v=1775835250",
+        "https://cdn.shopify.com/s/files/1/0291/1243/4748/files/260327_SUSAMUSA_Ren_Top_2.jpg?v=1775835251",
+        "https://cdn.shopify.com/s/files/1/0291/1243/4748/files/260327_SUSAMUSA_Ren_Top_3.jpg?v=1775835251"
+      ],
+      "tryOnImage": "/demos-images/susamusa/ren-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -498,6 +498,15 @@ function filterCSV(csvPath, slugColField, purgeSlugs) {
 function applyOverrides(state) {
   const removes = new Set(OVERRIDES.remove);
   const redos = new Set(Object.keys(OVERRIDES.redo));
+
+  // Auto-requeue any slug marked 'rejected' in approvals.json
+  let autoRequeued = 0;
+  if (fs.existsSync(APPROVALS_FILE)) {
+    const approvals = JSON.parse(fs.readFileSync(APPROVALS_FILE, 'utf8'));
+    for (const [slug, approvalState] of Object.entries(approvals)) {
+      if (approvalState === 'rejected' && !redos.has(slug)) { redos.add(slug); autoRequeued++; }
+    }
+  }
   const purge = new Set([...removes, ...redos]);
   if (purge.size === 0) return;
 
@@ -548,7 +557,7 @@ function applyOverrides(state) {
   for (const slug of purge) delete state.senderBySlug[slug];
 
   saveState(state);
-  console.log(`Overrides applied: ${removes.size} removes, ${redos.size} redos. Requeued ${domainsToRequeue.size} domains.\n`);
+  console.log(`Overrides applied: ${removes.size} removes, ${redos.size} redos (${autoRequeued} auto-requeued from rejected approvals). Requeued ${domainsToRequeue.size} domains.\n`);
 }
 function saveState(s) { fs.writeFileSync(STATE_FILE, JSON.stringify(s, null, 2)); }
 

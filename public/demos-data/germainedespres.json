@@ -1,0 +1,28 @@
+{
+  "slug": "germainedespres",
+  "brandName": "germainedespres",
+  "brandDomain": "germainedespres.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "TOP Anna CREME",
+      "handle": "top-anna-creme",
+      "price": "£150.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0634/5929/5467/products/1039.jpg?v=1678927482",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0634/5929/5467/products/1039.jpg?v=1678927482",
+        "https://cdn.shopify.com/s/files/1/0634/5929/5467/products/865.jpg?v=1678927483",
+        "https://cdn.shopify.com/s/files/1/0634/5929/5467/products/866.jpg?v=1653411331"
+      ],
+      "tryOnImage": "/demos-images/germainedespres/top-anna-creme.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

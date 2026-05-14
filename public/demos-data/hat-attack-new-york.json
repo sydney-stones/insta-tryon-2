@@ -1,0 +1,28 @@
+{
+  "slug": "hat-attack-new-york",
+  "brandName": "Hat Attack New York",
+  "brandDomain": "hatattack.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Stripe Turkish Towel",
+      "handle": "stripe-turkish-towel",
+      "price": "£83.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2372/4033/files/Spring26HatAttack-22285.jpg?v=1764710761",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2372/4033/files/Spring26HatAttack-22285.jpg?v=1764710761",
+        "https://cdn.shopify.com/s/files/1/2372/4033/files/Spring26HatAttack-22283.jpg?v=1764710764",
+        "https://cdn.shopify.com/s/files/1/2372/4033/files/DAN885_YELLOWCREAMCORAL_1.jpg?v=1766337896"
+      ],
+      "tryOnImage": "/demos-images/hat-attack-new-york/stripe-turkish-towel.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

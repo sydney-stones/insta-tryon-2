@@ -1,0 +1,28 @@
+{
+  "slug": "cfdco",
+  "brandName": "CFDCo.",
+  "brandDomain": "cianofarmer.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "#133 12oz Duck Canvas \"Hamby\" Vest Ochre",
+      "handle": "133-12oz-duck-canvas-hamby-vest-ochre",
+      "price": "£365.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1477/5590/files/hambyvestochre4.jpg?v=1774668463",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1477/5590/files/hambyvestochre4.jpg?v=1774668463",
+        "https://cdn.shopify.com/s/files/1/1477/5590/files/hambyvestochre2.jpg?v=1774668463",
+        "https://cdn.shopify.com/s/files/1/1477/5590/files/hambyvestochre3.jpg?v=1774668463"
+      ],
+      "tryOnImage": "/demos-images/cfdco/133-12oz-duck-canvas-hamby-vest-ochre.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

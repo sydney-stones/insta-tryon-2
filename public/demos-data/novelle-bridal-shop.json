@@ -1,0 +1,28 @@
+{
+  "slug": "novelle-bridal-shop",
+  "brandName": "Novelle Bridal Shop",
+  "brandDomain": "novellebridal.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Groovy",
+      "handle": "groovy",
+      "price": "£0.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0923/3184/files/groovy_bywatters_vancouver.jpg?v=1709600591",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0923/3184/files/groovy_bywatters_vancouver.jpg?v=1709600591",
+        "https://cdn.shopify.com/s/files/1/0923/3184/files/groovy_bywatters_vancouver3.jpg?v=1698193618",
+        "https://cdn.shopify.com/s/files/1/0923/3184/files/groovy_bywatters_vancouver2.jpg?v=1698193618"
+      ],
+      "tryOnImage": "/demos-images/novelle-bridal-shop/groovy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

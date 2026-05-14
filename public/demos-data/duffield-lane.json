@@ -1,0 +1,28 @@
+{
+  "slug": "duffield-lane",
+  "brandName": "Duffield Lane",
+  "brandDomain": "duffieldlane.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Winona Dress in Seaside Stripe",
+      "handle": "winona-dress-in-seaside-stripe",
+      "price": "£299.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0941/4136/files/WinonaDressSeasideStripe4_7922c75e-47f8-4260-9115-15bc42085967.jpg?v=1778256103",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0941/4136/files/WinonaDressSeasideStripe4_7922c75e-47f8-4260-9115-15bc42085967.jpg?v=1778256103",
+        "https://cdn.shopify.com/s/files/1/0941/4136/files/WinonaDressSeasideStripe7.jpg?v=1778255805",
+        "https://cdn.shopify.com/s/files/1/0941/4136/files/WinonaDressSeasideStripe3.jpg?v=1778255805"
+      ],
+      "tryOnImage": "/demos-images/duffield-lane/winona-dress-in-seaside-stripe.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

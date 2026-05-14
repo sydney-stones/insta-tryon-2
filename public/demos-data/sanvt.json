@@ -1,0 +1,28 @@
+{
+  "slug": "sanvt",
+  "brandName": "SANVT",
+  "brandDomain": "sanvt.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "The Unisex T-Shirt - Sage Green",
+      "handle": "the-unisex-t-shirt-sage-green",
+      "price": "£50.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0601/6024/5917/files/03_ce64b259-f7d5-4da5-b9d1-d43300b3382b.jpg?v=1776423355",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0601/6024/5917/files/03_ce64b259-f7d5-4da5-b9d1-d43300b3382b.jpg?v=1776423355",
+        "https://cdn.shopify.com/s/files/1/0601/6024/5917/files/04_39cdb958-0fd4-40c3-ae49-03c02df1930e.jpg?v=1776423355",
+        "https://cdn.shopify.com/s/files/1/0601/6024/5917/files/01_3ead16ac-4ced-4eee-90fa-4f122c76ac51.jpg?v=1776423355"
+      ],
+      "tryOnImage": "/demos-images/sanvt/the-unisex-t-shirt-sage-green.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

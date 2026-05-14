@@ -1,0 +1,28 @@
+{
+  "slug": "high-five-threads",
+  "brandName": "High Five Threads",
+  "brandDomain": "highfivethreads.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Not-So-Ugly Christmas Sweatshirt (Youth)",
+      "handle": "not-so-ugly-christmas-sweatshirt-youth-2",
+      "price": "£24.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0092/3222/files/2025ChristmasSweaterYouth-A.png?v=1764101755",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0092/3222/files/2025ChristmasSweaterYouth-A.png?v=1764101755",
+        "https://cdn.shopify.com/s/files/1/0092/3222/files/2025ChristmasSweaterYouth-B.png?v=1764101755",
+        "https://cdn.shopify.com/s/files/1/0092/3222/files/2025ChristmasSweaterYouth-C.png?v=1764101755"
+      ],
+      "tryOnImage": "/demos-images/high-five-threads/not-so-ugly-christmas-sweatshirt-youth-2.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

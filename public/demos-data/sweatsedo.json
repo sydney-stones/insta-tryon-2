@@ -1,0 +1,28 @@
+{
+  "slug": "sweatsedo",
+  "brandName": "Sweatsedo",
+  "brandDomain": "sweatsedo.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Topaz Velour Lounge Pants",
+      "handle": "topaz-velour-lounge-pants",
+      "price": "£54.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2242/6627/products/Brown_Rhinestoned_pants.jpg?v=1557076886",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2242/6627/products/Brown_Rhinestoned_pants.jpg?v=1557076886",
+        "https://cdn.shopify.com/s/files/1/2242/6627/products/Pant_front_f107223a-90c8-4169-909b-d8fccbb5811d.jpg?v=1557076900",
+        "https://cdn.shopify.com/s/files/1/2242/6627/products/Pants_back_b472dc37-2003-4464-9888-e893d4b06135.jpg?v=1557076902"
+      ],
+      "tryOnImage": "/demos-images/sweatsedo/topaz-velour-lounge-pants.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

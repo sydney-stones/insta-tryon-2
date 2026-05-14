@@ -1,0 +1,28 @@
+{
+  "slug": "evolve-fit-wear",
+  "brandName": "Evolve Fit Wear",
+  "brandDomain": "evolvefitwear.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Davidson Half Zip Relaxed Fit Sweatshirt- Bossa Nova",
+      "handle": "davidson-half-zip-relaxed-fit-sweatshirt-bossa-nova",
+      "price": "£138.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0568/0952/1359/files/Vardavbos2.jpg?v=1778632763",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0568/0952/1359/files/Vardavbos2.jpg?v=1778632763",
+        "https://cdn.shopify.com/s/files/1/0568/0952/1359/files/Vardavbos4.jpg?v=1778632763",
+        "https://cdn.shopify.com/s/files/1/0568/0952/1359/files/Vardavbos3.jpg?v=1778632763"
+      ],
+      "tryOnImage": "/demos-images/evolve-fit-wear/davidson-half-zip-relaxed-fit-sweatshirt-bossa-nova.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

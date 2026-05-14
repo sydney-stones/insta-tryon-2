@@ -1,0 +1,28 @@
+{
+  "slug": "unit-clothing",
+  "brandName": "UNIT Clothing",
+  "brandDomain": "unit.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "UNIT Loft Ladies Pullover Hoodie",
+      "handle": "unit-loft-ladies-pullover-hoodie",
+      "price": "£71.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/1175/5620/files/263208-OFF-WHITE.jpg?v=1776908744",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1175/5620/files/263208-OFF-WHITE.jpg?v=1776908744",
+        "https://cdn.shopify.com/s/files/1/1175/5620/files/263-Seasonal_420.jpg?v=1776908744",
+        "https://cdn.shopify.com/s/files/1/1175/5620/files/263208_2.jpg?v=1776908744"
+      ],
+      "tryOnImage": "/demos-images/unit-clothing/unit-loft-ladies-pullover-hoodie.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

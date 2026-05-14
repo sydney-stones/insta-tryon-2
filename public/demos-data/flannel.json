@@ -1,0 +1,28 @@
+{
+  "slug": "flannel",
+  "brandName": "FLANNEL",
+  "brandDomain": "flannel.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Beatrix Hand-Knit Beanie",
+      "handle": "beatrix-hand-knit-beanie-blush",
+      "price": "£195.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0383/8705/files/beatrixbeanie-blush.jpg?v=1777873342",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0383/8705/files/beatrixbeanie-blush.jpg?v=1777873342",
+        "https://cdn.shopify.com/s/files/1/0383/8705/files/erinaccessories-13.jpg?v=1777977079",
+        "https://cdn.shopify.com/s/files/1/0383/8705/files/erinaccessories-12.jpg?v=1777977079"
+      ],
+      "tryOnImage": "/demos-images/flannel/beatrix-hand-knit-beanie-blush.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

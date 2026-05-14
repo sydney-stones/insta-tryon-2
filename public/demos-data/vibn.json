@@ -1,0 +1,28 @@
+{
+  "slug": "vibn",
+  "brandName": "Vibn",
+  "brandDomain": "shopvibn.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "6-Pack T-Shirt Mystery Box",
+      "handle": "6-pack-t-shirt-mystery-box",
+      "price": "£91.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0234/6247/7901/files/FREEREWORKEDCARHARTT-2026-05-04T085936.326.png?v=1777899635",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0234/6247/7901/files/FREEREWORKEDCARHARTT-2026-05-04T085936.326.png?v=1777899635",
+        "https://cdn.shopify.com/s/files/1/0234/6247/7901/files/41_4a7b092a-97d4-4900-bb9a-fb5e8b1f7819.png?v=1774994928",
+        "https://cdn.shopify.com/s/files/1/0234/6247/7901/files/43_1e89fdbb-0c62-4089-b144-b169c1071683.png?v=1774994928"
+      ],
+      "tryOnImage": "/demos-images/vibn/6-pack-t-shirt-mystery-box.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

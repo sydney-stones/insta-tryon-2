@@ -1,0 +1,28 @@
+{
+  "slug": "hand-in-pocket",
+  "brandName": "Hand In Pocket",
+  "brandDomain": "handinpocket.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Heartloom Edina Dress - Eggshell",
+      "handle": "heartloom-edina-dress-eggshell",
+      "price": "£116.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1690/0763/files/Heartloom_01184_263es4a_edina_dress_A_front.webp?v=1778356581",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1690/0763/files/Heartloom_01184_263es4a_edina_dress_A_front.webp?v=1778356581",
+        "https://cdn.shopify.com/s/files/1/1690/0763/files/Heartloom_01184_263es4a_edina_dress_D_Back.webp?v=1778356583",
+        "https://cdn.shopify.com/s/files/1/1690/0763/files/Heartloom_01184_263es4a_edina_dress_C_front.webp?v=1778356586"
+      ],
+      "tryOnImage": "/demos-images/hand-in-pocket/heartloom-edina-dress-eggshell.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

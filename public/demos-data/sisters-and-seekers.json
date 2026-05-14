@@ -1,0 +1,28 @@
+{
+  "slug": "sisters-and-seekers",
+  "brandName": "Sisters and Seekers",
+  "brandDomain": "sistersandseekers.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Douglas Oversized Long Sleeve Tee in Sunset",
+      "handle": "douglas-oversized-long-sleeve-tee-in-sunset",
+      "price": "£48.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0431/1177/6422/files/SISTERS_3_2_268750.jpg?v=1775814476",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0431/1177/6422/files/SISTERS_3_2_268750.jpg?v=1775814476",
+        "https://cdn.shopify.com/s/files/1/0431/1177/6422/files/702687070016.jpg?v=1775814476",
+        "https://cdn.shopify.com/s/files/1/0431/1177/6422/files/SISTERS_3_2_268702.jpg?v=1775814476"
+      ],
+      "tryOnImage": "/demos-images/sisters-and-seekers/douglas-oversized-long-sleeve-tee-in-sunset.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

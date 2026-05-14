@@ -1,0 +1,28 @@
+{
+  "slug": "savile-lane",
+  "brandName": "Savile Lane",
+  "brandDomain": "savilelane.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "AU NOIR REMY blazer, Blue",
+      "handle": "au-noir-remy-blazer-blue",
+      "price": "£400.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/2451/0925/files/veston-remy-blue-3762664.webp?v=1775577801",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/2451/0925/files/veston-remy-blue-3762664.webp?v=1775577801",
+        "https://cdn.shopify.com/s/files/1/2451/0925/files/veston-remy-blue-9093763.jpg?v=1775577823",
+        "https://cdn.shopify.com/s/files/1/2451/0925/files/veston-remy-blue-7657135.webp?v=1775577823"
+      ],
+      "tryOnImage": "/demos-images/savile-lane/au-noir-remy-blazer-blue.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

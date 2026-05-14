@@ -1,0 +1,28 @@
+{
+  "slug": "with-harper-lu",
+  "brandName": "WITH HARPER LU",
+  "brandDomain": "withharperlu.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Midi Skirt | Mesh Ivory Polka",
+      "handle": "midi-skirt-mesh-ivory-polka",
+      "price": "£101.23",
+      "productImage": "https://cdn.shopify.com/s/files/1/0474/2358/6457/files/20252110_WithHarperLu_0626.jpg?v=1761709226",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0474/2358/6457/files/20252110_WithHarperLu_0626.jpg?v=1761709226",
+        "https://cdn.shopify.com/s/files/1/0474/2358/6457/files/20252110_WithHarperLu_0643.jpg?v=1770874053",
+        "https://cdn.shopify.com/s/files/1/0474/2358/6457/files/8484854.jpg?v=1770874053"
+      ],
+      "tryOnImage": "/demos-images/with-harper-lu/midi-skirt-mesh-ivory-polka.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

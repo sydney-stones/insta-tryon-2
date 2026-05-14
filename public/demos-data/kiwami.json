@@ -1,0 +1,28 @@
+{
+  "slug": "kiwami",
+  "brandName": "Kiwami",
+  "brandDomain": "kiwamisports.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Tee-shirt running Femme Wild Sunset",
+      "handle": "tee-shirt-running-femme-wild-sunset",
+      "price": "£50.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0492/2340/1631/files/VetementsfemmeRunningetTrail_Legerete_respirabiliteetconfortfabricationfrancaisekiwamisports.png?v=1772621351",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0492/2340/1631/files/VetementsfemmeRunningetTrail_Legerete_respirabiliteetconfortfabricationfrancaisekiwamisports.png?v=1772621351",
+        "https://cdn.shopify.com/s/files/1/0492/2340/1631/files/VetementsfemmeRunningetTrail_Legerete_respirabiliteetconfortfabricationfrancaisekiwamisports_2.png?v=1772621351",
+        "https://cdn.shopify.com/s/files/1/0492/2340/1631/files/T-SHIR_3.png?v=1772621351"
+      ],
+      "tryOnImage": "/demos-images/kiwami/tee-shirt-running-femme-wild-sunset.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

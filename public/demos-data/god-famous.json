@@ -1,0 +1,28 @@
+{
+  "slug": "god-famous",
+  "brandName": "God & Famous",
+  "brandDomain": "godandfamo.us",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "LS Technical Shirt - Murk",
+      "handle": "ls-technical-shirt-murk",
+      "price": "£64.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0020/8214/4343/files/godandfamous_dusk_LS_technical_shirt_1_0b07eca3-d6c7-431a-855c-8e8b18cd55d1.jpg?v=1733865321",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0020/8214/4343/files/godandfamous_dusk_LS_technical_shirt_1_0b07eca3-d6c7-431a-855c-8e8b18cd55d1.jpg?v=1733865321",
+        "https://cdn.shopify.com/s/files/1/0020/8214/4343/files/godandfamous_dusk_LS_technical_shirt_2_55edf2f0-3388-4f67-a495-225820246418.jpg?v=1733865321",
+        "https://cdn.shopify.com/s/files/1/0020/8214/4343/files/godandfamous_dusk_LS_technical_shirt_3_b08d4b2b-67f6-4fba-a2b2-d39aa650ba7f.jpg?v=1733865321"
+      ],
+      "tryOnImage": "/demos-images/god-famous/ls-technical-shirt-murk.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

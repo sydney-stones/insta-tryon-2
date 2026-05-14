@@ -1,0 +1,28 @@
+{
+  "slug": "maure",
+  "brandName": "Mauré",
+  "brandDomain": "maurestore.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Soft pants crème (tall)",
+      "handle": "soft-pants-creme-tall",
+      "price": "£39.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0528/3938/3233/files/SSEP_6.png?v=1778587683",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0528/3938/3233/files/SSEP_6.png?v=1778587683",
+        "https://cdn.shopify.com/s/files/1/0528/3938/3233/files/SSEP_3.png?v=1778587682",
+        "https://cdn.shopify.com/s/files/1/0528/3938/3233/files/SSEP_5.png?v=1778587682"
+      ],
+      "tryOnImage": "/demos-images/maure/soft-pants-creme-tall.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

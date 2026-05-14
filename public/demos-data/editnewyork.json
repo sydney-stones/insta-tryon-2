@@ -1,0 +1,28 @@
+{
+  "slug": "editnewyork",
+  "brandName": "EditNewYork",
+  "brandDomain": "editnewyork.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Toteme | Beaded Pleated Skirt in White",
+      "handle": "toteme-beaded-pleated-skirt-in-white",
+      "price": "£940.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0260/9830/3025/files/toteme-pleated-beaded-skirt-white.jpg?v=1777627085",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0260/9830/3025/files/toteme-pleated-beaded-skirt-white.jpg?v=1777627085",
+        "https://cdn.shopify.com/s/files/1/0260/9830/3025/files/toteme-pleated-beaded-skirt-white-alt.jpg?v=1777627085",
+        "https://cdn.shopify.com/s/files/1/0260/9830/3025/files/toteme-pleated-beaded-skirt-white-alt2.jpg?v=1777627085"
+      ],
+      "tryOnImage": "/demos-images/editnewyork/toteme-beaded-pleated-skirt-in-white.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "uniform-standard",
+  "brandName": "UNIFORM STANDARD",
+  "brandDomain": "uniformstandard.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Cotton Silk Button Polo Mist Blue Mens",
+      "handle": "cotton-silk-button-polo-mist-blue-mens",
+      "price": "£90.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0079/5380/9459/files/ButtonPoloMistBlue_1_jpg.jpg?v=1775510265",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0079/5380/9459/files/ButtonPoloMistBlue_1_jpg.jpg?v=1775510265",
+        "https://cdn.shopify.com/s/files/1/0079/5380/9459/files/Button_Polo_-_Mist_Blue_-_Model.jpg?v=1775998696",
+        "https://cdn.shopify.com/s/files/1/0079/5380/9459/files/ButtonPoloMistBlue_2_jpg.jpg?v=1775998696"
+      ],
+      "tryOnImage": "/demos-images/uniform-standard/cotton-silk-button-polo-mist-blue-mens.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

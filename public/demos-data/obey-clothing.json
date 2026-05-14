@@ -1,0 +1,27 @@
+{
+  "slug": "obey-clothing",
+  "brandName": "OBEY CLOTHING",
+  "brandDomain": "obeyclothing.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "NOUVEAU ANGEL ROW T-SHIRT",
+      "handle": "obey-nouveau-angel-row-t-shirt-digital-black",
+      "price": "£40.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0832/5243/files/268072739_DIB_2.png?v=1776110348",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0832/5243/files/268072739_DIB_2.png?v=1776110348",
+        "https://cdn.shopify.com/s/files/1/0832/5243/files/268072739_DIB_1.png?v=1776110348"
+      ],
+      "tryOnImage": "/demos-images/obey-clothing/obey-nouveau-angel-row-t-shirt-digital-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

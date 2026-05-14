@@ -1,0 +1,28 @@
+{
+  "slug": "the-pink-tulip-clothing",
+  "brandName": "The Pink Tulip Clothing",
+  "brandDomain": "thepinktulipclothing.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Pull It Together Drop Shoulder White Tee",
+      "handle": "tee-drop-shld-ss-raw-edges-ow",
+      "price": "£42.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0503/9515/2578/files/IMG-3151.jpg?v=1778091156",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0503/9515/2578/files/IMG-3151.jpg?v=1778091156",
+        "https://cdn.shopify.com/s/files/1/0503/9515/2578/files/IMG-3153.jpg?v=1778091156",
+        "https://cdn.shopify.com/s/files/1/0503/9515/2578/files/IMG-3154.jpg?v=1778091156"
+      ],
+      "tryOnImage": "/demos-images/the-pink-tulip-clothing/tee-drop-shld-ss-raw-edges-ow.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

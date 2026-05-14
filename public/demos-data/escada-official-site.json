@@ -1,0 +1,28 @@
+{
+  "slug": "escada-official-site",
+  "brandName": "ESCADA® Official Site",
+  "brandDomain": "escada.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Thirra Pant",
+      "handle": "thirra-pant",
+      "price": "£855.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0350/4763/7124/files/5037630-B207_look_X4_34802295-3b24-4948-9d0e-0e9b2fd1c73e.jpg?v=1714509874",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0350/4763/7124/files/5037630-B207_look_X4_34802295-3b24-4948-9d0e-0e9b2fd1c73e.jpg?v=1714509874",
+        "https://cdn.shopify.com/s/files/1/0350/4763/7124/files/5037630-B207_bust1_X1_76ee5822-3a98-416f-9c4e-7d2c1965bd90.jpg?v=1714509874",
+        "https://cdn.shopify.com/s/files/1/0350/4763/7124/files/5037630-B207_bust2_X2_568eb942-c301-405f-ab86-454472953a2d.jpg?v=1714509874"
+      ],
+      "tryOnImage": "/demos-images/escada-official-site/thirra-pant.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

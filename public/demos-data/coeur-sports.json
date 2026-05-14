@@ -1,0 +1,28 @@
+{
+  "slug": "coeur-sports",
+  "brandName": "Coeur Sports",
+  "brandDomain": "coeursports.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Women's Sleeved Triathlon Suit in Powered By Donuts",
+      "handle": "powered-by-donuts-womens-sleeved-one-piece-triathlon-suit",
+      "price": "£182.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0224/6189/files/coeur-sports-sleeved-tri-suit-powered-by-donuts-women-s-sleeved-one-piece-triathlon-suit-29284844306490.png?v=1738687970",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0224/6189/files/coeur-sports-sleeved-tri-suit-powered-by-donuts-women-s-sleeved-one-piece-triathlon-suit-29284844306490.png?v=1738687970",
+        "https://cdn.shopify.com/s/files/1/0224/6189/files/coeur-sports-sleeved-tri-suit-powered-by-donuts-women-s-sleeved-one-piece-triathlon-suit-29284844142650.png?v=1738687971",
+        "https://cdn.shopify.com/s/files/1/0224/6189/files/coeur-sports-sleeved-tri-suit-powered-by-donuts-women-s-sleeved-one-piece-triathlon-suit-29284844109882.png?v=1738687971"
+      ],
+      "tryOnImage": "/demos-images/coeur-sports/powered-by-donuts-womens-sleeved-one-piece-triathlon-suit.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "estefania-official",
+  "brandName": "ESTEFANIA OFFICIAL",
+  "brandDomain": "estefaniaofficial.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Cala Rossa Corset Cream",
+      "handle": "cala-rossa-corset-cream",
+      "price": "£400.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0241/3002/7625/files/DSC_8298.jpg?v=1763245991",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0241/3002/7625/files/DSC_8298.jpg?v=1763245991",
+        "https://cdn.shopify.com/s/files/1/0241/3002/7625/files/estefania-3.png?v=1763246038",
+        "https://cdn.shopify.com/s/files/1/0241/3002/7625/files/estefania-3.2.png?v=1763246037"
+      ],
+      "tryOnImage": "/demos-images/estefania-official/cala-rossa-corset-cream.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

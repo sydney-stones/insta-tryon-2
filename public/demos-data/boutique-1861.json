@@ -1,0 +1,28 @@
+{
+  "slug": "boutique-1861",
+  "brandName": "Boutique 1861",
+  "brandDomain": "1861.ca",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Tezpur | White Ribbed Scalloped Crop Top",
+      "handle": "tezpur",
+      "price": "£27.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0180/4953/files/tezpur-ES-1.jpg?v=1778089999",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0180/4953/files/tezpur-ES-1.jpg?v=1778089999",
+        "https://cdn.shopify.com/s/files/1/0180/4953/files/tezpur-ES-2.jpg?v=1778089999",
+        "https://cdn.shopify.com/s/files/1/0180/4953/files/tezpur-ES-3.jpg?v=1778089999"
+      ],
+      "tryOnImage": "/demos-images/boutique-1861/tezpur.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

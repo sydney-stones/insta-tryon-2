@@ -1,0 +1,28 @@
+{
+  "slug": "reistor",
+  "brandName": "Reistor",
+  "brandDomain": "reistor.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Oversized Shirt & Shorts Set in Off-White Textured Cotton",
+      "handle": "oversized-shirt-and-shorts-set-in-off-white-textured-cotton",
+      "price": "£183.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0734/5514/1178/files/Oversizedshirtintexturedchecks-5_b81d3153-9965-4263-bb10-a80d8afcdb62.jpg?v=1768564991",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0734/5514/1178/files/Oversizedshirtintexturedchecks-5_b81d3153-9965-4263-bb10-a80d8afcdb62.jpg?v=1768564991",
+        "https://cdn.shopify.com/s/files/1/0734/5514/1178/files/shorts-7.jpg?v=1768629792",
+        "https://cdn.shopify.com/s/files/1/0734/5514/1178/files/shorts-2.jpg?v=1768629907"
+      ],
+      "tryOnImage": "/demos-images/reistor/oversized-shirt-and-shorts-set-in-off-white-textured-cotton.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

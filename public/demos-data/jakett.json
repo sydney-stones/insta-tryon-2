@@ -1,0 +1,28 @@
+{
+  "slug": "jakett",
+  "brandName": "jakett",
+  "brandDomain": "jakett.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Harper Patina Leather Jacket Talc",
+      "handle": "harper-patina-leather-jacket-talc",
+      "price": "£550.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0933/2314/files/20260204_02302.jpg?v=1771800657",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0933/2314/files/20260204_02302.jpg?v=1771800657",
+        "https://cdn.shopify.com/s/files/1/0933/2314/files/20260204_02307.jpg?v=1771800660",
+        "https://cdn.shopify.com/s/files/1/0933/2314/files/20260204_02309.jpg?v=1771800663"
+      ],
+      "tryOnImage": "/demos-images/jakett/harper-patina-leather-jacket-talc.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "hannahartwear",
+  "brandName": "Hannahartwear",
+  "brandDomain": "hannahartwear.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Saffron Shirt - Iris Jade",
+      "handle": "saffron-shirt-iris-jade",
+      "price": "£195.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0066/1916/8866/files/SAFFRON_SHIRT_NOORA_PANT_IRIS_JADE_S20-25597-Hannah-D1-1132.jpg?v=1771211356",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0066/1916/8866/files/SAFFRON_SHIRT_NOORA_PANT_IRIS_JADE_S20-25597-Hannah-D1-1132.jpg?v=1771211356",
+        "https://cdn.shopify.com/s/files/1/0066/1916/8866/files/0O1A1733_RB.jpg?v=1771897328",
+        "https://cdn.shopify.com/s/files/1/0066/1916/8866/files/SAFFRON_SHIRT_NOORA_PANT_IRIS_JADE_S20-25597-Hannah-D1-1117.jpg?v=1771897328"
+      ],
+      "tryOnImage": "/demos-images/hannahartwear/saffron-shirt-iris-jade.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

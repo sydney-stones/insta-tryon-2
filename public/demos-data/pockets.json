@@ -1,0 +1,28 @@
+{
+  "slug": "pockets",
+  "brandName": "Pockets",
+  "brandDomain": "pockets.co.uk",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Ralph Lauren Navy Waffle Knit 1/4 Zip Sweater",
+      "handle": "ralph-lauren-navy-waffle-knitted-1-4-zip",
+      "price": "£210.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0873/3592/8138/files/ralph-lauren-navy-waffle-knit-1-4-zip-sweater_1.jpg?v=1778676136",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0873/3592/8138/files/ralph-lauren-navy-waffle-knit-1-4-zip-sweater_1.jpg?v=1778676136",
+        "https://cdn.shopify.com/s/files/1/0873/3592/8138/files/ralph-lauren-navy-waffle-knit-1-4-zip-sweater_2.jpg?v=1778676136",
+        "https://cdn.shopify.com/s/files/1/0873/3592/8138/files/ralph-lauren-navy-waffle-knit-1-4-zip-sweater_4.jpg?v=1778676136"
+      ],
+      "tryOnImage": "/demos-images/pockets/ralph-lauren-navy-waffle-knitted-1-4-zip.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

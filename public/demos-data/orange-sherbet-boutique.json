@@ -1,0 +1,28 @@
+{
+  "slug": "orange-sherbet-boutique",
+  "brandName": "Orange Sherbet Boutique",
+  "brandDomain": "orangesherbet.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Final Sale | Drift Tank Black",
+      "handle": "drift-tank-black",
+      "price": "£10.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0195/4256/files/Drift_Tank_Black_Resized_6.png?v=1776401471",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0195/4256/files/Drift_Tank_Black_Resized_6.png?v=1776401471",
+        "https://cdn.shopify.com/s/files/1/0195/4256/files/DriftTankBlack_3.png?v=1776401471",
+        "https://cdn.shopify.com/s/files/1/0195/4256/files/Drift_Tank_Black_Resized_1.png?v=1773886655"
+      ],
+      "tryOnImage": "/demos-images/orange-sherbet-boutique/drift-tank-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

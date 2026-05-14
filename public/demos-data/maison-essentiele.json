@@ -1,0 +1,28 @@
+{
+  "slug": "maison-essentiele",
+  "brandName": "MAISON ESSENTIELE",
+  "brandDomain": "maisonessentiele.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lace Inlay Dress",
+      "handle": "lace-inlay-dress-black",
+      "price": "£288.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0002/0624/1819/files/MAISON-ESSENTIELE-LACE-INLAY-DRESS-BLACK_0072_PM_EDITED.png?v=1777608107",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0002/0624/1819/files/MAISON-ESSENTIELE-LACE-INLAY-DRESS-BLACK_0072_PM_EDITED.png?v=1777608107",
+        "https://cdn.shopify.com/s/files/1/0002/0624/1819/files/MAISON-ESSENTIELE-LACE-INLAY-DRESS-BLACK_0089_PM_EDITED.png?v=1777608123",
+        "https://cdn.shopify.com/s/files/1/0002/0624/1819/files/MAISON-ESSENTIELE-LACE-INLAY-DRESS-BLACK_0081_PM_EDITED.png?v=1777608136"
+      ],
+      "tryOnImage": "/demos-images/maison-essentiele/lace-inlay-dress-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

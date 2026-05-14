@@ -1,0 +1,28 @@
+{
+  "slug": "mia-fratino",
+  "brandName": "Mia Fratino",
+  "brandDomain": "miafratino.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lina Vee",
+      "handle": "lina-vee",
+      "price": "£469.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1000/2752/files/MiaFratino_26052_LinaVee_Chestnut_1.jpg?v=1772774216",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1000/2752/files/MiaFratino_26052_LinaVee_Chestnut_1.jpg?v=1772774216",
+        "https://cdn.shopify.com/s/files/1/1000/2752/files/MiaFratino_26052_LinaVee_Chestnut_2.jpg?v=1772774216",
+        "https://cdn.shopify.com/s/files/1/1000/2752/files/MiaFratino_26052_LinaVee_Chestnut_3.jpg?v=1772774216"
+      ],
+      "tryOnImage": "/demos-images/mia-fratino/lina-vee.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

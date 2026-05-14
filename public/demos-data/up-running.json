@@ -1,0 +1,28 @@
+{
+  "slug": "up-running",
+  "brandName": "Up & Running",
+  "brandDomain": "upandrunning.co.uk",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "New Balance Women's London Edition Marathon Jacket in Cosmic Jade SS26",
+      "handle": "new-balance-womens-london-edition-marathon-jacket-in-cosmic-jade-ss26",
+      "price": "£130.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0525/8995/3187/files/1_b54ff4bd-580c-48d9-8f3a-dd01844a6c75.png?v=1771950737",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0525/8995/3187/files/1_b54ff4bd-580c-48d9-8f3a-dd01844a6c75.png?v=1771950737",
+        "https://cdn.shopify.com/s/files/1/0525/8995/3187/files/2_7f2e997d-4140-4c4d-9e9f-8cea069845ab.png?v=1771950737",
+        "https://cdn.shopify.com/s/files/1/0525/8995/3187/files/3_f2c96d11-66a5-4288-a474-28d62e89427e.png?v=1771950737"
+      ],
+      "tryOnImage": "/demos-images/up-running/new-balance-womens-london-edition-marathon-jacket-in-cosmic-jade-ss26.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

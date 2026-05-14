@@ -1,0 +1,28 @@
+{
+  "slug": "lskd-us",
+  "brandName": "LSKD US",
+  "brandDomain": "lskd.co",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Easy Oversized Sweater - Black",
+      "handle": "easy-sweater-oversize-black",
+      "price": "£90.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0993/2004/files/Duo-Model-Easy-Oversized-Sweater-Black-1.jpg?v=1743648949",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0993/2004/files/Duo-Model-Easy-Oversized-Sweater-Black-1.jpg?v=1743648949",
+        "https://cdn.shopify.com/s/files/1/0993/2004/files/XS-Model-Easy-Oversized-Sweater-Black-3.jpg?v=1743649084",
+        "https://cdn.shopify.com/s/files/1/0993/2004/files/M-Model-Easy-Oversized-Sweater-Black-3.jpg?v=1743649084"
+      ],
+      "tryOnImage": "/demos-images/lskd-us/easy-sweater-oversize-black.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

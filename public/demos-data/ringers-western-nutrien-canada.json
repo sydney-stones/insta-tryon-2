@@ -1,0 +1,28 @@
+{
+  "slug": "ringers-western-nutrien-canada",
+  "brandName": "Ringers Western Nutrien Canada",
+  "brandDomain": "ringerswestern.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Trail Blazer Womens Full Button Work Shirt",
+      "handle": "trail-blazer-womens-full-button-work-shirt",
+      "price": "£69.95",
+      "productImage": "https://cdn.shopify.com/s/files/1/0962/9466/6608/files/225073RW-NV_NAVY_02_FRONT_F_MTc3NjE0MzI1NzMwNg_3D_3D_00e785dd-a9e8-4741-87f5-5d3e15d7e60d.jpg?v=1776495277",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0962/9466/6608/files/225073RW-NV_NAVY_02_FRONT_F_MTc3NjE0MzI1NzMwNg_3D_3D_00e785dd-a9e8-4741-87f5-5d3e15d7e60d.jpg?v=1776495277",
+        "https://cdn.shopify.com/s/files/1/0962/9466/6608/files/225073RW-NV_NAVY_01_FRONT_F_MTc3NjE0MzI1NzMwNg_3D_3D.jpg?v=1776495277",
+        "https://cdn.shopify.com/s/files/1/0962/9466/6608/files/225073RW-NV_NAVY_04_FRONT_F_MTc3NjE0MzI1NzMwNg_3D_3D.jpg?v=1776495277"
+      ],
+      "tryOnImage": "/demos-images/ringers-western-nutrien-canada/trail-blazer-womens-full-button-work-shirt.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

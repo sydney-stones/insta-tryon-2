@@ -1,0 +1,28 @@
+{
+  "slug": "mott-bow",
+  "brandName": "Mott & Bow",
+  "brandDomain": "mottandbow.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Lounge Wide Leg Pants - Pre Order",
+      "handle": "lwlp-abbe-navy-pre",
+      "price": "£74.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0578/7385/8748/files/lwlp_abbe_navy_750x1000_1.jpg?v=1777326386",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0578/7385/8748/files/lwlp_abbe_navy_750x1000_1.jpg?v=1777326386",
+        "https://cdn.shopify.com/s/files/1/0578/7385/8748/files/lwlp_abbe_navy_750x1000_2.jpg?v=1777326386",
+        "https://cdn.shopify.com/s/files/1/0578/7385/8748/files/lwlp_abbe_navy_2400x2400_1.jpg?v=1777326387"
+      ],
+      "tryOnImage": "/demos-images/mott-bow/lwlp-abbe-navy-pre.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

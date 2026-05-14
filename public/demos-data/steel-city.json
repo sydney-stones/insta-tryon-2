@@ -1,0 +1,28 @@
+{
+  "slug": "steel-city",
+  "brandName": "Steel City",
+  "brandDomain": "shopsteelcity.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Mae Button Up",
+      "handle": "mae-button-up",
+      "price": "£68.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0199/5932/files/MaeBlack_4.png?v=1778693719",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0199/5932/files/MaeBlack_4.png?v=1778693719",
+        "https://cdn.shopify.com/s/files/1/0199/5932/files/MaeBlack_5.png?v=1778693719",
+        "https://cdn.shopify.com/s/files/1/0199/5932/files/MaeBlack_3.png?v=1778693719"
+      ],
+      "tryOnImage": "/demos-images/steel-city/mae-button-up.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

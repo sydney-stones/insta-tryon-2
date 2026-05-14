@@ -1,0 +1,27 @@
+{
+  "slug": "two-roads-hat-co",
+  "brandName": "Two Roads Hat Co.",
+  "brandDomain": "tworoadshatco.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "TR Take The Stage Koozie",
+      "handle": "tr-take-the-stage-koozie",
+      "price": "£8.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0276/2060/6023/files/B1A8901.jpg?v=1771008081",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0276/2060/6023/files/B1A8901.jpg?v=1771008081",
+        "https://cdn.shopify.com/s/files/1/0276/2060/6023/files/ChatGPT_Image_Jan_29_2026_02_13_07_PM_1.jpg?v=1771008097"
+      ],
+      "tryOnImage": "/demos-images/two-roads-hat-co/tr-take-the-stage-koozie.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

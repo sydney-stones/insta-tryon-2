@@ -1,0 +1,28 @@
+{
+  "slug": "y2house",
+  "brandName": "Y2HOUSE",
+  "brandDomain": "y2house.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Fluid Top",
+      "handle": "fluid-top",
+      "price": "£267.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0100/0613/4850/files/34693104_66144524_2048.png?v=1778701826",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0100/0613/4850/files/34693104_66144524_2048.png?v=1778701826",
+        "https://cdn.shopify.com/s/files/1/0100/0613/4850/files/IMG_5877.jpg?v=1778701872",
+        "https://cdn.shopify.com/s/files/1/0100/0613/4850/files/IMG_5243.jpg?v=1778699339"
+      ],
+      "tryOnImage": "/demos-images/y2house/fluid-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

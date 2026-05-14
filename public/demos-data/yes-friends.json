@@ -1,0 +1,28 @@
+{
+  "slug": "yes-friends",
+  "brandName": "Yes Friends",
+  "brandDomain": "yesfriends.co",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Linen EcoVero™️ Mini Dress",
+      "handle": "wrap-mini-dress",
+      "price": "£34.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0543/2360/9773/files/ethical-sustainable-linen-wrap-dress-mini-black-5.jpg?v=1777299806",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0543/2360/9773/files/ethical-sustainable-linen-wrap-dress-mini-black-5.jpg?v=1777299806",
+        "https://cdn.shopify.com/s/files/1/0543/2360/9773/files/ethical-sustainable-linen-wrap-dress-mini-black-2.jpg?v=1777299840",
+        "https://cdn.shopify.com/s/files/1/0543/2360/9773/files/ethical-sustainable-linen-wrap-dress-mini-black-4.jpg?v=1777299839"
+      ],
+      "tryOnImage": "/demos-images/yes-friends/wrap-mini-dress.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

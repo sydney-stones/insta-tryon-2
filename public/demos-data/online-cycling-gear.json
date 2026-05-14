@@ -1,0 +1,28 @@
+{
+  "slug": "online-cycling-gear",
+  "brandName": "Online Cycling Gear",
+  "brandDomain": "onlinecyclinggear.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Men's Basmala Short Sleeve Cycling Jersey Made-to-Order Performance Top",
+      "handle": "men-s-basmala-short-sleeve-cycling-jersey-made-to-order-performance-top",
+      "price": "£54.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/1849/9219/files/1wL5fTcILJS1Q34AxwZFJZrruhAgKCG7B_s2048.png?v=1776445838",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1849/9219/files/1wL5fTcILJS1Q34AxwZFJZrruhAgKCG7B_s2048.png?v=1776445838",
+        "https://cdn.shopify.com/s/files/1/1849/9219/files/1L7RfgSrfaBoSR5ipTOuPqnEkmsj_2HoC_s2048.png?v=1776445838",
+        "https://cdn.shopify.com/s/files/1/1849/9219/files/1oIM1xeBVihyiyMiYqx6PcTDuZRDJ28C4_s2048.png?v=1776445839"
+      ],
+      "tryOnImage": "/demos-images/online-cycling-gear/men-s-basmala-short-sleeve-cycling-jersey-made-to-order-performance-top.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

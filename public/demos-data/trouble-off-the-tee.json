@@ -1,0 +1,28 @@
+{
+  "slug": "trouble-off-the-tee",
+  "brandName": "Trouble Off The Tee",
+  "brandDomain": "troubleoffthetee.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Golf Of America",
+      "handle": "golf-of-america-hat",
+      "price": "£34.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0569/7857/1402/files/GOA_4_23064c9a-c1bb-4ae0-ab13-4abf3d27f545.png?v=1745277488",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0569/7857/1402/files/GOA_4_23064c9a-c1bb-4ae0-ab13-4abf3d27f545.png?v=1745277488",
+        "https://cdn.shopify.com/s/files/1/0569/7857/1402/files/GOA_silo.png?v=1745277488",
+        "https://cdn.shopify.com/s/files/1/0569/7857/1402/files/GOA_3.png?v=1745277488"
+      ],
+      "tryOnImage": "/demos-images/trouble-off-the-tee/golf-of-america-hat.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

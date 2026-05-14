@@ -1,0 +1,28 @@
+{
+  "slug": "shasa",
+  "brandName": "Shasa",
+  "brandDomain": "shasa.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Top corset detalle estampado lineas",
+      "handle": "top-corset-detalle-estampado-lineas",
+      "price": "£299.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0676/3433/1860/files/2607829056_1.jpg?v=1778691636",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0676/3433/1860/files/2607829056_1.jpg?v=1778691636",
+        "https://cdn.shopify.com/s/files/1/0676/3433/1860/files/2607829056_2.jpg?v=1778691636",
+        "https://cdn.shopify.com/s/files/1/0676/3433/1860/files/2607829056_3.jpg?v=1778691636"
+      ],
+      "tryOnImage": "/demos-images/shasa/top-corset-detalle-estampado-lineas.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

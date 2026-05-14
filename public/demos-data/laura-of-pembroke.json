@@ -1,0 +1,28 @@
+{
+  "slug": "laura-of-pembroke",
+  "brandName": "Laura of Pembroke",
+  "brandDomain": "lauraofpembroke.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "White Cotton Blouse",
+      "handle": "white-cotton-blouse",
+      "price": "£55.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0374/5141/files/0c9ecdf2afc8b970960c4555154c543279813ad13965da2619b0e1bd9d792e55.jpg?v=1778619196",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0374/5141/files/0c9ecdf2afc8b970960c4555154c543279813ad13965da2619b0e1bd9d792e55.jpg?v=1778619196",
+        "https://cdn.shopify.com/s/files/1/0374/5141/files/bfceba8dc98cdef291bd7612ff5c42a5adf0dd2dedce0dad8bb30c01e870cdd5.jpg?v=1778619201",
+        "https://cdn.shopify.com/s/files/1/0374/5141/files/c9b8b69bf5e6d4f94f6cce730daa09378b79b0c266a8428eb652b774a26f0b2b.jpg?v=1778619207"
+      ],
+      "tryOnImage": "/demos-images/laura-of-pembroke/white-cotton-blouse.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

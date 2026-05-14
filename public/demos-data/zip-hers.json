@@ -1,0 +1,28 @@
+{
+  "slug": "zip-hers",
+  "brandName": "Zip Hers",
+  "brandDomain": "ziphers.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "ZipHers Long Sleeve Quarter Zip Shirt",
+      "handle": "zip-hers-long-sleeve-quarter-zip-shirt",
+      "price": "£16.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0549/0717/5106/products/1.jpg?v=1723468107",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0549/0717/5106/products/1.jpg?v=1723468107",
+        "https://cdn.shopify.com/s/files/1/0549/0717/5106/products/2.jpg?v=1723468113",
+        "https://cdn.shopify.com/s/files/1/0549/0717/5106/products/3.jpg?v=1723468118"
+      ],
+      "tryOnImage": "/demos-images/zip-hers/zip-hers-long-sleeve-quarter-zip-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

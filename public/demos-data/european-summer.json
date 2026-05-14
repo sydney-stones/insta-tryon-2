@@ -1,0 +1,28 @@
+{
+  "slug": "european-summer",
+  "brandName": "European Summer",
+  "brandDomain": "shopeuropeansummer.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Ibiza triangle floral top",
+      "handle": "triangle-floral-top",
+      "price": "£25.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0751/3790/9016/files/DCE49EA2-89CA-43D1-A802-2AA636E6DC48.jpg?v=1771386211",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0751/3790/9016/files/DCE49EA2-89CA-43D1-A802-2AA636E6DC48.jpg?v=1771386211",
+        "https://cdn.shopify.com/s/files/1/0751/3790/9016/files/E25E7F93-FB4B-41E4-9C78-9B0B81B3B2E2.jpg?v=1771211803",
+        "https://cdn.shopify.com/s/files/1/0751/3790/9016/files/180C7B1E-9374-431C-9154-84123689AB6C.jpg?v=1771211802"
+      ],
+      "tryOnImage": "/demos-images/european-summer/triangle-floral-top.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

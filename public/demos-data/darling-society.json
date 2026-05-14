@@ -1,0 +1,28 @@
+{
+  "slug": "darling-society",
+  "brandName": "Darling Society",
+  "brandDomain": "darlingsociety.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Work of Art Meuse Band",
+      "handle": "work-of-art-meuse-band",
+      "price": "£74.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0771/6034/9987/files/gldn-darling-6606-Edit-Edit.jpg?v=1736200225",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0771/6034/9987/files/gldn-darling-6606-Edit-Edit.jpg?v=1736200225",
+        "https://cdn.shopify.com/s/files/1/0771/6034/9987/files/gldn-darling-6606-Edit-Edit-2.jpg?v=1736200226",
+        "https://cdn.shopify.com/s/files/1/0771/6034/9987/files/2024_beatrice6391.jpg?v=1736200226"
+      ],
+      "tryOnImage": "/demos-images/darling-society/work-of-art-meuse-band.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

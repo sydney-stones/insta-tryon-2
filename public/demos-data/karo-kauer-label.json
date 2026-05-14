@@ -1,0 +1,28 @@
+{
+  "slug": "karo-kauer-label",
+  "brandName": "Karo Kauer Label",
+  "brandDomain": "karokauer.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Knit Pants Striped Red",
+      "handle": "knit-pants-striped-red",
+      "price": "£89.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0306/9431/0023/files/KK_325_Studio_web-530.jpg?v=1777289857",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0306/9431/0023/files/KK_325_Studio_web-530.jpg?v=1777289857",
+        "https://cdn.shopify.com/s/files/1/0306/9431/0023/files/KK_325_Studio_web-536.jpg?v=1777289858",
+        "https://cdn.shopify.com/s/files/1/0306/9431/0023/files/KK_325_Studio_web-551.jpg?v=1777289859"
+      ],
+      "tryOnImage": "/demos-images/karo-kauer-label/knit-pants-striped-red.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

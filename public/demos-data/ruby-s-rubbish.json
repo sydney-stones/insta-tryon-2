@@ -1,0 +1,26 @@
+{
+  "slug": "ruby-s-rubbish",
+  "brandName": "Ruby's Rubbish®",
+  "brandDomain": "rubysrubbish.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "NEW You Look Like the Fourth | Seasonal T-Shirt | Ruby’s Rubbish®",
+      "handle": "new-you-look-like-the-fourth-seasonal-t-shirt-ruby-s-rubbish",
+      "price": "£28.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1132/0482/files/youlooklikethefourthofjuly_d3b366aa-fe87-4c9f-a3e0-5466914c4792.jpg?v=1776781601",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1132/0482/files/youlooklikethefourthofjuly_d3b366aa-fe87-4c9f-a3e0-5466914c4792.jpg?v=1776781601"
+      ],
+      "tryOnImage": "/demos-images/ruby-s-rubbish/new-you-look-like-the-fourth-seasonal-t-shirt-ruby-s-rubbish.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

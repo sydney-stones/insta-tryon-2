@@ -1,0 +1,28 @@
+{
+  "slug": "serafina",
+  "brandName": "Serafina",
+  "brandDomain": "serafina.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Vegan Suede Shirt Dress - Camel",
+      "handle": "v-neck-ribbed-knit-dress-fudge-copy",
+      "price": "£125.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0226/0245/files/Serafina_April_0893.jpg?v=1776652997",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0226/0245/files/Serafina_April_0893.jpg?v=1776652997",
+        "https://cdn.shopify.com/s/files/1/0226/0245/files/15_1e8c300b-e324-4fc1-bad0-958763155027.png?v=1776746021",
+        "https://cdn.shopify.com/s/files/1/0226/0245/files/Serafina_April_0908.jpg?v=1776746021"
+      ],
+      "tryOnImage": "/demos-images/serafina/v-neck-ribbed-knit-dress-fudge-copy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

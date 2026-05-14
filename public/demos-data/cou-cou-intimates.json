@@ -1,0 +1,28 @@
+{
+  "slug": "cou-cou-intimates",
+  "brandName": "Cou Cou Intimates",
+  "brandDomain": "coucouintimates.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "The Rina Long Sleeve: Grey Cotton Jersey",
+      "handle": "the-rina-long-sleeve-cotton-jersey-grey",
+      "price": "£62.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0539/8924/5106/files/TheRinaLongSleeveCottonJerseyGrey.jpg?v=1778592913",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0539/8924/5106/files/TheRinaLongSleeveCottonJerseyGrey.jpg?v=1778592913",
+        "https://cdn.shopify.com/s/files/1/0539/8924/5106/files/RINAGREY_d6a5ad34-35da-4dad-a072-7f6ba6da42ef.jpg?v=1774003040",
+        "https://cdn.shopify.com/s/files/1/0539/8924/5106/files/PRODUCTNAME_FABRIC_COLOR_24_82fca9ae-58f6-41c8-a4e5-c1ae205931cd.jpg?v=1774003040"
+      ],
+      "tryOnImage": "/demos-images/cou-cou-intimates/the-rina-long-sleeve-cotton-jersey-grey.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

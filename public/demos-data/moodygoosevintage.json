@@ -1,0 +1,26 @@
+{
+  "slug": "moodygoosevintage",
+  "brandName": "moodygoosevintage",
+  "brandDomain": "moodygoosevintage.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Moody Goose Gift Certificate - $40",
+      "handle": "moody-goose-gift-certificate-100-copy",
+      "price": "£40.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0617/6194/5775/files/40.png?v=1753815890",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0617/6194/5775/files/40.png?v=1753815890"
+      ],
+      "tryOnImage": "/demos-images/moodygoosevintage/moody-goose-gift-certificate-100-copy.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

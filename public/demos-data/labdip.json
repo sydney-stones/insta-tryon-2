@@ -1,0 +1,28 @@
+{
+  "slug": "labdip",
+  "brandName": "Labdip",
+  "brandDomain": "labdip.fr",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "SWEAT COLLEGE CANDY ARTWORK",
+      "handle": "college-sweat-rose-imprime",
+      "price": "£100.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0242/0912/9535/files/COLLEGE-TOPS-CANDYPRINT-PO1583-SS26-ESHOP-34119_-_light_2.jpg?v=1774882778",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0242/0912/9535/files/COLLEGE-TOPS-CANDYPRINT-PO1583-SS26-ESHOP-34119_-_light_2.jpg?v=1774882778",
+        "https://cdn.shopify.com/s/files/1/0242/0912/9535/files/COLLEGE-TOPS-CANDYPRINT-PO1583-SS26-ESHOP-34113_-_light_2.jpg?v=1774882721",
+        "https://cdn.shopify.com/s/files/1/0242/0912/9535/files/COLLEGE-TOPS-CANDYPRINT-PO1583-SS26-ESHOP-34096_-_light_2.jpg?v=1775053085"
+      ],
+      "tryOnImage": "/demos-images/labdip/college-sweat-rose-imprime.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

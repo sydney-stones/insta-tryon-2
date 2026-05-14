@@ -1,0 +1,28 @@
+{
+  "slug": "jottnar",
+  "brandName": "Jöttnar",
+  "brandDomain": "jottnar.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Elv (Past Season) Lightweight Technical T-Shirt",
+      "handle": "elv-mens-lightweight-technical-t-shirt-ss25",
+      "price": "£55.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0013/5790/5994/files/Elv_-_Collection_Hero-min.jpg?v=1744034804",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0013/5790/5994/files/Elv_-_Collection_Hero-min.jpg?v=1744034804",
+        "https://cdn.shopify.com/s/files/1/0013/5790/5994/files/Elv_-_Hero_Legion-min.jpg?v=1747221531",
+        "https://cdn.shopify.com/s/files/1/0013/5790/5994/files/Elv_-_Hero_Blackstone-min.jpg?v=1747221531"
+      ],
+      "tryOnImage": "/demos-images/jottnar/elv-mens-lightweight-technical-t-shirt-ss25.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

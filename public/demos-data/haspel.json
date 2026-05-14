@@ -1,0 +1,28 @@
+{
+  "slug": "haspel",
+  "brandName": "Haspel",
+  "brandDomain": "haspel.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Decatur Solid White (Tailored Fit) Pinpoint Oxford Dress Shirt - Button Down",
+      "handle": "henry-solid-white-button-down-trim-fit-dress-shirt",
+      "price": "£114.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0665/5557/files/DressShirt-whiteshirtcopy_cd470067-e589-430b-bffa-ef39b6f3d0fc.jpg?v=1740434879",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0665/5557/files/DressShirt-whiteshirtcopy_cd470067-e589-430b-bffa-ef39b6f3d0fc.jpg?v=1740434879",
+        "https://cdn.shopify.com/s/files/1/0665/5557/files/RED_PINCORD_SPORTCOATcopy_da95fa03-193f-4a7c-ac34-f76cf8bc046f.jpg?v=1740434879",
+        "https://cdn.shopify.com/s/files/1/0665/5557/files/RED_PINCORD_CLOSEcopy_eadb5129-88e0-4d4d-bf2e-640f45098d15.jpg?v=1740434879"
+      ],
+      "tryOnImage": "/demos-images/haspel/henry-solid-white-button-down-trim-fit-dress-shirt.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

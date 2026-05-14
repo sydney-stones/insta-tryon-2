@@ -1,0 +1,28 @@
+{
+  "slug": "nala",
+  "brandName": "Nala",
+  "brandDomain": "wearnala.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "10 Pack High Waist Brief - Better Than Cotton",
+      "handle": "10-pack-high-waist-brief-better-than-cotton",
+      "price": "£110.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0651/7083/3641/files/45_26f91735-5bb6-4d3e-8e8e-4909e056c522.png?v=1721271847",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0651/7083/3641/files/45_26f91735-5bb6-4d3e-8e8e-4909e056c522.png?v=1721271847",
+        "https://cdn.shopify.com/s/files/1/0651/7083/3641/files/0.62535800_1747177038.jpg?v=1747177040",
+        "https://cdn.shopify.com/s/files/1/0651/7083/3641/files/46_53b2676e-3682-42bd-b153-562d0f8662f6.png?v=1747177039"
+      ],
+      "tryOnImage": "/demos-images/nala/10-pack-high-waist-brief-better-than-cotton.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

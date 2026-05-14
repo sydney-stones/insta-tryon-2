@@ -1,0 +1,28 @@
+{
+  "slug": "altru-apparel",
+  "brandName": "Altru Apparel",
+  "brandDomain": "altruapparel.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "\"SOLVEM PROBLER\" Women's Relaxed Jersey Short Sleeve Tee",
+      "handle": "solvem-probler-womens-relaxed-jersey-short-sleeve-tee",
+      "price": "£38.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0153/2317/files/ALT5248-VTWHT-FRONT.jpg?v=1775787445",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0153/2317/files/ALT5248-VTWHT-FRONT.jpg?v=1775787445",
+        "https://cdn.shopify.com/s/files/1/0153/2317/files/ALT5248-VTWHT-BACK.jpg?v=1775787445",
+        "https://cdn.shopify.com/s/files/1/0153/2317/files/ALT5248-DKGRY-FRONT.jpg?v=1775787445"
+      ],
+      "tryOnImage": "/demos-images/altru-apparel/solvem-probler-womens-relaxed-jersey-short-sleeve-tee.jpg",
+      "modelGender": "men",
+      "modelName": "lukas",
+      "customerImages": {
+        "face": "/demo-models/lukas/face.png",
+        "body": "/demo-models/lukas/body.png"
+      }
+    }
+  ]
+}

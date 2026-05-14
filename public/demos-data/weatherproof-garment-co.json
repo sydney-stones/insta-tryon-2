@@ -1,0 +1,28 @@
+{
+  "slug": "weatherproof-garment-co",
+  "brandName": "Weatherproof Garment Co.",
+  "brandDomain": "weatherproofgarment.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "both",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "SPRING RAIN SLICKER",
+      "handle": "spring-rain-slicker",
+      "price": "£140.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0137/2939/8842/files/2_dce571c7-4a3b-4256-9805-bc7771ddf08d.jpg?v=1771940070",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0137/2939/8842/files/2_dce571c7-4a3b-4256-9805-bc7771ddf08d.jpg?v=1771940070",
+        "https://cdn.shopify.com/s/files/1/0137/2939/8842/files/S64022_SHOREBLUE_1FRONT.jpg?v=1771940070",
+        "https://cdn.shopify.com/s/files/1/0137/2939/8842/files/S64022_SHOREBLUE_1FRONTALT.jpg?v=1771940070"
+      ],
+      "tryOnImage": "/demos-images/weatherproof-garment-co/spring-rain-slicker.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

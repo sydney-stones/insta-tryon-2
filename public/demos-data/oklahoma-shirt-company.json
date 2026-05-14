@@ -1,0 +1,28 @@
+{
+  "slug": "oklahoma-shirt-company",
+  "brandName": "Oklahoma Shirt Company",
+  "brandDomain": "oklahomashirtcompany.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "OKC Groovy | Ivory & Black Crop T Shirt | OKC Basketball",
+      "handle": "okc-groovy-okc-basketball",
+      "price": "£23.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0278/9321/files/IVORY_CROPPED_FRONT_1.png?v=1775246107",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0278/9321/files/IVORY_CROPPED_FRONT_1.png?v=1775246107",
+        "https://cdn.shopify.com/s/files/1/0278/9321/files/BLACK_CROPPED_FRONT.png?v=1775232233",
+        "https://cdn.shopify.com/s/files/1/0278/9321/files/IVORY_CROPPED_BACK.png?v=1775232233"
+      ],
+      "tryOnImage": "/demos-images/oklahoma-shirt-company/okc-groovy-okc-basketball.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

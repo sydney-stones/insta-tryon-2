@@ -1,0 +1,28 @@
+{
+  "slug": "amantine",
+  "brandName": "Amantine",
+  "brandDomain": "amantine.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Deauville Corset Cotton Midi Dress",
+      "handle": "striped-cotton-midi-dress-boned-bodice-tie-front",
+      "price": "£168.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0208/9405/6497/files/amantine-striped-cotton-midi-dress-blush-cream-boned-bodice-front.jpg?v=1776110347",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0208/9405/6497/files/amantine-striped-cotton-midi-dress-blush-cream-boned-bodice-front.jpg?v=1776110347",
+        "https://cdn.shopify.com/s/files/1/0208/9405/6497/files/amantine-striped-cotton-midi-dress-blush-cream-corset-panel-detail.jpg?v=1776110613",
+        "https://cdn.shopify.com/s/files/1/0208/9405/6497/files/amantine-striped-cotton-midi-dress-blush-cream-boned-bodice-side.jpg?v=1776110613"
+      ],
+      "tryOnImage": "/demos-images/amantine/striped-cotton-midi-dress-boned-bodice-tie-front.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

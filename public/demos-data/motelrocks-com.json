@@ -1,0 +1,28 @@
+{
+  "slug": "motelrocks-com",
+  "brandName": "motelrocks.com",
+  "brandDomain": "motelrocks.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Sandat Smock Mini Dress in Mini Gingham Grey",
+      "handle": "sandat-smock-dress-mini-gingham-grey",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1444/3082/files/SANDAT-SMOCK-DRESS-MINI-GINGHAM-GREY-33262.jpg?v=1778227020",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1444/3082/files/SANDAT-SMOCK-DRESS-MINI-GINGHAM-GREY-33262.jpg?v=1778227020",
+        "https://cdn.shopify.com/s/files/1/1444/3082/files/SANDAT-SMOCK-DRESS-MINI-GINGHAM-GREY-33269.jpg?v=1778227020",
+        "https://cdn.shopify.com/s/files/1/1444/3082/files/SANDAT-SMOCK-DRESS-MINI-GINGHAM-GREY-33252.jpg?v=1778227020"
+      ],
+      "tryOnImage": "/demos-images/motelrocks-com/sandat-smock-dress-mini-gingham-grey.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

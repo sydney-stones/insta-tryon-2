@@ -1,0 +1,28 @@
+{
+  "slug": "intersport",
+  "brandName": "INTERSPORT",
+  "brandDomain": "intersport.it",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "T SHIRT NIKE DRI FIT SWOOSH FOG JR",
+      "handle": "t-shirt-nike-dri-fit-swoosh-fog-jr-s6004241",
+      "price": "£22.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0580/1227/0680/files/S6004241_304.jpg?v=1778723178",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0580/1227/0680/files/S6004241_304.jpg?v=1778723178",
+        "https://cdn.shopify.com/s/files/1/0580/1227/0680/files/S6004241_304cl001.jpg?v=1778723179",
+        "https://cdn.shopify.com/s/files/1/0580/1227/0680/files/S6004241_304cl002.jpg?v=1778723178"
+      ],
+      "tryOnImage": "/demos-images/intersport/t-shirt-nike-dri-fit-swoosh-fog-jr-s6004241.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

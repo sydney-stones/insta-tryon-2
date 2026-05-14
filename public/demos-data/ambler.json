@@ -1,0 +1,28 @@
+{
+  "slug": "ambler",
+  "brandName": "Ambler",
+  "brandDomain": "amblermw.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "women",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Cypress Toque",
+      "handle": "cypress-mens-toque",
+      "price": "£45.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/1656/3161/files/Cypress_HeatherCharcoal_07f89853-c40a-4c5c-a705-d641613157e3.png?v=1757587884",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/1656/3161/files/Cypress_HeatherCharcoal_07f89853-c40a-4c5c-a705-d641613157e3.png?v=1757587884",
+        "https://cdn.shopify.com/s/files/1/1656/3161/files/Cypress_Heather_Charcoal.png?v=1758794735",
+        "https://cdn.shopify.com/s/files/1/1656/3161/files/Cypress_Black_3c4138d2-e8a0-4034-a69a-d8a4274ea5c5.jpg?v=1765388859"
+      ],
+      "tryOnImage": "/demos-images/ambler/cypress-mens-toque.jpg",
+      "modelGender": "women",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

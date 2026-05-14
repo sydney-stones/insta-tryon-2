@@ -1,0 +1,28 @@
+{
+  "slug": "sene",
+  "brandName": "Sene",
+  "brandDomain": "senestudio.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "men",
+  "classificationConfidence": "high",
+  "tryOns": [
+    {
+      "title": "Merino Wool V-Neck T-Shirt - Dune",
+      "handle": "merino-wool-v-neck-t-shirt-dune",
+      "price": "£98.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0615/7913/files/Front_half_body_5c954c98-1962-4fea-8c69-d6115d35ded3.png?v=1778517252",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0615/7913/files/Front_half_body_5c954c98-1962-4fea-8c69-d6115d35ded3.png?v=1778517252",
+        "https://cdn.shopify.com/s/files/1/0615/7913/files/DSC00929-web.jpg?v=1778517220",
+        "https://cdn.shopify.com/s/files/1/0615/7913/files/Front_full_body_fadf0640-b5a2-48c2-9be3-ca99cf2d704e.png?v=1778517253"
+      ],
+      "tryOnImage": "/demos-images/sene/merino-wool-v-neck-t-shirt-dune.jpg",
+      "modelGender": "men",
+      "modelName": "otto",
+      "customerImages": {
+        "face": "/demo-models/otto/face.png",
+        "body": "/demo-models/otto/body.png"
+      }
+    }
+  ]
+}

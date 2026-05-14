@@ -1,0 +1,28 @@
+{
+  "slug": "sheike",
+  "brandName": "SHEIKE",
+  "brandDomain": "sheike.com.au",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "AMALFI LONGLINE KNIT",
+      "handle": "amalfi-longline-knit-black-1",
+      "price": "£19.00",
+      "productImage": "https://cdn.shopify.com/s/files/1/0285/9001/4596/files/1005713_AMALFI_LONGLINE_KNIT_BLACK_ARIARNE_1.jpg?v=1697490872",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0285/9001/4596/files/1005713_AMALFI_LONGLINE_KNIT_BLACK_ARIARNE_1.jpg?v=1697490872",
+        "https://cdn.shopify.com/s/files/1/0285/9001/4596/files/1005713_AMALFI_LONGLINE_KNIT_BLACK_ARIARNE_2.jpg?v=1697490872",
+        "https://cdn.shopify.com/s/files/1/0285/9001/4596/files/1005713_AMALFI_LONGLINE_KNIT_BLACK_ARIARNE_3.jpg?v=1697490872"
+      ],
+      "tryOnImage": "/demos-images/sheike/amalfi-longline-knit-black-1.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}

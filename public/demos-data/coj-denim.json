@@ -1,0 +1,28 @@
+{
+  "slug": "coj-denim",
+  "brandName": "COJ Denim",
+  "brandDomain": "cojdenim.com",
+  "generatedOn": "2026-05-14",
+  "genderClassification": "unisex",
+  "classificationConfidence": "low",
+  "tryOns": [
+    {
+      "title": "Mila Mid Waist Ankle Length Jogger 5 Pocket Trouser Black",
+      "handle": "coj0060-mila-mid-waist-ankle-length-jogger-5-pocket-trouser-black",
+      "price": "£29.99",
+      "productImage": "https://cdn.shopify.com/s/files/1/0756/9394/9225/files/Mila-l01-1204.jpg?v=1723198178",
+      "productImages": [
+        "https://cdn.shopify.com/s/files/1/0756/9394/9225/files/Mila-l01-1204.jpg?v=1723198178",
+        "https://cdn.shopify.com/s/files/1/0756/9394/9225/files/Mila-l01-1205.jpg?v=1723198181",
+        "https://cdn.shopify.com/s/files/1/0756/9394/9225/files/Mila-l01-1206.jpg?v=1723198184"
+      ],
+      "tryOnImage": "/demos-images/coj-denim/coj0060-mila-mid-waist-ankle-length-jogger-5-pocket-trouser-black.jpg",
+      "modelGender": "unisex",
+      "modelName": "ebba",
+      "customerImages": {
+        "face": "/demo-models/ebba/face.png",
+        "body": "/demo-models/ebba/body.png"
+      }
+    }
+  ]
+}
