@@ -6,7 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "monitor": "node --env-file=.env.local scripts/monitor.mjs",
+    "send:status": "node --env-file=.env.local scripts/send-emails.mjs --status",
+    "send:check": "node --env-file=.env.local scripts/send-emails.mjs --check",
+    "send:test": "node --env-file=.env.local scripts/send-emails.mjs --test",
+    "send:dry": "node --env-file=.env.local scripts/send-emails.mjs --live",
+    "send:live": "node --env-file=.env.local scripts/send-emails.mjs --live --confirm",
+    "warmup:check": "node --env-file=.env.local scripts/check-warmup.mjs"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.5.0",
