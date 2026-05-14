@@ -239,8 +239,8 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | DemoBrandGroup['status']>('all');
   const [autoIndex, setAutoIndex] = useState<AutoDemoIndex | null>(null);
-  const [approvals, setApprovals] = useState<Record<string, 'approved' | 'rejected'>>({});
-  const [autoFilter, setAutoFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('all');
+  const [approvals, setApprovals] = useState<Record<string, 'approved' | 'rejected' | 'removed'>>({});
+  const [autoFilter, setAutoFilter] = useState<'all' | 'pending' | 'approved' | 'rejected' | 'removed'>('all');
   const origin = typeof window !== 'undefined' ? window.location.origin : '';
 
   useEffect(() => {
@@ -261,7 +261,8 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
     });
   }, []);
 
-  const updateApproval = (slug: string, state: 'approved' | 'rejected' | 'pending') => {
+  const updateApproval = (slug: string, state: 'approved' | 'rejected' | 'removed' | 'pending') => {
+    // Optimistic UI update
     setApprovals(prev => {
       const next = { ...prev };
       if (state === 'pending') delete next[slug]; else next[slug] = state;
@@ -272,7 +273,23 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...(token ? { 'x-admin-token': token } : {}) },
       body: JSON.stringify({ slug, state }),
-    }).catch(() => {});
+    }).then(async r => {
+      if (!r.ok) {
+        // Roll back local state on persistence failure so the user knows it didn't save
+        const msg = await r.text();
+        console.error('[approvals] save failed', r.status, msg);
+        alert(`Failed to save (${r.status}). Approval state for "${slug}" was NOT persisted. Refresh and try again.`);
+        // Refetch to resync
+        const fresh = await fetch('/api/approvals').then(x => x.ok ? x.json() : null).catch(() => null);
+        if (fresh) {
+          fetch('/demos-data/approvals.json').then(x => x.ok ? x.json() : {}).catch(() => ({}))
+            .then(staticA => setApprovals({ ...staticA, ...fresh }));
+        }
+      }
+    }).catch(e => {
+      console.error('[approvals] network error', e);
+      alert(`Network error saving approval for "${slug}". State NOT persisted.`);
+    });
   };
 
   const autoDemos = autoIndex?.demos || [];
@@ -283,6 +300,7 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
       if (autoFilter === 'pending' && state !== 'pending') return false;
       if (autoFilter === 'approved' && state !== 'approved') return false;
       if (autoFilter === 'rejected' && state !== 'rejected') return false;
+      if (autoFilter === 'removed' && state !== 'removed') return false;
       if (!normalizedQuery) return true;
       return [d.brandName, d.brandDomain, d.contactFirstName, d.contactEmail, d.senderEmail, d.productTitle, d.slug]
         .some(f => f?.toLowerCase().includes(normalizedQuery));
@@ -291,7 +309,8 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
 
   const approvedCount = autoDemos.filter(d => approvals[d.slug] === 'approved').length;
   const rejectedCount = autoDemos.filter(d => approvals[d.slug] === 'rejected').length;
-  const pendingCount = autoDemos.length - approvedCount - rejectedCount;
+  const removedCount = autoDemos.filter(d => approvals[d.slug] === 'removed').length;
+  const pendingCount = autoDemos.length - approvedCount - rejectedCount - removedCount;
 
   const filteredGroups = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -381,12 +400,12 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
             <div>
               <h2 className="text-xl font-bold text-gray-900">Auto-generated personalised demos</h2>
               <p className="text-sm text-gray-600 mt-1">
-                {autoDemos.length} demos · {pendingCount} pending · {approvedCount} approved · {rejectedCount} rejected
+                {autoDemos.length} demos · {pendingCount} pending · {approvedCount} approved · {rejectedCount} rejected · {removedCount} removed
                 {autoIndex && <span className="ml-2 text-xs text-gray-400">index updated {new Date(autoIndex.generatedAt).toLocaleString()}</span>}
               </p>
             </div>
             <div className="flex gap-2 overflow-x-auto pb-1">
-              {(['all','pending','approved','rejected'] as const).map((s) => (
+              {(['all','pending','approved','rejected','removed'] as const).map((s) => (
                 <button key={s} onClick={() => setAutoFilter(s)}
                   className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${autoFilter === s ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}>
                   {s === 'all' ? 'All' : s.charAt(0).toUpperCase() + s.slice(1)}
@@ -418,6 +437,7 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
                     const stateStyle =
                       state === 'approved' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
                       state === 'rejected' ? 'bg-red-100 text-red-700 border-red-200' :
+                      state === 'removed'  ? 'bg-gray-200 text-gray-700 border-gray-300 line-through' :
                       'bg-amber-50 text-amber-700 border-amber-200';
                     return (
                       <tr key={d.slug} className="hover:bg-gray-50">
@@ -452,6 +472,15 @@ const AdminDemoDirectory: React.FC<AdminDemoDirectoryProps> = ({ onBack, onLogou
                             {state !== 'rejected' && (
                               <button onClick={() => updateApproval(d.slug, 'rejected')}
                                 className="px-2.5 py-1 text-xs text-red-700 border border-red-300 rounded hover:bg-red-50">Reject</button>
+                            )}
+                            {state !== 'removed' && (
+                              <button
+                                onClick={() => {
+                                  if (confirm(`Remove "${d.brandName}" from the system? This marks the demo as removed and will be purged from public-facing data on the next batch.`)) {
+                                    updateApproval(d.slug, 'removed');
+                                  }
+                                }}
+                                className="px-2.5 py-1 text-xs text-white bg-gray-700 rounded hover:bg-gray-800">Remove</button>
                             )}
                             {state !== 'pending' && (
                               <button onClick={() => updateApproval(d.slug, 'pending')}

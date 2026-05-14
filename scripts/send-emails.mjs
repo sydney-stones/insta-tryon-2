@@ -481,7 +481,17 @@ async function runLive() {
   const header = rows[0];
   const ix = (n) => header.indexOf(n);
 
-  const approvals = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'demos-data', 'approvals.json'), 'utf8'));
+  // Load static approvals from repo + live approvals from production Redis (via API)
+  // so removals/rejections done in the admin UI are honoured immediately.
+  const staticApprovals = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'demos-data', 'approvals.json'), 'utf8'));
+  let liveApprovals = {};
+  try {
+    const r = await fetch('https://renderedfits.com/api/approvals');
+    if (r.ok) liveApprovals = await r.json();
+  } catch (e) {
+    console.warn('Could not fetch live approvals from API; using static file only.');
+  }
+  const approvals = { ...staticApprovals, ...liveApprovals };
 
   const queue = [];
   let skipNotApproved = 0, skipDedup = 0, skipNoRecipient = 0;
